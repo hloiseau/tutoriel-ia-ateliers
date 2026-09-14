@@ -1,0 +1,4 @@
+Corpus : 1010 caractères ; vocabulaire : 31 tokens
+Contexte utilisé : 1 caractère ; température : 0.5
+le re paure leist de sst ure la prre la le le e re pa are re chisore le le s.
+le le le chis'ie le le coureste de le laste le cha fe lata lat r lene de larie chisst t chite une t chure

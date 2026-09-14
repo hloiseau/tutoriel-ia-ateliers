@@ -1,0 +1,29 @@
+[
+  {
+    "partie": 3,
+    "commande": [
+      "-m",
+      "unittest",
+      "-v",
+      "test_client"
+    ],
+    "stdout": "",
+    "stderr": "test_aucune_redirection (test_client.ClientTest.test_aucune_redirection) ... ok\ntest_erreur_reseau_remonte (test_client.ClientTest.test_erreur_reseau_remonte) ... ok\ntest_pas_de_messages (test_client.ClientTest.test_pas_de_messages) ... ok\ntest_requete_et_reponse (test_client.ClientTest.test_requete_et_reponse) ... ok\ntest_trop_de_tokens (test_client.ClientTest.test_trop_de_tokens) ... ok\ntest_usage_absent_reste_absent (test_client.ClientTest.test_usage_absent_reste_absent) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n",
+    "code_sortie": 0
+  },
+  {
+    "partie": 4,
+    "etape": "premier test rouge",
+    "stdout": "",
+    "stderr": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... FAIL\n\n======================================================================\nFAIL: test_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/suite-travail/extraction-controle/partie-4/mon-suivi/test_ticket.py\", line 5, in test_retour_en_stock_sans_baisse\n    self.assertFalse(notifier(Etat(2000, False), Etat(2000, True)))\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n",
+    "code_sortie": 1
+  },
+  {
+    "partie": 4,
+    "etape": "correction et scénario supplémentaire",
+    "stdout_tests": "",
+    "stderr_tests": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_booleen_comme_prix (test_ticket.DonneesInvalides.test_booleen_comme_prix) ... ok\ntest_disponibilite_non_booleenne (test_ticket.DonneesInvalides.test_disponibilite_non_booleenne) ... ok\ntest_prix_decimal (test_ticket.DonneesInvalides.test_prix_decimal) ... ok\ntest_prix_negatif (test_ticket.DonneesInvalides.test_prix_negatif) ... ok\ntest_baisse_un_centime (test_ticket.TicketPrix.test_baisse_un_centime) ... ok\ntest_prix_identique_deja_en_stock (test_ticket.TicketPrix.test_prix_identique_deja_en_stock) ... ok\ntest_prix_zero (test_ticket.TicketPrix.test_prix_zero) ... ok\ntest_retour_en_stock_avec_baisse (test_ticket.TicketPrix.test_retour_en_stock_avec_baisse) ... ok\ntest_retour_en_stock_avec_hausse (test_ticket.TicketPrix.test_retour_en_stock_avec_hausse) ... ok\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n",
+    "stdout_scenario": "{\"notifier\": true}\n",
+    "code_sortie": 0
+  }
+]

@@ -1,0 +1,1 @@
+Le modèle est maintenant un fichier que nous pouvons recharger et utiliser. Nous avons aussi rencontré une limite très concrète : notre écriture ne ressemble pas forcément aux images qui ont servi à l’entraînement.

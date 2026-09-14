@@ -1,0 +1,10 @@
+[
+  {
+    "role": "system",
+    "content": "Answer briefly in English."
+  },
+  {
+    "role": "user",
+    "content": "Explain what a variable is in programming, in two sentences."
+  }
+]

@@ -1,0 +1,5 @@
+Étiquette attendue : 3
+Probabilités : [0.099 0.099 0.104 0.099 0.092 0.103 0.102 0.097 0.102 0.102]
+Classe choisie : 2
+Paramètres : 650
+Exactitude avant entraînement : 10.3%

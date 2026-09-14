@@ -1,0 +1,254 @@
+{
+  "object": "container",
+  "slug": "une-histoire-de-lia",
+  "title": "Une histoire de l’IA, des premières idées à aujourd’hui",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-origines",
+      "title": "Les origines de l’intelligence artificielle",
+      "introduction": "01-origines/introduction.md",
+      "conclusion": "01-origines/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "babbage-lovelace",
+          "title": "Une machine à laquelle on donne des instructions",
+          "text": "01-origines/babbage-lovelace.md"
+        },
+        {
+          "object": "extract",
+          "slug": "neurones",
+          "title": "1943 : des neurones sur le papier",
+          "text": "01-origines/neurones.md"
+        },
+        {
+          "object": "extract",
+          "slug": "turing",
+          "title": "1950 : peut-on faire passer une machine pour un humain ?",
+          "text": "01-origines/turing.md"
+        },
+        {
+          "object": "extract",
+          "slug": "dartmouth",
+          "title": "1956 : le domaine prend un nom",
+          "text": "01-origines/dartmouth.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "02-regles",
+      "title": "Des règles pour raisonner",
+      "introduction": "02-regles/introduction.md",
+      "conclusion": "02-regles/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "logique",
+          "title": "Décrire ce que le programme sait",
+          "text": "02-regles/logique.md"
+        },
+        {
+          "object": "extract",
+          "slug": "echecs",
+          "title": "Les échecs : connaître les règles ne suffit pas",
+          "text": "02-regles/echecs.md"
+        },
+        {
+          "object": "extract",
+          "slug": "eliza",
+          "title": "1966 : discuter avec ELIZA",
+          "text": "02-regles/eliza.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "03-apprendre",
+      "title": "Apprendre à partir de données : les premières approches",
+      "introduction": "03-apprendre/introduction.md",
+      "conclusion": "03-apprendre/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "perceptron",
+          "title": "1958 : le perceptron",
+          "text": "03-apprendre/perceptron.md"
+        },
+        {
+          "object": "extract",
+          "slug": "apprentissage",
+          "title": "Ce que veut dire « apprendre »",
+          "text": "03-apprendre/apprentissage.md"
+        },
+        {
+          "object": "extract",
+          "slug": "plusieurs-couches",
+          "title": "1986 : ajuster plusieurs couches",
+          "text": "03-apprendre/plusieurs-couches.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "04-promesses",
+      "title": "Promesses, systèmes experts et hivers de l’IA",
+      "introduction": "04-promesses/introduction.md",
+      "conclusion": "04-promesses/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "limites",
+          "title": "Quand le petit monde devient trop grand",
+          "text": "04-promesses/limites.md"
+        },
+        {
+          "object": "extract",
+          "slug": "experts",
+          "title": "Concentrer les connaissances sur un métier",
+          "text": "04-promesses/experts.md"
+        },
+        {
+          "object": "extract",
+          "slug": "r1",
+          "title": "Des systèmes utilisés dans les entreprises",
+          "text": "04-promesses/r1.md"
+        },
+        {
+          "object": "extract",
+          "slug": "cycles",
+          "title": "Pourquoi plusieurs « hivers » ?",
+          "text": "04-promesses/cycles.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "05-deep-learning",
+      "title": "Le tournant du deep learning",
+      "introduction": "05-deep-learning/introduction.md",
+      "conclusion": "05-deep-learning/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "deep-blue",
+          "title": "1997 : Deep Blue gagne contre Kasparov",
+          "text": "05-deep-learning/deep-blue.md"
+        },
+        {
+          "object": "extract",
+          "slug": "autres-methodes",
+          "title": "L’apprentissage ne se limite pas aux réseaux",
+          "text": "05-deep-learning/autres-methodes.md"
+        },
+        {
+          "object": "extract",
+          "slug": "imagenet",
+          "title": "Des images et des personnes pour les classer",
+          "text": "05-deep-learning/imagenet.md"
+        },
+        {
+          "object": "extract",
+          "slug": "alexnet",
+          "title": "2012 : le succès d’AlexNet",
+          "text": "05-deep-learning/alexnet.md"
+        },
+        {
+          "object": "extract",
+          "slug": "alphago",
+          "title": "2016 : apprendre à jouer au go",
+          "text": "05-deep-learning/alphago.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "06-generatif",
+      "title": "Des transformers à l’IA générative",
+      "introduction": "06-generatif/introduction.md",
+      "conclusion": "06-generatif/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "attention",
+          "title": "2017 : les transformers",
+          "text": "06-generatif/attention.md"
+        },
+        {
+          "object": "extract",
+          "slug": "langage",
+          "title": "Prédire la suite d’un texte",
+          "text": "06-generatif/langage.md"
+        },
+        {
+          "object": "extract",
+          "slug": "instructions",
+          "title": "2022 : rendre ces modèles plus faciles à utiliser",
+          "text": "06-generatif/instructions.md"
+        },
+        {
+          "object": "extract",
+          "slug": "images",
+          "title": "Générer aussi des images",
+          "text": "06-generatif/images.md"
+        },
+        {
+          "object": "extract",
+          "slug": "donnees",
+          "title": "Des données à grande échelle, avec leurs problèmes",
+          "text": "06-generatif/donnees.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "07-aujourdhui",
+      "title": "Où en sommes-nous aujourd’hui ?",
+      "introduction": "07-aujourdhui/introduction.md",
+      "conclusion": "07-aujourdhui/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "agents",
+          "title": "Du modèle qui répond à l’agent qui utilise des outils",
+          "text": "07-aujourdhui/agents.md"
+        },
+        {
+          "object": "extract",
+          "slug": "mcp-skills",
+          "title": "Les MCP et les skills trouvent leur place",
+          "text": "07-aujourdhui/mcp-skills.md"
+        },
+        {
+          "object": "extract",
+          "slug": "modeles-locaux",
+          "title": "Des modèles que l’on peut récupérer",
+          "text": "07-aujourdhui/modeles-locaux.md"
+        },
+        {
+          "object": "extract",
+          "slug": "raisonnement",
+          "title": "2025–2026 : davantage de calcul, davantage d’autonomie ?",
+          "text": "07-aujourdhui/raisonnement.md"
+        },
+        {
+          "object": "extract",
+          "slug": "choisir",
+          "title": "Ce que cette histoire change pour nous",
+          "text": "07-aujourdhui/choisir.md"
+        }
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

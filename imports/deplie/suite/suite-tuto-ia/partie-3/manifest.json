@@ -1,0 +1,196 @@
+{
+  "object": "container",
+  "slug": "faire-tourner-un-modele-chez-soi",
+  "title": "Faire tourner un modèle chez soi",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-choisir",
+      "title": "Choisir ce que l’on va télécharger",
+      "introduction": "01-choisir/introduction.md",
+      "conclusion": "01-choisir/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "trois-pieces",
+          "title": "Le modèle, le moteur et notre programme",
+          "text": "01-choisir/trois-pieces.md"
+        },
+        {
+          "object": "extract",
+          "slug": "fiche",
+          "title": "Lire la fiche avant le nom du fichier",
+          "text": "01-choisir/fiche.md"
+        },
+        {
+          "object": "extract",
+          "slug": "machine",
+          "title": "De quoi votre ordinateur a-t-il besoin ?",
+          "text": "01-choisir/machine.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "02-installer",
+      "title": "Installer le moteur et lancer le modèle",
+      "introduction": "02-installer/introduction.md",
+      "conclusion": "02-installer/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "moteur",
+          "title": "Choisir la bonne archive de llama.cpp",
+          "text": "02-installer/moteur.md"
+        },
+        {
+          "object": "extract",
+          "slug": "poids",
+          "title": "Télécharger les poids et retrouver le même fichier",
+          "text": "02-installer/poids.md"
+        },
+        {
+          "object": "extract",
+          "slug": "demarrer",
+          "title": "Le premier démarrage",
+          "text": "02-installer/demarrer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "depanner",
+          "title": "Quand le serveur ne démarre pas",
+          "text": "02-installer/depanner.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "03-dialoguer",
+      "title": "Envoyer une question et conserver la réponse",
+      "introduction": "03-dialoguer/introduction.md",
+      "conclusion": "03-dialoguer/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "premier-appel",
+          "title": "Notre première requête",
+          "text": "03-dialoguer/premier-appel.md"
+        },
+        {
+          "object": "extract",
+          "slug": "requete",
+          "title": "Ce que fait le client",
+          "text": "03-dialoguer/requete.md"
+        },
+        {
+          "object": "extract",
+          "slug": "document",
+          "title": "Une réponse présente, une réponse absente",
+          "text": "03-dialoguer/document.md"
+        },
+        {
+          "object": "extract",
+          "slug": "contexte",
+          "title": "Pourquoi le modèle ne se souvient pas du premier essai",
+          "text": "03-dialoguer/contexte.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "04-mesurer",
+      "title": "Mesurer sans mélanger les résultats",
+      "introduction": "04-mesurer/introduction.md",
+      "conclusion": "04-mesurer/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "memoire",
+          "title": "Le fichier, la RAM et la mémoire du GPU",
+          "text": "04-mesurer/memoire.md"
+        },
+        {
+          "object": "extract",
+          "slug": "chronometre",
+          "title": "Répéter la même demande",
+          "text": "04-mesurer/chronometre.md"
+        },
+        {
+          "object": "extract",
+          "slug": "lire",
+          "title": "Que mesure notre chronomètre ?",
+          "text": "04-mesurer/lire.md"
+        },
+        {
+          "object": "extract",
+          "slug": "modifier",
+          "title": "Changer une seule chose",
+          "text": "04-mesurer/modifier.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "05-juger",
+      "title": "Décider si le résultat nous sert",
+      "introduction": "05-juger/introduction.md",
+      "conclusion": "05-juger/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "petite-grille",
+          "title": "Une petite grille qui vous appartient",
+          "text": "05-juger/petite-grille.md"
+        },
+        {
+          "object": "extract",
+          "slug": "choisir-usage",
+          "title": "Partir du travail à faire",
+          "text": "05-juger/choisir-usage.md"
+        },
+        {
+          "object": "extract",
+          "slug": "local",
+          "title": "Ce que « local » change vraiment",
+          "text": "05-juger/local.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "06-gpu",
+      "title": "Essayer une carte graphique, si vous en avez une",
+      "introduction": "06-gpu/introduction.md",
+      "conclusion": "06-gpu/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "preparer",
+          "title": "Vérifier que le moteur voit la carte",
+          "text": "06-gpu/preparer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "comparer",
+          "title": "Rejouer notre série sur GPU",
+          "text": "06-gpu/comparer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "garder",
+          "title": "Conserver une expérience que l’on peut refaire",
+          "text": "06-gpu/garder.md"
+        }
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

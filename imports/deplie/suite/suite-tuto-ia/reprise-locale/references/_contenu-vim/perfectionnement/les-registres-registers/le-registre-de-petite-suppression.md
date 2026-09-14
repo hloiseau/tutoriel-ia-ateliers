@@ -1,0 +1,1 @@
+Le registre `"-` est écrit seulement si le contenu supprimé fait moins d'une ligne et qu'on ne choisit pas explicitement d'écrire dans un autre registre.

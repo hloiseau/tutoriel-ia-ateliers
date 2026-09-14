@@ -1,0 +1,2 @@
+Les sessions vont permettre d'ouvrir Vim d'une manière prédéterminé. C'est une fonctionnalité qui est très utile lorsque l'on travaille sur un projet et que nous ouvrons toujours les mêmes fichiers avec la même disposition des fenêtres.  
+Cela va nous permettre de ne pas rouvrir Vim sans rien et de réarranger les fenêtres à chaque fois que l'on souhaite intervenir sur notre projet.

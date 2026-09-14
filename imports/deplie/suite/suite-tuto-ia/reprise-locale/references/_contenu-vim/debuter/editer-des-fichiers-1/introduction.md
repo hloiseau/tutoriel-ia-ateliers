@@ -1,0 +1,1 @@
+Pour commencer nous allons voir les fonctionnalités de Vim qui vous permettront de faire toutes les actions de base.

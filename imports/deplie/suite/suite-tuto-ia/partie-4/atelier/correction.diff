@@ -1,0 +1,11 @@
+--- a/suivi.py
++++ b/suivi.py
+@@ -18,7 +18,7 @@
+ 
+ def notifier(ancien: Etat, nouveau: Etat) -> bool:
+     return nouveau.disponible and (
+-        nouveau.prix_centimes < ancien.prix_centimes or not ancien.disponible
++        nouveau.prix_centimes < ancien.prix_centimes
+     )
+ 
+ 

@@ -1,0 +1,103 @@
+[
+  {
+    "commande": [
+      "python",
+      "inventaire.py"
+    ],
+    "code_sortie": 0,
+    "stdout": "{\n  \"systeme\": \"Linux\",\n  \"version_systeme\": \"6.18.44\",\n  \"architecture\": \"x86_64\",\n  \"python\": \"3.12.14\",\n  \"processeur_declare\": \"x86_64\",\n  \"processeurs_logiques\": 9,\n  \"espace_libre_octets\": 29950267392,\n  \"nvidia\": null\n}\n",
+    "stderr": "",
+    "duree_s": 0.0577643619999435
+  },
+  {
+    "commande": [
+      "python",
+      "client.py"
+    ],
+    "code_sortie": 0,
+    "stdout": "In programming, a variable is a named storage location that holds a value, allowing you to store and manipulate data in your code.\n\nRaison d’arrêt : stop\nRéponse enregistrée dans resultats/reponse.json\n",
+    "stderr": "",
+    "duree_s": 2.7374194349999925
+  },
+  {
+    "commande": [
+      "python",
+      "client.py",
+      "--fichier",
+      "questions/document.json",
+      "--sortie",
+      "resultats/document.json"
+    ],
+    "code_sortie": 0,
+    "stdout": "The library opens at 10:00 on Tuesdays.\n\nRaison d’arrêt : stop\nRéponse enregistrée dans resultats/document.json\n",
+    "stderr": "",
+    "duree_s": 4.582521139999926
+  },
+  {
+    "commande": [
+      "python",
+      "client.py",
+      "--fichier",
+      "questions/inconnue.json",
+      "--sortie",
+      "resultats/inconnue.json"
+    ],
+    "code_sortie": 0,
+    "stdout": "I do not know.\n\nRaison d’arrêt : stop\nRéponse enregistrée dans resultats/inconnue.json\n",
+    "stderr": "",
+    "duree_s": 3.07903714400004
+  },
+  {
+    "commande": [
+      "python",
+      "client.py",
+      "--fichier",
+      "questions/format.json",
+      "--sortie",
+      "resultats/format.json"
+    ],
+    "code_sortie": 0,
+    "stdout": "{\n  \"colors\": [\"red\", \"blue\"]\n}\n\nRaison d’arrêt : stop\nRéponse enregistrée dans resultats/format.json\n",
+    "stderr": "",
+    "duree_s": 2.5718754369997896
+  },
+  {
+    "commande": [
+      "python",
+      "client.py",
+      "--fichier",
+      "questions/francais.json",
+      "--sortie",
+      "resultats/francais.json"
+    ],
+    "code_sortie": 0,
+    "stdout": "Variable en programmation, en français, est une variable qui est utilisée pour stocker une valeur ou une information dans une application ou une machine. Cela peut être utilisée pour stocker une informations de type text, de type numérique, de type image ou de type audio.\n\nEn français, cela peut être similaire à ceux de l'Internet de rec\n\nRaison d’arrêt : length\nRéponse enregistrée dans resultats/francais.json\n",
+    "stderr": "",
+    "duree_s": 8.298918803999868
+  },
+  {
+    "commande": [
+      "python",
+      "mesurer.py",
+      "--nom",
+      "cpu-verifie-2048"
+    ],
+    "code_sortie": 0,
+    "stdout": "Échauffement 2.328 s\nEssai 1 2.392 s\nEssai 2 2.714 s\nEssai 3 2.591 s\nDurée médiane : 2.591 s\n",
+    "stderr": "",
+    "duree_s": 10.103028486000085
+  },
+  {
+    "commande": [
+      "python",
+      "-m",
+      "unittest",
+      "-v",
+      "test_client"
+    ],
+    "code_sortie": 0,
+    "stdout": "",
+    "stderr": "test_aucune_redirection (test_client.ClientTest.test_aucune_redirection) ... ok\ntest_erreur_reseau_remonte (test_client.ClientTest.test_erreur_reseau_remonte) ... ok\ntest_pas_de_messages (test_client.ClientTest.test_pas_de_messages) ... ok\ntest_requete_et_reponse (test_client.ClientTest.test_requete_et_reponse) ... ok\ntest_trop_de_tokens (test_client.ClientTest.test_trop_de_tokens) ... ok\ntest_usage_absent_reste_absent (test_client.ClientTest.test_usage_absent_reste_absent) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n",
+    "duree_s": 0.12159845600012886
+  }
+]

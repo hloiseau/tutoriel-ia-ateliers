@@ -1,0 +1,2 @@
+Rappelons-nous que Vim est un outil qui veut nous aider à être toujours plus productifs. Pour cela il nous met à disposition des commandes pour exécuter une commande répétée dans une *liste*.  
+Ces *listes* représentent plusieurs buffers, onglets, fenêtres ou arguments.

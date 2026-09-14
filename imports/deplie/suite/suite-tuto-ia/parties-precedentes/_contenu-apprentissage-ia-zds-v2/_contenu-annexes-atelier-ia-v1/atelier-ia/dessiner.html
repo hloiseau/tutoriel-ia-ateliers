@@ -1,0 +1,23 @@
+<!doctype html><html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dessiner un chiffre</title>
+<style>body{font:18px/1.6 system-ui;color:#233844;background:#f5f3ed;max-width:760px;margin:40px auto;padding:20px}h1{line-height:1.2}canvas{display:block;width:min(100%,400px);height:auto;border:2px solid #233844;touch-action:none;background:black}button,select{font:inherit;padding:8px 14px;margin:6px 6px 6px 0}button{cursor:pointer}label{display:block}#etat{min-height:1.6em}</style>
+<h1>À votre tour d’écrire un chiffre</h1>
+<p>Dessinez un chiffre clair sur le fond noir. Gardez une petite marge et essayez de remplir la hauteur de la grille. Les flèches du clavier déplacent le curseur ; la barre d’espace peint la case sélectionnée.</p>
+<canvas id="grille" width="400" height="400" tabindex="0" aria-label="Grille de dessin de huit lignes et huit colonnes"></canvas>
+<label>Intensité du trait <select id="intensite"><option value="1">Blanc</option><option value="0.5">Gris</option><option value="0">Noir (gomme)</option></select></label>
+<button id="effacer">Effacer</button><button id="exporter">Enregistrer dessin.json</button>
+<p id="etat" aria-live="polite"></p>
+<p>Déplacez ensuite <code>dessin.json</code> dans le dossier du projet et lancez <code>python 05_lire_dessin.py dessin.json</code>.</p>
+<script>
+const c=document.getElementById('grille'),ctx=c.getContext('2d');
+let pixels=Array.from({length:8},()=>Array(8).fill(0)),x=0,y=0,actif=false;
+function afficher(){for(let i=0;i<8;i++)for(let j=0;j<8;j++){const v=Math.round(pixels[i][j]*255);ctx.fillStyle=`rgb(${v},${v},${v})`;ctx.fillRect(j*50,i*50,50,50);ctx.strokeStyle='#555';ctx.lineWidth=1;ctx.strokeRect(j*50,i*50,50,50)}if(document.activeElement===c){ctx.strokeStyle='#00c4c4';ctx.lineWidth=3;ctx.strokeRect(x*50+2,y*50+2,46,46)}}
+function peindre(e){const r=c.getBoundingClientRect();x=Math.max(0,Math.min(7,Math.floor((e.clientX-r.left)/r.width*8)));y=Math.max(0,Math.min(7,Math.floor((e.clientY-r.top)/r.height*8)));pixels[y][x]=Number(document.getElementById('intensite').value);afficher()}
+c.addEventListener('pointerdown',e=>{actif=true;c.focus();c.setPointerCapture(e.pointerId);peindre(e)});
+c.addEventListener('pointermove',e=>{if(actif)peindre(e)});
+for(const event of ['pointerup','pointercancel'])c.addEventListener(event,()=>actif=false);
+c.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' '].includes(e.key))return;e.preventDefault();if(e.key==='ArrowLeft')x=Math.max(0,x-1);if(e.key==='ArrowRight')x=Math.min(7,x+1);if(e.key==='ArrowUp')y=Math.max(0,y-1);if(e.key==='ArrowDown')y=Math.min(7,y+1);if(e.key===' ')pixels[y][x]=Number(document.getElementById('intensite').value);afficher()});
+c.addEventListener('focus',afficher);c.addEventListener('blur',afficher);
+document.getElementById('effacer').onclick=()=>{pixels=Array.from({length:8},()=>Array(8).fill(0));afficher();document.getElementById('etat').textContent='Grille effacée.'};
+document.getElementById('exporter').onclick=()=>{const blob=new Blob([JSON.stringify({pixels},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='dessin.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);document.getElementById('etat').textContent='Enregistrez le fichier dans le dossier du projet.'};
+afficher();
+</script></html>

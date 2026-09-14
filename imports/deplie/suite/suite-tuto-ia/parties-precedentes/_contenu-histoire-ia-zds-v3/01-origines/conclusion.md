@@ -1,0 +1,1 @@
+Nous avons rencontré des machines programmables, des neurones décrits par des mathématiques et une proposition pour étudier l’intelligence avec des ordinateurs. À partir des années 1950, ces idées vont donner lieu à des programmes qui jouent, cherchent des démonstrations et dialoguent.

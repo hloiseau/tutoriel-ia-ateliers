@@ -1,0 +1,60 @@
+{
+  "requete": {
+    "model": "atelier-local",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Use only the supplied document. If it does not give the answer, say \"I do not know\"."
+      },
+      {
+        "role": "user",
+        "content": "Document: The fictional library of Brume opens at 10:00 on Tuesdays. It closes at 17:00.\nQuestion: When does the library open on Sunday?"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 96,
+    "stream": false,
+    "cache_prompt": false
+  },
+  "reponse_brute": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "I do not know."
+        }
+      }
+    ],
+    "created": 1789367791,
+    "model": "atelier-local",
+    "system_fingerprint": "b10809-5266f24da",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 6,
+      "prompt_tokens": 77,
+      "total_tokens": 83,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-Ill0dJrMmNgW9sFpnW0ABpsdWS55W3fI",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 77,
+      "prompt_ms": 2717.801,
+      "prompt_per_token_ms": 35.29611688311688,
+      "prompt_per_second": 28.331728481960234,
+      "predicted_n": 6,
+      "predicted_ms": 271.819,
+      "predicted_per_token_ms": 54.363800000000005,
+      "predicted_per_second": 18.394593461089915
+    }
+  },
+  "texte": "I do not know.",
+  "raison_arret": "stop",
+  "duree_s": 2.994305374000078,
+  "tokens_sortie": 6,
+  "tokens_sortie_par_seconde_globale": 2.0038036374308175
+}

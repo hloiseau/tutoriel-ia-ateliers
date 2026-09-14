@@ -1,0 +1,62 @@
+{
+  "requete": {
+    "model": "atelier-local",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer briefly in English."
+      },
+      {
+        "role": "user",
+        "content": "Explain what a variable is in programming, in two sentences."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 96,
+    "stream": false,
+    "cache_prompt": false
+  },
+  "reponse_brute": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "In programming, a variable is a named storage location that holds a value, allowing you to store and manipulate data in your code."
+        }
+      }
+    ],
+    "created": 1789367812,
+    "model": "atelier-local",
+    "system_fingerprint": "b10809-5266f24da",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 27,
+      "prompt_tokens": 31,
+      "total_tokens": 58,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-yo0fyDC2l01c8a7gDNsACzAALRtsxWa7",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 31,
+      "prompt_ms": 1041.702,
+      "prompt_per_token_ms": 33.60329032258065,
+      "prompt_per_second": 29.758990575039693,
+      "predicted_n": 27,
+      "predicted_ms": 1545.712,
+      "predicted_per_token_ms": 59.45046153846154,
+      "predicted_per_second": 16.820727276491354
+    }
+  },
+  "texte": "In programming, a variable is a named storage location that holds a value, allowing you to store and manipulate data in your code.",
+  "raison_arret": "stop",
+  "duree_s": 2.5910904630000005,
+  "tokens_sortie": 27,
+  "tokens_sortie_par_seconde_globale": 10.42032317495354,
+  "date_utc": "2026-09-14T06:36:52.546779+00:00",
+  "echauffement": false
+}

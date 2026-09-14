@@ -1,0 +1,1 @@
+Les paramètres ont été ajustés à partir des images et des réponses attendues. Nous pouvons mesurer la progression, sauvegarder le résultat et le regarder. Il reste à vérifier ce que cette progression vaut sur d’autres images.

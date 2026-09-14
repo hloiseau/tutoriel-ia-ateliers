@@ -1,0 +1,1 @@
+Nous avons une première chaîne complète : une image devient des scores, puis des probabilités, puis un chiffre choisi. Elle fonctionne, mais les réponses sont mauvaises. Il manque un moyen de corriger les paramètres.

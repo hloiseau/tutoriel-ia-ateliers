@@ -1,0 +1,3 @@
+À présent nous avons une utilisation avancée de Vim. Nous savons utiliser Vim à notre avantage et d'être plus rapide qu'avec un simple éditeur.
+
+Nous avons vu beaucoup de commandes et fonctionnalités. C'est en utilisant ces fonctionnalités au quotidien que vous les retiendrez. Vous verrez qu'avec le temps vous n'aurez plus besoin de réfléchir à comment faire une action, cela deviendra un automatisme.

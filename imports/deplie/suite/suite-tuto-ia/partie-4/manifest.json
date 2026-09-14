@@ -1,0 +1,184 @@
+{
+  "object": "container",
+  "slug": "developper-avec-une-ia",
+  "title": "Développer avec une IA, du problème au changement vérifié",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-projet",
+      "title": "Ouvrir un projet que l’on peut comprendre",
+      "introduction": "01-projet/introduction.md",
+      "conclusion": "01-projet/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "installer",
+          "title": "Récupérer le projet et lancer les tests",
+          "text": "01-projet/installer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "lire",
+          "title": "Suivre une entrée jusqu’à la décision",
+          "text": "01-projet/lire.md"
+        },
+        {
+          "object": "extract",
+          "slug": "aide",
+          "title": "Demander de l’aide pour lire",
+          "text": "01-projet/aide.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "02-demande",
+      "title": "Décider ce que le ticket veut changer",
+      "introduction": "02-demande/introduction.md",
+      "conclusion": "02-demande/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "regle",
+          "title": "Une remise en stock n’est pas une baisse de prix",
+          "text": "02-demande/regle.md"
+        },
+        {
+          "object": "extract",
+          "slug": "cas",
+          "title": "Écrire la table avant les tests",
+          "text": "02-demande/cas.md"
+        },
+        {
+          "object": "extract",
+          "slug": "limites",
+          "title": "Délimiter le changement",
+          "text": "02-demande/limites.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "03-tests",
+      "title": "Faire apparaître le bug dans un test",
+      "introduction": "03-tests/introduction.md",
+      "conclusion": "03-tests/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "rouge",
+          "title": "Écrire le premier test qui échoue",
+          "text": "03-tests/rouge.md"
+        },
+        {
+          "object": "extract",
+          "slug": "completer",
+          "title": "Ajouter les voisins du cas principal",
+          "text": "03-tests/completer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "agent",
+          "title": "Faire écrire les tests par l’agent",
+          "text": "03-tests/agent.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "04-corriger",
+      "title": "Faire le changement et lire le diff",
+      "introduction": "04-corriger/introduction.md",
+      "conclusion": "04-corriger/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "condition",
+          "title": "Relire les opérateurs",
+          "text": "04-corriger/condition.md"
+        },
+        {
+          "object": "extract",
+          "slug": "demander",
+          "title": "Une demande de modification précise",
+          "text": "04-corriger/demander.md"
+        },
+        {
+          "object": "extract",
+          "slug": "diff",
+          "title": "Lire ce qui a vraiment changé",
+          "text": "04-corriger/diff.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "05-verifier",
+      "title": "Vérifier au-delà de la dernière ligne verte",
+      "introduction": "05-verifier/introduction.md",
+      "conclusion": "05-verifier/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "suite",
+          "title": "Rejouer les tests et contrôler leur nombre",
+          "text": "05-verifier/suite.md"
+        },
+        {
+          "object": "extract",
+          "slug": "recette",
+          "title": "Passer par les fichiers JSON",
+          "text": "05-verifier/recette.md"
+        },
+        {
+          "object": "extract",
+          "slug": "casser",
+          "title": "Vérifier qu’un test sait encore protester",
+          "text": "05-verifier/casser.md"
+        },
+        {
+          "object": "extract",
+          "slug": "revue",
+          "title": "Demander une seconde lecture utile",
+          "text": "05-verifier/revue.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "06-garder-la-main",
+      "title": "Garder un changement que l’on sait expliquer",
+      "introduction": "06-garder-la-main/introduction.md",
+      "conclusion": "06-garder-la-main/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "rapport",
+          "title": "Écrire un compte rendu exploitable",
+          "text": "06-garder-la-main/rapport.md"
+        },
+        {
+          "object": "extract",
+          "slug": "apprendre",
+          "title": "Quand on apprend encore à développer",
+          "text": "06-garder-la-main/apprendre.md"
+        },
+        {
+          "object": "extract",
+          "slug": "choisir",
+          "title": "Trouver ses propres points de friction",
+          "text": "06-garder-la-main/choisir.md"
+        }
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

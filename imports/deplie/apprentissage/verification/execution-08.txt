@@ -1,0 +1,5 @@
+  0 | étiquettes arbitraires apprises : 8.8% | vrais chiffres de validation : 11.1%
+200 | étiquettes arbitraires apprises : 100.0% | vrais chiffres de validation : 3.9%
+400 | étiquettes arbitraires apprises : 100.0% | vrais chiffres de validation : 3.3%
+600 | étiquettes arbitraires apprises : 100.0% | vrais chiffres de validation : 3.3%
+800 | étiquettes arbitraires apprises : 100.0% | vrais chiffres de validation : 3.3%

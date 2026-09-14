@@ -1,0 +1,11 @@
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+0.00.005.561 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.008.246 I srv    load_model: loading model 'modeles/smollm2-360m-instruct-q8_0.gguf'
+0.00.394.200 I cmn          init: llama threadpool init, n_threads = 2
+0.00.619.107 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 2048, kv_unified = 'false'
+0.00.622.770 I srv  llama_server: model loaded
+0.00.622.788 I srv  llama_server: listening on http://127.0.0.1:8080
+0.00.622.789 W srv  llama_server: NOTICE: server default port will be changed to :9931 in a future release
+0.00.622.789 W srv  llama_server:         ref: https://github.com/ggml-org/llama.cpp/pull/26508

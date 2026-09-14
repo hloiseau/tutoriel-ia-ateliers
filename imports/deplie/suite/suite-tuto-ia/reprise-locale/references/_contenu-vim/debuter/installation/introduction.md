@@ -1,0 +1,1 @@
+Vim peut être installé avec votre système. Cependant, ici, nous allons voir comment l'installer sur la plupart des systèmes d'exploitation.

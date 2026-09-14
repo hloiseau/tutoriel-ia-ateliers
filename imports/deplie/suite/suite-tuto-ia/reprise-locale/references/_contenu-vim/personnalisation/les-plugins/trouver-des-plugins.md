@@ -1,0 +1,2 @@
+On trouve généralement les plugins sur GitHub ou bien GitLab. Le plus souvent c'est en cherchant une fonctionnalité particulière que l'on trouve un dépôt qui contient le code nécessaire.  
+Si ce que vous cherchez n'existe pas encore vous êtes le bienvenu à écrire un plugin et à le partager.

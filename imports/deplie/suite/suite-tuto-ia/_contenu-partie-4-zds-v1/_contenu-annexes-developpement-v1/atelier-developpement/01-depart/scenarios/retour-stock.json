@@ -1,0 +1,10 @@
+{
+  "ancien": {
+    "prix_centimes": 2000,
+    "disponible": false
+  },
+  "nouveau": {
+    "prix_centimes": 2000,
+    "disponible": true
+  }
+}

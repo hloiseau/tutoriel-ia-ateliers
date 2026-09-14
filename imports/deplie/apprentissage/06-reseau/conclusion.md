@@ -1,0 +1,1 @@
+Nous avons construit un réseau à plusieurs couches et fait circuler le gradient à travers ses calculs. Il sait apprendre davantage de détails ; certains sont utiles, d’autres permettent seulement de mémoriser. Les données à part servent à voir la différence.

@@ -1,0 +1,1 @@
+Tout comme les plugins, on trouve les packages sur des sites tels que GitHub ou GitLab. Souvent les packages présents les fonctionnalités spécifiques au langage que vous utilisez.

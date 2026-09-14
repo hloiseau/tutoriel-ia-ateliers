@@ -1,0 +1,1 @@
+La commande `:windo` est presque identique à`:bufdo`. Contrairement à `:bufdo`, `:windo` exécute la commande donnée dans tous les buffers qui sont affichés à l'écran (les buffers qui sont affichés dans un autre onglet ne seront pas impactés par la commande).

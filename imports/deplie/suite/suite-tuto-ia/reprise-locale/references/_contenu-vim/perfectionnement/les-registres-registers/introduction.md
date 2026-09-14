@@ -1,0 +1,1 @@
+Les registres sont des espaces mémoire. Ils sont notamment utiles pour les actions de couper, copier et coller.

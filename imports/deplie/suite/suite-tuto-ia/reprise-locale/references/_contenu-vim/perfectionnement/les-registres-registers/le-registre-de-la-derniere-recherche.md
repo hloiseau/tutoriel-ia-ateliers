@@ -1,0 +1,1 @@
+Lorsque l'on fait une recherche avec `/` en mode Normal, le contenu de ce que l'on cherche est enregistré dans ce registre.

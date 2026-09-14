@@ -1,0 +1,1 @@
+Dans ce chapitre nous allons voir comment effectuer des recherches dans un fichier texte. Nous allons évoquer ce que Vim stocke dans notre dos lors de certaines de nos actions pour les réutiliser et aussi comment facilement faire des remplacements.
