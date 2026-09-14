@@ -1,0 +1,56 @@
+{
+  "requete": {
+    "model": "atelier-local",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Return only valid JSON with one key named colors and the list [\"red\", \"blue\"] as its value."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 96,
+    "stream": false,
+    "cache_prompt": false
+  },
+  "reponse_brute": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"colors\": [\"red\", \"blue\"]\n}"
+        }
+      }
+    ],
+    "created": 1789367794,
+    "model": "atelier-local",
+    "system_fingerprint": "b10809-5266f24da",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 14,
+      "prompt_tokens": 52,
+      "total_tokens": 66,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-9bmnuX3mCjaSjMSmd0FOwLMjV2ArtkXn",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 52,
+      "prompt_ms": 1768.984,
+      "prompt_per_token_ms": 34.01892307692307,
+      "prompt_per_second": 29.395404367704856,
+      "predicted_n": 14,
+      "predicted_ms": 725.098,
+      "predicted_per_token_ms": 55.776769230769226,
+      "predicted_per_second": 17.928611029129858
+    }
+  },
+  "texte": "{\n  \"colors\": [\"red\", \"blue\"]\n}",
+  "raison_arret": "stop",
+  "duree_s": 2.5064317460000893,
+  "tokens_sortie": 14,
+  "tokens_sortie_par_seconde_globale": 5.585629858998563
+}
