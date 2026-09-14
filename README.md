@@ -20,6 +20,10 @@ Les répertoires `resultats-reference` contiennent des résultats réellement ob
 
 Vous pouvez cloner ce dépôt ou télécharger son archive ZIP depuis GitHub. Les [archives des trois ateliers](telechargements/) permettent de télécharger un atelier séparément. Le chapitre peut pointer vers une révision précise du dépôt pour conserver les mêmes fichiers au fil des corrections. Les fichiers de poids du modèle local et les exécutables de llama.cpp se téléchargent séparément.
 
+## Textes en relecture
+
+La [révision du début de la partie 4](redaction/partie-4/README.md) présente les outils, leurs tarifs en septembre 2026 et deux parcours d’installation avant le premier ticket. Les nouvelles installations restent à rejouer ; elles ne sont pas couvertes par les exécutions des ateliers ci-dessous.
+
 ## État des vérifications
 
 Les ateliers ont été exécutés sous Linux sur CPU. L’atelier local a été interrogé avec un vrai modèle ; les tests unitaires du client utilisent, eux, des réponses factices. Les scripts de développement et leurs mutations ont été exécutés. Les prompts fournis ne sont pas des traces attribuées à un agent particulier.

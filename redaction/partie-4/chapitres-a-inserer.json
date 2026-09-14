@@ -1,0 +1,83 @@
+[
+  {
+    "object": "container",
+    "slug": "outils",
+    "title": "Avec quoi va-t-on développer ?",
+    "introduction": "outils/introduction.md",
+    "conclusion": "outils/conclusion.md",
+    "children": [
+      {
+        "object": "extract",
+        "slug": "trois-morceaux",
+        "title": "Le modèle, le moteur et l’assistant",
+        "text": "outils/trois-morceaux.md"
+      },
+      {
+        "object": "extract",
+        "slug": "usages",
+        "title": "De la suggestion à l’agent",
+        "text": "outils/usages.md"
+      },
+      {
+        "object": "extract",
+        "slug": "panorama",
+        "title": "Faire le tour des outils",
+        "text": "outils/panorama.md"
+      }
+    ]
+  },
+  {
+    "object": "container",
+    "slug": "choisir",
+    "title": "Choisir une solution adaptée à ses besoins",
+    "introduction": "choisir/introduction.md",
+    "conclusion": "choisir/conclusion.md",
+    "children": [
+      {
+        "object": "extract",
+        "slug": "prix",
+        "title": "Combien cela coûte-t-il ?",
+        "text": "choisir/prix.md"
+      },
+      {
+        "object": "extract",
+        "slug": "local-ou-distant",
+        "title": "Où faire tourner le modèle ?",
+        "text": "choisir/local-ou-distant.md"
+      }
+    ]
+  },
+  {
+    "object": "container",
+    "slug": "installer",
+    "title": "Installer notre premier assistant",
+    "introduction": "installer/introduction.md",
+    "conclusion": "installer/conclusion.md",
+    "children": [
+      {
+        "object": "extract",
+        "slug": "projet",
+        "title": "Ouvrir notre copie du projet",
+        "text": "installer/projet.md"
+      },
+      {
+        "object": "extract",
+        "slug": "heberge",
+        "title": "Utiliser un service hébergé",
+        "text": "installer/heberge.md"
+      },
+      {
+        "object": "extract",
+        "slug": "local",
+        "title": "Relier l’éditeur à notre modèle local",
+        "text": "installer/local.md"
+      },
+      {
+        "object": "extract",
+        "slug": "premiere-lecture",
+        "title": "Notre première demande de lecture",
+        "text": "installer/premiere-lecture.md"
+      }
+    ]
+  }
+]
