@@ -1,8 +1,26 @@
-# Les ateliers du tutoriel sur l’IA
+# Comprendre l’IA et développer avec elle
 
-Les fichiers pratiques du tutoriel « Comprendre l’IA et développer avec elle », en cours de rédaction pour Zeste de Savoir.
+Les textes, les illustrations et les ateliers du tutoriel en cours de rédaction pour **Zeste de Savoir**, par Hugo Loiseau.
 
-On commence sur CPU, sans abonnement à une API. Une carte graphique peut servir à des variantes, mais elle n’est pas nécessaire pour suivre les premiers ateliers.
+**[Ouvrir le sommaire](SOMMAIRE.md)** · **[Voir ce qui est disponible](docs/etat-des-contenus.md)** · **[Lire les derniers chapitres](tutoriel/04-developpement/LECTURE.md)**
+
+Ce dépôt est le point de travail commun. La branche `main` rassemble les versions courantes, y compris les brouillons identifiés comme tels. Être présent ici ne signifie pas être validé pour publication.
+
+La centralisation est encore **incomplète** : les ateliers et le nouveau début de la partie 4 sont disponibles ; les textes précédemment remis en archives restent à importer. Leur liste figure dans [l’inventaire](docs/etat-des-contenus.md).
+
+## Où trouver quoi ?
+
+| Dossier ou fichier | Contenu |
+| --- | --- |
+| [SOMMAIRE.md](SOMMAIRE.md) | Plan global et liens de lecture |
+| [tutoriel/](tutoriel/README.md) | Sources Markdown du tutoriel, organisées par partie |
+| [ateliers/](ateliers/) | Code, données d’exercice et résultats de référence |
+| [telechargements/](telechargements/) | Archives des ateliers |
+| [docs/](docs/README.md) | État des textes, décisions de rédaction et vérifications |
+| [billets/](billets/README.md) | Repère vers le billet à l’origine du projet ; sources à récupérer |
+| [outils/](outils/) | Scripts de préparation et de vérification |
+
+Pour relire ou corriger, partez du sommaire et modifiez le Markdown de la section concernée. Les vues `LECTURE.md` regroupent les sections pour une lecture continue ; les fichiers séparés sont les sources à modifier. Les ZIP servent aux téléchargements et aux imports ZdS.
 
 ## Choisir un atelier
 
@@ -20,7 +38,7 @@ Les répertoires `resultats-reference` contiennent des résultats réellement ob
 
 Vous pouvez cloner ce dépôt ou télécharger son archive ZIP depuis GitHub. Les [archives des trois ateliers](telechargements/) permettent de télécharger un atelier séparément. Le chapitre peut pointer vers une révision précise du dépôt pour conserver les mêmes fichiers au fil des corrections. Les fichiers de poids du modèle local et les exécutables de llama.cpp se téléchargent séparément.
 
-## État des vérifications
+## État des vérifications des ateliers
 
 Les ateliers ont été exécutés sous Linux sur CPU. L’atelier local a été interrogé avec un vrai modèle ; les tests unitaires du client utilisent, eux, des réponses factices. Les scripts de développement et leurs mutations ont été exécutés. Les prompts fournis ne sont pas des traces attribuées à un agent particulier.
 
@@ -51,3 +69,4 @@ Copyright © 2026 Hugo Loiseau.
 - **Code et page de dessin : GPLv3**, voir [LICENSE](LICENSE).
 - **Textes de documentation et illustrations originales : CC BY-SA 4.0**, voir [LICENCE-TEXTES.md](LICENCE-TEXTES.md).
 - **Éléments tiers :** les licences et attributions précisées dans [CREDITS.md](CREDITS.md) restent applicables.
+
