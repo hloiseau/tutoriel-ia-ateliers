@@ -1,4 +1,4 @@
-Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**.
+Vous voulez essayer de discuter avec notre modèle depuis l’éditeur ? Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**. Cette expérience est facultative. Le raccord à Continue et l’essai du modèle de code ci-dessous restent à exécuter ; nous n’avons pas encore de résultat ni de temps de réponse à vous montrer.
 
 ### Retrouver le serveur
 
@@ -38,7 +38,7 @@ Code: Configuration de Continue pour le serveur de la partie 3
 
 Ici, `provider: openai` indique le format d’API utilisé. **La destination est l’adresse de `apiBase`**, donc notre ordinateur. La valeur `local` est un remplissage pour le champ de clé ; notre serveur d’atelier n’a pas d’authentification configurée. Ce n’est pas une clé de compte OpenAI[^p4-install-compatible].
 
-La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Le rôle `chat` nous suffit ; nous ne déclarons pas de capacité d’utilisation d’outils pour ce modèle[^p4-install-yaml].
+La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Nous déclarons le rôle `chat`, puis nous sélectionnerons le mode **Chat** dans l’interface. Ce rôle de configuration ne constitue pas à lui seul une interdiction d’utiliser des outils[^p4-install-yaml].
 
 Enregistrez, sélectionnez la configuration et le modèle locaux, puis choisissez le mode **Chat**. Envoyez une question très courte, par exemple :
 
@@ -52,7 +52,7 @@ Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres 
 
 La connexion fonctionne ? Nous pouvons changer ce que le serveur charge.
 
-Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code, qui reste adapté à des demandes courtes ; nous n’en attendrons pas les capacités d’un gros agent hébergé[^p4-install-qwen].
+Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code. Nous allons lui soumettre un extrait court pour examiner sa réponse ; sa fiche ne permet pas de conclure qu’il sera utile sur notre exercice[^p4-install-qwen].
 
 Dans [le dépôt officiel du modèle](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main), téléchargez **`qwen2.5-coder-1.5b-instruct-q4_k_m.gguf`**, puis placez-le dans le dossier `modeles` utilisé en partie 3. Ce fichier pèse environ **1,1 Go** ; prévoyez aussi de la mémoire pour le contexte et les programmes ouverts[^p4-install-qwen-fichier].
 

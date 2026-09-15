@@ -10,7 +10,7 @@ Lis `SOMMAIRE.md`, `docs/etat-des-contenus.md`, `docs/cadre-redaction.md`, `docs
 
 L’auteur possède une RTX 3090 Ti de 24 Go et 64 Go de DDR4 3200. Relève le système, le CPU, le pilote et les outils installés avant de choisir les commandes adaptées. Préserve les installations et les projets présents ; utilise un dossier d’expériences dédié.
 
-Rejoue d’abord les parcours CPU des parties 2, 3 et 4. La variante GPU est optionnelle pour le lecteur. Vérifie aussi les deux nouvelles installations d’assistant de la partie 4. Inspecte les fichiers avant de lancer leurs commandes et respecte les restrictions de l’environnement.
+Rejoue d’abord les parcours CPU des parties 2 et 3. En partie 4, distingue le parcours hébergé de l’expérience facultative de discussion locale sur CPU. Cette dernière ne valide pas un parcours d’agent de code. Pour chaque essai, consigne le temps avant la première réponse, la durée totale, la mémoire, la réponse complète et ses erreurs. Ne recommande une configuration pour l’atelier qu’après l’avoir éprouvée sur ses tâches. Vérifie aussi les nouvelles installations d’assistant de la partie 4. Inspecte les fichiers avant de lancer leurs commandes et respecte les restrictions de l’environnement.
 
 Conserve versions, commandes, sorties, codes de retour, réponses brutes et mesures dans un nouveau dossier daté. Ne remplace pas les résultats de référence. Distingue exécution réelle, réponse factice de test et déduction. Corrige les procédures à partir des erreurs effectivement rencontrées.
 

@@ -16,9 +16,11 @@ L’objectif reste de comprendre la fonction. Si l’explication ne vous aide pa
 
 ### Et pour les modifications ?
 
-Les deux parcours ne donneront pas exactement la même expérience. Avec un agent, vous pourrez lui demander de préparer les changements puis examiner le diff. Avec notre configuration locale en mode Chat, vous pourrez demander une proposition et l’appliquer vous-même après lecture. Nous n’avons pas configuré ce petit modèle pour piloter le terminal.
+Avec un assistant disposant d’un mode agent, vous pourrez ensuite lui demander de préparer les changements, puis examiner le diff et les résultats des tests.
 
-Dans les chapitres suivants, une consigne destinée à un agent pourra donc aussi servir à obtenir du code dans la discussion. Vous exécuterez alors vous-même les commandes indiquées et lui montrerez seulement la sortie utile. Le programme et les critères de réussite seront identiques.
+L’expérience locale s’arrête ici : une réponse sur une fonction ne valide pas la capacité du modèle à modifier le projet. Si vous voulez poursuivre en mode Chat, vous pourrez examiner ses propositions et les appliquer vous-même, mais nous n’avons pas vérifié que ce petit modèle saura suivre les demandes des chapitres suivants.
+
+Les exercices Python peuvent aussi se faire sans IA. Les corrigés vous permettront de vérifier votre travail ; cela ne remplacera pas l’expérience de piloter un agent.
 
 Gardez votre dossier `mon-suivi` : nous allons maintenant y lancer les tests et comprendre pourquoi un programme dont les tests passent peut tout de même avoir besoin d’une correction.
 

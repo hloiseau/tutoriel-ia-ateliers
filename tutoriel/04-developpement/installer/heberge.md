@@ -6,9 +6,9 @@ Ouvrez la vue de discussion. Pour cette première demande, choisissez une sessio
 
 Nous ne lançons pas encore de tâche en arrière-plan. Nous voulons une réponse que nous puissions comparer à quelques lignes sous nos yeux.
 
-Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Le parcours local reste disponible ; vous n’avez pas besoin de payer pour accéder aux fichiers et faire l’atelier.
+Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Vous pouvez utiliser un autre assistant auquel vous avez accès, attendre le renouvellement du quota ou poursuivre les exercices Python vous-même. Les fichiers et les corrigés restent accessibles sans abonnement. L’essai CPU ci-dessous ne garantit pas de remplacer le service hébergé.
 
-Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous constitue l’autre parcours.
+Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous est une expérience facultative.
 
 [^p4-install-copilot]: Microsoft, [configuration de Copilot dans VS Code](https://code.visualstudio.com/docs/setup/copilot).
 [^p4-install-roles]: Microsoft, [choix de l’agent, du rôle et du modèle](https://code.visualstudio.com/docs/agents/run/agent-harnesses).

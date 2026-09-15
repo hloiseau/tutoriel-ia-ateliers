@@ -39,3 +39,11 @@ Les fonctionnalités et tarifs des outils supplémentaires sont documentés par 
 ## Intégration du 15 septembre 2026
 
 Les six chapitres d’origine sont désormais récupérés et les trois nouveaux chapitres insérés dans le manifest courant. Les raccords sont appliqués. `outils/assembler_tutoriel.py` a vérifié les références et construit les lectures et les ZIP ; les installations d’assistants restent à rejouer.
+
+## Correction du périmètre CPU
+
+La relecture a identifié une promesse non étayée : les transitions présentaient la discussion avec Qwen 1,5B sur CPU comme une autre voie pour tout l’atelier. Cette équivalence est retirée. Le parcours hébergé devient le parcours principal ; la discussion CPU reste une expérience facultative non exécutée. Le rôle `chat` dans la configuration est distingué du mode Chat sélectionné dans l’interface.
+
+Avant toute recommandation pratique locale, relever le matériel, les versions, le modèle et sa quantification, le contexte effectif, la mémoire, le délai initial et la durée totale. Conserver les réponses et vérifier leur exactitude sur l’atelier. Si un mode agent est essayé, conserver aussi ses appels d’outils, erreurs, corrections et résultats de tests. Un chargement réussi ou une réponse courte ne suffit pas.
+
+Cette correction ne constitue pas une nouvelle validation des tarifs, des interfaces ou des autres affirmations de la partie 4.

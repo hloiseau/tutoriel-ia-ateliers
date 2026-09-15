@@ -37,3 +37,7 @@ L’archive fournie des parties 3 et 4 précédait trois corrections expliciteme
 [Vérification des ateliers](verification.md) · [Nouvelles installations de la partie 4](../tutoriel/04-developpement/VERIFICATION.md) · [Expériences sur la machine de l’auteur](experiences-a-lancer.md).
 
 Les rapports initiaux récupérés restent sous `docs/verifications-initiales/`. Ils décrivent leurs exécutions d’origine ; leurs chemins se rapportent aux anciens exports.
+
+## Correction après relecture : CPU et agent de code
+
+La cohérence des versions ne validait pas la faisabilité du parcours. Les introductions et raccords des parties 3–4 ont été corrigés : Qwen 1,5B sur CPU est une expérience facultative de discussion, encore non exécutée, et non une solution validée pour mener l’atelier avec un agent. La qualité des réponses et les délais restent à mesurer.

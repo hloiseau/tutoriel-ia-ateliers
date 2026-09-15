@@ -6,7 +6,7 @@ Un modèle répond dans notre terminal. Très bien. Mais comment passer de cette
 
 Il existe des extensions pour les éditeurs, des éditeurs qui intègrent directement l’IA, des assistants en ligne de commande et des agents qui travaillent sur une machine distante. Certains utilisent un abonnement, d’autres une API facturée à l’usage. Certains peuvent parler à notre serveur local. On peut vite passer davantage de temps à choisir son outil qu’à s’en servir. 😅
 
-Nous allons prendre le temps de nous y retrouver, puis installer de quoi travailler. Vous pourrez utiliser un service hébergé sans acheter de carte graphique, ou poursuivre avec un modèle sur votre machine. Un abonnement payant ne sera pas nécessaire pour commencer.
+Nous allons prendre le temps de nous y retrouver, puis installer de quoi travailler. Pour commencer sans carte graphique dédiée, nous utiliserons un assistant dont le modèle est hébergé, avec un accès gratuit si votre compte y est éligible. Nous garderons aussi une expérience facultative avec notre serveur local, pour voir ce que donne une discussion sur quelques lignes de code. Cet essai ne constitue pas un parcours d’agent de code sur CPU.
 
 Nous ouvrirons ensuite un petit projet Python de suivi de prix. Ses tests passent, mais il envoie une notification dans un cas où nous n’en voulons plus. Nous suivrons la modification jusqu’au bout : comprendre le programme, préciser la demande, reproduire le problème, corriger le code et vérifier le résultat.
 
@@ -15,7 +15,8 @@ Si vous débutez, prenez aussi le temps de faire votre propre lecture du code. U
 **TL;DR**
 
 - Nous choisissons un assistant en regardant ses fonctions, son coût et l’endroit où il traite nos données.
-- Deux installations sont proposées : VS Code avec GitHub Copilot, ou VS Code avec Continue et notre serveur local.
+- Le parcours principal utilise VS Code avec GitHub Copilot ; vous pouvez conserver un assistant que vous utilisez déjà.
+- L’essai local avec Continue est facultatif. Faire répondre un modèle ne suffit pas à montrer qu’il peut prendre en charge notre atelier.
 - Nous commençons par discuter du code, avant de laisser un outil le modifier.
 - Le même atelier sert ensuite à apprendre à relire, tester et valider une correction, avec ou sans agent.
 
@@ -178,7 +179,7 @@ Les noms, les offres et parfois les dépôts changent. Le comparatif est une pho
 
 ## 2. Choisir une solution adaptée à ses besoins
 
-**TL;DR** — Un abonnement, un logiciel gratuit et une API à l’usage ne se comparent pas avec le seul prix affiché. Regardez ce qui est inclus, ce qui déclenche une dépense supplémentaire et où part votre code. Pour commencer, une offre gratuite ou un petit modèle local suffit à essayer notre démarche.
+**TL;DR** — Un abonnement, un logiciel gratuit et une API à l’usage ne se comparent pas avec le seul prix affiché. Regardez ce qui est inclus, ce qui déclenche une dépense supplémentaire et où part votre code. Sans carte graphique dédiée, un modèle hébergé permet de commencer. L’essai avec un petit modèle local sert à explorer ses possibilités, sans présumer qu’il saura mener l’atelier.
 
 Nous avons les noms. Maintenant, lequel installer ? Votre budget compte, mais votre façon de travailler aussi. Un outil qui vous oblige à changer d’éditeur, envoie du code que vous ne pouvez pas transmettre ou vous fait attendre trop longtemps peut être mal adapté, même s’il produit de bonnes réponses.
 
@@ -257,26 +258,33 @@ En local, vous fournissez aussi la mémoire et le calcul. Cela permet de garder 
 | Situation | Point de départ possible |
 | --- | --- |
 | Petit ordinateur, priorité à une installation simple | Offre hébergée gratuite, si l’envoi du code est acceptable |
-| Envoi du code exclu, aucune carte graphique dédiée | Petit modèle de code sur CPU et demandes courtes |
-| Machine disposant de davantage de mémoire et d’un GPU compatible | Même principe local, puis essais de modèles plus volumineux |
+| Envoi du code exclu, aucune carte graphique dédiée | Essai local limité ; aucun parcours d’agent validé ici pour cette configuration |
+| Machine disposant de davantage de mémoire et d’un GPU compatible | Tester un modèle local sur les tâches visées, puis mesurer le délai et vérifier le résultat |
 | Assistant déjà fourni par votre équipe | Commencer avec cet outil, dans les conditions d’usage de l’équipe |
-Table: Plusieurs chemins pour le même atelier
+Table: Choisir selon ses contraintes
 
 Notre SmolLM2 de la partie 3 nous a servi à comprendre l’inférence. Il ne faut pas attendre de lui qu’il explore un dépôt et corrige un ticket tout seul. Nous allons d’abord l’utiliser pour vérifier la connexion, puis proposer un petit modèle spécialisé dans le code.
 
-Une grosse carte graphique donnera davantage de possibilités, mais elle ne sera pas le ticket d’entrée du tutoriel. Avec un modèle modeste, on peut discuter d’une fonction, demander un exemple et appliquer soi-même une proposition. Les manipulations sur le programme resteront les mêmes.
+Il faut distinguer deux choses : **le logiciel de l’agent peut tourner sur votre ordinateur pendant que son modèle tourne chez un fournisseur**. Dans ce cas, vous n’avez pas besoin d’une grosse carte graphique. Faire aussi tourner le modèle chez vous pose une autre question.
+
+llama.cpp permet l’inférence sur CPU[^p4-cpu-moteur]. Mais charger un modèle et obtenir une réponse ne prouve pas qu’il sera utile pour développer. Un agent doit exploiter le code qu’il lit, choisir ses actions, comprendre les résultats des commandes et poursuivre la tâche. Le temps de traitement du contexte s’ajoute à celui des réponses, à chaque étape. Il faut vérifier tout cela sur une tâche réelle.
+
+Notre essai avec Qwen2.5-Coder à 1,5 milliard de paramètres n’a pas été exécuté dans cette configuration. Nous ne savons donc pas encore s’il apporte une aide utile sur cet atelier, ni combien de temps il demande. Continue cite d’ailleurs un modèle Qwen Coder de cette taille pour la complétion, et d’autres modèles pour le travail d’agent[^p4-cpu-roles]. Ce sont des usages différents.
+
+Si vous ne pouvez ni envoyer votre code à un service ni utiliser un modèle local adapté, vous pouvez faire les exercices Python vous-même. Vous apprendrez à reproduire le problème et à vérifier la correction ; l’utilisation d’un agent restera à expérimenter avec une configuration qui le permet.
 
 Reste la question des données. Une API personnelle peut vous laisser choisir votre fournisseur, sans rendre l’inférence locale. Et une option « ne pas utiliser mes données pour l’entraînement » ne signifie pas que le code ne quitte jamais l’ordinateur : elle porte sur un usage des données après leur transmission.
 
 Pour notre atelier, nous utiliserons des fichiers publics et un ticket fictif. Pour votre travail, il faudra savoir ce que votre équipe autorise à transmettre. Nous reviendrons plus largement sur ces choix ; ils comptent déjà au moment d’installer l’outil.
 
+[^p4-cpu-moteur]: llama.cpp, [moteur d’inférence et plateformes prises en charge](https://github.com/ggml-org/llama.cpp).
+[^p4-cpu-roles]: Continue, [configuration et modèles recommandés pour le mode Agent](https://docs.continue.dev/ide-extensions/agent/model-setup).
+
 
 
 ## 3. Installer notre premier assistant
 
-**TL;DR** — Préparez une copie du projet, puis choisissez un seul des deux parcours. Avec Copilot, le modèle est hébergé. Avec Continue, nous allons réutiliser notre serveur local, puis essayer un petit modèle de code. Dans les deux cas, la première demande portera sur la lecture d’un extrait.
-
-Nous allons maintenant faire apparaître l’assistant à côté de notre code. Il n’a encore rien à corriger : commençons par vérifier que nous savons ce que nous lui envoyons et d’où vient sa réponse.
+**TL;DR** — Préparez une copie du projet, puis ouvrez votre assistant. Le parcours principal utilise Copilot avec un modèle hébergé. L’essai local avec Continue est facultatif et reste à vérifier : il explore la discussion sur un extrait, sans configurer un agent pour réaliser l’atelier.
 
 ### Ouvrir notre copie du projet
 
@@ -300,16 +308,16 @@ Ouvrez la vue de discussion. Pour cette première demande, choisissez une sessio
 
 Nous ne lançons pas encore de tâche en arrière-plan. Nous voulons une réponse que nous puissions comparer à quelques lignes sous nos yeux.
 
-Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Le parcours local reste disponible ; vous n’avez pas besoin de payer pour accéder aux fichiers et faire l’atelier.
+Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Vous pouvez utiliser un autre assistant auquel vous avez accès, attendre le renouvellement du quota ou poursuivre les exercices Python vous-même. Les fichiers et les corrigés restent accessibles sans abonnement. L’essai CPU ci-dessous ne garantit pas de remplacer le service hébergé.
 
-Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous constitue l’autre parcours.
+Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous est une expérience facultative.
 
 [^p4-install-copilot]: Microsoft, [configuration de Copilot dans VS Code](https://code.visualstudio.com/docs/setup/copilot).
 [^p4-install-roles]: Microsoft, [choix de l’agent, du rôle et du modèle](https://code.visualstudio.com/docs/agents/run/agent-harnesses).
 
 ### Relier l’éditeur à notre modèle local
 
-Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**.
+Vous voulez essayer de discuter avec notre modèle depuis l’éditeur ? Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**. Cette expérience est facultative. Le raccord à Continue et l’essai du modèle de code ci-dessous restent à exécuter ; nous n’avons pas encore de résultat ni de temps de réponse à vous montrer.
 
 ###### Retrouver le serveur
 
@@ -349,7 +357,7 @@ Code: Configuration de Continue pour le serveur de la partie 3
 
 Ici, `provider: openai` indique le format d’API utilisé. **La destination est l’adresse de `apiBase`**, donc notre ordinateur. La valeur `local` est un remplissage pour le champ de clé ; notre serveur d’atelier n’a pas d’authentification configurée. Ce n’est pas une clé de compte OpenAI[^p4-install-compatible].
 
-La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Le rôle `chat` nous suffit ; nous ne déclarons pas de capacité d’utilisation d’outils pour ce modèle[^p4-install-yaml].
+La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Nous déclarons le rôle `chat`, puis nous sélectionnerons le mode **Chat** dans l’interface. Ce rôle de configuration ne constitue pas à lui seul une interdiction d’utiliser des outils[^p4-install-yaml].
 
 Enregistrez, sélectionnez la configuration et le modèle locaux, puis choisissez le mode **Chat**. Envoyez une question très courte, par exemple :
 
@@ -363,7 +371,7 @@ Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres 
 
 La connexion fonctionne ? Nous pouvons changer ce que le serveur charge.
 
-Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code, qui reste adapté à des demandes courtes ; nous n’en attendrons pas les capacités d’un gros agent hébergé[^p4-install-qwen].
+Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code. Nous allons lui soumettre un extrait court pour examiner sa réponse ; sa fiche ne permet pas de conclure qu’il sera utile sur notre exercice[^p4-install-qwen].
 
 Dans [le dépôt officiel du modèle](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main), téléchargez **`qwen2.5-coder-1.5b-instruct-q4_k_m.gguf`**, puis placez-le dans le dossier `modeles` utilisé en partie 3. Ce fichier pèse environ **1,1 Go** ; prévoyez aussi de la mémoire pour le contexte et les programmes ouverts[^p4-install-qwen-fichier].
 
@@ -433,9 +441,11 @@ L’objectif reste de comprendre la fonction. Si l’explication ne vous aide pa
 
 ###### Et pour les modifications ?
 
-Les deux parcours ne donneront pas exactement la même expérience. Avec un agent, vous pourrez lui demander de préparer les changements puis examiner le diff. Avec notre configuration locale en mode Chat, vous pourrez demander une proposition et l’appliquer vous-même après lecture. Nous n’avons pas configuré ce petit modèle pour piloter le terminal.
+Avec un assistant disposant d’un mode agent, vous pourrez ensuite lui demander de préparer les changements, puis examiner le diff et les résultats des tests.
 
-Dans les chapitres suivants, une consigne destinée à un agent pourra donc aussi servir à obtenir du code dans la discussion. Vous exécuterez alors vous-même les commandes indiquées et lui montrerez seulement la sortie utile. Le programme et les critères de réussite seront identiques.
+L’expérience locale s’arrête ici : une réponse sur une fonction ne valide pas la capacité du modèle à modifier le projet. Si vous voulez poursuivre en mode Chat, vous pourrez examiner ses propositions et les appliquer vous-même, mais nous n’avons pas vérifié que ce petit modèle saura suivre les demandes des chapitres suivants.
+
+Les exercices Python peuvent aussi se faire sans IA. Les corrigés vous permettront de vérifier votre travail ; cela ne remplacera pas l’expérience de piloter un agent.
 
 Gardez votre dossier `mon-suivi` : nous allons maintenant y lancer les tests et comprendre pourquoi un programme dont les tests passent peut tout de même avoir besoin d’une correction.
 

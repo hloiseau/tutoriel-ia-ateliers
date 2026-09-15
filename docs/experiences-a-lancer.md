@@ -52,4 +52,4 @@ Reconstruire les lectures et les archives avec `python outils/assembler_tutoriel
 
 ## 7. Installation des assistants
 
-Rejouer les deux nouveaux parcours de la partie 4 : VS Code/Copilot et Continue avec le serveur local, puis Qwen sur CPU. Consigner les versions, la connexion effective, le contexte utilisé et les erreurs. Voir `tutoriel/04-developpement/VERIFICATION.md`.
+Rejouer le parcours principal VS Code/Copilot et, séparément, l’expérience facultative Continue avec le serveur local, puis Qwen sur CPU. Pour cette dernière, mesurer le délai, conserver la réponse et vérifier son exactitude ; ne pas en déduire une capacité à mener l’atelier comme agent. Consigner les versions, la connexion effective, le contexte utilisé et les erreurs. Voir `tutoriel/04-developpement/VERIFICATION.md`.

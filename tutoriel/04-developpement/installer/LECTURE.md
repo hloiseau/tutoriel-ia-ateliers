@@ -2,9 +2,7 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-**TL;DR** — Préparez une copie du projet, puis choisissez un seul des deux parcours. Avec Copilot, le modèle est hébergé. Avec Continue, nous allons réutiliser notre serveur local, puis essayer un petit modèle de code. Dans les deux cas, la première demande portera sur la lecture d’un extrait.
-
-Nous allons maintenant faire apparaître l’assistant à côté de notre code. Il n’a encore rien à corriger : commençons par vérifier que nous savons ce que nous lui envoyons et d’où vient sa réponse.
+**TL;DR** — Préparez une copie du projet, puis ouvrez votre assistant. Le parcours principal utilise Copilot avec un modèle hébergé. L’essai local avec Continue est facultatif et reste à vérifier : il explore la discussion sur un extrait, sans configurer un agent pour réaliser l’atelier.
 
 ## Ouvrir notre copie du projet
 
@@ -28,16 +26,16 @@ Ouvrez la vue de discussion. Pour cette première demande, choisissez une sessio
 
 Nous ne lançons pas encore de tâche en arrière-plan. Nous voulons une réponse que nous puissions comparer à quelques lignes sous nos yeux.
 
-Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Le parcours local reste disponible ; vous n’avez pas besoin de payer pour accéder aux fichiers et faire l’atelier.
+Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Vous pouvez utiliser un autre assistant auquel vous avez accès, attendre le renouvellement du quota ou poursuivre les exercices Python vous-même. Les fichiers et les corrigés restent accessibles sans abonnement. L’essai CPU ci-dessous ne garantit pas de remplacer le service hébergé.
 
-Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous constitue l’autre parcours.
+Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous est une expérience facultative.
 
 [^p4-install-copilot]: Microsoft, [configuration de Copilot dans VS Code](https://code.visualstudio.com/docs/setup/copilot).
 [^p4-install-roles]: Microsoft, [choix de l’agent, du rôle et du modèle](https://code.visualstudio.com/docs/agents/run/agent-harnesses).
 
 ## Relier l’éditeur à notre modèle local
 
-Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**.
+Vous voulez essayer de discuter avec notre modèle depuis l’éditeur ? Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**. Cette expérience est facultative. Le raccord à Continue et l’essai du modèle de code ci-dessous restent à exécuter ; nous n’avons pas encore de résultat ni de temps de réponse à vous montrer.
 
 ##### Retrouver le serveur
 
@@ -77,7 +75,7 @@ Code: Configuration de Continue pour le serveur de la partie 3
 
 Ici, `provider: openai` indique le format d’API utilisé. **La destination est l’adresse de `apiBase`**, donc notre ordinateur. La valeur `local` est un remplissage pour le champ de clé ; notre serveur d’atelier n’a pas d’authentification configurée. Ce n’est pas une clé de compte OpenAI[^p4-install-compatible].
 
-La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Le rôle `chat` nous suffit ; nous ne déclarons pas de capacité d’utilisation d’outils pour ce modèle[^p4-install-yaml].
+La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Nous déclarons le rôle `chat`, puis nous sélectionnerons le mode **Chat** dans l’interface. Ce rôle de configuration ne constitue pas à lui seul une interdiction d’utiliser des outils[^p4-install-yaml].
 
 Enregistrez, sélectionnez la configuration et le modèle locaux, puis choisissez le mode **Chat**. Envoyez une question très courte, par exemple :
 
@@ -91,7 +89,7 @@ Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres 
 
 La connexion fonctionne ? Nous pouvons changer ce que le serveur charge.
 
-Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code, qui reste adapté à des demandes courtes ; nous n’en attendrons pas les capacités d’un gros agent hébergé[^p4-install-qwen].
+Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code. Nous allons lui soumettre un extrait court pour examiner sa réponse ; sa fiche ne permet pas de conclure qu’il sera utile sur notre exercice[^p4-install-qwen].
 
 Dans [le dépôt officiel du modèle](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main), téléchargez **`qwen2.5-coder-1.5b-instruct-q4_k_m.gguf`**, puis placez-le dans le dossier `modeles` utilisé en partie 3. Ce fichier pèse environ **1,1 Go** ; prévoyez aussi de la mémoire pour le contexte et les programmes ouverts[^p4-install-qwen-fichier].
 
@@ -161,9 +159,11 @@ L’objectif reste de comprendre la fonction. Si l’explication ne vous aide pa
 
 ##### Et pour les modifications ?
 
-Les deux parcours ne donneront pas exactement la même expérience. Avec un agent, vous pourrez lui demander de préparer les changements puis examiner le diff. Avec notre configuration locale en mode Chat, vous pourrez demander une proposition et l’appliquer vous-même après lecture. Nous n’avons pas configuré ce petit modèle pour piloter le terminal.
+Avec un assistant disposant d’un mode agent, vous pourrez ensuite lui demander de préparer les changements, puis examiner le diff et les résultats des tests.
 
-Dans les chapitres suivants, une consigne destinée à un agent pourra donc aussi servir à obtenir du code dans la discussion. Vous exécuterez alors vous-même les commandes indiquées et lui montrerez seulement la sortie utile. Le programme et les critères de réussite seront identiques.
+L’expérience locale s’arrête ici : une réponse sur une fonction ne valide pas la capacité du modèle à modifier le projet. Si vous voulez poursuivre en mode Chat, vous pourrez examiner ses propositions et les appliquer vous-même, mais nous n’avons pas vérifié que ce petit modèle saura suivre les demandes des chapitres suivants.
+
+Les exercices Python peuvent aussi se faire sans IA. Les corrigés vous permettront de vérifier votre travail ; cela ne remplacera pas l’expérience de piloter un agent.
 
 Gardez votre dossier `mon-suivi` : nous allons maintenant y lancer les tests et comprendre pourquoi un programme dont les tests passent peut tout de même avoir besoin d’une correction.
 
