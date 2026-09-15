@@ -62,17 +62,18 @@ def build(part, export):
     title = manifest['title']
     index = f'# {title}\n\n[Sommaire global](../../SOMMAIRE.md) · [Lecture complète](LECTURE.md)\n\n'
     guided = part.name == '04-developpement'
-    workshop_count = next((n for n, c in enumerate(manifest['children']) if c['slug'] == 'comparatif'), len(manifest['children']))
+    annexes = part.name == 'annexes'
+    workshop_count = len(manifest['children'])
     if guided:
-        index += '## Suivre l’atelier\n\nLes sept chapitres ci-dessous se suivent dans le même dossier de travail. Le [comparatif complet](comparatif/LECTURE.md) peut aussi être consulté avant de choisir un assistant.\n\n'
+        index += 'Les sept chapitres ci-dessous se suivent dans le même dossier de travail. Le [comparatif des outils](../annexes/comparatif/LECTURE.md) et l’[expérience locale](../annexes/essai-local/LECTURE.md) se trouvent dans les annexes.\n\n'
     complete = f'# {title}\n\n[Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)\n\n'
     complete += lecture(read(part, manifest.get('introduction')), 1, '')
     for i, chapter in enumerate(manifest['children'], 1):
         directory = Path(chapter['introduction']).parent
-        if guided and i == workshop_count + 1:
-            index += '\n## Consulter ou expérimenter à part\n\nCes deux chapitres ne sont pas nécessaires pour terminer l’atelier.\n\n'
-        index += f"{i}. [{chapter['title']}]({directory.as_posix()}/LECTURE.md)\n"
-        page = f"# {i}. {chapter['title']}\n\n[Sommaire de la partie](../README.md) · [Sources](.)\n\n"
+        label = f'Annexe {chr(64 + i)}' if annexes else str(i)
+        index += (f"- **{label}** — " if annexes else f'{i}. ') + f"[{chapter['title']}]({directory.as_posix()}/LECTURE.md)\n"
+        nav_title = 'Sommaire des annexes' if annexes else 'Sommaire de la partie'
+        page = f"# {label}. {chapter['title']}\n\n[{nav_title}](../README.md) · [Sources](.)\n\n"
         nav = ''
         if guided:
             if i <= workshop_count:
@@ -84,11 +85,12 @@ def build(part, export):
                         other_dir = Path(other['introduction']).parent.as_posix()
                         links.append(f"[{label} : {other['title']}](../{other_dir}/LECTURE.md)")
                 nav = ' · '.join(links) + '\n'
-            else:
-                nav = '[Revenir à l’installation de l’atelier](../installer/LECTURE.md) · [Sommaire](../README.md)\n'
+            page += nav + '\n'
+        elif annexes:
+            nav = '[Revenir à l’atelier de développement](../../04-developpement/README.md)\n'
             page += nav + '\n'
         page += lecture(read(part, chapter.get('introduction')), 1, '../')
-        complete += f"\n## {i}. {chapter['title']}\n\n" + lecture(read(part, chapter.get('introduction')), 2, '')
+        complete += f"\n## {label}. {chapter['title']}\n\n" + lecture(read(part, chapter.get('introduction')), 2, '')
         for section in chapter['children']:
             text = read(part, section['text'])
             page += f"\n## {section['title']}\n\n" + lecture(text, 2, '../')
@@ -121,9 +123,9 @@ def build(part, export):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--exports', type=Path, help='Dossier de sortie facultatif des quatre ZIP ZdS')
+    parser.add_argument('--exports', type=Path, help='Dossier de sortie des ZIP ZdS des parties et des annexes')
     args = parser.parse_args()
-    reports = [build(p, args.exports) for p in sorted((ROOT/'tutoriel').glob('[0-9]*')) if (p/'manifest.json').exists()]
+    reports = [build(p, args.exports) for p in sorted((ROOT/'tutoriel').iterdir()) if (p/'manifest.json').is_file()]
     (ROOT/'docs/structure-tutoriel.json').write_text(json.dumps(reports, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps(reports, ensure_ascii=False, indent=2))
 

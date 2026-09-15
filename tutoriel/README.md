@@ -7,4 +7,6 @@
 - [Faire tourner un modèle chez soi](03-modele-local/README.md)
 - [Développer avec une IA, du problème au changement vérifié](04-developpement/README.md)
 
+Les [annexes](annexes/README.md) rassemblent le comparatif des outils et l’expérience locale facultative.
+
 Chaque partie conserve son manifest ZdS, ses introductions, ses conclusions, ses sections et ses images. Les `LECTURE.md` sont générés pour la relecture sur GitHub. Les modifications se font dans les petits Markdown référencés par les manifests.

@@ -10,4 +10,4 @@ Les scripts `outils/assembler_annexes.py` permettent de reconstruire ces fichier
 
 ## Textes du tutoriel
 
-Les [archives ZdS des quatre parties](zds/README.md) sont séparées des trois ateliers ci-dessus.
+Les [archives ZdS des quatre parties et des annexes](zds/README.md) sont séparées des trois ateliers ci-dessus.

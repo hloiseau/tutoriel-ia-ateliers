@@ -9,7 +9,8 @@ Mis à jour le **15 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 | [1 — Histoire](../tutoriel/01-histoire/README.md) | 7 | 29 | 12 | Version V3 validée par l’auteur ; texte préservé |
 | [2 — Construire un modèle](../tutoriel/02-apprentissage/README.md) | 8 | 31 | 13 | Version V2 rédigée, à poursuivre en relecture |
 | [3 — Modèle local](../tutoriel/03-modele-local/README.md) | 6 | 21 | 4 | Rédigée ; corrections demandées sur la forme conservées ; transition vers la partie 4 ajoutée |
-| [4 — Développement](../tutoriel/04-developpement/README.md) | 9 | 27 | 3 | Sept chapitres d’atelier réorganisés, un comparatif de référence et une expérience locale facultative ; interfaces à vérifier |
+| [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Atelier continu ; interfaces à vérifier |
+| [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Comparatif des outils et expérience locale facultative |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
 
@@ -45,3 +46,7 @@ La cohérence des versions ne validait pas la faisabilité du parcours. Les intr
 ## Réorganisation pédagogique
 
 Sept chapitres suivent désormais un seul atelier ; le comparatif et l’expérience locale sont consultables séparément. Les doublons de lecture et les redémarrages de l’exercice ont été retirés. Les commandes des versions de référence ont été rejouées sous Python 3.12.14, sans agent. Voir la [relecture et ses limites](relecture-partie4.md).
+
+## Déplacement dans les annexes
+
+À la demande de l’auteur, les anciens chapitres 8 et 9 de la partie 4 sont déplacés dans `tutoriel/annexes/`. La partie 4 comporte désormais sept chapitres et son export ne contient plus le comparatif ni l’expérience locale. Ceux-ci disposent d’un manifest et d’un ZIP d’import propres. Les anciens liens de lecture renvoient vers les annexes.

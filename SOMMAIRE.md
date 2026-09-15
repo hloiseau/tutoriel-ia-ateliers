@@ -2,7 +2,7 @@
 
 [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
-Les quatre premières parties sont centralisées avec leurs sources et illustrations : **30 chapitres, 108 sections et 32 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
+Les quatre premières parties sont centralisées avec leurs sources et illustrations : **28 chapitres et deux annexes, 108 sections et 32 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 
 ## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
@@ -52,11 +52,6 @@ Les quatre premières parties sont centralisées avec leurs sources et illustrat
 6. [Vérifier au-delà de la dernière ligne verte](tutoriel/04-developpement/05-verifier/LECTURE.md)
 7. [Garder un changement que l’on sait expliquer](tutoriel/04-developpement/06-garder-la-main/LECTURE.md)
 
-**À consulter séparément :**
-
-8. [Référence — comparer les outils et leurs tarifs](tutoriel/04-developpement/comparatif/LECTURE.md)
-9. [Expérience facultative — discuter avec un modèle local](tutoriel/04-developpement/essai-local/LECTURE.md)
-
 ## Parties suivantes
 
 5. Comprendre et encadrer les agents de code.
@@ -65,3 +60,8 @@ Les quatre premières parties sont centralisées avec leurs sources et illustrat
 8. Choisir la place de l’IA.
 
 [Lire le plan détaillé des parties 5 à 8](docs/plan-parties-suivantes.md). Ces parties restent à rédiger. Les questions éthiques, l’apprentissage des juniors et le choix de se passer de l’IA restent également présents dans les premières parties.
+
+## Annexes
+
+- [A — Comparer les outils et leurs tarifs](tutoriel/annexes/comparatif/LECTURE.md)
+- [B — Expérimenter une discussion avec un modèle local](tutoriel/annexes/essai-local/LECTURE.md)

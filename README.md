@@ -6,7 +6,7 @@ Les textes, les illustrations et les ateliers du tutoriel en cours de rédaction
 
 Ce dépôt est le point de travail commun. La branche `main` rassemble les versions courantes, y compris les brouillons identifiés comme tels. Être présent ici ne signifie pas être validé pour publication.
 
-Les **quatre premières parties** sont désormais réunies ici : **30 chapitres, 108 sections et 32 illustrations**, avec les ateliers et les documents de reprise. Le [sommaire](SOMMAIRE.md) mène directement aux lectures par chapitre. Les parties 5 à 8 restent au stade du plan ; le billet d’origine est un contenu séparé.
+Les **quatre premières parties** sont désormais réunies ici : **28 chapitres et deux annexes, 108 sections et 32 illustrations**, avec les ateliers et les documents de reprise. Le [sommaire](SOMMAIRE.md) mène directement aux lectures par chapitre. Les parties 5 à 8 restent au stade du plan ; le billet d’origine est un contenu séparé.
 
 ## Où trouver quoi ?
 
@@ -36,7 +36,7 @@ Les répertoires `resultats-reference` contiennent des résultats réellement ob
 
 ## Télécharger
 
-Les [quatre archives d’import ZdS](telechargements/zds/README.md) contiennent les textes et illustrations des parties 1 à 4.
+Les [archives d’import ZdS](telechargements/zds/README.md) contiennent les parties 1 à 4 et les annexes dans un ZIP séparé.
 
 Vous pouvez cloner ce dépôt ou télécharger son archive ZIP depuis GitHub. Les [archives des trois ateliers](telechargements/) permettent de télécharger un atelier séparément. Le chapitre peut pointer vers une révision précise du dépôt pour conserver les mêmes fichiers au fil des corrections. Les fichiers de poids du modèle local et les exécutables de llama.cpp se téléchargent séparément.
 
@@ -52,7 +52,7 @@ Les essais GPU, Windows, macOS et les interactions dans un vrai navigateur reste
 python outils/assembler_tutoriel.py --exports ../exports-zds
 ```
 
-Cette commande vérifie les fichiers et les images référencés, régénère les lectures GitHub et prépare un ZIP par partie avec son manifest à la racine. Sans `--exports`, elle régénère seulement les lectures. Les notes éditoriales et les ateliers ne sont pas inclus dans les imports ZdS.
+Cette commande vérifie les fichiers et les images référencés, régénère les lectures GitHub et prépare un ZIP par partie ainsi qu’un ZIP d’annexes, avec leurs manifests à la racine. Sans `--exports`, elle régénère seulement les lectures. Les notes éditoriales et les ateliers ne sont pas inclus dans les imports ZdS.
 
 ## Préparer les archives des ateliers
 

@@ -212,50 +212,6 @@
         }
       ],
       "ready_to_publish": false
-    },
-    {
-      "object": "container",
-      "slug": "comparatif",
-      "title": "Référence — comparer les outils et leurs tarifs",
-      "introduction": "comparatif/introduction.md",
-      "conclusion": "comparatif/conclusion.md",
-      "children": [
-        {
-          "object": "extract",
-          "slug": "panorama",
-          "title": "Les éditeurs et les agents",
-          "text": "comparatif/panorama.md"
-        },
-        {
-          "object": "extract",
-          "slug": "harness",
-          "title": "Pi et les autres harness",
-          "text": "comparatif/harness.md"
-        },
-        {
-          "object": "extract",
-          "slug": "prix",
-          "title": "Les prix et les limites des offres",
-          "text": "comparatif/prix.md"
-        }
-      ],
-      "ready_to_publish": false
-    },
-    {
-      "object": "container",
-      "slug": "essai-local",
-      "title": "Expérience facultative — discuter avec un modèle local",
-      "introduction": "essai-local/introduction.md",
-      "conclusion": "essai-local/conclusion.md",
-      "children": [
-        {
-          "object": "extract",
-          "slug": "connexion",
-          "title": "Relier Continue à notre serveur",
-          "text": "essai-local/connexion.md"
-        }
-      ],
-      "ready_to_publish": false
     }
   ],
   "ready_to_publish": false

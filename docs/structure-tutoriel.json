@@ -22,9 +22,16 @@
   },
   {
     "partie": "04-developpement",
-    "chapitres": 9,
-    "sections": 27,
+    "chapitres": 7,
+    "sections": 23,
     "images": 3,
-    "fichiers_sources": 47
+    "fichiers_sources": 39
+  },
+  {
+    "partie": "annexes",
+    "chapitres": 2,
+    "sections": 4,
+    "images": 0,
+    "fichiers_sources": 10
   }
 ]

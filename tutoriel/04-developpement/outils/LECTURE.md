@@ -30,7 +30,7 @@ La complétion suggère du code pendant que vous tapez. Nous allons surtout util
 - **La discussion** : nous montrons une fonction et demandons une explication. Nous lisons la réponse en gardant le code sous les yeux.
 - **Le mode agent** : le modèle peut demander au logiciel de lire ou modifier des fichiers et de lancer des commandes. Les résultats lui reviennent, ce qui lui permet de poursuivre.
 
-Le programme qui organise ces échanges est souvent appelé **harness**. Copilot, Codex, Claude Code, Pi et d’autres proposent leur propre manière de le faire. Nous comparerons leurs possibilités dans le chapitre de référence.
+Le programme qui organise ces échanges est souvent appelé **harness**. Copilot, Codex, Claude Code, Pi et d’autres proposent leur propre manière de le faire. Nous comparerons leurs possibilités dans l’annexe comparative.
 
 Pour commencer, nous resterons en discussion. Nous passerons au mode agent au moment d’écrire notre premier test. Vous verrez ainsi ce qui change quand l’outil peut agir sur les fichiers.
 
@@ -38,7 +38,7 @@ Pour commencer, nous resterons en discussion. Nous passerons au mode agent au mo
 
 Vous utilisez déjà un assistant capable de lire et modifier un projet ? Gardez-le. Les demandes de l’atelier portent sur des fichiers et des commandes Python ; elles ne dépendent pas d’une marque.
 
-Sinon, nous prendrons **VS Code avec GitHub Copilot** comme exemple d’installation. D’autres possibilités figurent dans le [comparatif complet](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/04-developpement/comparatif/LECTURE.md) : éditeurs, agents en terminal, choix du modèle, prix et limites des offres. Ce comparatif est daté de septembre 2026.
+Sinon, nous prendrons **VS Code avec GitHub Copilot** comme exemple d’installation. D’autres possibilités figurent dans le [comparatif complet](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/annexes/comparatif/LECTURE.md) : éditeurs, agents en terminal, choix du modèle, prix et limites des offres. Ce comparatif est daté de septembre 2026.
 
 Avant de vous connecter, vérifiez deux points :
 
