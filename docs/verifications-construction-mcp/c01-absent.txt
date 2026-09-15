@@ -1,0 +1,23 @@
+{
+  "operation": "ticket",
+  "valeur": "PRIX-999",
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "Error executing tool lire_ticket: Ticket introuvable dans le jeu de démonstration."
+      }
+    ],
+    "isError": true,
+    "resultType": "complete"
+  }
+}
+Tool 'lire_ticket' failed: 'Error executing tool lire_ticket: Ticket introuvable dans le jeu de démonstration.'

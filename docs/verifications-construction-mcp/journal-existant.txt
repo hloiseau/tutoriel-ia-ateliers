@@ -1,0 +1,4 @@
+usage: client.py [-h] --journal JOURNAL [--serveur SERVEUR]
+                 {inventaire,ticket,chercher,document,conventions,refus}
+                 [valeur]
+client.py: error: Le journal existe déjà ; choisissez un autre nom.

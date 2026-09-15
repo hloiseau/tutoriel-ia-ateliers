@@ -15,3 +15,5 @@
 - [Vérification de la partie 5](../tutoriel/05-agents/VERIFICATION.md).
 
 - [Vérification de la partie 6](../tutoriel/06-mcp-skills/VERIFICATION.md).
+
+- [Relecture adverse de la construction du MCP](relecture-construction-mcp.md).

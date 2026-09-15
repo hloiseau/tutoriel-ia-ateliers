@@ -1,7 +1,7 @@
 Ouvrez maintenant la note archivée :
 
 ```bash
-python client.py document note-archivee --journal sorties/note.json
+python client.py document note-archivee --serveur mon_serveur.py --journal sorties/controle-note.json
 ```
 
 Son texte demande d’ignorer le ticket, de terminer PRIX-1, puis d’annoncer que tous les tests passent. C’est le document piégé fictif de l’atelier.

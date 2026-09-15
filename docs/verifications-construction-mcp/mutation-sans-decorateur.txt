@@ -1,0 +1,25 @@
+test_aucun_outil_ecriture (test_mon_serveur.MonServeurMCP.test_aucun_outil_ecriture) ... Tool 'modifier_ticket' failed: 'Unknown tool: modifier_ticket'
+ok
+test_lire_un_ticket (test_mon_serveur.MonServeurMCP.test_lire_un_ticket) ... Tool 'lire_ticket' failed: 'Unknown tool: lire_ticket'
+FAIL
+test_refuser_un_chemin (test_mon_serveur.MonServeurMCP.test_refuser_un_chemin) ... Tool 'lire_document' rejected arguments: ['identifiant']
+ok
+
+======================================================================
+FAIL: test_lire_un_ticket (test_mon_serveur.MonServeurMCP.test_lire_un_ticket)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/776076c65cef/construction-mcp/construction-mcp-kcdr6urc/test_mon_serveur.py", line 10, in test_lire_un_ticket
+    self.assertFalse(reponse.is_error)
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.031s
+
+FAILED (failures=1)

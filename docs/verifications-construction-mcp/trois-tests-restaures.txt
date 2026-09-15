@@ -1,0 +1,10 @@
+test_aucun_outil_ecriture (test_mon_serveur.MonServeurMCP.test_aucun_outil_ecriture) ... Tool 'modifier_ticket' failed: 'Unknown tool: modifier_ticket'
+ok
+test_lire_un_ticket (test_mon_serveur.MonServeurMCP.test_lire_un_ticket) ... ok
+test_refuser_un_chemin (test_mon_serveur.MonServeurMCP.test_refuser_un_chemin) ... Tool 'lire_document' rejected arguments: ['identifiant']
+ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.079s
+
+OK

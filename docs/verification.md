@@ -28,7 +28,7 @@ Le banc sans modèle a été exécuté depuis son archive : douze tests et les s
 
 ## Partie 6
 
-Le serveur et le client MCP ont été exécutés depuis l’archive extraite, avec le SDK 2.2.0 et le protocole 2026-07-28 : dix appels stdio, dix tests en mémoire, paramètres invalides et tentative d’écriture refusés. La configuration et la structure du skill ont été contrôlées. Aucun modèle ni interface d’assistant n’a été essayé. [Rapport détaillé](../tutoriel/06-mcp-skills/VERIFICATION.md).
+Le parcours courant reconstruit `mon_serveur.py` depuis les blocs Markdown, dans une archive extraite. Six états successifs, trois tests du lecteur, deux mutations détectées et dix tests du corrigé ont été vérifiés. Les appels stdio et leurs résultats sont conservés ; aucun modèle ni interface d’assistant n’a été essayé. [Rapport détaillé](../tutoriel/06-mcp-skills/VERIFICATION.md).
 
 ## À reprendre sur d’autres environnements
 

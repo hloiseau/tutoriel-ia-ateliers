@@ -2,7 +2,7 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-[Précédent : Consulter notre premier ticket](../01-consulter/LECTURE.md) · [Suivant : Construire les outils dont on a besoin](../03-construire/LECTURE.md)
+[Précédent : Consulter notre premier ticket](../01-consulter/LECTURE.md) · [Suivant : Développer notre serveur MCP, pas à pas](../03-construire/LECTURE.md)
 
 **TL;DR** — MCP décrit les échanges avec le serveur. L’assistant décide comment présenter ses outils au modèle et comment traiter leurs résultats.
 
@@ -71,8 +71,8 @@ Pour notre atelier, les données sont fictives. Dans un projet professionnel, ce
 
 [^p6-transport]: Spécification MCP, [transports stdio et Streamable HTTP](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports).
 
-Le même serveur peut être appelé par notre script ou par un assistant compatible. Nous pouvons maintenant ouvrir son code et décider exactement ce qu’il donne accès à lire.
+Le même serveur peut être appelé par notre script ou par un assistant compatible. Nous avons essayé celui de l’atelier ; au chapitre suivant, nous allons créer le nôtre, depuis un fichier vide.
 
 ---
 
-[Précédent : Consulter notre premier ticket](../01-consulter/LECTURE.md) · [Suivant : Construire les outils dont on a besoin](../03-construire/LECTURE.md)
+[Précédent : Consulter notre premier ticket](../01-consulter/LECTURE.md) · [Suivant : Développer notre serveur MCP, pas à pas](../03-construire/LECTURE.md)

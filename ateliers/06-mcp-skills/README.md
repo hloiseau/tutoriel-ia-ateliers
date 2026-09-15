@@ -44,9 +44,17 @@ Le client lance et arrête lui-même `serveur.py`. Ne lancez pas un serveur dans
 
 Dans `prix-1.json`, `reponse.structuredContent` contient le ticket. Pour `refus`, `reponse.isError` vaut `true` : `modifier_ticket` n’existe pas. Le processus client termine normalement après avoir enregistré cette erreur attendue.
 
+## Construire son propre serveur
+
+Après les premiers essais du serveur fourni, le [chapitre 3](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/06-mcp-skills/03-construire/LECTURE.md) fait créer `mon_serveur.py` dans ce dossier, depuis un fichier vide. Chaque ajout se vérifie avec une commande qui porte `--serveur mon_serveur.py`. Le champ `serveur` des journaux indique le fichier lancé.
+
+Les [états intermédiaires](construction/README.md) permettent de reprendre une étape ; `serveur.py` est le corrigé complet. Une fois vos trois tests écrits, lancez `python -m unittest test_mon_serveur -v`. Ils importent votre fichier. Les dix tests du serveur fourni, décrits plus bas, vérifient le corrigé séparément.
+
+Pour utiliser votre fichier dans l’assistant, générez la configuration avec `python configuration.py --serveur mon_serveur.py`, remplacez l’entrée `atelier-tickets` existante et redémarrez-la. Les chapitres suivants utilisent ce serveur construit.
+
 ## Utiliser depuis VS Code
 
-Ouvrez ce dossier d’atelier comme dossier de travail de VS Code. Dans son terminal, avec le même Python que ci-dessus :
+Ouvrez ce dossier d’atelier comme dossier de travail de VS Code. Pour le premier essai du serveur fourni, dans son terminal avec le même Python que ci-dessus :
 
 ```bash
 python configuration.py

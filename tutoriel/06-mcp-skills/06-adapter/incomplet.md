@@ -1,7 +1,7 @@
 Consultez le second ticket :
 
 ```bash
-python client.py ticket PRIX-2 --journal sorties/prix-2.json
+python client.py ticket PRIX-2 --serveur mon_serveur.py --journal sorties/adaptation-prix-2.json
 ```
 
 Il demande de limiter les notifications trop rapprochées. Deux questions restent ouvertes : quelle durée définit un intervalle court, et une baisse plus importante peut-elle contourner cette limite ?

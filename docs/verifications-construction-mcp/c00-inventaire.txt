@@ -1,0 +1,18 @@
+{
+  "operation": "inventaire",
+  "valeur": null,
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "ttlMs": 0,
+    "cacheScope": "private",
+    "tools": [],
+    "resultType": "complete"
+  }
+}

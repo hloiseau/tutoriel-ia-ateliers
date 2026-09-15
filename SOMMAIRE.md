@@ -2,7 +2,7 @@
 
 [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
-Les six premières parties sont centralisées avec leurs sources et illustrations : **41 chapitres et deux annexes, 147 sections et 38 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
+Les six premières parties sont centralisées avec leurs sources et illustrations : **41 chapitres et deux annexes, 151 sections et 38 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 
 ## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
@@ -69,7 +69,7 @@ Les six premières parties sont centralisées avec leurs sources et illustration
 
 1. [Consulter notre premier ticket](tutoriel/06-mcp-skills/01-consulter/LECTURE.md)
 2. [Brancher le serveur à notre assistant](tutoriel/06-mcp-skills/02-relier/LECTURE.md)
-3. [Construire les outils dont on a besoin](tutoriel/06-mcp-skills/03-construire/LECTURE.md)
+3. [Développer notre serveur MCP, pas à pas](tutoriel/06-mcp-skills/03-construire/LECTURE.md)
 4. [Refuser ce que le serveur ne doit pas faire](tutoriel/06-mcp-skills/04-controler/LECTURE.md)
 5. [Écrire notre premier skill](tutoriel/06-mcp-skills/05-skill/LECTURE.md)
 6. [Faire évoluer le skill à partir des problèmes rencontrés](tutoriel/06-mcp-skills/06-adapter/LECTURE.md)

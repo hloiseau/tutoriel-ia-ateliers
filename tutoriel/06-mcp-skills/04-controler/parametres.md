@@ -1,23 +1,14 @@
-La signature de `lire_document` contient cette annotation :
-
-```python
-identifiant: Annotated[
-    StrictStr,
-    Field(pattern=r"^[a-z0-9-]+$", max_length=60),
-]
-```
-Code: Contrainte sur l’identifiant de document
-
-`StrictStr` demande une chaîne. Le motif autorise les lettres minuscules non accentuées, les chiffres et les tirets. La longueur est également limitée. Ces contraintes servent à construire le schéma annoncé au client et à valider la demande reçue.
-
-Essayez :
+Nous avons ajouté des contraintes sur l’identifiant des documents. Comparons deux erreurs :
 
 ```bash
-python client.py document ../tickets --journal sorties/mauvais-identifiant.json
+python client.py document ../tickets --serveur mon_serveur.py --journal sorties/controle-format.json
+python client.py document document-absent --serveur mon_serveur.py --journal sorties/controle-absent.json
 ```
 
-Le paramètre est refusé. Mais il faut aussi regarder ce qui aurait été fait d’un identifiant valide : notre code cherche une **clé dans un catalogue chargé depuis un fichier fixé par le programme**. Il ne construit pas un chemin à partir de l’argument du client.
+Les deux appels échouent, mais pour des raisons différentes. Le premier ne respecte pas le format attendu ; la fonction ne doit pas traiter cette demande. Le second passe la validation, puis notre recherche dans le catalogue constate que le document n’existe pas.
 
-La différence compte. Vérifier seulement que la valeur est une chaîne n’empêcherait pas un outil conçu pour lire des chemins de recevoir celui d’un fichier confidentiel. Ici, l’appelant ne choisit pas le fichier ouvert.
+Regardez ensuite `catalogue("documents.json")` dans votre code. Le nom du fichier est fixé par le programme. L’identifiant reçu sert à chercher une clé dans l’objet chargé, **pas à construire un chemin**. C’est cette conception qui limite les fichiers accessibles par cet outil ; le simple fait d’accepter une chaîne ne l’aurait pas fait.
 
-Cette validation ne dit pas qui a le droit de consulter quel ticket. Notre jeu fictif n’a qu’un seul niveau d’accès. Pour un service utilisé par plusieurs personnes, les droits sur les tickets doivent être vérifiés séparément ; un identifiant bien formé n’accorde aucune permission.
+Le contrôle de la recherche apporte un autre exemple : essayez `chercher "   "` à la place de `document document-absent`, avec un nouveau journal. La chaîne a bien trois caractères, mais notre fonction la nettoie et constate qu’elle ne contient aucun terme utile.
+
+Ces contrôles ne disent pas qui a le droit de lire quel ticket. Notre jeu fictif n’a qu’un seul niveau d’accès. Dans un service partagé, il faudrait aussi vérifier les droits du demandeur : connaître un identifiant valide ne donne pas une autorisation.

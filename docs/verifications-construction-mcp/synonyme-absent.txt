@@ -1,0 +1,26 @@
+{
+  "operation": "chercher",
+  "valeur": "alerte",
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"resultats\": [],\n  \"tronque\": false\n}"
+      }
+    ],
+    "structuredContent": {
+      "resultats": [],
+      "tronque": false
+    },
+    "isError": false,
+    "resultType": "complete"
+  }
+}

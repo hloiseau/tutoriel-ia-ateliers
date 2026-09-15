@@ -1,15 +1,37 @@
-En haut du fichier, cette ligne crée notre serveur :
+Commençons par un seul ticket, écrit dans le code. Ajoutez ces deux imports en haut du fichier :
 
 ```python
-mcp = MCPServer("atelier-tickets", version="1.0.0")
+from typing import Any
+from mcp.server.mcpserver.exceptions import ToolError
 ```
 
-Le décorateur `@mcp.tool(...)` qui précède `lire_ticket` l’enregistre comme outil. Sa description vient de la chaîne placée au début de la fonction. L’annotation de l’argument indique ce que le client peut lui transmettre.[^p6-serveur]
+Puis insérez cette fonction avant le bloc final de démarrage :
 
-Dans notre fonction, le travail proprement dit reste très ordinaire : charger le catalogue, chercher l’identifiant, retourner le ticket. Si l’identifiant manque, `ToolError` produit une erreur d’outil explicite. Le SDK se charge de l’exposition par MCP.
+```python
+@mcp.tool()
+def lire_ticket(identifiant: str) -> dict[str, Any]:
+    """Lire un ticket fictif par son identifiant."""
+    if identifiant != "PRIX-1":
+        raise ToolError("Ticket introuvable dans le jeu de démonstration.")
+    return {
+        "id": "PRIX-1",
+        "titre": "Ne plus notifier une simple remise en stock",
+    }
+```
 
-Regardez aussi le type de retour : `dict[str, Any]`. Nous retournons un objet dont les clés sont des chaînes et dont les valeurs peuvent différer. Avec cette annotation, notre SDK fournit le contenu structuré que nous avons consulté. Les champs précis de nos tickets restent définis par notre petit jeu de données ; nous n’avons pas encore construit un modèle de validation complet pour chacun.
+Le décorateur `@mcp.tool()` enregistre la fonction comme outil. Sa chaîne de documentation décrit son rôle ; l’annotation `identifiant: str` indique qu’on attend du texte. `dict[str, Any]` décrit un objet dont les clés sont des chaînes et dont les valeurs peuvent être de types différents. Le SDK en tire un résultat structuré.[^p6-construire-outil]
 
-Pour comprendre ce qui appartient à notre application, changez le titre de PRIX-1 dans une copie de `tickets.json`, puis relancez une lecture avec un nouveau journal. Le titre change, le protocole reste le même. Rétablissez ensuite le fichier : nous gardons les données communes pour les exercices suivants.
+Appelez votre nouvel outil :
 
-[^p6-serveur]: SDK Python MCP, [définir un serveur et ses outils](https://py.sdk.modelcontextprotocol.io/servers/).
+```bash
+python client.py ticket PRIX-1 --serveur mon_serveur.py --journal sorties/c01-ticket.json
+python client.py ticket PRIX-999 --serveur mon_serveur.py --journal sorties/c01-absent.json
+```
+
+Dans le premier journal, `structuredContent` contient les deux champs `id` et `titre`. Dans le second, `isError` vaut `true` : `ToolError` a produit une erreur compréhensible par le client.
+
+Pour vérifier que vous appelez bien votre code, changez momentanément le titre retourné en « Mon premier outil MCP », enregistrez et relancez la première commande avec un **nouveau nom de journal**. Vous devez retrouver ce titre dans la réponse. Rétablissez ensuite le texte initial.
+
+Le client relance le processus à chaque commande : il utilise donc le fichier enregistré. Nous avons écrit un outil MCP et observé sa réponse sans demander à une IA de l’interpréter.
+
+[^p6-construire-outil]: SDK Python MCP, [serveurs et outils](https://py.sdk.modelcontextprotocol.io/servers/).

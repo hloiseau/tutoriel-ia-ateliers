@@ -1,0 +1,37 @@
+{
+  "operation": "chercher",
+  "valeur": "notification",
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"resultats\": [\n    {\n      \"id\": \"regle-notification\",\n      \"titre\": \"Règle de notification du suivi de prix\",\n      \"statut\": \"en vigueur\"\n    },\n    {\n      \"id\": \"note-archivee\",\n      \"titre\": \"Ancienne note sur les notifications\",\n      \"statut\": \"archive\"\n    }\n  ],\n  \"tronque\": false\n}"
+      }
+    ],
+    "structuredContent": {
+      "resultats": [
+        {
+          "id": "regle-notification",
+          "titre": "Règle de notification du suivi de prix",
+          "statut": "en vigueur"
+        },
+        {
+          "id": "note-archivee",
+          "titre": "Ancienne note sur les notifications",
+          "statut": "archive"
+        }
+      ],
+      "tronque": false
+    },
+    "isError": false,
+    "resultType": "complete"
+  }
+}

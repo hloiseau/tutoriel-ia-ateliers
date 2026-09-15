@@ -1,7 +1,7 @@
 Lancez la tentative prévue dans le client :
 
 ```bash
-python client.py refus --journal sorties/refus.json
+python client.py refus --serveur mon_serveur.py --journal sorties/controle-refus.json
 ```
 
 Elle appelle `modifier_ticket` en demandant de terminer PRIX-1. Le serveur répond que l’outil est inconnu : nous ne l’avons pas exposé. Relisez PRIX-1 avec un nouveau journal ; son statut reste `a preparer`.
@@ -15,12 +15,6 @@ Notre serveur protège un périmètre précis : il ne propose pas d’opération
 
 Sur un vrai service, on utiliserait en plus un compte disposant uniquement des droits nécessaires. Si le compte peut supprimer un index et qu’un outil générique accepte n’importe quelle requête, retirer seulement l’outil nommé `delete_index` ne suffit pas.
 
-Pour vérifier notre implémentation :
-
-```bash
-python -m unittest discover -s . -p 'test_serveur.py' -v
-```
-
-Les dix tests vérifient notamment les arguments et les erreurs. Celui de la tentative d’écriture compare les empreintes des données avant et après l’appel. Il contrôle ce scénario ; il ne démontre pas l’impossibilité de toute écriture sur la machine.
+Notre troisième test couvre l’absence de l’outil d’écriture. La relecture du ticket permet aussi de comparer son état avant et après la demande. Cela vérifie ces appels précis ; ce n’est pas une preuve qu’aucun autre programme ne peut modifier les fichiers de la machine.
 
 [^p6-annotations]: Spécification MCP, [les annotations des outils sont des indications, pas des garanties](https://modelcontextprotocol.io/specification/2026-07-28/server/tools).

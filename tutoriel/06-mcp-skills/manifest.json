@@ -64,27 +64,51 @@
     {
       "object": "container",
       "slug": "03-construire",
-      "title": "Construire les outils dont on a besoin",
+      "title": "Développer notre serveur MCP, pas à pas",
       "introduction": "03-construire/introduction.md",
       "conclusion": "03-construire/conclusion.md",
       "children": [
         {
           "object": "extract",
+          "slug": "demarrer",
+          "title": "Partir d’un fichier vide",
+          "text": "03-construire/demarrer.md"
+        },
+        {
+          "object": "extract",
           "slug": "fonction",
-          "title": "D’une fonction Python à un outil MCP",
+          "title": "Exposer un premier outil",
           "text": "03-construire/fonction.md"
         },
         {
           "object": "extract",
+          "slug": "catalogue",
+          "title": "Lire les tickets depuis les données",
+          "text": "03-construire/catalogue.md"
+        },
+        {
+          "object": "extract",
           "slug": "chercher",
-          "title": "Chercher, puis ouvrir le bon document",
+          "title": "Ajouter la recherche documentaire",
           "text": "03-construire/chercher.md"
         },
         {
           "object": "extract",
+          "slug": "valider",
+          "title": "Valider les paramètres reçus",
+          "text": "03-construire/valider.md"
+        },
+        {
+          "object": "extract",
           "slug": "ressource",
-          "title": "Et les ressources ?",
+          "title": "Exposer les conventions comme ressource",
           "text": "03-construire/ressource.md"
+        },
+        {
+          "object": "extract",
+          "slug": "tester",
+          "title": "Écrire les tests et utiliser notre serveur",
+          "text": "03-construire/tester.md"
         }
       ],
       "ready_to_publish": false

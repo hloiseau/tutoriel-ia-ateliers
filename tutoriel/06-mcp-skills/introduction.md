@@ -1,4 +1,4 @@
-**TL;DR** — Nous allons consulter des tickets avec un vrai serveur MCP, lui refuser les écritures, puis préparer une recette avec un skill que nous pourrons modifier nous-mêmes.
+**TL;DR** — Nous allons consulter des tickets avec un vrai serveur MCP, développer le nôtre pas à pas, puis préparer une recette avec un skill que nous pourrons modifier nous-mêmes.
 
 Jusqu’ici, nous avons donné des fichiers à l’agent et observé ses appels d’outils. Mais les informations nécessaires ne sont pas toujours dans le dépôt : le ticket est dans Jira, une décision dans la documentation, un résultat dans les logs… On peut tout copier dans la conversation. Une fois. À la dixième, on aimerait bien faire autrement. 😅
 

@@ -1,0 +1,20 @@
+test_aucune_ecriture (test_serveur.ContratMCP.test_aucune_ecriture) ... Tool 'modifier_ticket' failed: 'Unknown tool: modifier_ticket'
+ok
+test_chemin_interdit (test_serveur.ContratMCP.test_chemin_interdit) ... Tool 'lire_document' rejected arguments: ['identifiant']
+ok
+test_document_piege_reste_du_contenu (test_serveur.ContratMCP.test_document_piege_reste_du_contenu) ... ok
+test_identifiant_inconnu (test_serveur.ContratMCP.test_identifiant_inconnu) ... Tool 'lire_ticket' failed: 'Error executing tool lire_ticket: Ticket introuvable dans le jeu de démonstration.'
+ok
+test_inventaire_lecture_seule (test_serveur.ContratMCP.test_inventaire_lecture_seule) ... ok
+test_recherche_et_lecture (test_serveur.ContratMCP.test_recherche_et_lecture) ... ok
+test_recherche_vide (test_serveur.ContratMCP.test_recherche_vide) ... Tool 'chercher_documentation' failed: 'Error executing tool chercher_documentation: Saisissez au moins deux caractères utiles.'
+ok
+test_ressource (test_serveur.ContratMCP.test_ressource) ... ok
+test_ticket_retourne_les_questions (test_serveur.ContratMCP.test_ticket_retourne_les_questions) ... ok
+test_type_incorrect (test_serveur.ContratMCP.test_type_incorrect) ... Tool 'lire_ticket' rejected arguments: ['identifiant']
+ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.133s
+
+OK

@@ -1,0 +1,341 @@
+{
+  "python": "3.12.14",
+  "plateforme": "Linux",
+  "archive_sha256": "dad4b647485386e2ba11630835e27d3dde13f8cd5ead85069797c278de037032",
+  "etats_reconstruits_depuis_markdown": 6,
+  "commandes": [
+    {
+      "essai": "c00-inventaire",
+      "commande": [
+        "python",
+        "client.py",
+        "inventaire",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c00-inventaire.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c01-ticket",
+      "commande": [
+        "python",
+        "client.py",
+        "ticket",
+        "PRIX-1",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c01-ticket.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c01-absent",
+      "commande": [
+        "python",
+        "client.py",
+        "ticket",
+        "PRIX-999",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c01-absent.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "titre-change",
+      "commande": [
+        "python",
+        "client.py",
+        "ticket",
+        "PRIX-1",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/titre-change.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c02-ticket",
+      "commande": [
+        "python",
+        "client.py",
+        "ticket",
+        "PRIX-2",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c02-ticket.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c03-recherche",
+      "commande": [
+        "python",
+        "client.py",
+        "chercher",
+        "notification",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c03-recherche.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c03-document",
+      "commande": [
+        "python",
+        "client.py",
+        "document",
+        "regle-notification",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c03-document.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "synonyme-absent",
+      "commande": [
+        "python",
+        "client.py",
+        "chercher",
+        "alerte",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/synonyme.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c04-inventaire",
+      "commande": [
+        "python",
+        "client.py",
+        "inventaire",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c04-inventaire.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c04-invalide",
+      "commande": [
+        "python",
+        "client.py",
+        "document",
+        "../tickets",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c04-invalide.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "c05-conventions",
+      "commande": [
+        "python",
+        "client.py",
+        "conventions",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c05-conventions.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "trois-tests",
+      "commande": [
+        "python",
+        "-m",
+        "unittest",
+        "test_mon_serveur",
+        "-v"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "mutation-sans-decorateur",
+      "commande": [
+        "python",
+        "-m",
+        "unittest",
+        "test_mon_serveur",
+        "-v"
+      ],
+      "code_sortie": 1,
+      "code_attendu": 1
+    },
+    {
+      "essai": "trois-tests-restaures",
+      "commande": [
+        "python",
+        "-m",
+        "unittest",
+        "test_mon_serveur",
+        "-v"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "mutation-sans-validation",
+      "commande": [
+        "python",
+        "-m",
+        "unittest",
+        "test_mon_serveur",
+        "-v"
+      ],
+      "code_sortie": 1,
+      "code_attendu": 1
+    },
+    {
+      "essai": "trois-tests-finaux",
+      "commande": [
+        "python",
+        "-m",
+        "unittest",
+        "test_mon_serveur",
+        "-v"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "dix-tests-corrige",
+      "commande": [
+        "python",
+        "-m",
+        "unittest",
+        "test_serveur",
+        "-v"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "cible-par-defaut",
+      "commande": [
+        "python",
+        "client.py",
+        "inventaire",
+        "--journal",
+        "sorties/corrige.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "serveur-absent",
+      "commande": [
+        "python",
+        "client.py",
+        "inventaire",
+        "--serveur",
+        "absent.py",
+        "--journal",
+        "sorties/absent.json"
+      ],
+      "code_sortie": 2,
+      "code_attendu": 2
+    },
+    {
+      "essai": "journal-existant",
+      "commande": [
+        "python",
+        "client.py",
+        "inventaire",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/c00-inventaire.json"
+      ],
+      "code_sortie": 2,
+      "code_attendu": 2
+    },
+    {
+      "essai": "configuration",
+      "commande": [
+        "python",
+        "configuration.py",
+        "--serveur",
+        "mon_serveur.py"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "document-21",
+      "commande": [
+        "python",
+        "client.py",
+        "document",
+        "document-absent",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/adverse-21.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "document-22",
+      "commande": [
+        "python",
+        "client.py",
+        "document",
+        "../tickets",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/adverse-22.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    },
+    {
+      "essai": "espaces",
+      "commande": [
+        "python",
+        "client.py",
+        "chercher",
+        "   ",
+        "--serveur",
+        "mon_serveur.py",
+        "--journal",
+        "sorties/espaces.json"
+      ],
+      "code_sortie": 0,
+      "code_attendu": 0
+    }
+  ],
+  "donnees_inchangees": true,
+  "modele_appele": false,
+  "interface_assistant_verifiee": false
+}

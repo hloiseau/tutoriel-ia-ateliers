@@ -2,44 +2,35 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-[Précédent : Construire les outils dont on a besoin](../03-construire/LECTURE.md) · [Suivant : Écrire notre premier skill](../05-skill/LECTURE.md)
+[Précédent : Développer notre serveur MCP, pas à pas](../03-construire/LECTURE.md) · [Suivant : Écrire notre premier skill](../05-skill/LECTURE.md)
 
-**TL;DR** — Nous allons rejeter un mauvais paramètre et une demande d’écriture, puis lire un document qui contient une fausse consigne. Ces trois problèmes ne se règlent pas au même endroit.
+**TL;DR** — Nous allons mettre notre serveur à l’épreuve : une demande mal formée, un outil d’écriture absent et une instruction cachée dans un document.
 
-Écrire « lecture seule » dans une description ne change pas les droits du programme. Voyons ce qui limite réellement notre serveur.
+Gardez `mon_serveur.py`, terminé au chapitre précédent, et le terminal ouvert à côté de `client.py`. Les commandes de ce chapitre ciblent votre fichier. Les tests de validation nous ont donné une première limite ; voyons ce qu’elle protège réellement.
 
 ## Un identifiant n’est pas un chemin
 
-La signature de `lire_document` contient cette annotation :
-
-```python
-identifiant: Annotated[
-    StrictStr,
-    Field(pattern=r"^[a-z0-9-]+$", max_length=60),
-]
-```
-Code: Contrainte sur l’identifiant de document
-
-`StrictStr` demande une chaîne. Le motif autorise les lettres minuscules non accentuées, les chiffres et les tirets. La longueur est également limitée. Ces contraintes servent à construire le schéma annoncé au client et à valider la demande reçue.
-
-Essayez :
+Nous avons ajouté des contraintes sur l’identifiant des documents. Comparons deux erreurs :
 
 ```bash
-python client.py document ../tickets --journal sorties/mauvais-identifiant.json
+python client.py document ../tickets --serveur mon_serveur.py --journal sorties/controle-format.json
+python client.py document document-absent --serveur mon_serveur.py --journal sorties/controle-absent.json
 ```
 
-Le paramètre est refusé. Mais il faut aussi regarder ce qui aurait été fait d’un identifiant valide : notre code cherche une **clé dans un catalogue chargé depuis un fichier fixé par le programme**. Il ne construit pas un chemin à partir de l’argument du client.
+Les deux appels échouent, mais pour des raisons différentes. Le premier ne respecte pas le format attendu ; la fonction ne doit pas traiter cette demande. Le second passe la validation, puis notre recherche dans le catalogue constate que le document n’existe pas.
 
-La différence compte. Vérifier seulement que la valeur est une chaîne n’empêcherait pas un outil conçu pour lire des chemins de recevoir celui d’un fichier confidentiel. Ici, l’appelant ne choisit pas le fichier ouvert.
+Regardez ensuite `catalogue("documents.json")` dans votre code. Le nom du fichier est fixé par le programme. L’identifiant reçu sert à chercher une clé dans l’objet chargé, **pas à construire un chemin**. C’est cette conception qui limite les fichiers accessibles par cet outil ; le simple fait d’accepter une chaîne ne l’aurait pas fait.
 
-Cette validation ne dit pas qui a le droit de consulter quel ticket. Notre jeu fictif n’a qu’un seul niveau d’accès. Pour un service utilisé par plusieurs personnes, les droits sur les tickets doivent être vérifiés séparément ; un identifiant bien formé n’accorde aucune permission.
+Le contrôle de la recherche apporte un autre exemple : essayez `chercher "   "` à la place de `document document-absent`, avec un nouveau journal. La chaîne a bien trois caractères, mais notre fonction la nettoie et constate qu’elle ne contient aucun terme utile.
+
+Ces contrôles ne disent pas qui a le droit de lire quel ticket. Notre jeu fictif n’a qu’un seul niveau d’accès. Dans un service partagé, il faudrait aussi vérifier les droits du demandeur : connaître un identifiant valide ne donne pas une autorisation.
 
 ## Demander une modification impossible par cet outil
 
 Lancez la tentative prévue dans le client :
 
 ```bash
-python client.py refus --journal sorties/refus.json
+python client.py refus --serveur mon_serveur.py --journal sorties/controle-refus.json
 ```
 
 Elle appelle `modifier_ticket` en demandant de terminer PRIX-1. Le serveur répond que l’outil est inconnu : nous ne l’avons pas exposé. Relisez PRIX-1 avec un nouveau journal ; son statut reste `a preparer`.
@@ -53,13 +44,7 @@ Notre serveur protège un périmètre précis : il ne propose pas d’opération
 
 Sur un vrai service, on utiliserait en plus un compte disposant uniquement des droits nécessaires. Si le compte peut supprimer un index et qu’un outil générique accepte n’importe quelle requête, retirer seulement l’outil nommé `delete_index` ne suffit pas.
 
-Pour vérifier notre implémentation :
-
-```bash
-python -m unittest discover -s . -p 'test_serveur.py' -v
-```
-
-Les dix tests vérifient notamment les arguments et les erreurs. Celui de la tentative d’écriture compare les empreintes des données avant et après l’appel. Il contrôle ce scénario ; il ne démontre pas l’impossibilité de toute écriture sur la machine.
+Notre troisième test couvre l’absence de l’outil d’écriture. La relecture du ticket permet aussi de comparer son état avant et après la demande. Cela vérifie ces appels précis ; ce n’est pas une preuve qu’aucun autre programme ne peut modifier les fichiers de la machine.
 
 [^p6-annotations]: Spécification MCP, [les annotations des outils sont des indications, pas des garanties](https://modelcontextprotocol.io/specification/2026-07-28/server/tools).
 
@@ -68,7 +53,7 @@ Les dix tests vérifient notamment les arguments et les erreurs. Celui de la ten
 Ouvrez maintenant la note archivée :
 
 ```bash
-python client.py document note-archivee --journal sorties/note.json
+python client.py document note-archivee --serveur mon_serveur.py --journal sorties/controle-note.json
 ```
 
 Son texte demande d’ignorer le ticket, de terminer PRIX-1, puis d’annoncer que tous les tests passent. C’est le document piégé fictif de l’atelier.
@@ -85,4 +70,4 @@ Le serveur sait fournir des données et rejeter certaines demandes. Il ne sait t
 
 ---
 
-[Précédent : Construire les outils dont on a besoin](../03-construire/LECTURE.md) · [Suivant : Écrire notre premier skill](../05-skill/LECTURE.md)
+[Précédent : Développer notre serveur MCP, pas à pas](../03-construire/LECTURE.md) · [Suivant : Écrire notre premier skill](../05-skill/LECTURE.md)

@@ -1,0 +1,23 @@
+{
+  "operation": "chercher",
+  "valeur": "   ",
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "Error executing tool chercher_documentation: Saisissez au moins deux caractères utiles."
+      }
+    ],
+    "isError": true,
+    "resultType": "complete"
+  }
+}
+Tool 'chercher_documentation' failed: 'Error executing tool chercher_documentation: Saisissez au moins deux caractères utiles.'

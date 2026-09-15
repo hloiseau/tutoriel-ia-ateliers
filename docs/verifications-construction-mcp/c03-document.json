@@ -1,0 +1,29 @@
+{
+  "operation": "document",
+  "valeur": "regle-notification",
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"regle-notification\",\n  \"titre\": \"Règle de notification du suivi de prix\",\n  \"statut\": \"en vigueur\",\n  \"revision\": \"exemple-1\",\n  \"texte\": \"Le prix est un entier en centimes. La notification est autorisée si le produit est actuellement disponible et si le prix a strictement baissé depuis l’observation précédente. Un retour en stock avec baisse notifie ; avec prix identique ou hausse, non.\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "id": "regle-notification",
+      "titre": "Règle de notification du suivi de prix",
+      "statut": "en vigueur",
+      "revision": "exemple-1",
+      "texte": "Le prix est un entier en centimes. La notification est autorisée si le produit est actuellement disponible et si le prix a strictement baissé depuis l’observation précédente. Un retour en stock avec baisse notifie ; avec prix identique ou hausse, non."
+    },
+    "isError": false,
+    "resultType": "complete"
+  }
+}

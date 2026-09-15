@@ -1,0 +1,26 @@
+{
+  "operation": "ticket",
+  "valeur": "PRIX-1",
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"PRIX-1\",\n  \"titre\": \"Mon premier outil MCP\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "id": "PRIX-1",
+      "titre": "Mon premier outil MCP"
+    },
+    "isError": false,
+    "resultType": "complete"
+  }
+}

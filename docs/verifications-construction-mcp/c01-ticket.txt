@@ -1,0 +1,26 @@
+{
+  "operation": "ticket",
+  "valeur": "PRIX-1",
+  "serveur": "mon_serveur.py",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"PRIX-1\",\n  \"titre\": \"Ne plus notifier une simple remise en stock\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "id": "PRIX-1",
+      "titre": "Ne plus notifier une simple remise en stock"
+    },
+    "isError": false,
+    "resultType": "complete"
+  }
+}
