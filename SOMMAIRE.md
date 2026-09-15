@@ -2,7 +2,7 @@
 
 [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
-Les quatre premières parties sont centralisées avec leurs sources et illustrations : **28 chapitres et deux annexes, 108 sections et 32 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
+Les cinq premières parties sont centralisées avec leurs sources et illustrations : **34 chapitres et deux annexes, 126 sections et 35 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 
 ## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
@@ -52,14 +52,23 @@ Les quatre premières parties sont centralisées avec leurs sources et illustrat
 6. [Vérifier au-delà de la dernière ligne verte](tutoriel/04-developpement/05-verifier/LECTURE.md)
 7. [Garder un changement que l’on sait expliquer](tutoriel/04-developpement/06-garder-la-main/LECTURE.md)
 
-## Parties suivantes
+## 5. Comprendre et encadrer les agents de code
 
-5. Comprendre et encadrer les agents de code.
+[Introduction](tutoriel/05-agents/introduction.md) · [Toute la partie](tutoriel/05-agents/LECTURE.md) · [Atelier](ateliers/05-agents/README.md)
+
+1. [Suivre une demande jusqu’à l’outil](tutoriel/05-agents/01-boucle/LECTURE.md)
+2. [Donner le contexte utile à l’étape en cours](tutoriel/05-agents/02-contexte/LECTURE.md)
+3. [Écrire des consignes que l’on peut contrôler](tutoriel/05-agents/03-consignes/LECTURE.md)
+4. [Observer un refus qui ne dépend pas du modèle](tutoriel/05-agents/04-permissions/LECTURE.md)
+5. [Arrêter une boucle et reprendre sans perdre le fil](tutoriel/05-agents/05-reprise/LECTURE.md)
+6. [Mesurer ce que la session nous a coûté](tutoriel/05-agents/06-couts/LECTURE.md)
+
+## Parties suivantes
 6. Les MCP et les skills en pratique.
 7. Construire et adapter son IA maison.
 8. Choisir la place de l’IA.
 
-[Lire le plan détaillé des parties 5 à 8](docs/plan-parties-suivantes.md). Ces parties restent à rédiger. Les questions éthiques, l’apprentissage des juniors et le choix de se passer de l’IA restent également présents dans les premières parties.
+[Lire le plan détaillé des parties 6 à 8](docs/plan-parties-suivantes.md). Ces parties restent à rédiger. Les questions éthiques, l’apprentissage des juniors et le choix de se passer de l’IA restent également présents dans les premières parties.
 
 ## Annexes
 

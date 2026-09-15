@@ -9,5 +9,7 @@
 
 - [Reprendre sur la machine de l’auteur](reprise-locale.md).
 - [Expériences à lancer](experiences-a-lancer.md).
-- [Plan détaillé des parties 5 à 8](plan-parties-suivantes.md).
+- [Plan détaillé des parties 6 à 8](plan-parties-suivantes.md).
 - [Contrôle structurel du tutoriel](structure-tutoriel.json).
+
+- [Vérification de la partie 5](../tutoriel/05-agents/VERIFICATION.md).

@@ -24,6 +24,7 @@ def main():
     tests('ateliers/03-modele-local/atelier-local', 6, 0)
     for etape, nombre, echecs in [('01-depart', 3, 0), ('02-test-rouge', 13, 2), ('03-corrige', 13, 0)]:
         tests('ateliers/04-developpement/atelier-developpement/' + etape, nombre, echecs)
+    tests('ateliers/05-agents', 12, 0)
     print('Les résultats correspondent aux étapes attendues.')
 
 

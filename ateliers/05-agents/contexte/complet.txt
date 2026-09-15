@@ -1,0 +1,77 @@
+HISTORIQUE FICTIF SANS RAPPORT AVEC LA DEMANDE
+Ancien message fictif 1 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 2 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 3 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 4 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 5 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 6 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 7 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 8 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 9 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 10 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 11 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 12 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 13 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 14 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 15 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 16 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 17 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 18 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 19 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 20 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 21 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 22 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 23 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 24 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 25 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 26 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 27 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 28 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 29 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 30 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 31 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 32 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 33 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 34 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 35 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 36 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 37 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 38 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 39 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 40 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 41 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 42 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 43 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 44 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 45 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 46 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 47 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 48 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 49 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 50 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 51 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 52 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 53 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 54 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 55 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 56 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 57 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 58 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 59 : vérification de la mise en page du tableau de bord.
+Ancien message fictif 60 : vérification de la mise en page du tableau de bord.
+
+DEMANDE
+Explique pourquoi un retour en stock au même prix peut déclencher une notification. Ne modifie rien.
+
+CODE INITIAL
+def notifier(ancien, nouveau):
+    return nouveau.disponible and (
+        nouveau.prix_centimes < ancien.prix_centimes or not ancien.disponible
+    )
+
+CAS
+ancien : prix_centimes=2000, disponible=False
+nouveau : prix_centimes=2000, disponible=True
+
+SORTIE DU PROGRAMME
+{"notifier": true}

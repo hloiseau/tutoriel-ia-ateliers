@@ -10,11 +10,12 @@ Mis à jour le **15 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 | [2 — Construire un modèle](../tutoriel/02-apprentissage/README.md) | 8 | 31 | 13 | Version V2 rédigée, à poursuivre en relecture |
 | [3 — Modèle local](../tutoriel/03-modele-local/README.md) | 6 | 21 | 4 | Rédigée ; corrections demandées sur la forme conservées ; transition vers la partie 4 ajoutée |
 | [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Atelier continu ; interfaces à vérifier |
+| [5 — Agents](../tutoriel/05-agents/README.md) | 6 | 18 | 3 | Première rédaction complète ; banc Python exécuté, essais avec un modèle à réaliser |
 | [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Comparatif des outils et expérience locale facultative |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
 
-Les parties 5 à 8 disposent d’un [plan détaillé](plan-parties-suivantes.md), pas encore de chapitres complets. Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
+Les parties 6 à 8 disposent d’un [plan détaillé](plan-parties-suivantes.md), pas encore de chapitres complets. Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
 
 ## Ce qui a été vérifié pendant l’intégration
 
@@ -50,3 +51,7 @@ Sept chapitres suivent désormais un seul atelier ; le comparatif et l’expéri
 ## Déplacement dans les annexes
 
 À la demande de l’auteur, les anciens chapitres 8 et 9 de la partie 4 sont déplacés dans `tutoriel/annexes/`. La partie 4 comporte désormais sept chapitres et son export ne contient plus le comparatif ni l’expérience locale. Ceux-ci disposent d’un manifest et d’un ZIP d’import propres. Les anciens liens de lecture renvoient vers les annexes.
+
+## Partie 5 rédigée
+
+Six chapitres, dix-huit sections, trois schémas et un atelier Python. Le banc rejoue des demandes d’outils fictives sans modèle. Son archive a été extraite et les manipulations exécutées ; les observations avec un assistant réel restent à faire. Voir [les résultats et les limites](../tutoriel/05-agents/VERIFICATION.md).

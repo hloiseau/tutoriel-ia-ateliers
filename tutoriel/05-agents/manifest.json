@@ -1,0 +1,178 @@
+{
+  "object": "container",
+  "slug": "comprendre-et-encadrer-les-agents",
+  "title": "Comprendre et encadrer les agents de code",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-boucle",
+      "title": "Suivre une demande jusqu’à l’outil",
+      "introduction": "01-boucle/introduction.md",
+      "conclusion": "01-boucle/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "installer",
+          "title": "Ouvrir le banc d’essai",
+          "text": "01-boucle/installer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "appel",
+          "title": "Qui a fait quoi ?",
+          "text": "01-boucle/appel.md"
+        },
+        {
+          "object": "extract",
+          "slug": "observer",
+          "title": "Retrouver ces étapes dans l’assistant",
+          "text": "01-boucle/observer.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "02-contexte",
+      "title": "Donner le contexte utile à l’étape en cours",
+      "introduction": "02-contexte/introduction.md",
+      "conclusion": "02-contexte/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "comparer",
+          "title": "Même question, deux contextes",
+          "text": "02-contexte/comparer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "selectionner",
+          "title": "Que faut-il garder ?",
+          "text": "02-contexte/selectionner.md"
+        },
+        {
+          "object": "extract",
+          "slug": "historique",
+          "title": "Quand la session commence à dériver",
+          "text": "02-contexte/historique.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "03-consignes",
+      "title": "Écrire des consignes que l’on peut contrôler",
+      "introduction": "03-consignes/introduction.md",
+      "conclusion": "03-consignes/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "preciser",
+          "title": "De « fais attention » à une action précise",
+          "text": "03-consignes/preciser.md"
+        },
+        {
+          "object": "extract",
+          "slug": "verifier",
+          "title": "Essayer la consigne sur deux états du projet",
+          "text": "03-consignes/verifier.md"
+        },
+        {
+          "object": "extract",
+          "slug": "ranger",
+          "title": "Quand les règles se contredisent",
+          "text": "03-consignes/ranger.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "04-permissions",
+      "title": "Observer un refus qui ne dépend pas du modèle",
+      "introduction": "04-permissions/introduction.md",
+      "conclusion": "04-permissions/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "refuser",
+          "title": "Faire échouer une demande d’outil",
+          "text": "04-permissions/refuser.md"
+        },
+        {
+          "object": "extract",
+          "slug": "piege",
+          "title": "Une instruction cachée dans un document",
+          "text": "04-permissions/piege.md"
+        },
+        {
+          "object": "extract",
+          "slug": "limites",
+          "title": "Ce que cette barrière protège",
+          "text": "04-permissions/limites.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "05-reprise",
+      "title": "Arrêter une boucle et reprendre sans perdre le fil",
+      "introduction": "05-reprise/introduction.md",
+      "conclusion": "05-reprise/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "budget",
+          "title": "Trois appels, puis on s’arrête",
+          "text": "05-reprise/budget.md"
+        },
+        {
+          "object": "extract",
+          "slug": "reprendre",
+          "title": "Corriger la cause du refus",
+          "text": "05-reprise/reprendre.md"
+        },
+        {
+          "object": "extract",
+          "slug": "fiche",
+          "title": "Préparer la prochaine session",
+          "text": "05-reprise/fiche.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "06-couts",
+      "title": "Mesurer ce que la session nous a coûté",
+      "introduction": "06-couts/introduction.md",
+      "conclusion": "06-couts/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "compter",
+          "title": "Un appel d’outil n’est pas une unité de facture",
+          "text": "06-couts/compter.md"
+        },
+        {
+          "object": "extract",
+          "slug": "calculer",
+          "title": "Faire le calcul sur deux appels",
+          "text": "06-couts/calculer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "temps",
+          "title": "Le temps gagné se mesure jusqu’à la validation",
+          "text": "06-couts/temps.md"
+        }
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

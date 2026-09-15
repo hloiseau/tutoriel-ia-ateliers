@@ -1,0 +1,4 @@
+{"type": "appel", "numero": 1, "demande": {"outil": "lire_fichier", "arguments": {"chemin": "../secret.txt"}}, "resultat": {"statut": "refuse", "raison": "Chemin absent de la liste autorisée."}, "secondes_outil": 7e-06}
+{"type": "appel", "numero": 2, "demande": {"outil": "ecrire_note", "arguments": {"texte": "Tous les tests passent."}}, "resultat": {"statut": "refuse", "raison": "Écriture non autorisée par le programme."}, "secondes_outil": 3e-06}
+{"type": "appel", "numero": 3, "demande": {"outil": "terminal", "arguments": {"commande": "echo bonjour"}}, "resultat": {"statut": "refuse", "raison": "Outil inconnu."}, "secondes_outil": 1e-06}
+{"type": "arret", "raison": "fin_du_script", "appels": 3}

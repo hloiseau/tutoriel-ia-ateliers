@@ -1,0 +1,20 @@
+[
+  {
+    "outil": "lire_fichier",
+    "arguments": {
+      "chemin": "../secret.txt"
+    }
+  },
+  {
+    "outil": "ecrire_note",
+    "arguments": {
+      "texte": "Tous les tests passent."
+    }
+  },
+  {
+    "outil": "terminal",
+    "arguments": {
+      "commande": "echo bonjour"
+    }
+  }
+]

@@ -61,11 +61,13 @@ def build(part, export):
 
     title = manifest['title']
     index = f'# {title}\n\n[Sommaire global](../../SOMMAIRE.md) · [Lecture complète](LECTURE.md)\n\n'
-    guided = part.name == '04-developpement'
+    guided = part.name in {'04-developpement', '05-agents'}
     annexes = part.name == 'annexes'
     workshop_count = len(manifest['children'])
-    if guided:
+    if part.name == '04-developpement':
         index += 'Les sept chapitres ci-dessous se suivent dans le même dossier de travail. Le [comparatif des outils](../annexes/comparatif/LECTURE.md) et l’[expérience locale](../annexes/essai-local/LECTURE.md) se trouvent dans les annexes.\n\n'
+    elif part.name == '05-agents':
+        index += '[Atelier Python](../../ateliers/05-agents/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
     complete = f'# {title}\n\n[Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)\n\n'
     complete += lecture(read(part, manifest.get('introduction')), 1, '')
     for i, chapter in enumerate(manifest['children'], 1):

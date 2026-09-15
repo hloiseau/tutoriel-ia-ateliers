@@ -1,0 +1,14 @@
+[
+  {
+    "outil": "lire_fichier",
+    "arguments": {
+      "chemin": "TICKET.md"
+    }
+  },
+  {
+    "outil": "lire_fichier",
+    "arguments": {
+      "chemin": "suivi.py"
+    }
+  }
+]

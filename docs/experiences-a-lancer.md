@@ -53,3 +53,7 @@ Reconstruire les lectures et les archives avec `python outils/assembler_tutoriel
 ## 7. Installation des assistants
 
 Rejouer le parcours principal VS Code/Copilot et, séparément, l’expérience facultative Continue avec le serveur local, puis Qwen sur CPU. Pour cette dernière, mesurer le délai, conserver la réponse et vérifier son exactitude ; ne pas en déduire une capacité à mener l’atelier comme agent. Consigner les versions, la connexion effective, le contexte utilisé et les erreurs. Voir `tutoriel/04-developpement/VERIFICATION.md`.
+
+## Partie 5 — observations avec un assistant
+
+Le banc Python sans modèle est exécuté et ses journaux sont conservés. Rejouer les observations de lecture, les deux contextes, les deux états de tests et la reprise de session avec un assistant réel. Consigner le modèle et la version, les pièces jointes, les réponses, les erreurs, le temps et les compteurs disponibles. Aucun résultat du banc ne doit être présenté comme une réponse de ce modèle. Voir `tutoriel/05-agents/VERIFICATION.md`.

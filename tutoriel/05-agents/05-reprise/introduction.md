@@ -1,0 +1,1 @@
+**TL;DR** — Nous allons arrêter des lectures répétées avec un budget d’appels, puis corriger une demande refusée. Pour une vraie session, nous conserverons l’état des fichiers et la prochaine action à vérifier.

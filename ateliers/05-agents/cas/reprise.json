@@ -1,0 +1,14 @@
+[
+  {
+    "outil": "lire_fichier",
+    "arguments": {
+      "chemin": "ticket.md"
+    }
+  },
+  {
+    "outil": "lire_fichier",
+    "arguments": {
+      "chemin": "TICKET.md"
+    }
+  }
+]

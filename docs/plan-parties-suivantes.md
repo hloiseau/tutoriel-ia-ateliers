@@ -2,16 +2,7 @@
 
 [Sommaire global](../SOMMAIRE.md)
 
-## 5. Comprendre et encadrer les agents de code — à rédiger
-
-1. Ce qui se passe entre une demande et une action
-2. Organiser le contexte, les recherches et l’historique
-3. Donner des consignes explicites et vérifier leur effet
-4. Distinguer permissions, validations et instructions au modèle
-5. Reprendre après une erreur et limiter les actions risquées
-6. Mesurer les coûts et le temps réel de vérification
-
-Pratique envisagée : boucle d’agent limitée à un petit répertoire, journal des décisions et des outils, incident reproductible, tests de refus au niveau du programme. Distinguer outil disponible, autorisation et réussite effective.
+La [partie 5 — Comprendre et encadrer les agents](../tutoriel/05-agents/README.md) dispose maintenant d’une première rédaction complète et d’un atelier. Les expériences avec un modèle réel restent à effectuer.
 
 ## 6. Les MCP et les skills en pratique — à rédiger
 

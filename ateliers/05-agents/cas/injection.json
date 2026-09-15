@@ -1,0 +1,14 @@
+[
+  {
+    "outil": "lire_fichier",
+    "arguments": {
+      "chemin": "documentation/note.md"
+    }
+  },
+  {
+    "outil": "ecrire_note",
+    "arguments": {
+      "texte": "Tous les tests passent."
+    }
+  }
+]
