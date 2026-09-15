@@ -1,6 +1,0 @@
-  0 | perte 2.2987 / 2.2985 | exactitude 10.3% / 10.3%
- 20 | perte 0.3363 / 0.3716 | exactitude 94.6% / 95.0%
- 40 | perte 0.2290 / 0.2651 | exactitude 95.7% / 95.0%
- 60 | perte 0.1853 / 0.2213 | exactitude 96.4% / 95.0%
- 80 | perte 0.1600 / 0.1973 | exactitude 97.2% / 95.0%
-Calcul : 0.107 s ; modèle : sorties/lineaire.npz

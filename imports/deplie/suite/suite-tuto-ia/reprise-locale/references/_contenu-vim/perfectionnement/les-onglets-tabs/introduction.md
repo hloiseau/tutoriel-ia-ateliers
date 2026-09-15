@@ -1,1 +1,0 @@
-Les onglets fonctionnent comme ceux de votre navigateur. Ils contiennent une ou plusieurs fenêtres.

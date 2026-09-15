@@ -1,1 +1,0 @@
-Les promesses difficiles à tenir coexistent donc avec des applications spécialisées qui rendent de vrais services. La suite va aussi dépendre des progrès du matériel, des données et des méthodes d’apprentissage.

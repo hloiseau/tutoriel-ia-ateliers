@@ -1,1 +1,0 @@
-Dans cette partie nous allons parler de fonctionnalité plus éloignée de l'édition de texte par rapport aux parties précédentes. On peut voir cette partie comme des *autour* qui permettent une productivité accrue.

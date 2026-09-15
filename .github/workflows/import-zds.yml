@@ -1,22 +1,23 @@
-name: Recuperer les exports ZdS
+name: Assembler les quatre parties ZdS
 on:
   push:
     branches: ["integration/archives-zds"]
-    paths: [".github/workflows/import-zds.yml", "outils/decompresser_imports.py"]
+    paths: [".github/workflows/import-zds.yml", "outils/assembler_tutoriel.py"]
 permissions:
   contents: write
 jobs:
-  extraction:
+  assemblage:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-      - name: Decompresser les archives
-        run: python3 outils/decompresser_imports.py
-      - name: Enregistrer les fichiers recuperes
+      - name: Verifier et assembler les sources
+        run: python3 outils/assembler_tutoriel.py --exports telechargements/zds
+      - name: Conserver les archives ZdS
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add imports/deplie
-          git commit -m "Decompresser les trois exports ZdS fournis"
+          git add tutoriel docs/structure-tutoriel.json telechargements/zds
+          git diff --cached --quiet && exit 0
+          git commit -m "Assembler les quatre archives ZdS depuis les sources centralisees"
           git push origin HEAD:integration/archives-zds

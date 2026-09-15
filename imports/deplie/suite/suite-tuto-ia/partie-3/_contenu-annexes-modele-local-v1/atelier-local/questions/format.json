@@ -1,6 +1,0 @@
-[
-  {
-    "role": "user",
-    "content": "Return only valid JSON with one key named colors and the list [\"red\", \"blue\"] as its value."
-  }
-]

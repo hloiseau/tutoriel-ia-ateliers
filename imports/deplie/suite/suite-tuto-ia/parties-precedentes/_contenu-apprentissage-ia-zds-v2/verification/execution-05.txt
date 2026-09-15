@@ -1,2 +1,0 @@
-Validation d'origine : 95.0%
-Décalée d'un pixel à droite : 41.4%

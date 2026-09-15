@@ -1,1 +1,0 @@
-Il existe deux types de plugins, les plugins globaux (qui sont actifs sur tous les types de fichiers) et les plugins spécifiques au type de fichier (qui sont actifs uniquement pour le type spécifier).

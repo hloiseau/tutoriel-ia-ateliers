@@ -1,2 +1,0 @@
-Personnaliser son outil est très pratique pour être plus productif en fonction de ses besoins. Ici nous avons vu seulement la partie immergée de l'iceberg de la personnalisation de Vim.  
-Pour tout besoin plus spécifique, une recherche dans votre moteur de recherche favori vous permettra de trouver l'option ou le plugin adéquat.

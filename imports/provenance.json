@@ -1,0 +1,1236 @@
+{
+  "archives": [
+    {
+      "path": "imports/histoire-ia-zds-v3.zip",
+      "sha256": "56cf64b41bcbca81abce237aa958fb263ffaae542f3a3ab6fa294b36baa5c1a4"
+    },
+    {
+      "path": "imports/apprentissage-ia-zds-v2.zip",
+      "sha256": "d8f30731bc95fd67db5f2f786588c378fe77703d491bf05fbd9201c6c27fcb09"
+    },
+    {
+      "path": "imports/tutoriel-ia-suite-parties-3-4.zip",
+      "sha256": "b9ff4ceb6d49d037ba77794254f2d2c1eb1963266e8a98edffa98303c6227f04"
+    }
+  ],
+  "fichiers": [
+    {
+      "destination": "tutoriel/01-histoire/01-origines/babbage-lovelace.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "01-origines/babbage-lovelace.md",
+      "sha256_source": "2e36d5c3118a1133643abdffbaf371ad7019080c48e38c164e6d2a1d7812890a"
+    },
+    {
+      "destination": "tutoriel/01-histoire/01-origines/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "01-origines/conclusion.md",
+      "sha256_source": "29f0d520e8a658427cb79b0402a4759f17dbdb9a1a22ea6e1f662ff624c4c516"
+    },
+    {
+      "destination": "tutoriel/01-histoire/01-origines/dartmouth.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "01-origines/dartmouth.md",
+      "sha256_source": "e8a7910a1fbb288182a276a716e6ad18b8031443d2b0a2298491dcdc1b2aae22"
+    },
+    {
+      "destination": "tutoriel/01-histoire/01-origines/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "01-origines/introduction.md",
+      "sha256_source": "288977931fa563623c39bcc1b8df2d6930f1d2a4eb036ea8e1d4f0f4d95e1c17"
+    },
+    {
+      "destination": "tutoriel/01-histoire/01-origines/neurones.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "01-origines/neurones.md",
+      "sha256_source": "4c1a38208da566276fd8b5b4bff1cd05b35b1af5be89c7217546b6e5923d5fdb"
+    },
+    {
+      "destination": "tutoriel/01-histoire/01-origines/turing.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "01-origines/turing.md",
+      "sha256_source": "9c00d80edf2f38260b014853ead387d11d8ee6169005826c68154cc52be28441"
+    },
+    {
+      "destination": "tutoriel/01-histoire/02-regles/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "02-regles/conclusion.md",
+      "sha256_source": "aea558d4e15f963391f8bddcc05177ca6b978e9ae801c8a5069675ad052f32c6"
+    },
+    {
+      "destination": "tutoriel/01-histoire/02-regles/echecs.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "02-regles/echecs.md",
+      "sha256_source": "1059a039b9a6c427eeb451dbd24d651fdbe5d605295c8b75cea7a6ff22d47919"
+    },
+    {
+      "destination": "tutoriel/01-histoire/02-regles/eliza.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "02-regles/eliza.md",
+      "sha256_source": "bddc4164b6e3e8517950a2fe2174965e8271752b51c965680839d5e24b7cf0e9"
+    },
+    {
+      "destination": "tutoriel/01-histoire/02-regles/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "02-regles/introduction.md",
+      "sha256_source": "287f6dd7b62571678877f96e2c7e55c8e9f67fe7a71849dab40f17bfd4bfb674"
+    },
+    {
+      "destination": "tutoriel/01-histoire/02-regles/logique.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "02-regles/logique.md",
+      "sha256_source": "060c9bd1d7a1fc73e8e600f0174748a21d8568da585196822fa23faaea338991"
+    },
+    {
+      "destination": "tutoriel/01-histoire/03-apprendre/apprentissage.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "03-apprendre/apprentissage.md",
+      "sha256_source": "9aa0d45933f12d05057530a1382f92a9af1f30e395c755fbfb96ce949f0d4f84"
+    },
+    {
+      "destination": "tutoriel/01-histoire/03-apprendre/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "03-apprendre/conclusion.md",
+      "sha256_source": "ea1f5c0cc23b71a817259811e3c5ab0df08f5f89d02d85e70ff9beacd1e664ef"
+    },
+    {
+      "destination": "tutoriel/01-histoire/03-apprendre/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "03-apprendre/introduction.md",
+      "sha256_source": "2ad4e1a6fa18b87bbf0a9540a0d6ba7da9335f0ad9f51da021221e0cb3974fce"
+    },
+    {
+      "destination": "tutoriel/01-histoire/03-apprendre/perceptron.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "03-apprendre/perceptron.md",
+      "sha256_source": "fa238ba7a769c0e5a49bc5c22527fefe4727fe4f30e5a2d2a8df99bf0fbaee02"
+    },
+    {
+      "destination": "tutoriel/01-histoire/03-apprendre/plusieurs-couches.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "03-apprendre/plusieurs-couches.md",
+      "sha256_source": "b8de6981987dc09a6aec40911975b495a251c7f44afc693f49d42cb0c398d7de"
+    },
+    {
+      "destination": "tutoriel/01-histoire/04-promesses/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "04-promesses/conclusion.md",
+      "sha256_source": "1996637ba7b2aa137dfc2485385c678464985c69bec192500c99631be3bc5b79"
+    },
+    {
+      "destination": "tutoriel/01-histoire/04-promesses/cycles.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "04-promesses/cycles.md",
+      "sha256_source": "df1c16a9f8116a9df69568de03760939f6dece2cbcf821270d66f3bc608907bb"
+    },
+    {
+      "destination": "tutoriel/01-histoire/04-promesses/experts.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "04-promesses/experts.md",
+      "sha256_source": "574c7c1f6709ebceb5210e7075a4bf0a5ddb2af9ff8294d9fe69a070cfb1e59a"
+    },
+    {
+      "destination": "tutoriel/01-histoire/04-promesses/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "04-promesses/introduction.md",
+      "sha256_source": "0b694c62dcfff15cbb4f1d3be6e1d55809e89bc567feb948730470f472305d30"
+    },
+    {
+      "destination": "tutoriel/01-histoire/04-promesses/limites.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "04-promesses/limites.md",
+      "sha256_source": "1aa8a11800e4fd64e13ac01448063989450405843d32ad447a58759ac55d8c8a"
+    },
+    {
+      "destination": "tutoriel/01-histoire/04-promesses/r1.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "04-promesses/r1.md",
+      "sha256_source": "4009be8beb71da4ba3ed850bd86d788f89d05a5e49646e58c18e22e37922bf8f"
+    },
+    {
+      "destination": "tutoriel/01-histoire/05-deep-learning/alexnet.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "05-deep-learning/alexnet.md",
+      "sha256_source": "74bd3bb7966937a39ae848c302aac67164bd8af58fdf3f9b0aedb7834bd3c6fc"
+    },
+    {
+      "destination": "tutoriel/01-histoire/05-deep-learning/alphago.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "05-deep-learning/alphago.md",
+      "sha256_source": "d0bfee5c8c5bf7f3d8933d759f8d879d4fba535ab18c1faf2c0b3eb8b690b146"
+    },
+    {
+      "destination": "tutoriel/01-histoire/05-deep-learning/autres-methodes.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "05-deep-learning/autres-methodes.md",
+      "sha256_source": "7aa9f385a7a9bffd9e4fbe41e452e71b13d49550ccc234fe618ce7756b3d1194"
+    },
+    {
+      "destination": "tutoriel/01-histoire/05-deep-learning/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "05-deep-learning/conclusion.md",
+      "sha256_source": "27c88693744f00684a3d70aa4175ddbaa52f254bf35fe2a67b27e62bc305de84"
+    },
+    {
+      "destination": "tutoriel/01-histoire/05-deep-learning/deep-blue.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "05-deep-learning/deep-blue.md",
+      "sha256_source": "5950835f90ba5852a76e533e9bfc2bc455833e91f7fea254bcd7bd9ca55a0520"
+    },
+    {
+      "destination": "tutoriel/01-histoire/05-deep-learning/imagenet.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "05-deep-learning/imagenet.md",
+      "sha256_source": "41e5b28c63c8a6713d9dec072b0faa977b581f47d589870b9da848f7cfa52bd1"
+    },
+    {
+      "destination": "tutoriel/01-histoire/05-deep-learning/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "05-deep-learning/introduction.md",
+      "sha256_source": "e0b3f156be3ab1a754238d8f1590dda2c8bf162e62232381611665ac1c509812"
+    },
+    {
+      "destination": "tutoriel/01-histoire/06-generatif/attention.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "06-generatif/attention.md",
+      "sha256_source": "cf7750576b8a413bea34e45493625eafa084aa6bdba273b6211670d617a39317"
+    },
+    {
+      "destination": "tutoriel/01-histoire/06-generatif/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "06-generatif/conclusion.md",
+      "sha256_source": "542f8ef83b9fca0f457f40ae487570cd0dd7f730a8e83169bb83270f23222d2f"
+    },
+    {
+      "destination": "tutoriel/01-histoire/06-generatif/donnees.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "06-generatif/donnees.md",
+      "sha256_source": "73cd311887a72783b8bad414d1cd1de7366bb5e803d4a6d14b6b37b23fdd6175"
+    },
+    {
+      "destination": "tutoriel/01-histoire/06-generatif/images.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "06-generatif/images.md",
+      "sha256_source": "9e3c727a911791d6d971d9940720c100e7e53a1a1a501d3a3eaaf6db801841d2"
+    },
+    {
+      "destination": "tutoriel/01-histoire/06-generatif/instructions.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "06-generatif/instructions.md",
+      "sha256_source": "4fea0920b97dc8306afea44ecab2c50c22a18ddc1a774cd88eb10615297df378"
+    },
+    {
+      "destination": "tutoriel/01-histoire/06-generatif/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "06-generatif/introduction.md",
+      "sha256_source": "dece8d3080028793c824eb02a74c700834a429689750ce94609935caee9654ab"
+    },
+    {
+      "destination": "tutoriel/01-histoire/06-generatif/langage.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "06-generatif/langage.md",
+      "sha256_source": "c744bc3ced7e97b6158487320edaf2e9e7c06223d747d398440cd067450ff525"
+    },
+    {
+      "destination": "tutoriel/01-histoire/07-aujourdhui/agents.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "07-aujourdhui/agents.md",
+      "sha256_source": "3d2d4ed43771411144d0b2542f4dd3f9dc632507453789ad8d8844d3647d7193"
+    },
+    {
+      "destination": "tutoriel/01-histoire/07-aujourdhui/choisir.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "07-aujourdhui/choisir.md",
+      "sha256_source": "55894bf6065e036231fc45e622c5ba339ce88c0a05f8927d4d0a8cd360efcaf0"
+    },
+    {
+      "destination": "tutoriel/01-histoire/07-aujourdhui/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "07-aujourdhui/conclusion.md",
+      "sha256_source": "8ba667af9a2a29dd6eacc534bcb41249b6925a326e7f536c6c9cf154152deabd"
+    },
+    {
+      "destination": "tutoriel/01-histoire/07-aujourdhui/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "07-aujourdhui/introduction.md",
+      "sha256_source": "d491e3b135105d1b411696f6a75a3ea4066892acab3ff2d938261cecd8c5c62d"
+    },
+    {
+      "destination": "tutoriel/01-histoire/07-aujourdhui/mcp-skills.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "07-aujourdhui/mcp-skills.md",
+      "sha256_source": "74dd23b85341aff55a31f974554f6277618f14f0f9f31e2d5e472f5467a512dd"
+    },
+    {
+      "destination": "tutoriel/01-histoire/07-aujourdhui/modeles-locaux.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "07-aujourdhui/modeles-locaux.md",
+      "sha256_source": "d7cadb948f325a7ab5783d2a038829405a222ab3762d77bb7c1b44ace57f1b99"
+    },
+    {
+      "destination": "tutoriel/01-histoire/07-aujourdhui/raisonnement.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "07-aujourdhui/raisonnement.md",
+      "sha256_source": "1dff0b3ae1baf6fd5d450f9707f389690b17fcf5c4819148d1e6267e2690eca6"
+    },
+    {
+      "destination": "tutoriel/01-histoire/CREDITS.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "CREDITS.md",
+      "sha256_source": "f8ba87da5e8f8d4c66878e1b769f271ba476beaf16112901ba544f656e23ba76"
+    },
+    {
+      "destination": "tutoriel/01-histoire/conclusion.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "conclusion.md",
+      "sha256_source": "bde1a2c842cec8dc96e8bf964f55725bc66d83cdf2e916c69be1b75ac8108e36"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/agent-outils.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/agent-outils.png",
+      "sha256_source": "c091aa0d8d3ac2c577ae15693487e959bc5b1639ebce363bf8f7263fc305d38b"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/arbre-recherche.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/arbre-recherche.png",
+      "sha256_source": "f42bc67353d14ee4cb61a3fc7cc0983e1533a7bac7c5abf38a4268a0729d447b"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/attention.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/attention.png",
+      "sha256_source": "74ef39a62a8c2ae819d32096a616ce860f6c02ec4d6decace0a5ca779db57a2a"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/babbage-cartes.jpg",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/babbage-cartes.jpg",
+      "sha256_source": "54864e110e3b4482da66d7bbd974a9ad483b8ae3bb070cc11e98a853ac01ca63"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/babbage-mecanisme.jpg",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/babbage-mecanisme.jpg",
+      "sha256_source": "4017b6e92098472ee4f1027f13f2b67d78629711308a48abea18bdb8b70d2d5b"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/couches-erreur.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/couches-erreur.png",
+      "sha256_source": "fee7fb22c7ab5e32e8320476f6de9696fa973c763e21002fbc903fc17d5936aa"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/deduction.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/deduction.png",
+      "sha256_source": "6628fb610012ed3725ec0176cb1f6ce27c831bfae32d24bdc4ccd2ea70fa2873"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/diffusion.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/diffusion.png",
+      "sha256_source": "1fd03b10f37d9e90660be9d9ea2f967efb0e09ddf5ba97b678fe4db4aaede100"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/image-couches.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/image-couches.png",
+      "sha256_source": "951918b2293ad35d021a3c20e28ac666ece8805d672e53b6fccd72f3c2ec08fe"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/neurone-deux-signaux.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/neurone-deux-signaux.png",
+      "sha256_source": "5a1ae11db0c379e970d15d46bf1e23bb57ce482fbdd1a210ba1d80343a7dab90"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/separation.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/separation.png",
+      "sha256_source": "f07bdd1e6d08cee49416ffd1784a76aec177ce72ba0a01bfeb56d072a0b21a2f"
+    },
+    {
+      "destination": "tutoriel/01-histoire/images/systeme-expert.png",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "images/systeme-expert.png",
+      "sha256_source": "0ea9f06c51b151d7c92d8da49773ada1cd2c990cb2643bd2e89301890b84cae5"
+    },
+    {
+      "destination": "tutoriel/01-histoire/introduction.md",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "introduction.md",
+      "sha256_source": "af9bf614b557d356344a09a54ffeef602ca337118d70d74c047a635abe6fb79e"
+    },
+    {
+      "destination": "tutoriel/01-histoire/manifest.json",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "manifest.json",
+      "sha256_source": "f25e15b6782e357d46b71b82fd4ef01ea20accd6dd10d54192050bffbefd8af9"
+    },
+    {
+      "destination": "tutoriel/01-histoire/sources.json",
+      "archive": "histoire-ia-zds-v3.zip",
+      "source": "sources.json",
+      "sha256_source": "7d60ba12d471944d655a52589e4431975a9f49efbf98be13acb99757fc744841"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/01-atelier/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "01-atelier/conclusion.md",
+      "sha256_source": "ace6429065bc4a8e19118b69c671697dbdad5b5a48e661d0925f8b5ab8aadf79"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/01-atelier/depanner.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "01-atelier/depanner.md",
+      "sha256_source": "8d482ab2b1dd8d09f0132cc365ae114d1c61f40cc453326549b38f1e81529fe6"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/01-atelier/installer.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "01-atelier/installer.md",
+      "sha256_source": "1a1b9d14749920174407a3529660162c671cdaad840af278ec3c605a81e8eba1"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/01-atelier/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "01-atelier/introduction.md",
+      "sha256_source": "4d1b1256a4d435424de412ccc6ee10dc2ad0758b6616b23b92877950037c0da4"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/01-atelier/premieres-images.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "01-atelier/premieres-images.md",
+      "sha256_source": "b4022e404f525c8ca781ade1d3a49fe82e38db7669b5661b788c760d95170a53"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/01-atelier/repartir.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "01-atelier/repartir.md",
+      "sha256_source": "046217b289a2d6059401e912fef277b84f1b86b5159ff02dcdc481bd979c9162"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/02-predire/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "02-predire/conclusion.md",
+      "sha256_source": "8857ab609c124ad9b3924ddc6dfe63d17e523ca080751c7bae654beb5d35bb51"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/02-predire/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "02-predire/introduction.md",
+      "sha256_source": "617844767b596daaa86720d345a06b92220a58a9eece07eb70125bc34bf38d47"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/02-predire/poids.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "02-predire/poids.md",
+      "sha256_source": "8fad6bd6e17d6171afea52e72b5659ae07df6aacc29f2a4de7532caca06c161b"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/02-predire/premier-essai.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "02-predire/premier-essai.md",
+      "sha256_source": "d5e1e94b3b98c42c44155c15e2f95b782835e8dc052869b322107e12423a64a5"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/02-predire/softmax.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "02-predire/softmax.md",
+      "sha256_source": "4ac5b664949168ff40096cbe9fc54ca6d38c76861d24d93d74f6b9e917e8d709"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/03-apprendre/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "03-apprendre/conclusion.md",
+      "sha256_source": "48239d2f311480537de574751ac7cd51d0221a38a7bc58d2301c5ba7ee2af052"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/03-apprendre/entrainer.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "03-apprendre/entrainer.md",
+      "sha256_source": "9e4275fbe749c796fe3364b9cae21d99ac8ebbed6b990de3296a3445ba058996"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/03-apprendre/erreur.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "03-apprendre/erreur.md",
+      "sha256_source": "6996c1ed338faf88cd736e8502f57a8c84d0d4be5944ea6d04757172647fc4f5"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/03-apprendre/gradient.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "03-apprendre/gradient.md",
+      "sha256_source": "b706c49bf550db8407164c2b3ca85254b4b1c1d18afddf1934431bab3cb1b96c"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/03-apprendre/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "03-apprendre/introduction.md",
+      "sha256_source": "4d0bdbfe111502612c5edb6d8df5d600940d62fa42e6a37acda79f2ef5b24b22"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/03-apprendre/poids-appris.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "03-apprendre/poids-appris.md",
+      "sha256_source": "27ad185f51fdf6a39c3f95cd5dcd6e34a399570aa436be87c954f13ec7b89b1b"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/04-evaluer/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "04-evaluer/conclusion.md",
+      "sha256_source": "8c6298d17ce12198ebdb0e85f74440df17f1d647c65034bd49f7b441484c70ba"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/04-evaluer/decalage.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "04-evaluer/decalage.md",
+      "sha256_source": "09ce7d47880168be47abd2e5ee7a380ad7dc95a9fe82324ce74c2ae5b684a2a3"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/04-evaluer/erreurs.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "04-evaluer/erreurs.md",
+      "sha256_source": "45166f6285fa94dd0a3fdc14d16419d534c1e8f96ff67a53efb31b2645666a95"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/04-evaluer/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "04-evaluer/introduction.md",
+      "sha256_source": "b87798e74cde29175bda3c3fa56da70e1d21489e610fbc849e41493ae54dd46c"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/04-evaluer/test.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "04-evaluer/test.md",
+      "sha256_source": "fd32dcb1bb59b4a8d9e7fe19f936aa9f3725ac4e5d34d27e90b61fdc195254d9"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/05-dessiner/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "05-dessiner/conclusion.md",
+      "sha256_source": "d76ff383eaaf77e64dd7df1fdb8af96bef97e4450e4cac4062fb50db8ca5b8e8"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/05-dessiner/format.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "05-dessiner/format.md",
+      "sha256_source": "c4e8a7bc54210c9cc6e580728c2188016555540f406638d2008c0e027ca58fae"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/05-dessiner/grille.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "05-dessiner/grille.md",
+      "sha256_source": "56c15db724b1213a49319b7bdf1d3d344d8461414c748b5b8e5b84ca38cd3354"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/05-dessiner/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "05-dessiner/introduction.md",
+      "sha256_source": "0366bf601b3b3331748b5e64b4791e414d22f0a467150fffff0ecfffe4433109"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/05-dessiner/sauvegarde.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "05-dessiner/sauvegarde.md",
+      "sha256_source": "2eb3430c8ae88f908b16cd686bcdb7d438b9220748f3c6f93779ef344c70a763"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/06-reseau/comparaison.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "06-reseau/comparaison.md",
+      "sha256_source": "85d38392476089e5c33ecd5b1446b500d81664328efd56fc12934f45109f0a64"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/06-reseau/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "06-reseau/conclusion.md",
+      "sha256_source": "98237c433764530fdbb87cd02f9a86987f2fc3e49888dbdf0ed5a844b980c3f6"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/06-reseau/couche.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "06-reseau/couche.md",
+      "sha256_source": "27f6a75ac41b77c707028d35418db2f222cb32b49a31d5901d176a1b00770364"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/06-reseau/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "06-reseau/introduction.md",
+      "sha256_source": "35e2d40f04ad02d4b58baddae80be06058fa930c94e3346ae4f72f0ff12ad93f"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/06-reseau/memoriser.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "06-reseau/memoriser.md",
+      "sha256_source": "5a2d79ff569f4cc0a6a4ac31fec964fa96582afc455b48fc1528d599b00272e2"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/06-reseau/retour.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "06-reseau/retour.md",
+      "sha256_source": "e906b275cc67a8879bda1d1fdc5b32b491fb4b8df200fe1d87d4bf0303feffb0"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/07-langage/attention.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "07-langage/attention.md",
+      "sha256_source": "d26bbd31a4f1b1948dedd6367e86094cbb33ce4eb61028e6d5f6088135576773"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/07-langage/compter.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "07-langage/compter.md",
+      "sha256_source": "6829681420e4e9dd8525810251d208f114338aa0300fc9a9012fdcc5feb3d855"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/07-langage/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "07-langage/conclusion.md",
+      "sha256_source": "1767239c04cd2e73fc5b1d72068cc13fd6e7009630fff4bd85bd0d68abbe89aa"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/07-langage/generer.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "07-langage/generer.md",
+      "sha256_source": "be1363998bc821fc4a9ed291362dc6cc80b35ff6ba6287146b953802bd62fc14"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/07-langage/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "07-langage/introduction.md",
+      "sha256_source": "79bfb81f954e12262ee6fe7335ad1573d54c370ebd5d07bcd0f3a576f76d7429"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/07-langage/reponse.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "07-langage/reponse.md",
+      "sha256_source": "ad387d2a5a44e6c7cd07757169c234ec4ac0a6716678b1146e3a72342a464026"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/07-langage/tokens.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "07-langage/tokens.md",
+      "sha256_source": "b5ccb2a4d9a975d41d3047b07162be09e933296603c8549a734e912ef8f1ff9f"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/08-outils/appel.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "08-outils/appel.md",
+      "sha256_source": "8467c387b58e0bd9b6ab8c003332177482bfa51ef050de1062eeb122cbc6fa02"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/08-outils/boucle.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "08-outils/boucle.md",
+      "sha256_source": "2037114188d567e1dd51c28c72a04e8366c9270438f94d02c77907ba11aab721"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/08-outils/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "08-outils/conclusion.md",
+      "sha256_source": "bba0507b18399452bfcf7c4be73273839deaf7c19fd8df78d4ca723c4106f551"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/08-outils/contexte.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "08-outils/contexte.md",
+      "sha256_source": "1a28e89e86fc45036f27128ab59dd8048ac10cc76b82bbd57e3280cf5e10e54b"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/08-outils/garder-la-main.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "08-outils/garder-la-main.md",
+      "sha256_source": "4b094d65b4dd65ed6ec84af5d7adaa7d432d836ad80d49e10011b0bcc8444ea6"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/08-outils/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "08-outils/introduction.md",
+      "sha256_source": "30a3bbcf4a4a936edea9ecaa4a5497da51ca3378dee2381a2204ec62f7733810"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/08-outils/materiel.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "08-outils/materiel.md",
+      "sha256_source": "36741065648951db4d324420460b6b143412d9d3c1bf3619bced61faf5c4283d"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/CREDITS.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "CREDITS.md",
+      "sha256_source": "d0bf4e0d556cbd7895e21992f16e2d1f2b3f06382d5e7f303dcc6afd325e3caa"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/conclusion.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "conclusion.md",
+      "sha256_source": "cbae4ef76148c50d0649be61e1def0b1a9a57cdaa07d531865cf9147830298ce"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/agent-outils.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/agent-outils.png",
+      "sha256_source": "c091aa0d8d3ac2c577ae15693487e959bc5b1639ebce363bf8f7263fc305d38b"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/attention.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/attention.png",
+      "sha256_source": "0f5e4a2ee4bf4584a4926feafb39060738027307572f2c2cffea5c0d7600df6e"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/avant-apres.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/avant-apres.png",
+      "sha256_source": "7763febc4b3ac4665d81da20f3c5cf1e8202d1c9b3d91c08db13be8cd8272f77"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/bigrammes.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/bigrammes.png",
+      "sha256_source": "91f7157f4c6608b3f184f5796d0735ac05ba30b26e68aee201119e317321a6ad"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/chiffres.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/chiffres.png",
+      "sha256_source": "199e3159bcfccf8c5679f42612068066d6de08dcbeb3493b07c114eb5ba05e67"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/decalage.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/decalage.png",
+      "sha256_source": "9a322022c22ff1fee8699eec53f1ae57d69e307a1f46ebce5a2f044acb49fc25"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/dessin-resultat.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/dessin-resultat.png",
+      "sha256_source": "e8d14967eecc3c490d50b2b485f93762e9a0c679e01ea279bed060acb7feca0c"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/lineaire-confusions.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/lineaire-confusions.png",
+      "sha256_source": "5f25bbadceb856aaecc9276971d7f69e33405cec787b732851c4e723a038448e"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/lineaire-courbes.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/lineaire-courbes.png",
+      "sha256_source": "e12586fca77c9a3df40d800958fdd67e2e75207b27dbcb9073dd018c434e19b0"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/lineaire-erreurs.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/lineaire-erreurs.png",
+      "sha256_source": "2e555b84c02a444ec55a68c41778411d53721b290d1b8aba1e06288a6fc970b3"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/memorisation.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/memorisation.png",
+      "sha256_source": "ade2736b5af39497f4170a2488a22e42d6fe048aafea06e484fa329b6ddca3d7"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/poids.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/poids.png",
+      "sha256_source": "3c0070eadc4e3eb46a1de887a8ad6dff95de5e2a479d7d94374becb2cbf75ae7"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/images/reseau-courbes.png",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "images/reseau-courbes.png",
+      "sha256_source": "a4899f2763e5e5030da4fed9af11c90cddd6a6db082ae2093903808d90a0cc11"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/introduction.md",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "introduction.md",
+      "sha256_source": "4053fcc830daf13f9f0466a90731386a1e9bf995a61c67b45c8ed2c5c9536f5d"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/manifest.json",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "manifest.json",
+      "sha256_source": "74fc492ca6b4c1cc1cd94bafd1789292d4d18ea8104873b7e551d90d080fe175"
+    },
+    {
+      "destination": "tutoriel/02-apprentissage/sources.json",
+      "archive": "apprentissage-ia-zds-v2.zip",
+      "source": "sources.json",
+      "sha256_source": "c5ec48efcfab67a6e173a8c5d64797f54420458325e28179f88ed417e36ff89a"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/01-choisir/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/01-choisir/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/01-choisir/fiche.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/01-choisir/fiche.md",
+      "sha256_source": "c27599e0dc17529ca7e9474cefa5699e16be63f67da96be6eb88c33d57f33f70"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/01-choisir/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/01-choisir/introduction.md",
+      "sha256_source": "13370da77daea58f077cdf519e2657b913cc48c799db6bad8a70e07ffae6ad12"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/01-choisir/machine.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/01-choisir/machine.md",
+      "sha256_source": "efa0af56b4b7cdb2ec79b2963b2c0264ae9e4df487c8d55e28e6ba94416c6ea2"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/01-choisir/trois-pieces.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/01-choisir/trois-pieces.md",
+      "sha256_source": "f98debf9d360318e63939bb1e4ea1618bd54249d73e81558695188609fc18d2b"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/02-installer/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/02-installer/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/02-installer/demarrer.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/02-installer/demarrer.md",
+      "sha256_source": "57471ff7b3d13e081f44fcda4b7deb2dceca235e9dbfe0ea1ecfdc5530aaef9e"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/02-installer/depanner.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/02-installer/depanner.md",
+      "sha256_source": "f99c1296589b3c7c7f03c3972d9d3a4fa194b0c9f40fbbcef017125d70d5f9e1"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/02-installer/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/02-installer/introduction.md",
+      "sha256_source": "eeff21dc380b9498395329c9c0a05d9880313dafdd07fa806308dff044f384c9"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/02-installer/moteur.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/02-installer/moteur.md",
+      "sha256_source": "318e50488d58bd52b375ee4526a2cdab086fc2775b998491506ac0ef9c1e13dd"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/02-installer/poids.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/02-installer/poids.md",
+      "sha256_source": "0bae06ba89dad06e654aae4dcf02cb2669b4d46cc35aef0f91f33e5fb83ec07a"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/03-dialoguer/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/03-dialoguer/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/03-dialoguer/contexte.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/03-dialoguer/contexte.md",
+      "sha256_source": "441db3d46c8f28a829cfd2071245db88c25ada6299f2cb9134378dc0de2999ae"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/03-dialoguer/document.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/03-dialoguer/document.md",
+      "sha256_source": "d080692fcd79fe9d4c7f994b298142f8553c39d1093b1f00a58b258d7ab84b6d"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/03-dialoguer/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/03-dialoguer/introduction.md",
+      "sha256_source": "bd725a36a7ee0b0c39e3200c4c1d7653f1b08e8aee4a1e165e5696f8c8f4d043"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/03-dialoguer/premier-appel.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/03-dialoguer/premier-appel.md",
+      "sha256_source": "27f4a06b4aa2e88da5d726dd23279981eb8d5802c5853c494afdcd9b52766863"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/03-dialoguer/requete.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/03-dialoguer/requete.md",
+      "sha256_source": "c2ff2763f6cd48431466d02aee055503f05ff08c9c3df16558e3dfd8ba067548"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/04-mesurer/chronometre.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/04-mesurer/chronometre.md",
+      "sha256_source": "53ccdb9527307b637c7826c3446b19f154bd2097b11ea3a6eebb19eb34414475"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/04-mesurer/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/04-mesurer/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/04-mesurer/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/04-mesurer/introduction.md",
+      "sha256_source": "d0f1873bcf012ea01dfe32e7323423e2ce4eb5219a72bf3f9864c73cfb39da1a"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/04-mesurer/lire.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/04-mesurer/lire.md",
+      "sha256_source": "62a9b80701f87a28a220eb32a115f98c7d7adaa70bcbc1098310744cfdf8e627"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/04-mesurer/memoire.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/04-mesurer/memoire.md",
+      "sha256_source": "5ad0b473a5e6591009cb9304eb1b9ad048d705d280b8124919af3e19738db9bf"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/04-mesurer/modifier.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/04-mesurer/modifier.md",
+      "sha256_source": "3871b127d881d05f39a31690326116b071db1f50d33d6095e0e54788c3199bb0"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/05-juger/choisir-usage.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/05-juger/choisir-usage.md",
+      "sha256_source": "84d7296bf70de45ab5cf1def7a06a30839d5cdb49c09a0625003ded3868c9d27"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/05-juger/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/05-juger/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/05-juger/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/05-juger/introduction.md",
+      "sha256_source": "04bb4f9aeecec12bf820367058ed08b8fbe30935ad3dd109d6ee8e5e83f5f203"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/05-juger/local.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/05-juger/local.md",
+      "sha256_source": "6058373376c402ccba76057657b7173d7e5182b305d6a45ace8d0a28cf7c5e77"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/05-juger/petite-grille.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/05-juger/petite-grille.md",
+      "sha256_source": "37c519871b4ba2cd20ca2cb0320404744c5e670496ab5c69f18d331570b9f54e"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/06-gpu/comparer.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/06-gpu/comparer.md",
+      "sha256_source": "9a87bcc614bbb454ffa1b62faee55d6164c755f10674551a2470ee4d755bdeae"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/06-gpu/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/06-gpu/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/06-gpu/garder.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/06-gpu/garder.md",
+      "sha256_source": "276c97a548e411c808c0e7fcdca7402ec1603d24110ebd454fbbb556be5cb903"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/06-gpu/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/06-gpu/introduction.md",
+      "sha256_source": "faf56a6d5bc9f2954d2056608c5f002096f1af141070d079e2606d9276da1369"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/06-gpu/preparer.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/06-gpu/preparer.md",
+      "sha256_source": "32a4489847c0672f5032a63b0c4f1b519ec5552eec3582593f641ba9cb7b70a2"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/CREDITS.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/CREDITS.md",
+      "sha256_source": "4b1799038003641254710dd88cbeab84f5063a47dd6a3b4ffed0794321b870cd"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/conclusion.md",
+      "sha256_source": "29131192c26bc78645cf9f37d87735a0549fedd8e9ab39095a95677101558538"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/images/historique.png",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/images/historique.png",
+      "sha256_source": "6db711c617c3f937178ae8dcca9114fa6efe3d4b760f4ced340d1aa02bb0d418"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/images/installation.png",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/images/installation.png",
+      "sha256_source": "9933fa7a1e64be825cea0af1c2c982802a99e6e282d3dc5b9271b7f2db43227d"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/images/poids.png",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/images/poids.png",
+      "sha256_source": "37bba7377d94cea9bebfd44922a5edcca50bdeb65fc6a6416cb8970b87f0b7a8"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/images/quantifier.png",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/images/quantifier.png",
+      "sha256_source": "0d1a2cdf9eaf1bb4ef7492c6376e00b6e6971ee709fe07c7e55a64427ac96d04"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/introduction.md",
+      "sha256_source": "302113de3718984d3250fe2a098f4388abaf799a5f4e1df60304a9d99dc4eceb"
+    },
+    {
+      "destination": "tutoriel/03-modele-local/manifest.json",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-3/manifest.json",
+      "sha256_source": "94b045f214b0f514d35f2ddd2bae5a56ec2be84c80728f1ac07d6ce6c8608148"
+    },
+    {
+      "destination": "tutoriel/04-developpement/01-projet/aide.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/01-projet/aide.md",
+      "sha256_source": "77ae888fc22c97d85f0b8d9c1abee857ba80b4932c4e21999c0815b1ff4c37fe"
+    },
+    {
+      "destination": "tutoriel/04-developpement/01-projet/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/01-projet/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/04-developpement/01-projet/installer.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/01-projet/installer.md",
+      "sha256_source": "0fb4bf99ef99712237acb484447f630befc79e110962410e994a5adbcc90a7f8"
+    },
+    {
+      "destination": "tutoriel/04-developpement/01-projet/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/01-projet/introduction.md",
+      "sha256_source": "6c95c969ff14847ef5f4d38be0bbb92e70ffeb2584849234f531b8a7e85ac714"
+    },
+    {
+      "destination": "tutoriel/04-developpement/01-projet/lire.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/01-projet/lire.md",
+      "sha256_source": "5a9635af2986a984e2e6706f65511bb41219ca9d97e7a253d0710d4f74fd604c"
+    },
+    {
+      "destination": "tutoriel/04-developpement/02-demande/cas.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/02-demande/cas.md",
+      "sha256_source": "7b74792dab096c0bc6fce275921e8f61b47f73e2397f0c9b84f04988aa9ea910"
+    },
+    {
+      "destination": "tutoriel/04-developpement/02-demande/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/02-demande/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/04-developpement/02-demande/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/02-demande/introduction.md",
+      "sha256_source": "205e2154f6038aea48911ace0399aca32ad8e40eb7074080de9537cc6bfe7a4a"
+    },
+    {
+      "destination": "tutoriel/04-developpement/02-demande/limites.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/02-demande/limites.md",
+      "sha256_source": "3055fd91167f22f0f6c3c5ed37c143b82abf5013ee12aa215648e166275526df"
+    },
+    {
+      "destination": "tutoriel/04-developpement/02-demande/regle.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/02-demande/regle.md",
+      "sha256_source": "a23912e80cc6ebba0df50a1ffd64ced2cff5880657582027eb3248d93c40d0f5"
+    },
+    {
+      "destination": "tutoriel/04-developpement/03-tests/agent.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/03-tests/agent.md",
+      "sha256_source": "caaa1a7d801790c87a3f5c6dca7f0349e06f6c6f6b1577676c4a783e6e09cd36"
+    },
+    {
+      "destination": "tutoriel/04-developpement/03-tests/completer.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/03-tests/completer.md",
+      "sha256_source": "3e6909580785b045607ff46634d374944b93ba2edfe4e8db21acbdd78720900f"
+    },
+    {
+      "destination": "tutoriel/04-developpement/03-tests/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/03-tests/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/04-developpement/03-tests/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/03-tests/introduction.md",
+      "sha256_source": "84b561bfc2e1675318088bda4b4c1afbfe81c8a8891232591bb1d4e2d2e676f0"
+    },
+    {
+      "destination": "tutoriel/04-developpement/03-tests/rouge.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/03-tests/rouge.md",
+      "sha256_source": "2ae46c0c95828ad54b36eb0c814af36f0622b418bc5f55974aa390fbfa989359"
+    },
+    {
+      "destination": "tutoriel/04-developpement/04-corriger/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/04-corriger/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/04-developpement/04-corriger/condition.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/04-corriger/condition.md",
+      "sha256_source": "63e9b81c171cb9877c5c199aa648cfd1c676baf89f3bddbbadff11eeea94b85e"
+    },
+    {
+      "destination": "tutoriel/04-developpement/04-corriger/demander.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/04-corriger/demander.md",
+      "sha256_source": "91bc3cb2b056ccc045fe8ac7205086e11b4d4fef71e20a0a315c9d350eac3235"
+    },
+    {
+      "destination": "tutoriel/04-developpement/04-corriger/diff.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/04-corriger/diff.md",
+      "sha256_source": "798ca8634a485f3cb5f3cfa8dcc952cfa4e1e4622e5061bd5a65f8b352dfdd37"
+    },
+    {
+      "destination": "tutoriel/04-developpement/04-corriger/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/04-corriger/introduction.md",
+      "sha256_source": "f7643d3dd1f7d06d0146364ae7a82733d2af0f371e505767f85c4601015c6cc1"
+    },
+    {
+      "destination": "tutoriel/04-developpement/05-verifier/casser.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/05-verifier/casser.md",
+      "sha256_source": "a9de4ade421bfa30821f546197d1f8ae6e3cee6c85baad7bc3c168329758de1f"
+    },
+    {
+      "destination": "tutoriel/04-developpement/05-verifier/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/05-verifier/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/04-developpement/05-verifier/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/05-verifier/introduction.md",
+      "sha256_source": "c719b09a570869ce70f01b382779cc7335a7a4131670a388a3fb68e76921e564"
+    },
+    {
+      "destination": "tutoriel/04-developpement/05-verifier/recette.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/05-verifier/recette.md",
+      "sha256_source": "67eb5a27237cb758acccc8ab952fb0360983232b37d88fc024bb0ef7c911c0d5"
+    },
+    {
+      "destination": "tutoriel/04-developpement/05-verifier/revue.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/05-verifier/revue.md",
+      "sha256_source": "70ee5c30bb8cad7da1762af793fd08b2e1c1895d254e3547fff525c2bc033471"
+    },
+    {
+      "destination": "tutoriel/04-developpement/05-verifier/suite.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/05-verifier/suite.md",
+      "sha256_source": "304d277e4747ec4224ffc6937b16023348e4ff4958f432b5facb3a7da57e4098"
+    },
+    {
+      "destination": "tutoriel/04-developpement/06-garder-la-main/apprendre.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/06-garder-la-main/apprendre.md",
+      "sha256_source": "507cbd9cae531b080379506478047bc03881b03098484b8f982e31fab17f73e5"
+    },
+    {
+      "destination": "tutoriel/04-developpement/06-garder-la-main/choisir.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/06-garder-la-main/choisir.md",
+      "sha256_source": "3d6bcfd0e6449aece853c18a20128d85d9f7ec9b5c3fde19c383f5893efed831"
+    },
+    {
+      "destination": "tutoriel/04-developpement/06-garder-la-main/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/06-garder-la-main/conclusion.md",
+      "sha256_source": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "destination": "tutoriel/04-developpement/06-garder-la-main/introduction.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/06-garder-la-main/introduction.md",
+      "sha256_source": "f1461298871bab82912bbe3e77f57b1678f65ab7868b776a8d2173f8a78f4f6f"
+    },
+    {
+      "destination": "tutoriel/04-developpement/06-garder-la-main/rapport.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/06-garder-la-main/rapport.md",
+      "sha256_source": "6f0f448cb71336d4a4c2b308d7c84a17bcfb66414cbb402d2e35577f6ffa06e1"
+    },
+    {
+      "destination": "tutoriel/04-developpement/CREDITS.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/CREDITS.md",
+      "sha256_source": "4b1799038003641254710dd88cbeab84f5063a47dd6a3b4ffed0794321b870cd"
+    },
+    {
+      "destination": "tutoriel/04-developpement/conclusion.md",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/conclusion.md",
+      "sha256_source": "de136074ec66746faf5751868743d03c1c3650ae50f703adc4676d580f836292"
+    },
+    {
+      "destination": "tutoriel/04-developpement/images/decision.png",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/images/decision.png",
+      "sha256_source": "febb4da92b0b20f49cdf5e8e3dd33efa6c5b1de739650eb477db88d7646187d8"
+    },
+    {
+      "destination": "tutoriel/04-developpement/images/projet.png",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/images/projet.png",
+      "sha256_source": "36a71742265b6853766b579ee1c61545a01da75e7aafab049407a82cb63745e8"
+    },
+    {
+      "destination": "tutoriel/04-developpement/images/tests.png",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/images/tests.png",
+      "sha256_source": "b10648f4c81c93294fb0ab4f391edbf8540c0b1d35741ec04e4ae5208143ec30"
+    },
+    {
+      "destination": "tutoriel/04-developpement/manifest.json",
+      "archive": "tutoriel-ia-suite-parties-3-4.zip",
+      "source": "suite-tuto-ia/partie-4/manifest.json",
+      "sha256_source": "213230fbf704d7b813358e5cfa67e4251798e58547beec1dea391a0d614c39c9"
+    }
+  ]
+}

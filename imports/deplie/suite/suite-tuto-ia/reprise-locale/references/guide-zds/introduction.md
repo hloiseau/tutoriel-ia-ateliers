@@ -1,5 +1,0 @@
-Zeste de Savoir utilise un langage de formatage de texte très proche du Markdown, auquel ont été ajoutées quelques extensions courantes. Ce langage est utilisé sur ZdS pour écrire les tutoriels, les articles, les messages de forums ou MP, etc.
-
-On ne présente plus le Markdown, ce langage de formatage alliant la simplicité d'écriture à la facilité de lecture. Sa syntaxe très légère permet en effet de lire du simple texte de façon presque aussi agréable que s'il était réellement mis en forme. Mais aussi pratique que soit le Markdown, il ne permet pas de tout baliser. Les indices et exposants, par exemple, n'ont pas de représentations Markdown. Il existe donc des extensions permettant de compléter le Markdown natif. Certaines de ces extensions, très courantes, ont été reprises sur ZdS, d'autres ont été spécifiquement implémentées pour répondre aux besoins précis de ZdS. Nous vous présentons donc ici les syntaxes utilisables sur ZdS.
-
-*[ZdS]: Zeste de Savoir

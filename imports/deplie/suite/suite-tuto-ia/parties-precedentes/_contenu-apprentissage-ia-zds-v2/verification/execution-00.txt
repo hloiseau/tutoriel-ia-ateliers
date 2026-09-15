@@ -1,5 +1,0 @@
-Images : 1797 ; pixels par image : 64
-Entraînement : 1077 ; validation : 360 ; test : 360
-Valeurs normalisées : 0.0 à 1.0
-exemple.json : chiffre 3, provenant de l'entraînement
-Image écrite : sorties/chiffres.png

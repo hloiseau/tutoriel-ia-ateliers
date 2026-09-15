@@ -1,4 +1,0 @@
-{
-  "outil": "lire_fiche",
-  "resultat": "La validation sert à comparer les réglages sans utiliser le jeu de test."
-}

@@ -1,1 +1,0 @@
-Vim possède une fonction de template personnalisé en fonction du type de fichier nouvellement créé. Dans notre configuration on lui précise quel type de fichier doit utiliser quel template. Lorsqu'un fichier de ce type est créé, Vim copie le template afin de ne pas commencer par un fichier vide.

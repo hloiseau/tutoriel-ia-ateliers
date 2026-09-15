@@ -21,7 +21,7 @@ L’environnement local n’était pas disponible pour cette révision. Les vér
 3. Télécharger le GGUF Qwen, consigner sa révision et son empreinte ; mesurer la mémoire utilisée et vérifier le lancement avec le binaire de llama.cpp de la partie 3.
 4. Exécuter la demande de lecture avec Qwen sur CPU. Vérifier que les budgets de contexte et de sortie suffisent ; ajuster selon les observations.
 5. Vérifier le parcours sans connexion Internet après installation et téléchargement.
-6. Exécuter `integrer.py` sur les sources complètes, inspecter le diff et importer le ZIP dans un brouillon ZdS.
+6. Importer dans un brouillon ZdS le ZIP construit depuis les sources centralisées ; l’intégration des sources et la construction du ZIP ont été réalisées le 15 septembre 2026.
 7. Vérifier le rendu des tableaux, notes et légendes, puis le passage vers les six chapitres conservés.
 
 Le parcours GPU reste une variante future. Aucune vitesse, compatibilité Windows/macOS ou réussite d’agent autonome n’est déduite de la seule documentation.
@@ -35,3 +35,7 @@ Les transitions de noms et les interruptions temporaires d’offres sont signal�
 ## Extension du panorama
 
 Les fonctionnalités et tarifs des outils supplémentaires sont documentés par les sources officielles citées dans les extraits. Aucun de ces harness supplémentaires n’a été installé ni comparé par un benchmark dans cette session. Leur notoriété ne sert pas de classement de qualité ou d’adoption mesurée.
+
+## Intégration du 15 septembre 2026
+
+Les six chapitres d’origine sont désormais récupérés et les trois nouveaux chapitres insérés dans le manifest courant. Les raccords sont appliqués. `outils/assembler_tutoriel.py` a vérifié les références et construit les lectures et les ZIP ; les installations d’assistants restent à rejouer.

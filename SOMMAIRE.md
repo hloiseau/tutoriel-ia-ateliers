@@ -1,52 +1,64 @@
 # Sommaire du tutoriel
 
-[Accueil](README.md) · [État des contenus et fichiers à récupérer](docs/etat-des-contenus.md)
+[Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
-Les titres des huit parties décrivent le plan de travail retenu. Le découpage précis des parties déjà rédigées sera repris de leurs sources, sans le reconstituer de mémoire.
+Les quatre premières parties sont centralisées avec leurs sources et illustrations : **30 chapitres, 110 sections et 32 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 
-| Partie | Sujet | Lecture et pratique disponibles |
-| --- | --- | --- |
-| 1 | **L’histoire de l’IA, des premières idées à aujourd’hui** | Texte et illustrations validés dans les échanges, archive à importer |
-| 2 | **Comprendre et construire de petits modèles** | Texte à importer ; [atelier d’apprentissage](ateliers/02-apprentissage/atelier-ia/README.md) |
-| 3 | **Faire tourner un modèle localement** | Texte à importer ; [atelier local](ateliers/03-modele-local/atelier-local/README.md) |
-| 4 | **Développer avec une IA, du problème au changement vérifié** | [Nouveau début de la partie](tutoriel/04-developpement/README.md) ; [atelier de développement](ateliers/04-developpement/README.md) ; six chapitres existants à importer |
-| 5 | **Comprendre et encadrer les agents** | Contexte, permissions, outils, coûts et limites — à rédiger |
-| 6 | **Adapter ses outils à sa manière de travailler** | MCP, skills et base de connaissances — à rédiger |
-| 7 | **Construire et adapter sa propre IA** | Application, recherche documentaire, adaptation de modèles, fine-tuning et petits entraînements — à rédiger |
-| 8 | **Choisir ses usages et ses dépendances** | Éthique, données, licences, travail, environnement, apprentissage et alternatives — à rédiger |
+## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
-## Partie 4 — Ordre des chapitres
+[Introduction](tutoriel/01-histoire/introduction.md) · [Toute la partie](tutoriel/01-histoire/LECTURE.md)
 
-Les trois premiers chapitres sont disponibles. Les positions 4 à 9 correspondent aux textes déjà rédigés dans l’archive des parties 3 et 4, encore à récupérer.
+1. [Les origines de l’intelligence artificielle](tutoriel/01-histoire/01-origines/LECTURE.md)
+2. [Des règles pour raisonner](tutoriel/01-histoire/02-regles/LECTURE.md)
+3. [Apprendre à partir de données : les premières approches](tutoriel/01-histoire/03-apprendre/LECTURE.md)
+4. [Promesses, systèmes experts et hivers de l’IA](tutoriel/01-histoire/04-promesses/LECTURE.md)
+5. [Le tournant du deep learning](tutoriel/01-histoire/05-deep-learning/LECTURE.md)
+6. [Des transformers à l’IA générative](tutoriel/01-histoire/06-generatif/LECTURE.md)
+7. [Où en sommes-nous aujourd’hui ?](tutoriel/01-histoire/07-aujourdhui/LECTURE.md)
 
-1. **Avec quoi va-t-on développer ?** — [Introduction](tutoriel/04-developpement/outils/introduction.md)
-   - [Le modèle, le moteur et l’assistant](tutoriel/04-developpement/outils/trois-morceaux.md)
-   - [De la suggestion à l’agent](tutoriel/04-developpement/outils/usages.md)
-   - [Faire le tour des outils](tutoriel/04-developpement/outils/panorama.md)
-   - [Pi et les autres harness](tutoriel/04-developpement/outils/harness.md)
-2. **Choisir une solution adaptée à ses besoins** — [Introduction](tutoriel/04-developpement/choisir/introduction.md)
-   - [Combien cela coûte-t-il ?](tutoriel/04-developpement/choisir/prix.md)
-   - [Où faire tourner le modèle ?](tutoriel/04-developpement/choisir/local-ou-distant.md)
-3. **Installer notre premier assistant** — [Introduction](tutoriel/04-developpement/installer/introduction.md)
-   - [Ouvrir notre copie du projet](tutoriel/04-developpement/installer/projet.md)
-   - [Utiliser un service hébergé](tutoriel/04-developpement/installer/heberge.md)
-   - [Relier l’éditeur à notre modèle local](tutoriel/04-developpement/installer/local.md)
-   - [Notre première demande de lecture](tutoriel/04-developpement/installer/premiere-lecture.md)
-4. **Ouvrir un projet que l’on peut comprendre**
-5. **Décider ce que le ticket veut changer**
-6. **Faire apparaître le bug dans un test**
-7. **Faire le changement et lire le diff**
-8. **Vérifier au-delà de la dernière ligne verte**
-9. **Garder un changement que l’on sait expliquer**
+## 2. Comprendre un modèle en le construisant
 
-[Introduction de la partie 4](tutoriel/04-developpement/introduction.md) · [Lecture continue des ajouts](tutoriel/04-developpement/LECTURE.md)
+[Introduction](tutoriel/02-apprentissage/introduction.md) · [Toute la partie](tutoriel/02-apprentissage/LECTURE.md)
 
-## Les fils à garder dans toutes les parties
+1. [Installer notre petit atelier](tutoriel/02-apprentissage/01-atelier/LECTURE.md)
+2. [Des pixels à une première réponse](tutoriel/02-apprentissage/02-predire/LECTURE.md)
+3. [Faire apprendre le modèle](tutoriel/02-apprentissage/03-apprendre/LECTURE.md)
+4. [Lire les résultats sans se raconter d’histoires](tutoriel/02-apprentissage/04-evaluer/LECTURE.md)
+5. [Faire reconnaître nos propres dessins](tutoriel/02-apprentissage/05-dessiner/LECTURE.md)
+6. [Ajouter une couche… et voir ce que cela change](tutoriel/02-apprentissage/06-reseau/LECTURE.md)
+7. [Produire du texte, un morceau à la fois](tutoriel/02-apprentissage/07-langage/LECTURE.md)
+8. [Du modèle aux outils qui l’entourent](tutoriel/02-apprentissage/08-outils/LECTURE.md)
 
-- Des manipulations concrètes, avec des explications et des corrections consultables.
-- Un parcours accessible sans grosse carte graphique ni abonnement obligatoire.
-- Du code que le lecteur apprend à comprendre, relire, tester et valider.
-- Le choix de ne pas utiliser l’IA, ou de ne l’utiliser que pour certains besoins.
-- Les conséquences de nos choix techniques et des services auxquels nous confions nos données.
+## 3. Faire tourner un modèle chez soi
 
-Les parties sur l’éthique et l’apprentissage ne dispensent pas d’aborder ces questions dès les premiers usages.
+[Introduction](tutoriel/03-modele-local/introduction.md) · [Toute la partie](tutoriel/03-modele-local/LECTURE.md)
+
+1. [Choisir ce que l’on va télécharger](tutoriel/03-modele-local/01-choisir/LECTURE.md)
+2. [Installer le moteur et lancer le modèle](tutoriel/03-modele-local/02-installer/LECTURE.md)
+3. [Envoyer une question et conserver la réponse](tutoriel/03-modele-local/03-dialoguer/LECTURE.md)
+4. [Mesurer sans mélanger les résultats](tutoriel/03-modele-local/04-mesurer/LECTURE.md)
+5. [Décider si le résultat nous sert](tutoriel/03-modele-local/05-juger/LECTURE.md)
+6. [Essayer une carte graphique, si vous en avez une](tutoriel/03-modele-local/06-gpu/LECTURE.md)
+
+## 4. Développer avec une IA, du problème au changement vérifié
+
+[Introduction](tutoriel/04-developpement/introduction.md) · [Toute la partie](tutoriel/04-developpement/LECTURE.md)
+
+1. [Avec quoi va-t-on développer ?](tutoriel/04-developpement/outils/LECTURE.md)
+2. [Choisir une solution adaptée à ses besoins](tutoriel/04-developpement/choisir/LECTURE.md)
+3. [Installer notre premier assistant](tutoriel/04-developpement/installer/LECTURE.md)
+4. [Ouvrir un projet que l’on peut comprendre](tutoriel/04-developpement/01-projet/LECTURE.md)
+5. [Décider ce que le ticket veut changer](tutoriel/04-developpement/02-demande/LECTURE.md)
+6. [Faire apparaître le bug dans un test](tutoriel/04-developpement/03-tests/LECTURE.md)
+7. [Faire le changement et lire le diff](tutoriel/04-developpement/04-corriger/LECTURE.md)
+8. [Vérifier au-delà de la dernière ligne verte](tutoriel/04-developpement/05-verifier/LECTURE.md)
+9. [Garder un changement que l’on sait expliquer](tutoriel/04-developpement/06-garder-la-main/LECTURE.md)
+
+## Parties suivantes
+
+5. Comprendre et encadrer les agents de code.
+6. Les MCP et les skills en pratique.
+7. Construire et adapter son IA maison.
+8. Choisir la place de l’IA.
+
+[Lire le plan détaillé des parties 5 à 8](docs/plan-parties-suivantes.md). Ces parties restent à rédiger. Les questions éthiques, l’apprentissage des juniors et le choix de se passer de l’IA restent également présents dans les premières parties.

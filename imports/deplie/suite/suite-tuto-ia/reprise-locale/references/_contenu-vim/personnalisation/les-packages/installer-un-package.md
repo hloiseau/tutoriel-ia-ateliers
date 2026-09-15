@@ -1,1 +1,0 @@
-Les packages prennent place dans le répertoire `~/.vim/pack/<name>/start/` et seront chargé au démarrage de Vim. `<name>` est un nom choisi par l'utilisateur pour mieux s'y retrouver.

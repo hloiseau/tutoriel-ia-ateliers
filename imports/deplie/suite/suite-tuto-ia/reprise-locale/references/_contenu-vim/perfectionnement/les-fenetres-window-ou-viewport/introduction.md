@@ -1,1 +1,0 @@
-À présent nous savons manipuler les buffers. Cependant il serait pratique de pouvoir visualiser des buffers en même temps. Pour cela nous avons la possibilité de couper notre fenêtre courante en fenêtre plus petite.

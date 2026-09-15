@@ -1,18 +1,10 @@
 # Sources du tutoriel
 
-[Sommaire global](../SOMMAIRE.md) · [Inventaire](../docs/etat-des-contenus.md)
+[Sommaire global](../SOMMAIRE.md) · [État des contenus](../docs/etat-des-contenus.md)
 
-Le dossier contient les textes effectivement récupérés. Les chapitres absents ne sont pas remplacés par des résumés ou des fichiers vides.
+- [Une histoire de l’IA, des premières idées à aujourd’hui](01-histoire/README.md)
+- [Comprendre un modèle en le construisant](02-apprentissage/README.md)
+- [Faire tourner un modèle chez soi](03-modele-local/README.md)
+- [Développer avec une IA, du problème au changement vérifié](04-developpement/README.md)
 
-Pour l’instant, [04-developpement](04-developpement/README.md) contient le nouveau début de la partie 4 : trois chapitres, leur introduction et les raccords aux textes précédents.
-
-À réception des archives, les autres sources seront rangées dans :
-
-| Partie | Emplacement prévu |
-| --- | --- |
-| Histoire | `01-histoire/` |
-| Apprentissage | `02-apprentissage/` |
-| Modèle local | `03-modele-local/` |
-| Développement | `04-developpement/`, en complétant les fichiers présents |
-
-Chaque partie conserve son découpage ZdS : manifest, introductions, conclusions, extraits et images. Les sources en petits Markdown font référence ; les vues de lecture et les archives sont dérivées de ces fichiers.
+Chaque partie conserve son manifest ZdS, ses introductions, ses conclusions, ses sections et ses images. Les `LECTURE.md` sont générés pour la relecture sur GitHub. Les modifications se font dans les petits Markdown référencés par les manifests.

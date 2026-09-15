@@ -1,0 +1,30 @@
+[
+  {
+    "partie": "01-histoire",
+    "chapitres": 7,
+    "sections": 29,
+    "images": 12,
+    "fichiers_sources": 45
+  },
+  {
+    "partie": "02-apprentissage",
+    "chapitres": 8,
+    "sections": 31,
+    "images": 13,
+    "fichiers_sources": 49
+  },
+  {
+    "partie": "03-modele-local",
+    "chapitres": 6,
+    "sections": 21,
+    "images": 4,
+    "fichiers_sources": 35
+  },
+  {
+    "partie": "04-developpement",
+    "chapitres": 9,
+    "sections": 29,
+    "images": 3,
+    "fichiers_sources": 49
+  }
+]

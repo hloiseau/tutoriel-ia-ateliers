@@ -1,1 +1,0 @@
-Un ordinateur peut exécuter des instructions. Pourrait-il aussi utiliser des connaissances pour trouver lui-même les étapes d’une solution ? Dans les années 1950 et 1960, cette question occupe une place importante dans les recherches sur l’IA.
