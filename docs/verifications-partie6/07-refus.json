@@ -1,0 +1,21 @@
+{
+  "operation": "refus",
+  "valeur": null,
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "Unknown tool: modifier_ticket"
+      }
+    ],
+    "isError": true,
+    "resultType": "complete"
+  }
+}

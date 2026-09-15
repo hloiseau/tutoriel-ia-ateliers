@@ -4,17 +4,7 @@
 
 La [partie 5 — Comprendre et encadrer les agents](../tutoriel/05-agents/README.md) dispose maintenant d’une première rédaction complète et d’un atelier. Les expériences avec un modèle réel restent à effectuer.
 
-## 6. Les MCP et les skills en pratique — à rédiger
-
-1. Ce que MCP apporte et ce qu’il ne fait pas
-2. Utiliser un serveur MCP et observer les échanges
-3. Construire un petit serveur MCP en lecture seule
-4. Contrôler les paramètres et traiter les réponses comme des données
-5. Écrire un skill adapté à une tâche réelle
-6. Faire évoluer ses fichiers par essais, erreurs et refacto
-7. Articuler skills, conventions et base de connaissances
-
-Pratique envisagée : faux tickets et documentation locale, recherche via MCP, tests des outils et d’un refus d’écriture, skill de préparation de tests ou de revue. Garder le protocole, le client et les politiques d’accès distincts. Ne pas supposer que tous les produits chargent les descriptions au même moment.
+La [partie 6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) dispose également d’une rédaction complète et d’un atelier MCP exécuté. Les essais du skill avec un modèle restent à effectuer.
 
 ## 7. Construire et adapter son IA maison — à rédiger
 

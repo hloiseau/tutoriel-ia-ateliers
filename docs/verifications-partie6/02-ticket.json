@@ -1,0 +1,32 @@
+{
+  "operation": "ticket",
+  "valeur": "PRIX-1",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"PRIX-1\",\n  \"titre\": \"Ne plus notifier une simple remise en stock\",\n  \"statut\": \"a preparer\",\n  \"regle\": \"Notifier seulement si le produit est disponible dans le nouvel état et si son prix baisse strictement.\",\n  \"questions_ouvertes\": [],\n  \"documents\": [\n    \"regle-notification\"\n  ],\n  \"revision\": \"exemple-1\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "id": "PRIX-1",
+      "titre": "Ne plus notifier une simple remise en stock",
+      "statut": "a preparer",
+      "regle": "Notifier seulement si le produit est disponible dans le nouvel état et si son prix baisse strictement.",
+      "questions_ouvertes": [],
+      "documents": [
+        "regle-notification"
+      ],
+      "revision": "exemple-1"
+    },
+    "isError": false,
+    "resultType": "complete"
+  }
+}

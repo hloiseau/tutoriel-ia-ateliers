@@ -1,0 +1,149 @@
+{
+  "date": "2026-09-15",
+  "os": "Linux",
+  "python": "3.12.14",
+  "mcp": "2.2.0",
+  "protocole": "2026-07-28",
+  "archive_sha256": "e26ad711d953bd84c8876511ee4e2da2bdeb7726fb13a112e5f22886a76660ff",
+  "execution_depuis_archive_extraite": true,
+  "appels_stdio": [
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "inventaire",
+        "--journal",
+        "01-inventaire.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": false,
+      "journal": "01-inventaire.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "ticket",
+        "PRIX-1",
+        "--journal",
+        "02-ticket.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": false,
+      "journal": "02-ticket.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "chercher",
+        "notification",
+        "--journal",
+        "03-chercher.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": false,
+      "journal": "03-chercher.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "document",
+        "regle-notification",
+        "--journal",
+        "04-document.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": false,
+      "journal": "04-document.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "conventions",
+        "--journal",
+        "05-conventions.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": false,
+      "journal": "05-conventions.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "ticket",
+        "PRIX-2",
+        "--journal",
+        "06-ticket.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": false,
+      "journal": "06-ticket.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "refus",
+        "--journal",
+        "07-refus.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": true,
+      "journal": "07-refus.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "ticket",
+        "PRIX-999",
+        "--journal",
+        "08-ticket.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": true,
+      "journal": "08-ticket.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "document",
+        "../tickets",
+        "--journal",
+        "09-document.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": true,
+      "journal": "09-document.json"
+    },
+    {
+      "commande": [
+        "python",
+        "client.py",
+        "document",
+        "note-archivee",
+        "--journal",
+        "10-document.json"
+      ],
+      "code_sortie": 0,
+      "erreur_outil": false,
+      "journal": "10-document.json"
+    }
+  ],
+  "tests_reussis": 10,
+  "donnees_inchangees": true,
+  "empreintes_donnees": {
+    "conventions.md": "29d6734d99b5fcda17a8d236c1c79f7fa91c97ece64fcccfe004e6fd8a213454",
+    "tickets.json": "ab016811fd4c0a33dc294f9b760cde0418f843594b57881a7f59002388deb87c",
+    "documents.json": "100d4ae7e3fb28b8e5991f30beb035c4c30944c98153617734954b77aca46f23"
+  },
+  "configuration_json_et_chemins_valides": true,
+  "ecrasement_journal_refuse": true,
+  "modele_appele": false,
+  "interface_assistant_verifiee": false
+}

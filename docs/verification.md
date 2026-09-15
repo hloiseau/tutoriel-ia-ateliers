@@ -22,6 +22,14 @@ Les trois états du projet et les scénarios ont été exécutés. La suite init
 
 Les prompts sont proposés pour différents agents. Aucun comportement d’un produit particulier n’est garanti par ces résultats.
 
+## Partie 5
+
+Le banc sans modèle a été exécuté depuis son archive : douze tests et les scénarios de lecture, refus, budget et reprise. [Rapport détaillé](../tutoriel/05-agents/VERIFICATION.md).
+
+## Partie 6
+
+Le serveur et le client MCP ont été exécutés depuis l’archive extraite, avec le SDK 2.2.0 et le protocole 2026-07-28 : dix appels stdio, dix tests en mémoire, paramètres invalides et tentative d’écriture refusés. La configuration et la structure du skill ont été contrôlées. Aucun modèle ni interface d’assistant n’a été essayé. [Rapport détaillé](../tutoriel/06-mcp-skills/VERIFICATION.md).
+
 ## À reprendre sur d’autres environnements
 
 Les commandes Windows et macOS, le GPU et les interactions dans un navigateur réel restent à valider. Gardez vos propres résultats et leurs paramètres, même lorsqu’ils diffèrent de ceux fournis.

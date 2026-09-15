@@ -61,13 +61,15 @@ def build(part, export):
 
     title = manifest['title']
     index = f'# {title}\n\n[Sommaire global](../../SOMMAIRE.md) · [Lecture complète](LECTURE.md)\n\n'
-    guided = part.name in {'04-developpement', '05-agents'}
+    guided = part.name in {'04-developpement', '05-agents', '06-mcp-skills'}
     annexes = part.name == 'annexes'
     workshop_count = len(manifest['children'])
     if part.name == '04-developpement':
         index += 'Les sept chapitres ci-dessous se suivent dans le même dossier de travail. Le [comparatif des outils](../annexes/comparatif/LECTURE.md) et l’[expérience locale](../annexes/essai-local/LECTURE.md) se trouvent dans les annexes.\n\n'
     elif part.name == '05-agents':
         index += '[Atelier Python](../../ateliers/05-agents/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
+    elif part.name == '06-mcp-skills':
+        index += '[Atelier MCP et skill](../../ateliers/06-mcp-skills/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
     complete = f'# {title}\n\n[Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)\n\n'
     complete += lecture(read(part, manifest.get('introduction')), 1, '')
     for i, chapter in enumerate(manifest['children'], 1):
@@ -80,12 +82,12 @@ def build(part, export):
         if guided:
             if i <= workshop_count:
                 links = []
-                for offset, label in ((-1, 'Précédent'), (1, 'Suivant')):
+                for offset, nav_label in ((-1, 'Précédent'), (1, 'Suivant')):
                     target = i - 1 + offset
                     if 0 <= target < workshop_count:
                         other = manifest['children'][target]
                         other_dir = Path(other['introduction']).parent.as_posix()
-                        links.append(f"[{label} : {other['title']}](../{other_dir}/LECTURE.md)")
+                        links.append(f"[{nav_label} : {other['title']}](../{other_dir}/LECTURE.md)")
                 nav = ' · '.join(links) + '\n'
             page += nav + '\n'
         elif annexes:

@@ -16,7 +16,7 @@ Les **sept chapitres de cette partie** suivent l’atelier. L’annexe [« Compa
 
 Les fichiers du projet sont publics et le ticket est fictif. Nous pouvons les montrer au service choisi sans utiliser le code de notre entreprise. Si vous préférez travailler sans IA, les tests et les corrections expliquées permettent aussi de suivre l’exercice.
 
-## Suivant. Choisir de quoi suivre l’atelier
+## 1. Choisir de quoi suivre l’atelier
 
 **TL;DR** — Pour l’atelier, il nous faut discuter du code, modifier un fichier et lire le résultat des tests. Gardez un assistant qui sait déjà le faire ; sinon, nous allons préparer VS Code avec Copilot.
 
@@ -65,7 +65,7 @@ Copilot propose une offre gratuite sous conditions et avec des limites[^p4-depar
 
 
 
-## Suivant. Installer l’assistant et observer le problème
+## 2. Installer l’assistant et observer le problème
 
 **TL;DR** — Nous préparons une copie de travail, ouvrons l’assistant et exécutons le programme. À la fin du chapitre, nous aurons observé le problème et retrouvé la fonction qui le provoque.
 
@@ -157,7 +157,7 @@ Nous savons maintenant où intervenir. Ouvrons le ticket pour décider ce qui do
 
 
 
-## Suivant. Décider ce que le ticket veut changer
+## 3. Décider ce que le ticket veut changer
 
 **TL;DR :** une phrase de ticket cache parfois plusieurs comportements. Nous allons les mettre à plat avant de toucher à la fonction.
 
@@ -209,7 +209,7 @@ Dans votre propre travail, gardez ce périmètre à la taille de la tâche. Un c
 
 
 
-## Suivant. Faire apparaître le bug dans un test
+## 4. Faire apparaître le bug dans un test
 
 **TL;DR** — Nous allons faire ajouter un premier test à l’agent, puis lire son échec. La correction expliquée juste après permet de contrôler ce qu’il a écrit, ou d’ajouter le test vous-même.
 
@@ -297,7 +297,7 @@ Si vous souhaitez retrouver exactement ces treize tests, remplacez votre seul fi
 
 
 
-## Suivant. Faire le changement et lire le diff
+## 5. Faire le changement et lire le diff
 
 **TL;DR** — L’agent va corriger la fonction sans toucher aux résultats attendus des tests. Nous comparerons ensuite son changement à la règle du ticket.
 
@@ -383,7 +383,7 @@ Le test ajouté est attendu. En revanche, changer les données de `retour-stock.
 
 
 
-## Suivant. Vérifier au-delà de la dernière ligne verte
+## 6. Vérifier au-delà de la dernière ligne verte
 
 **TL;DR :** la suite teste la fonction ; les scénarios font aussi passer les données par le chargement JSON. Nous allons examiner les deux.
 
@@ -474,7 +474,7 @@ Pour notre petit changement, une revue efficace peut être courte. Il n’y a au
 
 
 
-## Suivant. Garder un changement que l’on sait expliquer
+## 7. Garder un changement que l’on sait expliquer
 
 **TL;DR :** préparez une trace courte du problème, de la correction et des vérifications. Puis choisissez où l’aide vous a réellement été utile.
 

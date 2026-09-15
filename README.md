@@ -2,11 +2,11 @@
 
 Les textes, les illustrations et les ateliers du tutoriel en cours de rédaction pour **Zeste de Savoir**, par Hugo Loiseau.
 
-**[Ouvrir le sommaire](SOMMAIRE.md)** · **[Voir ce qui est disponible](docs/etat-des-contenus.md)** · **[Lire les derniers chapitres](tutoriel/05-agents/LECTURE.md)**
+**[Ouvrir le sommaire](SOMMAIRE.md)** · **[Voir ce qui est disponible](docs/etat-des-contenus.md)** · **[Lire les derniers chapitres](tutoriel/06-mcp-skills/LECTURE.md)**
 
 Ce dépôt est le point de travail commun. La branche `main` rassemble les versions courantes, y compris les brouillons identifiés comme tels. Être présent ici ne signifie pas être validé pour publication.
 
-Les **cinq premières parties** sont désormais réunies ici : **34 chapitres et deux annexes, 126 sections et 35 illustrations**, avec les ateliers et les documents de reprise. Le [sommaire](SOMMAIRE.md) mène directement aux lectures par chapitre. Les parties 6 à 8 restent au stade du plan ; le billet d’origine est un contenu séparé.
+Les **six premières parties** sont désormais réunies ici : **41 chapitres et deux annexes, 147 sections et 38 illustrations**, avec les ateliers et les documents de reprise. Le [sommaire](SOMMAIRE.md) mène directement aux lectures par chapitre. Les parties 7 et 8 restent au stade du plan ; le billet d’origine est un contenu séparé.
 
 ## Où trouver quoi ?
 
@@ -30,6 +30,7 @@ Pour relire ou corriger, partez du sommaire et modifiez le Markdown de la sectio
 | 3 — Modèle local | Charger un petit modèle, lui envoyer des messages et mesurer les appels | [Atelier local](ateliers/03-modele-local/atelier-local/README.md) |
 | 4 — Développement | Reproduire un bug, écrire les tests, corriger et vérifier un suivi de prix | [Atelier de développement](ateliers/04-developpement/README.md) |
 | 5 — Agents | Observer des appels d’outils, des refus et un budget, puis calculer un coût fictif | [Banc d’essai sans modèle](ateliers/05-agents/README.md) |
+| 6 — MCP et skills | Consulter des tickets avec un serveur MCP et préparer une recette | [Atelier MCP et skill](ateliers/06-mcp-skills/README.md) |
 
 Chaque README indique le dossier dans lequel ouvrir le terminal et les commandes à lancer. Python 3.12 est utilisé pour les exécutions de référence.
 
@@ -37,9 +38,9 @@ Les répertoires `resultats-reference` contiennent des résultats réellement ob
 
 ## Télécharger
 
-Les [archives d’import ZdS](telechargements/zds/README.md) contiennent les parties 1 à 5 et les annexes dans un ZIP séparé.
+Les [archives d’import ZdS](telechargements/zds/README.md) contiennent les parties 1 à 6 et les annexes dans un ZIP séparé.
 
-Vous pouvez cloner ce dépôt ou télécharger son archive ZIP depuis GitHub. Les [archives des quatre ateliers](telechargements/) permettent de télécharger un atelier séparément. Le chapitre peut pointer vers une révision précise du dépôt pour conserver les mêmes fichiers au fil des corrections. Les fichiers de poids du modèle local et les exécutables de llama.cpp se téléchargent séparément.
+Vous pouvez cloner ce dépôt ou télécharger son archive ZIP depuis GitHub. Les [archives des cinq ateliers](telechargements/) permettent de télécharger un atelier séparément. Le chapitre peut pointer vers une révision précise du dépôt pour conserver les mêmes fichiers au fil des corrections. Les fichiers de poids du modèle local et les exécutables de llama.cpp se téléchargent séparément.
 
 ## État des vérifications des ateliers
 
@@ -61,7 +62,7 @@ Cette commande vérifie les fichiers et les images référencés, régénère le
 python outils/assembler_annexes.py
 ```
 
-Les quatre ZIP sont écrits dans `telechargements/`. Ils contiennent le code, les résultats de référence et les mentions de licence.
+Les cinq ZIP sont écrits dans `telechargements/`. Ils contiennent le code, les résultats de référence et les mentions de licence.
 
 Pour exécuter les contrôles rapides sans téléchargement de modèle :
 
@@ -69,7 +70,7 @@ Pour exécuter les contrôles rapides sans téléchargement de modèle :
 python outils/verifier.py
 ```
 
-Ces contrôles ne relancent pas les entraînements de la partie 2 ni le serveur de la partie 3.
+Ces contrôles ne relancent pas les entraînements de la partie 2 ni le serveur de la partie 3. Les tests MCP de la partie 6 se lancent séparément, avec les dépendances de son [atelier](ateliers/06-mcp-skills/README.md).
 
 Les sources des données et du modèle sont recensées dans [CREDITS.md](CREDITS.md).
 

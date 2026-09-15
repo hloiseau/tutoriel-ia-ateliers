@@ -11,11 +11,12 @@ Mis à jour le **15 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 | [3 — Modèle local](../tutoriel/03-modele-local/README.md) | 6 | 21 | 4 | Rédigée ; corrections demandées sur la forme conservées ; transition vers la partie 4 ajoutée |
 | [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Atelier continu ; interfaces à vérifier |
 | [5 — Agents](../tutoriel/05-agents/README.md) | 6 | 18 | 3 | Première rédaction complète ; banc Python exécuté, essais avec un modèle à réaliser |
+| [6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) | 7 | 21 | 3 | Première rédaction complète ; serveur et client exécutés, essais du skill avec un modèle à réaliser |
 | [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Comparatif des outils et expérience locale facultative |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
 
-Les parties 6 à 8 disposent d’un [plan détaillé](plan-parties-suivantes.md), pas encore de chapitres complets. Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
+Les parties 7 et 8 disposent d’un [plan détaillé](plan-parties-suivantes.md), pas encore de chapitres complets. Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
 
 ## Ce qui a été vérifié pendant l’intégration
 
@@ -55,3 +56,9 @@ Sept chapitres suivent désormais un seul atelier ; le comparatif et l’expéri
 ## Partie 5 rédigée
 
 Six chapitres, dix-huit sections, trois schémas et un atelier Python. Le banc rejoue des demandes d’outils fictives sans modèle. Son archive a été extraite et les manipulations exécutées ; les observations avec un assistant réel restent à faire. Voir [les résultats et les limites](../tutoriel/05-agents/VERIFICATION.md).
+
+## Partie 6 rédigée
+
+Sept chapitres, vingt et une sections, trois schémas, un serveur et un client MCP, puis un skill de préparation de recette. Dix appels stdio et dix tests ont été exécutés depuis l’archive extraite. Les fichiers de la recette restent à essayer avec un assistant réel. Voir [les résultats et leurs limites](../tutoriel/06-mcp-skills/VERIFICATION.md).
+
+Une correction de l’assembleur rétablit également les numéros de chapitre dans les lectures complètes des parties 4 et 5 ; leurs sources de cours restent inchangées.

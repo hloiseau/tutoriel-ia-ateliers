@@ -1,0 +1,35 @@
+{
+  "operation": "ticket",
+  "valeur": "PRIX-2",
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"id\": \"PRIX-2\",\n  \"titre\": \"Limiter les notifications trop rapprochées\",\n  \"statut\": \"a preparer\",\n  \"regle\": \"Éviter de notifier plusieurs fois un même utilisateur pour un même produit dans un intervalle court.\",\n  \"questions_ouvertes\": [\n    \"Quelle durée définit un intervalle court ?\",\n    \"Une nouvelle baisse plus importante peut-elle contourner cette limite ?\"\n  ],\n  \"documents\": [\n    \"regle-notification\"\n  ],\n  \"revision\": \"exemple-1\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "id": "PRIX-2",
+      "titre": "Limiter les notifications trop rapprochées",
+      "statut": "a preparer",
+      "regle": "Éviter de notifier plusieurs fois un même utilisateur pour un même produit dans un intervalle court.",
+      "questions_ouvertes": [
+        "Quelle durée définit un intervalle court ?",
+        "Une nouvelle baisse plus importante peut-elle contourner cette limite ?"
+      ],
+      "documents": [
+        "regle-notification"
+      ],
+      "revision": "exemple-1"
+    },
+    "isError": false,
+    "resultType": "complete"
+  }
+}

@@ -7,6 +7,7 @@ Archives reconstruites depuis les sources courantes du tutoriel. Chaque ZIP cont
 - [Partie 3 — Modèle local](03-modele-local.zip)
 - [Partie 4 — Développement](04-developpement.zip)
 - [Partie 5 — Agents, contexte et permissions](05-agents.zip)
+- [Partie 6 — MCP et skills](06-mcp-skills.zip)
 - [Annexes — Comparatif et expérience locale](annexes.zip)
 
 Les contrôles de structure ne remplacent pas la relecture dans un brouillon ZdS ni les validations pratiques restantes.

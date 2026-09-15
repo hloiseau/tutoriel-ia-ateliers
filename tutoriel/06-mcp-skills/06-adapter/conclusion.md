@@ -1,0 +1,1 @@
+La procédure commence à correspondre à une manière de travailler. Reste à la maintenir sans finir avec un fichier géant qui mélange les règles du projet, les données métier et toutes les erreurs de l’année.

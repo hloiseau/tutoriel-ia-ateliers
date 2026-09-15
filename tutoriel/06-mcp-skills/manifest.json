@@ -1,0 +1,206 @@
+{
+  "object": "container",
+  "slug": "mcp-et-skills-en-pratique",
+  "title": "Les MCP et les skills en pratique",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-consulter",
+      "title": "Consulter notre premier ticket",
+      "introduction": "01-consulter/introduction.md",
+      "conclusion": "01-consulter/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "installer",
+          "title": "Préparer le dossier",
+          "text": "01-consulter/installer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "ticket",
+          "title": "Demander PRIX-1",
+          "text": "01-consulter/ticket.md"
+        },
+        {
+          "object": "extract",
+          "slug": "depanner",
+          "title": "Si le ticket n’arrive pas",
+          "text": "01-consulter/depanner.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "02-relier",
+      "title": "Brancher le serveur à notre assistant",
+      "introduction": "02-relier/introduction.md",
+      "conclusion": "02-relier/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "decouvrir",
+          "title": "Demander ce que le serveur sait faire",
+          "text": "02-relier/decouvrir.md"
+        },
+        {
+          "object": "extract",
+          "slug": "configurer",
+          "title": "Garder l’assistant que nous avons déjà",
+          "text": "02-relier/configurer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "trajet",
+          "title": "Où passent les informations ?",
+          "text": "02-relier/trajet.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "03-construire",
+      "title": "Construire les outils dont on a besoin",
+      "introduction": "03-construire/introduction.md",
+      "conclusion": "03-construire/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "fonction",
+          "title": "D’une fonction Python à un outil MCP",
+          "text": "03-construire/fonction.md"
+        },
+        {
+          "object": "extract",
+          "slug": "chercher",
+          "title": "Chercher, puis ouvrir le bon document",
+          "text": "03-construire/chercher.md"
+        },
+        {
+          "object": "extract",
+          "slug": "ressource",
+          "title": "Et les ressources ?",
+          "text": "03-construire/ressource.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "04-controler",
+      "title": "Refuser ce que le serveur ne doit pas faire",
+      "introduction": "04-controler/introduction.md",
+      "conclusion": "04-controler/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "parametres",
+          "title": "Un identifiant n’est pas un chemin",
+          "text": "04-controler/parametres.md"
+        },
+        {
+          "object": "extract",
+          "slug": "ecriture",
+          "title": "Demander une modification impossible par cet outil",
+          "text": "04-controler/ecriture.md"
+        },
+        {
+          "object": "extract",
+          "slug": "document",
+          "title": "Quand la documentation donne des ordres",
+          "text": "04-controler/document.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "05-skill",
+      "title": "Écrire notre premier skill",
+      "introduction": "05-skill/introduction.md",
+      "conclusion": "05-skill/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "dossier",
+          "title": "Donner un nom à une tâche précise",
+          "text": "05-skill/dossier.md"
+        },
+        {
+          "object": "extract",
+          "slug": "procedure",
+          "title": "Décrire le travail à faire",
+          "text": "05-skill/procedure.md"
+        },
+        {
+          "object": "extract",
+          "slug": "essayer",
+          "title": "Préparer la recette de PRIX-1",
+          "text": "05-skill/essayer.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "06-adapter",
+      "title": "Faire évoluer le skill à partir des problèmes rencontrés",
+      "introduction": "06-adapter/introduction.md",
+      "conclusion": "06-adapter/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "incomplet",
+          "title": "Un ticket qui ne dit pas tout",
+          "text": "06-adapter/incomplet.md"
+        },
+        {
+          "object": "extract",
+          "slug": "corriger",
+          "title": "Changer la règle qui a réellement manqué",
+          "text": "06-adapter/corriger.md"
+        },
+        {
+          "object": "extract",
+          "slug": "comparer",
+          "title": "Garder des essais que l’on peut comparer",
+          "text": "06-adapter/comparer.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "07-ranger",
+      "title": "Articuler skills, conventions et base de connaissances",
+      "introduction": "07-ranger/introduction.md",
+      "conclusion": "07-ranger/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "repartir",
+          "title": "Mettre chaque information à sa place",
+          "text": "07-ranger/repartir.md"
+        },
+        {
+          "object": "extract",
+          "slug": "refacto",
+          "title": "Faire une petite passe de refacto",
+          "text": "07-ranger/refacto.md"
+        },
+        {
+          "object": "extract",
+          "slug": "suite",
+          "title": "Choisir jusqu’où aller",
+          "text": "07-ranger/suite.md"
+        }
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

@@ -1,0 +1,1 @@
+Nous pouvons désormais consulter des faits, les utiliser dans une procédure et modifier cette procédure à partir d’un problème observé. Les fichiers restent assez accessibles pour qu’on puisse les contester, les simplifier et les faire évoluer.

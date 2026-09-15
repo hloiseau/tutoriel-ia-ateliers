@@ -20,6 +20,7 @@ def main():
         ('03-modele-local', 'annexes-modele-local-v1.zip'),
         ('04-developpement', 'annexes-developpement-v1.zip'),
         ('05-agents', 'atelier-agents.zip'),
+        ('06-mcp-skills', 'atelier-mcp-skills.zip'),
     ]
     if args.atelier and args.atelier not in {d for d, _ in ateliers}:
         parser.error('Atelier inconnu.')

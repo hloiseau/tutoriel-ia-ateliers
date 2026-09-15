@@ -12,7 +12,7 @@ Nous garderons l’assistant choisi pour la partie 4. Pour les incidents que nou
 
 Il faut Python 3.12 et savoir lire les petits fichiers de l’atelier précédent. Aucun nouveau service ni GPU n’est nécessaire pour le banc. Les observations avec votre assistant utilisent, elles, votre accès au modèle habituel.
 
-## Suivant. Suivre une demande jusqu’à l’outil
+## 1. Suivre une demande jusqu’à l’outil
 
 **TL;DR** — Une demande d’outil, son autorisation et son résultat sont trois étapes distinctes. Nous allons les retrouver dans un journal avant de les chercher dans notre assistant.
 
@@ -78,7 +78,7 @@ Nous allons justement examiner ce que le modèle reçoit, au-delà du texte que 
 
 
 
-## Suivant. Donner le contexte utile à l’étape en cours
+## 2. Donner le contexte utile à l’étape en cours
 
 **TL;DR** — Le contexte comprend nos messages, mais aussi les extraits et les résultats que l’assistant ajoute. Nous allons comparer deux demandes identiques dont l’une est encombrée par un historique sans rapport.
 
@@ -123,7 +123,7 @@ Nous préparerons plus loin une fiche de reprise. Pour le moment, gardez le tick
 
 
 
-## Suivant. Écrire des consignes que l’on peut contrôler
+## 3. Écrire des consignes que l’on peut contrôler
 
 **TL;DR** — Une consigne utile nomme l’action, les limites et le résultat à examiner. Nous allons transformer une demande vague, puis vérifier son effet sur un petit cas.
 
@@ -173,7 +173,7 @@ Une consigne explicite reste adressée à un modèle. Pour une action qui doit �
 
 
 
-## Suivant. Observer un refus qui ne dépend pas du modèle
+## 4. Observer un refus qui ne dépend pas du modèle
 
 **TL;DR** — Nous allons demander trois actions au banc : lire un chemin interdit, écrire une note et utiliser un terminal absent. Le programme doit les refuser, quel que soit le texte de la demande.
 
@@ -245,7 +245,7 @@ Sur votre assistant, retrouvez une permission concrète et sa portée : commande
 
 
 
-## Suivant. Arrêter une boucle et reprendre sans perdre le fil
+## 5. Arrêter une boucle et reprendre sans perdre le fil
 
 **TL;DR** — Nous allons arrêter des lectures répétées avec un budget d’appels, puis corriger une demande refusée. Pour une vraie session, nous conserverons l’état des fichiers et la prochaine action à vérifier.
 
@@ -312,7 +312,7 @@ Le modèle peut préparer ce résumé. Relisez les décisions et les faits avant
 
 
 
-## Suivant. Mesurer ce que la session nous a coûté
+## 6. Mesurer ce que la session nous a coûté
 
 **TL;DR** — Nous distinguerons les appels d’outils, les tokens facturés et notre temps de travail. Un petit calcul permet de voir pourquoi le cache et les tours successifs changent la facture.
 

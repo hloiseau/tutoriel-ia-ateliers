@@ -1,0 +1,23 @@
+{
+  "operation": "conventions",
+  "valeur": null,
+  "protocole": "2026-07-28",
+  "reponse": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "atelier-tickets",
+        "version": "1.0.0"
+      }
+    },
+    "ttlMs": 0,
+    "cacheScope": "private",
+    "contents": [
+      {
+        "uri": "atelier://conventions",
+        "mimeType": "text/plain",
+        "text": "# Conventions du projet fictif\n\nLes prix sont des entiers en centimes. Les scénarios comparent deux observations dans une même devise. Une recette préparée n’est pas une recette exécutée.\n"
+      }
+    ],
+    "resultType": "complete"
+  }
+}

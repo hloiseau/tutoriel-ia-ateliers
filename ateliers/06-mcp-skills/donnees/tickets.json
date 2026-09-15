@@ -1,0 +1,27 @@
+{
+  "PRIX-1": {
+    "id": "PRIX-1",
+    "titre": "Ne plus notifier une simple remise en stock",
+    "statut": "a preparer",
+    "regle": "Notifier seulement si le produit est disponible dans le nouvel état et si son prix baisse strictement.",
+    "questions_ouvertes": [],
+    "documents": [
+      "regle-notification"
+    ],
+    "revision": "exemple-1"
+  },
+  "PRIX-2": {
+    "id": "PRIX-2",
+    "titre": "Limiter les notifications trop rapprochées",
+    "statut": "a preparer",
+    "regle": "Éviter de notifier plusieurs fois un même utilisateur pour un même produit dans un intervalle court.",
+    "questions_ouvertes": [
+      "Quelle durée définit un intervalle court ?",
+      "Une nouvelle baisse plus importante peut-elle contourner cette limite ?"
+    ],
+    "documents": [
+      "regle-notification"
+    ],
+    "revision": "exemple-1"
+  }
+}
