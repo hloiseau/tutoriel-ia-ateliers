@@ -9,7 +9,7 @@ Mis à jour le **15 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 | [1 — Histoire](../tutoriel/01-histoire/README.md) | 7 | 29 | 12 | Version V3 validée par l’auteur ; texte préservé |
 | [2 — Construire un modèle](../tutoriel/02-apprentissage/README.md) | 8 | 31 | 13 | Version V2 rédigée, à poursuivre en relecture |
 | [3 — Modèle local](../tutoriel/03-modele-local/README.md) | 6 | 21 | 4 | Rédigée ; corrections demandées sur la forme conservées ; transition vers la partie 4 ajoutée |
-| [4 — Développement](../tutoriel/04-developpement/README.md) | 9 | 29 | 3 | Six chapitres récupérés, précédés des trois chapitres sur les outils et l’installation ; ensemble à relire |
+| [4 — Développement](../tutoriel/04-developpement/README.md) | 9 | 27 | 3 | Sept chapitres d’atelier réorganisés, un comparatif de référence et une expérience locale facultative ; interfaces à vérifier |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
 
@@ -41,3 +41,7 @@ Les rapports initiaux récupérés restent sous `docs/verifications-initiales/`.
 ## Correction après relecture : CPU et agent de code
 
 La cohérence des versions ne validait pas la faisabilité du parcours. Les introductions et raccords des parties 3–4 ont été corrigés : Qwen 1,5B sur CPU est une expérience facultative de discussion, encore non exécutée, et non une solution validée pour mener l’atelier avec un agent. La qualité des réponses et les délais restent à mesurer.
+
+## Réorganisation pédagogique
+
+Sept chapitres suivent désormais un seul atelier ; le comparatif et l’expérience locale sont consultables séparément. Les doublons de lecture et les redémarrages de l’exercice ont été retirés. Les commandes des versions de référence ont été rejouées sous Python 3.12.14, sans agent. Voir la [relecture et ses limites](relecture-partie4.md).

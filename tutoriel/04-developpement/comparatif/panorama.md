@@ -20,7 +20,7 @@ Table: Quelques portes d’entrée pour développer avec une IA
 
 Deux changements peuvent vous éviter de suivre une ancienne procédure d’installation. Google a annoncé le passage des utilisateurs individuels de Gemini CLI et Gemini Code Assist vers Antigravity CLI à compter du 18 juin 2026[^p4-out-migration]. De son côté, l’adresse de tarification de Windsurf redirige, lors de cette consultation, vers celle de Devin[^p4-out-windsurf]. Si vous reconnaissez un ancien nom, vérifiez donc aussi le parcours d’accès actuel.
 
-Pour notre installation, nous allons garder deux possibilités : Copilot dans VS Code pour essayer un service hébergé, et Continue dans le même éditeur pour réutiliser notre serveur. Ce choix nous donne des manipulations concrètes à suivre ; les étapes de lecture du code et de validation resteront utilisables avec les autres outils.
+Pour commencer l’atelier, revenez au chapitre « Installer l’assistant et observer le problème ». L’expérience Continue avec notre serveur local se trouve séparément à la fin de cette partie.
 
 [^p4-out-copilot]: GitHub, [offres et fonctions de Copilot](https://github.com/features/copilot/plans).
 [^p4-out-cursor]: Cursor, [offres et fonctions](https://cursor.com/pricing).

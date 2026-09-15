@@ -1,4 +1,4 @@
-Si vous découvrez Python, vous avez peut-être eu envie de demander directement la version finale. Vous l’auriez obtenue plus vite. Mais pourriez-vous maintenant expliquer pourquoi le `or` posait problème ?
+Si vous découvrez Python, vous avez peut-être eu envie de demander directement la version finale. Mais pourriez-vous ensuite expliquer pourquoi le `or` posait problème ?
 
 Fermez la correction et essayez de prédire le résultat de deux cas : un retour en stock avec hausse, puis une baisse d’un centime sur un produit disponible. Vérifiez vos réponses en exécutant le programme.
 

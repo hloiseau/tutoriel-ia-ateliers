@@ -1,0 +1,1 @@
+Une connexion réussie montre que l’éditeur peut parler au serveur. Pour savoir si cette installation vous aide à développer, il reste à examiner ses réponses et ses délais sur vos propres tâches. Nous n’avons pas configuré ni validé ici un parcours d’agent sur CPU.

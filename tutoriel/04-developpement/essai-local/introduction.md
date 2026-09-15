@@ -1,0 +1,1 @@
+**TL;DR** — Expérience facultative : relier Continue au serveur de la partie 3, puis examiner la réponse d’un petit modèle de code. Cette configuration reste à exécuter et à mesurer ; nous ne la présentons pas comme un agent capable de mener l’atelier.

@@ -1,23 +1,24 @@
-Un résumé de l’agent raconte ce qu’il pense avoir fait. Le diff montre les fichiers modifiés. Ouvrez celui de votre éditeur, puis cherchez le changement dans `suivi.py`.
+Ouvrez la comparaison des fichiers dans votre éditeur. Dans VS Code, ouvrez la version originale `01-depart/suivi.py` et copiez tout son contenu. Revenez dans `mon-suivi/suivi.py`, ouvrez la palette de commandes et lancez **File: Compare Active File with Clipboard**[^p4-diff-vscode]. Les libellés peuvent être traduits dans votre installation.
 
-La correction fournie retire ce morceau :
+Notre correction de référence montre :
 
 ```diff
 -        nouveau.prix_centimes < ancien.prix_centimes or not ancien.disponible
 +        nouveau.prix_centimes < ancien.prix_centimes
 ```
-Code: Le changement de comportement dans la fonction
+Code: La règle retirée par notre correction
 
-Si Git est installé, vous pouvez aussi comparer les deux dossiers depuis leur dossier parent :
+Si Git est installé, vous pouvez faire la même comparaison depuis un terminal, sans créer de dépôt :
 
 ```bash
-git diff --no-index 01-depart/suivi.py mon-suivi/suivi.py
+git diff --no-index "/chemin/vers/atelier-developpement/01-depart/suivi.py" "/chemin/vers/mon-suivi/suivi.py"
 ```
 
-Cette commande fonctionne sans créer de dépôt Git. Avec `--no-index`, un code de sortie égal à 1 signifie que les fichiers diffèrent ; ce n’est pas forcément un échec de la comparaison.[^p4-diff]
+Remplacez les deux chemins par ceux de vos fichiers. Cette commande ne suppose pas que les dossiers sont voisins. Avec `--no-index`, le code de sortie 1 signifie que les fichiers diffèrent[^p4-diff].
 
-Regardez ensuite les autres fichiers modifiés. Les nouveaux tests sont attendus. Une modification des données d’entrée pour éviter le bug, une suppression de validation ou une réécriture de tout le programme demandent une explication.
+Cette comparaison ne porte que sur `suivi.py`. Dans la liste des fichiers touchés affichée par l’assistant, ouvrez ensuite chaque autre fichier. Pour un fichier déjà présent au départ, recommencez la comparaison avec son original dans `01-depart`. Lisez entièrement le nouveau `test_ticket.py`, qui n’a pas d’original.
 
-Si vous débutez, choisissez une ligne retirée et une ligne conservée, puis expliquez leur rôle sans recopier le résumé de l’agent. Si vous n’y arrivez pas encore, revenez à la fonction. Le résultat est assez petit pour que cette lecture reste abordable.
+Le test ajouté est attendu. En revanche, changer les données de `retour-stock.json`, supprimer un test ou modifier une validation n’est pas nécessaire pour corriger cette condition. Cherchez la raison de ces changements avant de les garder.
 
-[^p4-diff]: Git, [comparaison de fichiers avec `git diff --no-index`](https://git-scm.com/docs/git-diff).
+[^p4-diff-vscode]: Microsoft, [comparaison des fichiers dans VS Code](https://code.visualstudio.com/docs/editing/codebasics#_compare-files).
+[^p4-diff]: Git, [comparaison avec git diff --no-index](https://git-scm.com/docs/git-diff).

@@ -2,7 +2,7 @@
 
 [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
-Les quatre premières parties sont centralisées avec leurs sources et illustrations : **30 chapitres, 110 sections et 32 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
+Les quatre premières parties sont centralisées avec leurs sources et illustrations : **30 chapitres, 108 sections et 32 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 
 ## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
@@ -44,15 +44,18 @@ Les quatre premières parties sont centralisées avec leurs sources et illustrat
 
 [Introduction](tutoriel/04-developpement/introduction.md) · [Toute la partie](tutoriel/04-developpement/LECTURE.md)
 
-1. [Avec quoi va-t-on développer ?](tutoriel/04-developpement/outils/LECTURE.md)
-2. [Choisir une solution adaptée à ses besoins](tutoriel/04-developpement/choisir/LECTURE.md)
-3. [Installer notre premier assistant](tutoriel/04-developpement/installer/LECTURE.md)
-4. [Ouvrir un projet que l’on peut comprendre](tutoriel/04-developpement/01-projet/LECTURE.md)
-5. [Décider ce que le ticket veut changer](tutoriel/04-developpement/02-demande/LECTURE.md)
-6. [Faire apparaître le bug dans un test](tutoriel/04-developpement/03-tests/LECTURE.md)
-7. [Faire le changement et lire le diff](tutoriel/04-developpement/04-corriger/LECTURE.md)
-8. [Vérifier au-delà de la dernière ligne verte](tutoriel/04-developpement/05-verifier/LECTURE.md)
-9. [Garder un changement que l’on sait expliquer](tutoriel/04-developpement/06-garder-la-main/LECTURE.md)
+1. [Choisir de quoi suivre l’atelier](tutoriel/04-developpement/outils/LECTURE.md)
+2. [Installer l’assistant et observer le problème](tutoriel/04-developpement/installer/LECTURE.md)
+3. [Décider ce que le ticket veut changer](tutoriel/04-developpement/02-demande/LECTURE.md)
+4. [Faire apparaître le bug dans un test](tutoriel/04-developpement/03-tests/LECTURE.md)
+5. [Faire le changement et lire le diff](tutoriel/04-developpement/04-corriger/LECTURE.md)
+6. [Vérifier au-delà de la dernière ligne verte](tutoriel/04-developpement/05-verifier/LECTURE.md)
+7. [Garder un changement que l’on sait expliquer](tutoriel/04-developpement/06-garder-la-main/LECTURE.md)
+
+**À consulter séparément :**
+
+8. [Référence — comparer les outils et leurs tarifs](tutoriel/04-developpement/comparatif/LECTURE.md)
+9. [Expérience facultative — discuter avec un modèle local](tutoriel/04-developpement/essai-local/LECTURE.md)
 
 ## Parties suivantes
 

@@ -16,13 +16,13 @@ Date du relevé documentaire : **14 septembre 2026**.
 
 L’environnement local n’était pas disponible pour cette révision. Les vérifications antérieures du serveur et de l’atelier Python ne valident pas les nouvelles intégrations.
 
-1. Installer VS Code et parcourir l’activation de Copilot Free avec un compte éligible ; vérifier les libellés visibles et le rôle Ask.
+1. Installer VS Code et parcourir l’activation de Copilot Free avec un compte éligible ; vérifier les libellés visibles, la session Local avec modèles Copilot et le passage du rôle Ask au rôle Agent.
 2. Installer Continue, charger les deux configurations YAML et vérifier la réponse de chaque serveur.
 3. Télécharger le GGUF Qwen, consigner sa révision et son empreinte ; mesurer la mémoire utilisée et vérifier le lancement avec le binaire de llama.cpp de la partie 3.
 4. Exécuter la demande de lecture avec Qwen sur CPU. Vérifier que les budgets de contexte et de sortie suffisent ; ajuster selon les observations.
 5. Vérifier le parcours sans connexion Internet après installation et téléchargement.
 6. Importer dans un brouillon ZdS le ZIP construit depuis les sources centralisées ; l’intégration des sources et la construction du ZIP ont été réalisées le 15 septembre 2026.
-7. Vérifier le rendu des tableaux, notes et légendes, puis le passage vers les six chapitres conservés.
+7. Vérifier le rendu des tableaux, notes et légendes, puis la progression des sept chapitres d’atelier et les deux chapitres complémentaires.
 
 Le parcours GPU reste une variante future. Aucune vitesse, compatibilité Windows/macOS ou réussite d’agent autonome n’est déduite de la seule documentation.
 
@@ -47,3 +47,7 @@ La relecture a identifié une promesse non étayée : les transitions présentai
 Avant toute recommandation pratique locale, relever le matériel, les versions, le modèle et sa quantification, le contexte effectif, la mémoire, le délai initial et la durée totale. Conserver les réponses et vérifier leur exactitude sur l’atelier. Si un mode agent est essayé, conserver aussi ses appels d’outils, erreurs, corrections et résultats de tests. Un chargement réussi ou une réponse courte ne suffit pas.
 
 Cette correction ne constitue pas une nouvelle validation des tarifs, des interfaces ou des autres affirmations de la partie 4.
+
+## Réorganisation pédagogique
+
+Sept chapitres suivent désormais un seul atelier ; le comparatif et l’expérience locale sont consultables séparément. Les doublons de lecture et les redémarrages de l’exercice ont été retirés. Les commandes des versions de référence ont été rejouées sous Python 3.12.14, sans agent. Voir la [relecture et ses limites](../../docs/relecture-partie4.md).

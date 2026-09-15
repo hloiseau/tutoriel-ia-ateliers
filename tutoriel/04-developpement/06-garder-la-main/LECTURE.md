@@ -1,6 +1,8 @@
-# 9. Garder un changement que l’on sait expliquer
+# 7. Garder un changement que l’on sait expliquer
 
 [Sommaire de la partie](../README.md) · [Sources](.)
+
+[Précédent : Vérifier au-delà de la dernière ligne verte](../05-verifier/LECTURE.md)
 
 **TL;DR :** préparez une trace courte du problème, de la correction et des vérifications. Puis choisissez où l’aide vous a réellement été utile.
 
@@ -34,7 +36,7 @@ Il compare deux observations dans une même devise implicite.
 ```
 Code: Une trame à compléter avec vos résultats
 
-Les cases laissées vides ne doivent pas être remplies par une supposition. Si vous n’avez pas exécuté un scénario, écrivez-le ou lancez-le.
+Indiquez « non exécuté » pour les scénarios que vous n’avez pas lancés.
 
 Ce texte peut ensuite servir de base à une description de pull request dans un vrai projet. Avant de publier, relisez les fichiers et les traces jointes : un rapport de test peut lui aussi contenir des données qu’on ne souhaite pas diffuser.
 
@@ -42,7 +44,7 @@ L’agent peut rédiger ce compte rendu à partir des sorties conservées. Vous 
 
 ## Quand on apprend encore à développer
 
-Si vous découvrez Python, vous avez peut-être eu envie de demander directement la version finale. Vous l’auriez obtenue plus vite. Mais pourriez-vous maintenant expliquer pourquoi le `or` posait problème ?
+Si vous découvrez Python, vous avez peut-être eu envie de demander directement la version finale. Mais pourriez-vous ensuite expliquer pourquoi le `or` posait problème ?
 
 Fermez la correction et essayez de prédire le résultat de deux cas : un retour en stock avec hausse, puis une baisse d’un centime sur un produit disponible. Vérifiez vos réponses en exécutant le programme.
 
@@ -64,4 +66,10 @@ N’ajoutez pas automatiquement un framework ou une série de commandes pour rep
 
 Vous pouvez aussi conclure que l’outil ne vous aide pas sur ce type de tâche. Adapter un outil à son besoin comprend cette possibilité.
 
+Notre correction tient en peu de caractères, mais nous savons maintenant quel cas elle change et comment le vérifier. Gardez votre copie de travail et votre compte rendu.
 
+L’atelier s’arrête ici. Le comparatif qui suit sert à choisir d’autres outils ; l’expérience locale permet d’explorer une autre installation. Dans la prochaine partie, nous regarderons plus précisément comment les agents choisissent leurs actions et comment encadrer ce travail.
+
+---
+
+[Précédent : Vérifier au-delà de la dernière ligne verte](../05-verifier/LECTURE.md)

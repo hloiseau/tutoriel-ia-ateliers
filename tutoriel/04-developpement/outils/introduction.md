@@ -1,3 +1,3 @@
-**TL;DR** — Le modèle produit une réponse, le moteur le fait tourner et l’assistant organise le travail autour. Pour développer, on peut demander une suggestion, discuter d’un extrait ou laisser un agent intervenir dans le projet. Ce ne sont pas les mêmes besoins.
+**TL;DR** — Pour l’atelier, il nous faut discuter du code, modifier un fichier et lire le résultat des tests. Gardez un assistant qui sait déjà le faire ; sinon, nous allons préparer VS Code avec Copilot.
 
-Avant de choisir un nom dans une liste, regardons ce que nous voulons lui faire faire. « Développer avec une IA » peut vouloir dire accepter une ligne proposée dans l’éditeur comme confier plusieurs fichiers à un agent. Entre les deux, il y a de quoi trouver une utilisation qui vous convienne.
+Avant l’installation, réglons deux questions : à qui allons-nous montrer le code, et qui exécutera les commandes ?

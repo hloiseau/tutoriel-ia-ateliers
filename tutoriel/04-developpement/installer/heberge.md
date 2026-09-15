@@ -1,14 +1,12 @@
-Dans ce parcours, nous utilisons **GitHub Copilot dans VS Code**, avec un compte GitHub et l’offre gratuite si votre compte y est éligible. Le modèle tournera chez le fournisseur ; le code ajouté à la conversation lui sera transmis.
+Dans VS Code, ouvrez le menu de l’icône Copilot dans la barre d’état, choisissez **Use AI Features**, puis suivez la connexion à GitHub. L’offre gratuite peut être proposée à un compte éligible ; le tableau de bord Copilot permet de consulter son usage[^p4-install-copilot].
 
-Dans la barre d’état de VS Code, ouvrez le menu de l’icône Copilot, choisissez **Use AI Features**, puis suivez la connexion à GitHub. Un compte sans abonnement peut être inscrit à Copilot Free. Le tableau de bord Copilot, accessible depuis la barre d’état, permet de suivre l’usage[^p4-install-copilot].
+Ouvrez ensuite la vue **Chat**. Pour la première lecture, utilisez une session **Local** et le rôle **Ask**, avec un modèle accessible par votre compte Copilot. Ici, *Local* désigne l’exécution des outils de VS Code, pas l’hébergement du modèle. Le rôle Ask permet de poser des questions sans modifier le code[^p4-install-roles].
 
-Ouvrez la vue de discussion. Pour cette première demande, choisissez une session **Copilot** et le rôle **Ask**, qui permet de poser des questions sans modifier le code. Choisissez un modèle disponible dans votre offre, ou **Auto** si cette option est proposée[^p4-install-roles].
+Les interfaces évoluent. Si vous utilisez une autre version ou un autre assistant, cherchez la fonction de discussion sans édition. Nous lui fournirons nous-mêmes le court extrait à expliquer.
 
-Nous ne lançons pas encore de tâche en arrière-plan. Nous voulons une réponse que nous puissions comparer à quelques lignes sous nos yeux.
+Si l’accès au modèle est bloqué, regardez le compte connecté et le quota disponible avant de relancer la demande. Vous pouvez continuer les manipulations Python pendant que cet accès est indisponible.
 
-Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Vous pouvez utiliser un autre assistant auquel vous avez accès, attendre le renouvellement du quota ou poursuivre les exercices Python vous-même. Les fichiers et les corrigés restent accessibles sans abonnement. L’essai CPU ci-dessous ne garantit pas de remplacer le service hébergé.
-
-Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous est une expérience facultative.
+Laissez la discussion ouverte. Nous allons d’abord exécuter le programme pour avoir quelque chose de précis à lui montrer.
 
 [^p4-install-copilot]: Microsoft, [configuration de Copilot dans VS Code](https://code.visualstudio.com/docs/setup/copilot).
-[^p4-install-roles]: Microsoft, [choix de l’agent, du rôle et du modèle](https://code.visualstudio.com/docs/agents/run/agent-harnesses).
+[^p4-install-roles]: Microsoft, [cibles de session et rôles Ask et Agent](https://code.visualstudio.com/docs/agents/run/agent-harnesses).

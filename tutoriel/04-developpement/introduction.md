@@ -1,17 +1,13 @@
-Un modèle répond dans notre terminal. Très bien. Mais comment passer de cette conversation à une modification dans un vrai projet ?
+**TL;DR** — Nous allons corriger un petit programme avec l’aide d’un agent : observer le problème, écrire un test qui le reproduit, faire la modification et vérifier le résultat. Un seul dossier de travail nous suivra jusqu’au bout.
 
-Il existe des extensions pour les éditeurs, des éditeurs qui intègrent directement l’IA, des assistants en ligne de commande et des agents qui travaillent sur une machine distante. Certains utilisent un abonnement, d’autres une API facturée à l’usage. Certains peuvent parler à notre serveur local. On peut vite passer davantage de temps à choisir son outil qu’à s’en servir. 😅
+Les trois tests passent. Pourtant, notre suivi de prix annonce une bonne affaire… alors que le prix n’a pas baissé. Voilà un programme un peu trop enthousiaste. 😅
 
-Nous allons prendre le temps de nous y retrouver, puis installer de quoi travailler. Pour commencer sans carte graphique dédiée, nous utiliserons un assistant dont le modèle est hébergé, avec un accès gratuit si votre compte y est éligible. Nous garderons aussi une expérience facultative avec notre serveur local, pour voir ce que donne une discussion sur quelques lignes de code. Cet essai ne constitue pas un parcours d’agent de code sur CPU.
+Nous allons lui retirer cette habitude. La correction sera petite, ce qui nous laissera le temps de comprendre ce que l’agent fait autour : les fichiers qu’il lit, les tests qu’il écrit et les commandes qu’il lance.
 
-Nous ouvrirons ensuite un petit projet Python de suivi de prix. Ses tests passent, mais il envoie une notification dans un cas où nous n’en voulons plus. Nous suivrons la modification jusqu’au bout : comprendre le programme, préciser la demande, reproduire le problème, corriger le code et vérifier le résultat.
+Dans la partie précédente, nous faisions tourner un modèle chez nous. Pour cet atelier, nous utiliserons un assistant de développement avec un modèle hébergé. Vous n’avez donc pas besoin d’une grosse carte graphique. Si vous avez déjà un assistant, gardez-le ; sinon, nous décrirons une installation avec VS Code et GitHub Copilot. L’accès gratuit dépend de votre compte et de son quota.
 
-Si vous débutez, prenez aussi le temps de faire votre propre lecture du code. Une explication très convaincante peut être fausse ; pour s’en apercevoir, il faut pouvoir suivre ce que fait le programme.
+Il vous faut savoir ouvrir un terminal, lancer un programme Python et lire une fonction simple. Le projet utilise Python 3.12 et sa bibliothèque standard. Nous expliquerons les assertions de test et la condition qui nous intéressent.
 
-**TL;DR**
+Les **sept premiers chapitres** suivent l’atelier. Le chapitre [« Référence — comparer les outils et leurs tarifs »](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/04-developpement/comparatif/LECTURE.md) rassemble le panorama complet, dont Pi : vous pouvez le consulter dès maintenant pour choisir votre outil, puis revenir à l’installation. L’**expérience locale avec Continue**, à la fin, est facultative et reste à vérifier sur machine ; elle ne remplace pas un parcours d’agent validé.
 
-- Nous choisissons un assistant en regardant ses fonctions, son coût et l’endroit où il traite nos données.
-- Le parcours principal utilise VS Code avec GitHub Copilot ; vous pouvez conserver un assistant que vous utilisez déjà.
-- L’essai local avec Continue est facultatif. Faire répondre un modèle ne suffit pas à montrer qu’il peut prendre en charge notre atelier.
-- Nous commençons par discuter du code, avant de laisser un outil le modifier.
-- Le même atelier sert ensuite à apprendre à relire, tester et valider une correction, avec ou sans agent.
+Les fichiers du projet sont publics et le ticket est fictif. Nous pouvons les montrer au service choisi sans utiliser le code de notre entreprise. Si vous préférez travailler sans IA, les tests et les corrections expliquées permettent aussi de suivre l’exercice.

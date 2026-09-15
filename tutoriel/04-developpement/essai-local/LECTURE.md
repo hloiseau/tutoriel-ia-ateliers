@@ -1,6 +1,16 @@
-Vous voulez essayer de discuter avec notre modèle depuis l’éditeur ? Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**. Cette expérience est facultative. Le raccord à Continue et l’essai du modèle de code ci-dessous restent à exécuter ; nous n’avons pas encore de résultat ni de temps de réponse à vous montrer.
+# 9. Expérience facultative — discuter avec un modèle local
 
-### Retrouver le serveur
+[Sommaire de la partie](../README.md) · [Sources](.)
+
+[Revenir à l’installation de l’atelier](../installer/LECTURE.md) · [Sommaire](../README.md)
+
+**TL;DR** — Expérience facultative : relier Continue au serveur de la partie 3, puis examiner la réponse d’un petit modèle de code. Cette configuration reste à exécuter et à mesurer ; nous ne la présentons pas comme un agent capable de mener l’atelier.
+
+## Relier Continue à notre serveur
+
+Vous voulez essayer de discuter avec notre modèle depuis l’éditeur ? Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**. Gardez sous la main la commande de lancement du serveur qui fonctionnait en partie 3.
+
+##### Retrouver le serveur
 
 Relancez `llama-server` avec la commande qui fonctionnait sur votre machine dans la partie précédente. Pour cette première connexion, conservez le port `8080`, l’adresse `127.0.0.1`, l’alias `atelier-local` et le contexte de `2048` tokens.
 
@@ -8,7 +18,7 @@ Ouvrez <http://127.0.0.1:8080/health> dans le navigateur. Lorsque le modèle est
 
 Si rien ne répond, regardez d’abord le terminal du serveur. Installer une extension ne réparera pas un modèle qui n’a pas fini de charger.
 
-### Ajouter Continue
+##### Ajouter Continue
 
 Dans les extensions de VS Code, recherchez **Continue**, ou ouvrez directement [sa page officielle](https://marketplace.visualstudio.com/items?itemName=Continue.continue), puis installez l’extension[^p4-install-continue].
 
@@ -48,7 +58,7 @@ Ce n’est pas un test d’intelligence. Nous cherchons une réponse, même impa
 
 Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres de l’extension : désactivez-le pour cet usage local[^p4-install-offline]. Les réglages réseau de VS Code et des autres extensions restent séparés. Pour vérifier que cette conversation n’a pas besoin d’Internet, vous pouvez couper la connexion après les téléchargements, ouvrir une nouvelle discussion et envoyer une autre question.
 
-### Passer à un modèle de code
+##### Passer à un modèle de code
 
 La connexion fonctionne ? Nous pouvons changer ce que le serveur charge.
 
@@ -89,7 +99,9 @@ models:
 ```
 Code: Configuration de discussion avec le modèle de code
 
-Ouvrez une nouvelle conversation après le changement de modèle. Nous allons lui montrer une fonction, pas le dépôt entier.
+Ouvrez une nouvelle conversation après le changement de modèle. Copiez la définition de `Etat` et la fonction `notifier` depuis **la version initiale** `01-depart/suivi.py`. Posez la même question que dans le chapitre de lecture : pour `Etat(2000, False)` puis `Etat(2000, True)`, quelles valeurs prennent les conditions et que renvoie la fonction ?
+
+Chronométrez le temps avant le début de la réponse et sa durée totale. Conservez le texte obtenu, puis vérifiez-le contre le code : le résultat initial est vrai. Une réponse rapide mais fausse ne nous aide pas davantage qu’une réponse juste qui arrive trop tard pour notre usage.
 
 Si la réponse est lente, commencez par raccourcir la demande et la sortie attendue. Si la machine manque de mémoire, revenez au contexte précédent ou au petit modèle pour finir le diagnostic de connexion. Pour l’atelier, vous pouvez toujours effectuer les modifications vous-même : il n’est pas nécessaire de laisser un modèle en difficulté multiplier les tentatives.
 
@@ -101,3 +113,9 @@ Si la réponse est lente, commencez par raccourcir la demande et la sortie atten
 [^p4-install-offline]: Continue, [fonctionnement sans Internet](https://docs.continue.dev/guides/running-continue-without-internet).
 [^p4-install-qwen]: Qwen, [Qwen2.5-Coder-1.5B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF).
 [^p4-install-qwen-fichier]: Qwen, [fichiers GGUF proposés](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main).
+
+Une connexion réussie montre que l’éditeur peut parler au serveur. Pour savoir si cette installation vous aide à développer, il reste à examiner ses réponses et ses délais sur vos propres tâches. Nous n’avons pas configuré ni validé ici un parcours d’agent sur CPU.
+
+---
+
+[Revenir à l’installation de l’atelier](../installer/LECTURE.md) · [Sommaire](../README.md)

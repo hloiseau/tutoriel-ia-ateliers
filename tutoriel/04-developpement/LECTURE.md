@@ -2,75 +2,553 @@
 
 [Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)
 
-Un modèle répond dans notre terminal. Très bien. Mais comment passer de cette conversation à une modification dans un vrai projet ?
+**TL;DR** — Nous allons corriger un petit programme avec l’aide d’un agent : observer le problème, écrire un test qui le reproduit, faire la modification et vérifier le résultat. Un seul dossier de travail nous suivra jusqu’au bout.
 
-Il existe des extensions pour les éditeurs, des éditeurs qui intègrent directement l’IA, des assistants en ligne de commande et des agents qui travaillent sur une machine distante. Certains utilisent un abonnement, d’autres une API facturée à l’usage. Certains peuvent parler à notre serveur local. On peut vite passer davantage de temps à choisir son outil qu’à s’en servir. 😅
+Les trois tests passent. Pourtant, notre suivi de prix annonce une bonne affaire… alors que le prix n’a pas baissé. Voilà un programme un peu trop enthousiaste. 😅
 
-Nous allons prendre le temps de nous y retrouver, puis installer de quoi travailler. Pour commencer sans carte graphique dédiée, nous utiliserons un assistant dont le modèle est hébergé, avec un accès gratuit si votre compte y est éligible. Nous garderons aussi une expérience facultative avec notre serveur local, pour voir ce que donne une discussion sur quelques lignes de code. Cet essai ne constitue pas un parcours d’agent de code sur CPU.
+Nous allons lui retirer cette habitude. La correction sera petite, ce qui nous laissera le temps de comprendre ce que l’agent fait autour : les fichiers qu’il lit, les tests qu’il écrit et les commandes qu’il lance.
 
-Nous ouvrirons ensuite un petit projet Python de suivi de prix. Ses tests passent, mais il envoie une notification dans un cas où nous n’en voulons plus. Nous suivrons la modification jusqu’au bout : comprendre le programme, préciser la demande, reproduire le problème, corriger le code et vérifier le résultat.
+Dans la partie précédente, nous faisions tourner un modèle chez nous. Pour cet atelier, nous utiliserons un assistant de développement avec un modèle hébergé. Vous n’avez donc pas besoin d’une grosse carte graphique. Si vous avez déjà un assistant, gardez-le ; sinon, nous décrirons une installation avec VS Code et GitHub Copilot. L’accès gratuit dépend de votre compte et de son quota.
 
-Si vous débutez, prenez aussi le temps de faire votre propre lecture du code. Une explication très convaincante peut être fausse ; pour s’en apercevoir, il faut pouvoir suivre ce que fait le programme.
+Il vous faut savoir ouvrir un terminal, lancer un programme Python et lire une fonction simple. Le projet utilise Python 3.12 et sa bibliothèque standard. Nous expliquerons les assertions de test et la condition qui nous intéressent.
 
-**TL;DR**
+Les **sept premiers chapitres** suivent l’atelier. Le chapitre [« Référence — comparer les outils et leurs tarifs »](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/04-developpement/comparatif/LECTURE.md) rassemble le panorama complet, dont Pi : vous pouvez le consulter dès maintenant pour choisir votre outil, puis revenir à l’installation. L’**expérience locale avec Continue**, à la fin, est facultative et reste à vérifier sur machine ; elle ne remplace pas un parcours d’agent validé.
 
-- Nous choisissons un assistant en regardant ses fonctions, son coût et l’endroit où il traite nos données.
-- Le parcours principal utilise VS Code avec GitHub Copilot ; vous pouvez conserver un assistant que vous utilisez déjà.
-- L’essai local avec Continue est facultatif. Faire répondre un modèle ne suffit pas à montrer qu’il peut prendre en charge notre atelier.
-- Nous commençons par discuter du code, avant de laisser un outil le modifier.
-- Le même atelier sert ensuite à apprendre à relire, tester et valider une correction, avec ou sans agent.
+Les fichiers du projet sont publics et le ticket est fictif. Nous pouvons les montrer au service choisi sans utiliser le code de notre entreprise. Si vous préférez travailler sans IA, les tests et les corrections expliquées permettent aussi de suivre l’exercice.
 
-## 1. Avec quoi va-t-on développer ?
+## 1. Choisir de quoi suivre l’atelier
 
-**TL;DR** — Le modèle produit une réponse, le moteur le fait tourner et l’assistant organise le travail autour. Pour développer, on peut demander une suggestion, discuter d’un extrait ou laisser un agent intervenir dans le projet. Ce ne sont pas les mêmes besoins.
+**TL;DR** — Pour l’atelier, il nous faut discuter du code, modifier un fichier et lire le résultat des tests. Gardez un assistant qui sait déjà le faire ; sinon, nous allons préparer VS Code avec Copilot.
 
-Avant de choisir un nom dans une liste, regardons ce que nous voulons lui faire faire. « Développer avec une IA » peut vouloir dire accepter une ligne proposée dans l’éditeur comme confier plusieurs fichiers à un agent. Entre les deux, il y a de quoi trouver une utilisation qui vous convienne.
+Avant l’installation, réglons deux questions : à qui allons-nous montrer le code, et qui exécutera les commandes ?
 
-### Le modèle, le moteur et l’assistant
+### Où tournent le code et le modèle ?
 
-Reprenons notre installation de la partie précédente.
+Notre client de la partie précédente envoyait une question à `llama-server`, qui faisait calculer la réponse par le modèle. Un assistant de développement ajoute notamment les fichiers du projet à cette conversation.
 
-Le fichier GGUF contient les paramètres du **modèle**. **llama.cpp** fournit le moteur qui les utilise pour calculer une réponse. Notre petit client Python envoie la question au serveur et affiche le résultat.
+Il faut distinguer **l’endroit où l’assistant agit** et **l’endroit où le modèle tourne**. Dans l’installation que nous allons utiliser, l’éditeur et les tests tournent sur notre ordinateur. Le modèle, lui, reçoit le contexte et calcule sa réponse chez le fournisseur.
 
-Pour travailler dans un éditeur, nous pouvons remplacer ce client par un **assistant de développement**. C’est lui qui prépare la requête avec notre question et les extraits de code, affiche la réponse et, selon ses fonctions, propose une modification ou exécute une commande.
-
-| Élément | Dans notre installation locale | Ce qu’il fait |
-| --- | --- | --- |
-| Modèle | Un fichier GGUF | Fournit les paramètres utilisés pour produire la réponse |
-| Moteur et serveur | `llama-server` | Charge le modèle, effectue les calculs et reçoit les requêtes |
-| Assistant | Continue dans l’éditeur | Prépare la conversation et permet de travailler avec le code |
-Table: Les trois éléments que nous allons relier
-
-Changer d’assistant ne signifie donc pas forcément changer de modèle. Et changer de modèle ne demande pas forcément de quitter son éditeur.
-
-Il faut aussi distinguer **l’endroit où l’assistant agit** et **l’endroit où le modèle tourne**. Un agent lancé dans votre terminal peut lire des fichiers et exécuter les tests sur votre ordinateur, tout en envoyant le contexte à un service distant pour obtenir ses réponses.
-
-À l’inverse, une extension peut envoyer ses requêtes à `127.0.0.1`, comme notre client Python. Dans ce cas, c’est notre serveur qui calcule les réponses. Le mot « local » mérite donc une petite question supplémentaire : *qu’est-ce qui tourne localement, exactement ?*
-
-### De la suggestion à l’agent
-
-Vous êtes en train d’écrire une fonction. L’éditeur suggère la fin de la ligne : c’est de la **complétion**. Vous décidez si vous la gardez.
-
-Un peu plus loin, vous tombez sur une condition difficile à lire. Vous sélectionnez ces lignes et demandez une explication : c’est une **discussion avec du contexte**. Vous n’avez pas besoin que l’outil puisse modifier le dépôt pour vous aider.
-
-Vous pouvez aussi demander une **modification ciblée** : ajouter un cas de test, simplifier une fonction ou proposer un autre nom. L’assistant prépare alors du code ou un diff, que vous relisez.
-
-Enfin, un **agent** peut enchaîner plusieurs actions : chercher le fichier concerné, le lire, le modifier, lancer les tests, lire l’erreur et recommencer. Il lui faut un modèle, mais aussi un programme qui exécute les actions et lui renvoie leurs résultats.
-
-| Votre besoin | Fonction à chercher |
+| Élément | Dans l’atelier |
 | --- | --- |
-| Écrire moins de code répétitif au clavier | Complétion dans l’éditeur |
-| Comprendre une fonction ou une erreur | Discussion avec sélection de code |
-| Obtenir une proposition facile à relire | Modification ciblée et affichage du diff |
-| Faire avancer une tâche dans plusieurs fichiers | Agent avec accès au projet et au terminal |
-| Confier une tâche pendant que vous faites autre chose | Exécution en arrière-plan, locale ou distante |
-Table: Partir du travail à faire pour choisir une fonction
+| Projet et tests Python | Sur notre ordinateur |
+| Assistant | Dans l’éditeur, avec accès à notre copie de travail |
+| Modèle et moteur d’inférence | Chez le fournisseur du modèle |
+Table: Où se passe le travail ?
 
-Ces fonctions peuvent cohabiter dans un même produit. Cela ne vous oblige pas à toutes les activer.
+C’est pour cela que cette installation ne demande pas de GPU. Faire également tourner le modèle chez soi est une autre possibilité, avec des besoins de mémoire et de calcul à évaluer. Un petit modèle qui répond sur CPU ne devient pas un agent de code efficace simplement parce qu’on le branche à l’éditeur.
 
-Si votre difficulté actuelle est d’imaginer des cas de test, commencez par là. Vous pouvez écrire le code vous-même et demander à l’assistant quels comportements vous avez oubliés. Vous pouvez aussi préférer déboguer seul et ne lui demander qu’une explication de documentation. Il n’y a pas de formule complète à adopter pour avoir le droit de s’en servir. 🙂
+### Discuter, puis laisser agir
 
-### Faire le tour des outils
+La complétion suggère du code pendant que vous tapez. Nous allons surtout utiliser deux autres fonctions :
+
+- **La discussion** : nous montrons une fonction et demandons une explication. Nous lisons la réponse en gardant le code sous les yeux.
+- **Le mode agent** : le modèle peut demander au logiciel de lire ou modifier des fichiers et de lancer des commandes. Les résultats lui reviennent, ce qui lui permet de poursuivre.
+
+Le programme qui organise ces échanges est souvent appelé **harness**. Copilot, Codex, Claude Code, Pi et d’autres proposent leur propre manière de le faire. Nous comparerons leurs possibilités dans le chapitre de référence.
+
+Pour commencer, nous resterons en discussion. Nous passerons au mode agent au moment d’écrire notre premier test. Vous verrez ainsi ce qui change quand l’outil peut agir sur les fichiers.
+
+### Quel outil prendre pour commencer ?
+
+Vous utilisez déjà un assistant capable de lire et modifier un projet ? Gardez-le. Les demandes de l’atelier portent sur des fichiers et des commandes Python ; elles ne dépendent pas d’une marque.
+
+Sinon, nous prendrons **VS Code avec GitHub Copilot** comme exemple d’installation. D’autres possibilités figurent dans le [comparatif complet](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/04-developpement/comparatif/LECTURE.md) : éditeurs, agents en terminal, choix du modèle, prix et limites des offres. Ce comparatif est daté de septembre 2026.
+
+Avant de vous connecter, vérifiez deux points :
+
+- Le service peut-il recevoir ces fichiers ? Pour notre petit projet public, oui. Pour votre code professionnel, il faudra connaître les règles de votre équipe.
+- Quel accès avez-vous au modèle ? Une offre gratuite peut avoir un quota. Un logiciel libre peut, lui, utiliser une API payante. Le prix du logiciel ne donne donc pas toujours le coût de la tâche.
+
+Copilot propose une offre gratuite sous conditions et avec des limites[^p4-depart-offre]. Si elle n’est pas disponible pour votre compte, vous pouvez utiliser un autre accès que vous possédez ou suivre les corrections expliquées sans agent. Nous n’allons pas vous demander de souscrire pour ouvrir trois fichiers Python. 🙂
+
+[^p4-depart-offre]: GitHub, [offres et limites de Copilot](https://github.com/features/copilot/plans).
+
+
+
+## 2. Installer l’assistant et observer le problème
+
+**TL;DR** — Nous préparons une copie de travail, ouvrons l’assistant et exécutons le programme. À la fin du chapitre, nous aurons observé le problème et retrouvé la fonction qui le provoque.
+
+### Préparer notre seule copie de travail
+
+Téléchargez [les fichiers de l’atelier](https://github.com/hloiseau/tutoriel-ia-ateliers/raw/b95165289276a45bc299d0826e3c540727e8e203/telechargements/annexes-developpement-v1.zip), puis décompressez l’archive. Le dossier `atelier-developpement` contient trois états du même projet :
+
+| Dossier fourni | À quoi il nous servira |
+| --- | --- |
+| `01-depart` | Le programme avant notre modification |
+| `02-test-rouge` | Les tests de référence, avant la correction |
+| `03-corrige` | La correction à consulter après avoir essayé |
+Table: Les fichiers de départ et les corrections
+
+Copiez **`01-depart`** dans un nouveau dossier nommé **`mon-suivi`**, en dehors du dossier téléchargé. Gardez les trois versions fournies à leur emplacement d’origine. `mon-suivi` sera notre seule copie de travail ; nous ne repartirons pas de zéro à chaque chapitre.
+
+Installez [Visual Studio Code](https://code.visualstudio.com/download), puis utilisez **Fichier → Ouvrir le dossier** pour ouvrir `mon-suivi`. Si vous avez déjà un éditeur et un assistant, ouvrez cette même copie avec eux et passez à « Observer le problème ».
+
+Dans l’explorateur, vous devez retrouver `suivi.py`, `test_suivi.py`, `TICKET.md` et `scenarios`. Les dossiers de correction restent en dehors de l’espace de travail : autant éviter de laisser la réponse sous le nez de l’agent. 🙂
+
+### Ouvrir la discussion dans VS Code
+
+Dans VS Code, ouvrez le menu de l’icône Copilot dans la barre d’état, choisissez **Use AI Features**, puis suivez la connexion à GitHub. L’offre gratuite peut être proposée à un compte éligible ; le tableau de bord Copilot permet de consulter son usage[^p4-install-copilot].
+
+Ouvrez ensuite la vue **Chat**. Pour la première lecture, utilisez une session **Local** et le rôle **Ask**, avec un modèle accessible par votre compte Copilot. Ici, *Local* désigne l’exécution des outils de VS Code, pas l’hébergement du modèle. Le rôle Ask permet de poser des questions sans modifier le code[^p4-install-roles].
+
+Les interfaces évoluent. Si vous utilisez une autre version ou un autre assistant, cherchez la fonction de discussion sans édition. Nous lui fournirons nous-mêmes le court extrait à expliquer.
+
+Si l’accès au modèle est bloqué, regardez le compte connecté et le quota disponible avant de relancer la demande. Vous pouvez continuer les manipulations Python pendant que cet accès est indisponible.
+
+Laissez la discussion ouverte. Nous allons d’abord exécuter le programme pour avoir quelque chose de précis à lui montrer.
+
+[^p4-install-copilot]: Microsoft, [configuration de Copilot dans VS Code](https://code.visualstudio.com/docs/setup/copilot).
+[^p4-install-roles]: Microsoft, [cibles de session et rôles Ask et Agent](https://code.visualstudio.com/docs/agents/run/agent-harnesses).
+
+### Observer le problème
+
+Dans l’éditeur, ouvrez **Terminal → Nouveau terminal**. Il doit être placé dans `mon-suivi`, le dossier qui contient `suivi.py`. Nous utiliserons Python 3.12 ; aucune bibliothèque supplémentaire n’est nécessaire.
+
+```bash
+python --version
+python -m unittest discover -v
+```
+Code: Vérifier Python et lancer les tests de départ
+
+Si votre installation utilise `python3` ou `py -3.12`, remplacez `python` par cette commande dans la suite.
+
+Vous devez obtenir **trois tests réussis**. Si vous voyez `Ran 0 tests`, vérifiez le dossier courant et la présence de `test_suivi.py` : aucune fonction n’a encore été testée[^p4-unittest].
+
+Ouvrez maintenant `scenarios/retour-stock.json`. Le produit passe d’indisponible à disponible, mais son prix reste à 2 000 centimes. Exécutez ce scénario :
+
+```bash
+python suivi.py scenarios/retour-stock.json
+```
+
+Le programme initial affiche :
+
+```json
+{"notifier": true}
+```
+Code: Une notification décidée sans baisse de prix
+
+Les tests passent, et nous venons pourtant de reproduire le comportement à changer. Ils ne couvraient donc pas ce cas. Le programme se contente d’afficher sa décision : aucun courriel n’est envoyé.
+
+[^p4-unittest]: Python, [découverte et exécution des tests avec unittest](https://docs.python.org/3.12/library/unittest.html).
+
+### Retrouver la décision et la faire expliquer
+
+Ouvrez `suivi.py`. La fonction `main` lit le fichier JSON ; `lire_etat` construit les deux objets `Etat` ; `notifier` reçoit ces objets et décide du résultat.
+
+![Le fichier JSON est lu, transformé en deux états puis envoyé à la fonction de décision](images/projet.png)
+Figure: Le chemin de notre scénario
+
+Retrouvez `notifier` dans le fichier. Copiez cette fonction et la définition de `Etat` dans la discussion, puis envoyez :
+
+```text
+Explique quand notifier renvoie True.
+Pour ancien = Etat(2000, False) et nouveau = Etat(2000, True),
+donne la valeur de chaque condition et le résultat final.
+Appuie-toi sur ce code. Ne propose pas encore de correction.
+```
+Code: Demander une explication que l’on peut vérifier
+
+Gardez la fonction sous les yeux pendant la lecture. `nouveau.disponible` vaut vrai ; la comparaison des prix vaut faux ; `not ancien.disponible` vaut vrai. Le `or` suffit donc à rendre vraie la parenthèse, puis la fonction entière.
+
+Si l’explication de l’assistant aboutit à faux, confrontez-la à ces trois valeurs et au résultat que vous avez exécuté. C’est un désaccord précis à lui montrer, sans lui demander vaguement de « mieux réfléchir ».
+
+Nous savons maintenant où intervenir. Ouvrons le ticket pour décider ce qui doit remplacer cette règle.
+
+
+
+## 3. Décider ce que le ticket veut changer
+
+**TL;DR :** une phrase de ticket cache parfois plusieurs comportements. Nous allons les mettre à plat avant de toucher à la fonction.
+
+### Une remise en stock n’est pas une baisse de prix
+
+Le ticket PRIX-1 demande de ne plus notifier un produit qui revient simplement en stock. Le fichier `TICKET.md` donne la règle complète : une notification est autorisée seulement si le produit est disponible dans le nouvel état **et** si son prix a strictement baissé par rapport à l’observation précédente.
+
+Les prix sont des entiers en centimes. Nous comparons deux observations consécutives, dans une même devise implicite. Il n’est pas question de retrouver le prix le plus bas des six derniers mois ni de calculer une promotion.
+
+Avant de regarder la suite, répondez à ces deux cas :
+
+- Le produit revient en stock au même prix. Faut-il notifier ?
+- Le produit revient en stock avec un prix plus bas. Faut-il notifier ?
+
+Le premier cas doit donner **faux**, le second **vrai**. « Ne plus notifier une remise en stock » ne veut donc pas dire « ignorer tous les produits qui étaient indisponibles ». Une baisse de prix peut accompagner le retour en stock.
+
+C’est exactement le genre de raccourci qu’il faut éclaircir dans un vrai ticket. Si personne n’a décidé comment traiter le second cas, l’agent ne devrait pas choisir discrètement à la place de l’équipe.
+
+### Écrire la table avant les tests
+
+Voici les cas que nous voulons distinguer :
+
+| Ancien état | Nouvel état | Notification attendue |
+| --- | --- | --- |
+| 20 €, disponible | 15 €, disponible | Oui |
+| 15 €, disponible | 20 €, disponible | Non |
+| 20 €, disponible | 15 €, indisponible | Non |
+| 20 €, indisponible | 20 €, disponible | Non |
+| 20 €, indisponible | 15 €, disponible | Oui |
+| 20 €, indisponible | 25 €, disponible | Non |
+| 20 €, disponible | 20 €, disponible | Non |
+Table: Les situations que la règle doit départager
+
+Les trois premières correspondent déjà à nos tests de départ. Les suivantes rendent visible ce que ces tests ne contrôlaient pas.
+
+Vous pouvez demander à l’agent de proposer cette table avant de coder les tests. Relisez alors les **résultats attendus**, pas seulement le nombre de lignes. Une longue suite de tests qui attend la mauvaise réponse reste une longue suite de tests qui attend la mauvaise réponse.
+
+Pour une règle aussi petite, faire la table soi-même prend peu de temps. Dans un projet plus grand, l’aide peut surtout servir à retrouver les cas oubliés ou à traduire une règle déjà décidée en scénarios exécutables.
+
+### Délimiter le changement
+
+Ajoutons quelques limites simples à notre travail : nous conservons la fonction `notifier`, les fichiers JSON et les validations existantes. Nous n’ajoutons pas de base, d’envoi de courriel ou de système de préférences.
+
+Pourquoi le préciser ? Parce qu’une demande d’« amélioration des notifications » pourrait facilement produire une architecture plus ambitieuse que notre besoin. Ici, le programme doit continuer à prendre deux états et à renvoyer une décision.
+
+Les limites ne sont pas seulement des interdictions à adresser à l’agent. Elles nous servent aussi pendant la revue. Si un nouveau fichier de configuration apparaît, nous pourrons demander quel comportement du ticket le rend nécessaire.
+
+Dans votre propre travail, gardez ce périmètre à la taille de la tâche. Un correctif d’une condition n’exige pas automatiquement un document de conception de dix pages. Il exige en revanche que les cas ambigus aient une réponse.
+
+
+
+## 4. Faire apparaître le bug dans un test
+
+**TL;DR** — Nous allons faire ajouter un premier test à l’agent, puis lire son échec. La correction expliquée juste après permet de contrôler ce qu’il a écrit, ou d’ajouter le test vous-même.
+
+### Demander un premier test à l’agent
+
+Gardez `mon-suivi` ouvert : il contient encore la fonction initiale et ses trois tests. Nous allons demander à l’agent d’ajouter **un seul test**, celui de la remise en stock au même prix.
+
+Dans la session **Local** de VS Code, passez du rôle **Ask** au rôle **Agent** avec le sélecteur de la discussion. Agent dispose des outils de lecture, d’édition et d’exécution ; Ask nous servait seulement à discuter[^p4-premier-agent]. Avec un autre assistant, activez son mode de modification du projet. Conservez les demandes d’autorisation pour les commandes plutôt que d’activer une approbation générale.
+
+Envoyez :
+
+```text
+Dans mon-suivi, lis TICKET.md, suivi.py et test_suivi.py.
+Crée test_ticket.py avec unittest.
+Ajoute uniquement test_retour_en_stock_sans_baisse :
+notifier(Etat(2000, False), Etat(2000, True)) doit renvoyer False.
+Ne modifie ni suivi.py ni les tests existants.
+Lance python -m unittest discover -v depuis mon-suivi.
+Rapporte le résultat obtenu et l’assertion en échec.
+Ne crée pas de commit et ne publie rien.
+```
+Code: Notre première demande qui modifie un fichier
+
+Adaptez `python` si vous avez utilisé une autre commande au chapitre précédent. Quand l’outil vous demande d’autoriser une commande, regardez le dossier et la commande affichés. Cet exercice ne demande ni installation de paquet ni accès réseau.
+
+Observez les actions : lecture des fichiers, création du test, lancement de la suite. Si l’agent corrige aussi `suivi.py`, arrêtez-le et remettez **ce seul fichier** dans son état initial à partir de `01-depart`. Gardez le nouveau test : nous voulons justement le voir échouer avant de corriger.
+
+Si vous travaillez sans agent, créez le test décrit dans la section suivante. Dans les deux cas, nous continuons dans le même dossier.
+
+[^p4-premier-agent]: Microsoft, [rôles disponibles dans une session Local](https://code.visualstudio.com/docs/agents/run/agent-harnesses).
+
+### Écrire le premier test qui échoue
+
+Ouvrez le fichier `test_ticket.py` créé par l’agent. Pour ce premier cas, il peut se réduire à ceci. Si vous faites l’exercice à la main, créez ce fichier maintenant :
+
+```python
+import unittest
+from suivi import Etat, notifier
+
+
+class TicketPrix(unittest.TestCase):
+    def test_retour_en_stock_sans_baisse(self):
+        self.assertFalse(
+            notifier(Etat(2000, False), Etat(2000, True))
+        )
+```
+Code: Reproduire le cas du ticket dans un test
+
+`unittest.TestCase` fournit les assertions, et les méthodes dont le nom commence par `test_` sont exécutées comme tests. Ici, `assertFalse` vérifie que l’appel à **notre fonction** renvoie une valeur fausse. Si l’agent compare seulement deux constantes, son test ne contrôle pas `notifier`.
+
+Lancez de nouveau :
+
+```bash
+python -m unittest discover -v
+```
+
+Avec cet unique nouveau test, vous devez obtenir **quatre tests, dont un en échec**. Le programme renvoie vrai, alors que ce cas attend faux. Nous n’avons pas cassé le projet en ajoutant un test : nous avons rendu visible le désaccord avec la nouvelle règle.
+
+Lisez le nom du test en échec. Une erreur d’import ou une faute de syntaxe ne prouvent pas que le comportement du ticket est reproduit. Le programme doit atteindre l’assertion, puis échouer parce que sa décision ne correspond pas à celle attendue.
+
+Si votre test passe déjà, vérifiez que vous travaillez bien dans la copie de `01-depart` et que la fonction n’a pas été corrigée par avance. Il serait dommage de conclure à une démonstration du bug sans avoir exécuté le code qui le contient.
+
+### Ajouter les voisins du cas principal
+
+Nous avons couvert la remise en stock au même prix. Il manque notamment deux voisins : le retour avec une baisse, qui doit notifier, et le retour avec une hausse, qui ne doit pas notifier.
+
+Demandez à l’agent de compléter **le fichier existant**, en lui donnant la table du ticket :
+
+```text
+Complète test_ticket.py avec les cas encore absents de cette table.
+Conserve les tests déjà écrits et ne modifie pas suivi.py.
+Lance la suite et indique quels comportements échouent.
+```
+
+Joignez la table à la demande. Vous pouvez aussi écrire ces tests vous-même. Relisez leurs valeurs attendues : `assertTrue` pour une baisse accompagnant le retour, `assertFalse` pour une hausse.
+
+Notre fichier de référence se trouve dans **`02-test-rouge/test_ticket.py`**, parmi les dossiers extraits au début. Ouvrez-le séparément, puis comparez-le au vôtre. Il comporte aussi des cas à un centime, un prix nul et des entrées invalides. Ces derniers protègent les validations déjà présentes dans `Etat`.
+
+Avec ce fichier de référence et les trois tests d’origine, on obtient **treize tests, dont deux échouent avant correction** : le retour en stock sans baisse et celui avec hausse. Votre agent peut avoir produit un autre nombre de tests. Comparez les comportements couverts et les échecs, pas seulement le compteur.
+
+![Trois états réellement exécutés : trois tests verts, puis deux échecs sur treize, puis treize tests verts](images/tests.png)
+Figure: Les résultats des versions de référence fournies
+
+Si vous souhaitez retrouver exactement ces treize tests, remplacez votre seul fichier `test_ticket.py` par celui de `02-test-rouge`, après l’avoir lu. Gardez `suivi.py` dans son état initial. Nous avons maintenant les tests qui nous permettront de contrôler la correction.
+
+
+
+## 5. Faire le changement et lire le diff
+
+**TL;DR** — L’agent va corriger la fonction sans toucher aux résultats attendus des tests. Nous comparerons ensuite son changement à la règle du ticket.
+
+### Une demande de modification précise
+
+Les tests reproduisent le problème ; la fonction est encore dans son état initial. Dans la même session, demandez maintenant :
+
+```text
+Applique le comportement décrit dans TICKET.md.
+Conserve les interfaces existantes et limite la modification
+au code nécessaire.
+Ne change pas les réponses attendues des tests pour les faire passer.
+Lance la suite avec python -m unittest discover -v.
+Montre le diff et explique la condition modifiée.
+Ne crée pas de commit et ne publie rien.
+```
+Code: Confier la correction en gardant un résultat relisible
+
+La demande porte sur le comportement du ticket ; elle ne donne pas la ligne de correction. C’est le moment de regarder quelle solution l’agent propose. Si vous faites l’exercice à la main, essayez votre modification avant de lire la section suivante.
+
+Cela reste une consigne au modèle. Pour limiter effectivement son accès aux fichiers, au réseau ou à la publication, utilisez aussi les permissions de votre outil. Une phrase dans un prompt n’a pas le même rôle qu’un droit technique refusant l’opération.
+
+Si l’agent propose une classe de notification, une nouvelle dépendance ou un système de règles pour cette fonction, demandez-lui quel cas du ticket le justifie. Vous pouvez rejeter ces ajouts et demander une modification plus petite. Vous n’êtes pas obligé de conserver du code parce qu’il a déjà été généré.
+
+### Relire les opérateurs
+
+Comparez maintenant sa proposition à la fonction initiale :
+
+```python
+def notifier(ancien: Etat, nouveau: Etat) -> bool:
+    return nouveau.disponible and (
+        nouveau.prix_centimes < ancien.prix_centimes or not ancien.disponible
+    )
+```
+
+Lisez-la à voix haute : le produit doit être disponible maintenant, et il faut soit une baisse de prix, soit une ancienne indisponibilité.
+
+Le second terme du `or` explique notre problème. Pour un retour en stock, `not ancien.disponible` vaut vrai. Le prix peut être identique ou même plus élevé : l’expression entre parenthèses sera tout de même vraie.
+
+Notre ticket exige uniquement une disponibilité actuelle et une baisse stricte. Notre correction de référence est :
+
+```python
+def notifier(ancien: Etat, nouveau: Etat) -> bool:
+    return nouveau.disponible and (
+        nouveau.prix_centimes < ancien.prix_centimes
+    )
+```
+Code: La fonction après correction
+
+Une expression sur une ligne peut être tout aussi correcte. Ce que nous cherchons dans la proposition, c’est la disponibilité actuelle et la baisse stricte, sans condition supplémentaire.
+
+N’ajoutez pas `ancien.disponible` dans la nouvelle condition. Cela empêcherait de notifier une vraie baisse au moment du retour en stock, contrairement à la règle décidée.
+
+![Seul le cas disponible maintenant avec baisse de prix autorise une notification](images/decision.png)
+Figure: La règle complète tient dans ces quatre combinaisons
+
+### Lire ce qui a vraiment changé
+
+Ouvrez la comparaison des fichiers dans votre éditeur. Dans VS Code, ouvrez la version originale `01-depart/suivi.py` et copiez tout son contenu. Revenez dans `mon-suivi/suivi.py`, ouvrez la palette de commandes et lancez **File: Compare Active File with Clipboard**[^p4-diff-vscode]. Les libellés peuvent être traduits dans votre installation.
+
+Notre correction de référence montre :
+
+```diff
+-        nouveau.prix_centimes < ancien.prix_centimes or not ancien.disponible
++        nouveau.prix_centimes < ancien.prix_centimes
+```
+Code: La règle retirée par notre correction
+
+Si Git est installé, vous pouvez faire la même comparaison depuis un terminal, sans créer de dépôt :
+
+```bash
+git diff --no-index "/chemin/vers/atelier-developpement/01-depart/suivi.py" "/chemin/vers/mon-suivi/suivi.py"
+```
+
+Remplacez les deux chemins par ceux de vos fichiers. Cette commande ne suppose pas que les dossiers sont voisins. Avec `--no-index`, le code de sortie 1 signifie que les fichiers diffèrent[^p4-diff].
+
+Cette comparaison ne porte que sur `suivi.py`. Dans la liste des fichiers touchés affichée par l’assistant, ouvrez ensuite chaque autre fichier. Pour un fichier déjà présent au départ, recommencez la comparaison avec son original dans `01-depart`. Lisez entièrement le nouveau `test_ticket.py`, qui n’a pas d’original.
+
+Le test ajouté est attendu. En revanche, changer les données de `retour-stock.json`, supprimer un test ou modifier une validation n’est pas nécessaire pour corriger cette condition. Cherchez la raison de ces changements avant de les garder.
+
+[^p4-diff-vscode]: Microsoft, [comparaison des fichiers dans VS Code](https://code.visualstudio.com/docs/editing/codebasics#_compare-files).
+[^p4-diff]: Git, [comparaison avec git diff --no-index](https://git-scm.com/docs/git-diff).
+
+
+
+## 6. Vérifier au-delà de la dernière ligne verte
+
+**TL;DR :** la suite teste la fonction ; les scénarios font aussi passer les données par le chargement JSON. Nous allons examiner les deux.
+
+### Rejouer les tests et contrôler leur nombre
+
+Après correction, lancez :
+
+```bash
+python -m unittest discover -v
+```
+
+Avec le fichier complet de `02-test-rouge`, les **treize tests passent**. Si vous avez conservé les tests de l’agent, le nombre peut être différent. Vérifiez que les cas décidés dans la table sont couverts et que ceux qui échouaient passent désormais, avec les mêmes valeurs attendues.
+
+Les noms des tests vous permettent de voir les situations réellement contrôlées. Regardez en particulier les deux qui échouaient avant la correction. Ils doivent toujours être présents et conserver leurs valeurs attendues.
+
+Dans un rapport d’agent, cherchez la commande, son dossier d’exécution et son résultat. « Tests vérifiés » peut cacher plusieurs choses : une lecture du code des tests, une exécution partielle, ou une suite complète. Nous voulons savoir laquelle a eu lieu.
+
+Si une dépendance manque ou qu’une commande échoue, le rapport doit le dire. Réussir à écrire les tests n’est pas la même chose que réussir à les exécuter.
+
+### Passer par les fichiers JSON
+
+Exécutez maintenant nos trois scénarios :
+
+```bash
+python suivi.py scenarios/retour-stock.json
+python suivi.py scenarios/baisse.json
+python suivi.py scenarios/rupture.json
+```
+
+Voici les décisions attendues après correction :
+
+| Fichier | Résultat |
+| --- | --- |
+| `retour-stock.json` | `{"notifier": false}` |
+| `baisse.json` | `{"notifier": true}` |
+| `rupture.json` | `{"notifier": false}` |
+Table: Les trois scénarios de recette
+
+Nous passons cette fois par la lecture du fichier, la construction des états, la décision et l’affichage. Les tests précédents appelaient surtout les fonctions directement. Les deux vérifications se complètent.
+
+Créez ensuite une copie de `retour-stock.json`, nommée `retour-stock-baisse.json`, et changez seulement le nouveau prix : 1 500 au lieu de 2 000. Lancez ce nouveau scénario. Le résultat doit être vrai.
+
+Ne modifiez pas les scénarios pour les faire coïncider avec une réponse inattendue. Si un cas ne produit pas ce que la règle prévoit, conservez le fichier qui le reproduit. C’est une meilleure base de discussion qu’une capture sans ses données d’entrée.
+
+### Vérifier qu’un test sait encore protester
+
+Cette expérience est facultative. Copiez le dossier corrigé `mon-suivi` dans un dossier voisin nommé **`mon-suivi-mutations`**. Depuis le terminal placé dans `mon-suivi`, entrez dans cette nouvelle copie :
+
+```bash
+cd ../mon-suivi-mutations
+```
+
+Ouvrez **le fichier `suivi.py` de cette copie**, remplacez `<` par `<=`, enregistrez, puis relancez `python -m unittest discover -v` dans ce terminal.
+
+Le prix identique autorise maintenant une notification. Les tests qui attendent l’absence de notification à prix inchangé doivent échouer. S’ils ne le font pas, vérifiez que vous avez exécuté la bonne copie et que ces cas sont présents.
+
+Rétablissez ensuite `<`, puis retirez temporairement la condition `nouveau.disponible and`. Le test de baisse sur un produit indisponible doit cette fois protester.
+
+Ces modifications volontaires sont de petites **mutations** : nous introduisons une erreur précise pour voir si les tests la remarquent. Cela ne prouve pas qu’ils détecteront tous les bugs. Cela permet de vérifier que les cas importants ne sont pas seulement décoratifs.
+
+Rétablissez la condition dans `mon-suivi-mutations`, puis revenez à notre copie de travail restée intacte :
+
+```bash
+cd ../mon-suivi
+python -m unittest discover -v
+```
+
+Le but est de tester nos tests, pas de préparer discrètement le prochain ticket. 🙂
+
+### Demander une seconde lecture utile
+
+Pour un second avis, vous pouvez faire relire le changement par un agent. C’est facultatif pour terminer l’atelier. Fournissez-lui le diff obtenu dans la comparaison, le contenu de `TICKET.md` et la table des cas attendus :
+
+```text
+Relis le diff par rapport à TICKET.md et aux scénarios.
+Pour chaque problème trouvé, donne un cas reproductible,
+le comportement obtenu et celui attendu.
+Ne modifie pas les fichiers pendant cette revue.
+Si tu ne trouves pas de problème, indique ce que tu as vérifié
+et les limites de cette vérification.
+```
+
+Cette demande évite de réduire la revue à des préférences de style. Une remarque devient plus utile lorsqu’on peut lancer le scénario qui la justifie.
+
+Le second passage peut tout de même manquer la même erreur que le premier. Changer de session ou de modèle n’en fait pas une preuve indépendante au sens fort : les outils peuvent partager des habitudes et des angles morts. Appuyez-vous sur les scénarios, le code et les sorties observées.
+
+Pour notre petit changement, une revue efficace peut être courte. Il n’y a aucune raison d’inventer trois problèmes pour remplir une section de rapport.
+
+
+
+## 7. Garder un changement que l’on sait expliquer
+
+**TL;DR :** préparez une trace courte du problème, de la correction et des vérifications. Puis choisissez où l’aide vous a réellement été utile.
+
+### Écrire un compte rendu exploitable
+
+Créez un fichier `COMPTE-RENDU.md` et renseignez-le avec votre propre exécution :
+
+```markdown
+# PRIX-1 — Ne plus notifier une simple remise en stock
+
+## Problème
+
+Le retour en stock autorisait une notification même sans baisse de prix.
+
+## Changement
+
+La décision exige une disponibilité actuelle et une baisse stricte.
+Les interfaces et les validations des entrées sont conservées.
+
+## Vérifications effectuées
+
+- Commande de tests, dossier d’exécution, nombre de tests et résultat :
+- Scénario retour en stock, résultat observé :
+- Scénario baisse de prix, résultat observé :
+- Scénario indisponible, résultat observé :
+
+## Limites
+
+Le programme calcule une décision. Il n’envoie pas de notification.
+Il compare deux observations dans une même devise implicite.
+```
+Code: Une trame à compléter avec vos résultats
+
+Indiquez « non exécuté » pour les scénarios que vous n’avez pas lancés.
+
+Ce texte peut ensuite servir de base à une description de pull request dans un vrai projet. Avant de publier, relisez les fichiers et les traces jointes : un rapport de test peut lui aussi contenir des données qu’on ne souhaite pas diffuser.
+
+L’agent peut rédiger ce compte rendu à partir des sorties conservées. Vous gardez à vérifier que les phrases correspondent aux commandes effectivement réalisées.
+
+### Quand on apprend encore à développer
+
+Si vous découvrez Python, vous avez peut-être eu envie de demander directement la version finale. Mais pourriez-vous ensuite expliquer pourquoi le `or` posait problème ?
+
+Fermez la correction et essayez de prédire le résultat de deux cas : un retour en stock avec hausse, puis une baisse d’un centime sur un produit disponible. Vérifiez vos réponses en exécutant le programme.
+
+Si vous vous trompez, ce n’est pas une raison de renoncer à l’aide. Demandez une explication de l’expression booléenne, construisez une table de valeurs ou réduisez l’exemple à deux booléens. Vous pouvez vous servir du modèle pour trouver une autre explication sans lui confier immédiatement toute la modification.
+
+Pour apprendre, une bonne utilisation consiste souvent à demander un indice, un contre-exemple ou une question de vérification. Une solution complète trop tôt peut vous faire sauter exactement l’effort dont vous aviez besoin pour comprendre.
+
+Et certains jours, le plus efficace sera de fermer l’agent et de lire la fonction tranquillement. Il n’y a rien à rentabiliser à chaque ligne.
+
+### Trouver ses propres points de friction
+
+Reprenez les étapes de cet atelier et demandez-vous lesquelles vous ont posé problème. Comprendre la règle ? Retrouver la fonction ? Penser aux cas limites ? Écrire la syntaxe de `unittest` ? Relire le diff ?
+
+L’aide n’a pas le même intérêt partout. Si vous aimez écrire le code mais que préparer une recette vous prend un temps fou, vous pouvez garder le code et demander une première liste de scénarios. Si vous connaissez bien les tests mais découvrez un langage, une explication ciblée peut être plus utile qu’une implémentation complète.
+
+Pour comparer deux façons de travailler, notez le temps total, y compris les corrections de demandes, la lecture des résultats et la validation. Le temps pendant lequel l’agent produit du texte n’est qu’une partie du travail.
+
+N’ajoutez pas automatiquement un framework ou une série de commandes pour reproduire cet atelier. Nous avons séparé des étapes afin de voir ce qu’elles vérifient. Dans votre quotidien, regroupez ou simplifiez ce qui peut l’être, tout en conservant les contrôles nécessaires au changement.
+
+Vous pouvez aussi conclure que l’outil ne vous aide pas sur ce type de tâche. Adapter un outil à son besoin comprend cette possibilité.
+
+Notre correction tient en peu de caractères, mais nous savons maintenant quel cas elle change et comment le vérifier. Gardez votre copie de travail et votre compte rendu.
+
+L’atelier s’arrête ici. Le comparatif qui suit sert à choisir d’autres outils ; l’expérience locale permet d’explorer une autre installation. Dans la prochaine partie, nous regarderons plus précisément comment les agents choisissent leurs actions et comment encadrer ce travail.
+
+## 8. Référence — comparer les outils et leurs tarifs
+
+**TL;DR** — Cette référence compare les interfaces, les possibilités et les coûts des outils. Vous pouvez y revenir pour changer d’assistant sans recommencer l’atelier.
+
+Le relevé est une photographie de septembre 2026. Un éditeur, un harness et un abonnement à un modèle ne désignent pas la même chose ; regardez surtout ce que chaque offre vous permet de faire avec votre projet.
+
+### Les éditeurs et les agents
 
 Commençons par les outils que vous pouvez rencontrer dans un éditeur, un terminal ou un service distant. Nous compléterons ce panorama avec les harness extensibles, dont Pi, dans la section suivante. Ce n’est pas la liste de tous les produits existants, ni un classement de leurs modèles.
 
@@ -94,7 +572,7 @@ Table: Quelques portes d’entrée pour développer avec une IA
 
 Deux changements peuvent vous éviter de suivre une ancienne procédure d’installation. Google a annoncé le passage des utilisateurs individuels de Gemini CLI et Gemini Code Assist vers Antigravity CLI à compter du 18 juin 2026[^p4-out-migration]. De son côté, l’adresse de tarification de Windsurf redirige, lors de cette consultation, vers celle de Devin[^p4-out-windsurf]. Si vous reconnaissez un ancien nom, vérifiez donc aussi le parcours d’accès actuel.
 
-Pour notre installation, nous allons garder deux possibilités : Copilot dans VS Code pour essayer un service hébergé, et Continue dans le même éditeur pour réutiliser notre serveur. Ce choix nous donne des manipulations concrètes à suivre ; les étapes de lecture du code et de validation resteront utilisables avec les autres outils.
+Pour commencer l’atelier, revenez au chapitre « Installer l’assistant et observer le problème ». L’expérience Continue avec notre serveur local se trouve séparément à la fin de cette partie.
 
 [^p4-out-copilot]: GitHub, [offres et fonctions de Copilot](https://github.com/features/copilot/plans).
 [^p4-out-cursor]: Cursor, [offres et fonctions](https://cursor.com/pricing).
@@ -118,19 +596,6 @@ Vous croiserez souvent le mot **harness** dans les discussions sur les agents. I
 Dans notre premier client Python, nous envoyions une question et recevions du texte. Un harness peut ajouter la boucle suivante : le modèle demande à lire un fichier, le programme le lit et lui renvoie le contenu, puis le modèle choisit la prochaine action. La gestion des sessions, des permissions et des modifications appartient aussi à cet entourage logiciel.
 
 Deux agents utilisant le même modèle peuvent donc se comporter différemment. Ils ne préparent pas forcément le même contexte et ne lui donnent pas les mêmes outils.
-
-###### Les agents que l’on rencontre déjà dans les offres
-
-Claude Code, Codex, OpenCode, Aider, Cline ou encore l’agent de Copilot ne sont pas simplement des fenêtres de discussion. Ils organisent un travail sur le projet. Les comparer demande de regarder leur fonctionnement, au-delà du modèle annoncé.
-
-| Famille | Exemples déjà rencontrés | Ce qui compte pour choisir |
-| --- | --- | --- |
-| Agent lié à une offre de fournisseur | Claude Code, Codex, Copilot | Modèles accessibles, mode de facturation, permissions et interfaces disponibles |
-| Agent permettant de choisir son fournisseur | OpenCode, Aider, Cline | Compatibilité de l’API, modèle local possible, outils et manière d’appliquer les changements |
-| Éditeur intégrant un agent | Cursor, Antigravity, environnement JetBrains | Intégration au code, complétion, lecture du diff et place laissée aux outils habituels |
-Table: Les offres présentées plus haut ne se situent pas toutes au même niveau
-
-Ces catégories se recoupent. Un même agent peut être accessible en terminal et intégré à plusieurs éditeurs. Les modalités d’accès restent celles documentées pour chaque offre.
 
 ###### Pi, et les autres possibilités à connaître
 
@@ -175,15 +640,7 @@ Les noms, les offres et parfois les dépôts changent. Le comparatif est une pho
 [^p4-h-roo]: [Dépôt officiel Roo Code, archivé](https://github.com/RooCodeInc/Roo-Code).
 [^p4-h-gemini]: Google, [transition de Gemini CLI vers Antigravity CLI](https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/).
 
-
-
-## 2. Choisir une solution adaptée à ses besoins
-
-**TL;DR** — Un abonnement, un logiciel gratuit et une API à l’usage ne se comparent pas avec le seul prix affiché. Regardez ce qui est inclus, ce qui déclenche une dépense supplémentaire et où part votre code. Sans carte graphique dédiée, un modèle hébergé permet de commencer. L’essai avec un petit modèle local sert à explorer ses possibilités, sans présumer qu’il saura mener l’atelier.
-
-Nous avons les noms. Maintenant, lequel installer ? Votre budget compte, mais votre façon de travailler aussi. Un outil qui vous oblige à changer d’éditeur, envoie du code que vous ne pouvez pas transmettre ou vous fait attendre trop longtemps peut être mal adapté, même s’il produit de bonnes réponses.
-
-### Combien cela coûte-t-il ?
+### Les prix et les limites des offres
 
 Les montants ci-dessous sont les tarifs individuels affichés en **dollars américains, par mois avec facturation mensuelle**, relevés le **14 septembre 2026**. Les offres annuelles, promotions et contrats d’entreprise ne sont pas comparés ici. Le prix finalement facturé dépend aussi du pays, des taxes et du canal d’achat.
 
@@ -249,75 +706,15 @@ Avant d’acheter un abonnement, essayez quelques tâches que vous faites réell
 [^p4-prix-kiro]: [Tarifs Kiro](https://kiro.dev/pricing/).
 [^p4-prix-openhands]: [Tarifs OpenHands](https://www.openhands.dev/pricing).
 
-### Où faire tourner le modèle ?
-
-Pour un service hébergé, votre ordinateur doit surtout faire tourner l’éditeur et le projet. Le fournisseur effectue les calculs du modèle. Vous avez besoin d’un accès au service et d’une connexion réseau, mais pas d’une grosse carte graphique.
-
-En local, vous fournissez aussi la mémoire et le calcul. Cela permet de garder l’inférence sur votre machine et de travailler sans accès au fournisseur une fois les éléments nécessaires téléchargés. En échange, il faut choisir un modèle qui tient en mémoire et dont le temps de réponse vous convient.
-
-| Situation | Point de départ possible |
-| --- | --- |
-| Petit ordinateur, priorité à une installation simple | Offre hébergée gratuite, si l’envoi du code est acceptable |
-| Envoi du code exclu, aucune carte graphique dédiée | Essai local limité ; aucun parcours d’agent validé ici pour cette configuration |
-| Machine disposant de davantage de mémoire et d’un GPU compatible | Tester un modèle local sur les tâches visées, puis mesurer le délai et vérifier le résultat |
-| Assistant déjà fourni par votre équipe | Commencer avec cet outil, dans les conditions d’usage de l’équipe |
-Table: Choisir selon ses contraintes
-
-Notre SmolLM2 de la partie 3 nous a servi à comprendre l’inférence. Il ne faut pas attendre de lui qu’il explore un dépôt et corrige un ticket tout seul. Nous allons d’abord l’utiliser pour vérifier la connexion, puis proposer un petit modèle spécialisé dans le code.
-
-Il faut distinguer deux choses : **le logiciel de l’agent peut tourner sur votre ordinateur pendant que son modèle tourne chez un fournisseur**. Dans ce cas, vous n’avez pas besoin d’une grosse carte graphique. Faire aussi tourner le modèle chez vous pose une autre question.
-
-llama.cpp permet l’inférence sur CPU[^p4-cpu-moteur]. Mais charger un modèle et obtenir une réponse ne prouve pas qu’il sera utile pour développer. Un agent doit exploiter le code qu’il lit, choisir ses actions, comprendre les résultats des commandes et poursuivre la tâche. Le temps de traitement du contexte s’ajoute à celui des réponses, à chaque étape. Il faut vérifier tout cela sur une tâche réelle.
-
-Notre essai avec Qwen2.5-Coder à 1,5 milliard de paramètres n’a pas été exécuté dans cette configuration. Nous ne savons donc pas encore s’il apporte une aide utile sur cet atelier, ni combien de temps il demande. Continue cite d’ailleurs un modèle Qwen Coder de cette taille pour la complétion, et d’autres modèles pour le travail d’agent[^p4-cpu-roles]. Ce sont des usages différents.
-
-Si vous ne pouvez ni envoyer votre code à un service ni utiliser un modèle local adapté, vous pouvez faire les exercices Python vous-même. Vous apprendrez à reproduire le problème et à vérifier la correction ; l’utilisation d’un agent restera à expérimenter avec une configuration qui le permet.
-
-Reste la question des données. Une API personnelle peut vous laisser choisir votre fournisseur, sans rendre l’inférence locale. Et une option « ne pas utiliser mes données pour l’entraînement » ne signifie pas que le code ne quitte jamais l’ordinateur : elle porte sur un usage des données après leur transmission.
-
-Pour notre atelier, nous utiliserons des fichiers publics et un ticket fictif. Pour votre travail, il faudra savoir ce que votre équipe autorise à transmettre. Nous reviendrons plus largement sur ces choix ; ils comptent déjà au moment d’installer l’outil.
-
-[^p4-cpu-moteur]: llama.cpp, [moteur d’inférence et plateformes prises en charge](https://github.com/ggml-org/llama.cpp).
-[^p4-cpu-roles]: Continue, [configuration et modèles recommandés pour le mode Agent](https://docs.continue.dev/ide-extensions/agent/model-setup).
 
 
+## 9. Expérience facultative — discuter avec un modèle local
 
-## 3. Installer notre premier assistant
+**TL;DR** — Expérience facultative : relier Continue au serveur de la partie 3, puis examiner la réponse d’un petit modèle de code. Cette configuration reste à exécuter et à mesurer ; nous ne la présentons pas comme un agent capable de mener l’atelier.
 
-**TL;DR** — Préparez une copie du projet, puis ouvrez votre assistant. Le parcours principal utilise Copilot avec un modèle hébergé. L’essai local avec Continue est facultatif et reste à vérifier : il explore la discussion sur un extrait, sans configurer un agent pour réaliser l’atelier.
+### Relier Continue à notre serveur
 
-### Ouvrir notre copie du projet
-
-Téléchargez [les fichiers de l’atelier de développement](https://github.com/hloiseau/tutoriel-ia-ateliers/raw/b95165289276a45bc299d0826e3c540727e8e203/telechargements/annexes-developpement-v1.zip), puis décompressez l’archive. Vous pouvez aussi les récupérer dans [le dépôt](https://github.com/hloiseau/tutoriel-ia-ateliers/tree/b95165289276a45bc299d0826e3c540727e8e203/ateliers/04-developpement).
-
-Dans `atelier-developpement`, copiez le dossier `01-depart` dans un nouveau dossier nommé `mon-suivi`, **en dehors du dépôt téléchargé**. Gardez les autres dossiers à côté pour plus tard : ils contiennent les étapes de correction.
-
-Installez [Visual Studio Code](https://code.visualstudio.com/download), si vous ne l’avez pas déjà, puis utilisez **Fichier → Ouvrir le dossier** pour ouvrir `mon-suivi`. L’explorateur doit afficher `suivi.py`, les tests et le dossier `scenarios`. Il ne doit pas afficher `02-test-rouge` et `03-corrige` : autant éviter de poser une devinette à l’agent en lui laissant la réponse sous le nez. 🙂
-
-Pour le moment, ouvrez simplement `suivi.py`. Nous lancerons les tests dans le chapitre consacré au projet.
-
-Si vous utilisez déjà Cursor, Codex, Claude Code ou un autre assistant, vous pouvez garder votre outil et ouvrir cette même copie. La demande de lecture en fin de chapitre sera identique.
-
-### Utiliser un service hébergé
-
-Dans ce parcours, nous utilisons **GitHub Copilot dans VS Code**, avec un compte GitHub et l’offre gratuite si votre compte y est éligible. Le modèle tournera chez le fournisseur ; le code ajouté à la conversation lui sera transmis.
-
-Dans la barre d’état de VS Code, ouvrez le menu de l’icône Copilot, choisissez **Use AI Features**, puis suivez la connexion à GitHub. Un compte sans abonnement peut être inscrit à Copilot Free. Le tableau de bord Copilot, accessible depuis la barre d’état, permet de suivre l’usage[^p4-install-copilot].
-
-Ouvrez la vue de discussion. Pour cette première demande, choisissez une session **Copilot** et le rôle **Ask**, qui permet de poser des questions sans modifier le code. Choisissez un modèle disponible dans votre offre, ou **Auto** si cette option est proposée[^p4-install-roles].
-
-Nous ne lançons pas encore de tâche en arrière-plan. Nous voulons une réponse que nous puissions comparer à quelques lignes sous nos yeux.
-
-Si l’interface vous demande de souscrire pour continuer, vérifiez le compte connecté, son éligibilité et le quota restant. Vous pouvez utiliser un autre assistant auquel vous avez accès, attendre le renouvellement du quota ou poursuivre les exercices Python vous-même. Les fichiers et les corrigés restent accessibles sans abonnement. L’essai CPU ci-dessous ne garantit pas de remplacer le service hébergé.
-
-Une fois la discussion ouverte, passez à la section « Notre première demande de lecture ». L’installation locale ci-dessous est une expérience facultative.
-
-[^p4-install-copilot]: Microsoft, [configuration de Copilot dans VS Code](https://code.visualstudio.com/docs/setup/copilot).
-[^p4-install-roles]: Microsoft, [choix de l’agent, du rôle et du modèle](https://code.visualstudio.com/docs/agents/run/agent-harnesses).
-
-### Relier l’éditeur à notre modèle local
-
-Vous voulez essayer de discuter avec notre modèle depuis l’éditeur ? Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**. Cette expérience est facultative. Le raccord à Continue et l’essai du modèle de code ci-dessous restent à exécuter ; nous n’avons pas encore de résultat ni de temps de réponse à vous montrer.
+Vous voulez essayer de discuter avec notre modèle depuis l’éditeur ? Nous allons conserver le serveur de la partie 3 et remplacer notre client Python par **Continue**. Gardez sous la main la commande de lancement du serveur qui fonctionnait en partie 3.
 
 ###### Retrouver le serveur
 
@@ -408,7 +805,9 @@ models:
 ```
 Code: Configuration de discussion avec le modèle de code
 
-Ouvrez une nouvelle conversation après le changement de modèle. Nous allons lui montrer une fonction, pas le dépôt entier.
+Ouvrez une nouvelle conversation après le changement de modèle. Copiez la définition de `Etat` et la fonction `notifier` depuis **la version initiale** `01-depart/suivi.py`. Posez la même question que dans le chapitre de lecture : pour `Etat(2000, False)` puis `Etat(2000, True)`, quelles valeurs prennent les conditions et que renvoie la fonction ?
+
+Chronométrez le temps avant le début de la réponse et sa durée totale. Conservez le texte obtenu, puis vérifiez-le contre le code : le résultat initial est vrai. Une réponse rapide mais fausse ne nous aide pas davantage qu’une réponse juste qui arrive trop tard pour notre usage.
 
 Si la réponse est lente, commencez par raccourcir la demande et la sortie attendue. Si la machine manque de mémoire, revenez au contexte précédent ou au petit modèle pour finir le diagnostic de connexion. Pour l’atelier, vous pouvez toujours effectuer les modifications vous-même : il n’est pas nécessaire de laisser un modèle en difficulté multiplier les tentatives.
 
@@ -421,467 +820,8 @@ Si la réponse est lente, commencez par raccourcir la demande et la sortie atten
 [^p4-install-qwen]: Qwen, [Qwen2.5-Coder-1.5B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF).
 [^p4-install-qwen-fichier]: Qwen, [fichiers GGUF proposés](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main).
 
-### Notre première demande de lecture
-
-Dans `suivi.py`, repérez la fonction `notifier`. Copiez-la dans la discussion, avec la définition de `Etat` juste au-dessus. Dans Continue, vous pouvez aussi sélectionner le code et utiliser **Ctrl+L**, ou **Cmd+L** sur macOS, pour l’ajouter à la conversation[^p4-install-chat].
-
-Ajoutez cette demande :
-
-> Explique ce que représente un état et dans quels cas cette fonction renvoie vrai. Appuie-toi uniquement sur cet extrait. Ne modifie aucun fichier et ne propose pas encore de correction.
-
-Nous n’attendons pas une réponse mot pour mot. Le code doit permettre de retrouver deux informations : un état contient un prix en centimes et une disponibilité ; la fonction décide de notifier lorsque le produit est disponible et qu’au moins une des deux conditions de la parenthèse est vraie.
-
-Lisez l’explication en gardant le code ouvert. Si le modèle parle d’un envoi de courriel ou d’une base de données, cherchez ce qui lui permet de l’affirmer dans l’extrait. Vous ne trouverez rien : cette fonction renvoie seulement un booléen.
-
-Votre modèle local répond mal en français ? Vous pouvez essayer la même demande en anglais :
-
-> Explain what an Etat represents and when notifier returns True. Use only this snippet. Do not change any files or suggest a fix yet.
-
-L’objectif reste de comprendre la fonction. Si l’explication ne vous aide pas, revenez au code et décomposez la condition vous-même. Nous allons justement le faire dans le chapitre suivant.
-
-###### Et pour les modifications ?
-
-Avec un assistant disposant d’un mode agent, vous pourrez ensuite lui demander de préparer les changements, puis examiner le diff et les résultats des tests.
-
-L’expérience locale s’arrête ici : une réponse sur une fonction ne valide pas la capacité du modèle à modifier le projet. Si vous voulez poursuivre en mode Chat, vous pourrez examiner ses propositions et les appliquer vous-même, mais nous n’avons pas vérifié que ce petit modèle saura suivre les demandes des chapitres suivants.
-
-Les exercices Python peuvent aussi se faire sans IA. Les corrigés vous permettront de vérifier votre travail ; cela ne remplacera pas l’expérience de piloter un agent.
-
-Gardez votre dossier `mon-suivi` : nous allons maintenant y lancer les tests et comprendre pourquoi un programme dont les tests passent peut tout de même avoir besoin d’une correction.
-
-[^p4-install-chat]: Continue, [discussion et sélection de code](https://docs.continue.dev/ide-extensions/chat/quick-start).
-
-
-
-## 4. Ouvrir un projet que l’on peut comprendre
-
-**TL;DR :** nous allons lire le programme et vérifier son état de départ. Un agent peut nous aider à nous repérer, mais les fichiers restent notre point de contrôle.
-
-### Lancer les tests du projet
-
-Votre dossier `mon-suivi` est déjà ouvert dans l’éditeur depuis l’installation de l’assistant. Gardez cette copie : inutile de télécharger ou de recopier le projet une seconde fois.
-
-Ouvrez un terminal dans ce dossier. Il doit contenir `suivi.py` et `scenarios`. Pour exécuter cet atelier, nous utilisons Python 3.12 ; aucune bibliothèque externe n’est nécessaire.
-
-```bash
-python -m unittest discover -v
-python suivi.py scenarios/retour-stock.json
-```
-Code: Lancer les tests existants et le scénario de remise en stock
-
-Si votre installation utilise la commande `python3` ou `py -3.12`, utilisez-la à la place de `python` dans les commandes de l’atelier.
-
-Les trois tests de départ passent. Le scénario affiche pourtant une décision de notification pour une simple remise en stock. Le programme n’envoie rien sur le réseau : il affiche sa décision en JSON.
-
-Nous allons suivre le chemin qui mène à cette décision avant de demander une correction.
-
-Si vous lisez « Ran 0 tests », vous n’avez pas encore vérifié le projet. Regardez le dossier courant et la présence de `test_suivi.py`. Un lancement sans test trouvé peut se terminer sans erreur, ce qui rend la dernière ligne trompeuse si on la lit seule.[^p4-unittest]
-
-[^p4-unittest]: Python, [découverte et exécution des tests avec `unittest`](https://docs.python.org/3.12/library/unittest.html).
-
-### Suivre une entrée jusqu’à la décision
-
-Ouvrez `scenarios/retour-stock.json`. Il décrit deux observations du même produit : un prix de 2 000 centimes avant et après, avec un passage d’indisponible à disponible.
-
-Lancez :
-
-```bash
-python suivi.py scenarios/retour-stock.json
-```
-
-Le programme initial affiche :
-
-```json
-{"notifier": true}
-```
-Code: Décision du programme avant notre modification
-
-Il n’envoie aucun courriel et ne contacte aucun service : il calcule une décision et l’affiche. Nous pouvons donc rejouer le scénario autant de fois que nécessaire.
-
-Ouvrez maintenant `suivi.py` et suivez les appels. `main` charge le fichier JSON. `lire_etat` vérifie les champs de chaque observation et crée un `Etat`. La fonction `notifier` reçoit l’ancien et le nouvel état, puis renvoie un booléen. Enfin, `main` affiche ce résultat en JSON.
-
-![Le fichier JSON est lu, transformé en deux états puis envoyé à la fonction de décision](images/projet.png)
-Figure: Le parcours d’un scénario dans notre programme
-
-Vous n’avez pas besoin de mémoriser tout le fichier. En revanche, vous devez pouvoir montrer la fonction qui décide et expliquer quelles données elle reçoit. Essayez de la retrouver une deuxième fois sans relire ce paragraphe.
-
-### Demander de l’aide pour lire
-
-Si vous utilisez un agent, ouvrez uniquement le dossier `mon-suivi` dans son espace de travail. Commencez par une demande de lecture :
-
-```text
-Lis README.md, suivi.py, test_suivi.py et TICKET.md.
-Explique le chemin entre le fichier JSON et la décision.
-Cite les fonctions concernées.
-N’édite aucun fichier pendant cette lecture.
-Signale les questions auxquelles les fichiers ne répondent pas.
-```
-Code: Une consigne pour se repérer dans le projet
-
-Cette consigne peut être utilisée dans différents outils. La manière de choisir le dossier et d’autoriser une lecture dépend de votre application. Vérifiez ce périmètre dans son interface avant de lui demander d’agir.
-
-Comparez ensuite son explication au code. S’il parle d’une file de messages, d’un appel réseau ou d’une base de données, cherchez où cela apparaît. Dans notre projet, aucun de ces éléments n’existe. Une explication plausible n’est pas une preuve de lecture.
-
-Vous pouvez aussi lui demander d’expliquer une ligne précise, puis reformuler vous-même son rôle. C’est particulièrement utile quand on apprend un langage : on garde un passage court, dont on peut vérifier chaque détail.
-
-
-
-## 5. Décider ce que le ticket veut changer
-
-**TL;DR :** une phrase de ticket cache parfois plusieurs comportements. Nous allons les mettre à plat avant de toucher à la fonction.
-
-### Une remise en stock n’est pas une baisse de prix
-
-Le ticket PRIX-1 demande de ne plus notifier un produit qui revient simplement en stock. Le fichier `TICKET.md` donne la règle complète : une notification est autorisée seulement si le produit est disponible dans le nouvel état **et** si son prix a strictement baissé par rapport à l’observation précédente.
-
-Les prix sont des entiers en centimes. Nous comparons deux observations consécutives, dans une même devise implicite. Il n’est pas question de retrouver le prix le plus bas des six derniers mois ni de calculer une promotion.
-
-Avant de regarder la suite, répondez à ces deux cas :
-
-- Le produit revient en stock au même prix. Faut-il notifier ?
-- Le produit revient en stock avec un prix plus bas. Faut-il notifier ?
-
-Le premier cas doit donner **faux**, le second **vrai**. « Ne plus notifier une remise en stock » ne veut donc pas dire « ignorer tous les produits qui étaient indisponibles ». Une baisse de prix peut accompagner le retour en stock.
-
-C’est exactement le genre de raccourci qu’il faut éclaircir dans un vrai ticket. Si personne n’a décidé comment traiter le second cas, l’agent ne devrait pas choisir discrètement à la place de l’équipe.
-
-### Écrire la table avant les tests
-
-Voici les cas que nous voulons distinguer :
-
-| Ancien état | Nouvel état | Notification attendue |
-| --- | --- | --- |
-| 20 €, disponible | 15 €, disponible | Oui |
-| 15 €, disponible | 20 €, disponible | Non |
-| 20 €, disponible | 15 €, indisponible | Non |
-| 20 €, indisponible | 20 €, disponible | Non |
-| 20 €, indisponible | 15 €, disponible | Oui |
-| 20 €, indisponible | 25 €, disponible | Non |
-| 20 €, disponible | 20 €, disponible | Non |
-Table: Les situations que la règle doit départager
-
-Les trois premières correspondent déjà à nos tests de départ. Les suivantes rendent visible ce que ces tests ne contrôlaient pas.
-
-Vous pouvez demander à l’agent de proposer cette table avant de coder les tests. Relisez alors les **résultats attendus**, pas seulement le nombre de lignes. Une longue suite de tests qui attend la mauvaise réponse reste une longue suite de tests qui attend la mauvaise réponse.
-
-Pour une règle aussi petite, faire la table soi-même prend peu de temps. Dans un projet plus grand, l’aide peut surtout servir à retrouver les cas oubliés ou à traduire une règle déjà décidée en scénarios exécutables.
-
-### Délimiter le changement
-
-Ajoutons quelques limites simples à notre travail : nous conservons la fonction `notifier`, les fichiers JSON et les validations existantes. Nous n’ajoutons pas de base, d’envoi de courriel ou de système de préférences.
-
-Pourquoi le préciser ? Parce qu’une demande d’« amélioration des notifications » pourrait facilement produire une architecture plus ambitieuse que notre besoin. Ici, le programme doit continuer à prendre deux états et à renvoyer une décision.
-
-Les limites ne sont pas seulement des interdictions à adresser à l’agent. Elles nous servent aussi pendant la revue. Si un nouveau fichier de configuration apparaît, nous pourrons demander quel comportement du ticket le rend nécessaire.
-
-Dans votre propre travail, gardez ce périmètre à la taille de la tâche. Un correctif d’une condition n’exige pas automatiquement un document de conception de dix pages. Il exige en revanche que les cas ambigus aient une réponse.
-
-
-
-## 6. Faire apparaître le bug dans un test
-
-**TL;DR :** nous ajoutons d’abord le cas oublié. Son échec nous permet de vérifier que le test distingue bien l’ancien comportement du comportement demandé.
-
-### Écrire le premier test qui échoue
-
-Dans `mon-suivi`, créez `test_ticket.py` :
-
-```python
-import unittest
-from suivi import Etat, notifier
-
-
-class TicketPrix(unittest.TestCase):
-    def test_retour_en_stock_sans_baisse(self):
-        self.assertFalse(
-            notifier(Etat(2000, False), Etat(2000, True))
-        )
-```
-Code: Reproduire le cas du ticket dans un test
-
-Lancez de nouveau :
-
-```bash
-python -m unittest discover -v
-```
-
-Cette fois, vous devez obtenir **quatre tests, dont un en échec**. Le programme renvoie vrai, alors que ce cas attend faux. Nous n’avons pas cassé le projet en ajoutant un test : nous avons rendu visible le désaccord avec la nouvelle règle.
-
-Lisez le nom du test en échec. Une erreur d’import ou une faute de syntaxe ne prouvent pas que le comportement du ticket est reproduit. Le programme doit atteindre l’assertion, puis échouer parce que sa décision ne correspond pas à celle attendue.
-
-Si votre test passe déjà, vérifiez que vous travaillez bien dans la copie de `01-depart` et que la fonction n’a pas été corrigée par avance. Il serait dommage de conclure à une démonstration du bug sans avoir exécuté le code qui le contient.
-
-### Ajouter les voisins du cas principal
-
-Le cas principal est maintenant couvert. Ajoutez les autres situations de la table, notamment le retour en stock avec baisse et celui avec hausse. Pour une baisse accompagnant le retour, l’assertion doit être `assertTrue`.
-
-Le dossier `02-test-rouge` contient une version complète de `test_ticket.py`. Vous pouvez comparer votre fichier au sien ou le recopier après avoir essayé. Il ajoute aussi les limites suivantes : une baisse d’un centime, un prix nul et des données invalides.
-
-Avec ce fichier complet, la suite contient **treize tests**. Avant correction, **deux échouent** : le retour en stock sans baisse et le retour en stock avec hausse. Le reste passe.
-
-![Trois états réellement exécutés : trois tests verts, puis deux échecs sur treize, puis treize tests verts](images/tests.png)
-Figure: Les résultats des trois versions fournies dans l’atelier
-
-Les tests de données invalides vérifient notamment qu’un prix négatif, un prix décimal, un booléen utilisé comme prix et une disponibilité écrite sous forme de texte sont refusés. Ils protègent un comportement existant ; ils ne décrivent pas de nouvelles fonctionnalités du ticket.
-
-Lisez le test sur le booléen comme prix avec la validation dans `Etat`. En Python, les booléens sont un cas particulier des entiers. Le contrôle `type(...) is int` utilisé ici exclut délibérément `True`, alors qu’un simple `isinstance(..., int)` l’accepterait.[^p4-bool]
-
-[^p4-bool]: Python, [type booléen et relation avec les entiers](https://docs.python.org/3.12/library/stdtypes.html#boolean-type-bool).
-
-### Faire écrire les tests par l’agent
-
-Si vous voulez lui confier cette étape, repartez de la copie initiale et donnez-lui cette consigne :
-
-```text
-À partir de TICKET.md, propose une table de cas puis écris
-les tests manquants dans test_ticket.py.
-Ne modifie pas suivi.py.
-Lance python -m unittest discover -v.
-Rapporte les noms des tests en échec et la différence
-entre la valeur attendue et la valeur obtenue.
-```
-
-La séparation entre les tests et la correction nous permet d’observer le comportement initial. Vérifiez le diff après son intervention : s’il a modifié `suivi.py` en même temps, l’expérience ne montre plus aussi clairement que les nouveaux tests attrapent l’ancien comportement.
-
-Regardez également si ses tests appellent vraiment `notifier`. Un test qui compare deux constantes ou reproduit sa propre version de la condition peut passer sans contrôler notre fonction.
-
-Enfin, les tests sont du code exécuté sur votre ordinateur. Dans cet atelier, ils utilisent seulement nos petites fonctions. Dans un dépôt inconnu, regardez leurs imports, leurs préparatifs et les commandes proposées avant de les lancer. Le mot « test » ne garantit pas à lui seul l’absence d’écriture ou d’appel réseau.
-
-
-
-## 7. Faire le changement et lire le diff
-
-**TL;DR :** la règle attendue tient dans deux conditions. Nous allons enlever celle qui autorisait une notification pour une simple remise en stock.
-
-### Relire les opérateurs
-
-Voici la fonction initiale :
-
-```python
-def notifier(ancien: Etat, nouveau: Etat) -> bool:
-    return nouveau.disponible and (
-        nouveau.prix_centimes < ancien.prix_centimes or not ancien.disponible
-    )
-```
-
-Lisez-la à voix haute : le produit doit être disponible maintenant, et il faut soit une baisse de prix, soit une ancienne indisponibilité.
-
-Le second terme du `or` explique notre problème. Pour un retour en stock, `not ancien.disponible` vaut vrai. Le prix peut être identique ou même plus élevé : l’expression entre parenthèses sera tout de même vraie.
-
-Notre ticket exige uniquement une disponibilité actuelle et une baisse stricte. La correction devient :
-
-```python
-def notifier(ancien: Etat, nouveau: Etat) -> bool:
-    return nouveau.disponible and (
-        nouveau.prix_centimes < ancien.prix_centimes
-    )
-```
-Code: La fonction après correction
-
-Nous conservons les parenthèses et la présentation afin que le diff porte sur le changement de comportement. Il serait possible d’écrire cette expression sur une ligne, mais cela n’est pas nécessaire pour résoudre le ticket.
-
-N’ajoutez pas `ancien.disponible` dans la nouvelle condition. Cela empêcherait de notifier une vraie baisse au moment du retour en stock, contrairement à la règle décidée.
-
-![Seul le cas disponible maintenant avec baisse de prix autorise une notification](images/decision.png)
-Figure: La règle complète tient dans ces quatre combinaisons
-
-### Une demande de modification précise
-
-Pour demander cette correction à l’agent, vous pouvez utiliser :
-
-```text
-Applique le comportement décrit dans TICKET.md.
-Conserve les interfaces existantes et limite la modification
-au code nécessaire.
-Ne change pas les réponses attendues des tests pour les faire passer.
-Lance la suite avec python -m unittest discover -v.
-Montre le diff et explique la condition modifiée.
-Ne crée pas de commit et ne publie rien.
-```
-Code: Confier la correction en gardant un résultat relisible
-
-Les verbes disent ce qui doit être fait. « Ce serait bien de vérifier les tests » laisse une intention vague ; « lance cette commande et rapporte son résultat » donne une action et une preuve à chercher.
-
-Cela reste une consigne au modèle. Pour limiter effectivement son accès aux fichiers, au réseau ou à la publication, utilisez aussi les permissions de votre outil. Une phrase dans un prompt n’a pas le même rôle qu’un droit technique refusant l’opération.
-
-Si l’agent propose une classe de notification, une nouvelle dépendance ou un système de règles pour cette fonction, demandez-lui quel cas du ticket le justifie. Vous pouvez rejeter ces ajouts et demander une modification plus petite. Vous n’êtes pas obligé de conserver du code parce qu’il a déjà été généré.
-
-### Lire ce qui a vraiment changé
-
-Un résumé de l’agent raconte ce qu’il pense avoir fait. Le diff montre les fichiers modifiés. Ouvrez celui de votre éditeur, puis cherchez le changement dans `suivi.py`.
-
-La correction fournie retire ce morceau :
-
-```diff
--        nouveau.prix_centimes < ancien.prix_centimes or not ancien.disponible
-+        nouveau.prix_centimes < ancien.prix_centimes
-```
-Code: Le changement de comportement dans la fonction
-
-Si Git est installé, vous pouvez aussi comparer les deux dossiers depuis leur dossier parent :
-
-```bash
-git diff --no-index 01-depart/suivi.py mon-suivi/suivi.py
-```
-
-Cette commande fonctionne sans créer de dépôt Git. Avec `--no-index`, un code de sortie égal à 1 signifie que les fichiers diffèrent ; ce n’est pas forcément un échec de la comparaison.[^p4-diff]
-
-Regardez ensuite les autres fichiers modifiés. Les nouveaux tests sont attendus. Une modification des données d’entrée pour éviter le bug, une suppression de validation ou une réécriture de tout le programme demandent une explication.
-
-Si vous débutez, choisissez une ligne retirée et une ligne conservée, puis expliquez leur rôle sans recopier le résumé de l’agent. Si vous n’y arrivez pas encore, revenez à la fonction. Le résultat est assez petit pour que cette lecture reste abordable.
-
-[^p4-diff]: Git, [comparaison de fichiers avec `git diff --no-index`](https://git-scm.com/docs/git-diff).
-
-
-
-## 8. Vérifier au-delà de la dernière ligne verte
-
-**TL;DR :** la suite teste la fonction ; les scénarios font aussi passer les données par le chargement JSON. Nous allons examiner les deux.
-
-### Rejouer les tests et contrôler leur nombre
-
-Après correction, lancez :
-
-```bash
-python -m unittest discover -v
-```
-
-Avec le fichier complet de `02-test-rouge`, les **treize tests passent**. Si vous avez seulement écrit le premier nouveau test, vous en aurez quatre : ce n’est pas la même couverture, même si la dernière ligne est également `OK`.
-
-Les noms des tests vous permettent de voir les situations réellement contrôlées. Regardez en particulier les deux qui échouaient avant la correction. Ils doivent toujours être présents et conserver leurs valeurs attendues.
-
-Dans un rapport d’agent, cherchez la commande, son dossier d’exécution et son résultat. « Tests vérifiés » peut cacher plusieurs choses : une lecture du code des tests, une exécution partielle, ou une suite complète. Nous voulons savoir laquelle a eu lieu.
-
-Si une dépendance manque ou qu’une commande échoue, le rapport doit le dire. Réussir à écrire les tests n’est pas la même chose que réussir à les exécuter.
-
-### Passer par les fichiers JSON
-
-Exécutez maintenant nos trois scénarios :
-
-```bash
-python suivi.py scenarios/retour-stock.json
-python suivi.py scenarios/baisse.json
-python suivi.py scenarios/rupture.json
-```
-
-Voici les décisions attendues après correction :
-
-| Fichier | Résultat |
-| --- | --- |
-| `retour-stock.json` | `{"notifier": false}` |
-| `baisse.json` | `{"notifier": true}` |
-| `rupture.json` | `{"notifier": false}` |
-Table: Les trois scénarios de recette
-
-Nous passons cette fois par la lecture du fichier, la construction des états, la décision et l’affichage. Les tests précédents appelaient surtout les fonctions directement. Les deux vérifications se complètent.
-
-Créez ensuite une copie de `retour-stock.json`, nommée `retour-stock-baisse.json`, et changez seulement le nouveau prix : 1 500 au lieu de 2 000. Lancez ce nouveau scénario. Le résultat doit être vrai.
-
-Ne modifiez pas les scénarios pour les faire coïncider avec une réponse inattendue. Si un cas ne produit pas ce que la règle prévoit, conservez le fichier qui le reproduit. C’est une meilleure base de discussion qu’une capture sans ses données d’entrée.
-
-### Vérifier qu’un test sait encore protester
-
-Faisons une petite expérience, dans une **copie du projet corrigé**. Remplacez `<` par `<=` dans `notifier`, puis relancez la suite.
-
-Le prix identique autorise maintenant une notification. Les tests qui attendent l’absence de notification à prix inchangé doivent échouer. S’ils ne le font pas, vérifiez que vous avez exécuté la bonne copie et que ces cas sont présents.
-
-Rétablissez ensuite `<`, puis retirez temporairement la condition `nouveau.disponible and`. Le test de baisse sur un produit indisponible doit cette fois protester.
-
-Ces modifications volontaires sont de petites **mutations** : nous introduisons une erreur précise pour voir si les tests la remarquent. Cela ne prouve pas qu’ils détecteront tous les bugs. Cela permet de vérifier que les cas importants ne sont pas seulement décoratifs.
-
-Revenez enfin à la version corrigée et relancez la suite. Ne gardez pas une mutation dans votre copie de travail ; le but est de tester nos tests, pas de préparer discrètement le prochain ticket. 🙂
-
-### Demander une seconde lecture utile
-
-Vous pouvez maintenant faire relire le diff par un agent, en lui donnant aussi le ticket et les cas attendus :
-
-```text
-Relis le diff par rapport à TICKET.md et aux scénarios.
-Pour chaque problème trouvé, donne un cas reproductible,
-le comportement obtenu et celui attendu.
-Ne modifie pas les fichiers pendant cette revue.
-Si tu ne trouves pas de problème, indique ce que tu as vérifié
-et les limites de cette vérification.
-```
-
-Cette demande évite de réduire la revue à des préférences de style. Une remarque devient plus utile lorsqu’on peut lancer le scénario qui la justifie.
-
-Le second passage peut tout de même manquer la même erreur que le premier. Changer de session ou de modèle n’en fait pas une preuve indépendante au sens fort : les outils peuvent partager des habitudes et des angles morts. Appuyez-vous sur les scénarios, le code et les sorties observées.
-
-Pour notre petit changement, une revue efficace peut être courte. Il n’y a aucune raison d’inventer trois problèmes pour remplir une section de rapport.
-
-
-
-## 9. Garder un changement que l’on sait expliquer
-
-**TL;DR :** préparez une trace courte du problème, de la correction et des vérifications. Puis choisissez où l’aide vous a réellement été utile.
-
-### Écrire un compte rendu exploitable
-
-Créez un fichier `COMPTE-RENDU.md` et renseignez-le avec votre propre exécution :
-
-```markdown
-# PRIX-1 — Ne plus notifier une simple remise en stock
-
-## Problème
-
-Le retour en stock autorisait une notification même sans baisse de prix.
-
-## Changement
-
-La décision exige une disponibilité actuelle et une baisse stricte.
-Les interfaces et les validations des entrées sont conservées.
-
-## Vérifications effectuées
-
-- Commande de tests, dossier d’exécution, nombre de tests et résultat :
-- Scénario retour en stock, résultat observé :
-- Scénario baisse de prix, résultat observé :
-- Scénario indisponible, résultat observé :
-
-## Limites
-
-Le programme calcule une décision. Il n’envoie pas de notification.
-Il compare deux observations dans une même devise implicite.
-```
-Code: Une trame à compléter avec vos résultats
-
-Les cases laissées vides ne doivent pas être remplies par une supposition. Si vous n’avez pas exécuté un scénario, écrivez-le ou lancez-le.
-
-Ce texte peut ensuite servir de base à une description de pull request dans un vrai projet. Avant de publier, relisez les fichiers et les traces jointes : un rapport de test peut lui aussi contenir des données qu’on ne souhaite pas diffuser.
-
-L’agent peut rédiger ce compte rendu à partir des sorties conservées. Vous gardez à vérifier que les phrases correspondent aux commandes effectivement réalisées.
-
-### Quand on apprend encore à développer
-
-Si vous découvrez Python, vous avez peut-être eu envie de demander directement la version finale. Vous l’auriez obtenue plus vite. Mais pourriez-vous maintenant expliquer pourquoi le `or` posait problème ?
-
-Fermez la correction et essayez de prédire le résultat de deux cas : un retour en stock avec hausse, puis une baisse d’un centime sur un produit disponible. Vérifiez vos réponses en exécutant le programme.
-
-Si vous vous trompez, ce n’est pas une raison de renoncer à l’aide. Demandez une explication de l’expression booléenne, construisez une table de valeurs ou réduisez l’exemple à deux booléens. Vous pouvez vous servir du modèle pour trouver une autre explication sans lui confier immédiatement toute la modification.
-
-Pour apprendre, une bonne utilisation consiste souvent à demander un indice, un contre-exemple ou une question de vérification. Une solution complète trop tôt peut vous faire sauter exactement l’effort dont vous aviez besoin pour comprendre.
-
-Et certains jours, le plus efficace sera de fermer l’agent et de lire la fonction tranquillement. Il n’y a rien à rentabiliser à chaque ligne.
-
-### Trouver ses propres points de friction
-
-Reprenez les étapes de cet atelier et demandez-vous lesquelles vous ont posé problème. Comprendre la règle ? Retrouver la fonction ? Penser aux cas limites ? Écrire la syntaxe de `unittest` ? Relire le diff ?
-
-L’aide n’a pas le même intérêt partout. Si vous aimez écrire le code mais que préparer une recette vous prend un temps fou, vous pouvez garder le code et demander une première liste de scénarios. Si vous connaissez bien les tests mais découvrez un langage, une explication ciblée peut être plus utile qu’une implémentation complète.
-
-Pour comparer deux façons de travailler, notez le temps total, y compris les corrections de demandes, la lecture des résultats et la validation. Le temps pendant lequel l’agent produit du texte n’est qu’une partie du travail.
-
-N’ajoutez pas automatiquement un framework ou une série de commandes pour reproduire cet atelier. Nous avons séparé des étapes afin de voir ce qu’elles vérifient. Dans votre quotidien, regroupez ou simplifiez ce qui peut l’être, tout en conservant les contrôles nécessaires au changement.
-
-Vous pouvez aussi conclure que l’outil ne vous aide pas sur ce type de tâche. Adapter un outil à son besoin comprend cette possibilité.
-
-
+Une connexion réussie montre que l’éditeur peut parler au serveur. Pour savoir si cette installation vous aide à développer, il reste à examiner ses réponses et ses délais sur vos propres tâches. Nous n’avons pas configuré ni validé ici un parcours d’agent sur CPU.
 
 ## Conclusion
 
-La correction de notre fonction tient en peu de caractères. Le travail ne se résume pourtant pas à ces caractères : il a fallu comprendre la demande, trouver le comportement existant, choisir les cas et vérifier le résultat.
-
-Un agent peut aider à plusieurs de ces étapes. Il peut aussi vous faire perdre du temps en élargissant le sujet, en ajoutant du code inutile ou en produisant des vérifications qui ne vérifient pas la bonne chose. Vous avez maintenant un petit projet sur lequel observer ces différences sans mettre une application réelle en jeu.
-
-Gardez ce qui vous sert. Si vous préférez écrire vous-même la correction et demander de l’aide uniquement pour les cas de test, faites-le. Si tout l’exercice vous semble plus simple à réaliser sans IA, faites-le aussi. Votre manière de travailler n’a pas à devenir plus compliquée pour justifier l’usage d’un outil.
+Vous pouvez conserver le même assistant pour la suite. Nous allons maintenant ouvrir un peu le capot : contexte, outils, permissions et coût d’une session d’agent.

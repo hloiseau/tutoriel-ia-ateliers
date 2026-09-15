@@ -1,6 +1,8 @@
-# 5. Décider ce que le ticket veut changer
+# 3. Décider ce que le ticket veut changer
 
 [Sommaire de la partie](../README.md) · [Sources](.)
+
+[Précédent : Installer l’assistant et observer le problème](../installer/LECTURE.md) · [Suivant : Faire apparaître le bug dans un test](../03-tests/LECTURE.md)
 
 **TL;DR :** une phrase de ticket cache parfois plusieurs comportements. Nous allons les mettre à plat avant de toucher à la fonction.
 
@@ -51,3 +53,7 @@ Les limites ne sont pas seulement des interdictions à adresser à l’agent. El
 Dans votre propre travail, gardez ce périmètre à la taille de la tâche. Un correctif d’une condition n’exige pas automatiquement un document de conception de dix pages. Il exige en revanche que les cas ambigus aient une réponse.
 
 
+
+---
+
+[Précédent : Installer l’assistant et observer le problème](../installer/LECTURE.md) · [Suivant : Faire apparaître le bug dans un test](../03-tests/LECTURE.md)

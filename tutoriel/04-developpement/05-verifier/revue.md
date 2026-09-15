@@ -1,4 +1,4 @@
-Vous pouvez maintenant faire relire le diff par un agent, en lui donnant aussi le ticket et les cas attendus :
+Pour un second avis, vous pouvez faire relire le changement par un agent. C’est facultatif pour terminer l’atelier. Fournissez-lui le diff obtenu dans la comparaison, le contenu de `TICKET.md` et la table des cas attendus :
 
 ```text
 Relis le diff par rapport à TICKET.md et aux scénarios.

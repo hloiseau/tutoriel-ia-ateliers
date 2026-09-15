@@ -61,12 +61,32 @@ def build(part, export):
 
     title = manifest['title']
     index = f'# {title}\n\n[Sommaire global](../../SOMMAIRE.md) · [Lecture complète](LECTURE.md)\n\n'
+    guided = part.name == '04-developpement'
+    workshop_count = next((n for n, c in enumerate(manifest['children']) if c['slug'] == 'comparatif'), len(manifest['children']))
+    if guided:
+        index += '## Suivre l’atelier\n\nLes sept chapitres ci-dessous se suivent dans le même dossier de travail. Le [comparatif complet](comparatif/LECTURE.md) peut aussi être consulté avant de choisir un assistant.\n\n'
     complete = f'# {title}\n\n[Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)\n\n'
     complete += lecture(read(part, manifest.get('introduction')), 1, '')
     for i, chapter in enumerate(manifest['children'], 1):
         directory = Path(chapter['introduction']).parent
+        if guided and i == workshop_count + 1:
+            index += '\n## Consulter ou expérimenter à part\n\nCes deux chapitres ne sont pas nécessaires pour terminer l’atelier.\n\n'
         index += f"{i}. [{chapter['title']}]({directory.as_posix()}/LECTURE.md)\n"
         page = f"# {i}. {chapter['title']}\n\n[Sommaire de la partie](../README.md) · [Sources](.)\n\n"
+        nav = ''
+        if guided:
+            if i <= workshop_count:
+                links = []
+                for offset, label in ((-1, 'Précédent'), (1, 'Suivant')):
+                    target = i - 1 + offset
+                    if 0 <= target < workshop_count:
+                        other = manifest['children'][target]
+                        other_dir = Path(other['introduction']).parent.as_posix()
+                        links.append(f"[{label} : {other['title']}](../{other_dir}/LECTURE.md)")
+                nav = ' · '.join(links) + '\n'
+            else:
+                nav = '[Revenir à l’installation de l’atelier](../installer/LECTURE.md) · [Sommaire](../README.md)\n'
+            page += nav + '\n'
         page += lecture(read(part, chapter.get('introduction')), 1, '../')
         complete += f"\n## {i}. {chapter['title']}\n\n" + lecture(read(part, chapter.get('introduction')), 2, '')
         for section in chapter['children']:
@@ -74,6 +94,8 @@ def build(part, export):
             page += f"\n## {section['title']}\n\n" + lecture(text, 2, '../')
             complete += f"\n### {section['title']}\n\n" + lecture(text, 3, '')
         page += '\n' + lecture(read(part, chapter.get('conclusion')), 1, '../')
+        if nav:
+            page += '\n---\n\n' + nav
         complete += '\n' + lecture(read(part, chapter.get('conclusion')), 2, '')
         (part / directory / 'LECTURE.md').write_text(page, encoding='utf-8')
     complete += '\n## Conclusion\n\n' + lecture(read(part, manifest.get('conclusion')), 1, '')

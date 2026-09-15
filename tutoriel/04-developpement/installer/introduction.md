@@ -1,1 +1,1 @@
-**TL;DR** — Préparez une copie du projet, puis ouvrez votre assistant. Le parcours principal utilise Copilot avec un modèle hébergé. L’essai local avec Continue est facultatif et reste à vérifier : il explore la discussion sur un extrait, sans configurer un agent pour réaliser l’atelier.
+**TL;DR** — Nous préparons une copie de travail, ouvrons l’assistant et exécutons le programme. À la fin du chapitre, nous aurons observé le problème et retrouvé la fonction qui le provoque.

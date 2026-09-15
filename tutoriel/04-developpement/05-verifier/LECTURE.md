@@ -1,6 +1,8 @@
-# 8. Vérifier au-delà de la dernière ligne verte
+# 6. Vérifier au-delà de la dernière ligne verte
 
 [Sommaire de la partie](../README.md) · [Sources](.)
+
+[Précédent : Faire le changement et lire le diff](../04-corriger/LECTURE.md) · [Suivant : Garder un changement que l’on sait expliquer](../06-garder-la-main/LECTURE.md)
 
 **TL;DR :** la suite teste la fonction ; les scénarios font aussi passer les données par le chargement JSON. Nous allons examiner les deux.
 
@@ -12,7 +14,7 @@ Après correction, lancez :
 python -m unittest discover -v
 ```
 
-Avec le fichier complet de `02-test-rouge`, les **treize tests passent**. Si vous avez seulement écrit le premier nouveau test, vous en aurez quatre : ce n’est pas la même couverture, même si la dernière ligne est également `OK`.
+Avec le fichier complet de `02-test-rouge`, les **treize tests passent**. Si vous avez conservé les tests de l’agent, le nombre peut être différent. Vérifiez que les cas décidés dans la table sont couverts et que ceux qui échouaient passent désormais, avec les mêmes valeurs attendues.
 
 Les noms des tests vous permettent de voir les situations réellement contrôlées. Regardez en particulier les deux qui échouaient avant la correction. Ils doivent toujours être présents et conserver leurs valeurs attendues.
 
@@ -47,7 +49,13 @@ Ne modifiez pas les scénarios pour les faire coïncider avec une réponse inatt
 
 ## Vérifier qu’un test sait encore protester
 
-Faisons une petite expérience, dans une **copie du projet corrigé**. Remplacez `<` par `<=` dans `notifier`, puis relancez la suite.
+Cette expérience est facultative. Copiez le dossier corrigé `mon-suivi` dans un dossier voisin nommé **`mon-suivi-mutations`**. Depuis le terminal placé dans `mon-suivi`, entrez dans cette nouvelle copie :
+
+```bash
+cd ../mon-suivi-mutations
+```
+
+Ouvrez **le fichier `suivi.py` de cette copie**, remplacez `<` par `<=`, enregistrez, puis relancez `python -m unittest discover -v` dans ce terminal.
 
 Le prix identique autorise maintenant une notification. Les tests qui attendent l’absence de notification à prix inchangé doivent échouer. S’ils ne le font pas, vérifiez que vous avez exécuté la bonne copie et que ces cas sont présents.
 
@@ -55,11 +63,18 @@ Rétablissez ensuite `<`, puis retirez temporairement la condition `nouveau.disp
 
 Ces modifications volontaires sont de petites **mutations** : nous introduisons une erreur précise pour voir si les tests la remarquent. Cela ne prouve pas qu’ils détecteront tous les bugs. Cela permet de vérifier que les cas importants ne sont pas seulement décoratifs.
 
-Revenez enfin à la version corrigée et relancez la suite. Ne gardez pas une mutation dans votre copie de travail ; le but est de tester nos tests, pas de préparer discrètement le prochain ticket. 🙂
+Rétablissez la condition dans `mon-suivi-mutations`, puis revenez à notre copie de travail restée intacte :
+
+```bash
+cd ../mon-suivi
+python -m unittest discover -v
+```
+
+Le but est de tester nos tests, pas de préparer discrètement le prochain ticket. 🙂
 
 ## Demander une seconde lecture utile
 
-Vous pouvez maintenant faire relire le diff par un agent, en lui donnant aussi le ticket et les cas attendus :
+Pour un second avis, vous pouvez faire relire le changement par un agent. C’est facultatif pour terminer l’atelier. Fournissez-lui le diff obtenu dans la comparaison, le contenu de `TICKET.md` et la table des cas attendus :
 
 ```text
 Relis le diff par rapport à TICKET.md et aux scénarios.
@@ -77,3 +92,7 @@ Le second passage peut tout de même manquer la même erreur que le premier. Cha
 Pour notre petit changement, une revue efficace peut être courte. Il n’y a aucune raison d’inventer trois problèmes pour remplir une section de rapport.
 
 
+
+---
+
+[Précédent : Faire le changement et lire le diff](../04-corriger/LECTURE.md) · [Suivant : Garder un changement que l’on sait expliquer](../06-garder-la-main/LECTURE.md)

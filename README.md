@@ -6,7 +6,7 @@ Les textes, les illustrations et les ateliers du tutoriel en cours de rédaction
 
 Ce dépôt est le point de travail commun. La branche `main` rassemble les versions courantes, y compris les brouillons identifiés comme tels. Être présent ici ne signifie pas être validé pour publication.
 
-Les **quatre premières parties** sont désormais réunies ici : **30 chapitres, 110 sections et 32 illustrations**, avec les ateliers et les documents de reprise. Le [sommaire](SOMMAIRE.md) mène directement aux lectures par chapitre. Les parties 5 à 8 restent au stade du plan ; le billet d’origine est un contenu séparé.
+Les **quatre premières parties** sont désormais réunies ici : **30 chapitres, 108 sections et 32 illustrations**, avec les ateliers et les documents de reprise. Le [sommaire](SOMMAIRE.md) mène directement aux lectures par chapitre. Les parties 5 à 8 restent au stade du plan ; le billet d’origine est un contenu séparé.
 
 ## Où trouver quoi ?
 

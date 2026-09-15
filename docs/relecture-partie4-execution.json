@@ -1,0 +1,141 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "mode": "Exécution des fichiers de référence, sans agent ni interface graphique",
+  "resultats": [
+    {
+      "etape": "depart",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "dossier": "mon-suivi",
+      "code": 0,
+      "sortie": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "etape": "scenario_initial",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "suivi.py",
+        "scenarios/retour-stock.json"
+      ],
+      "dossier": "mon-suivi",
+      "code": 0,
+      "sortie": "{\"notifier\": true}\n"
+    },
+    {
+      "etape": "premier_test",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "dossier": "mon-suivi",
+      "code": 1,
+      "sortie": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... FAIL\n\n======================================================================\nFAIL: test_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi/test_ticket.py\", line 7, in test_retour_en_stock_sans_baisse\n    self.assertFalse(\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "etape": "tests_reference_avant",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "dossier": "mon-suivi",
+      "code": 1,
+      "sortie": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_booleen_comme_prix (test_ticket.DonneesInvalides.test_booleen_comme_prix) ... ok\ntest_disponibilite_non_booleenne (test_ticket.DonneesInvalides.test_disponibilite_non_booleenne) ... ok\ntest_prix_decimal (test_ticket.DonneesInvalides.test_prix_decimal) ... ok\ntest_prix_negatif (test_ticket.DonneesInvalides.test_prix_negatif) ... ok\ntest_baisse_un_centime (test_ticket.TicketPrix.test_baisse_un_centime) ... ok\ntest_prix_identique_deja_en_stock (test_ticket.TicketPrix.test_prix_identique_deja_en_stock) ... ok\ntest_prix_zero (test_ticket.TicketPrix.test_prix_zero) ... ok\ntest_retour_en_stock_avec_baisse (test_ticket.TicketPrix.test_retour_en_stock_avec_baisse) ... ok\ntest_retour_en_stock_avec_hausse (test_ticket.TicketPrix.test_retour_en_stock_avec_hausse) ... FAIL\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... FAIL\n\n======================================================================\nFAIL: test_retour_en_stock_avec_hausse (test_ticket.TicketPrix.test_retour_en_stock_avec_hausse)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi/test_ticket.py\", line 16, in test_retour_en_stock_avec_hausse\n    self.assertFalse(notifier(Etat(2000, False), Etat(2500, True)))\nAssertionError: True is not false\n\n======================================================================\nFAIL: test_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi/test_ticket.py\", line 10, in test_retour_en_stock_sans_baisse\n    self.assertFalse(notifier(Etat(2000, False), Etat(2000, True)))\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nFAILED (failures=2)\n"
+    },
+    {
+      "etape": "apres_correction",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "dossier": "mon-suivi",
+      "code": 0,
+      "sortie": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_booleen_comme_prix (test_ticket.DonneesInvalides.test_booleen_comme_prix) ... ok\ntest_disponibilite_non_booleenne (test_ticket.DonneesInvalides.test_disponibilite_non_booleenne) ... ok\ntest_prix_decimal (test_ticket.DonneesInvalides.test_prix_decimal) ... ok\ntest_prix_negatif (test_ticket.DonneesInvalides.test_prix_negatif) ... ok\ntest_baisse_un_centime (test_ticket.TicketPrix.test_baisse_un_centime) ... ok\ntest_prix_identique_deja_en_stock (test_ticket.TicketPrix.test_prix_identique_deja_en_stock) ... ok\ntest_prix_zero (test_ticket.TicketPrix.test_prix_zero) ... ok\ntest_retour_en_stock_avec_baisse (test_ticket.TicketPrix.test_retour_en_stock_avec_baisse) ... ok\ntest_retour_en_stock_avec_hausse (test_ticket.TicketPrix.test_retour_en_stock_avec_hausse) ... ok\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "etape": "retour-stock",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "suivi.py",
+        "scenarios/retour-stock.json"
+      ],
+      "dossier": "mon-suivi",
+      "code": 0,
+      "sortie": "{\"notifier\": false}\n"
+    },
+    {
+      "etape": "baisse",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "suivi.py",
+        "scenarios/baisse.json"
+      ],
+      "dossier": "mon-suivi",
+      "code": 0,
+      "sortie": "{\"notifier\": true}\n"
+    },
+    {
+      "etape": "rupture",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "suivi.py",
+        "scenarios/rupture.json"
+      ],
+      "dossier": "mon-suivi",
+      "code": 0,
+      "sortie": "{\"notifier\": false}\n"
+    },
+    {
+      "etape": "mutation_egal",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "dossier": "mon-suivi-mutations",
+      "code": 1,
+      "sortie": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_booleen_comme_prix (test_ticket.DonneesInvalides.test_booleen_comme_prix) ... ok\ntest_disponibilite_non_booleenne (test_ticket.DonneesInvalides.test_disponibilite_non_booleenne) ... ok\ntest_prix_decimal (test_ticket.DonneesInvalides.test_prix_decimal) ... ok\ntest_prix_negatif (test_ticket.DonneesInvalides.test_prix_negatif) ... ok\ntest_baisse_un_centime (test_ticket.TicketPrix.test_baisse_un_centime) ... ok\ntest_prix_identique_deja_en_stock (test_ticket.TicketPrix.test_prix_identique_deja_en_stock) ... FAIL\ntest_prix_zero (test_ticket.TicketPrix.test_prix_zero) ... ERROR\ntest_retour_en_stock_avec_baisse (test_ticket.TicketPrix.test_retour_en_stock_avec_baisse) ... ok\ntest_retour_en_stock_avec_hausse (test_ticket.TicketPrix.test_retour_en_stock_avec_hausse) ... ok\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... FAIL\n\n======================================================================\nERROR: test_prix_zero (test_ticket.TicketPrix.test_prix_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi-mutations/test_ticket.py\", line 25, in test_prix_zero\n    self.assertTrue(notifier(Etat(1, True), Etat(0, True)))\n                                            ^^^^^^^^^^^^^\n  File \"<string>\", line 5, in __init__\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi-mutations/suivi.py\", line 17, in __post_init__\n    raise ValueError(\"Le prix doit être un entier positif ou nul, en centimes.\")\nValueError: Le prix doit être un entier positif ou nul, en centimes.\n\n======================================================================\nFAIL: test_prix_identique_deja_en_stock (test_ticket.TicketPrix.test_prix_identique_deja_en_stock)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi-mutations/test_ticket.py\", line 19, in test_prix_identique_deja_en_stock\n    self.assertFalse(notifier(Etat(2000, True), Etat(2000, True)))\nAssertionError: True is not false\n\n======================================================================\nFAIL: test_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi-mutations/test_ticket.py\", line 10, in test_retour_en_stock_sans_baisse\n    self.assertFalse(notifier(Etat(2000, False), Etat(2000, True)))\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nFAILED (failures=2, errors=1)\n"
+    },
+    {
+      "etape": "mutation_disponibilite",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "dossier": "mon-suivi-mutations",
+      "code": 1,
+      "sortie": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... FAIL\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_booleen_comme_prix (test_ticket.DonneesInvalides.test_booleen_comme_prix) ... ok\ntest_disponibilite_non_booleenne (test_ticket.DonneesInvalides.test_disponibilite_non_booleenne) ... ok\ntest_prix_decimal (test_ticket.DonneesInvalides.test_prix_decimal) ... ok\ntest_prix_negatif (test_ticket.DonneesInvalides.test_prix_negatif) ... ok\ntest_baisse_un_centime (test_ticket.TicketPrix.test_baisse_un_centime) ... ok\ntest_prix_identique_deja_en_stock (test_ticket.TicketPrix.test_prix_identique_deja_en_stock) ... ok\ntest_prix_zero (test_ticket.TicketPrix.test_prix_zero) ... ok\ntest_retour_en_stock_avec_baisse (test_ticket.TicketPrix.test_retour_en_stock_avec_baisse) ... ok\ntest_retour_en_stock_avec_hausse (test_ticket.TicketPrix.test_retour_en_stock_avec_hausse) ... ok\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... ok\n\n======================================================================\nFAIL: test_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/776076c65cef/verification-pedagogie-avjvhxov/mon-suivi-mutations/test_suivi.py\", line 16, in test_baisse_mais_indisponible\n    self.assertFalse(notifier(Etat(2000, True), Etat(1500, False)))\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "etape": "retour_copie_intacte",
+      "commande": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "dossier": "mon-suivi",
+      "code": 0,
+      "sortie": "test_baisse_en_stock (test_suivi.ComportementExistant.test_baisse_en_stock) ... ok\ntest_baisse_mais_indisponible (test_suivi.ComportementExistant.test_baisse_mais_indisponible) ... ok\ntest_hausse_en_stock (test_suivi.ComportementExistant.test_hausse_en_stock) ... ok\ntest_booleen_comme_prix (test_ticket.DonneesInvalides.test_booleen_comme_prix) ... ok\ntest_disponibilite_non_booleenne (test_ticket.DonneesInvalides.test_disponibilite_non_booleenne) ... ok\ntest_prix_decimal (test_ticket.DonneesInvalides.test_prix_decimal) ... ok\ntest_prix_negatif (test_ticket.DonneesInvalides.test_prix_negatif) ... ok\ntest_baisse_un_centime (test_ticket.TicketPrix.test_baisse_un_centime) ... ok\ntest_prix_identique_deja_en_stock (test_ticket.TicketPrix.test_prix_identique_deja_en_stock) ... ok\ntest_prix_zero (test_ticket.TicketPrix.test_prix_zero) ... ok\ntest_retour_en_stock_avec_baisse (test_ticket.TicketPrix.test_retour_en_stock_avec_baisse) ... ok\ntest_retour_en_stock_avec_hausse (test_ticket.TicketPrix.test_retour_en_stock_avec_hausse) ... ok\ntest_retour_en_stock_sans_baisse (test_ticket.TicketPrix.test_retour_en_stock_sans_baisse) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n"
+    }
+  ]
+}

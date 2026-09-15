@@ -26,7 +26,7 @@ Il compare deux observations dans une même devise implicite.
 ```
 Code: Une trame à compléter avec vos résultats
 
-Les cases laissées vides ne doivent pas être remplies par une supposition. Si vous n’avez pas exécuté un scénario, écrivez-le ou lancez-le.
+Indiquez « non exécuté » pour les scénarios que vous n’avez pas lancés.
 
 Ce texte peut ensuite servir de base à une description de pull request dans un vrai projet. Avant de publier, relisez les fichiers et les traces jointes : un rapport de test peut lui aussi contenir des données qu’on ne souhaite pas diffuser.
 

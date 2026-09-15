@@ -4,19 +4,6 @@ Dans notre premier client Python, nous envoyions une question et recevions du te
 
 Deux agents utilisant le même modèle peuvent donc se comporter différemment. Ils ne préparent pas forcément le même contexte et ne lui donnent pas les mêmes outils.
 
-### Les agents que l’on rencontre déjà dans les offres
-
-Claude Code, Codex, OpenCode, Aider, Cline ou encore l’agent de Copilot ne sont pas simplement des fenêtres de discussion. Ils organisent un travail sur le projet. Les comparer demande de regarder leur fonctionnement, au-delà du modèle annoncé.
-
-| Famille | Exemples déjà rencontrés | Ce qui compte pour choisir |
-| --- | --- | --- |
-| Agent lié à une offre de fournisseur | Claude Code, Codex, Copilot | Modèles accessibles, mode de facturation, permissions et interfaces disponibles |
-| Agent permettant de choisir son fournisseur | OpenCode, Aider, Cline | Compatibilité de l’API, modèle local possible, outils et manière d’appliquer les changements |
-| Éditeur intégrant un agent | Cursor, Antigravity, environnement JetBrains | Intégration au code, complétion, lecture du diff et place laissée aux outils habituels |
-Table: Les offres présentées plus haut ne se situent pas toutes au même niveau
-
-Ces catégories se recoupent. Un même agent peut être accessible en terminal et intégré à plusieurs éditeurs. Les modalités d’accès restent celles documentées pour chaque offre.
-
 ### Pi, et les autres possibilités à connaître
 
 **Pi** mérite qu’on s’y arrête. Il propose un agent en terminal que l’on peut étendre et intégrer à ses propres outils. Sa conception laisse une grande place aux extensions et aux modèles de consignes, plutôt que de fournir par défaut toutes les étapes d’une méthode de développement. Il dispose aussi d’interfaces permettant de le piloter depuis un programme[^p4-h-pi].
