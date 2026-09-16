@@ -1,0 +1,15 @@
+{
+  "moteur": "llama.cpp b10809",
+  "modele": "SmolLM2-360M-Instruct Q8_0",
+  "contexte": 2048,
+  "fils_cpu": 2,
+  "gpu": false,
+  "port": 8080,
+  "date": "2026-09-16",
+  "modele_sha256": "48ab3034d0dd401fbc721eb1df3217902fee7dab9078992d66431f09b7750201",
+  "backend_cpu": "libggml-cpu-x64.so",
+  "alias": "atelier-local",
+  "temperature": 0,
+  "max_tokens": 192,
+  "parallel": 1
+}

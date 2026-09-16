@@ -1,0 +1,70 @@
+{
+  "lot": "validation",
+  "k": 3,
+  "seuil": 0.12,
+  "questions_avec_source": 4,
+  "avec_au_moins_une_source_pertinente": 4,
+  "questions_sans_source": 1,
+  "sans_passage_sur_questions_sans_source": 1,
+  "details": [
+    {
+      "id": "v1",
+      "question": "Une remise en stock à prix égal envoie-t-elle une notification ?",
+      "attendus": [
+        "notification#2"
+      ],
+      "trouves": [
+        "notification#2",
+        "notification#1"
+      ],
+      "source_pertinente_presente": true,
+      "aucun_passage": false
+    },
+    {
+      "id": "v2",
+      "question": "Quand les données de staging sont-elles réinitialisées ?",
+      "attendus": [
+        "staging#1"
+      ],
+      "trouves": [
+        "staging#1"
+      ],
+      "source_pertinente_presente": true,
+      "aucun_passage": false
+    },
+    {
+      "id": "v3",
+      "question": "Une recette préparée prouve-t-elle que les scénarios ont été exécutés ?",
+      "attendus": [
+        "recette#1"
+      ],
+      "trouves": [
+        "recette#1"
+      ],
+      "source_pertinente_presente": true,
+      "aucun_passage": false
+    },
+    {
+      "id": "v4",
+      "question": "Quel délai de temporisation a été validé ?",
+      "attendus": [
+        "temporisation#1",
+        "temporisation#2"
+      ],
+      "trouves": [
+        "temporisation#2",
+        "recette#1"
+      ],
+      "source_pertinente_presente": true,
+      "aucun_passage": false
+    },
+    {
+      "id": "v5",
+      "question": "Quel est le nom de la présidente de la société ?",
+      "attendus": [],
+      "trouves": [],
+      "source_pertinente_presente": null,
+      "aucun_passage": true
+    }
+  ]
+}

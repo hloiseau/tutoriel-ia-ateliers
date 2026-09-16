@@ -6,18 +6,7 @@ La [partie 5 — Comprendre et encadrer les agents](../tutoriel/05-agents/README
 
 La [partie 6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) dispose également d’une rédaction complète et d’un atelier MCP exécuté. Les essais du skill avec un modèle restent à effectuer.
 
-## 7. Construire et adapter son IA maison — à rédiger
-
-1. Choisir entre contexte, recherche documentaire, adaptation et entraînement
-2. Construire une recherche dans ses documents
-3. Évaluer la réponse et retrouver les passages utilisés
-4. Construire une application autour du modèle local
-5. Préparer ses données et adapter un modèle existant
-6. Expérimenter les adaptateurs et leurs limites
-7. Entraîner un petit modèle de langage plus élaboré
-8. Comparer les besoins matériels et les résultats
-
-Pratique envisagée : documents fictifs, application locale, corpus créé ou libre, entraînement minuscule sur CPU et variantes GPU optionnelles. Pas de promesse d’entraîner un modèle géant à la maison. Évaluer sur des exemples distincts de l’entraînement et conserver aussi les régressions.
+La [partie 7 — IA maison](../tutoriel/07-ia-maison/README.md) dispose de huit chapitres et d’un atelier exécuté sur CPU : recherche lexicale, application documentaire, adaptation complète, LoRA et entraînement depuis zéro d’un petit réseau. L’expérience d’adaptation d’un LLM sur GPU reste à réaliser ; son [document de reprise](../ateliers/07-ia-maison/experience-gpu/PROMPT-CODEX.md) est fourni.
 
 ## 8. Choisir la place de l’IA — à rédiger
 

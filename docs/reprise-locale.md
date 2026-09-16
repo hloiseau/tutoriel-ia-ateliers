@@ -19,3 +19,7 @@ Modifie les petits Markdown déclarés dans les manifests, puis lance `python ou
 Prépare des modifications relisibles dans Git. Cette reprise ne demande pas à elle seule une publication sur ZdS. La rédaction peut avancer sans attendre les retours des lecteurs.
 
 Pour la partie 5, distingue les journaux du banc sans modèle des observations d’un assistant réel. Le protocole et les expériences restantes sont dans `tutoriel/05-agents/VERIFICATION.md`.
+
+## Expérience d’adaptation de la partie 7
+
+Le protocole ciblé est dans [experience-gpu/PROMPT-CODEX.md](../ateliers/07-ia-maison/experience-gpu/PROMPT-CODEX.md). Il complète ce document : préserver la base, isoler l’environnement, comparer les anciennes tâches et recharger l’adaptateur dans un nouveau processus.

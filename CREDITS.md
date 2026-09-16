@@ -13,3 +13,7 @@ La partie 2 utilise les 1 797 images fournies par `sklearn.datasets.load_digits`
 [llama.cpp](https://github.com/ggml-org/llama.cpp) sert de moteur d’inférence. Ses exécutables ne sont pas inclus.
 
 Les corpus courts, scénarios, tickets fictifs et scripts d’exercice ont été préparés pour ce tutoriel. Les résultats de référence ne sont pas des données d’entreprise.
+
+## Petit modèle de la partie 7
+
+Les corpus de caractères, les illustrations et les poids originaux de `ateliers/07-ia-maison/resultats-reference` sont créés pour ce tutoriel : © 2026 Hugo Loiseau, CC BY-SA 4.0. Il s’agit des poids du petit réseau NumPy, pas de poids SmolLM2. Le code est sous GPL-3.0-only. Les réponses documentaires enregistrées proviennent d’appels réels au modèle SmolLM2 mentionné plus haut.

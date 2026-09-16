@@ -1,0 +1,1 @@
+Nous avons entraîné de vrais paramètres, mais sur une tâche volontairement minuscule. Voyons maintenant ce que cette expérience permet de préparer sur une autre machine, et ce qu’elle ne permet pas de promettre.

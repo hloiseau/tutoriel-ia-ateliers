@@ -1,0 +1,83 @@
+{
+  "mode": "complet",
+  "corpus": "base",
+  "pas": 1200,
+  "graine": 7,
+  "contexte_caracteres": 12,
+  "parametres_base": 15055,
+  "parametres_entraines": 15055,
+  "rang": null,
+  "perte_validation_avant": 4.309773035509216,
+  "perte_validation_apres": 0.16583935262274233,
+  "empreinte_base_avant": "8baf39d21f8dfe797223fdf91cacabae158828329b041b76482ced84e1c40a71",
+  "empreinte_base_apres": "9320fd4b4bfc60fcd523a03606fa0924a96049c4475f0e122bdf87cf0f602c99",
+  "duree_entrainement_s": 0.5748795990002691,
+  "courbe": [
+    {
+      "pas": 1,
+      "perte_lot_train": 4.303836412230575,
+      "perte_validation": 4.228700752745199
+    },
+    {
+      "pas": 100,
+      "perte_lot_train": 0.29265675079487735,
+      "perte_validation": 0.3126611326094237
+    },
+    {
+      "pas": 200,
+      "perte_lot_train": 0.1843523691818231,
+      "perte_validation": 0.176268216455599
+    },
+    {
+      "pas": 300,
+      "perte_lot_train": 0.12073060005893514,
+      "perte_validation": 0.18979455730621464
+    },
+    {
+      "pas": 400,
+      "perte_lot_train": 0.21669927201866382,
+      "perte_validation": 0.15179879483555114
+    },
+    {
+      "pas": 500,
+      "perte_lot_train": 0.10346811782777603,
+      "perte_validation": 0.15826954836135326
+    },
+    {
+      "pas": 600,
+      "perte_lot_train": 0.13043195624495854,
+      "perte_validation": 0.16440125482248932
+    },
+    {
+      "pas": 700,
+      "perte_lot_train": 0.0017464535208515713,
+      "perte_validation": 0.15855791644971168
+    },
+    {
+      "pas": 800,
+      "perte_lot_train": 0.14914097182448596,
+      "perte_validation": 0.15658514615313235
+    },
+    {
+      "pas": 900,
+      "perte_lot_train": 0.14561757958819166,
+      "perte_validation": 0.1528542865784785
+    },
+    {
+      "pas": 1000,
+      "perte_lot_train": 0.03176825206588471,
+      "perte_validation": 0.15113802672949486
+    },
+    {
+      "pas": 1100,
+      "perte_lot_train": 0.06201581453435686,
+      "perte_validation": 0.15363289348484882
+    },
+    {
+      "pas": 1200,
+      "perte_lot_train": 0.10184381684786176,
+      "perte_validation": 0.16583935262274233
+    }
+  ],
+  "corpus_train_sha256": "fc93d5e108ec0c9f1a33291d458170ed8a57b2795f9931889d3b2dad51f53840"
+}

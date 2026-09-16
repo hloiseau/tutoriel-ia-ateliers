@@ -1,0 +1,41 @@
+[
+  {
+    "id": "v1",
+    "question": "Une remise en stock à prix égal envoie-t-elle une notification ?",
+    "sources": [
+      "notification#2"
+    ],
+    "reponse_attendue": "Non."
+  },
+  {
+    "id": "v2",
+    "question": "Quand les données de staging sont-elles réinitialisées ?",
+    "sources": [
+      "staging#1"
+    ],
+    "reponse_attendue": "Le mardi à 06 h 00 UTC."
+  },
+  {
+    "id": "v3",
+    "question": "Une recette préparée prouve-t-elle que les scénarios ont été exécutés ?",
+    "sources": [
+      "recette#1"
+    ],
+    "reponse_attendue": "Non."
+  },
+  {
+    "id": "v4",
+    "question": "Quel délai de temporisation a été validé ?",
+    "sources": [
+      "temporisation#1",
+      "temporisation#2"
+    ],
+    "reponse_attendue": "La durée reste à décider."
+  },
+  {
+    "id": "v5",
+    "question": "Quel est le nom de la présidente de la société ?",
+    "sources": [],
+    "reponse_attendue": "Information absente du corpus."
+  }
+]

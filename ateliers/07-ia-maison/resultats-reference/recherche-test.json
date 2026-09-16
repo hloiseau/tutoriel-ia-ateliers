@@ -1,0 +1,70 @@
+{
+  "lot": "test",
+  "k": 3,
+  "seuil": 0.12,
+  "questions_avec_source": 4,
+  "avec_au_moins_une_source_pertinente": 3,
+  "questions_sans_source": 1,
+  "sans_passage_sur_questions_sans_source": 1,
+  "details": [
+    {
+      "id": "t1",
+      "question": "Dans quelle unité sont exprimés les prix ?",
+      "attendus": [
+        "notification#1"
+      ],
+      "trouves": [
+        "notification#2",
+        "notification#1",
+        "temporisation#1"
+      ],
+      "source_pertinente_presente": true,
+      "aucun_passage": false
+    },
+    {
+      "id": "t2",
+      "question": "Que conserve un journal de vérification ?",
+      "attendus": [
+        "journal#1"
+      ],
+      "trouves": [
+        "journal#1"
+      ],
+      "source_pertinente_presente": true,
+      "aucun_passage": false
+    },
+    {
+      "id": "t3",
+      "question": "Faut-il chiffrer une durée non décidée pour PRIX-2 ?",
+      "attendus": [
+        "temporisation#1",
+        "temporisation#2"
+      ],
+      "trouves": [
+        "temporisation#1",
+        "notification#2",
+        "notification#1"
+      ],
+      "source_pertinente_presente": true,
+      "aucun_passage": false
+    },
+    {
+      "id": "t4",
+      "question": "À quelle heure purge-t-on les fixtures ?",
+      "attendus": [
+        "staging#1"
+      ],
+      "trouves": [],
+      "source_pertinente_presente": false,
+      "aucun_passage": true
+    },
+    {
+      "id": "t5",
+      "question": "Quelle est la température de la planète Neptune ?",
+      "attendus": [],
+      "trouves": [],
+      "source_pertinente_presente": null,
+      "aucun_passage": true
+    }
+  ]
+}

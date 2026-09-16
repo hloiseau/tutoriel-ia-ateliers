@@ -1,0 +1,234 @@
+{
+  "object": "container",
+  "slug": "construire-et-adapter-son-ia-maison",
+  "title": "Construire et adapter son IA maison",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-choisir",
+      "title": "Choisir ce que l’on veut modifier",
+      "introduction": "01-choisir/introduction.md",
+      "conclusion": "01-choisir/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "besoin",
+          "title": "Qu’est-ce qui manque à notre outil ?",
+          "text": "01-choisir/besoin.md"
+        },
+        {
+          "object": "extract",
+          "slug": "installer",
+          "title": "Ouvrir les fichiers de la partie",
+          "text": "01-choisir/installer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "separer",
+          "title": "Une recherche n’est pas un entraînement",
+          "text": "01-choisir/separer.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "02-rechercher",
+      "title": "Construire une recherche dans nos documents",
+      "introduction": "02-rechercher/introduction.md",
+      "conclusion": "02-rechercher/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "paragraphes",
+          "title": "Garder des morceaux que l’on peut retrouver",
+          "text": "02-rechercher/paragraphes.md"
+        },
+        {
+          "object": "extract",
+          "slug": "score",
+          "title": "Des mots à un score de recherche",
+          "text": "02-rechercher/score.md"
+        },
+        {
+          "object": "extract",
+          "slug": "limites",
+          "title": "Quand les mots ne sont pas les mêmes",
+          "text": "02-rechercher/limites.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "03-evaluer",
+      "title": "Évaluer les sources avant les réponses",
+      "introduction": "03-evaluer/introduction.md",
+      "conclusion": "03-evaluer/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "lots",
+          "title": "Garder des questions de côté",
+          "text": "03-evaluer/lots.md"
+        },
+        {
+          "object": "extract",
+          "slug": "absence",
+          "title": "Dire ce que l’on n’a pas trouvé",
+          "text": "03-evaluer/absence.md"
+        },
+        {
+          "object": "extract",
+          "slug": "citations",
+          "title": "Une citation peut être vraie et mal utilisée",
+          "text": "03-evaluer/citations.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "04-application",
+      "title": "Assembler notre assistant documentaire",
+      "introduction": "04-application/introduction.md",
+      "conclusion": "04-application/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "contexte",
+          "title": "Regarder ce que le modèle va recevoir",
+          "text": "04-application/contexte.md"
+        },
+        {
+          "object": "extract",
+          "slug": "programme",
+          "title": "Relier les deux morceaux",
+          "text": "04-application/programme.md"
+        },
+        {
+          "object": "extract",
+          "slug": "reponses",
+          "title": "Le bon document, la mauvaise réponse",
+          "text": "04-application/reponses.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "05-donnees",
+      "title": "Préparer ce que notre modèle va apprendre",
+      "introduction": "05-donnees/introduction.md",
+      "conclusion": "05-donnees/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "corpus",
+          "title": "Un terrain de jeu que nous maîtrisons",
+          "text": "05-donnees/corpus.md"
+        },
+        {
+          "object": "extract",
+          "slug": "lots",
+          "title": "Séparer les exemples avant de les découper",
+          "text": "05-donnees/lots.md"
+        },
+        {
+          "object": "extract",
+          "slug": "base",
+          "title": "Partir d’un premier modèle déjà entraîné",
+          "text": "05-donnees/base.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "06-adaptateurs",
+      "title": "Ajouter un petit adaptateur",
+      "introduction": "06-adaptateurs/introduction.md",
+      "conclusion": "06-adaptateurs/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "principe",
+          "title": "Une correction ajoutée au calcul",
+          "text": "06-adaptateurs/principe.md"
+        },
+        {
+          "object": "extract",
+          "slug": "entrainer",
+          "title": "Entraîner puis recharger l’adaptateur",
+          "text": "06-adaptateurs/entrainer.md"
+        },
+        {
+          "object": "extract",
+          "slug": "resultats",
+          "title": "L’amélioration qui cache une régression",
+          "text": "06-adaptateurs/resultats.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "07-entrainer",
+      "title": "Entraîner notre réseau depuis zéro",
+      "introduction": "07-entrainer/introduction.md",
+      "conclusion": "07-entrainer/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "reseau",
+          "title": "Douze caractères pour deviner le suivant",
+          "text": "07-entrainer/reseau.md"
+        },
+        {
+          "object": "extract",
+          "slug": "boucle",
+          "title": "Des nombres aléatoires aux premières régularités",
+          "text": "07-entrainer/boucle.md"
+        },
+        {
+          "object": "extract",
+          "slug": "generation",
+          "title": "Pourquoi une petite perte peut produire du charabia",
+          "text": "07-entrainer/generation.md"
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "08-comparer",
+      "title": "Choisir la suite sans changer de machine par défaut",
+      "introduction": "08-comparer/introduction.md",
+      "conclusion": "08-comparer/conclusion.md",
+      "children": [
+        {
+          "object": "extract",
+          "slug": "materiel",
+          "title": "Ce qui a réellement tourné ici",
+          "text": "08-comparer/materiel.md"
+        },
+        {
+          "object": "extract",
+          "slug": "gpu",
+          "title": "Préparer une expérience sur la 3090 Ti",
+          "text": "08-comparer/gpu.md"
+        },
+        {
+          "object": "extract",
+          "slug": "choix",
+          "title": "Revenir au besoin de départ",
+          "text": "08-comparer/choix.md"
+        }
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

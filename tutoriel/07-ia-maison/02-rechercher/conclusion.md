@@ -1,0 +1,1 @@
+La recherche réussit sur certaines formulations et échoue sur une autre dont nous connaissons pourtant la réponse. Gardons ce cas : il nous empêchera de confondre une démonstration réussie avec une recherche fiable en général.

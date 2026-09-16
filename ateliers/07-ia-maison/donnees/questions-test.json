@@ -1,0 +1,41 @@
+[
+  {
+    "id": "t1",
+    "question": "Dans quelle unité sont exprimés les prix ?",
+    "sources": [
+      "notification#1"
+    ],
+    "reponse_attendue": "En centimes, dans une même devise."
+  },
+  {
+    "id": "t2",
+    "question": "Que conserve un journal de vérification ?",
+    "sources": [
+      "journal#1"
+    ],
+    "reponse_attendue": "Demande, sources, résultat observé et version des fichiers."
+  },
+  {
+    "id": "t3",
+    "question": "Faut-il chiffrer une durée non décidée pour PRIX-2 ?",
+    "sources": [
+      "temporisation#1",
+      "temporisation#2"
+    ],
+    "reponse_attendue": "Non, la durée reste à décider."
+  },
+  {
+    "id": "t4",
+    "question": "À quelle heure purge-t-on les fixtures ?",
+    "sources": [
+      "staging#1"
+    ],
+    "reponse_attendue": "Le mardi à 06 h 00 UTC ; formulation avec vocabulaire différent."
+  },
+  {
+    "id": "t5",
+    "question": "Quelle est la température de la planète Neptune ?",
+    "sources": [],
+    "reponse_attendue": "Information absente du corpus."
+  }
+]

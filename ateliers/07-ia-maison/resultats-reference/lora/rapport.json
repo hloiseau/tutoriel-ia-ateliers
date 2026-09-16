@@ -1,0 +1,63 @@
+{
+  "mode": "lora",
+  "corpus": "adaptation",
+  "pas": 800,
+  "graine": 7,
+  "contexte_caracteres": 12,
+  "parametres_base": 15055,
+  "parametres_entraines": 556,
+  "rang": 4,
+  "perte_validation_avant": 5.811002901546513,
+  "perte_validation_apres": 0.4469907700944741,
+  "empreinte_base_avant": "9320fd4b4bfc60fcd523a03606fa0924a96049c4475f0e122bdf87cf0f602c99",
+  "empreinte_base_apres": "9320fd4b4bfc60fcd523a03606fa0924a96049c4475f0e122bdf87cf0f602c99",
+  "duree_entrainement_s": 0.13852630900146323,
+  "courbe": [
+    {
+      "pas": 1,
+      "perte_lot_train": 5.860636805024851,
+      "perte_validation": 5.809867520672865
+    },
+    {
+      "pas": 100,
+      "perte_lot_train": 1.1792275763705033,
+      "perte_validation": 1.6620208293989103
+    },
+    {
+      "pas": 200,
+      "perte_lot_train": 0.9514477153508327,
+      "perte_validation": 0.9659807785074849
+    },
+    {
+      "pas": 300,
+      "perte_lot_train": 0.7062834437111812,
+      "perte_validation": 0.7428875276511661
+    },
+    {
+      "pas": 400,
+      "perte_lot_train": 0.45741208121434934,
+      "perte_validation": 0.6309059654429365
+    },
+    {
+      "pas": 500,
+      "perte_lot_train": 0.36533456030541006,
+      "perte_validation": 0.5535383714414841
+    },
+    {
+      "pas": 600,
+      "perte_lot_train": 0.5143803124392679,
+      "perte_validation": 0.514192148342663
+    },
+    {
+      "pas": 700,
+      "perte_lot_train": 0.3080055010397796,
+      "perte_validation": 0.46856824991752644
+    },
+    {
+      "pas": 800,
+      "perte_lot_train": 0.3459512148754262,
+      "perte_validation": 0.4469907700944741
+    }
+  ],
+  "corpus_train_sha256": "4b8b8f762d1394c17dc37df0aff33799015ba642fa3a35e24231520bfa987eed"
+}

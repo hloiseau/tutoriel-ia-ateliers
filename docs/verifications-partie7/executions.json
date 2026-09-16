@@ -1,0 +1,132 @@
+{
+  "date": "2026-09-16",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "systeme": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "numpy": "2.3.5",
+  "threadpoolctl": "3.6.0",
+  "archive_sha256": "b43d82ada1c21f73891cb1650b2ce0c36b326fa1f18d5bc7c7c33218e104011b",
+  "commandes": [
+    {
+      "commande": "python -m unittest discover -s . -p test_atelier.py -v",
+      "code": 0,
+      "stdout": "",
+      "stderr": "test_adaptateur_initial_ne_change_pas_les_predictions (test_atelier.Modele.test_adaptateur_initial_ne_change_pas_les_predictions) ... ok\ntest_adaptateur_refuse_autre_base (test_atelier.Modele.test_adaptateur_refuse_autre_base) ... ok\ntest_gradients_adaptateur (test_atelier.Modele.test_gradients_adaptateur) ... ok\ntest_gradients_modele (test_atelier.Modele.test_gradients_modele) ... ok\ntest_pas_de_fenetre_entre_deux_lignes (test_atelier.Modele.test_pas_de_fenetre_entre_deux_lignes) ... ok\ntest_rechargement_adaptateur (test_atelier.Modele.test_rechargement_adaptateur) ... ok\ntest_archive_exclue (test_atelier.Recherche.test_archive_exclue) ... ok\ntest_document_retrouve (test_atelier.Recherche.test_document_retrouve) ... ok\ntest_pas_de_promesse_semantique (test_atelier.Recherche.test_pas_de_promesse_semantique) ... ok\ntest_question_hors_corpus (test_atelier.Recherche.test_question_hors_corpus) ... ok\ntest_sources_retracables (test_atelier.Recherche.test_sources_retracables) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.033s\n\nOK\n"
+    },
+    {
+      "commande": "python auditer_donnees.py",
+      "code": 0,
+      "stdout": "{\n  \"base\": {\n    \"train\": {\n      \"lignes\": 180,\n      \"groupes\": 60\n    },\n    \"validation\": {\n      \"lignes\": 30,\n      \"groupes\": 10\n    },\n    \"test\": {\n      \"lignes\": 30,\n      \"groupes\": 10\n    }\n  },\n  \"adaptation\": {\n    \"train\": {\n      \"lignes\": 180,\n      \"groupes\": 60\n    },\n    \"validation\": {\n      \"lignes\": 30,\n      \"groupes\": 10\n    },\n    \"test\": {\n      \"lignes\": 30,\n      \"groupes\": 10\n    }\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python evaluer_recherche.py --lot validation --sortie sorties/recherche-validation.json",
+      "code": 0,
+      "stdout": "{\n  \"lot\": \"validation\",\n  \"k\": 3,\n  \"seuil\": 0.12,\n  \"questions_avec_source\": 4,\n  \"avec_au_moins_une_source_pertinente\": 4,\n  \"questions_sans_source\": 1,\n  \"sans_passage_sur_questions_sans_source\": 1,\n  \"details\": [\n    {\n      \"id\": \"v1\",\n      \"question\": \"Une remise en stock à prix égal envoie-t-elle une notification ?\",\n      \"attendus\": [\n        \"notification#2\"\n      ],\n      \"trouves\": [\n        \"notification#2\",\n        \"notification#1\"\n      ],\n      \"source_pertinente_presente\": true,\n      \"aucun_passage\": false\n    },\n    {\n      \"id\": \"v2\",\n      \"question\": \"Quand les données de staging sont-elles réinitialisées ?\",\n      \"attendus\": [\n        \"staging#1\"\n      ],\n      \"trouves\": [\n        \"staging#1\"\n      ],\n      \"source_pertinente_presente\": true,\n      \"aucun_passage\": false\n    },\n    {\n      \"id\": \"v3\",\n      \"question\": \"Une recette préparée prouve-t-elle que les scénarios ont été exécutés ?\",\n      \"attendus\": [\n        \"recette#1\"\n      ],\n      \"trouves\": [\n        \"recette#1\"\n      ],\n      \"source_pertinente_presente\": true,\n      \"aucun_passage\": false\n    },\n    {\n      \"id\": \"v4\",\n      \"question\": \"Quel délai de temporisation a été validé ?\",\n      \"attendus\": [\n        \"temporisation#1\",\n        \"temporisation#2\"\n      ],\n      \"trouves\": [\n        \"temporisation#2\",\n        \"recette#1\"\n      ],\n      \"source_pertinente_presente\": true,\n      \"aucun_passage\": false\n    },\n    {\n      \"id\": \"v5\",\n      \"question\": \"Quel est le nom de la présidente de la société ?\",\n      \"attendus\": [],\n      \"trouves\": [],\n      \"source_pertinente_presente\": null,\n      \"aucun_passage\": true\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python evaluer_recherche.py --lot test --sortie sorties/recherche-test.json",
+      "code": 0,
+      "stdout": "{\n  \"lot\": \"test\",\n  \"k\": 3,\n  \"seuil\": 0.12,\n  \"questions_avec_source\": 4,\n  \"avec_au_moins_une_source_pertinente\": 3,\n  \"questions_sans_source\": 1,\n  \"sans_passage_sur_questions_sans_source\": 1,\n  \"details\": [\n    {\n      \"id\": \"t1\",\n      \"question\": \"Dans quelle unité sont exprimés les prix ?\",\n      \"attendus\": [\n        \"notification#1\"\n      ],\n      \"trouves\": [\n        \"notification#2\",\n        \"notification#1\",\n        \"temporisation#1\"\n      ],\n      \"source_pertinente_presente\": true,\n      \"aucun_passage\": false\n    },\n    {\n      \"id\": \"t2\",\n      \"question\": \"Que conserve un journal de vérification ?\",\n      \"attendus\": [\n        \"journal#1\"\n      ],\n      \"trouves\": [\n        \"journal#1\"\n      ],\n      \"source_pertinente_presente\": true,\n      \"aucun_passage\": false\n    },\n    {\n      \"id\": \"t3\",\n      \"question\": \"Faut-il chiffrer une durée non décidée pour PRIX-2 ?\",\n      \"attendus\": [\n        \"temporisation#1\",\n        \"temporisation#2\"\n      ],\n      \"trouves\": [\n        \"temporisation#1\",\n        \"notification#2\",\n        \"notification#1\"\n      ],\n      \"source_pertinente_presente\": true,\n      \"aucun_passage\": false\n    },\n    {\n      \"id\": \"t4\",\n      \"question\": \"À quelle heure purge-t-on les fixtures ?\",\n      \"attendus\": [\n        \"staging#1\"\n      ],\n      \"trouves\": [],\n      \"source_pertinente_presente\": false,\n      \"aucun_passage\": true\n    },\n    {\n      \"id\": \"t5\",\n      \"question\": \"Quelle est la température de la planète Neptune ?\",\n      \"attendus\": [],\n      \"trouves\": [],\n      \"source_pertinente_presente\": null,\n      \"aucun_passage\": true\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python ma_recherche.py",
+      "code": 0,
+      "stdout": "1 notification#1 ['prix']\n4 notification#2 ['egal', 'prix', 'remise', 'stock']\n1 temporisation#1 ['prix']\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python mon_assistant.py Quand les données de staging sont-elles réinitialisées ?",
+      "code": 0,
+      "stdout": "staging#1 — Les données de démonstration de staging sont réinitialisées chaque mardi à 06 h 00 UTC. Cet horaire concerne uniquement le service fictif de cet atelier.\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python assistant_local.py Température de Neptune --appeler --sortie sorties/aucune-source.json",
+      "code": 0,
+      "stdout": "aucune_source_retrouvee\nJournal : sorties/aucune-source.json\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python assistant_local.py Quel délai de temporisation est validé ? --sortie sorties/contexte.json",
+      "code": 0,
+      "stdout": "pret\nJournal : sorties/contexte.json\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python assistant_local.py Quel délai de temporisation est validé ? --appeler --sortie sorties/serveur-absent.json",
+      "code": 2,
+      "stdout": "",
+      "stderr": "Appel impossible : <urlopen error [Errno 111] Connection refused>. Vérifiez le serveur local sur le port 8080.\n"
+    },
+    {
+      "commande": "python petit_modele.py entrainer --pas 1200 --sortie sorties/base",
+      "code": 0,
+      "stdout": "{\n  \"mode\": \"complet\",\n  \"corpus\": \"base\",\n  \"pas\": 1200,\n  \"graine\": 7,\n  \"contexte_caracteres\": 12,\n  \"parametres_base\": 15055,\n  \"parametres_entraines\": 15055,\n  \"rang\": null,\n  \"perte_validation_avant\": 4.309773035509216,\n  \"perte_validation_apres\": 0.16583935262274233,\n  \"empreinte_base_avant\": \"8baf39d21f8dfe797223fdf91cacabae158828329b041b76482ced84e1c40a71\",\n  \"empreinte_base_apres\": \"9320fd4b4bfc60fcd523a03606fa0924a96049c4475f0e122bdf87cf0f602c99\",\n  \"duree_entrainement_s\": 0.6219509840011597,\n  \"corpus_train_sha256\": \"fc93d5e108ec0c9f1a33291d458170ed8a57b2795f9931889d3b2dad51f53840\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py entrainer --base sorties/base/modele.npz --mode complet --corpus adaptation --pas 800 --sortie sorties/complet",
+      "code": 0,
+      "stdout": "{\n  \"mode\": \"complet\",\n  \"corpus\": \"adaptation\",\n  \"pas\": 800,\n  \"graine\": 7,\n  \"contexte_caracteres\": 12,\n  \"parametres_base\": 15055,\n  \"parametres_entraines\": 15055,\n  \"rang\": null,\n  \"perte_validation_avant\": 5.811002901546513,\n  \"perte_validation_apres\": 0.324851913470722,\n  \"empreinte_base_avant\": \"9320fd4b4bfc60fcd523a03606fa0924a96049c4475f0e122bdf87cf0f602c99\",\n  \"empreinte_base_apres\": \"7b469106d6c5f201e145090fd1b11997c48f93964189b9f5c94623e074a54dfa\",\n  \"duree_entrainement_s\": 0.3665450049993524,\n  \"corpus_train_sha256\": \"4b8b8f762d1394c17dc37df0aff33799015ba642fa3a35e24231520bfa987eed\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py entrainer --base sorties/base/modele.npz --mode lora --corpus adaptation --pas 800 --sortie sorties/lora",
+      "code": 0,
+      "stdout": "{\n  \"mode\": \"lora\",\n  \"corpus\": \"adaptation\",\n  \"pas\": 800,\n  \"graine\": 7,\n  \"contexte_caracteres\": 12,\n  \"parametres_base\": 15055,\n  \"parametres_entraines\": 556,\n  \"rang\": 4,\n  \"perte_validation_avant\": 5.811002901546513,\n  \"perte_validation_apres\": 0.4469907700944741,\n  \"empreinte_base_avant\": \"9320fd4b4bfc60fcd523a03606fa0924a96049c4475f0e122bdf87cf0f602c99\",\n  \"empreinte_base_apres\": \"9320fd4b4bfc60fcd523a03606fa0924a96049c4475f0e122bdf87cf0f602c99\",\n  \"duree_entrainement_s\": 0.1809478110008058,\n  \"corpus_train_sha256\": \"4b8b8f762d1394c17dc37df0aff33799015ba642fa3a35e24231520bfa987eed\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py generer --modele sorties/base/modele.npz --adaptateur sorties/lora/adaptateur.npz --debut INFO ",
+      "code": 0,
+      "stdout": "INFO produit=28 prix=44 5eot=Nr=N n oeoir=ai4sttsNl\npoccxiiii 81 e50n\notosuFar55\nocuO=F pccpro=3=n=onoisiliocesi\nartdNntOtk=d\nis=6x ceiiototiNn ntocs.Oi\n osui=n dti\n\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py evaluer --modele sorties/base/modele.npz --corpus base --sortie sorties/base/test-base.json",
+      "code": 0,
+      "stdout": "{\n  \"corpus\": \"base\",\n  \"lot\": \"test\",\n  \"caracteres_predits\": 3280,\n  \"perte_moyenne\": 0.47554400466717134,\n  \"perplexite\": 1.6088892026959727\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py evaluer --modele sorties/base/modele.npz --corpus adaptation --sortie sorties/base/test-adaptation.json",
+      "code": 0,
+      "stdout": "{\n  \"corpus\": \"adaptation\",\n  \"lot\": \"test\",\n  \"caracteres_predits\": 1570,\n  \"perte_moyenne\": 6.081620361868808,\n  \"perplexite\": 437.7379141970121\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py evaluer --modele sorties/complet/modele.npz --corpus base --sortie sorties/complet/test-base.json",
+      "code": 0,
+      "stdout": "{\n  \"corpus\": \"base\",\n  \"lot\": \"test\",\n  \"caracteres_predits\": 3280,\n  \"perte_moyenne\": 1.7566878387725846,\n  \"perplexite\": 5.793217511873755\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py evaluer --modele sorties/complet/modele.npz --corpus adaptation --sortie sorties/complet/test-adaptation.json",
+      "code": 0,
+      "stdout": "{\n  \"corpus\": \"adaptation\",\n  \"lot\": \"test\",\n  \"caracteres_predits\": 1570,\n  \"perte_moyenne\": 0.8403090800952461,\n  \"perplexite\": 2.3170830303601537\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py evaluer --modele sorties/lora/modele.npz --corpus base --sortie sorties/lora/test-base.json",
+      "code": 0,
+      "stdout": "{\n  \"corpus\": \"base\",\n  \"lot\": \"test\",\n  \"caracteres_predits\": 3280,\n  \"perte_moyenne\": 8.772528923795512,\n  \"perplexite\": 6454.474716796765\n}\n",
+      "stderr": ""
+    },
+    {
+      "commande": "python petit_modele.py evaluer --modele sorties/lora/modele.npz --corpus adaptation --sortie sorties/lora/test-adaptation.json",
+      "code": 0,
+      "stdout": "{\n  \"corpus\": \"adaptation\",\n  \"lot\": \"test\",\n  \"caracteres_predits\": 1570,\n  \"perte_moyenne\": 0.9458149991252965,\n  \"perplexite\": 2.574911073935252\n}\n",
+      "stderr": ""
+    }
+  ],
+  "comparaison_reference": "six pertes de test identiques à 1e-10 près",
+  "limites": [
+    "Linux CPU uniquement",
+    "appels réels du modèle documentaire exécutés séparément ; voir journaux",
+    "GPU non exécuté"
+  ],
+  "archive_executee_sha256": "8382fa76e604a97d99d3d963064a5175095eb3b7a05685637455fad8a2102ac8",
+  "reconstruction_finale": "Seul CREDITS.md a changé après exécution ; tous les scripts, données et résultats sont identiques octet pour octet."
+}

@@ -1,0 +1,4 @@
+INFO produit=38 prix=48 stock=oui decision=notifier
+non decirion=attendre
+i=d7con ttN7ropuisd89isto d88
+5 nstiedI76o vtec7 sonoduiio reprix=r5 stock=non decision=att

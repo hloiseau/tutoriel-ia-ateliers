@@ -1,0 +1,1 @@
+Notre assistant fonctionne comme programme, mais ses réponses ne sont pas assez fiables pour lui confier les décisions du service. Gardons cette différence en tête en passant à une autre expérience : modifier les poids d’un modèle.

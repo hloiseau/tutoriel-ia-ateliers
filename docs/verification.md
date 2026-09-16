@@ -33,3 +33,7 @@ Le parcours courant reconstruit `mon_serveur.py` depuis les blocs Markdown, dans
 ## À reprendre sur d’autres environnements
 
 Les commandes Windows et macOS, le GPU et les interactions dans un navigateur réel restent à valider. Gardez vos propres résultats et leurs paramètres, même lorsqu’ils diffèrent de ceux fournis.
+
+## Partie 7
+
+Onze tests et dix-neuf commandes ont été exécutés depuis l’archive extraite, sous Linux avec Python 3.12.14, NumPy 2.3.5 et threadpoolctl 3.6.0. Les entraînements de base, LoRA et complet reproduisent les six pertes de test enregistrées. Trois appels réels à SmolLM2 sur CPU sont conservés, dont une temporisation inventée. [Rapport détaillé](../tutoriel/07-ia-maison/VERIFICATION.md). L’adaptation d’un LLM sur GPU, Windows, macOS et l’import dans l’interface ZdS restent non exécutés.

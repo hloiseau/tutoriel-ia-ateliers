@@ -57,3 +57,7 @@ Rejouer le parcours principal VS Code/Copilot et, séparément, l’expérience 
 ## Partie 5 — observations avec un assistant
 
 Le banc Python sans modèle est exécuté et ses journaux sont conservés. Rejouer les observations de lecture, les deux contextes, les deux états de tests et la reprise de session avec un assistant réel. Consigner le modèle et la version, les pièces jointes, les réponses, les erreurs, le temps et les compteurs disponibles. Aucun résultat du banc ne doit être présenté comme une réponse de ce modèle. Voir `tutoriel/05-agents/VERIFICATION.md`.
+
+## 8. Adapter un LLM sur la machine de l’auteur
+
+Suivre le [prompt de reprise de la partie 7](../ateliers/07-ia-maison/experience-gpu/PROMPT-CODEX.md). Commencer par identifier le système et les pilotes, mesurer un petit essai et vérifier la sauvegarde/recharge de l’adaptateur. Les entraînements NumPy sur CPU sont déjà exécutés ; aucune adaptation de LLM sur GPU n’est encore annoncée.

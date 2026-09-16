@@ -1,0 +1,30 @@
+le produit 80 est disponible. son prix baisse de 100 a 90 centimes. le service prepare une notification.
+le produit 80 revient en stock. son prix reste a 100 centimes. le service ne prepare pas de notification.
+le ticket 80 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 81 est disponible. son prix baisse de 101 a 91 centimes. le service prepare une notification.
+le produit 81 revient en stock. son prix reste a 101 centimes. le service ne prepare pas de notification.
+le ticket 81 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 82 est disponible. son prix baisse de 102 a 92 centimes. le service prepare une notification.
+le produit 82 revient en stock. son prix reste a 102 centimes. le service ne prepare pas de notification.
+le ticket 82 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 83 est disponible. son prix baisse de 103 a 93 centimes. le service prepare une notification.
+le produit 83 revient en stock. son prix reste a 103 centimes. le service ne prepare pas de notification.
+le ticket 83 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 84 est disponible. son prix baisse de 104 a 94 centimes. le service prepare une notification.
+le produit 84 revient en stock. son prix reste a 104 centimes. le service ne prepare pas de notification.
+le ticket 84 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 85 est disponible. son prix baisse de 105 a 95 centimes. le service prepare une notification.
+le produit 85 revient en stock. son prix reste a 105 centimes. le service ne prepare pas de notification.
+le ticket 85 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 86 est disponible. son prix baisse de 106 a 96 centimes. le service prepare une notification.
+le produit 86 revient en stock. son prix reste a 106 centimes. le service ne prepare pas de notification.
+le ticket 86 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 87 est disponible. son prix baisse de 107 a 97 centimes. le service prepare une notification.
+le produit 87 revient en stock. son prix reste a 107 centimes. le service ne prepare pas de notification.
+le ticket 87 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 88 est disponible. son prix baisse de 108 a 98 centimes. le service prepare une notification.
+le produit 88 revient en stock. son prix reste a 108 centimes. le service ne prepare pas de notification.
+le ticket 88 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.
+le produit 89 est disponible. son prix baisse de 109 a 99 centimes. le service prepare une notification.
+le produit 89 revient en stock. son prix reste a 109 centimes. le service ne prepare pas de notification.
+le ticket 89 contient une question ouverte. la recette attend une decision. aucun test ne prouve encore le resultat.

@@ -2,7 +2,7 @@
 
 [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
-Les six premières parties sont centralisées avec leurs sources et illustrations : **41 chapitres et deux annexes, 151 sections et 38 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
+Les sept premières parties sont centralisées avec leurs sources et illustrations : **49 chapitres et deux annexes, 175 sections et 42 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 
 ## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
@@ -75,12 +75,24 @@ Les six premières parties sont centralisées avec leurs sources et illustration
 6. [Faire évoluer le skill à partir des problèmes rencontrés](tutoriel/06-mcp-skills/06-adapter/LECTURE.md)
 7. [Articuler skills, conventions et base de connaissances](tutoriel/06-mcp-skills/07-ranger/LECTURE.md)
 
-## Parties suivantes
+## 7. Construire et adapter son IA maison
 
-7. Construire et adapter son IA maison.
+[Introduction](tutoriel/07-ia-maison/introduction.md) · [Toute la partie](tutoriel/07-ia-maison/LECTURE.md) · [Atelier](ateliers/07-ia-maison/README.md)
+
+1. [Choisir ce que l’on veut modifier](tutoriel/07-ia-maison/01-choisir/LECTURE.md)
+2. [Construire une recherche dans nos documents](tutoriel/07-ia-maison/02-rechercher/LECTURE.md)
+3. [Évaluer les sources avant les réponses](tutoriel/07-ia-maison/03-evaluer/LECTURE.md)
+4. [Assembler notre assistant documentaire](tutoriel/07-ia-maison/04-application/LECTURE.md)
+5. [Préparer ce que notre modèle va apprendre](tutoriel/07-ia-maison/05-donnees/LECTURE.md)
+6. [Ajouter un petit adaptateur](tutoriel/07-ia-maison/06-adaptateurs/LECTURE.md)
+7. [Entraîner notre réseau depuis zéro](tutoriel/07-ia-maison/07-entrainer/LECTURE.md)
+8. [Choisir la suite sans changer de machine par défaut](tutoriel/07-ia-maison/08-comparer/LECTURE.md)
+
+## Partie suivante
+
 8. Choisir la place de l’IA.
 
-[Lire le plan détaillé des parties 7 et 8](docs/plan-parties-suivantes.md). Ces parties restent à rédiger. Les questions éthiques, l’apprentissage des juniors et le choix de se passer de l’IA restent également présents dans les premières parties.
+[Lire le plan détaillé de la partie 8](docs/plan-parties-suivantes.md). Cette partie reste à rédiger. Les questions éthiques, l’apprentissage des juniors et le choix de se passer de l’IA restent également présents dans les premières parties.
 
 ## Annexes
 

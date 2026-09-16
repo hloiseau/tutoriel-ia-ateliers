@@ -12,11 +12,12 @@ Mis à jour le **16 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 | [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Atelier continu ; interfaces à vérifier |
 | [5 — Agents](../tutoriel/05-agents/README.md) | 6 | 18 | 3 | Première rédaction complète ; banc Python exécuté, essais avec un modèle à réaliser |
 | [6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) | 7 | 25 | 3 | Validée par l’auteur le 16 septembre 2026 ; parcours MCP vérifié, essais du skill avec un modèle à réaliser |
+| [7 — IA maison](../tutoriel/07-ia-maison/README.md) | 8 | 24 | 4 | Première rédaction complète ; recherche, application et entraînements CPU exécutés ; expérience GPU à faire |
 | [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Comparatif des outils et expérience locale facultative |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
 
-Les parties 7 et 8 disposent d’un [plan détaillé](plan-parties-suivantes.md), pas encore de chapitres complets. Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
+La partie 7 dispose maintenant de huit chapitres et d’un atelier. La partie 8 reste au stade du [plan détaillé](plan-parties-suivantes.md). Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
 
 ## Ce qui a été vérifié pendant l’intégration
 
@@ -72,3 +73,9 @@ Le parcours a été reconstruit depuis les blocs de code du chapitre, avec les f
 ## Partie 6 validée par l’auteur
 
 Hugo valide la partie 6 le **16 septembre 2026**, après la reprise de la construction du MCP et sa passe adverse. Cette validation porte sur la version des chapitres au commit `aa79bbe51ff9fe2379604339b88057d3fe34719f`. Les essais pratiques restants sont suivis dans le rapport de vérification. L’analogie des recettes reste notée dans le cadre de rédaction pour une éventuelle prochaine passe.
+
+## Partie 7 rédigée
+
+Huit chapitres, vingt-quatre sections et quatre illustrations. L’archive pratique a été extraite et dix-neuf commandes ont été exécutées, dont onze tests. Les trois entraînements et les six pertes de test ont été reproduits. Trois appels réels au modèle documentaire conservent notamment une durée inventée malgré une source qui la laisse ouverte.
+
+La [vérification](../tutoriel/07-ia-maison/VERIFICATION.md) distingue ces exécutions de l’adaptation d’un LLM sur GPU, qui reste à réaliser. La partie 7 n’a pas encore été validée par l’auteur.

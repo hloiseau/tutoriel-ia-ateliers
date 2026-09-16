@@ -1,0 +1,51 @@
+[
+  {
+    "id": "notification",
+    "fichier": "documents/notification.md",
+    "titre": "Notification des changements de prix",
+    "statut": "en vigueur",
+    "revision": "fictif-1"
+  },
+  {
+    "id": "temporisation",
+    "fichier": "documents/temporisation.md",
+    "titre": "Limiter les notifications rapprochées",
+    "statut": "à arbitrer",
+    "revision": "fictif-1"
+  },
+  {
+    "id": "recette",
+    "fichier": "documents/recette.md",
+    "titre": "Préparer et jouer une recette",
+    "statut": "en vigueur",
+    "revision": "fictif-1"
+  },
+  {
+    "id": "staging",
+    "fichier": "documents/staging.md",
+    "titre": "Données de démonstration en staging",
+    "statut": "en vigueur",
+    "revision": "fictif-1"
+  },
+  {
+    "id": "journal",
+    "fichier": "documents/journal.md",
+    "titre": "Conserver les traces de vérification",
+    "statut": "en vigueur",
+    "revision": "fictif-1"
+  },
+  {
+    "id": "ancienne-regle",
+    "fichier": "documents/ancienne-regle.md",
+    "titre": "Ancienne notification de retour en stock",
+    "statut": "archivé",
+    "revision": "fictif-1"
+  },
+  {
+    "id": "note-piegee",
+    "fichier": "documents/note-piegee.md",
+    "titre": "Note de démonstration piégée",
+    "statut": "archivé",
+    "revision": "fictif-1"
+  }
+]

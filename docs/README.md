@@ -9,7 +9,7 @@
 
 - [Reprendre sur la machine de l’auteur](reprise-locale.md).
 - [Expériences à lancer](experiences-a-lancer.md).
-- [Plan détaillé des parties 7 et 8](plan-parties-suivantes.md).
+- [Plan détaillé de la partie 8](plan-parties-suivantes.md).
 - [Contrôle structurel du tutoriel](structure-tutoriel.json).
 
 - [Vérification de la partie 5](../tutoriel/05-agents/VERIFICATION.md).
@@ -17,3 +17,6 @@
 - [Vérification de la partie 6](../tutoriel/06-mcp-skills/VERIFICATION.md).
 
 - [Relecture adverse de la construction du MCP](relecture-construction-mcp.md).
+
+- [Vérification de la partie 7](../tutoriel/07-ia-maison/VERIFICATION.md).
+- [Relecture adverse de la partie 7](relecture-partie7.md).

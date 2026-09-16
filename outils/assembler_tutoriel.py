@@ -61,7 +61,7 @@ def build(part, export):
 
     title = manifest['title']
     index = f'# {title}\n\n[Sommaire global](../../SOMMAIRE.md) · [Lecture complète](LECTURE.md)\n\n'
-    guided = part.name in {'04-developpement', '05-agents', '06-mcp-skills'}
+    guided = part.name in {'04-developpement', '05-agents', '06-mcp-skills', '07-ia-maison'}
     annexes = part.name == 'annexes'
     workshop_count = len(manifest['children'])
     if part.name == '04-developpement':
@@ -70,6 +70,8 @@ def build(part, export):
         index += '[Atelier Python](../../ateliers/05-agents/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
     elif part.name == '06-mcp-skills':
         index += '[Atelier MCP et skill](../../ateliers/06-mcp-skills/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
+    elif part.name == '07-ia-maison':
+        index += '[Atelier IA maison](../../ateliers/07-ia-maison/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
     complete = f'# {title}\n\n[Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)\n\n'
     complete += lecture(read(part, manifest.get('introduction')), 1, '')
     for i, chapter in enumerate(manifest['children'], 1):
