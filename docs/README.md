@@ -23,3 +23,8 @@
 
 - [Vérification de la partie 8](../tutoriel/08-choisir/VERIFICATION.md).
 - [Relecture adverse de la partie 8](relecture-partie8.md).
+
+- [Prompts de reprise](prompts/README.md) : expériences locales et réécriture par huit sous-agents.
+- [Guide de voix de Hugo](prompts/GUIDE-VOIX-HUGO.md) : références et exemples avant/après.
+- [Export global ZdS](export-global.md) et [rapport de structure](structure-globale.json).
+- [Dossier des prochaines relectures](relecture/README.md).

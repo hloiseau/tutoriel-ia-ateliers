@@ -16,3 +16,7 @@ Les parties 1 à 8 sont maintenant présentes avec leurs sources, leurs illustra
 Relire les chapitres dans leur ordre, vérifier les transitions et essayer les imports dans un brouillon ZdS. Exécuter les expériences encore ouvertes sur la machine de l’auteur. Revoir les informations changeantes avant publication. Ces travaux sont suivis dans [les expériences à lancer](experiences-a-lancer.md) et [les vérifications](verification.md).
 
 La conclusion de la partie 8 termine le parcours prévu, avec la possibilité d’adapter les outils ou de s’en passer.
+
+## Reprise préparée
+
+L’introduction générale, le ZIP global et les prompts sont disponibles. La prochaine rédaction utilisera le [coordinateur de réécriture](prompts/RELECTURE-COORDINATEUR.md) avec huit missions distinctes. Les essais du PC utiliseront le [coordinateur local](prompts/LOCAL-COORDINATEUR.md). Il reste à exécuter ces deux travaux, intégrer leurs résultats puis essayer le rendu dans un brouillon ZdS.

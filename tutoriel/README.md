@@ -1,6 +1,6 @@
 # Sources du tutoriel
 
-[Sommaire global](../SOMMAIRE.md) · [État des contenus](../docs/etat-des-contenus.md)
+[Introduction générale](introduction.md) · [Sommaire global](../SOMMAIRE.md) · [État des contenus](../docs/etat-des-contenus.md)
 
 - [Une histoire de l’IA, des premières idées à aujourd’hui](01-histoire/README.md)
 - [Comprendre un modèle en le construisant](02-apprentissage/README.md)
@@ -18,3 +18,5 @@
 Les [annexes](annexes/README.md) rassemblent le comparatif des outils et l’expérience locale facultative.
 
 Chaque partie conserve son manifest ZdS, ses introductions, ses conclusions, ses sections et ses images. Les `LECTURE.md` sont générés pour la relecture sur GitHub. Les modifications se font dans les petits Markdown référencés par les manifests.
+
+Le [ZIP global](../telechargements/zds/tutoriel-ia-complet.zip) rassemble le parcours. Son `manifest.json` est généré par `python outils/assembler_global.py` ; voir [les règles d’assemblage](../docs/export-global.md).

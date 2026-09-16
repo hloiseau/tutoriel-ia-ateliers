@@ -1,6 +1,6 @@
 # Sommaire du tutoriel
 
-[Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
+[Introduction générale](tutoriel/introduction.md) · [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
 Les huit parties sont centralisées avec leurs sources et illustrations : **56 chapitres et deux annexes, 196 sections et 46 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 

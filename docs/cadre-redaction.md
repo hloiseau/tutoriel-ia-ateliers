@@ -67,3 +67,7 @@ GitHub rassemble désormais les fichiers courants. Le sommaire est le point d’
 Les derniers chapitres peuvent être sur `main` tout en restant à relire. Leur statut doit l’indiquer. La publication sur ZdS reste une étape séparée.
 
 Textes et illustrations originales : CC BY-SA 4.0. Code : licence GPLv3 présente dans le dépôt. Conserver les licences et attributions propres aux éléments tiers.
+
+## Guide détaillé pour la prochaine réécriture
+
+Le [guide de voix de Hugo](prompts/GUIDE-VOIX-HUGO.md) rassemble le texte maison de référence, la pédagogie retenue du tutoriel Vim et les corrections explicites de l’auteur. Sa demande récente porte notamment sur les oppositions répétées (« c’est ceci, pas cela »), le ton scolaire et les panneaux méta. Le [prompt coordinateur](prompts/RELECTURE-COORDINATEUR.md) prévoit huit sous-agents, un par partie, puis une passe transversale. Cette réécriture est préparée, pas encore exécutée.

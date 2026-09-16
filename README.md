@@ -2,7 +2,7 @@
 
 Les textes, les illustrations et les ateliers du tutoriel en cours de rédaction pour **Zeste de Savoir**, par Hugo Loiseau.
 
-**[Ouvrir le sommaire](SOMMAIRE.md)** · **[Voir ce qui est disponible](docs/etat-des-contenus.md)** · **[Lire les derniers chapitres](tutoriel/08-choisir/LECTURE.md)**
+**[Lire l’introduction générale](tutoriel/introduction.md)** · **[Ouvrir le sommaire](SOMMAIRE.md)** · **[Voir ce qui est disponible](docs/etat-des-contenus.md)** · **[Lire les derniers chapitres](tutoriel/08-choisir/LECTURE.md)**
 
 Ce dépôt est le point de travail commun. La branche `main` rassemble les versions courantes, y compris les brouillons identifiés comme tels. Être présent ici ne signifie pas être validé pour publication.
 
@@ -40,7 +40,7 @@ Les répertoires `resultats-reference` contiennent des résultats réellement ob
 
 ## Télécharger
 
-Les [archives d’import ZdS](telechargements/zds/README.md) contiennent les parties 1 à 8 et les annexes dans un ZIP séparé.
+Le [ZIP global pour ZdS](telechargements/zds/tutoriel-ia-complet.zip) rassemble l’introduction, les huit parties et les annexes. Les [imports séparés](telechargements/zds/README.md) restent disponibles. La structure est contrôlée ; l’import dans le site reste à essayer.
 
 Vous pouvez cloner ce dépôt ou télécharger son archive ZIP depuis GitHub. Les [archives des sept ateliers](telechargements/) permettent de télécharger un atelier séparément. Le chapitre peut pointer vers une révision précise du dépôt pour conserver les mêmes fichiers au fil des corrections. Les fichiers de poids du modèle local et les exécutables de llama.cpp se téléchargent séparément.
 
@@ -54,13 +54,22 @@ Les exercices de décision de la partie 8 ont été vérifiés depuis leur archi
 
 Les essais GPU, Windows, macOS et les interactions dans un vrai navigateur restent à vérifier. Voir [les résultats et leurs limites](docs/verification.md).
 
+## Reprendre le travail avec un assistant
+
+- [Prompts pour les expériences sur le PC de Hugo](docs/prompts/LOCAL-COORDINATEUR.md), avec une mission détaillée par atelier.
+- [Prompt de réécriture complète](docs/prompts/RELECTURE-COORDINATEUR.md), avec huit sous-agents, un par partie.
+- [Guide de voix et de pédagogie](docs/prompts/GUIDE-VOIX-HUGO.md), avec le texte maison de Hugo et des exemples avant/après.
+
+Ces documents préparent les prochaines passes ; ils ne valent pas exécution des expériences ni réécriture déjà réalisée.
+
 ## Préparer les lectures et les imports ZdS
 
 ```bash
-python outils/assembler_tutoriel.py --exports ../exports-zds
+python outils/assembler_tutoriel.py --exports telechargements/zds
+python outils/assembler_global.py
 ```
 
-Cette commande vérifie les fichiers et les images référencés, régénère les lectures GitHub et prépare un ZIP par partie ainsi qu’un ZIP d’annexes, avec leurs manifests à la racine. Sans `--exports`, elle régénère seulement les lectures. Les notes éditoriales et les ateliers ne sont pas inclus dans les imports ZdS.
+La première commande vérifie les fichiers et les images référencés, régénère les lectures GitHub et prépare les imports séparés. Sans `--exports`, elle régénère seulement les lectures. La seconde construit le ZIP global et son manifest. Les notes éditoriales et les ateliers sont exclus des imports ZdS. Voir [le fonctionnement et les contrôles de l’export global](docs/export-global.md).
 
 ## Préparer les archives des ateliers
 

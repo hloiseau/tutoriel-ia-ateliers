@@ -2,6 +2,8 @@
 
 Archives reconstruites depuis les sources courantes du tutoriel. Chaque ZIP contient son manifest à la racine, les sections et les illustrations. Les ateliers restent dans leurs archives séparées.
 
+- **[Tutoriel complet — huit parties et annexes](tutoriel-ia-complet.zip)**
+
 - [Partie 1 — Histoire](01-histoire.zip)
 - [Partie 2 — Apprentissage](02-apprentissage.zip)
 - [Partie 3 — Modèle local](03-modele-local.zip)
@@ -18,6 +20,9 @@ Pour reconstruire après une modification, depuis la racine du dépôt :
 
 ```bash
 python outils/assembler_tutoriel.py --exports telechargements/zds
+python outils/assembler_global.py
 ```
 
 [Sommaire et lectures sur GitHub](../../SOMMAIRE.md)
+
+[Structure, transformations et limites de l’export global](../../docs/export-global.md).

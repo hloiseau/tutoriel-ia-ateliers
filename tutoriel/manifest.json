@@ -1,0 +1,1856 @@
+{
+  "object": "container",
+  "slug": "comprendre-lia-et-developper-avec-elle",
+  "title": "Comprendre l’IA et développer avec elle",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "une-histoire-de-lia",
+      "title": "Une histoire de l’IA, des premières idées à aujourd’hui",
+      "introduction": "01-histoire/introduction.md",
+      "conclusion": "01-histoire/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "01-origines",
+          "title": "Les origines de l’intelligence artificielle",
+          "introduction": "01-histoire/01-origines/introduction.md",
+          "conclusion": "01-histoire/01-origines/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "babbage-lovelace",
+              "title": "Une machine à laquelle on donne des instructions",
+              "text": "01-histoire/01-origines/babbage-lovelace.md"
+            },
+            {
+              "object": "extract",
+              "slug": "neurones",
+              "title": "1943 : des neurones sur le papier",
+              "text": "01-histoire/01-origines/neurones.md"
+            },
+            {
+              "object": "extract",
+              "slug": "turing",
+              "title": "1950 : peut-on faire passer une machine pour un humain ?",
+              "text": "01-histoire/01-origines/turing.md"
+            },
+            {
+              "object": "extract",
+              "slug": "dartmouth",
+              "title": "1956 : le domaine prend un nom",
+              "text": "01-histoire/01-origines/dartmouth.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-regles",
+          "title": "Des règles pour raisonner",
+          "introduction": "01-histoire/02-regles/introduction.md",
+          "conclusion": "01-histoire/02-regles/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "logique",
+              "title": "Décrire ce que le programme sait",
+              "text": "01-histoire/02-regles/logique.md"
+            },
+            {
+              "object": "extract",
+              "slug": "echecs",
+              "title": "Les échecs : connaître les règles ne suffit pas",
+              "text": "01-histoire/02-regles/echecs.md"
+            },
+            {
+              "object": "extract",
+              "slug": "eliza",
+              "title": "1966 : discuter avec ELIZA",
+              "text": "01-histoire/02-regles/eliza.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-apprendre",
+          "title": "Apprendre à partir de données : les premières approches",
+          "introduction": "01-histoire/03-apprendre/introduction.md",
+          "conclusion": "01-histoire/03-apprendre/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "perceptron",
+              "title": "1958 : le perceptron",
+              "text": "01-histoire/03-apprendre/perceptron.md"
+            },
+            {
+              "object": "extract",
+              "slug": "apprentissage",
+              "title": "Ce que veut dire « apprendre »",
+              "text": "01-histoire/03-apprendre/apprentissage.md"
+            },
+            {
+              "object": "extract",
+              "slug": "plusieurs-couches",
+              "title": "1986 : ajuster plusieurs couches",
+              "text": "01-histoire/03-apprendre/plusieurs-couches.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-promesses",
+          "title": "Promesses, systèmes experts et hivers de l’IA",
+          "introduction": "01-histoire/04-promesses/introduction.md",
+          "conclusion": "01-histoire/04-promesses/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "limites",
+              "title": "Quand le petit monde devient trop grand",
+              "text": "01-histoire/04-promesses/limites.md"
+            },
+            {
+              "object": "extract",
+              "slug": "experts",
+              "title": "Concentrer les connaissances sur un métier",
+              "text": "01-histoire/04-promesses/experts.md"
+            },
+            {
+              "object": "extract",
+              "slug": "r1",
+              "title": "Des systèmes utilisés dans les entreprises",
+              "text": "01-histoire/04-promesses/r1.md"
+            },
+            {
+              "object": "extract",
+              "slug": "cycles",
+              "title": "Pourquoi plusieurs « hivers » ?",
+              "text": "01-histoire/04-promesses/cycles.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-deep-learning",
+          "title": "Le tournant du deep learning",
+          "introduction": "01-histoire/05-deep-learning/introduction.md",
+          "conclusion": "01-histoire/05-deep-learning/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "deep-blue",
+              "title": "1997 : Deep Blue gagne contre Kasparov",
+              "text": "01-histoire/05-deep-learning/deep-blue.md"
+            },
+            {
+              "object": "extract",
+              "slug": "autres-methodes",
+              "title": "L’apprentissage ne se limite pas aux réseaux",
+              "text": "01-histoire/05-deep-learning/autres-methodes.md"
+            },
+            {
+              "object": "extract",
+              "slug": "imagenet",
+              "title": "Des images et des personnes pour les classer",
+              "text": "01-histoire/05-deep-learning/imagenet.md"
+            },
+            {
+              "object": "extract",
+              "slug": "alexnet",
+              "title": "2012 : le succès d’AlexNet",
+              "text": "01-histoire/05-deep-learning/alexnet.md"
+            },
+            {
+              "object": "extract",
+              "slug": "alphago",
+              "title": "2016 : apprendre à jouer au go",
+              "text": "01-histoire/05-deep-learning/alphago.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-generatif",
+          "title": "Des transformers à l’IA générative",
+          "introduction": "01-histoire/06-generatif/introduction.md",
+          "conclusion": "01-histoire/06-generatif/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "attention",
+              "title": "2017 : les transformers",
+              "text": "01-histoire/06-generatif/attention.md"
+            },
+            {
+              "object": "extract",
+              "slug": "langage",
+              "title": "Prédire la suite d’un texte",
+              "text": "01-histoire/06-generatif/langage.md"
+            },
+            {
+              "object": "extract",
+              "slug": "instructions",
+              "title": "2022 : rendre ces modèles plus faciles à utiliser",
+              "text": "01-histoire/06-generatif/instructions.md"
+            },
+            {
+              "object": "extract",
+              "slug": "images",
+              "title": "Générer aussi des images",
+              "text": "01-histoire/06-generatif/images.md"
+            },
+            {
+              "object": "extract",
+              "slug": "donnees",
+              "title": "Des données à grande échelle, avec leurs problèmes",
+              "text": "01-histoire/06-generatif/donnees.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "07-aujourdhui",
+          "title": "Où en sommes-nous aujourd’hui ?",
+          "introduction": "01-histoire/07-aujourdhui/introduction.md",
+          "conclusion": "01-histoire/07-aujourdhui/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "agents",
+              "title": "Du modèle qui répond à l’agent qui utilise des outils",
+              "text": "01-histoire/07-aujourdhui/agents.md"
+            },
+            {
+              "object": "extract",
+              "slug": "mcp-skills",
+              "title": "Les MCP et les skills trouvent leur place",
+              "text": "01-histoire/07-aujourdhui/mcp-skills.md"
+            },
+            {
+              "object": "extract",
+              "slug": "modeles-locaux",
+              "title": "Des modèles que l’on peut récupérer",
+              "text": "01-histoire/07-aujourdhui/modeles-locaux.md"
+            },
+            {
+              "object": "extract",
+              "slug": "raisonnement",
+              "title": "2025–2026 : davantage de calcul, davantage d’autonomie ?",
+              "text": "01-histoire/07-aujourdhui/raisonnement.md"
+            },
+            {
+              "object": "extract",
+              "slug": "choisir",
+              "title": "Ce que cette histoire change pour nous",
+              "text": "01-histoire/07-aujourdhui/choisir.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "comprendre-un-modele-en-le-construisant",
+      "title": "Comprendre un modèle en le construisant",
+      "introduction": "02-apprentissage/introduction.md",
+      "conclusion": "02-apprentissage/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "01-atelier",
+          "title": "Installer notre petit atelier",
+          "introduction": "02-apprentissage/01-atelier/introduction.md",
+          "conclusion": "02-apprentissage/01-atelier/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "installer",
+              "title": "Préparer Python et les fichiers",
+              "text": "02-apprentissage/01-atelier/installer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "premieres-images",
+              "title": "Afficher les chiffres",
+              "text": "02-apprentissage/01-atelier/premieres-images.md"
+            },
+            {
+              "object": "extract",
+              "slug": "repartir",
+              "title": "Mettre des images de côté",
+              "text": "02-apprentissage/01-atelier/repartir.md"
+            },
+            {
+              "object": "extract",
+              "slug": "depanner",
+              "title": "Si la première commande ne fonctionne pas",
+              "text": "02-apprentissage/01-atelier/depanner.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-predire",
+          "title": "Des pixels à une première réponse",
+          "introduction": "02-apprentissage/02-predire/introduction.md",
+          "conclusion": "02-apprentissage/02-predire/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "poids",
+              "title": "Ce que fait un poids",
+              "text": "02-apprentissage/02-predire/poids.md"
+            },
+            {
+              "object": "extract",
+              "slug": "softmax",
+              "title": "Transformer les scores en probabilités",
+              "text": "02-apprentissage/02-predire/softmax.md"
+            },
+            {
+              "object": "extract",
+              "slug": "premier-essai",
+              "title": "Lancer le modèle avant l’apprentissage",
+              "text": "02-apprentissage/02-predire/premier-essai.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-apprendre",
+          "title": "Faire apprendre le modèle",
+          "introduction": "02-apprentissage/03-apprendre/introduction.md",
+          "conclusion": "02-apprentissage/03-apprendre/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "erreur",
+              "title": "Mesurer ce qui ne va pas",
+              "text": "02-apprentissage/03-apprendre/erreur.md"
+            },
+            {
+              "object": "extract",
+              "slug": "gradient",
+              "title": "Trouver dans quel sens déplacer les poids",
+              "text": "02-apprentissage/03-apprendre/gradient.md"
+            },
+            {
+              "object": "extract",
+              "slug": "entrainer",
+              "title": "Lancer les mises à jour",
+              "text": "02-apprentissage/03-apprendre/entrainer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "poids-appris",
+              "title": "Regarder ce qui a changé",
+              "text": "02-apprentissage/03-apprendre/poids-appris.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-evaluer",
+          "title": "Lire les résultats sans se raconter d’histoires",
+          "introduction": "02-apprentissage/04-evaluer/introduction.md",
+          "conclusion": "02-apprentissage/04-evaluer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "test",
+              "title": "Faire le bilan sur le test",
+              "text": "02-apprentissage/04-evaluer/test.md"
+            },
+            {
+              "object": "extract",
+              "slug": "erreurs",
+              "title": "Ouvrir les images qui posent problème",
+              "text": "02-apprentissage/04-evaluer/erreurs.md"
+            },
+            {
+              "object": "extract",
+              "slug": "decalage",
+              "title": "Déplacer les chiffres d’un pixel",
+              "text": "02-apprentissage/04-evaluer/decalage.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-dessiner",
+          "title": "Faire reconnaître nos propres dessins",
+          "introduction": "02-apprentissage/05-dessiner/introduction.md",
+          "conclusion": "02-apprentissage/05-dessiner/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "grille",
+              "title": "Dessiner puis enregistrer",
+              "text": "02-apprentissage/05-dessiner/grille.md"
+            },
+            {
+              "object": "extract",
+              "slug": "format",
+              "title": "Le dessin devient exactement 64 nombres",
+              "text": "02-apprentissage/05-dessiner/format.md"
+            },
+            {
+              "object": "extract",
+              "slug": "sauvegarde",
+              "title": "Réutiliser le modèle sans le réentraîner",
+              "text": "02-apprentissage/05-dessiner/sauvegarde.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-reseau",
+          "title": "Ajouter une couche… et voir ce que cela change",
+          "introduction": "02-apprentissage/06-reseau/introduction.md",
+          "conclusion": "02-apprentissage/06-reseau/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "couche",
+              "title": "Une transformation entre l’image et les scores",
+              "text": "02-apprentissage/06-reseau/couche.md"
+            },
+            {
+              "object": "extract",
+              "slug": "retour",
+              "title": "Faire revenir l’erreur à travers la couche",
+              "text": "02-apprentissage/06-reseau/retour.md"
+            },
+            {
+              "object": "extract",
+              "slug": "comparaison",
+              "title": "Entraîner puis comparer",
+              "text": "02-apprentissage/06-reseau/comparaison.md"
+            },
+            {
+              "object": "extract",
+              "slug": "memoriser",
+              "title": "Apprendre les mauvaises réponses",
+              "text": "02-apprentissage/06-reseau/memoriser.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "07-langage",
+          "title": "Produire du texte, un morceau à la fois",
+          "introduction": "02-apprentissage/07-langage/introduction.md",
+          "conclusion": "02-apprentissage/07-langage/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "tokens",
+              "title": "Transformer les caractères en nombres",
+              "text": "02-apprentissage/07-langage/tokens.md"
+            },
+            {
+              "object": "extract",
+              "slug": "compter",
+              "title": "Apprendre quelles lettres se suivent",
+              "text": "02-apprentissage/07-langage/compter.md"
+            },
+            {
+              "object": "extract",
+              "slug": "generer",
+              "title": "Tirer la suite du texte",
+              "text": "02-apprentissage/07-langage/generer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "attention",
+              "title": "Calculer une attention sur quatre positions",
+              "text": "02-apprentissage/07-langage/attention.md"
+            },
+            {
+              "object": "extract",
+              "slug": "reponse",
+              "title": "Pourquoi cela ne fait pas encore un assistant",
+              "text": "02-apprentissage/07-langage/reponse.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "08-outils",
+          "title": "Du modèle aux outils qui l’entourent",
+          "introduction": "02-apprentissage/08-outils/introduction.md",
+          "conclusion": "02-apprentissage/08-outils/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "appel",
+              "title": "Exécuter un appel d’outil",
+              "text": "02-apprentissage/08-outils/appel.md"
+            },
+            {
+              "object": "extract",
+              "slug": "boucle",
+              "title": "Qui choisit, qui exécute ?",
+              "text": "02-apprentissage/08-outils/boucle.md"
+            },
+            {
+              "object": "extract",
+              "slug": "contexte",
+              "title": "Changer les informations ou changer le modèle",
+              "text": "02-apprentissage/08-outils/contexte.md"
+            },
+            {
+              "object": "extract",
+              "slug": "materiel",
+              "title": "Ce que ces expériences ont demandé",
+              "text": "02-apprentissage/08-outils/materiel.md"
+            },
+            {
+              "object": "extract",
+              "slug": "garder-la-main",
+              "title": "Ce que nous voulons déléguer",
+              "text": "02-apprentissage/08-outils/garder-la-main.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "faire-tourner-un-modele-chez-soi",
+      "title": "Faire tourner un modèle chez soi",
+      "introduction": "03-modele-local/introduction.md",
+      "conclusion": "03-modele-local/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "01-choisir",
+          "title": "Choisir ce que l’on va télécharger",
+          "introduction": "03-modele-local/01-choisir/introduction.md",
+          "conclusion": "03-modele-local/01-choisir/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "trois-pieces",
+              "title": "Le modèle, le moteur et notre programme",
+              "text": "03-modele-local/01-choisir/trois-pieces.md"
+            },
+            {
+              "object": "extract",
+              "slug": "fiche",
+              "title": "Lire la fiche avant le nom du fichier",
+              "text": "03-modele-local/01-choisir/fiche.md"
+            },
+            {
+              "object": "extract",
+              "slug": "machine",
+              "title": "De quoi votre ordinateur a-t-il besoin ?",
+              "text": "03-modele-local/01-choisir/machine.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-installer",
+          "title": "Installer le moteur et lancer le modèle",
+          "introduction": "03-modele-local/02-installer/introduction.md",
+          "conclusion": "03-modele-local/02-installer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "moteur",
+              "title": "Choisir la bonne archive de llama.cpp",
+              "text": "03-modele-local/02-installer/moteur.md"
+            },
+            {
+              "object": "extract",
+              "slug": "poids",
+              "title": "Télécharger les poids et retrouver le même fichier",
+              "text": "03-modele-local/02-installer/poids.md"
+            },
+            {
+              "object": "extract",
+              "slug": "demarrer",
+              "title": "Le premier démarrage",
+              "text": "03-modele-local/02-installer/demarrer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "depanner",
+              "title": "Quand le serveur ne démarre pas",
+              "text": "03-modele-local/02-installer/depanner.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-dialoguer",
+          "title": "Envoyer une question et conserver la réponse",
+          "introduction": "03-modele-local/03-dialoguer/introduction.md",
+          "conclusion": "03-modele-local/03-dialoguer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "premier-appel",
+              "title": "Notre première requête",
+              "text": "03-modele-local/03-dialoguer/premier-appel.md"
+            },
+            {
+              "object": "extract",
+              "slug": "requete",
+              "title": "Ce que fait le client",
+              "text": "03-modele-local/03-dialoguer/requete.md"
+            },
+            {
+              "object": "extract",
+              "slug": "document",
+              "title": "Une réponse présente, une réponse absente",
+              "text": "03-modele-local/03-dialoguer/document.md"
+            },
+            {
+              "object": "extract",
+              "slug": "contexte",
+              "title": "Pourquoi le modèle ne se souvient pas du premier essai",
+              "text": "03-modele-local/03-dialoguer/contexte.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-mesurer",
+          "title": "Mesurer sans mélanger les résultats",
+          "introduction": "03-modele-local/04-mesurer/introduction.md",
+          "conclusion": "03-modele-local/04-mesurer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "memoire",
+              "title": "Le fichier, la RAM et la mémoire du GPU",
+              "text": "03-modele-local/04-mesurer/memoire.md"
+            },
+            {
+              "object": "extract",
+              "slug": "chronometre",
+              "title": "Répéter la même demande",
+              "text": "03-modele-local/04-mesurer/chronometre.md"
+            },
+            {
+              "object": "extract",
+              "slug": "lire",
+              "title": "Que mesure notre chronomètre ?",
+              "text": "03-modele-local/04-mesurer/lire.md"
+            },
+            {
+              "object": "extract",
+              "slug": "modifier",
+              "title": "Changer une seule chose",
+              "text": "03-modele-local/04-mesurer/modifier.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-juger",
+          "title": "Décider si le résultat nous sert",
+          "introduction": "03-modele-local/05-juger/introduction.md",
+          "conclusion": "03-modele-local/05-juger/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "petite-grille",
+              "title": "Une petite grille qui vous appartient",
+              "text": "03-modele-local/05-juger/petite-grille.md"
+            },
+            {
+              "object": "extract",
+              "slug": "choisir-usage",
+              "title": "Partir du travail à faire",
+              "text": "03-modele-local/05-juger/choisir-usage.md"
+            },
+            {
+              "object": "extract",
+              "slug": "local",
+              "title": "Ce que « local » change vraiment",
+              "text": "03-modele-local/05-juger/local.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-gpu",
+          "title": "Essayer une carte graphique, si vous en avez une",
+          "introduction": "03-modele-local/06-gpu/introduction.md",
+          "conclusion": "03-modele-local/06-gpu/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "preparer",
+              "title": "Vérifier que le moteur voit la carte",
+              "text": "03-modele-local/06-gpu/preparer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "comparer",
+              "title": "Rejouer notre série sur GPU",
+              "text": "03-modele-local/06-gpu/comparer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "garder",
+              "title": "Conserver une expérience que l’on peut refaire",
+              "text": "03-modele-local/06-gpu/garder.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "developper-avec-une-ia",
+      "title": "Développer avec une IA, du problème au changement vérifié",
+      "introduction": "04-developpement/introduction.md",
+      "conclusion": "04-developpement/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "outils",
+          "title": "Choisir de quoi suivre l’atelier",
+          "introduction": "04-developpement/outils/introduction.md",
+          "conclusion": "04-developpement/outils/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "ou",
+              "title": "Où tournent le code et le modèle ?",
+              "text": "04-developpement/outils/trois-morceaux.md"
+            },
+            {
+              "object": "extract",
+              "slug": "usages",
+              "title": "Discuter, puis laisser agir",
+              "text": "04-developpement/outils/usages.md"
+            },
+            {
+              "object": "extract",
+              "slug": "choisir",
+              "title": "Quel outil prendre pour commencer ?",
+              "text": "04-developpement/outils/choisir.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "installer",
+          "title": "Installer l’assistant et observer le problème",
+          "introduction": "04-developpement/installer/introduction.md",
+          "conclusion": "04-developpement/installer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "projet",
+              "title": "Préparer notre seule copie de travail",
+              "text": "04-developpement/installer/projet.md"
+            },
+            {
+              "object": "extract",
+              "slug": "heberge",
+              "title": "Ouvrir la discussion dans VS Code",
+              "text": "04-developpement/installer/heberge.md"
+            },
+            {
+              "object": "extract",
+              "slug": "observer",
+              "title": "Observer le problème",
+              "text": "04-developpement/installer/observer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "lire",
+              "title": "Retrouver la décision et la faire expliquer",
+              "text": "04-developpement/installer/lire.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-demande",
+          "title": "Décider ce que le ticket veut changer",
+          "introduction": "04-developpement/02-demande/introduction.md",
+          "conclusion": "04-developpement/02-demande/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "regle",
+              "title": "Une remise en stock n’est pas une baisse de prix",
+              "text": "04-developpement/02-demande/regle.md"
+            },
+            {
+              "object": "extract",
+              "slug": "cas",
+              "title": "Écrire la table avant les tests",
+              "text": "04-developpement/02-demande/cas.md"
+            },
+            {
+              "object": "extract",
+              "slug": "limites",
+              "title": "Délimiter le changement",
+              "text": "04-developpement/02-demande/limites.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-tests",
+          "title": "Faire apparaître le bug dans un test",
+          "introduction": "04-developpement/03-tests/introduction.md",
+          "conclusion": "04-developpement/03-tests/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "agent",
+              "title": "Demander un premier test à l’agent",
+              "text": "04-developpement/03-tests/agent.md"
+            },
+            {
+              "object": "extract",
+              "slug": "rouge",
+              "title": "Écrire le premier test qui échoue",
+              "text": "04-developpement/03-tests/rouge.md"
+            },
+            {
+              "object": "extract",
+              "slug": "completer",
+              "title": "Ajouter les voisins du cas principal",
+              "text": "04-developpement/03-tests/completer.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-corriger",
+          "title": "Faire le changement et lire le diff",
+          "introduction": "04-developpement/04-corriger/introduction.md",
+          "conclusion": "04-developpement/04-corriger/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "demander",
+              "title": "Une demande de modification précise",
+              "text": "04-developpement/04-corriger/demander.md"
+            },
+            {
+              "object": "extract",
+              "slug": "condition",
+              "title": "Relire les opérateurs",
+              "text": "04-developpement/04-corriger/condition.md"
+            },
+            {
+              "object": "extract",
+              "slug": "diff",
+              "title": "Lire ce qui a vraiment changé",
+              "text": "04-developpement/04-corriger/diff.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-verifier",
+          "title": "Vérifier au-delà de la dernière ligne verte",
+          "introduction": "04-developpement/05-verifier/introduction.md",
+          "conclusion": "04-developpement/05-verifier/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "suite",
+              "title": "Rejouer les tests et contrôler leur nombre",
+              "text": "04-developpement/05-verifier/suite.md"
+            },
+            {
+              "object": "extract",
+              "slug": "recette",
+              "title": "Passer par les fichiers JSON",
+              "text": "04-developpement/05-verifier/recette.md"
+            },
+            {
+              "object": "extract",
+              "slug": "casser",
+              "title": "Vérifier qu’un test sait encore protester",
+              "text": "04-developpement/05-verifier/casser.md"
+            },
+            {
+              "object": "extract",
+              "slug": "revue",
+              "title": "Demander une seconde lecture utile",
+              "text": "04-developpement/05-verifier/revue.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-garder-la-main",
+          "title": "Garder un changement que l’on sait expliquer",
+          "introduction": "04-developpement/06-garder-la-main/introduction.md",
+          "conclusion": "04-developpement/06-garder-la-main/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "rapport",
+              "title": "Écrire un compte rendu exploitable",
+              "text": "04-developpement/06-garder-la-main/rapport.md"
+            },
+            {
+              "object": "extract",
+              "slug": "apprendre",
+              "title": "Quand on apprend encore à développer",
+              "text": "04-developpement/06-garder-la-main/apprendre.md"
+            },
+            {
+              "object": "extract",
+              "slug": "choisir",
+              "title": "Trouver ses propres points de friction",
+              "text": "04-developpement/06-garder-la-main/choisir.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "comprendre-et-encadrer-les-agents",
+      "title": "Comprendre et encadrer les agents de code",
+      "introduction": "05-agents/introduction.md",
+      "conclusion": "05-agents/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "01-boucle",
+          "title": "Suivre une demande jusqu’à l’outil",
+          "introduction": "05-agents/01-boucle/introduction.md",
+          "conclusion": "05-agents/01-boucle/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "installer",
+              "title": "Ouvrir le banc d’essai",
+              "text": "05-agents/01-boucle/installer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "appel",
+              "title": "Qui a fait quoi ?",
+              "text": "05-agents/01-boucle/appel.md"
+            },
+            {
+              "object": "extract",
+              "slug": "observer",
+              "title": "Retrouver ces étapes dans l’assistant",
+              "text": "05-agents/01-boucle/observer.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-contexte",
+          "title": "Donner le contexte utile à l’étape en cours",
+          "introduction": "05-agents/02-contexte/introduction.md",
+          "conclusion": "05-agents/02-contexte/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "comparer",
+              "title": "Même question, deux contextes",
+              "text": "05-agents/02-contexte/comparer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "selectionner",
+              "title": "Que faut-il garder ?",
+              "text": "05-agents/02-contexte/selectionner.md"
+            },
+            {
+              "object": "extract",
+              "slug": "historique",
+              "title": "Quand la session commence à dériver",
+              "text": "05-agents/02-contexte/historique.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-consignes",
+          "title": "Écrire des consignes que l’on peut contrôler",
+          "introduction": "05-agents/03-consignes/introduction.md",
+          "conclusion": "05-agents/03-consignes/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "preciser",
+              "title": "De « fais attention » à une action précise",
+              "text": "05-agents/03-consignes/preciser.md"
+            },
+            {
+              "object": "extract",
+              "slug": "verifier",
+              "title": "Essayer la consigne sur deux états du projet",
+              "text": "05-agents/03-consignes/verifier.md"
+            },
+            {
+              "object": "extract",
+              "slug": "ranger",
+              "title": "Quand les règles se contredisent",
+              "text": "05-agents/03-consignes/ranger.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-permissions",
+          "title": "Observer un refus qui ne dépend pas du modèle",
+          "introduction": "05-agents/04-permissions/introduction.md",
+          "conclusion": "05-agents/04-permissions/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "refuser",
+              "title": "Faire échouer une demande d’outil",
+              "text": "05-agents/04-permissions/refuser.md"
+            },
+            {
+              "object": "extract",
+              "slug": "piege",
+              "title": "Une instruction cachée dans un document",
+              "text": "05-agents/04-permissions/piege.md"
+            },
+            {
+              "object": "extract",
+              "slug": "limites",
+              "title": "Ce que cette barrière protège",
+              "text": "05-agents/04-permissions/limites.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-reprise",
+          "title": "Arrêter une boucle et reprendre sans perdre le fil",
+          "introduction": "05-agents/05-reprise/introduction.md",
+          "conclusion": "05-agents/05-reprise/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "budget",
+              "title": "Trois appels, puis on s’arrête",
+              "text": "05-agents/05-reprise/budget.md"
+            },
+            {
+              "object": "extract",
+              "slug": "reprendre",
+              "title": "Corriger la cause du refus",
+              "text": "05-agents/05-reprise/reprendre.md"
+            },
+            {
+              "object": "extract",
+              "slug": "fiche",
+              "title": "Préparer la prochaine session",
+              "text": "05-agents/05-reprise/fiche.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-couts",
+          "title": "Mesurer ce que la session nous a coûté",
+          "introduction": "05-agents/06-couts/introduction.md",
+          "conclusion": "05-agents/06-couts/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "compter",
+              "title": "Un appel d’outil n’est pas une unité de facture",
+              "text": "05-agents/06-couts/compter.md"
+            },
+            {
+              "object": "extract",
+              "slug": "calculer",
+              "title": "Faire le calcul sur deux appels",
+              "text": "05-agents/06-couts/calculer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "temps",
+              "title": "Le temps gagné se mesure jusqu’à la validation",
+              "text": "05-agents/06-couts/temps.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "mcp-et-skills-en-pratique",
+      "title": "Les MCP et les skills en pratique",
+      "introduction": "06-mcp-skills/introduction.md",
+      "conclusion": "06-mcp-skills/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "01-consulter",
+          "title": "Consulter notre premier ticket",
+          "introduction": "06-mcp-skills/01-consulter/introduction.md",
+          "conclusion": "06-mcp-skills/01-consulter/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "installer",
+              "title": "Préparer le dossier",
+              "text": "06-mcp-skills/01-consulter/installer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "ticket",
+              "title": "Demander PRIX-1",
+              "text": "06-mcp-skills/01-consulter/ticket.md"
+            },
+            {
+              "object": "extract",
+              "slug": "depanner",
+              "title": "Si le ticket n’arrive pas",
+              "text": "06-mcp-skills/01-consulter/depanner.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-relier",
+          "title": "Brancher le serveur à notre assistant",
+          "introduction": "06-mcp-skills/02-relier/introduction.md",
+          "conclusion": "06-mcp-skills/02-relier/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "decouvrir",
+              "title": "Demander ce que le serveur sait faire",
+              "text": "06-mcp-skills/02-relier/decouvrir.md"
+            },
+            {
+              "object": "extract",
+              "slug": "configurer",
+              "title": "Garder l’assistant que nous avons déjà",
+              "text": "06-mcp-skills/02-relier/configurer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "trajet",
+              "title": "Où passent les informations ?",
+              "text": "06-mcp-skills/02-relier/trajet.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-construire",
+          "title": "Développer notre serveur MCP, pas à pas",
+          "introduction": "06-mcp-skills/03-construire/introduction.md",
+          "conclusion": "06-mcp-skills/03-construire/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "demarrer",
+              "title": "Partir d’un fichier vide",
+              "text": "06-mcp-skills/03-construire/demarrer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "fonction",
+              "title": "Exposer un premier outil",
+              "text": "06-mcp-skills/03-construire/fonction.md"
+            },
+            {
+              "object": "extract",
+              "slug": "catalogue",
+              "title": "Lire les tickets depuis les données",
+              "text": "06-mcp-skills/03-construire/catalogue.md"
+            },
+            {
+              "object": "extract",
+              "slug": "chercher",
+              "title": "Ajouter la recherche documentaire",
+              "text": "06-mcp-skills/03-construire/chercher.md"
+            },
+            {
+              "object": "extract",
+              "slug": "valider",
+              "title": "Valider les paramètres reçus",
+              "text": "06-mcp-skills/03-construire/valider.md"
+            },
+            {
+              "object": "extract",
+              "slug": "ressource",
+              "title": "Exposer les conventions comme ressource",
+              "text": "06-mcp-skills/03-construire/ressource.md"
+            },
+            {
+              "object": "extract",
+              "slug": "tester",
+              "title": "Écrire les tests et utiliser notre serveur",
+              "text": "06-mcp-skills/03-construire/tester.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-controler",
+          "title": "Refuser ce que le serveur ne doit pas faire",
+          "introduction": "06-mcp-skills/04-controler/introduction.md",
+          "conclusion": "06-mcp-skills/04-controler/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "parametres",
+              "title": "Un identifiant n’est pas un chemin",
+              "text": "06-mcp-skills/04-controler/parametres.md"
+            },
+            {
+              "object": "extract",
+              "slug": "ecriture",
+              "title": "Demander une modification impossible par cet outil",
+              "text": "06-mcp-skills/04-controler/ecriture.md"
+            },
+            {
+              "object": "extract",
+              "slug": "document",
+              "title": "Quand la documentation donne des ordres",
+              "text": "06-mcp-skills/04-controler/document.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-skill",
+          "title": "Écrire notre premier skill",
+          "introduction": "06-mcp-skills/05-skill/introduction.md",
+          "conclusion": "06-mcp-skills/05-skill/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "dossier",
+              "title": "Donner un nom à une tâche précise",
+              "text": "06-mcp-skills/05-skill/dossier.md"
+            },
+            {
+              "object": "extract",
+              "slug": "procedure",
+              "title": "Décrire le travail à faire",
+              "text": "06-mcp-skills/05-skill/procedure.md"
+            },
+            {
+              "object": "extract",
+              "slug": "essayer",
+              "title": "Préparer la recette de PRIX-1",
+              "text": "06-mcp-skills/05-skill/essayer.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-adapter",
+          "title": "Faire évoluer le skill à partir des problèmes rencontrés",
+          "introduction": "06-mcp-skills/06-adapter/introduction.md",
+          "conclusion": "06-mcp-skills/06-adapter/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "incomplet",
+              "title": "Un ticket qui ne dit pas tout",
+              "text": "06-mcp-skills/06-adapter/incomplet.md"
+            },
+            {
+              "object": "extract",
+              "slug": "corriger",
+              "title": "Changer la règle qui a réellement manqué",
+              "text": "06-mcp-skills/06-adapter/corriger.md"
+            },
+            {
+              "object": "extract",
+              "slug": "comparer",
+              "title": "Garder des essais que l’on peut comparer",
+              "text": "06-mcp-skills/06-adapter/comparer.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "07-ranger",
+          "title": "Articuler skills, conventions et base de connaissances",
+          "introduction": "06-mcp-skills/07-ranger/introduction.md",
+          "conclusion": "06-mcp-skills/07-ranger/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "repartir",
+              "title": "Mettre chaque information à sa place",
+              "text": "06-mcp-skills/07-ranger/repartir.md"
+            },
+            {
+              "object": "extract",
+              "slug": "refacto",
+              "title": "Faire une petite passe de refacto",
+              "text": "06-mcp-skills/07-ranger/refacto.md"
+            },
+            {
+              "object": "extract",
+              "slug": "suite",
+              "title": "Choisir jusqu’où aller",
+              "text": "06-mcp-skills/07-ranger/suite.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "construire-et-adapter-son-ia-maison",
+      "title": "Construire et adapter son IA maison",
+      "introduction": "07-ia-maison/introduction.md",
+      "conclusion": "07-ia-maison/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "01-choisir",
+          "title": "Choisir ce que l’on veut modifier",
+          "introduction": "07-ia-maison/01-choisir/introduction.md",
+          "conclusion": "07-ia-maison/01-choisir/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "besoin",
+              "title": "Qu’est-ce qui manque à notre outil ?",
+              "text": "07-ia-maison/01-choisir/besoin.md"
+            },
+            {
+              "object": "extract",
+              "slug": "installer",
+              "title": "Ouvrir les fichiers de la partie",
+              "text": "07-ia-maison/01-choisir/installer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "separer",
+              "title": "Une recherche n’est pas un entraînement",
+              "text": "07-ia-maison/01-choisir/separer.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-rechercher",
+          "title": "Construire une recherche dans nos documents",
+          "introduction": "07-ia-maison/02-rechercher/introduction.md",
+          "conclusion": "07-ia-maison/02-rechercher/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "paragraphes",
+              "title": "Garder des morceaux que l’on peut retrouver",
+              "text": "07-ia-maison/02-rechercher/paragraphes.md"
+            },
+            {
+              "object": "extract",
+              "slug": "score",
+              "title": "Des mots à un score de recherche",
+              "text": "07-ia-maison/02-rechercher/score.md"
+            },
+            {
+              "object": "extract",
+              "slug": "limites",
+              "title": "Quand les mots ne sont pas les mêmes",
+              "text": "07-ia-maison/02-rechercher/limites.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-evaluer",
+          "title": "Évaluer les sources avant les réponses",
+          "introduction": "07-ia-maison/03-evaluer/introduction.md",
+          "conclusion": "07-ia-maison/03-evaluer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "lots",
+              "title": "Garder des questions de côté",
+              "text": "07-ia-maison/03-evaluer/lots.md"
+            },
+            {
+              "object": "extract",
+              "slug": "absence",
+              "title": "Dire ce que l’on n’a pas trouvé",
+              "text": "07-ia-maison/03-evaluer/absence.md"
+            },
+            {
+              "object": "extract",
+              "slug": "citations",
+              "title": "Une citation peut être vraie et mal utilisée",
+              "text": "07-ia-maison/03-evaluer/citations.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-application",
+          "title": "Assembler notre assistant documentaire",
+          "introduction": "07-ia-maison/04-application/introduction.md",
+          "conclusion": "07-ia-maison/04-application/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "contexte",
+              "title": "Regarder ce que le modèle va recevoir",
+              "text": "07-ia-maison/04-application/contexte.md"
+            },
+            {
+              "object": "extract",
+              "slug": "programme",
+              "title": "Relier les deux morceaux",
+              "text": "07-ia-maison/04-application/programme.md"
+            },
+            {
+              "object": "extract",
+              "slug": "reponses",
+              "title": "Le bon document, la mauvaise réponse",
+              "text": "07-ia-maison/04-application/reponses.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-donnees",
+          "title": "Préparer ce que notre modèle va apprendre",
+          "introduction": "07-ia-maison/05-donnees/introduction.md",
+          "conclusion": "07-ia-maison/05-donnees/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "corpus",
+              "title": "Un terrain de jeu que nous maîtrisons",
+              "text": "07-ia-maison/05-donnees/corpus.md"
+            },
+            {
+              "object": "extract",
+              "slug": "lots",
+              "title": "Séparer les exemples avant de les découper",
+              "text": "07-ia-maison/05-donnees/lots.md"
+            },
+            {
+              "object": "extract",
+              "slug": "base",
+              "title": "Partir d’un premier modèle déjà entraîné",
+              "text": "07-ia-maison/05-donnees/base.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-adaptateurs",
+          "title": "Ajouter un petit adaptateur",
+          "introduction": "07-ia-maison/06-adaptateurs/introduction.md",
+          "conclusion": "07-ia-maison/06-adaptateurs/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "principe",
+              "title": "Une correction ajoutée au calcul",
+              "text": "07-ia-maison/06-adaptateurs/principe.md"
+            },
+            {
+              "object": "extract",
+              "slug": "entrainer",
+              "title": "Entraîner puis recharger l’adaptateur",
+              "text": "07-ia-maison/06-adaptateurs/entrainer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "resultats",
+              "title": "L’amélioration qui cache une régression",
+              "text": "07-ia-maison/06-adaptateurs/resultats.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "07-entrainer",
+          "title": "Entraîner notre réseau depuis zéro",
+          "introduction": "07-ia-maison/07-entrainer/introduction.md",
+          "conclusion": "07-ia-maison/07-entrainer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "reseau",
+              "title": "Douze caractères pour deviner le suivant",
+              "text": "07-ia-maison/07-entrainer/reseau.md"
+            },
+            {
+              "object": "extract",
+              "slug": "boucle",
+              "title": "Des nombres aléatoires aux premières régularités",
+              "text": "07-ia-maison/07-entrainer/boucle.md"
+            },
+            {
+              "object": "extract",
+              "slug": "generation",
+              "title": "Pourquoi une petite perte peut produire du charabia",
+              "text": "07-ia-maison/07-entrainer/generation.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "08-comparer",
+          "title": "Choisir la suite sans changer de machine par défaut",
+          "introduction": "07-ia-maison/08-comparer/introduction.md",
+          "conclusion": "07-ia-maison/08-comparer/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "materiel",
+              "title": "Ce qui a réellement tourné ici",
+              "text": "07-ia-maison/08-comparer/materiel.md"
+            },
+            {
+              "object": "extract",
+              "slug": "gpu",
+              "title": "Préparer une expérience sur la 3090 Ti",
+              "text": "07-ia-maison/08-comparer/gpu.md"
+            },
+            {
+              "object": "extract",
+              "slug": "choix",
+              "title": "Revenir au besoin de départ",
+              "text": "07-ia-maison/08-comparer/choix.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "choisir-la-place-de-l-ia",
+      "title": "Choisir la place de l’IA",
+      "introduction": "08-choisir/introduction.md",
+      "conclusion": "08-choisir/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "01-travail",
+          "title": "D’où viennent les données et le travail humain ?",
+          "introduction": "08-choisir/01-travail/introduction.md",
+          "conclusion": "08-choisir/01-travail/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "remonter",
+              "title": "Remonter avant le téléchargement",
+              "text": "08-choisir/01-travail/remonter.md"
+            },
+            {
+              "object": "extract",
+              "slug": "personnes",
+              "title": "Les personnes que le mot « automatisation » cache",
+              "text": "08-choisir/01-travail/personnes.md"
+            },
+            {
+              "object": "extract",
+              "slug": "selection",
+              "title": "Ce que nous choisissons de garder",
+              "text": "08-choisir/01-travail/selection.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "02-ouverture",
+          "title": "Licences, transparence et possibilités de vérification",
+          "introduction": "08-choisir/02-ouverture/introduction.md",
+          "conclusion": "08-choisir/02-ouverture/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "objets",
+              "title": "De quoi parle la licence ?",
+              "text": "08-choisir/02-ouverture/objets.md"
+            },
+            {
+              "object": "extract",
+              "slug": "libertes",
+              "title": "Ce que l’ouverture rend possible",
+              "text": "08-choisir/02-ouverture/libertes.md"
+            },
+            {
+              "object": "extract",
+              "slug": "fiche",
+              "title": "Examiner un modèle que nous avons déjà utilisé",
+              "text": "08-choisir/02-ouverture/fiche.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "03-ressources",
+          "title": "Coûts, énergie, matériel et environnement",
+          "introduction": "08-choisir/03-ressources/introduction.md",
+          "conclusion": "08-choisir/03-ressources/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "perimetre",
+              "title": "Que mettons-nous dans le calcul ?",
+              "text": "08-choisir/03-ressources/perimetre.md"
+            },
+            {
+              "object": "extract",
+              "slug": "calcul",
+              "title": "Un calcul que nous pouvons refaire",
+              "text": "08-choisir/03-ressources/calcul.md"
+            },
+            {
+              "object": "extract",
+              "slug": "usage",
+              "title": "Éviter une dépense qui ne sert pas la tâche",
+              "text": "08-choisir/03-ressources/usage.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "04-dependances",
+          "title": "Dépendances techniques et économiques",
+          "introduction": "08-choisir/04-dependances/introduction.md",
+          "conclusion": "08-choisir/04-dependances/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "trajet",
+              "title": "Suivre les données jusqu’au bout",
+              "text": "08-choisir/04-dependances/trajet.md"
+            },
+            {
+              "object": "extract",
+              "slug": "sortie",
+              "title": "Préparer le jour où l’on change d’outil",
+              "text": "08-choisir/04-dependances/sortie.md"
+            },
+            {
+              "object": "extract",
+              "slug": "collectif",
+              "title": "Ne pas tout faire reposer sur un abonnement individuel",
+              "text": "08-choisir/04-dependances/collectif.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "05-apprendre",
+          "title": "Apprendre et exercer notre métier",
+          "introduction": "08-choisir/05-apprendre/introduction.md",
+          "conclusion": "08-choisir/05-apprendre/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "comprendre",
+              "title": "La relecture demande quelque chose à relire avec",
+              "text": "08-choisir/05-apprendre/comprendre.md"
+            },
+            {
+              "object": "extract",
+              "slug": "exercice",
+              "title": "Fermer l’assistant et ouvrir six lignes",
+              "text": "08-choisir/05-apprendre/exercice.md"
+            },
+            {
+              "object": "extract",
+              "slug": "metier",
+              "title": "Garder de la place pour apprendre au travail",
+              "text": "08-choisir/05-apprendre/metier.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "06-alternatives",
+          "title": "Alternatives, logiciels libres et possibilités de s’en passer",
+          "introduction": "08-choisir/06-alternatives/introduction.md",
+          "conclusion": "08-choisir/06-alternatives/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "solutions",
+              "title": "Repartir de la difficulté réelle",
+              "text": "08-choisir/06-alternatives/solutions.md"
+            },
+            {
+              "object": "extract",
+              "slug": "comparer",
+              "title": "Compter jusqu’au résultat utilisable",
+              "text": "08-choisir/06-alternatives/comparer.md"
+            },
+            {
+              "object": "extract",
+              "slug": "etudes",
+              "title": "Quand les études ne racontent pas toutes la même chose",
+              "text": "08-choisir/06-alternatives/etudes.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "07-decider",
+          "title": "Construire ses propres critères de choix",
+          "introduction": "08-choisir/07-decider/introduction.md",
+          "conclusion": "08-choisir/07-decider/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "contraintes",
+              "title": "Ce qui se discute et ce qui bloque",
+              "text": "08-choisir/07-decider/contraintes.md"
+            },
+            {
+              "object": "extract",
+              "slug": "decision",
+              "title": "Écrire une décision que l’on peut appliquer",
+              "text": "08-choisir/07-decider/decision.md"
+            },
+            {
+              "object": "extract",
+              "slug": "continuer",
+              "title": "Garder la méthode que l’on peut expliquer",
+              "text": "08-choisir/07-decider/continuer.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container",
+      "slug": "annexes",
+      "title": "Annexes",
+      "introduction": "annexes/introduction.md",
+      "conclusion": "annexes/conclusion.md",
+      "children": [
+        {
+          "object": "container",
+          "slug": "comparatif",
+          "title": "Comparer les outils et leurs tarifs",
+          "introduction": "annexes/comparatif/introduction.md",
+          "conclusion": "annexes/comparatif/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "panorama",
+              "title": "Les éditeurs et les agents",
+              "text": "annexes/comparatif/panorama.md"
+            },
+            {
+              "object": "extract",
+              "slug": "harness",
+              "title": "Pi et les autres harness",
+              "text": "annexes/comparatif/harness.md"
+            },
+            {
+              "object": "extract",
+              "slug": "prix",
+              "title": "Les prix et les limites des offres",
+              "text": "annexes/comparatif/prix.md"
+            }
+          ],
+          "ready_to_publish": false
+        },
+        {
+          "object": "container",
+          "slug": "essai-local",
+          "title": "Expérimenter une discussion avec un modèle local",
+          "introduction": "annexes/essai-local/introduction.md",
+          "conclusion": "annexes/essai-local/conclusion.md",
+          "children": [
+            {
+              "object": "extract",
+              "slug": "connexion",
+              "title": "Relier Continue à notre serveur",
+              "text": "annexes/essai-local/connexion.md"
+            }
+          ],
+          "ready_to_publish": false
+        }
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

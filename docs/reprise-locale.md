@@ -1,25 +1,9 @@
-# Reprendre avec Codex sur la machine de l’auteur
+# Reprendre sur le PC de Hugo
 
-Ouvrir une session dans un clone à jour de `hloiseau/tutoriel-ia-ateliers`, puis lui donner ce texte :
+Ouvrir un clone à jour de `hloiseau/tutoriel-ia-ateliers` dans Codex local, puis copier le [prompt coordinateur des expériences](prompts/LOCAL-COORDINATEUR.md). Il contient le contexte nécessaire à une nouvelle conversation, les règles de préparation et les livrables attendus.
 
----
+La machine annoncée possède une RTX 3090 Ti de 24 Go et 64 Go de DDR4 3200. Le système d’exploitation reste à relever. Les [missions par atelier](prompts/local/README.md) couvrent les parties 2 à 7 et une observation humaine facultative pour la partie 8. Les [expériences restantes](experiences-a-lancer.md) distinguent les références déjà exécutées des validations à faire.
 
-Nous écrivons le tutoriel français « Comprendre l’IA et développer avec elle » pour ZdS. Ce dépôt est la source courante du travail.
+La réécriture générale dispose d’un [autre prompt](prompts/RELECTURE-COORDINATEUR.md), avec huit sous-agents et le [guide de voix de Hugo](prompts/GUIDE-VOIX-HUGO.md). L’assistant local transmettra ses preuves et ses corrections au coordinateur éditorial pour éviter les modifications concurrentes.
 
-Lis `SOMMAIRE.md`, `docs/etat-des-contenus.md`, `docs/cadre-redaction.md`, `docs/experiences-a-lancer.md` et les rapports de vérification des ateliers. Les parties 1 à 5 sont sous `tutoriel/` ; le code pratique est sous `ateliers/`. La partie historique V3 a été validée : ne change pas son ton.
-
-L’auteur possède une RTX 3090 Ti de 24 Go et 64 Go de DDR4 3200. Relève le système, le CPU, le pilote et les outils installés avant de choisir les commandes adaptées. Préserve les installations et les projets présents ; utilise un dossier d’expériences dédié.
-
-Rejoue d’abord les parcours CPU des parties 2 et 3. En partie 4, distingue le parcours hébergé de l’expérience facultative de discussion locale sur CPU. Cette dernière ne valide pas un parcours d’agent de code. Pour chaque essai, consigne le temps avant la première réponse, la durée totale, la mémoire, la réponse complète et ses erreurs. Ne recommande une configuration pour l’atelier qu’après l’avoir éprouvée sur ses tâches. Vérifie aussi la session Local avec les modèles Copilot, le passage Ask → Agent, l’affichage des actions et la comparaison avec le presse-papiers dans VS Code. Ces manipulations documentées n’ont pas été rejouées. Inspecte les fichiers avant de lancer leurs commandes et respecte les restrictions de l’environnement.
-
-Conserve versions, commandes, sorties, codes de retour, réponses brutes et mesures dans un nouveau dossier daté. Ne remplace pas les résultats de référence. Distingue exécution réelle, réponse factice de test et déduction. Corrige les procédures à partir des erreurs effectivement rencontrées.
-
-Modifie les petits Markdown déclarés dans les manifests, puis lance `python outils/assembler_tutoriel.py --exports ../exports-zds`. Les `LECTURE.md` sont générés. Le tutoriel reste indépendant d’un fournisseur, accessible sans grosse carte graphique et attentif aux enjeux éthiques et à l’apprentissage.
-
-Prépare des modifications relisibles dans Git. Cette reprise ne demande pas à elle seule une publication sur ZdS. La rédaction peut avancer sans attendre les retours des lecteurs.
-
-Pour la partie 5, distingue les journaux du banc sans modèle des observations d’un assistant réel. Le protocole et les expériences restantes sont dans `tutoriel/05-agents/VERIFICATION.md`.
-
-## Expérience d’adaptation de la partie 7
-
-Le protocole ciblé est dans [experience-gpu/PROMPT-CODEX.md](../ateliers/07-ia-maison/experience-gpu/PROMPT-CODEX.md). Il complète ce document : préserver la base, isoler l’environnement, comparer les anciennes tâches et recharger l’adaptateur dans un nouveau processus.
+Les rapports publics des nouveaux essais iront dans `docs/experiences-locales/`, dans des sous-dossiers datés. Ce chemin sera créé lors des premières exécutions ; sa mention ici n’atteste pas qu’elles ont eu lieu.

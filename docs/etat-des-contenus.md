@@ -88,3 +88,9 @@ Sept chapitres, vingt et une sections, quatre illustrations et un atelier sans d
 Les sources distinguent travail humain, droits, ouverture, impacts environnementaux, dépendances et apprentissage. Les durées du bilan et les paramètres du calcul énergétique sont fictifs et étiquetés comme tels. Aucune comparaison réelle avec et sans IA, ni mesure pédagogique sur des lecteurs, n’a été réalisée. Voir [le rapport](../tutoriel/08-choisir/VERIFICATION.md) et la [passe adverse](relecture-partie8.md).
 
 Cette partie attend la relecture de l’auteur. Les huit parties sont rédigées ; cela ne vaut ni validation générale ni publication sur ZdS.
+
+## Préparation de la reprise et de la relecture globale
+
+L’auteur a donné un avis globalement positif sur la partie 8, en demandant de reprendre plus tard son ton et les oppositions rhétoriques répétées. Une nouvelle [introduction générale](../tutoriel/introduction.md) est rédigée et attend sa relecture. Le [ZIP global](../telechargements/zds/tutoriel-ia-complet.zip) réunit les huit parties et les annexes ; sa structure est vérifiée, son import interactif dans ZdS reste à faire.
+
+Les [prompts locaux](prompts/LOCAL-COORDINATEUR.md) couvrent les expériences sur le PC de Hugo. Le [prompt de réécriture](prompts/RELECTURE-COORDINATEUR.md) demande une flotte de huit sous-agents et renvoie au guide détaillé de sa voix. Ces documents n’attestent ni de nouvelles expériences GPU ni d’une passe globale déjà réalisée. Les chapitres existants ne sont pas réécrits lors de cette préparation.
