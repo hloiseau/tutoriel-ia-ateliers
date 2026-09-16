@@ -13,7 +13,7 @@ Table: Quelques points de contrôle avant de réinstaller tout l’atelier
 
 Si vous changez le port, il faudra aussi changer `BASE` dans `client.py`. Pour le premier essai, conserver `8080` évite cette manipulation supplémentaire.
 
-Ne lancez pas le programme en administrateur pour essayer de corriger une erreur de chemin ou un manque de mémoire. Cela ne règle aucun de ces deux problèmes.
+Les droits d’administrateur ne corrigent ni un chemin erroné ni un manque de mémoire. Gardez les permissions normales et revenez au premier message utile.
 
 Sous Linux x86-64, si le moteur signale `no backends are loaded` alors que les bibliothèques sont présentes, vous pouvez lui indiquer explicitement la variante CPU générique fournie dans l’archive :
 

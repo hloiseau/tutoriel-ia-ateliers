@@ -8,7 +8,7 @@
 
 ## Ouvrir le banc d’essai
 
-Récupérez le dossier [ateliers/05-agents du dépôt](https://github.com/hloiseau/tutoriel-ia-ateliers/tree/main/ateliers/05-agents), ou téléchargez [l’archive de cet atelier](https://github.com/hloiseau/tutoriel-ia-ateliers/raw/main/telechargements/atelier-agents.zip). Décompressez-la dans un dossier de travail et ouvrez le terminal à côté de `banc.py`.
+Récupérez le dossier [ateliers/05-agents du dépôt](https://github.com/hloiseau/tutoriel-ia-ateliers/tree/main/ateliers/05-agents), ou téléchargez [l’archive de cet atelier](https://github.com/hloiseau/tutoriel-ia-ateliers/raw/main/telechargements/atelier-agents.zip). Décompressez-la dans un dossier de travail. Pour la suite, votre terminal doit être ouvert dans le dossier qui contient `banc.py`.
 
 Le dossier `projet` contient la fonction initiale de suivi de prix et son ticket. Les fichiers de `cas` décrivent les appels que nous allons rejouer. Nous ne toucherons pas à votre correction de la partie 4.
 
@@ -28,7 +28,9 @@ Journal : sorties/lecture.jsonl
 ```
 Code: Deux demandes de lecture réellement exécutées par le banc
 
-Ouvrez `sorties/lecture.jsonl`. Chaque ligne est un objet JSON : la demande, le résultat et le temps passé dans l’outil y sont conservés. Pour refaire l’essai, donnez un autre nom au journal ; le programme refuse d’écraser un journal existant.
+Le terminal résume le parcours ; le détail se trouve dans `sorties/lecture.jsonl`. Chaque ligne est un objet JSON qui conserve la demande, son résultat et le temps passé dans la fonction Python, sous la clé `secondes_outil`. Cette durée ne mesure aucune inférence de modèle.
+
+Pour refaire l’essai, donnez un autre nom au journal. Le programme refuse d’écraser le premier, afin que vous puissiez comparer les traces.
 
 ## Qui a fait quoi ?
 
@@ -38,14 +40,14 @@ Ouvrez maintenant `cas/lecture.json`. Sa première demande est :
 {"outil": "lire_fichier", "arguments": {"chemin": "TICKET.md"}}
 ```
 
-Le script choisit ici l’appel. Dans une session d’agent, c’est généralement une réponse du modèle qui demande cet outil avec ces arguments. Le logiciel reçoit la demande, effectue les contrôles nécessaires, puis appelle la fonction. Il renvoie ensuite le résultat au modèle pour poursuivre la conversation[^p5-outils].
+Dans notre banc, le fichier JSON choisit l’appel. Dans une session d’agent, la demande vient généralement d’une réponse du modèle. Le logiciel reçoit le nom de l’outil et ses arguments, applique ses contrôles, puis exécute la fonction ou renvoie un refus. Le résultat rejoint ensuite la conversation et le modèle peut choisir l’étape suivante[^p5-outils].
 
 ![Une demande passe par le contrôle du programme ; elle mène à l’outil ou à un refus, puis le résultat revient à la conversation](../images/boucle.png)
 Figure: La demande et son exécution sont deux moments différents
 
-Dans le journal, retrouvez le contenu du ticket sous `resultat.contenu`. C’est cette information qu’un assistant pourrait fournir au modèle au tour suivant. La ligne « je vais lire le ticket » ne suffit pas : elle ne contient ni l’appel ni son résultat.
+Dans le journal, retrouvez le contenu du ticket sous `resultat.contenu`. Voilà l’information qu’un assistant pourrait fournir au modèle au tour suivant. Une phrase comme « je vais lire le ticket » annonce seulement une intention ; le journal permet de vérifier l’appel et son résultat.
 
-Notre banc s’arrête à la fin de la liste. Un agent peut, lui, choisir une autre action selon la réponse reçue, poser une question ou terminer. Le journal expose des actions et des résultats ; ce n’est pas un enregistrement de tout son raisonnement interne.
+Le banc s’arrête à la fin de la liste préparée. Un agent réel peut demander une autre action selon le résultat reçu, poser une question ou terminer. Son journal expose les actions et leurs résultats, sans nous livrer pour autant tout le raisonnement interne du modèle.
 
 [^p5-outils]: Anthropic, [fonctionnement des appels d’outils](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview). Les noms des messages dépendent de l’API ; la demande et l’exécution restent distinctes.
 
@@ -60,13 +62,13 @@ Appuie ton explication sur la fonction présente dans ce dossier.
 Ne modifie aucun fichier et ne lance pas les tests.
 ```
 
-Dépliez les actions affichées par l’outil. Cherchez quels fichiers ont été lus et à quel moment leur contenu est revenu. Selon l’application, vous verrez les arguments complets, un extrait ou seulement une indication de lecture. Notez ce que l’interface permet réellement de vérifier.
+Dépliez les actions affichées par l’outil. Quels fichiers ont été lus ? À quel moment leur contenu est-il revenu ? Selon l’application, vous verrez les arguments complets, un extrait ou une simple indication de lecture. Notez uniquement ce que l’interface vous permet de vérifier.
 
-Si l’agent répond sans lecture visible, cela ne prouve pas à lui seul qu’il invente : l’éditeur a pu joindre le fichier au contexte. Regardez les pièces jointes et les informations de session. Si vous ne pouvez pas savoir, gardez cette incertitude dans votre relevé.
+Une réponse sans lecture visible peut aussi venir d’un fichier déjà joint au contexte par l’éditeur. Regardez les pièces jointes et les informations de session. Si l’interface ne permet pas de trancher, écrivez-le simplement dans votre relevé au lieu de reconstituer un parcours imaginaire.
 
-Nous allons justement examiner ce que le modèle reçoit, au-delà du texte que nous tapons.
+Cette petite enquête laisse une question ouverte : qu’a réellement reçu le modèle en plus de notre demande ? C’est le sujet du prochain chapitre.
 
-
+Le journal nous donne trois repères : la demande d’outil, le contrôle du programme et le résultat renvoyé. Pour comprendre la réponse finale, il faut maintenant regarder l’autre matière première de l’agent : son contexte.
 
 ---
 

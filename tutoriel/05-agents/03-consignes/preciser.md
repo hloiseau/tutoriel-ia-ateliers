@@ -2,7 +2,7 @@ Voici une demande difficile à contrôler :
 
 > Regarde le code, fais attention aux cas limites et assure-toi que tout est bon.
 
-Qu’est-ce qui nous permettra de dire que le travail est terminé ? Le modèle peut répondre par un commentaire très rassurant sans avoir fait ce que nous attendions.
+À quel résultat reconnaîtrons-nous que le travail est terminé ? Avec cette seule phrase, le modèle peut produire un commentaire très rassurant sans avoir inspecté le bon cas.
 
 Pour notre projet, nous pouvons écrire :
 
@@ -14,6 +14,6 @@ Sinon, propose un test qui appelle notifier sur ce cas.
 Ne modifie pas les fichiers. Ne prétends pas avoir exécuté la suite.
 ```
 
-Les verbes sont impératifs et le résultat est vérifiable. L’agent doit retrouver un cas précis ou en proposer un. Il n’a pas à deviner ce que « tout est bon » voulait dire.
+Les verbes sont impératifs, le cas est nommé et le résultat se vérifie dans les fichiers. L’agent doit retrouver un test précis ou en proposer un ; il n’a plus à deviner ce que « tout est bon » voulait dire.
 
-Gardez les demandes courtes tant que le travail l’est. Une longue liste d’interdictions sans rapport rend aussi plus difficile la lecture de ce qui compte.
+Gardez les demandes courtes tant que le travail l’est. Dix interdictions héritées d’un autre ticket finiraient par cacher la seule règle qui compte ici.

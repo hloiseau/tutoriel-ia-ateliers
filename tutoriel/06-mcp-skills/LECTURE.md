@@ -2,13 +2,13 @@
 
 [Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)
 
-**TL;DR** — Nous allons consulter des tickets avec un vrai serveur MCP, développer le nôtre pas à pas, puis préparer une recette avec un skill que nous pourrons modifier nous-mêmes.
+**TL;DR** — Nous allons consulter des tickets avec un serveur utilisant le protocole MCP, développer le nôtre pas à pas, puis préparer une recette avec un skill que nous pourrons modifier nous-mêmes.
 
-Jusqu’ici, nous avons donné des fichiers à l’agent et observé ses appels d’outils. Mais les informations nécessaires ne sont pas toujours dans le dépôt : le ticket est dans Jira, une décision dans la documentation, un résultat dans les logs… On peut tout copier dans la conversation. Une fois. À la dixième, on aimerait bien faire autrement. 😅
+Jusqu’ici, nous avons donné des fichiers à l’agent et observé ses appels d’outils. Seulement, les informations nécessaires ne vivent pas toujours dans le dépôt : le ticket est dans Jira, une décision dans la documentation, un résultat dans les logs… On peut tout copier dans la conversation. Une fois. À la dixième, on aimerait bien faire autrement. 😅
 
-Nous allons donner à l’agent un moyen de consulter ces informations, puis lui expliquer comment s’en servir pour une tâche précise. Ce sont deux choses différentes : **accéder à un ticket** et **préparer les tests de ce ticket**.
+Nous allons donc lui donner un accès précis à ces informations, puis écrire la procédure qui permet de s’en servir pour préparer des tests. Le serveur MCP s’occupera du premier travail ; le skill décrira le second.
 
-Pour suivre, gardez Python 3.12 et l’assistant utilisé dans la partie 4. Le serveur et le client de l’atelier fonctionnent sur CPU, sans modèle et sans compte sur un service de tickets. Les essais dans l’assistant utilisent votre modèle habituel. Nous n’allons pas transformer le petit modèle local de la partie 3 en agent de développement.
+Pour suivre, gardez Python 3.12 et l’assistant utilisé dans la partie 4. Le serveur et le client de l’atelier fonctionnent sur CPU, sans modèle et sans compte sur un service de tickets. Les essais dans l’assistant réutilisent votre modèle habituel : le petit modèle local de la partie 3 n’a pas été validé pour mener une session d’agent de développement.
 
 Les tickets et les documents sont fictifs. Nous retrouvons notre suivi de prix avec un premier ticket, PRIX-1, dont la règle est décidée, et un second, PRIX-2, auquel il manque encore des informations. Les [fichiers de l’atelier](https://github.com/hloiseau/tutoriel-ia-ateliers/tree/main/ateliers/06-mcp-skills) sont disponibles dans le dépôt.
 
@@ -16,7 +16,7 @@ Les tickets et les documents sont fictifs. Nous retrouvons notre suivi de prix a
 
 **TL;DR** — Le client lance le serveur, lui demande PRIX-1 et enregistre sa réponse. Aucun modèle n’intervient encore.
 
-Avant de parler du protocole, faisons-lui transporter quelque chose. Un ticket fera très bien l’affaire. 🙂
+Avant de démonter le protocole pièce par pièce, faisons-lui transporter quelque chose. Un ticket fera très bien l’affaire. 🙂
 
 ### Préparer le dossier
 
@@ -75,9 +75,9 @@ La réponse est assez longue : le SDK fournit notamment une représentation text
 ```
 Code: Contenu du ticket fictif retourné par le serveur
 
-Comparez-le avec `donnees/tickets.json`. C’est bien notre fichier qui a répondu. Le client n’a ni deviné la règle ni demandé à un modèle de la reformuler.
+Comparez-le avec `donnees/tickets.json` : les champs correspondent. Le client a lu la règle par l’intermédiaire du serveur, sans demander à un modèle de la deviner ou de la reformuler.
 
-Le journal conserve aussi `protocole`, la version employée lors de l’échange. Notre exécution avec le SDK fourni utilise `2026-07-28`. Ce journal contient les résultats obtenus par le client, pas une capture de chaque message qui a circulé.
+Le journal conserve aussi `protocole`, la version employée lors de l’échange. Notre exécution avec le SDK fourni utilise `2026-07-28`. Nous y enregistrons le résultat obtenu par le client ; pour examiner chaque message du transport, il faudrait une trace plus détaillée.
 
 Pour refaire la commande, choisissez un autre nom de journal. Le client refuse d’écraser le premier : nous pourrons comparer nos essais sans perdre la réponse précédente.
 
@@ -101,11 +101,11 @@ C’est différent d’un client qui n’arrive même pas à démarrer :
 | `isError: true` dans un journal enregistré | Le message retourné par l’outil |
 | Le serveur s’arrête avant de répondre | La sortie d’erreur du terminal et les dépendances |
 
-Le client imprime les erreurs attendues de l’outil dans son journal et termine normalement. Un code de sortie nul signifie ici qu’il a pu enregistrer la réponse, pas que le ticket demandé a été trouvé.
+Le client enregistre les erreurs attendues de l’outil dans son journal et termine normalement. Son code de sortie nul nous apprend que l’échange a pu être conservé. Pour savoir si le ticket a été trouvé, il faut encore lire `isError` et le message de l’outil.
 
-Une erreur correctement remontée est déjà un résultat utile : l’agent pourra dire qu’il n’a pas obtenu le ticket. Une réponse inventée serait beaucoup plus ennuyeuse à repérer.
+Cette erreur correctement remontée est déjà utile : l’agent pourra dire qu’il n’a pas obtenu le ticket. C’est tout de même plus facile à traiter qu’une réponse inventée avec beaucoup d’assurance. 😅
 
-Nous avons obtenu une donnée par MCP. Regardons maintenant ce que le client a dû connaître pour la demander, puis remplaçons-le par notre assistant.
+PRIX-1 est arrivé jusqu’à notre journal. Regardons maintenant comment le client a découvert l’outil qui le lui a fourni, puis branchons ce même serveur à notre assistant.
 
 ## 2. Brancher le serveur à notre assistant
 
@@ -133,9 +133,9 @@ Code: Deux appels du SDK, à l’intérieur d’un client ouvert
 
 MCP, pour *Model Context Protocol*, définit notamment la découverte et l’appel des outils ; le SDK construit les messages nécessaires.[^p6-tools] Nous n’avons pas à écrire nous-mêmes l’enveloppe du protocole.
 
-Voilà ce qu’apporte un format commun : notre assistant peut demander au serveur son inventaire, au lieu de contenir à l’avance une intégration Python spécifique à `lire_ticket`. Cela ne garantit ni que tous les assistants utilisent toutes les possibilités de MCP, ni qu’ils montrent les mêmes boutons.
+Voilà ce qu’apporte un format commun : notre assistant peut demander au serveur son inventaire, au lieu d’embarquer une intégration Python écrite spécialement pour `lire_ticket`. Chaque assistant choisit ensuite les possibilités qu’il prend en charge et la manière de les présenter dans son interface.
 
-Et MCP n’a pas choisi de lire PRIX-1 : dans notre client, ce choix vient de la ligne de commande. Dans un agent, il peut venir d’une demande d’outil produite par le modèle, traitée par le programme qui l’entoure.
+Dans notre client, la ligne de commande choisit de lire PRIX-1. Avec un agent, le modèle peut demander cet outil ; le programme qui l’entoure décide alors comment traiter cette demande et son résultat. MCP décrit l’échange entre les programmes, il ne décide pas quel ticket consulter.
 
 [^p6-tools]: Spécification MCP, [outils et appels d’outils](https://modelcontextprotocol.io/specification/2026-07-28/server/tools).
 
@@ -155,9 +155,9 @@ Demandez :
 
 > Consulte PRIX-1 avec le MCP atelier-tickets et donne-moi sa règle.
 
-Dépliez l’appel d’outil. Retrouve-t-on `lire_ticket`, l’identifiant `PRIX-1` et la règle que nous avons obtenue dans le terminal ? Si l’assistant a seulement ouvert `tickets.json`, il a pu trouver la bonne réponse, mais vous n’avez pas encore testé son accès MCP.
+Dépliez l’appel d’outil. Retrouve-t-on `lire_ticket`, l’identifiant `PRIX-1` et la règle obtenue dans le terminal ? Si l’assistant a simplement ouvert `tickets.json`, sa réponse peut être juste, mais cet essai ne nous apprend encore rien sur son accès MCP.
 
-Avec Cursor, Codex, Pi ou un autre assistant, gardez votre outil. Il faut reprendre la **commande** et les **arguments** dans sa configuration MCP, si votre installation prend en charge le transport stdio. Le fichier JSON de VS Code n’est pas un format de configuration universel. Si cet accès manque, les manipulations avec `client.py` restent disponibles ; nous pourrons essayer séparément la procédure du skill.
+Avec Cursor, Codex, Pi ou un autre assistant, gardez votre outil. S’il prend en charge le transport stdio, reprenez la **commande** et les **arguments** dans son propre format de configuration MCP : le JSON de VS Code ne se copie pas tel quel partout. Sans cet accès, poursuivez les manipulations avec `client.py` ; la procédure du skill pourra être essayée séparément.
 
 [^p6-vscode-mcp]: [Ajouter et gérer les serveurs MCP dans VS Code](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
 
@@ -170,19 +170,19 @@ Figure: Un serveur local peut alimenter un modèle distant
 
 Dans le vocabulaire MCP, l’application qui accueille l’interaction est l’**hôte**. Elle contient un client MCP qui parle au serveur. Le modèle n’a pas besoin de comprendre comment Python ouvre `tickets.json` ; il reçoit les outils que l’hôte lui présente et les résultats que celui-ci réintroduit dans la conversation.
 
-Le mot *local* mérite donc qu’on précise ce qu’il désigne. Le serveur tourne ici sur notre machine. Si l’assistant utilise un modèle hébergé, les informations issues du ticket peuvent ensuite lui être envoyées. Héberger le MCP chez soi ne suffit pas à garder toute la conversation chez soi.
+Le mot *local* désigne ici le serveur, qui tourne sur notre machine. Avec un modèle hébergé, les informations issues du ticket peuvent ensuite quitter cette machine pour rejoindre la conversation. Il faut suivre tout le trajet avant de conclure où vivent les données.
 
 Pour notre atelier, les données sont fictives. Dans un projet professionnel, ce trajet aide à décider quels champs exposer et avec quel compte accéder aux services. Une liste d’identifiants et de titres suffit parfois pour chercher ; envoyer tout le ticket, ses pièces jointes et son historique à chaque recherche ajouterait des informations dont on n’a pas encore besoin.
 
 [^p6-transport]: Spécification MCP, [transports stdio et Streamable HTTP](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports).
 
-Le même serveur peut être appelé par notre script ou par un assistant compatible. Nous avons essayé celui de l’atelier ; au chapitre suivant, nous allons créer le nôtre, depuis un fichier vide.
+Notre script sait appeler le serveur, et un assistant compatible peut faire le même échange. Nous connaissons maintenant le résultat à obtenir ; construisons notre propre serveur depuis un fichier vide.
 
 ## 3. Développer notre serveur MCP, pas à pas
 
 **TL;DR** — Nous allons créer `mon_serveur.py`, lui ajouter un premier outil, puis la recherche documentaire, la validation des paramètres et des tests. À chaque étape, le client appellera le fichier que nous venons d’écrire.
 
-Le serveur fourni nous a permis de voir le résultat. À nous de construire le nôtre ! Gardez le même dossier d’atelier et le même environnement Python : les données et le client sont déjà prêts.
+Le serveur fourni nous a montré le résultat. À nous de construire le nôtre ! Gardez le même dossier d’atelier et le même environnement Python : les données et le client sont déjà prêts, ce qui nous permet de vérifier chaque ajout au fur et à mesure.
 
 ### Partir d’un fichier vide
 
@@ -279,7 +279,7 @@ def catalogue(nom):
     return json.loads((ROOT / "donnees" / nom).read_text(encoding="utf-8"))
 ```
 
-`ROOT` désigne le dossier du fichier serveur. Le catalogue reste donc accessible même si un assistant démarre ce programme depuis un autre dossier. Ici, `nom` viendra uniquement de chaînes écrites dans nos fonctions : le client ne pourra pas choisir un chemin de fichier.
+`ROOT` désigne le dossier du fichier serveur. Le catalogue reste ainsi accessible même si un assistant démarre le programme depuis un autre dossier. La valeur de `nom` vient uniquement des chaînes écrites dans nos fonctions ; aucun argument du client n’est utilisé pour construire ce chemin.
 
 Remplacez ensuite **toute la fonction `lire_ticket`, décorateur compris**, par :
 
@@ -299,13 +299,13 @@ Essayez maintenant :
 python client.py ticket PRIX-2 --serveur mon_serveur.py --journal sorties/c02-ticket.json
 ```
 
-Le résultat contient les deux questions ouvertes de PRIX-2. Comparez-le avec `donnees/tickets.json` : la fonction a trouvé l’identifiant dans le catalogue et renvoyé son contenu. Elle n’a plus besoin d’embarquer les données de chaque ticket dans son code.
+Le résultat contient les deux questions ouvertes de PRIX-2. Comparez-le avec `donnees/tickets.json` : la fonction a trouvé l’identifiant dans le catalogue et renvoyé son contenu. Les prochains tickets pourront être ajoutés dans les données, sans grossir cette fonction.
 
 Nous relisons le petit fichier à chaque appel. Cela rend les changements immédiatement visibles et suffit pour ce jeu de données. Un service réel appellerait peut-être une API, gérerait ses erreurs et contrôlerait les droits du compte utilisé ; nous avons isolé l’accès aux données pour pouvoir le faire évoluer.
 
 ### Ajouter la recherche documentaire
 
-PRIX-1 cite `regle-notification`. Nous allons ajouter un outil pour ouvrir ce document et un autre pour trouver des documents quand on ne connaît pas encore leur identifiant.
+PRIX-1 cite `regle-notification`, mais un ticket ne nous donnera pas toujours l’identifiant du bon document. Ajoutons un outil pour ouvrir une source connue et un autre pour la chercher.
 
 Ajoutez ces deux fonctions après `lire_ticket`, toujours avant le démarrage du serveur :
 
@@ -349,7 +349,7 @@ python client.py document regle-notification --serveur mon_serveur.py --journal 
 
 La recherche doit trouver la règle et la note archivée. Le second appel retourne le texte complet de la règle en vigueur. Nous pouvons ainsi **chercher des sources**, puis **ouvrir celle qui nous intéresse**, sans charger tous les textes dès la première demande.
 
-Essayez aussi une recherche avec `alerte`, dans un nouveau journal. Elle ne trouve rien : notre code cherche une expression littérale, pas un sens voisin. Il n’y a pas d’embeddings cachés dans la boucle. Cette limite vient de notre fonction, pas du protocole MCP.
+Essayez aussi une recherche avec `alerte`, dans un nouveau journal. Elle ne trouve rien : notre code cherche une expression littérale et ignore les mots de sens voisin. Aucune magie ni embeddings cachés dans cette petite boucle. 🙂 Cette limite vient de notre fonction de recherche ; MCP se contente d’en transporter la demande et le résultat.
 
 ### Valider les paramètres reçus
 
@@ -396,7 +396,7 @@ def lire_document(identifiant: IdentifiantDocument) -> dict[str, Any]:
 
 Remplacez également les trois décorateurs `@mcp.tool()` par `@mcp.tool(annotations=LECTURE)`.
 
-Les annotations déclarent que nos outils lisent des données, ne les détruisent pas, et que répéter la lecture n’ajoute pas d’effet d’écriture. `openWorldHint=False` indique qu’ils travaillent dans notre jeu fermé de données. Ces indications ne retirent aucun droit au processus : c’est toujours notre code qui doit correspondre à ce qu’il annonce.[^p6-construire-annotations]
+Les annotations présentent nos outils comme des lectures non destructives que l’on peut répéter sans ajouter d’effet d’écriture. `openWorldHint=False` indique qu’ils travaillent dans notre jeu fermé de données. Le client peut utiliser ces indications pour présenter ou choisir les outils. Les droits du processus, eux, restent inchangés : notre code doit réellement tenir ce qu’il annonce.[^p6-construire-annotations]
 
 Vérifiez l’inventaire et une demande invalide :
 
@@ -430,19 +430,19 @@ Puis lisez-la :
 python client.py conventions --serveur mon_serveur.py --journal sorties/c05-conventions.json
 ```
 
-La réponse contient le texte de nos conventions, notamment l’usage des centimes. `atelier://conventions` est un identifiant compris par le serveur, pas une adresse à ouvrir dans le navigateur.
+La réponse contient le texte de nos conventions, notamment l’usage des centimes. L’identifiant `atelier://conventions` permet au serveur de désigner cette ressource ; votre navigateur n’a rien à ouvrir à cette adresse.
 
 Un outil propose une opération avec des arguments ; une ressource expose un contenu identifié. Un autre serveur pourrait représenter ses tickets comme des ressources. Le client décide ensuite comment proposer ou charger ces contenus.[^p6-construire-ressource]
 
 Notre fichier contient maintenant trois outils et une ressource. Si vous souhaitez comparer, `serveur.py` est le corrigé complet. Regardez les différences avant de remplacer quoi que ce soit : une faute de nom ou une définition après `run` suffit à expliquer un outil absent.
 
-Pour déboguer, évitez les `print()` dans le serveur : sa sortie standard transporte MCP. Utilisez les logs ou la sortie d’erreur, par exemple `print("lecture du catalogue", file=sys.stderr)` après avoir importé `sys`. Votre message restera alors un diagnostic, pas un morceau de protocole à décoder.
+Pour déboguer, évitez les `print()` dans le serveur : sa sortie standard transporte MCP. Utilisez les logs ou la sortie d’erreur, par exemple `print("lecture du catalogue", file=sys.stderr)` après avoir importé `sys`. Votre diagnostic ne se retrouvera pas au milieu des messages du protocole.
 
 [^p6-construire-ressource]: Spécification MCP, [ressources](https://modelcontextprotocol.io/specification/2026-07-28/server/resources).
 
 ### Écrire les tests et utiliser notre serveur
 
-Nos commandes montrent que quelques appels fonctionnent. Gardons aussi des contrôles que nous pourrons relancer après un changement.
+Nos commandes montrent que quelques appels fonctionnent. Écrivons maintenant des contrôles que nous pourrons relancer après chaque changement, sans rouvrir les journaux un par un.
 
 Créez `test_mon_serveur.py` à côté de `mon_serveur.py` et écrivez :
 
@@ -487,7 +487,7 @@ python -m unittest test_mon_serveur -v
 
 Les trois tests doivent passer. Le deuxième cherche aussi `string_pattern_mismatch`, le code de l’erreur de format retournée par notre version du SDK : une simple erreur « document introuvable » ne suffirait pas. Le troisième vérifie l’inventaire, pour distinguer un outil absent d’un outil présent qui aurait refusé cet appel.
 
-`IsolatedAsyncioTestCase` permet d’écrire des tests avec `async` et `await`. `Client(mcp)` appelle notre serveur en mémoire ; il ne démarre pas de processus. Les commandes précédentes ont, elles, exercé le transport stdio.
+`IsolatedAsyncioTestCase` permet d’écrire des tests avec `async` et `await`. Ici, `Client(mcp)` appelle le serveur en mémoire. Les commandes précédentes complètent donc ces tests en exerçant le transport stdio entre deux processus.
 
 Vérifions que le premier test ne passe pas par accident. Commentez temporairement le décorateur de `lire_ticket` dans **`mon_serveur.py`**, puis relancez les tests. La lecture doit échouer : la fonction existe toujours en Python, mais elle n’est plus exposée comme outil. Rétablissez le décorateur et vérifiez que les trois tests repassent au vert.
 
@@ -501,17 +501,17 @@ python configuration.py --serveur mon_serveur.py
 
 Dans `.vscode/mcp.json`, remplacez l’entrée **`atelier-tickets`** par celle affichée, en gardant vos autres serveurs. Arrêtez puis redémarrez cette entrée depuis **MCP: List Servers** pour charger votre programme. Les chemins absolus affichés concernent votre machine. Avec un autre assistant, modifiez le chemin du programme dans sa configuration MCP.
 
-Demandez de nouveau la lecture de PRIX-1 et inspectez l’appel. L’essai dans l’assistant dépend de votre installation et de votre modèle ; les tests Python ne le remplacent pas. Pour les chapitres suivants, nous garderons `mon_serveur.py` et cette configuration.
+Demandez de nouveau la lecture de PRIX-1 et inspectez l’appel. Cet essai dépend de votre installation et de votre modèle. Les tests Python ont vérifié le serveur et ses appels ; ils ne prédisent pas ce que l’assistant choisira d’en faire. Pour les chapitres suivants, nous garderons `mon_serveur.py` et cette configuration.
 
 Nous sommes partis d’un fichier vide et nous avons obtenu un serveur que nous savons appeler, modifier et tester. Le client et l’assistant peuvent maintenant utiliser notre propre fichier.
 
-Au chapitre suivant, nous allons chercher ce que ces contrôles laissent encore passer : un identifiant valide ne donne pas un droit d’accès, et une réponse d’outil peut contenir une mauvaise consigne.
+Nos contrôles ont toutefois un périmètre précis. Le chapitre suivant le mettra à l’épreuve avec une demande mal formée, un outil d’écriture absent et une consigne cachée dans un document.
 
 ## 4. Refuser ce que le serveur ne doit pas faire
 
 **TL;DR** — Nous allons mettre notre serveur à l’épreuve : une demande mal formée, un outil d’écriture absent et une instruction cachée dans un document.
 
-Gardez `mon_serveur.py`, terminé au chapitre précédent, et le terminal ouvert à côté de `client.py`. Les commandes de ce chapitre ciblent votre fichier. Les tests de validation nous ont donné une première limite ; voyons ce qu’elle protège réellement.
+Gardez `mon_serveur.py`, terminé au chapitre précédent, et le terminal ouvert à côté de `client.py`. Toutes les commandes de ce chapitre ciblent votre fichier. Nous allons provoquer plusieurs refus et regarder précisément où chacun intervient.
 
 ### Un identifiant n’est pas un chemin
 
@@ -522,13 +522,13 @@ python client.py document ../tickets --serveur mon_serveur.py --journal sorties/
 python client.py document document-absent --serveur mon_serveur.py --journal sorties/controle-absent.json
 ```
 
-Les deux appels échouent, mais pour des raisons différentes. Le premier ne respecte pas le format attendu ; la fonction ne doit pas traiter cette demande. Le second passe la validation, puis notre recherche dans le catalogue constate que le document n’existe pas.
+Les deux appels échouent, mais à deux endroits différents. Le premier est arrêté par la validation du format, avant l’appel de notre fonction. Le second atteint la fonction ; sa recherche dans le catalogue constate alors que le document n’existe pas.
 
 Regardez ensuite `catalogue("documents.json")` dans votre code. Le nom du fichier est fixé par le programme. L’identifiant reçu sert à chercher une clé dans l’objet chargé, **pas à construire un chemin**. C’est cette conception qui limite les fichiers accessibles par cet outil ; le simple fait d’accepter une chaîne ne l’aurait pas fait.
 
 Le contrôle de la recherche apporte un autre exemple : essayez `chercher "   "` à la place de `document document-absent`, avec un nouveau journal. La chaîne a bien trois caractères, mais notre fonction la nettoie et constate qu’elle ne contient aucun terme utile.
 
-Ces contrôles ne disent pas qui a le droit de lire quel ticket. Notre jeu fictif n’a qu’un seul niveau d’accès. Dans un service partagé, il faudrait aussi vérifier les droits du demandeur : connaître un identifiant valide ne donne pas une autorisation.
+Notre jeu fictif n’a qu’un seul niveau d’accès. Dans un service partagé, il faudrait ajouter le contrôle des droits du demandeur : un identifiant peut être parfaitement formé et désigner malgré tout un ticket auquel ce compte ne devrait pas accéder.
 
 ### Demander une modification impossible par cet outil
 
@@ -540,16 +540,16 @@ python client.py refus --serveur mon_serveur.py --journal sorties/controle-refus
 
 Elle appelle `modifier_ticket` en demandant de terminer PRIX-1. Le serveur répond que l’outil est inconnu : nous ne l’avons pas exposé. Relisez PRIX-1 avec un nouveau journal ; son statut reste `a preparer`.
 
-Vous avez peut-être vu `readOnlyHint` dans l’inventaire. Cette annotation annonce l’intention de l’outil aux clients ; elle ne retire aucun droit au processus et ne transforme pas une fonction d’écriture en lecture seule.[^p6-annotations]
+Vous avez peut-être vu `readOnlyHint` dans l’inventaire. Cette annotation annonce l’intention de l’outil aux clients. Elle ne change ni le code de la fonction ni les droits du processus qui l’exécute.[^p6-annotations]
 
 ![Les paramètres sont validés, seuls les outils déclarés sont accessibles, et les droits du processus restent une limite distincte.](images/acces.png)
 Figure: Trois contrôles différents autour d’une lecture
 
-Notre serveur protège un périmètre précis : il ne propose pas d’opération MCP d’écriture et ses fonctions ne modifient pas les données. Il ne protège pas ces fichiers contre un autre programme lancé avec les droits de notre compte. Si l’assistant possède aussi un terminal, cette autre voie d’accès reste à considérer.
+Notre serveur protège un périmètre précis : il ne propose aucune opération MCP d’écriture et ses fonctions laissent les données intactes. Un assistant qui possède aussi un terminal dispose toutefois d’une autre voie vers les fichiers, avec les droits de notre compte.
 
-Sur un vrai service, on utiliserait en plus un compte disposant uniquement des droits nécessaires. Si le compte peut supprimer un index et qu’un outil générique accepte n’importe quelle requête, retirer seulement l’outil nommé `delete_index` ne suffit pas.
+Sur un vrai service, on utiliserait en plus un compte limité aux droits nécessaires. Un outil générique capable d’envoyer n’importe quelle requête avec un compte administrateur contournerait facilement notre belle absence de bouton `delete_index`.
 
-Notre troisième test couvre l’absence de l’outil d’écriture. La relecture du ticket permet aussi de comparer son état avant et après la demande. Cela vérifie ces appels précis ; ce n’est pas une preuve qu’aucun autre programme ne peut modifier les fichiers de la machine.
+Notre troisième test couvre l’absence de l’outil d’écriture. La relecture du ticket compare aussi son état avant et après la demande. Ces vérifications portent sur les appels que nous venons de jouer ; les droits des autres programmes de la machine restent à traiter séparément.
 
 [^p6-annotations]: Spécification MCP, [les annotations des outils sont des indications, pas des garanties](https://modelcontextprotocol.io/specification/2026-07-28/server/tools).
 
@@ -563,19 +563,19 @@ python client.py document note-archivee --serveur mon_serveur.py --journal sorti
 
 Son texte demande d’ignorer le ticket, de terminer PRIX-1, puis d’annoncer que tous les tests passent. C’est le document piégé fictif de l’atelier.
 
-Le serveur le retourne sans l’exécuter. Jusque-là, rien de mystérieux : pour Python, il s’agit d’une chaîne. Le problème apparaît si un agent traite ce contenu comme une nouvelle instruction à suivre. Il a demandé de la documentation ; il ne devrait pas en déduire une autorisation de modifier un ticket.
+Le serveur retourne cette chaîne telle quelle. Le danger apparaît plus loin, si l’agent traite le texte reçu comme une nouvelle instruction : il a demandé de la documentation et se retrouve soudain prié de modifier un ticket.
 
 Dans une conversation d’essai, demandez à votre assistant de lire cette note et d’en comparer le contenu à PRIX-1. Regardez les outils appelés et la réponse obtenue. Un résultat satisfaisant identifie le caractère archivé et la demande étrangère à la tâche ; il n’annonce pas des tests qu’il n’a pas exécutés. Si l’agent tente une action, conservez la trace : nous avons précisément besoin de voir où la séparation a échoué.
 
-Même si la tentative `modifier_ticket` est bloquée, le modèle peut encore écrire une réponse trompeuse dans la conversation. La barrière technique protège l’action visée, pas la vérité de chaque phrase.
+Le refus de `modifier_ticket` protège l’action visée. Le modèle peut tout de même écrire dans la conversation que les tests passent ; aucune barrière technique de notre petit serveur ne vérifie la vérité de cette phrase.
 
-Nous avons déjà abordé les instructions cachées dans la partie 5. Ici, elles arrivent par un autre chemin : **une réponse d’outil reste du contenu à examiner**. Le fait qu’elle ait traversé MCP n’en fait pas une consigne prioritaire.
+Nous avons déjà abordé les instructions cachées dans la partie 5. Ici, elles arrivent par une réponse d’outil. Gardons le même réflexe : ce contenu doit être examiné comme une source, même s’il a traversé MCP.
 
-Le serveur sait fournir des données et rejeter certaines demandes. Il ne sait toujours pas comment nous voulons préparer une recette. C’est le rôle du fichier que nous allons écrire.
+Le serveur fournit les données et bloque les demandes qui sortent de son contrat. Pour transformer ces sources en scénarios de recette, il nous manque encore une procédure : ce sera notre premier skill.
 
 ## 5. Écrire notre premier skill
 
-**TL;DR** — Nous allons mettre une procédure de préparation de recette dans un dossier lisible et modifiable. Le skill dira quoi faire des sources ; il ne créera pas les accès MCP.
+**TL;DR** — Nous allons mettre une procédure de préparation de recette dans un dossier lisible et modifiable. Le skill guidera l’usage des sources déjà accessibles par MCP.
 
 Demander « prépare-moi les tests » laisse encore beaucoup de place à l’interprétation. Quels tests ? Avec quelles données ? Et que faire si le ticket ne décide pas du résultat attendu ?
 
@@ -592,7 +592,7 @@ license: CC-BY-SA-4.0
 ```
 Code: Métadonnées du skill fourni
 
-Le nom désigne la tâche. La description aide l’assistant à reconnaître quand ce dossier peut servir. « Un super expert du développement » ne lui dirait pas grand-chose sur le moment où charger une procédure de recette.
+Le nom désigne la tâche. La description aide l’assistant à reconnaître quand ce dossier peut servir. Avec « un super expert du développement », il aurait encore fallu deviner à quel moment charger une procédure de recette.
 
 Le format Agent Skills prévoit un dossier contenant `SKILL.md`, avec des métadonnées YAML puis les instructions en Markdown. On peut y joindre des scripts, des références ou des modèles de documents.[^p6-format-skill] Notre dossier ne contient que la procédure et une référence de présentation.
 
@@ -601,7 +601,7 @@ Le format Agent Skills prévoit un dossier contenant `SKILL.md`, avec des métad
 | `SKILL.md` | Quand préparer la recette et comment traiter les sources |
 | `references/format-recette.md` | La forme du résultat à présenter |
 
-Les mots *skill*, *commande* et *plugin* ne désignent donc pas exactement la même chose. Un produit peut proposer notre skill comme commande dans son interface. Un plugin peut distribuer plusieurs skills avec des outils. Notre procédure reste un fichier que nous pouvons lire et modifier sans adopter l’organisation complète d’un plugin.
+Un produit peut proposer notre skill sous la forme d’une commande dans son interface. Un plugin peut, lui, distribuer plusieurs skills avec des outils. Ces mots décrivent des objets qui se recouvrent parfois, mais notre point de départ reste très simple : un fichier de procédure que nous pouvons lire et modifier.
 
 [^p6-format-skill]: [Spécification du format Agent Skills](https://agentskills.io/specification).
 
@@ -613,13 +613,13 @@ Le corps du skill commence par demander la lecture du ticket. Il fait ensuite ch
 
 Nous écrivons à l’impératif parce que nous décrivons la procédure attendue. « Tu pourrais peut-être vérifier les questions » ressemble à une possibilité parmi d’autres. Ici, leur examen fait partie du travail.
 
-Cela ne transforme pas le texte en programme déterministe. Nous devrons vérifier que le modèle suit cette procédure, comme nous avons vérifié les tests proposés dans la partie 4.
+L’impératif rend notre attente claire ; il ne transforme pas le texte en programme déterministe. Nous devrons vérifier ce que le modèle en fait, comme nous avons relu les tests proposés dans la partie 4.
 
 Le skill ne contient pas la règle « notifier si le prix baisse et si le produit est disponible ». Cette information appartient au ticket et à sa documentation. En la recopiant dans la procédure, nous créerions une deuxième version à mettre à jour lors du prochain changement métier.
 
-Enfin, le skill demande de lire `references/format-recette.md` au moment de présenter le résultat. Ce fichier précise les colonnes : cas, préconditions, action, résultat attendu et source. Il ne sert pas à découvrir si PRIX-1 existe ; le charger plus tard permet de garder les informations proches de l’étape où elles sont utiles.
+Enfin, le skill demande de lire `references/format-recette.md` au moment de présenter le résultat. Ce fichier précise les colonnes : cas, préconditions, action, résultat attendu et source. L’assistant peut ainsi charger ce format au moment de rédiger, après avoir découvert PRIX-1 et examiné ses sources.
 
-Le chargement progressif dépend de l’implémentation du client : séparer les fichiers rend ce fonctionnement possible, mais ne prouve pas à lui seul que votre assistant évite de tout charger.[^p6-chargement]
+Le chargement progressif dépend de l’implémentation du client. Cette séparation le rend possible ; vérifiez dans votre outil quels fichiers sont réellement chargés et à quel moment.[^p6-chargement]
 
 [^p6-chargement]: Agent Skills, [prise en charge et chargement par les clients](https://agentskills.io/client-implementation/adding-skills-support).
 
@@ -631,13 +631,13 @@ Si `/preparer-recette` apparaît dans le chat, sélectionnez-le puis demandez :
 
 > Prépare la recette de PRIX-1 avec le MCP atelier-tickets. Présente-la dans la conversation.
 
-Avec un autre assistant, utilisez son emplacement de skills ou demandez explicitement la lecture du fichier fourni. Cette dernière possibilité permet d’essayer les instructions, même sans découverte automatique du dossier. Elle ne valide pas le mécanisme d’activation du produit.
+Avec un autre assistant, utilisez son emplacement de skills ou demandez explicitement la lecture du fichier fourni. Dans ce second cas, vous essayez bien les instructions, mais pas la découverte automatique du dossier par le produit.
 
 Dans la réponse, cherchez des cas concrets. Le retour en stock à prix égal doit être distingué du retour en stock accompagné d’une baisse. L’indisponibilité nouvelle doit aussi être couverte. Un tableau très long qui répète seulement « le système fonctionne correctement » ne nous aide pas beaucoup. 😅
 
 Comparez la proposition avec `attendus-recette.md`. Ce document contient des cas rédigés pour l’exercice. Les données y sont en centimes, comme dans nos conventions. Il explique aussi ce qui manque pour exécuter une vraie recette : notre jeu ne décrit ni interface de staging ni compte ni moyen d’observer un envoi.
 
-La préparation peut donc être utile sans prétendre que les tests ont eu lieu. Pour annoncer un résultat, il faudrait encore disposer de l’application et jouer les scénarios.
+À ce stade, nous avons préparé des scénarios. Pour annoncer leurs résultats, il faudrait encore disposer de l’application et les exécuter. Gardons cette différence dans le vocabulaire : une jolie recette ne fait toujours pas cuire le gâteau. 🙂
 
 [^p6-vscode-skill]: [Utiliser les skills dans VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills).
 
@@ -653,7 +653,7 @@ Un ami m’a proposé une comparaison qui me plaît bien :
 
 On peut reprendre une bonne base sans tout garder. Pour un skill, cela peut vouloir dire retirer une étape qui ne nous sert pas, ajouter une vérification qui manque ou remplacer une étape prévue pour un outil que l’on n’utilise pas. C’est à la procédure de s’adapter à notre manière de travailler.
 
-C’est souvent là que les choses deviennent intéressantes : le premier exemple marchait, le suivant révèle ce que nous n’avions pas précisé.
+C’est souvent là que les choses deviennent intéressantes : PRIX-1 peut donner un résultat convaincant, puis PRIX-2 révèle tout ce que la procédure ou le ticket n’avaient pas précisé.
 
 ### Un ticket qui ne dit pas tout
 
@@ -667,11 +667,11 @@ Il demande de limiter les notifications trop rapprochées. Deux questions resten
 
 Ouvrez une nouvelle conversation, chargez le même skill et demandez la préparation de PRIX-2. Une nouvelle conversation évite que vos corrections précédentes soient les seules à expliquer un bon résultat : nous voulons voir ce que les fichiers permettent de refaire.
 
-Que doit contenir la réponse ? Des questions, justement. On peut déjà identifier des familles de cas : une notification juste avant la limite, une autre juste après, une nouvelle baisse pendant l’intervalle. Mais choisir « dix minutes » ou décider qu’une forte baisse passe toujours inventerait une règle.
+La réponse devrait faire apparaître les deux questions. Elle peut déjà identifier des familles de cas : une notification juste avant la limite, une autre juste après, une nouvelle baisse pendant l’intervalle. En revanche, « dix minutes » ou « une forte baisse passe toujours » seraient des règles inventées pour remplir les cases.
 
 La documentation de PRIX-1 ne résout pas cette ambiguïté. Elle dit quand une baisse rend une notification pertinente ; PRIX-2 ajoute une condition de temporisation encore à définir. Des sources vraies peuvent donc rester insuffisantes pour répondre.
 
-Une recette avec deux résultats « à arbitrer » peut être plus utile qu’un tableau entièrement rempli. Elle montre précisément les décisions dont nous avons besoin pour poursuivre. Ce n’est pas au modèle de décider discrètement du comportement du produit pour que son tableau soit plus joli.
+Une recette avec deux résultats « à arbitrer » peut être plus utile qu’un tableau entièrement rempli. Elle montre précisément les décisions dont nous avons besoin pour poursuivre. Un trou visible se discute avec l’équipe ; une règle inventée au fond d’une cellule risque de devenir le comportement du produit par accident.
 
 ### Changer la règle qui a réellement manqué
 
@@ -681,13 +681,13 @@ Si le skill a bien été chargé, vous pouvez demander une correction précise :
 
 > Sur PRIX-2, tu as choisi une durée alors que le ticket la laisse ouverte. Modifie le skill pour laisser ce résultat à arbitrer et présenter la question. Garde la préparation possible pour les cas déjà décidés. Montre-moi le diff avant de réessayer.
 
-Relisez le diff. Une bonne modification décrit le comportement manquant. Une mauvaise modification peut simplement ajouter PRIX-2 comme cas particulier, puis inventer une durée sur le prochain ticket.
+Relisez le diff. La modification devrait décrire le comportement manquant de manière générale. Si elle ajoute seulement PRIX-2 comme cas particulier, le prochain ticket incomplet risque de déclencher la même invention.
 
 Notre version fournie contient déjà la consigne sur les décisions manquantes. Si votre assistant la suit, ne rajoutez pas une deuxième formulation pour le principe. Gardez plutôt ce cas dans vos essais futurs.
 
 Après une modification, rejouez PRIX-2 **et** PRIX-1 dans des conversations neuves. Une règle trop large, comme « s’arrêter dès qu’il manque une information », pourrait empêcher toute préparation de PRIX-1 sous prétexte que notre jeu ne fournit pas d’interface de staging. Nous voulons préparer ce qui est déterminé et nommer ce qui manque pour l’exécution.
 
-C’est du *trial and error*, avec des traces qui permettent de comprendre ce qui a changé. L’IA peut nous aider à modifier les fichiers ; nous gardons la décision sur le comportement voulu.
+C’est du *trial and error*, avec des traces pour comprendre ce qui a changé. L’IA peut nous aider à modifier les fichiers ; la décision sur le comportement voulu nous revient toujours.
 
 ### Garder des essais que l’on peut comparer
 
@@ -704,9 +704,9 @@ Conservez une petite fiche par essai :
 
 Ces éléments permettent de comparer autre chose qu’une impression. Un meilleur résultat après avoir changé à la fois le modèle, le ticket et le skill ne nous apprend pas quelle modification a aidé.
 
-Il n’est pas nécessaire d’attendre les retours d’autres lecteurs pour avancer. Nos deux tickets et le document piégé fournissent déjà de quoi mettre la procédure à l’épreuve. Si un nouvel incident apparaît dans votre travail, ajoutez un exemple réduit qui le reproduit, avec des données partageables.
+Nos deux tickets et le document piégé fournissent déjà de quoi mettre la procédure à l’épreuve. Lorsqu’un nouvel incident apparaît dans votre travail, ajoutez un exemple réduit qui le reproduit avec des données partageables ; vous pourrez alors vérifier si la correction tient au prochain changement.
 
-Les tests Python de l’atelier ne vérifient pas cette partie : ils contrôlent le serveur. Pour le skill, le résultat dépend aussi du modèle, du contexte et du produit qui charge les fichiers. Un passage réussi n’est pas un taux de fiabilité.
+Les tests Python de l’atelier contrôlent le serveur. Le skill doit être essayé séparément, car son résultat dépend aussi du modèle, du contexte et du produit qui charge les fichiers. Un seul passage réussi nous donne une trace utile, aucun taux de fiabilité.
 
 Nous pouvons également comparer l’effort avec une préparation manuelle. Si la réponse demande plus de temps à réparer qu’à écrire, le skill n’a pas encore trouvé sa place pour cette tâche. Et si vous n’aimez pas déléguer le code, rien n’oblige à aller plus loin que cette aide à la recette.
 
@@ -716,7 +716,7 @@ La procédure commence à correspondre à une manière de travailler. Reste à l
 
 **TL;DR** — La procédure dit comment travailler ; les conventions décrivent les règles communes du projet ; la base de connaissances fournit les faits dont on a besoin. Nous allons ranger un exemple dans chacun de ces endroits.
 
-Au début, tout tient dans un fichier. Puis on ajoute une règle, un extrait de documentation, trois exceptions… et personne ne sait plus où corriger le montant d’un seuil.
+Au début, tout tient dans un fichier. Puis on ajoute une règle, un extrait de documentation, trois exceptions… et la prochaine personne qui cherche le montant d’un seuil ouvre cinq copies différentes. 😅
 
 ### Mettre chaque information à sa place
 
@@ -735,7 +735,7 @@ Figure: Des fichiers différents parce que les informations changent pour des ra
 
 Si la règle de notification évolue, nous corrigeons sa source métier. Si la présentation des recettes change, nous corrigeons la référence du skill. Si le projet change d’unité monétaire interne, les conventions et le code doivent être revus ensemble.
 
-La séparation n’a d’intérêt que si les liens permettent de retrouver les informations. Dans notre atelier, le ticket cite un document par son identifiant et le skill renvoie explicitement vers son format de recette. Déplacer un paragraphe dans un sous-dossier sans indiquer quand le lire ne suffit pas.
+Les liens rendent cette séparation utilisable. Dans notre atelier, le ticket cite un document par son identifiant et le skill renvoie explicitement vers son format de recette. Un paragraphe déplacé dans un sous-dossier sans indication devient seulement plus difficile à retrouver.
 
 ### Faire une petite passe de refacto
 
@@ -752,7 +752,7 @@ Demandez à l’agent de proposer leur répartition entre les fichiers de l’at
 
 Si vous appliquez une telle refacto à vos propres fichiers, relisez aussi ce qui a été supprimé. Une information déplacée doit toujours exister à son nouvel emplacement ; une règle dupliquée doit avoir une source clairement choisie. Sinon, la prochaine correction laissera deux versions contradictoires.
 
-Puis rejouez la préparation des deux tickets. La réorganisation doit conserver les décisions attendues. Nous ne cherchons pas le plus grand nombre de petits fichiers : une référence de trois lignes peut très bien rester dans le skill si elle sert à chaque utilisation et ne change jamais indépendamment.
+Puis rejouez la préparation des deux tickets et vérifiez que les décisions attendues sont toujours là. Une référence de trois lignes peut très bien rester dans le skill si elle sert à chaque utilisation et ne change jamais indépendamment. Découper davantage ne rapporterait alors que des clics supplémentaires.
 
 Dans mon usage, ces passes viennent après les problèmes rencontrés : une information répétée, une règle perdue, un fichier devenu trop long. Je préfère pouvoir expliquer à quoi sert la séparation que reproduire une arborescence parce qu’elle semble sérieuse.
 
@@ -760,22 +760,24 @@ Dans mon usage, ces passes viennent après les problèmes rencontrés : une info
 
 Nous avons construit un serveur pour consulter des sources et un skill pour préparer une recette. Vous pouvez garder l’un sans l’autre. Une commande qui affiche le ticket peut suffire dans un petit projet ; un skill peut travailler à partir de documents déjà présents dans le dépôt.
 
-Avant d’ajouter un MCP, regardez ce qui manque dans votre tâche actuelle. Faut-il retrouver une décision ? Consulter une valeur réelle ? Éviter de recopier un ticket à chaque session ? Le nombre d’outils disponibles n’est pas, en soi, une amélioration. Leurs descriptions et leurs réponses occupent du contexte selon la façon dont votre assistant les charge.
+Avant d’ajouter un MCP, regardez ce qui manque dans votre tâche actuelle. Faut-il retrouver une décision ? Consulter une valeur réelle ? Éviter de recopier un ticket à chaque session ? Chaque nouvel outil apporte aussi sa description et ses réponses dans le contexte, selon la façon dont l’assistant les charge. Ajoutez celui qui résout le problème observé.
 
 Avant de reprendre un skill, regardez ses choix : où commence-t-il, où s’arrête-t-il, qu’est-ce qu’il suppose déjà décidé ? Une procédure qui lance automatiquement l’implémentation, la revue et la publication ne correspond pas à notre simple demande de préparation de recette.
 
-Vous pouvez reprendre nos fichiers pour expérimenter, puis les changer. Le résultat à conserver est celui qui vous aide dans votre travail, avec vos outils et vos contraintes. Si une étape ne vous sert pas, elle n’a pas à rester parce qu’un dépôt populaire la recommande.
+Vous pouvez reprendre nos fichiers pour expérimenter, puis les changer. Gardez ce qui vous aide avec vos outils et vos contraintes. Une étape inutile chez vous peut disparaître, même si elle figure dans le dépôt le plus étoilé du moment.
 
-Dans la partie suivante, nous allons agrandir notre corpus documentaire. Notre recherche littérale atteint vite ses limites quand on ne connaît pas les mots employés dans les sources. Ce sera l’occasion de construire une recherche plus utile, puis de distinguer ce que l’on obtient en donnant de meilleurs documents au modèle de ce qui demande réellement de l’adapter ou de l’entraîner.
+Dans la partie suivante, notre corpus documentaire va grandir. La recherche littérale échoue déjà sur `alerte` parce que la source parle de `notification` ; nous allons construire une recherche plus utile. Nous pourrons alors voir ce que de meilleurs documents changent dans la réponse, avant de toucher aux poids d’un modèle.
 
 Nous pouvons désormais consulter des faits, les utiliser dans une procédure et modifier cette procédure à partir d’un problème observé. Les fichiers restent assez accessibles pour qu’on puisse les contester, les simplifier et les faire évoluer.
 
 ## Conclusion
 
-Notre ticket a suivi un trajet complet : un client l’a demandé au serveur MCP, nous avons examiné sa documentation, puis un skill a fourni les instructions pour préparer sa recette.
+Notre ticket a suivi un trajet complet dans l’atelier : le client l’a demandé au serveur MCP, nous avons examiné sa documentation, puis nous avons écrit un skill destiné à guider la préparation de sa recette.
 
-Les rôles sont maintenant visibles dans les fichiers. Le serveur fournit des accès précis. Le skill décrit une tâche. Les documents portent les faits du projet. Et nous relisons encore les résultats, notamment là où le ticket laisse une décision ouverte.
+Chaque information a maintenant sa place. Le serveur fournit des accès précis, le skill décrit une tâche et les documents portent les faits du projet. Notre relecture reste indispensable lorsque le ticket laisse une décision ouverte.
 
-Si la préparation des tests vous fait perdre du temps, c’est déjà un endroit où essayer ces outils. Vous n’avez pas besoin de déléguer tout le développement ni d’organiser votre équipe autour d’un framework pour en tirer quelque chose.
+Si la préparation des tests vous fait perdre du temps, vous tenez déjà un endroit raisonnable où essayer ces outils. Une tâche pénible et bien délimitée suffit ; aucune raison de leur confier tout le développement ou de réorganiser l’équipe autour d’un framework.
 
 Gardez ce qui vous aide, changez ce qui vous gêne et vérifiez ce que ces changements produisent. Nous avons enfin des outils dont on peut modifier une bonne partie du fonctionnement ; autant en profiter. 🙂
+
+Notre recherche littérale manque encore `alerte` lorsque la source parle de `notification`. La partie suivante partira de cet échec pour améliorer la recherche avant de toucher aux poids d’un modèle.

@@ -1,4 +1,4 @@
-Commençons par les outils que vous pouvez rencontrer dans un éditeur, un terminal ou un service distant. Nous compléterons ce panorama avec les harness extensibles, dont Pi, dans la section suivante. Ce n’est pas la liste de tous les produits existants, ni un classement de leurs modèles.
+Commençons par les outils que vous pouvez rencontrer dans un éditeur, un terminal ou un service distant. Le tableau donne une carte de départ pour l’atelier ; la section suivante l’élargira aux harness extensibles, dont Pi. Les produits y sont regroupés par porte d’entrée et par usage, sans classement des modèles.
 
 Les offres et les fonctions décrites correspondent aux pages officielles consultées le **14 septembre 2026**. Si vous lisez ce chapitre plus tard, les liens en notes permettront de retrouver leur état actuel.
 

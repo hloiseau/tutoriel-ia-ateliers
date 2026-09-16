@@ -8,7 +8,7 @@ En 2020, l’article sur GPT-3 montre qu’un grand modèle de langage peut acco
 
 Par exemple, nous pouvons montrer le format d’une traduction, puis demander d’en produire une nouvelle. Ce travail à partir du contexte ne doit pas être confondu avec un nouvel entraînement du modèle.
 
-Le programme ne consulte pas nécessairement une fiche vérifiée pour chaque phrase qu’il écrit. Il peut produire une suite convaincante qui contient une erreur. La fluidité du texte et son exactitude doivent donc être examinées séparément.
+Une suite convaincante peut contenir une erreur : le programme ne consulte pas nécessairement une fiche vérifiée pour chaque phrase qu’il écrit. Lisons donc la fluidité du texte et son exactitude comme deux propriétés séparées.
 
 
 [^h6s2-gpt3]: [Brown et ses collègues, Language Models are Few-Shot Learners (2020)](https://arxiv.org/abs/2005.14165).

@@ -2,7 +2,7 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-Un modèle qui réussit ses exercices, c’est encourageant. Mais notre objectif était de reconnaître des chiffres, pas seulement de faire monter une courbe. Ouvrons les erreurs, puis modifions les images pour voir où le résultat tient encore.
+Notre courbe monte et 95 % des images de validation sont bien classées. Ouvrons maintenant les erreurs du test, puis déplaçons les chiffres d’un pixel. Nous verrons vite ce que ce résultat mesure vraiment.
 
 ## Faire le bilan sur le test
 
@@ -42,7 +42,7 @@ Regardez ensuite les scores. Une mauvaise réponse peut recevoir un score élev�
 
 Une image complètement noire passera aussi dans les calculs. Si tous les pixels sont nuls, les scores du modèle linéaire se réduisent à ses biais. Il choisira quand même un chiffre.
 
-Nous pourrions ajouter une règle qui refuse les scores trop faibles, mais il faudrait mesurer son effet : combien d’erreurs évite-t-elle, et combien de bonnes réponses refuse-t-elle ? Choisir un seuil au hasard ne rend pas le système fiable.
+Une règle pourrait refuser les scores trop faibles. Avant de l’adopter, il faudrait compter les erreurs qu’elle évite et les bonnes réponses qu’elle rejette. Un seuil choisi au hasard déplacerait simplement le problème.
 
 ## Déplacer les chiffres d’un pixel
 
@@ -68,4 +68,4 @@ Le décalage n’est pas parfaitement neutre : sur une grille aussi petite, perd
 
 Une piste consiste à lui montrer des variations pendant l’entraînement : légers déplacements, par exemple. C’est une forme d’**augmentation de données**. On fabriquerait ces variantes à partir des seules images d’entraînement, puis on vérifierait leur effet sur la validation. Transformer aussi le test en exercices d’entraînement ferait disparaître la question que nous cherchons à mesurer.
 
-Les quinze erreurs et le décalage nous donnent des informations que le seul pourcentage de réussite cachait. Nous pouvons maintenant passer à une entrée qui vient vraiment de l’extérieur : notre propre dessin.
+Le modèle fait quinze erreurs sur le test et s’effondre lorsque les images glissent d’un pixel. Soumettons-lui maintenant une entrée qui vient vraiment de l’extérieur : notre propre dessin.

@@ -17,7 +17,7 @@ Le modèle peut ainsi attribuer `0,60` au trois, `0,25` au huit et répartir les
 chiffre = probas.argmax()
 ```
 
-Un score de 60 % est une probabilité **calculée par le modèle**. Ce n’est pas automatiquement la garantie que 60 % des dessins ayant ce score seront bien reconnus. Pour savoir si les scores correspondent aux fréquences de réussite, il faudrait aussi étudier leur calibration.
+Un score de 60 % est une probabilité **calculée par le modèle**. Pour affirmer que, parmi les dessins qui reçoivent ce score, environ 60 % sont bien reconnus, il faudrait étudier la **calibration** du modèle. Nous ne la mesurons pas dans cet atelier.
 
 
 [^p2-2-softmax-softmax]: [Dive into Deep Learning, Softmax Regression](https://d2l.ai/chapter_linear-classification/softmax-regression.html).

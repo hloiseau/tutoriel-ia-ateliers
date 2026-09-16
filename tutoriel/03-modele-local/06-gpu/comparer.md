@@ -1,6 +1,6 @@
 Arrêtez le serveur CPU. Dans sa commande, retirez `--device none` et remplacez `-ngl 0` par `-ngl all`. Conservez le fichier GGUF, la taille de contexte, le nombre de requêtes simultanées et les autres paramètres.
 
-Regardez les messages de démarrage : le moteur doit indiquer le placement des couches sur le GPU. Une commande qui accepte une option n’est pas une preuve que tout le calcul a été placé où vous l’imaginez.
+Regardez les messages de démarrage : le moteur doit indiquer le placement des couches sur le GPU. C’est ce journal, puis l’activité de la carte, qui nous dira si l’option a produit l’effet attendu.
 
 Relancez la série :
 
@@ -8,8 +8,8 @@ Relancez la série :
 python mesurer.py --nom gpu-contexte2048
 ```
 
-Notez la commande exacte et la mémoire vidéo observée. Comparez les durées aux essais CPU et relisez les réponses. Nous utilisons un modèle minuscule à l’échelle de certaines cartes : cette comparaison ne permettra pas de prévoir le gain pour tous les modèles ou toutes les tailles de requêtes.
+Notez la commande exacte et la mémoire vidéo observée. Comparez les durées aux essais CPU et relisez les réponses. Avec ce modèle de 360 millions de paramètres et ces courtes requêtes, les résultats décriront cette expérience précise. Un modèle plus grand ou un contexte plus long changeraient le travail demandé à la carte.
 
-Une RTX 3090 Ti avec 24 Go de mémoire vidéo permet d’envisager des expériences plus grandes que celle-ci, mais il faut toujours tenir compte du modèle, de sa précision, du contexte et de la mémoire déjà occupée. Il n’y a pas de correspondance universelle « tant de Go = tel modèle sans aucune contrainte ».
+Une RTX 3090 Ti avec 24 Go de mémoire vidéo permet d’envisager des expériences plus grandes que celle-ci. Avant de choisir la suivante, comptez le modèle, sa précision, le contexte et la mémoire déjà occupée : la capacité de la carte ne suffit pas à désigner un modèle universellement adapté.
 
 Avant de télécharger plus gros, choisissez ce que vous voulez améliorer dans votre grille d’évaluation. Sinon, il est assez facile de passer la soirée à remplir un disque sans avoir avancé sur son besoin.

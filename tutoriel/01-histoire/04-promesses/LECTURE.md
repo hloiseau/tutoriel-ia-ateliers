@@ -18,7 +18,7 @@ Le programme rencontre donc deux difficultés : le nombre de possibilités à ca
 
 En 1973, un rapport de James Lighthill, commandé pour examiner l’IA au Royaume-Uni, critique une partie de ses résultats et de ses perspectives. Le témoignage historique de l’université d’Édimbourg décrit la perte de confiance qui suit, ainsi que les réorganisations et les années difficiles pour la recherche.[^h4s1-edinburgh]
 
-On parle d’**hiver de l’IA** pour ces périodes de recul de l’intérêt et des financements. Cela ne veut pas dire que tous les laboratoires ferment ni que tous les chercheurs s’arrêtent. À Édimbourg, des travaux et des enseignements se poursuivent, avant un nouvel essor des applications dans les années 1980.
+On parle d’**hiver de l’IA** pour ces périodes de recul de l’intérêt et des financements. Le froid n’atteint pas tous les laboratoires de la même manière : à Édimbourg, des travaux et des enseignements se poursuivent avant un nouvel essor des applications dans les années 1980.
 
 
 [^h4s1-edinburgh]: [Jim Howe, Artificial Intelligence at Edinburgh University: a Perspective (2007)](https://www.inf.ed.ac.uk/about/AIhistory.html).
@@ -34,9 +34,9 @@ Nous n’allons pas reproduire de règles médicales ici. Prenons plutôt un ate
 ![Un exemple de diagnostic de lampe distingue un problème d’alimentation d’une ampoule à examiner, à partir de réponses à des questions.](../images/systeme-expert.png)
 Figure: Quelques règles de diagnostic pour une lampe : chaque réponse ouvre une nouvelle piste.
 
-Le **moteur d’inférence** est la partie du programme qui applique les règles aux faits disponibles. La **base de connaissances** contient les informations et les règles du domaine. C’est donc bien quelque chose qu’il faut constituer et entretenir.
+Le **moteur d’inférence** applique les règles aux faits disponibles. La **base de connaissances** contient les informations et les règles du domaine ; des personnes doivent la constituer, puis l’entretenir.
 
-Si nous ajoutons un modèle de lampe avec un fonctionnement différent, quelqu’un doit vérifier quelles règles restent valables. Si deux règles se contredisent, il faut comprendre pourquoi. L’expertise n’a pas disparu : une partie de son travail a été déplacée vers la construction du système.
+Ajoutons un modèle de lampe au fonctionnement différent : quelqu’un doit vérifier quelles règles restent valables et comprendre les éventuelles contradictions. Une partie du travail des spécialistes s’est déplacée vers la construction du système.
 
 
 [^h4s2-mycin]: [John McCarthy, Some Expert Systems Need Common Sense](https://www-formal.stanford.edu/jmc/someneed/someneed.html).
@@ -58,13 +58,13 @@ Dans un exemple fictif de configuration, une carte peut être compatible avec un
 
 ## Pourquoi plusieurs « hivers » ?
 
-Les récits de l’IA distinguent habituellement une première période de désillusion dans les années 1970, puis une autre à la fin des années 1980 et au début des années 1990. Les dates exactes varient selon les pays et les domaines ; il ne s’agit pas d’un interrupteur mondial que quelqu’un aurait éteint deux fois.
+Les récits de l’IA distinguent habituellement une première période de désillusion dans les années 1970, puis une autre à la fin des années 1980 et au début des années 1990. Les dates varient selon les pays et les domaines : personne n’a éteint deux fois un interrupteur mondial.
 
 Les systèmes spécialisés ont montré leur utilité, mais leur coût de développement, leur maintenance et les limites de leur domaine peuvent rendre leur déploiement décevant. Une entreprise n’achète pas seulement une démonstration : elle doit pouvoir utiliser et faire évoluer le système.[^h4s4-histoire]
 
 L’apprentissage statistique, les réseaux, la recherche de solutions et les systèmes de connaissances ne disparaissent pas tous en même temps. Certaines techniques deviennent même des composants ordinaires de logiciels, sans être présentées en permanence comme de l’IA.
 
-Réussir à organiser quelques caisses ne garantit pas de savoir gérer tout un entrepôt. Mais il peut tout de même avoir appris quelque chose d’utile aux chercheurs.
+Organiser quelques caisses ne suffit pas à gérer tout un entrepôt. La démonstration peut malgré tout avoir appris quelque chose d’utile aux chercheurs.
 
 
 [^h4s4-histoire]: [IBM, The History of Artificial Intelligence (mis à jour en 2026)](https://www.ibm.com/think/topics/history-of-artificial-intelligence).

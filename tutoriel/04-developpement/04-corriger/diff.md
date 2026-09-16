@@ -16,9 +16,9 @@ git diff --no-index "/chemin/vers/atelier-developpement/01-depart/suivi.py" "/ch
 
 Remplacez les deux chemins par ceux de vos fichiers. Cette commande ne suppose pas que les dossiers sont voisins. Avec `--no-index`, le code de sortie 1 signifie que les fichiers diffèrent[^p4-diff].
 
-Cette comparaison ne porte que sur `suivi.py`. Dans la liste des fichiers touchés affichée par l’assistant, ouvrez ensuite chaque autre fichier. Pour un fichier déjà présent au départ, recommencez la comparaison avec son original dans `01-depart`. Lisez entièrement le nouveau `test_ticket.py`, qui n’a pas d’original.
+Cette première comparaison ne porte que sur `suivi.py`. Reprenez ensuite la liste des fichiers touchés affichée par l’assistant. Comparez chaque fichier qui existait déjà à son original dans `01-depart`, puis lisez entièrement le nouveau `test_ticket.py`.
 
-Le test ajouté est attendu. En revanche, changer les données de `retour-stock.json`, supprimer un test ou modifier une validation n’est pas nécessaire pour corriger cette condition. Cherchez la raison de ces changements avant de les garder.
+Le test ajouté est attendu. Changer les données de `retour-stock.json`, supprimer un test ou modifier une validation sortirait en revanche du correctif demandé. Si vous trouvez l’un de ces changements, demandez sa raison puis retirez-le s’il ne sert aucun cas du ticket.
 
 [^p4-diff-vscode]: Microsoft, [comparaison des fichiers dans VS Code](https://code.visualstudio.com/docs/editing/codebasics#_compare-files).
 [^p4-diff]: Git, [comparaison avec git diff --no-index](https://git-scm.com/docs/git-diff).

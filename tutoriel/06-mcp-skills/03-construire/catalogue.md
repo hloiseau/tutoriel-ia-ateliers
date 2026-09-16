@@ -18,7 +18,7 @@ def catalogue(nom):
     return json.loads((ROOT / "donnees" / nom).read_text(encoding="utf-8"))
 ```
 
-`ROOT` désigne le dossier du fichier serveur. Le catalogue reste donc accessible même si un assistant démarre ce programme depuis un autre dossier. Ici, `nom` viendra uniquement de chaînes écrites dans nos fonctions : le client ne pourra pas choisir un chemin de fichier.
+`ROOT` désigne le dossier du fichier serveur. Le catalogue reste ainsi accessible même si un assistant démarre le programme depuis un autre dossier. La valeur de `nom` vient uniquement des chaînes écrites dans nos fonctions ; aucun argument du client n’est utilisé pour construire ce chemin.
 
 Remplacez ensuite **toute la fonction `lire_ticket`, décorateur compris**, par :
 
@@ -38,6 +38,6 @@ Essayez maintenant :
 python client.py ticket PRIX-2 --serveur mon_serveur.py --journal sorties/c02-ticket.json
 ```
 
-Le résultat contient les deux questions ouvertes de PRIX-2. Comparez-le avec `donnees/tickets.json` : la fonction a trouvé l’identifiant dans le catalogue et renvoyé son contenu. Elle n’a plus besoin d’embarquer les données de chaque ticket dans son code.
+Le résultat contient les deux questions ouvertes de PRIX-2. Comparez-le avec `donnees/tickets.json` : la fonction a trouvé l’identifiant dans le catalogue et renvoyé son contenu. Les prochains tickets pourront être ajoutés dans les données, sans grossir cette fonction.
 
 Nous relisons le petit fichier à chaque appel. Cela rend les changements immédiatement visibles et suffit pour ce jeu de données. Un service réel appellerait peut-être une API, gérerait ses erreurs et contrôlerait les droits du compte utilisé ; nous avons isolé l’accès aux données pour pouvoir le faire évoluer.

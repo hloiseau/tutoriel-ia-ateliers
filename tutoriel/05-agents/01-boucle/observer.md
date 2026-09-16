@@ -7,8 +7,8 @@ Appuie ton explication sur la fonction présente dans ce dossier.
 Ne modifie aucun fichier et ne lance pas les tests.
 ```
 
-Dépliez les actions affichées par l’outil. Cherchez quels fichiers ont été lus et à quel moment leur contenu est revenu. Selon l’application, vous verrez les arguments complets, un extrait ou seulement une indication de lecture. Notez ce que l’interface permet réellement de vérifier.
+Dépliez les actions affichées par l’outil. Quels fichiers ont été lus ? À quel moment leur contenu est-il revenu ? Selon l’application, vous verrez les arguments complets, un extrait ou une simple indication de lecture. Notez uniquement ce que l’interface vous permet de vérifier.
 
-Si l’agent répond sans lecture visible, cela ne prouve pas à lui seul qu’il invente : l’éditeur a pu joindre le fichier au contexte. Regardez les pièces jointes et les informations de session. Si vous ne pouvez pas savoir, gardez cette incertitude dans votre relevé.
+Une réponse sans lecture visible peut aussi venir d’un fichier déjà joint au contexte par l’éditeur. Regardez les pièces jointes et les informations de session. Si l’interface ne permet pas de trancher, écrivez-le simplement dans votre relevé au lieu de reconstituer un parcours imaginaire.
 
-Nous allons justement examiner ce que le modèle reçoit, au-delà du texte que nous tapons.
+Cette petite enquête laisse une question ouverte : qu’a réellement reçu le modèle en plus de notre demande ? C’est le sujet du prochain chapitre.

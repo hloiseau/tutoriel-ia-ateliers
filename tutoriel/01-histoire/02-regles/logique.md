@@ -15,7 +15,7 @@ La difficulté augmente lorsqu’il existe plusieurs règles applicables et de n
 
 Une heuristique ressemble à un conseil pratique : « commence par les possibilités qui semblent les plus utiles ». Elle évite parfois beaucoup d’essais, mais ne garantit pas à elle seule de trouver la meilleure solution.
 
-Le rapport de 1956 décrit le système et ses méthodes ; il faut distinguer cette description du détail de son exécution sur un ordinateur.
+Le rapport de 1956 décrit le système et ses méthodes. Il ne fournit cependant pas le journal détaillé d’une exécution sur un ordinateur ; restons-en à ce qu’il documente.
 
 
 [^h2s1-logic]: [Newell et Simon, The Logic Theory Machine (1956)](https://www.rand.org/pubs/papers/P868.html).

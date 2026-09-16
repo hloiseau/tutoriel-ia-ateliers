@@ -1,1 +1,1 @@
-Nous avons construit un réseau à plusieurs couches et fait circuler le gradient à travers ses calculs. Il sait apprendre davantage de détails ; certains sont utiles, d’autres permettent seulement de mémoriser. Les données à part servent à voir la différence.
+Le gradient traverse désormais plusieurs couches. Cette capacité supplémentaire aide le réseau à apprendre davantage de détails, y compris 80 étiquettes tirées au hasard. La validation et le test nous permettent de voir ce qui reste utile sur d’autres images.

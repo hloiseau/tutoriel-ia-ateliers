@@ -17,19 +17,21 @@ Téléchargez [les fichiers de l’atelier](https://github.com/hloiseau/tutoriel
 | `03-corrige` | La correction à consulter après avoir essayé |
 Table: Les fichiers de départ et les corrections
 
-Copiez **`01-depart`** dans un nouveau dossier nommé **`mon-suivi`**, en dehors du dossier téléchargé. Gardez les trois versions fournies à leur emplacement d’origine. `mon-suivi` sera notre seule copie de travail ; nous ne repartirons pas de zéro à chaque chapitre.
+Copiez **`01-depart`** dans un nouveau dossier nommé **`mon-suivi`**, en dehors du dossier téléchargé. Gardez les trois versions fournies à leur emplacement d’origine : elles nous serviront de points de comparaison. Toutes nos modifications iront dans `mon-suivi`, sans nouveau départ au chapitre suivant.
 
 Installez [Visual Studio Code](https://code.visualstudio.com/download), puis utilisez **Fichier → Ouvrir le dossier** pour ouvrir `mon-suivi`. Si vous avez déjà un éditeur et un assistant, ouvrez cette même copie avec eux et passez à « Observer le problème ».
 
 Dans l’explorateur, vous devez retrouver `suivi.py`, `test_suivi.py`, `TICKET.md` et `scenarios`. Les dossiers de correction restent en dehors de l’espace de travail : autant éviter de laisser la réponse sous le nez de l’agent. 🙂
 
+À partir d’ici, chaque commande indiquée sans autre précision est à lancer depuis `mon-suivi`.
+
 ## Ouvrir la discussion dans VS Code
 
-Dans VS Code, ouvrez le menu de l’icône Copilot dans la barre d’état, choisissez **Use AI Features**, puis suivez la connexion à GitHub. L’offre gratuite peut être proposée à un compte éligible ; le tableau de bord Copilot permet de consulter son usage[^p4-install-copilot].
+La documentation de VS Code consultée pour cette partie indique le parcours suivant : ouvrez le menu de l’icône Copilot dans la barre d’état, choisissez **Use AI Features**, puis suivez la connexion à GitHub. L’offre gratuite peut être proposée à un compte éligible ; le tableau de bord Copilot permet de consulter son usage[^p4-install-copilot].
 
 Ouvrez ensuite la vue **Chat**. Pour la première lecture, utilisez une session **Local** et le rôle **Ask**, avec un modèle accessible par votre compte Copilot. Ici, *Local* désigne l’exécution des outils de VS Code, pas l’hébergement du modèle. Le rôle Ask permet de poser des questions sans modifier le code[^p4-install-roles].
 
-Les interfaces évoluent. Si vous utilisez une autre version ou un autre assistant, cherchez la fonction de discussion sans édition. Nous lui fournirons nous-mêmes le court extrait à expliquer.
+Les libellés et leur emplacement peuvent avoir changé depuis ce relevé. Si votre version diffère, cherchez la fonction de discussion sans édition. Avec un autre assistant, ouvrez son mode équivalent : nous lui fournirons nous-mêmes le court extrait à expliquer.
 
 Si l’accès au modèle est bloqué, regardez le compte connecté et le quota disponible avant de relancer la demande. Vous pouvez continuer les manipulations Python pendant que cet accès est indisponible.
 
@@ -65,7 +67,7 @@ Le programme initial affiche :
 ```
 Code: Une notification décidée sans baisse de prix
 
-Les tests passent, et nous venons pourtant de reproduire le comportement à changer. Ils ne couvraient donc pas ce cas. Le programme se contente d’afficher sa décision : aucun courriel n’est envoyé.
+Voilà notre point de départ : la suite est verte, tandis que le scénario du ticket produit la mauvaise décision. Les trois tests existants n’exercent donc jamais ce retour en stock. Le programme se contente d’afficher sa décision ; aucun courriel n’est envoyé.
 
 [^p4-unittest]: Python, [découverte et exécution des tests avec unittest](https://docs.python.org/3.12/library/unittest.html).
 
@@ -88,9 +90,9 @@ Code: Demander une explication que l’on peut vérifier
 
 Gardez la fonction sous les yeux pendant la lecture. `nouveau.disponible` vaut vrai ; la comparaison des prix vaut faux ; `not ancien.disponible` vaut vrai. Le `or` suffit donc à rendre vraie la parenthèse, puis la fonction entière.
 
-Si l’explication de l’assistant aboutit à faux, confrontez-la à ces trois valeurs et au résultat que vous avez exécuté. C’est un désaccord précis à lui montrer, sans lui demander vaguement de « mieux réfléchir ».
+Si l’explication de l’assistant aboutit à faux, renvoyez-lui ces trois valeurs ainsi que le résultat exécuté. Vous aurez un désaccord précis à résoudre, bien plus utile qu’une invitation à « mieux réfléchir ».
 
-Nous savons maintenant où intervenir. Ouvrons le ticket pour décider ce qui doit remplacer cette règle.
+Nous avons retrouvé la condition responsable. Le ticket va maintenant nous dire ce qu’elle doit exprimer — et surtout ce qu’elle ne dit pas sur les autres cas.
 
 
 

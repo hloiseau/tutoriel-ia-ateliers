@@ -1,1 +1,1 @@
-
+La bonne quantité de contexte dépend de l’action : expliquer une condition, modifier une règle et reprendre une longue session demandent des pièces différentes. Pour guider l’agent dans ces pièces, il nous faut maintenant écrire une demande dont nous pourrons vérifier le résultat.

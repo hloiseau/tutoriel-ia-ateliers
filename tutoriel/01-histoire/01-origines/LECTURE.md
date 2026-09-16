@@ -2,7 +2,7 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-Avant les premiers ordinateurs, on cherche déjà à confier des calculs à des machines. Le projet est alors très matériel : il faut concevoir les pièces, transmettre les mouvements et trouver comment donner les opérations à effectuer.
+Avant les premiers ordinateurs, confier un calcul à une machine commence par un problème très matériel : concevoir les pièces, transmettre les mouvements et trouver comment donner les opérations à effectuer.
 
 Au XIXe siècle, Charles Babbage et Ada Lovelace envisagent déjà une machine dont on pourrait changer les instructions.
 
@@ -15,7 +15,7 @@ Figure: Modèle d’essai de la machine analytique. © The Board of Trustees of 
 
 Regardez les roues et les axes de ce mécanisme. Les opérations doivent être réalisées par le mouvement de ces pièces. La photographie montre seulement une partie de la machine : l’ensemble ne sera pas achevé du vivant de Babbage.
 
-Pour effectuer un autre calcul, on change les instructions. Pas besoin de reconstruire tous les engrenages à chaque fois, heureusement. 🙂 Les cartes permettent aussi de répéter une suite d’opérations. Si vous avez déjà écrit une boucle dans un programme, vous connaissez le principe.
+Pour effectuer un autre calcul, on change les instructions et on garde le mécanisme — heureusement, personne n’a à reconstruire tous les engrenages. 🙂 Les cartes permettent aussi de répéter une suite d’opérations. Si vous avez déjà écrit une boucle dans un programme, vous connaissez le principe.
 
 ![Cartes perforées destinées à la machine analytique, avec des trous disposés en lignes et des annotations manuscrites.](../images/babbage-cartes.jpg)
 Figure: Cartes pour la machine analytique. © The Board of Trustees of the Science Museum, [Science Museum Group](https://collection.sciencemuseumgroup.org.uk/objects/co62248/punched-cards-for-babbages-analytical-engine), [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -24,7 +24,7 @@ En 1843, Ada Lovelace publie une traduction d’un texte décrivant cette machin
 
 Imaginons que nous décidions d’associer les nombres de 0 à 6 aux notes do, ré, mi, fa, sol, la et si. La suite `0, 2, 4` représente alors **do, mi, sol**. En ajoutant 1 à chaque nombre, nous obtenons `1, 3, 5`, soit **ré, fa, la**.
 
-Nous avons transformé une suite de notes en effectuant des opérations sur des nombres. En représentant les notes par des nombres, une machine à calculer peut donc manipuler autre chose que des quantités.
+Dans notre exemple, les opérations portent sur des nombres que nous interprétons comme des notes. Cette représentation permettrait à une machine de manipuler autre chose que des quantités.
 
 Nous sommes encore dans les antécédents de l’informatique. Il faudra d’autres machines et d’autres travaux pour arriver à l’IA.
 
@@ -73,13 +73,13 @@ En 1955, John McCarthy, Marvin Minsky, Nathaniel Rochester et Claude Shannon pro
 
 Ils veulent étudier comment faire utiliser le langage à des machines, leur faire résoudre des problèmes et leur permettre de s’améliorer. Les réseaux de neurones figurent aussi dans les pistes proposées.
 
-La rencontre de 1956 devient un événement fondateur du domaine. Les recherches n’ont pas toutes commencé cet été-là, mais elles sont réunies sous un nom et un projet commun.
+La rencontre de 1956 devient un événement fondateur du domaine. Plusieurs des recherches qu’elle rassemble existaient déjà ; elles disposent désormais d’un nom et d’un projet commun.
 
 Le programme est ambitieux : les auteurs espèrent obtenir des avancées en réunissant un petit groupe pendant l’été. Certains de ces problèmes leur résisteront pourtant pendant des décennies.
 
-Il existe déjà plusieurs façons d’aborder ces questions. On peut chercher à représenter des neurones, mais aussi décrire des connaissances et des règles qu’un programme devra appliquer.
+Les participants ne partent pas tous dans la même direction. Certains cherchent à représenter des neurones ; d’autres décrivent des connaissances et les règles qu’un programme devra appliquer. Suivons d’abord cette seconde piste.
 
 
 [^h1s4-dartmouth]: [McCarthy, Minsky, Rochester et Shannon, proposition du projet de Dartmouth (1955, pour la rencontre de 1956)](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904).
 
-Nous avons rencontré des machines programmables, des neurones décrits par des mathématiques et une proposition pour étudier l’intelligence avec des ordinateurs. À partir des années 1950, ces idées vont donner lieu à des programmes qui jouent, cherchent des démonstrations et dialoguent.
+Les machines programmables, les neurones décrits par des mathématiques et le projet de Dartmouth posent plusieurs pistes. À partir des années 1950, elles donnent lieu à des programmes qui jouent, cherchent des démonstrations et dialoguent.

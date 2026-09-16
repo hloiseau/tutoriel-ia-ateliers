@@ -139,9 +139,9 @@ X[index].reshape(8, 8)
 
 ## Mettre des images de côté
 
-Nous pourrions entraîner le modèle sur toutes les images, puis compter ses bonnes réponses sur ces mêmes images. Mais nous voudrions aussi savoir comment il se comporte sur celles qu’il n’a pas utilisées pour apprendre.
+Avant l’entraînement, mettons de côté les images qui serviront à juger le modèle. Compter ses bonnes réponses sur les images qu’il vient d’apprendre nous dirait surtout s’il sait retrouver ses exercices.
 
-Nous formons donc trois groupes :
+Nous formons trois groupes :
 
 | Groupe | Images | Usage |
 | --- | ---: | --- |
@@ -183,4 +183,4 @@ python -c "import sys; print(sys.executable)"
 
 Le chemin doit contenir le dossier `.venv` de l’atelier. Cela évite de chercher pendant vingt minutes pourquoi une bibliothèque est « installée » et « introuvable » en même temps. 🙂
 
-Nous avons des images, leurs réponses attendues et trois groupes distincts. Aucun paramètre n’a encore été entraîné. Le modèle va maintenant devoir transformer les 64 pixels en dix scores.
+Les images sont chargées, leurs réponses attendues sont connues et le test attend sagement à part. Aucun paramètre n’a encore bougé : il faut d’abord transformer les 64 pixels en dix scores.

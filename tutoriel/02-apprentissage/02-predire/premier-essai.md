@@ -14,7 +14,7 @@ Exactitude avant entraînement : 10.3%
 
 Le chiffre attendu est un trois. Le modèle choisit un deux. Ses probabilités sont toutes proches d’un dixième : les poids viennent d’être tirés au hasard, il n’a encore reçu aucune correction.
 
-Les 10,3 % de bonnes réponses ne sont donc pas une panne. Avec dix classes assez équilibrées, une règle naïve ou un choix au hasard peut déjà obtenir un résultat de cet ordre. C’est un point de comparaison, pas un objectif.
+Les 10,3 % de bonnes réponses nous donnent un point de départ. Avec dix classes assez équilibrées, une règle naïve ou un choix au hasard peut déjà obtenir un résultat de cet ordre. L’entraînement devra faire nettement mieux.
 
 Ouvrez `02_predire.py`. Remplacez :
 
@@ -28,6 +28,6 @@ par :
 index = train[1]
 ```
 
-Relancez le programme. Nous avons changé l’image, pas les paramètres. Le score peut bouger, mais le modèle n’apprend rien en exécutant cette prédiction.
+Relancez le programme. Les scores changent parce que l’image a changé. Les paramètres, eux, sont exactement les mêmes : exécuter une prédiction ne les modifie pas.
 
 Vous pouvez conserver cette modification ou remettre `train[0]` pour retrouver l’exemple du trois. Le script d’entraînement choisit ses propres lots et ne dépend pas de ce changement.

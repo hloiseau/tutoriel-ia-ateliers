@@ -1,4 +1,4 @@
-Créez un fichier `COMPTE-RENDU.md` et renseignez-le avec votre propre exécution :
+Créez un fichier `COMPTE-RENDU.md` dans `mon-suivi` et renseignez-le avec votre propre exécution :
 
 ```markdown
 # PRIX-1 — Ne plus notifier une simple remise en stock
@@ -28,6 +28,6 @@ Code: Une trame à compléter avec vos résultats
 
 Indiquez « non exécuté » pour les scénarios que vous n’avez pas lancés.
 
-Ce texte peut ensuite servir de base à une description de pull request dans un vrai projet. Avant de publier, relisez les fichiers et les traces jointes : un rapport de test peut lui aussi contenir des données qu’on ne souhaite pas diffuser.
+Ce texte peut servir de base à une description de pull request dans un vrai projet. Avant de publier, relisez les fichiers et les traces jointes : un rapport de test peut lui aussi contenir des données qu’on ne souhaite pas diffuser.
 
-L’agent peut rédiger ce compte rendu à partir des sorties conservées. Vous gardez à vérifier que les phrases correspondent aux commandes effectivement réalisées.
+L’agent peut rédiger ce compte rendu à partir des sorties conservées. Comparez ensuite chaque affirmation aux commandes effectivement réalisées ; « treize tests passent » réclame une sortie de treize tests, pas un souvenir de la consigne.

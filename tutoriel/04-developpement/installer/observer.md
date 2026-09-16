@@ -23,6 +23,6 @@ Le programme initial affiche :
 ```
 Code: Une notification décidée sans baisse de prix
 
-Les tests passent, et nous venons pourtant de reproduire le comportement à changer. Ils ne couvraient donc pas ce cas. Le programme se contente d’afficher sa décision : aucun courriel n’est envoyé.
+Voilà notre point de départ : la suite est verte, tandis que le scénario du ticket produit la mauvaise décision. Les trois tests existants n’exercent donc jamais ce retour en stock. Le programme se contente d’afficher sa décision ; aucun courriel n’est envoyé.
 
 [^p4-unittest]: Python, [découverte et exécution des tests avec unittest](https://docs.python.org/3.12/library/unittest.html).

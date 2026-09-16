@@ -6,11 +6,11 @@
 
 **TL;DR** — Une information manquante, une procédure mal suivie et un comportement à apprendre ne demandent pas forcément la même intervention.
 
-« Je veux que l’IA connaisse mon projet » est un bon point de départ, mais pas encore une tâche assez précise. Prenons quelques demandes concrètes.
+« Je veux que l’IA connaisse mon projet » donne une direction. Pour savoir quoi construire, il nous faut maintenant un problème observable. Prenons quelques demandes concrètes.
 
 ## Qu’est-ce qui manque à notre outil ?
 
-Notre assistant doit répondre à une question sur les notifications. Trois difficultés peuvent se cacher derrière une mauvaise réponse : il n’a pas reçu la règle, il l’a mal interprétée, ou il produit un format inutilisable.
+Notre assistant doit répondre à une question sur les notifications. S’il échoue, nous pouvons déjà chercher à quel moment les choses se gâtent : la règle manque dans son contexte, il la lit de travers, ou sa réponse arrive dans un format inutilisable.
 
 | Besoin | Premier essai raisonnable |
 | --- | --- |
@@ -19,9 +19,9 @@ Notre assistant doit répondre à une question sur les notifications. Trois diff
 | Produire régulièrement une forme particulière | Comparer une consigne et des exemples, puis envisager une adaptation si nécessaire |
 | Comprendre comment un modèle apprend | Entraîner un petit réseau que l’on peut examiner |
 
-Ces possibilités peuvent se combiner. Un modèle adapté à un format peut encore avoir besoin d’une recherche documentaire pour retrouver une règle récente.
+Ces interventions peuvent se combiner. Un modèle habitué à produire un format précis peut encore avoir besoin d’une recherche documentaire pour retrouver la dernière règle en vigueur.
 
-En revanche, modifier ses poids pour chaque changement d’horaire rendrait une simple mise à jour documentaire bien compliquée. Notre première question sera donc : **où l’information devrait-elle vivre ?** Dans une source que l’on consulte, une procédure que l’on suit, ou un comportement que l’on cherche à apprendre ?
+Modifier ses poids à chaque changement d’horaire transformerait une simple mise à jour documentaire en chantier d’entraînement. Demandons-nous d’abord : **où l’information devrait-elle vivre ?** Dans une source que l’on consulte, une procédure que l’on suit, ou un comportement que l’on cherche à apprendre ?
 
 Pour les notifications, gardons la règle dans un document versionné. Nous pourrons retrouver sa provenance et la corriger sans réentraîner le modèle.
 
@@ -54,11 +54,11 @@ Nous allons sélectionner des passages, les joindre à une question et demander 
 ![Le corpus alimente un index ; la question sert à choisir les passages, puis le modèle reçoit la question et les sources sélectionnées.](../images/recherche.png)
 Figure: Retrouver des sources avant de générer une réponse
 
-Dans notre application, cet appel ne déclenche aucun entraînement. Le contexte transmis change, les poids restent identiques. Si nous redémarrons sans joindre les documents, ils ne sont pas devenus une connaissance acquise par le modèle.
+Dans notre application, cet appel ne déclenche aucun entraînement. Nous changeons le contexte transmis à chaque question, tandis que les poids restent identiques. Redémarrez sans joindre les documents : le modèle ne saura pas soudain retrouver la règle de notification.
 
-MCP pourrait exposer notre recherche comme outil, de la même manière que `chercher_documentation` dans la partie 6. Le protocole ne choisirait pas pour autant la méthode de classement des passages : cette méthode appartient au programme derrière l’outil.
+Un serveur MCP pourrait exposer cette recherche comme outil, à la manière de `chercher_documentation` dans la partie 6. Le programme placé derrière l’outil garderait la responsabilité de découper et classer les passages.
 
-Commençons avec peu de documents et une recherche que nous pouvons lire. Une base vectorielle n’est pas un passage obligé pour retrouver dix paragraphes.
+Avec dix paragraphes, nous pouvons commencer par une recherche que nous savons lire de bout en bout. Nous verrons son premier échec avant d’envisager une base vectorielle.
 
 [^p7-rag]: Lewis et al., [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://arxiv.org/abs/2005.11401). Notre application utilise une recherche lexicale simple ; elle ne reproduit pas le système entraîné dans cet article.
 

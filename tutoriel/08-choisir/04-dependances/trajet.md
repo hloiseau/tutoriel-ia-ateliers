@@ -1,4 +1,4 @@
-Dans la partie 6, notre serveur MCP lisait des documents sur notre ordinateur. Cela ne décidait pas où tournait le modèle qui recevait ensuite les résultats. Nous retrouvons la même question avec une interface installée localement : ses fichiers sont chez nous, mais ses requêtes peuvent partir ailleurs.
+Dans la partie 6, notre serveur MCP lisait des documents sur notre ordinateur, puis transmettait ses résultats au modèle choisi par l’assistant. Avec une interface installée localement, les fichiers du programme restent chez nous tandis que les requêtes peuvent partir ailleurs. Le mot « local » décrit ici un morceau du trajet.
 
 Ouvrez `fiches/flux.md` et remplissez une ligne par trajet : de l’éditeur au modèle, de l’agent au serveur MCP, du serveur aux tickets, puis vers les éventuels journaux. Pour chaque trajet, notez ce qui passe, où cela arrive et ce qui vous permet de l’affirmer.
 
@@ -9,6 +9,6 @@ Ouvrez `fiches/flux.md` et remplissez une ligne par trajet : de l’éditeur au 
 | Assistant installé pour la partie 4 | Le trajet dépend du produit, de sa configuration et du fournisseur sélectionné |
 | Politique d’un service externe | Elle doit être vérifiée pour ce service et l’offre utilisée |
 
-« Non utilisé pour l’entraînement » ne signifie pas forcément « jamais conservé ». La rétention des journaux, l’accès de tiers et la localisation du traitement sont des questions distinctes. Il faut lire les engagements applicables plutôt que déduire toutes les réponses d’une seule option.
+Une option « non utilisé pour l’entraînement » répond à une question précise. Pour connaître la durée de conservation des journaux, l’accès de tiers et la localisation du traitement, il reste à lire les engagements applicables au service et à l’offre choisis.
 
 Pour notre exercice, restez sur les documents fictifs fournis. Une fois la carte des trajets dessinée, vous pourrez décider quelles données de votre propre projet seraient acceptables dans cette configuration.

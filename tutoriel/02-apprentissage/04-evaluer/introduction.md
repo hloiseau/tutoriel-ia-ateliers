@@ -1,1 +1,1 @@
-Un modèle qui réussit ses exercices, c’est encourageant. Mais notre objectif était de reconnaître des chiffres, pas seulement de faire monter une courbe. Ouvrons les erreurs, puis modifions les images pour voir où le résultat tient encore.
+Notre courbe monte et 95 % des images de validation sont bien classées. Ouvrons maintenant les erreurs du test, puis déplaçons les chiffres d’un pixel. Nous verrons vite ce que ce résultat mesure vraiment.

@@ -13,6 +13,6 @@ Table: Les situations que la règle doit départager
 
 Les trois premières correspondent déjà à nos tests de départ. Les suivantes rendent visible ce que ces tests ne contrôlaient pas.
 
-Vous pouvez demander à l’agent de proposer cette table avant de coder les tests. Relisez alors les **résultats attendus**, pas seulement le nombre de lignes. Une longue suite de tests qui attend la mauvaise réponse reste une longue suite de tests qui attend la mauvaise réponse.
+Vous pouvez demander à l’agent de proposer cette table avant de coder les tests. Relisez surtout les **résultats attendus**. Dix tests persuadés qu’une hausse mérite une alerte ne rendraient pas cette idée plus juste. 😅
 
-Pour une règle aussi petite, faire la table soi-même prend peu de temps. Dans un projet plus grand, l’aide peut surtout servir à retrouver les cas oubliés ou à traduire une règle déjà décidée en scénarios exécutables.
+Pour une règle aussi petite, faire la table soi-même prend peu de temps. Dans un projet plus grand, l’aide devient intéressante pour retrouver les voisins d’un cas principal ou traduire une règle déjà décidée en scénarios exécutables.

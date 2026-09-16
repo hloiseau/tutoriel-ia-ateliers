@@ -1,1 +1,1 @@
-La recherche réussit sur certaines formulations et échoue sur une autre dont nous connaissons pourtant la réponse. Gardons ce cas : il nous empêchera de confondre une démonstration réussie avec une recherche fiable en général.
+La règle de staging remonte avec une formulation et disparaît avec « purge des fixtures ». Gardons les deux questions : si nous changeons le classement, elles nous diront tout de suite ce que nous avons gagné — et peut-être perdu.

@@ -7,9 +7,9 @@ Figure: Chaque cercle représente une unité de calcul du réseau ; les connexio
 
 Suivez d’abord les flèches vers la droite : le réseau produit une réponse. Nous la comparons à la réponse attendue. Le calcul en sens inverse sert ensuite à déterminer comment modifier les poids.
 
-Cette publication contribue à faire connaître l’intérêt de la méthode pour les réseaux à plusieurs couches. Elle ne signifie pas que toutes les difficultés sont résolues, ni que le principe du calcul des dérivées à travers une suite d’opérations vient d’être inventé.
+Cette publication contribue à faire connaître l’intérêt de la méthode pour les réseaux à plusieurs couches. Elle s’inscrit dans des travaux antérieurs sur le calcul des dérivées à travers une suite d’opérations, et les réseaux restent difficiles à entraîner.
 
-Nous pouvons maintenant entraîner des réseaux plus élaborés. Le temps de calcul, les données disponibles et le choix de l’architecture restent cependant des contraintes importantes.
+La méthode ouvre la voie à des réseaux plus élaborés. Leur entraînement dépend encore du temps de calcul, des données disponibles et du choix de l’architecture.
 
 
 [^h3s3-backprop]: [Rumelhart, Hinton et Williams, Learning representations by back-propagating errors (1986)](https://www.nature.com/articles/323533a0).

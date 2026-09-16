@@ -1,9 +1,9 @@
-Si notre problème est de retrouver une règle récente, la recherche documentaire reste un bon endroit où travailler. Nous pouvons enrichir les questions, améliorer les formulations ou comparer une autre méthode de recherche.
+Pour retrouver une règle récente, travaillons d’abord sur la recherche documentaire. La question « purge des fixtures » nous donne déjà un cas à conserver pendant que nous enrichissons les formulations ou comparons une autre méthode.
 
-Si les passages sont corrects mais que le modèle invente la réponse, ce n’est plus le même chantier. Il faut examiner la génération, ses consignes et le modèle utilisé. Pour certaines réponses, afficher la source ou calculer le résultat directement sera plus simple.
+Lorsque les bons passages sont présents et que le modèle invente tout de même dix minutes, le chantier se déplace vers la génération, ses consignes et le modèle utilisé. Pour certaines réponses, afficher la source ou calculer directement le résultat sera plus simple.
 
-Si nous voulons apprendre une forme stable à partir de nombreux exemples, une adaptation peut valoir un essai. Nous savons maintenant qu’il faut regarder les anciennes tâches autant que la nouvelle, et lire les sorties en plus des métriques.
+Une adaptation peut valoir un essai pour apprendre une forme stable à partir de nombreux exemples. Notre régression sur les anciennes phrases nous a appris à garder ces tâches dans l’évaluation, et le charabia généré à lire les sorties en plus des métriques.
 
-Enfin, entraîner un petit réseau peut être un excellent moyen de comprendre ces mécanismes, même lorsque son résultat n’est pas utilisable en production. Nous avons le droit d’expérimenter pour apprendre. Nous avons aussi le droit de constater qu’un script ordinaire répond mieux au besoin. 🙂
+Enfin, entraîner un petit réseau aide à comprendre ces mécanismes, même lorsque son résultat reste inutilisable en production. Nous pouvons expérimenter pour apprendre, puis constater honnêtement qu’un script ordinaire répond mieux au besoin. 🙂
 
-Reste une question que les fichiers de poids ne résolvent pas : que choisissons-nous de faire de ces outils ? Les données utilisées, les personnes concernées, la dépendance à un service et les ressources consommées comptent autant dans cette décision. Ce sera le sujet de la dernière partie.
+Les fichiers de poids ne décident cependant pas de la place que nous voulons donner à ces outils. Les données utilisées, les personnes concernées, la dépendance à un service et les ressources consommées vont maintenant entrer dans le choix : c’est le sujet de la dernière partie.

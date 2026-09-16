@@ -1,10 +1,10 @@
-Une expérience METR menée en 2025 sur 16 développeurs expérimentés travaillant dans leurs dépôts a mesuré un ralentissement avec les outils alors disponibles. Les participants avaient pourtant l’impression d’être accélérés. Il faut garder le contexte : développeurs, tâches, dépôts et outils précis.[^p8-metr25]
+Une expérience METR menée en 2025 sur 16 développeurs expérimentés travaillant dans leurs dépôts a mesuré un ralentissement avec les outils alors disponibles. Les participants avaient pourtant l’impression d’être accélérés. Ce résultat appartient à des développeurs, des tâches, des dépôts et des outils précis.[^p8-metr25]
 
 En février 2026, METR explique que son expérience suivante rencontre des biais de sélection et des difficultés de mesure, notamment avec des usages parallèles. L’organisme considère ces nouvelles données insuffisantes pour donner une estimation fiable de l’effet courant. On ne peut donc pas transporter le résultat de 2025 jusqu’à aujourd’hui comme une constante, ni annoncer son contraire avec la même assurance.[^p8-metr26]
 
-C’est une bonne raison de conserver nos traces. « J’ai eu l’impression d’aller plus vite » et « le résultat vérifié m’a demandé moins de travail » sont deux observations possibles, qui peuvent diverger.
+Conservons donc nos traces. « J’ai eu l’impression d’aller plus vite » et « le résultat vérifié m’a demandé moins de travail » sont deux observations possibles, qui peuvent diverger.
 
-Le confort compte aussi. Une aide peut réduire une tâche pénible sans réduire son temps total. Nous pouvons décider que cela nous convient, à condition de le dire ainsi. De la même manière, produire davantage de lignes n’est pas forcément produire un meilleur logiciel.
+Le confort compte aussi. Une aide peut rendre une tâche moins pénible sans réduire son temps total, et ce résultat peut très bien nous convenir si nous le décrivons ainsi. Quant au nombre de lignes produites, il renseigne surtout sur le nombre de lignes que quelqu’un devra ensuite comprendre.
 
 Enfin, notre essai doit inclure les personnes qui récupèrent le travail. Si nous économisons vingt minutes en passant une heure de correction à un collègue, nous avons surtout changé l’endroit où le coût apparaît.
 

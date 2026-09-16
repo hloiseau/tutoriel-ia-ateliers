@@ -4,7 +4,7 @@ L’un de ses mécanismes essentiels est l’**attention** : il permet de combin
 
 > Le chat poursuit la souris parce qu’elle a volé son fromage.
 
-Pour interpréter « elle », le contexte est utile. Un mécanisme d’attention permet au calcul effectué à une position de tenir compte d’autres éléments de la phrase. Cela ne signifie pas qu’on lui a écrit une règle « elle désigne toujours la souris » : les paramètres qui organisent ces calculs sont appris.
+Pour interpréter « elle », le contexte est utile. Un mécanisme d’attention permet au calcul effectué à une position de tenir compte d’autres éléments de la phrase. Les paramètres qui organisent ces calculs sont appris ; personne n’a écrit une règle « elle désigne toujours la souris ».
 
 ![Le mot « elle » est relié à plusieurs éléments de la phrase ; les liens illustrent l’accès au contexte et ne représentent pas des poids mesurés.](image:images/attention.png)
 Figure: Illustration du rôle du contexte. Les liens ne proviennent pas de l’analyse d’un modèle réel.

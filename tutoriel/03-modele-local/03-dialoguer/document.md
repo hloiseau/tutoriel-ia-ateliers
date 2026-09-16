@@ -9,6 +9,6 @@ Les deux fichiers parlent d’une bibliothèque fictive. Le document indique qu�
 
 Pour le mardi, nous attendons **10 heures**. Pour le dimanche, nous attendons que le modèle dise qu’il ne sait pas. La consigne lui demande explicitement de se limiter au document.
 
-S’il invente un horaire du dimanche, ne complétez pas le document pour rendre sa réponse vraie. Conservez l’erreur. Nous cherchons justement à voir s’il respecte une limite d’information.
+S’il invente un horaire du dimanche, conservez l’erreur. Compléter le document après coup rendrait le cas beaucoup moins intéressant : nous voulons savoir comment il réagit lorsqu’une information manque.
 
-Vous venez de construire deux petits cas d’évaluation : une réponse accessible et une information absente. Ce n’est pas encore une évaluation générale du modèle, mais c’est déjà beaucoup plus précis que « j’ai discuté dix minutes, ça avait l’air bien ».
+Ces deux cas ciblent désormais un comportement chacun : retrouver une réponse présente et s’abstenir lorsque l’information manque. Ils ne résument pas les capacités du modèle ; ils donnent en revanche deux observations que nous pourrons rejouer au prochain changement.

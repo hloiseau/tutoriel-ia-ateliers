@@ -1,6 +1,6 @@
 En 2009, une équipe autour de Fei-Fei Li présente **ImageNet**, une grande base d’images organisée en catégories. Son intérêt est de fournir des données pour entraîner et évaluer des systèmes de reconnaissance d’images.[^h5s3-imagenet]
 
-Pour apprendre à reconnaître un chat, un réseau doit voir des exemples. Mais il faut d’abord rassembler les images, choisir les catégories et vérifier ce qu’elles contiennent. Le papier d’ImageNet décrit notamment le recours à des personnes chargées de vérifier des annotations via Amazon Mechanical Turk.
+Pour apprendre à reconnaître un chat, un réseau doit voir des exemples. Avant l’entraînement, des personnes rassemblent les images, choisissent les catégories et vérifient ce qu’elles contiennent. L’article d’ImageNet décrit notamment le recours à des personnes chargées de vérifier des annotations via Amazon Mechanical Turk.
 
 Les données ne se sont donc pas rangées toutes seules dans les bons dossiers. Derrière une base d’apprentissage se trouvent des choix et du travail humain.
 

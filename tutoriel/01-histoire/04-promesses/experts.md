@@ -7,9 +7,9 @@ Nous n’allons pas reproduire de règles médicales ici. Prenons plutôt un ate
 ![Un exemple de diagnostic de lampe distingue un problème d’alimentation d’une ampoule à examiner, à partir de réponses à des questions.](image:images/systeme-expert.png)
 Figure: Quelques règles de diagnostic pour une lampe : chaque réponse ouvre une nouvelle piste.
 
-Le **moteur d’inférence** est la partie du programme qui applique les règles aux faits disponibles. La **base de connaissances** contient les informations et les règles du domaine. C’est donc bien quelque chose qu’il faut constituer et entretenir.
+Le **moteur d’inférence** applique les règles aux faits disponibles. La **base de connaissances** contient les informations et les règles du domaine ; des personnes doivent la constituer, puis l’entretenir.
 
-Si nous ajoutons un modèle de lampe avec un fonctionnement différent, quelqu’un doit vérifier quelles règles restent valables. Si deux règles se contredisent, il faut comprendre pourquoi. L’expertise n’a pas disparu : une partie de son travail a été déplacée vers la construction du système.
+Ajoutons un modèle de lampe au fonctionnement différent : quelqu’un doit vérifier quelles règles restent valables et comprendre les éventuelles contradictions. Une partie du travail des spécialistes s’est déplacée vers la construction du système.
 
 
 [^h4s2-mycin]: [John McCarthy, Some Expert Systems Need Common Sense](https://www-formal.stanford.edu/jmc/someneed/someneed.html).

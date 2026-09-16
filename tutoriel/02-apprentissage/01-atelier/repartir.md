@@ -1,6 +1,6 @@
-Nous pourrions entraîner le modèle sur toutes les images, puis compter ses bonnes réponses sur ces mêmes images. Mais nous voudrions aussi savoir comment il se comporte sur celles qu’il n’a pas utilisées pour apprendre.
+Avant l’entraînement, mettons de côté les images qui serviront à juger le modèle. Compter ses bonnes réponses sur les images qu’il vient d’apprendre nous dirait surtout s’il sait retrouver ses exercices.
 
-Nous formons donc trois groupes :
+Nous formons trois groupes :
 
 | Groupe | Images | Usage |
 | --- | ---: | --- |

@@ -1,1 +1,1 @@
-Les paramètres ont été ajustés à partir des images et des réponses attendues. Nous pouvons mesurer la progression, sauvegarder le résultat et le regarder. Il reste à vérifier ce que cette progression vaut sur d’autres images.
+La perte a baissé, les bonnes réponses ont augmenté et les paramètres tiennent désormais dans un fichier. Ces courbes portent encore sur l’entraînement et la validation. Le jeu de test va nous dire ce que le modèle fait avec des images restées de côté.

@@ -16,4 +16,4 @@ Figure: Poids du modèle linéaire. Un pixel clair placé sur une zone bleue aug
 
 Ce ne sont pas dix photographies mémorisées. Ce sont les coefficients utilisés dans nos multiplications. Certaines positions favorisent un chiffre, d’autres le défavorisent.
 
-Le modèle a maintenant une manière de séparer les classes à partir de ces positions. Il n’a pas pour autant appris que « deux boucles superposées font un huit », ni que déplacer un chiffre devrait conserver son identité.
+Le modèle sépare maintenant les classes à partir de ces positions. Rien dans ce calcul ne lui enseigne que « deux boucles superposées font un huit » ou qu’un chiffre garde son identité lorsqu’on le déplace. Nous allons justement essayer de le déplacer.

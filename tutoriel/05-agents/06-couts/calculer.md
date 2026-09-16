@@ -1,4 +1,4 @@
-Ouvrez `usage-exemple.csv`. Nous y avons placé deux appels fictifs pour comprendre le calcul, avec trois catégories **qui ne se recouvrent pas** :
+Ouvrez `usage-exemple.csv`. Il contient deux appels fictifs répartis dans trois catégories disjointes :
 
 | Appel | Entrée hors cache | Entrée lue en cache | Sortie |
 | --- | --- | --- | --- |
@@ -14,6 +14,6 @@ Avec des tarifs eux aussi fictifs, lancez :
 python mesurer.py usage-exemple.csv --prix-entree 2 --prix-cache 0.2 --prix-sortie 8
 ```
 
-Le résultat est `0.004200` unités monétaires. Passez ensuite `--prix-cache` à `2` : le coût devient `0.006000`. Vous venez de changer la tarification d’une catégorie, pas le nombre de tokens ni la qualité de la réponse.
+Le résultat est `0.004200` unités monétaires. Passez ensuite `--prix-cache` à `2` : le coût devient `0.006000`. Seul le tarif de la lecture du cache a changé ; le CSV contient toujours les mêmes tokens et ne dit rien de la qualité des réponses.
 
-Ce calcul simplifié ne couvre pas une écriture de cache facturée séparément, un outil payant ou un abonnement. Pour l’utiliser sur vos données, adaptez les colonnes à la facture concernée. Il n’est pas nécessaire d’avoir une précision au millionième pour décider si l’outil vous sert ; elle nous permet ici de vérifier une petite formule sans arrondir trop tôt.
+Une écriture de cache facturée séparément, un outil payant ou un abonnement demanderait d’autres colonnes. Adaptez-les à la facture concernée avant d’utiliser vos propres données. L’affichage à six décimales sert ici à vérifier la formule sans arrondir trop tôt ; dans un bilan réel, choisissez une précision adaptée à la décision.

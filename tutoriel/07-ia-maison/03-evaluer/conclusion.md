@@ -1,1 +1,1 @@
-Nous savons examiner la recherche sans attribuer ses réussites ou ses échecs au modèle de langage. Passons à l’application complète, en conservant les sources dans son journal.
+Nous savons maintenant dire si l’échec vient de la recherche avant d’accuser le modèle de langage. Relions les deux, tout en conservant dans le journal les passages que le modèle a réellement reçus.

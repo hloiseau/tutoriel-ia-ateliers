@@ -5,7 +5,7 @@ Figure: Un serveur local peut alimenter un modèle distant
 
 Dans le vocabulaire MCP, l’application qui accueille l’interaction est l’**hôte**. Elle contient un client MCP qui parle au serveur. Le modèle n’a pas besoin de comprendre comment Python ouvre `tickets.json` ; il reçoit les outils que l’hôte lui présente et les résultats que celui-ci réintroduit dans la conversation.
 
-Le mot *local* mérite donc qu’on précise ce qu’il désigne. Le serveur tourne ici sur notre machine. Si l’assistant utilise un modèle hébergé, les informations issues du ticket peuvent ensuite lui être envoyées. Héberger le MCP chez soi ne suffit pas à garder toute la conversation chez soi.
+Le mot *local* désigne ici le serveur, qui tourne sur notre machine. Avec un modèle hébergé, les informations issues du ticket peuvent ensuite quitter cette machine pour rejoindre la conversation. Il faut suivre tout le trajet avant de conclure où vivent les données.
 
 Pour notre atelier, les données sont fictives. Dans un projet professionnel, ce trajet aide à décider quels champs exposer et avec quel compte accéder aux services. Une liste d’identifiants et de titres suffit parfois pour chercher ; envoyer tout le ticket, ses pièces jointes et son historique à chaque recherche ajouterait des informations dont on n’a pas encore besoin.
 

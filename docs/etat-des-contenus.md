@@ -6,15 +6,15 @@ Mis à jour le **16 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 
 | Partie | Chapitres | Sections | Illustrations | État éditorial |
 | --- | --- | --- | --- | --- |
-| [1 — Histoire](../tutoriel/01-histoire/README.md) | 7 | 29 | 12 | Version V3 validée par l’auteur ; texte préservé |
-| [2 — Construire un modèle](../tutoriel/02-apprentissage/README.md) | 8 | 31 | 13 | Version V2 rédigée, à poursuivre en relecture |
-| [3 — Modèle local](../tutoriel/03-modele-local/README.md) | 6 | 21 | 4 | Rédigée ; corrections demandées sur la forme conservées ; transition vers la partie 4 ajoutée |
-| [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Atelier continu ; interfaces à vérifier |
-| [5 — Agents](../tutoriel/05-agents/README.md) | 6 | 18 | 3 | Première rédaction complète ; banc Python exécuté, essais avec un modèle à réaliser |
-| [6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) | 7 | 25 | 3 | Validée par l’auteur le 16 septembre 2026 ; parcours MCP vérifié, essais du skill avec un modèle à réaliser |
-| [7 — IA maison](../tutoriel/07-ia-maison/README.md) | 8 | 24 | 4 | Accord global de l’auteur ; recherche, application et entraînements CPU exécutés ; expérience GPU à faire |
-| [8 — Choisir la place de l’IA](../tutoriel/08-choisir/README.md) | 7 | 21 | 4 | Première rédaction complète ; exercices vérifiés ; relecture de l’auteur à faire |
-| [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Comparatif des outils et expérience locale facultative |
+| [1 — Histoire](../tutoriel/01-histoire/README.md) | 7 | 29 | 12 | Fond V3 validé ; réécriture globale effectuée, à relire par l’auteur |
+| [2 — Construire un modèle](../tutoriel/02-apprentissage/README.md) | 8 | 31 | 13 | Réécriture globale effectuée ; résultats CPU préservés, à relire par l’auteur |
+| [3 — Modèle local](../tutoriel/03-modele-local/README.md) | 6 | 21 | 4 | Réécriture globale effectuée ; références CPU préservées, essais sur la machine de l’auteur à faire |
+| [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Réécriture globale effectuée ; atelier continu, interfaces à vérifier |
+| [5 — Agents](../tutoriel/05-agents/README.md) | 6 | 18 | 3 | Réécriture globale effectuée ; banc Python exécuté, essais avec un modèle à réaliser |
+| [6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) | 7 | 25 | 3 | Fond validé ; réécriture globale effectuée, essais du skill avec un modèle à réaliser |
+| [7 — IA maison](../tutoriel/07-ia-maison/README.md) | 8 | 24 | 4 | Accord global conservé ; réécriture effectuée, expérience GPU à faire |
+| [8 — Choisir la place de l’IA](../tutoriel/08-choisir/README.md) | 7 | 21 | 4 | Réécriture globale effectuée ; exercices vérifiés, à relire par l’auteur |
+| [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Formulations harmonisées ; comparatif daté et expérience locale facultative à exécuter |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
 
@@ -93,4 +93,12 @@ Cette partie attend la relecture de l’auteur. Les huit parties sont rédigées
 
 L’auteur a donné un avis globalement positif sur la partie 8, en demandant de reprendre plus tard son ton et les oppositions rhétoriques répétées. Une nouvelle [introduction générale](../tutoriel/introduction.md) est rédigée et attend sa relecture. Le [ZIP global](../telechargements/zds/tutoriel-ia-complet.zip) réunit les huit parties et les annexes ; sa structure est vérifiée, son import interactif dans ZdS reste à faire.
 
-Les [prompts locaux](prompts/LOCAL-COORDINATEUR.md) couvrent les expériences sur le PC de Hugo. Le [prompt de réécriture](prompts/RELECTURE-COORDINATEUR.md) demande une flotte de huit sous-agents et renvoie au guide détaillé de sa voix. Ces documents n’attestent ni de nouvelles expériences GPU ni d’une passe globale déjà réalisée. Les chapitres existants ne sont pas réécrits lors de cette préparation.
+Les [prompts locaux](prompts/LOCAL-COORDINATEUR.md) couvrent les expériences sur le PC de Hugo. Le [prompt de réécriture](prompts/RELECTURE-COORDINATEUR.md) demande une flotte de huit sous-agents et renvoie au guide détaillé de sa voix. Ces documents n’attestent d’aucune nouvelle expérience GPU ; la passe éditoriale effectuée ensuite est décrite ci-dessous.
+
+## Réécriture globale du 16 septembre 2026
+
+Huit missions distinctes ont relu et réécrit les sources canoniques, une par partie, puis deux passes adverses ont contrôlé les raccords. Le [bilan de coordination](relecture/2026-09-16-globale/bilan-coordinateur.md) rassemble les changements, les contrôles et les endroits où concentrer la relecture de l’auteur.
+
+La passe a réduit les oppositions rhétoriques et les transitions automatiques, rendu les manipulations plus concrètes et conservé les distinctions techniques utiles. Le schéma de recherche documentaire de la partie 7 a également été reformulé depuis son générateur. L’introduction générale, déjà naturelle, a été relue sans changement de fond.
+
+Cette réécriture n’ajoute aucune expérience sur le PC de Hugo. Son système reste à identifier ; l’adaptation de LLM sur la RTX 3090 Ti, les interfaces réelles, les essais de skills et d’agents ainsi que l’import interactif dans ZdS restent à effectuer. Le [projet d’extension aux usages hors développement](relecture/2026-09-16-globale/extension-hors-developpement.md) est une proposition de structure, pas une neuvième partie déjà rédigée.

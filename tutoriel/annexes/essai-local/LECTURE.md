@@ -4,7 +4,7 @@
 
 [Revenir à l’atelier de développement](../../04-developpement/README.md)
 
-**TL;DR** — Expérience facultative : relier Continue au serveur de la partie 3, puis examiner la réponse d’un petit modèle de code. Cette configuration reste à exécuter et à mesurer ; nous ne la présentons pas comme un agent capable de mener l’atelier.
+**TL;DR** — Expérience facultative : relier Continue au serveur de la partie 3, puis examiner la réponse d’un petit modèle de code. Cette configuration reste à exécuter et à mesurer. Le parcours s’arrête à une courte discussion ; les capacités d’un agent de code sur CPU restent à établir.
 
 ## Relier Continue à notre serveur
 
@@ -46,15 +46,15 @@ models:
 ```
 Code: Configuration de Continue pour le serveur de la partie 3
 
-Ici, `provider: openai` indique le format d’API utilisé. **La destination est l’adresse de `apiBase`**, donc notre ordinateur. La valeur `local` est un remplissage pour le champ de clé ; notre serveur d’atelier n’a pas d’authentification configurée. Ce n’est pas une clé de compte OpenAI[^p4-install-compatible].
+Ici, `provider: openai` indique le format d’API utilisé. **La destination est l’adresse de `apiBase`**, donc notre ordinateur. La valeur `local` remplit le champ de clé attendu par l’extension ; notre serveur d’atelier ne vérifie aucune clé et aucun compte OpenAI n’intervient[^p4-install-compatible].
 
-La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Nous déclarons le rôle `chat`, puis nous sélectionnerons le mode **Chat** dans l’interface. Ce rôle de configuration ne constitue pas à lui seul une interdiction d’utiliser des outils[^p4-install-yaml].
+La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Nous déclarons le rôle `chat`, puis nous sélectionnerons le mode **Chat** dans l’interface. Les permissions d’outils se règlent ailleurs ; ce rôle décrit seulement l’usage prévu du modèle[^p4-install-yaml].
 
 Enregistrez, sélectionnez la configuration et le modèle locaux, puis choisissez le mode **Chat**. Envoyez une question très courte, par exemple :
 
 > Reply with the word hello.
 
-Ce n’est pas un test d’intelligence. Nous cherchons une réponse, même imparfaite, et une requête correspondante dans le terminal de `llama-server`. Si une erreur mentionne une clé de service distant, vérifiez le modèle sélectionné et `apiBase`.
+Ici, nous vérifions simplement la connexion. Cherchez une réponse, même imparfaite, et la requête correspondante dans le terminal de `llama-server`. Si une erreur mentionne une clé de service distant, vérifiez le modèle sélectionné et `apiBase`.
 
 Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres de l’extension : désactivez-le pour cet usage local[^p4-install-offline]. Les réglages réseau de VS Code et des autres extensions restent séparés. Pour vérifier que cette conversation n’a pas besoin d’Internet, vous pouvez couper la connexion après les téléchargements, ouvrir une nouvelle discussion et envoyer une autre question.
 
@@ -62,7 +62,7 @@ Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres 
 
 La connexion fonctionne ? Nous pouvons changer ce que le serveur charge.
 
-Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code. Nous allons lui soumettre un extrait court pour examiner sa réponse ; sa fiche ne permet pas de conclure qu’il sera utile sur notre exercice[^p4-install-qwen].
+Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code. Sa fiche décrit ses usages prévus ; notre extrait court nous montrera ce qu’il produit ici, sur notre machine[^p4-install-qwen].
 
 Dans [le dépôt officiel du modèle](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main), téléchargez **`qwen2.5-coder-1.5b-instruct-q4_k_m.gguf`**, puis placez-le dans le dossier `modeles` utilisé en partie 3. Ce fichier pèse environ **1,1 Go** ; prévoyez aussi de la mémoire pour le contexte et les programmes ouverts[^p4-install-qwen-fichier].
 
@@ -103,7 +103,7 @@ Ouvrez une nouvelle conversation après le changement de modèle. Copiez la déf
 
 Chronométrez le temps avant le début de la réponse et sa durée totale. Conservez le texte obtenu, puis vérifiez-le contre le code : le résultat initial est vrai. Une réponse rapide mais fausse ne nous aide pas davantage qu’une réponse juste qui arrive trop tard pour notre usage.
 
-Si la réponse est lente, commencez par raccourcir la demande et la sortie attendue. Si la machine manque de mémoire, revenez au contexte précédent ou au petit modèle pour finir le diagnostic de connexion. Pour l’atelier, vous pouvez toujours effectuer les modifications vous-même : il n’est pas nécessaire de laisser un modèle en difficulté multiplier les tentatives.
+Si la réponse est lente, commencez par raccourcir la demande et la sortie attendue. Si la machine manque de mémoire, revenez au contexte précédent ou au petit modèle pour finir le diagnostic de connexion. Vous pouvez aussi poursuivre l’atelier à la main, plutôt que de laisser un modèle en difficulté multiplier les tentatives.
 
 [^p4-install-server]: llama.cpp, [documentation du serveur et des points d’accès HTTP](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md).
 [^p4-install-continue]: Continue, [installation de l’extension](https://docs.continue.dev/ide-extensions/install).
@@ -114,7 +114,7 @@ Si la réponse est lente, commencez par raccourcir la demande et la sortie atten
 [^p4-install-qwen]: Qwen, [Qwen2.5-Coder-1.5B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF).
 [^p4-install-qwen-fichier]: Qwen, [fichiers GGUF proposés](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main).
 
-Une connexion réussie montre que l’éditeur peut parler au serveur. Pour savoir si cette installation vous aide à développer, il reste à examiner ses réponses et ses délais sur vos propres tâches. Nous n’avons pas configuré ni validé ici un parcours d’agent sur CPU.
+Une connexion réussie montre que l’éditeur peut parler au serveur. Pour savoir si cette installation vous aide à développer, examinez ensuite ses réponses et ses délais sur vos propres tâches. Cette expérience s’arrête à la discussion avec un petit modèle ; elle ne valide aucun parcours d’agent sur CPU.
 
 ---
 

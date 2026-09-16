@@ -2,17 +2,17 @@
 
 [Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)
 
-**TL;DR** — Le comparatif permet de choisir ou de changer d’assistant. L’expérience locale propose de relier un éditeur à notre serveur. Ces annexes se consultent selon vos besoins, indépendamment du déroulé de l’atelier.
+**TL;DR** — Revenez au comparatif pour choisir ou changer d’assistant. L’expérience locale, elle, relie un éditeur au serveur de la partie 3. Ces deux annexes restent facultatives et se consultent selon vos besoins.
 
 ## Annexe A. Comparer les outils et leurs tarifs
 
 **TL;DR** — Cette référence compare les interfaces, les possibilités et les coûts des outils. Vous pouvez y revenir pour changer d’assistant sans recommencer l’atelier.
 
-Le relevé est une photographie de septembre 2026. Un éditeur, un harness et un abonnement à un modèle ne désignent pas la même chose ; regardez surtout ce que chaque offre vous permet de faire avec votre projet.
+Le relevé est une photographie de septembre 2026. Un éditeur, un harness et un abonnement à un modèle couvrent des besoins et des dépenses différents. Pour les comparer, partez des tâches que vous voulez réaliser dans votre projet.
 
 ### Les éditeurs et les agents
 
-Commençons par les outils que vous pouvez rencontrer dans un éditeur, un terminal ou un service distant. Nous compléterons ce panorama avec les harness extensibles, dont Pi, dans la section suivante. Ce n’est pas la liste de tous les produits existants, ni un classement de leurs modèles.
+Commençons par les outils que vous pouvez rencontrer dans un éditeur, un terminal ou un service distant. Le tableau donne une carte de départ pour l’atelier ; la section suivante l’élargira aux harness extensibles, dont Pi. Les produits y sont regroupés par porte d’entrée et par usage, sans classement des modèles.
 
 Les offres et les fonctions décrites correspondent aux pages officielles consultées le **14 septembre 2026**. Si vous lisez ce chapitre plus tard, les liens en notes permettront de retrouver leur état actuel.
 
@@ -57,13 +57,13 @@ Vous croiserez souvent le mot **harness** dans les discussions sur les agents. I
 
 Dans notre premier client Python, nous envoyions une question et recevions du texte. Un harness peut ajouter la boucle suivante : le modèle demande à lire un fichier, le programme le lit et lui renvoie le contenu, puis le modèle choisit la prochaine action. La gestion des sessions, des permissions et des modifications appartient aussi à cet entourage logiciel.
 
-Deux agents utilisant le même modèle peuvent donc se comporter différemment. Ils ne préparent pas forcément le même contexte et ne lui donnent pas les mêmes outils.
+Avec le même modèle, deux agents peuvent donc se comporter différemment : chacun prépare son contexte, choisit les outils disponibles et organise la boucle à sa manière.
 
 ###### Pi, et les autres possibilités à connaître
 
 **Pi** mérite qu’on s’y arrête. Il propose un agent en terminal que l’on peut étendre et intégrer à ses propres outils. Sa conception laisse une grande place aux extensions et aux modèles de consignes, plutôt que de fournir par défaut toutes les étapes d’une méthode de développement. Il dispose aussi d’interfaces permettant de le piloter depuis un programme[^p4-h-pi].
 
-Cela rejoint une question qui nous suivra dans le tutoriel : est-ce l’outil qui décide de notre manière de travailler, ou pouvons-nous le modifier pour qu’il nous aide là où nous en avons besoin ?
+Pi illustre une question qui nous suivra dans le tutoriel : jusqu’où pouvons-nous adapter l’outil à notre manière de travailler ?
 
 | Outil | Interface et approche | Choix du modèle et usage local |
 | --- | --- | --- |
@@ -78,15 +78,15 @@ Table: Compléter le panorama des harness et des environnements d’agents
 
 Pour Pi, la documentation permet par exemple de déclarer l’adresse d’un serveur compatible dans un fichier de configuration. Nous retrouvons ainsi la séparation entre modèle et assistant, sans devoir adopter un fournisseur unique[^p4-h-pi-models].
 
-Cette liberté n’implique pas que toutes les protections soient installées d’avance. Le dépôt de Pi précise que le programme s’exécute avec les droits du processus qui le lance, sans système intégré de restriction des accès aux fichiers, aux processus ou au réseau. Une isolation supplémentaire relève donc de l’environnement dans lequel on l’exécute[^p4-h-pi-droits]. C’est une différence concrète à connaître lorsqu’on compare deux harness.
+Cette liberté demande de prévoir les protections adaptées. Le dépôt de Pi précise que le programme s’exécute avec les droits du processus qui le lance, sans système intégré de restriction des accès aux fichiers, aux processus ou au réseau. Une isolation supplémentaire relève de l’environnement dans lequel on l’exécute[^p4-h-pi-droits]. C’est une différence concrète à connaître lorsqu’on compare deux harness.
 
 ###### Les noms que vous trouverez dans d’anciens comparatifs
 
-**Roo Code** a sa place dans l’histoire de ces outils, mais son dépôt officiel est archivé depuis le **15 mai 2026**. Nous ne le présenterons donc pas comme une installation maintenue au même titre que les projets actifs de cette liste[^p4-h-roo].
+**Roo Code** a sa place dans l’histoire de ces outils, mais son dépôt officiel est archivé depuis le **15 mai 2026**. Les anciennes procédures qui l’utilisent demandent donc une attention particulière[^p4-h-roo].
 
-**Gemini CLI** mérite aussi d’être nommé explicitement. Le changement annoncé par Google concerne notamment les parcours gratuits et les abonnements individuels transférés vers Antigravity ; il ne faut pas en déduire que tous les usages professionnels ou toutes les modalités d’accès ont disparu[^p4-h-gemini].
+**Gemini CLI** mérite aussi d’être nommé explicitement. Le changement annoncé par Google concerne notamment les parcours gratuits et les abonnements individuels transférés vers Antigravity ; les usages professionnels et les autres modalités d’accès suivent leurs propres conditions[^p4-h-gemini].
 
-Les noms, les offres et parfois les dépôts changent. Le comparatif est une photographie de septembre 2026, pas une liste à apprendre par cœur. Les étoiles GitHub peuvent aider à repérer un projet connu ; elles ne disent pas si sa manière de travailler convient à votre équipe.
+Les noms, les offres et parfois les dépôts changent. Ce comparatif photographie leur état en septembre 2026. Les étoiles GitHub peuvent aider à repérer un projet connu ; pour choisir, il faudra surtout essayer sa manière de travailler sur les tâches de votre équipe.
 
 [^p4-h-pi]: Pi, [présentation du harness et de ses extensions](https://pi.dev/).
 [^p4-h-pi-models]: Pi, [modèles et fournisseurs personnalisés](https://pi.dev/docs/latest/models).
@@ -139,7 +139,7 @@ Table: Tarifs complémentaires, relevés le 14 septembre 2026 en USD
 
 Un abonnement au modèle, un abonnement au logiciel et une machine qui exécute l’agent peuvent donc représenter trois dépenses distinctes. Avant de comparer les totaux, regardez qui fournit chacun de ces éléments.
 
-« Gratuit » peut donc désigner deux choses : un service qui vous accorde un petit quota, ou un logiciel que vous installez sans payer, mais auquel il faut fournir un modèle. Dans le second cas, brancher une API payante ne rend pas ses réponses gratuites.
+« Gratuit » peut donc désigner deux choses : un service qui vous accorde un petit quota, ou un logiciel que vous installez sans payer, mais auquel il faut fournir un modèle. Avec une API payante, le logiciel reste gratuit tandis que chaque réponse peut être facturée.
 
 De même, une complétion et une tâche d’agent ne représentent pas la même quantité de travail. Un agent peut lire plusieurs fichiers, produire du code, recevoir une sortie de tests et recommencer. Selon la tarification, cela consomme des tokens, des crédits ou une partie d’un quota. Les crédits de deux fournisseurs ne sont pas une unité commune.
 
@@ -172,7 +172,7 @@ Avant d’acheter un abonnement, essayez quelques tâches que vous faites réell
 
 ## Annexe B. Expérimenter une discussion avec un modèle local
 
-**TL;DR** — Expérience facultative : relier Continue au serveur de la partie 3, puis examiner la réponse d’un petit modèle de code. Cette configuration reste à exécuter et à mesurer ; nous ne la présentons pas comme un agent capable de mener l’atelier.
+**TL;DR** — Expérience facultative : relier Continue au serveur de la partie 3, puis examiner la réponse d’un petit modèle de code. Cette configuration reste à exécuter et à mesurer. Le parcours s’arrête à une courte discussion ; les capacités d’un agent de code sur CPU restent à établir.
 
 ### Relier Continue à notre serveur
 
@@ -214,15 +214,15 @@ models:
 ```
 Code: Configuration de Continue pour le serveur de la partie 3
 
-Ici, `provider: openai` indique le format d’API utilisé. **La destination est l’adresse de `apiBase`**, donc notre ordinateur. La valeur `local` est un remplissage pour le champ de clé ; notre serveur d’atelier n’a pas d’authentification configurée. Ce n’est pas une clé de compte OpenAI[^p4-install-compatible].
+Ici, `provider: openai` indique le format d’API utilisé. **La destination est l’adresse de `apiBase`**, donc notre ordinateur. La valeur `local` remplit le champ de clé attendu par l’extension ; notre serveur d’atelier ne vérifie aucune clé et aucun compte OpenAI n’intervient[^p4-install-compatible].
 
-La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Nous déclarons le rôle `chat`, puis nous sélectionnerons le mode **Chat** dans l’interface. Ce rôle de configuration ne constitue pas à lui seul une interdiction d’utiliser des outils[^p4-install-yaml].
+La longueur de contexte correspond à celle de notre serveur. Nous limitons aussi la réponse à 128 tokens pour ce premier essai. Nous déclarons le rôle `chat`, puis nous sélectionnerons le mode **Chat** dans l’interface. Les permissions d’outils se règlent ailleurs ; ce rôle décrit seulement l’usage prévu du modèle[^p4-install-yaml].
 
 Enregistrez, sélectionnez la configuration et le modèle locaux, puis choisissez le mode **Chat**. Envoyez une question très courte, par exemple :
 
 > Reply with the word hello.
 
-Ce n’est pas un test d’intelligence. Nous cherchons une réponse, même imparfaite, et une requête correspondante dans le terminal de `llama-server`. Si une erreur mentionne une clé de service distant, vérifiez le modèle sélectionné et `apiBase`.
+Ici, nous vérifions simplement la connexion. Cherchez une réponse, même imparfaite, et la requête correspondante dans le terminal de `llama-server`. Si une erreur mentionne une clé de service distant, vérifiez le modèle sélectionné et `apiBase`.
 
 Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres de l’extension : désactivez-le pour cet usage local[^p4-install-offline]. Les réglages réseau de VS Code et des autres extensions restent séparés. Pour vérifier que cette conversation n’a pas besoin d’Internet, vous pouvez couper la connexion après les téléchargements, ouvrir une nouvelle discussion et envoyer une autre question.
 
@@ -230,7 +230,7 @@ Continue propose un réglage **Allow Anonymous Telemetry** dans les paramètres 
 
 La connexion fonctionne ? Nous pouvons changer ce que le serveur charge.
 
-Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code. Nous allons lui soumettre un extrait court pour examiner sa réponse ; sa fiche ne permet pas de conclure qu’il sera utile sur notre exercice[^p4-install-qwen].
+Pour un premier essai sur CPU, prenons **Qwen2.5-Coder-1.5B-Instruct**, dans sa version GGUF `Q4_K_M`. C’est un petit modèle destiné au code. Sa fiche décrit ses usages prévus ; notre extrait court nous montrera ce qu’il produit ici, sur notre machine[^p4-install-qwen].
 
 Dans [le dépôt officiel du modèle](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main), téléchargez **`qwen2.5-coder-1.5b-instruct-q4_k_m.gguf`**, puis placez-le dans le dossier `modeles` utilisé en partie 3. Ce fichier pèse environ **1,1 Go** ; prévoyez aussi de la mémoire pour le contexte et les programmes ouverts[^p4-install-qwen-fichier].
 
@@ -271,7 +271,7 @@ Ouvrez une nouvelle conversation après le changement de modèle. Copiez la déf
 
 Chronométrez le temps avant le début de la réponse et sa durée totale. Conservez le texte obtenu, puis vérifiez-le contre le code : le résultat initial est vrai. Une réponse rapide mais fausse ne nous aide pas davantage qu’une réponse juste qui arrive trop tard pour notre usage.
 
-Si la réponse est lente, commencez par raccourcir la demande et la sortie attendue. Si la machine manque de mémoire, revenez au contexte précédent ou au petit modèle pour finir le diagnostic de connexion. Pour l’atelier, vous pouvez toujours effectuer les modifications vous-même : il n’est pas nécessaire de laisser un modèle en difficulté multiplier les tentatives.
+Si la réponse est lente, commencez par raccourcir la demande et la sortie attendue. Si la machine manque de mémoire, revenez au contexte précédent ou au petit modèle pour finir le diagnostic de connexion. Vous pouvez aussi poursuivre l’atelier à la main, plutôt que de laisser un modèle en difficulté multiplier les tentatives.
 
 [^p4-install-server]: llama.cpp, [documentation du serveur et des points d’accès HTTP](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md).
 [^p4-install-continue]: Continue, [installation de l’extension](https://docs.continue.dev/ide-extensions/install).
@@ -282,7 +282,7 @@ Si la réponse est lente, commencez par raccourcir la demande et la sortie atten
 [^p4-install-qwen]: Qwen, [Qwen2.5-Coder-1.5B-Instruct-GGUF](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF).
 [^p4-install-qwen-fichier]: Qwen, [fichiers GGUF proposés](https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/tree/main).
 
-Une connexion réussie montre que l’éditeur peut parler au serveur. Pour savoir si cette installation vous aide à développer, il reste à examiner ses réponses et ses délais sur vos propres tâches. Nous n’avons pas configuré ni validé ici un parcours d’agent sur CPU.
+Une connexion réussie montre que l’éditeur peut parler au serveur. Pour savoir si cette installation vous aide à développer, examinez ensuite ses réponses et ses délais sur vos propres tâches. Cette expérience s’arrête à la discussion avec un petit modèle ; elle ne valide aucun parcours d’agent sur CPU.
 
 ## Conclusion
 

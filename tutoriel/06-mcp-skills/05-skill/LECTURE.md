@@ -4,7 +4,7 @@
 
 [Précédent : Refuser ce que le serveur ne doit pas faire](../04-controler/LECTURE.md) · [Suivant : Faire évoluer le skill à partir des problèmes rencontrés](../06-adapter/LECTURE.md)
 
-**TL;DR** — Nous allons mettre une procédure de préparation de recette dans un dossier lisible et modifiable. Le skill dira quoi faire des sources ; il ne créera pas les accès MCP.
+**TL;DR** — Nous allons mettre une procédure de préparation de recette dans un dossier lisible et modifiable. Le skill guidera l’usage des sources déjà accessibles par MCP.
 
 Demander « prépare-moi les tests » laisse encore beaucoup de place à l’interprétation. Quels tests ? Avec quelles données ? Et que faire si le ticket ne décide pas du résultat attendu ?
 
@@ -21,7 +21,7 @@ license: CC-BY-SA-4.0
 ```
 Code: Métadonnées du skill fourni
 
-Le nom désigne la tâche. La description aide l’assistant à reconnaître quand ce dossier peut servir. « Un super expert du développement » ne lui dirait pas grand-chose sur le moment où charger une procédure de recette.
+Le nom désigne la tâche. La description aide l’assistant à reconnaître quand ce dossier peut servir. Avec « un super expert du développement », il aurait encore fallu deviner à quel moment charger une procédure de recette.
 
 Le format Agent Skills prévoit un dossier contenant `SKILL.md`, avec des métadonnées YAML puis les instructions en Markdown. On peut y joindre des scripts, des références ou des modèles de documents.[^p6-format-skill] Notre dossier ne contient que la procédure et une référence de présentation.
 
@@ -30,7 +30,7 @@ Le format Agent Skills prévoit un dossier contenant `SKILL.md`, avec des métad
 | `SKILL.md` | Quand préparer la recette et comment traiter les sources |
 | `references/format-recette.md` | La forme du résultat à présenter |
 
-Les mots *skill*, *commande* et *plugin* ne désignent donc pas exactement la même chose. Un produit peut proposer notre skill comme commande dans son interface. Un plugin peut distribuer plusieurs skills avec des outils. Notre procédure reste un fichier que nous pouvons lire et modifier sans adopter l’organisation complète d’un plugin.
+Un produit peut proposer notre skill sous la forme d’une commande dans son interface. Un plugin peut, lui, distribuer plusieurs skills avec des outils. Ces mots décrivent des objets qui se recouvrent parfois, mais notre point de départ reste très simple : un fichier de procédure que nous pouvons lire et modifier.
 
 [^p6-format-skill]: [Spécification du format Agent Skills](https://agentskills.io/specification).
 
@@ -42,13 +42,13 @@ Le corps du skill commence par demander la lecture du ticket. Il fait ensuite ch
 
 Nous écrivons à l’impératif parce que nous décrivons la procédure attendue. « Tu pourrais peut-être vérifier les questions » ressemble à une possibilité parmi d’autres. Ici, leur examen fait partie du travail.
 
-Cela ne transforme pas le texte en programme déterministe. Nous devrons vérifier que le modèle suit cette procédure, comme nous avons vérifié les tests proposés dans la partie 4.
+L’impératif rend notre attente claire ; il ne transforme pas le texte en programme déterministe. Nous devrons vérifier ce que le modèle en fait, comme nous avons relu les tests proposés dans la partie 4.
 
 Le skill ne contient pas la règle « notifier si le prix baisse et si le produit est disponible ». Cette information appartient au ticket et à sa documentation. En la recopiant dans la procédure, nous créerions une deuxième version à mettre à jour lors du prochain changement métier.
 
-Enfin, le skill demande de lire `references/format-recette.md` au moment de présenter le résultat. Ce fichier précise les colonnes : cas, préconditions, action, résultat attendu et source. Il ne sert pas à découvrir si PRIX-1 existe ; le charger plus tard permet de garder les informations proches de l’étape où elles sont utiles.
+Enfin, le skill demande de lire `references/format-recette.md` au moment de présenter le résultat. Ce fichier précise les colonnes : cas, préconditions, action, résultat attendu et source. L’assistant peut ainsi charger ce format au moment de rédiger, après avoir découvert PRIX-1 et examiné ses sources.
 
-Le chargement progressif dépend de l’implémentation du client : séparer les fichiers rend ce fonctionnement possible, mais ne prouve pas à lui seul que votre assistant évite de tout charger.[^p6-chargement]
+Le chargement progressif dépend de l’implémentation du client. Cette séparation le rend possible ; vérifiez dans votre outil quels fichiers sont réellement chargés et à quel moment.[^p6-chargement]
 
 [^p6-chargement]: Agent Skills, [prise en charge et chargement par les clients](https://agentskills.io/client-implementation/adding-skills-support).
 
@@ -60,13 +60,13 @@ Si `/preparer-recette` apparaît dans le chat, sélectionnez-le puis demandez :
 
 > Prépare la recette de PRIX-1 avec le MCP atelier-tickets. Présente-la dans la conversation.
 
-Avec un autre assistant, utilisez son emplacement de skills ou demandez explicitement la lecture du fichier fourni. Cette dernière possibilité permet d’essayer les instructions, même sans découverte automatique du dossier. Elle ne valide pas le mécanisme d’activation du produit.
+Avec un autre assistant, utilisez son emplacement de skills ou demandez explicitement la lecture du fichier fourni. Dans ce second cas, vous essayez bien les instructions, mais pas la découverte automatique du dossier par le produit.
 
 Dans la réponse, cherchez des cas concrets. Le retour en stock à prix égal doit être distingué du retour en stock accompagné d’une baisse. L’indisponibilité nouvelle doit aussi être couverte. Un tableau très long qui répète seulement « le système fonctionne correctement » ne nous aide pas beaucoup. 😅
 
 Comparez la proposition avec `attendus-recette.md`. Ce document contient des cas rédigés pour l’exercice. Les données y sont en centimes, comme dans nos conventions. Il explique aussi ce qui manque pour exécuter une vraie recette : notre jeu ne décrit ni interface de staging ni compte ni moyen d’observer un envoi.
 
-La préparation peut donc être utile sans prétendre que les tests ont eu lieu. Pour annoncer un résultat, il faudrait encore disposer de l’application et jouer les scénarios.
+À ce stade, nous avons préparé des scénarios. Pour annoncer leurs résultats, il faudrait encore disposer de l’application et les exécuter. Gardons cette différence dans le vocabulaire : une jolie recette ne fait toujours pas cuire le gâteau. 🙂
 
 [^p6-vscode-skill]: [Utiliser les skills dans VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills).
 

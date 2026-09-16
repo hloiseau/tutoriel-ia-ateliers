@@ -1,1 +1,1 @@
-Nous avons une carte des trajets et une possibilité de continuer sans l’outil. Voyons maintenant ce que nous voulons être capables de faire nous-mêmes.
+Rangez la carte des trajets et la procédure de sortie avec le projet : elles serviront lors d’une panne comme lors d’un changement d’outil. Reste une dépendance moins visible, celle de nos propres savoir-faire lorsque l’assistant prend l’habitude de chercher et d’écrire à notre place.

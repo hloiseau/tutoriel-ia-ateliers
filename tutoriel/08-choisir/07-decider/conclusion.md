@@ -1,1 +1,1 @@
-Notre décision peut maintenant être expliquée, essayée et révisée. Elle porte sur un usage précis, avec les personnes qui le font vivre et celles qui en subissent les conséquences.
+La fiche tient en quelques rubriques, mais elle conserve l’essentiel : l’usage précis, les personnes concernées, la façon de vérifier et les conditions d’arrêt. Refermons maintenant le tutoriel avec ce que ces huit parties nous permettent de choisir.

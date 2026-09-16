@@ -4,7 +4,7 @@
 
 [Précédent : Faire le changement et lire le diff](../04-corriger/LECTURE.md) · [Suivant : Garder un changement que l’on sait expliquer](../06-garder-la-main/LECTURE.md)
 
-**TL;DR :** la suite teste la fonction ; les scénarios font aussi passer les données par le chargement JSON. Nous allons examiner les deux.
+**TL;DR** — Une suite verte couvre la fonction avec les cas que nous avons écrits. Les scénarios JSON feront ensuite parcourir au programme tout le chemin observé au début.
 
 ## Rejouer les tests et contrôler leur nombre
 
@@ -16,11 +16,11 @@ python -m unittest discover -v
 
 Avec le fichier complet de `02-test-rouge`, les **treize tests passent**. Si vous avez conservé les tests de l’agent, le nombre peut être différent. Vérifiez que les cas décidés dans la table sont couverts et que ceux qui échouaient passent désormais, avec les mêmes valeurs attendues.
 
-Les noms des tests vous permettent de voir les situations réellement contrôlées. Regardez en particulier les deux qui échouaient avant la correction. Ils doivent toujours être présents et conserver leurs valeurs attendues.
+Les noms des tests donnent un premier inventaire des situations contrôlées. Retrouvez surtout les deux qui échouaient avant la correction : ils doivent encore être présents, avec les mêmes valeurs attendues.
 
-Dans un rapport d’agent, cherchez la commande, son dossier d’exécution et son résultat. « Tests vérifiés » peut cacher plusieurs choses : une lecture du code des tests, une exécution partielle, ou une suite complète. Nous voulons savoir laquelle a eu lieu.
+Dans le rapport de l’agent, cherchez la commande, son dossier d’exécution et son résultat. La formule « tests vérifiés » est trop floue : l’agent a pu lire leur code, en lancer un seul ou exécuter la suite complète.
 
-Si une dépendance manque ou qu’une commande échoue, le rapport doit le dire. Réussir à écrire les tests n’est pas la même chose que réussir à les exécuter.
+Une dépendance manquante ou une commande interrompue doit rester visible dans le rapport. Un fichier de test bien écrit ne nous apprend rien sur le résultat d’une exécution qui n’a pas eu lieu.
 
 ## Passer par les fichiers JSON
 
@@ -41,11 +41,11 @@ Voici les décisions attendues après correction :
 | `rupture.json` | `{"notifier": false}` |
 Table: Les trois scénarios de recette
 
-Nous passons cette fois par la lecture du fichier, la construction des états, la décision et l’affichage. Les tests précédents appelaient surtout les fonctions directement. Les deux vérifications se complètent.
+Cette fois, les données traversent la lecture du fichier, la construction des états, la décision puis l’affichage. Les tests précédents appelaient surtout les fonctions directement. Ensemble, ces deux niveaux couvrent la règle et son chemin d’entrée principal.
 
 Créez ensuite une copie de `retour-stock.json`, nommée `retour-stock-baisse.json`, et changez seulement le nouveau prix : 1 500 au lieu de 2 000. Lancez ce nouveau scénario. Le résultat doit être vrai.
 
-Ne modifiez pas les scénarios pour les faire coïncider avec une réponse inattendue. Si un cas ne produit pas ce que la règle prévoit, conservez le fichier qui le reproduit. C’est une meilleure base de discussion qu’une capture sans ses données d’entrée.
+Si un cas produit une réponse inattendue, conservez le fichier qui le reproduit. Modifier ensuite ses données pour obtenir du vert effacerait précisément l’information dont nous avons besoin. Un scénario complet vaut mieux qu’une capture privée de ses entrées.
 
 ## Vérifier qu’un test sait encore protester
 
@@ -55,13 +55,13 @@ Cette expérience est facultative. Copiez le dossier corrigé `mon-suivi` dans u
 cd ../mon-suivi-mutations
 ```
 
-Ouvrez **le fichier `suivi.py` de cette copie**, remplacez `<` par `<=`, enregistrez, puis relancez `python -m unittest discover -v` dans ce terminal.
+Ouvrez **le fichier `suivi.py` de cette copie**. Dans la fonction `notifier` uniquement, remplacez la comparaison `nouveau.prix_centimes < ancien.prix_centimes` par `nouveau.prix_centimes <= ancien.prix_centimes`. Enregistrez, puis relancez `python -m unittest discover -v` dans ce terminal.
 
-Le prix identique autorise maintenant une notification. Les tests qui attendent l’absence de notification à prix inchangé doivent échouer. S’ils ne le font pas, vérifiez que vous avez exécuté la bonne copie et que ces cas sont présents.
+Le prix identique autorise maintenant une notification. Les tests qui attendent l’absence de notification à prix inchangé doivent échouer. S’ils ne le font pas, vérifiez la copie exécutée et la présence de ces cas.
 
 Rétablissez ensuite `<`, puis retirez temporairement la condition `nouveau.disponible and`. Le test de baisse sur un produit indisponible doit cette fois protester.
 
-Ces modifications volontaires sont de petites **mutations** : nous introduisons une erreur précise pour voir si les tests la remarquent. Cela ne prouve pas qu’ils détecteront tous les bugs. Cela permet de vérifier que les cas importants ne sont pas seulement décoratifs.
+Ces modifications volontaires sont de petites **mutations** : nous introduisons une erreur précise pour voir si les tests la remarquent. Nous vérifions ainsi que les cas importants savent protester. D’autres bugs restent évidemment possibles ; deux mutations ne dressent pas un bouclier magique autour de la fonction.
 
 Rétablissez la condition dans `mon-suivi-mutations`, puis revenez à notre copie de travail restée intacte :
 
@@ -85,11 +85,11 @@ Si tu ne trouves pas de problème, indique ce que tu as vérifié
 et les limites de cette vérification.
 ```
 
-Cette demande évite de réduire la revue à des préférences de style. Une remarque devient plus utile lorsqu’on peut lancer le scénario qui la justifie.
+Cette demande ramène la revue aux comportements. Une remarque devient utile lorsqu’elle s’accompagne d’un scénario que l’on peut lancer.
 
-Le second passage peut tout de même manquer la même erreur que le premier. Changer de session ou de modèle n’en fait pas une preuve indépendante au sens fort : les outils peuvent partager des habitudes et des angles morts. Appuyez-vous sur les scénarios, le code et les sorties observées.
+Le second passage peut manquer la même erreur que le premier. Une nouvelle session, même avec un autre modèle, peut retrouver les mêmes habitudes et les mêmes angles morts. Les scénarios, le code et les sorties observées restent nos pièces les plus solides.
 
-Pour notre petit changement, une revue efficace peut être courte. Il n’y a aucune raison d’inventer trois problèmes pour remplir une section de rapport.
+Pour notre petit changement, une revue efficace peut tenir en quelques lignes. Inutile d’inventer trois problèmes pour donner du volume au rapport.
 
 
 

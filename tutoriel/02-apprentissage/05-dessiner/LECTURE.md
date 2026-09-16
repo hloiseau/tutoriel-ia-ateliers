@@ -2,7 +2,7 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-Écrire le même chiffre de la même manière que dans le jeu de données, ce serait pratique. Mais ce n’est pas ce qui arrivera lorsque quelqu’un utilisera notre programme. À nous de dessiner.
+Les images du jeu partagent un format et une manière d’occuper la grille. Notre propre écriture risque de bousculer ces habitudes. À nous de dessiner.
 
 ## Dessiner puis enregistrer
 
@@ -95,4 +95,4 @@ Si vous souhaitez ensuite lui faire apprendre vos dessins, il faudra aussi leur 
 
 [^p2-5-sauvegarde-save]: [NumPy, savez_compressed](https://numpy.org/doc/stable/reference/generated/numpy.savez_compressed.html).
 
-Le modèle est maintenant un fichier que nous pouvons recharger et utiliser. Nous avons aussi rencontré une limite très concrète : notre écriture ne ressemble pas forcément aux images qui ont servi à l’entraînement.
+Le fichier du modèle se recharge sans nouvel entraînement. Face à notre dessin, sa réponse dépend beaucoup de la manière dont nous avons occupé la grille. Ajoutons maintenant une couche au réseau et regardons si davantage de paramètres change ce comportement.

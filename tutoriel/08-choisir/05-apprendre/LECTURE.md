@@ -4,7 +4,7 @@
 
 [Précédent : Dépendances techniques et économiques](../04-dependances/LECTURE.md) · [Suivant : Alternatives, logiciels libres et possibilités de s’en passer](../06-alternatives/LECTURE.md)
 
-**TL;DR** — Terminer un exercice et apprendre à le refaire sont deux objectifs différents. Nous allons lire une fonction, prévoir ses résultats et la modifier sans assistant avant de comparer une aide éventuelle.
+**TL;DR** — Un exercice terminé ne dit pas encore ce que nous saurons refaire demain. Nous allons lire une fonction, prévoir ses résultats et la modifier sans assistant avant d’examiner l’aide qu’il pourrait apporter.
 
 Le test est vert. Très bien. Maintenant, fermez la conversation : pourquoi ce test est-il vert ?
 
@@ -14,9 +14,9 @@ Si je ne connais pas la règle métier, les types manipulés ou la manière dont
 
 C’est pourquoi je ne conseillerais pas à quelqu’un qui découvre la programmation de reprendre directement ma manière de déléguer le développement à un agent. Certaines tâches sont justement des occasions d’apprendre à chercher, à réduire un problème et à comprendre une erreur. Les faire disparaître trop tôt peut nous laisser sans repères pour la suite.
 
-Une expérience publiée par des chercheurs d’Anthropic en janvier 2026 a réparti 52 développeurs, majoritairement juniors, entre des tâches avec ou sans assistance pour découvrir une bibliothèque Python. Le groupe assisté a moins bien réussi l’évaluation immédiate de compréhension ; la différence de vitesse n’était pas statistiquement significative. Ce résultat concerne une petite expérience et une évaluation à court terme, pas toute une carrière.[^p8-apprendre]
+Une expérience publiée par des chercheurs d’Anthropic en janvier 2026 a réparti 52 développeurs, majoritairement juniors, entre des tâches avec ou sans assistance pour découvrir une bibliothèque Python. Le groupe assisté a moins bien réussi l’évaluation immédiate de compréhension ; la différence de vitesse n’était pas statistiquement significative. Le périmètre reste celui d’une petite expérience et d’une évaluation à court terme : elle ne raconte pas toute une carrière.[^p8-apprendre]
 
-Nous pouvons en tirer une question pratique, sans en faire une interdiction générale : **qu’est-ce que je veux apprendre pendant cette tâche ?** Si l’objectif est de comprendre une boucle, générer toute la boucle peut court-circuiter le travail intéressant. Demander une explication sur une erreur après l’avoir examinée laisse une autre place à l’effort.
+Elle nous laisse une question pratique : **qu’est-ce que je veux apprendre pendant cette tâche ?** Si l’objectif est de comprendre une boucle, générer toute la boucle peut court-circuiter le travail intéressant. Examiner d’abord une erreur, puis demander un indice ou une explication, laisse une autre place à l’effort.
 
 [^p8-apprendre]: Shen et Tamkin, [*How AI assistance impacts the formation of coding skills*](https://www.anthropic.com/research/AI-assistance-coding-skills), 29 janvier 2026. Étude menée par un fournisseur d’IA ; ses analyses des différentes manières d’interagir avec l’outil sont exploratoires et ne prouvent pas à elles seules un lien causal.
 
@@ -44,7 +44,7 @@ Le programme affiche les cas, le résultat obtenu et le résultat attendu, puis 
 
 Le lendemain, ou simplement après une autre tâche, essayez une petite variante sans rouvrir la réponse : ne notifier que si la baisse atteint au moins 100 centimes, toujours avec un produit disponible. Que se passe-t-il pour une baisse de 99, de 100 et de 101 centimes ? La correction de cette variante est fournie elle aussi.
 
-Ce n’est pas un examen à envoyer à quelqu’un. L’intérêt est de constater ce que nous savons encore expliquer et modifier après avoir fermé l’outil.
+Personne ne ramassera la copie. 🙂 Observez plutôt ce que vous savez encore expliquer et modifier après avoir fermé l’outil.
 
 ## Garder de la place pour apprendre au travail
 
@@ -52,15 +52,15 @@ L’IA peut aider à reformuler une erreur, à proposer des cas de test ou à do
 
 Une équipe peut aussi garder des moments où l’on enquête à deux, où l’on présente pourquoi une correction fonctionne et où les débutants écrivent des changements qu’ils peuvent expliquer. Sinon, demander à un junior de « vérifier ce que l’agent a fait » lui confie une responsabilité sans forcément lui donner les moyens de l’exercer.
 
-Cela ne concerne pas seulement les juniors. Après plusieurs semaines à déléguer un domaine, nous pouvons nous demander si nous saurions encore diagnostiquer sa panne. L’exercice précédent est volontairement petit ; dans un vrai projet, la reprise peut porter sur un test qui échoue ou un incident réduit.
+Les développeurs expérimentés peuvent perdre les mêmes repères. Après plusieurs semaines à déléguer un domaine, saurions-nous encore diagnostiquer sa panne ? L’exercice précédent est volontairement petit ; dans un vrai projet, la reprise peut porter sur un test qui échoue ou un incident réduit.
 
-Quant à l’avenir du métier, une tâche exposée à l’automatisation n’est pas un emploi dont la disparition est démontrée. Les travaux de l’OIT sur l’exposition aux IA génératives examinent des tâches et des métiers ; ils ne permettent pas de prédire le destin de chaque développeur.[^p8-oit]
+Quant à l’avenir du métier, les travaux de l’OIT examinent l’exposition de tâches et de métiers aux IA génératives. Ils ne prédisent pas le destin de chaque développeur ni la disparition automatique d’un emploi dès qu’une de ses tâches est exposée.[^p8-oit]
 
 Les décisions d’organisation restent donc centrales : qui reçoit du temps pour apprendre, qui relit, qui arbitre, et que fait-on du temps éventuellement gagné ? Nous pouvons discuter de ces choix maintenant, sans attendre qu’une prédiction sur « la fin des développeurs » se réalise ou se trompe.
 
 [^p8-oit]: OIT, [*Generative AI and Jobs: A Refined Global Index of Occupational Exposure*](https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure), 2025.
 
-Nous avons un moyen de regarder ce que nous apprenons, en plus de ce que nous produisons. Comparons maintenant plusieurs façons de faire le travail demandé.
+Le résultat de l’exercice tient dans quelques booléens ; son intérêt se voit surtout le lendemain, lorsque nous savons encore expliquer la condition et la modifier. Ajoutons cette capacité à nos critères quand nous comparerons plusieurs façons d’accomplir une tâche.
 
 ---
 

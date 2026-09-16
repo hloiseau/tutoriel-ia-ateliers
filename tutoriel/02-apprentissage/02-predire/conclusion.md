@@ -1,1 +1,1 @@
-Nous avons une première chaîne complète : une image devient des scores, puis des probabilités, puis un chiffre choisi. Elle fonctionne, mais les réponses sont mauvaises. Il manque un moyen de corriger les paramètres.
+Une image devient maintenant dix scores, puis dix probabilités et enfin un chiffre choisi. Pour l’instant, notre trois finit dans la case du deux. Il faut traduire cette erreur en modifications des paramètres.

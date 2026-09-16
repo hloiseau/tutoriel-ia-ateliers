@@ -6,4 +6,4 @@ Changer d’API ne suffit pas toujours : deux modèles acceptant des messages de
 
 Le fichier `fiches/sortie.md` distingue ce que l’on possède, ce que l’on peut exporter et ce qu’il faudra reconstruire. Il demande aussi quelle procédure permet de travailler pendant une panne. Une bonne réponse peut être très simple : reprendre les tests et la recette manuellement.
 
-Nous n’avons pas besoin d’une migration parfaite en cinq minutes. Nous avons besoin de savoir où se trouve la dépendance et ce que son remplacement coûterait en travail.
+L’essai ne promet pas une migration parfaite en cinq minutes. Il localise la dépendance et donne une première idée du travail nécessaire pour la remplacer.

@@ -1,1 +1,1 @@
-
+Une limite arrête la boucle ; le journal explique où elle s’est arrêtée ; la fiche rassemble l’état nécessaire pour repartir. Cette reprise consomme toutefois du temps, des appels et parfois un quota payant. Nous allons les compter séparément.

@@ -6,7 +6,7 @@
 
 **TL;DR** — Nous allons découper les textes, comparer leurs mots à ceux de la question et conserver les références des passages sélectionnés.
 
-Un document entier peut contenir la bonne information et beaucoup d’autres choses. Essayons de ramener seulement le morceau dont nous avons besoin.
+Notre règle de notification occupe deux phrases au milieu d’un document. Envoyer toute la page au modèle ajouterait surtout du bruit ; essayons de ramener le passage qui répond à la question.
 
 ## Garder des morceaux que l’on peut retrouver
 
@@ -35,7 +35,7 @@ for passage in charger():
 
 Lancez `python ma_recherche.py`. La fonction `mots` du module fourni normalise la casse et les accents, puis écarte quelques mots fréquents comme « le » et « des ». Vous voyez les mots communs qui ont fait remonter chaque passage.
 
-Compter les intersections traite pourtant tous les mots de la même manière. Un terme présent partout distingue peu les documents. Le classement livré dans `Index` utilise **TF-IDF** : la fréquence dans le passage est pondérée par la rareté du mot dans le corpus. Les vecteurs sont ensuite normalisés et comparés par leur produit scalaire, ce qui revient ici à une similarité cosinus.[^p7-tfidf]
+Ce premier résultat donne le même poids à tous les mots communs. Or, un terme présent dans presque tous les documents nous aide peu à choisir. Le classement livré dans `Index` utilise **TF-IDF** : la fréquence dans le passage est pondérée par la rareté du mot dans le corpus. Les vecteurs sont ensuite normalisés et comparés par leur produit scalaire, ce qui revient ici à une similarité cosinus.[^p7-tfidf]
 
 Lancez cette version :
 
@@ -43,7 +43,7 @@ Lancez cette version :
 python recherche.py "Une remise en stock à prix égal envoie-t-elle une notification ?" --sortie sorties/recherche.json
 ```
 
-Le deuxième paragraphe de `notification` doit apparaître en tête. Ouvrez le journal et lisez le texte : **le score aide à classer, il ne certifie pas la réponse**. Le seuil de `0.12` est un choix de cet exercice, pas une probabilité minimale de vérité.
+Le deuxième paragraphe de `notification` doit apparaître en tête. Ouvrez le journal et lisez son texte. Le score nous a aidés à le classer ; il ne dit rien sur la vérité d’une future réponse. De même, le seuil de `0.12` sert uniquement à cet exercice : ce nombre n’est pas une probabilité minimale de vérité.
 
 [^p7-tfidf]: Manning, Raghavan et Schütze, [pondération TF-IDF](https://nlp.stanford.edu/IR-book/html/htmledition/tf-idf-weighting-1.html). Notre code utilise une variante lissée de l’IDF.
 
@@ -57,13 +57,13 @@ python recherche.py "À quelle heure purge-t-on les fixtures ?" --sortie sorties
 
 Notre moteur ne trouve rien. Pourtant, `staging.md` explique quand les données de démonstration sont réinitialisées. La question emploie simplement un autre vocabulaire.
 
-Ce manque n’est pas une preuve que l’information n’existe pas. Il décrit une limite de notre recherche. On peut ajouter des synonymes adaptés au domaine, reformuler la question, ou utiliser des embeddings appris pour rapprocher certaines formulations. Mais une proximité sémantique n’est toujours pas une garantie de pertinence : il faudra tester les passages retrouvés.
+Le document existe ; notre recherche vient simplement de le manquer. Nous pouvons ajouter des synonymes adaptés au domaine, reformuler la question ou utiliser des embeddings appris pour rapprocher certaines formulations. Cette dernière méthode devra elle aussi être évaluée sur les passages retrouvés : deux textes proches par le sens peuvent rester hors sujet pour notre question précise.
 
 Pour le constater sans ajouter un modèle, remplacez la question par « Quand les données de staging sont-elles réinitialisées ? », avec un nouveau nom de sortie. Le passage attendu remonte alors.
 
-Notre index est reconstruit en mémoire à chaque lancement. Un corpus plus grand demanderait peut-être de le conserver ; il faudrait alors prévoir sa mise à jour et la suppression des documents retirés. Pour l’instant, gardons cette version simple et mesurons ce qu’elle retrouve réellement.
+Notre index est reconstruit en mémoire à chaque lancement. Avec un corpus plus grand, nous pourrions le conserver entre deux exécutions ; il faudrait alors prévoir sa mise à jour et la suppression des documents retirés. Pour l’instant, cette version simple nous laisse voir exactement ce qui remonte et ce qui lui échappe.
 
-La recherche réussit sur certaines formulations et échoue sur une autre dont nous connaissons pourtant la réponse. Gardons ce cas : il nous empêchera de confondre une démonstration réussie avec une recherche fiable en général.
+La règle de staging remonte avec une formulation et disparaît avec « purge des fixtures ». Gardons les deux questions : si nous changeons le classement, elles nous diront tout de suite ce que nous avons gagné — et peut-être perdu.
 
 ---
 

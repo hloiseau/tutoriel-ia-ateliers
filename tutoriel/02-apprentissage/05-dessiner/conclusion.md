@@ -1,1 +1,1 @@
-Le modèle est maintenant un fichier que nous pouvons recharger et utiliser. Nous avons aussi rencontré une limite très concrète : notre écriture ne ressemble pas forcément aux images qui ont servi à l’entraînement.
+Le fichier du modèle se recharge sans nouvel entraînement. Face à notre dessin, sa réponse dépend beaucoup de la manière dont nous avons occupé la grille. Ajoutons maintenant une couche au réseau et regardons si davantage de paramètres change ce comportement.

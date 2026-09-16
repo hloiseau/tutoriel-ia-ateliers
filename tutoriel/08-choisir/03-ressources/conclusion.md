@@ -1,1 +1,1 @@
-Nous savons faire un calcul limité sans lui faire dire plus que ce qu’il mesure. Passons à ce qui arriverait si notre fournisseur, notre réseau ou notre machine devenait indisponible.
+Le calcul affiche 100 Wh pour notre hypothèse et s’arrête là. Une autre question très concrète attend l’équipe : que devient son travail si le fournisseur, le réseau ou la machine devient indisponible ?

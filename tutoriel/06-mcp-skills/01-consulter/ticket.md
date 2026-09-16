@@ -21,8 +21,8 @@ La réponse est assez longue : le SDK fournit notamment une représentation text
 ```
 Code: Contenu du ticket fictif retourné par le serveur
 
-Comparez-le avec `donnees/tickets.json`. C’est bien notre fichier qui a répondu. Le client n’a ni deviné la règle ni demandé à un modèle de la reformuler.
+Comparez-le avec `donnees/tickets.json` : les champs correspondent. Le client a lu la règle par l’intermédiaire du serveur, sans demander à un modèle de la deviner ou de la reformuler.
 
-Le journal conserve aussi `protocole`, la version employée lors de l’échange. Notre exécution avec le SDK fourni utilise `2026-07-28`. Ce journal contient les résultats obtenus par le client, pas une capture de chaque message qui a circulé.
+Le journal conserve aussi `protocole`, la version employée lors de l’échange. Notre exécution avec le SDK fourni utilise `2026-07-28`. Nous y enregistrons le résultat obtenu par le client ; pour examiner chaque message du transport, il faudrait une trace plus détaillée.
 
 Pour refaire la commande, choisissez un autre nom de journal. Le client refuse d’écraser le premier : nous pourrons comparer nos essais sans perdre la réponse précédente.

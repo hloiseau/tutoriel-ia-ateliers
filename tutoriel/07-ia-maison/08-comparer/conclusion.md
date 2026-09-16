@@ -1,1 +1,1 @@
-Gardez les journaux et les exemples ratés avec les résultats encourageants. Ils nous disent où porter le prochain effort, sans confondre une expérience instructive avec un outil prêt à être déployé.
+Gardez les journaux et les exemples ratés avec les résultats encourageants. Ensemble, ils indiquent où porter le prochain effort. La dernière partie élargit maintenant la question : voulons-nous consentir cet effort, avec quelles données, quelles dépendances et quelles conséquences ?

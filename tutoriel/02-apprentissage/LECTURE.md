@@ -154,9 +154,9 @@ X[index].reshape(8, 8)
 
 ### Mettre des images de côté
 
-Nous pourrions entraîner le modèle sur toutes les images, puis compter ses bonnes réponses sur ces mêmes images. Mais nous voudrions aussi savoir comment il se comporte sur celles qu’il n’a pas utilisées pour apprendre.
+Avant l’entraînement, mettons de côté les images qui serviront à juger le modèle. Compter ses bonnes réponses sur les images qu’il vient d’apprendre nous dirait surtout s’il sait retrouver ses exercices.
 
-Nous formons donc trois groupes :
+Nous formons trois groupes :
 
 | Groupe | Images | Usage |
 | --- | ---: | --- |
@@ -198,7 +198,7 @@ python -c "import sys; print(sys.executable)"
 
 Le chemin doit contenir le dossier `.venv` de l’atelier. Cela évite de chercher pendant vingt minutes pourquoi une bibliothèque est « installée » et « introuvable » en même temps. 🙂
 
-Nous avons des images, leurs réponses attendues et trois groupes distincts. Aucun paramètre n’a encore été entraîné. Le modèle va maintenant devoir transformer les 64 pixels en dix scores.
+Les images sont chargées, leurs réponses attendues sont connues et le test attend sagement à part. Aucun paramètre n’a encore bougé : il faut d’abord transformer les 64 pixels en dix scores.
 
 ## 2. Des pixels à une première réponse
 
@@ -264,7 +264,7 @@ Le modèle peut ainsi attribuer `0,60` au trois, `0,25` au huit et répartir les
 chiffre = probas.argmax()
 ```
 
-Un score de 60 % est une probabilité **calculée par le modèle**. Ce n’est pas automatiquement la garantie que 60 % des dessins ayant ce score seront bien reconnus. Pour savoir si les scores correspondent aux fréquences de réussite, il faudrait aussi étudier leur calibration.
+Un score de 60 % est une probabilité **calculée par le modèle**. Pour affirmer que, parmi les dessins qui reçoivent ce score, environ 60 % sont bien reconnus, il faudrait étudier la **calibration** du modèle. Nous ne la mesurons pas dans cet atelier.
 
 
 [^p2-2-softmax-softmax]: [Dive into Deep Learning, Softmax Regression](https://d2l.ai/chapter_linear-classification/softmax-regression.html).
@@ -287,7 +287,7 @@ Exactitude avant entraînement : 10.3%
 
 Le chiffre attendu est un trois. Le modèle choisit un deux. Ses probabilités sont toutes proches d’un dixième : les poids viennent d’être tirés au hasard, il n’a encore reçu aucune correction.
 
-Les 10,3 % de bonnes réponses ne sont donc pas une panne. Avec dix classes assez équilibrées, une règle naïve ou un choix au hasard peut déjà obtenir un résultat de cet ordre. C’est un point de comparaison, pas un objectif.
+Les 10,3 % de bonnes réponses nous donnent un point de départ. Avec dix classes assez équilibrées, une règle naïve ou un choix au hasard peut déjà obtenir un résultat de cet ordre. L’entraînement devra faire nettement mieux.
 
 Ouvrez `02_predire.py`. Remplacez :
 
@@ -301,15 +301,15 @@ par :
 index = train[1]
 ```
 
-Relancez le programme. Nous avons changé l’image, pas les paramètres. Le score peut bouger, mais le modèle n’apprend rien en exécutant cette prédiction.
+Relancez le programme. Les scores changent parce que l’image a changé. Les paramètres, eux, sont exactement les mêmes : exécuter une prédiction ne les modifie pas.
 
 Vous pouvez conserver cette modification ou remettre `train[0]` pour retrouver l’exemple du trois. Le script d’entraînement choisit ses propres lots et ne dépend pas de ce changement.
 
-Nous avons une première chaîne complète : une image devient des scores, puis des probabilités, puis un chiffre choisi. Elle fonctionne, mais les réponses sont mauvaises. Il manque un moyen de corriger les paramètres.
+Une image devient maintenant dix scores, puis dix probabilités et enfin un chiffre choisi. Pour l’instant, notre trois finit dans la case du deux. Il faut traduire cette erreur en modifications des paramètres.
 
 ## 3. Faire apprendre le modèle
 
-Le modèle se trompe sur un trois. Nous pourrions lui dire « non, c’est un trois », mais il faut traduire cette correction en calculs. Quels poids faut-il changer ? Et de combien ?
+Le modèle vient de prendre un trois pour un deux. L’étiquette nous donne la bonne réponse ; il reste à traduire l’écart en calculs. Quels poids faut-il changer ? Et de combien ?
 
 ### Mesurer ce qui ne va pas
 
@@ -452,13 +452,13 @@ Figure: Poids du modèle linéaire. Un pixel clair placé sur une zone bleue aug
 
 Ce ne sont pas dix photographies mémorisées. Ce sont les coefficients utilisés dans nos multiplications. Certaines positions favorisent un chiffre, d’autres le défavorisent.
 
-Le modèle a maintenant une manière de séparer les classes à partir de ces positions. Il n’a pas pour autant appris que « deux boucles superposées font un huit », ni que déplacer un chiffre devrait conserver son identité.
+Le modèle sépare maintenant les classes à partir de ces positions. Rien dans ce calcul ne lui enseigne que « deux boucles superposées font un huit » ou qu’un chiffre garde son identité lorsqu’on le déplace. Nous allons justement essayer de le déplacer.
 
-Les paramètres ont été ajustés à partir des images et des réponses attendues. Nous pouvons mesurer la progression, sauvegarder le résultat et le regarder. Il reste à vérifier ce que cette progression vaut sur d’autres images.
+La perte a baissé, les bonnes réponses ont augmenté et les paramètres tiennent désormais dans un fichier. Ces courbes portent encore sur l’entraînement et la validation. Le jeu de test va nous dire ce que le modèle fait avec des images restées de côté.
 
 ## 4. Lire les résultats sans se raconter d’histoires
 
-Un modèle qui réussit ses exercices, c’est encourageant. Mais notre objectif était de reconnaître des chiffres, pas seulement de faire monter une courbe. Ouvrons les erreurs, puis modifions les images pour voir où le résultat tient encore.
+Notre courbe monte et 95 % des images de validation sont bien classées. Ouvrons maintenant les erreurs du test, puis déplaçons les chiffres d’un pixel. Nous verrons vite ce que ce résultat mesure vraiment.
 
 ### Faire le bilan sur le test
 
@@ -498,7 +498,7 @@ Regardez ensuite les scores. Une mauvaise réponse peut recevoir un score élev�
 
 Une image complètement noire passera aussi dans les calculs. Si tous les pixels sont nuls, les scores du modèle linéaire se réduisent à ses biais. Il choisira quand même un chiffre.
 
-Nous pourrions ajouter une règle qui refuse les scores trop faibles, mais il faudrait mesurer son effet : combien d’erreurs évite-t-elle, et combien de bonnes réponses refuse-t-elle ? Choisir un seuil au hasard ne rend pas le système fiable.
+Une règle pourrait refuser les scores trop faibles. Avant de l’adopter, il faudrait compter les erreurs qu’elle évite et les bonnes réponses qu’elle rejette. Un seuil choisi au hasard déplacerait simplement le problème.
 
 ### Déplacer les chiffres d’un pixel
 
@@ -524,11 +524,11 @@ Le décalage n’est pas parfaitement neutre : sur une grille aussi petite, perd
 
 Une piste consiste à lui montrer des variations pendant l’entraînement : légers déplacements, par exemple. C’est une forme d’**augmentation de données**. On fabriquerait ces variantes à partir des seules images d’entraînement, puis on vérifierait leur effet sur la validation. Transformer aussi le test en exercices d’entraînement ferait disparaître la question que nous cherchons à mesurer.
 
-Les quinze erreurs et le décalage nous donnent des informations que le seul pourcentage de réussite cachait. Nous pouvons maintenant passer à une entrée qui vient vraiment de l’extérieur : notre propre dessin.
+Le modèle fait quinze erreurs sur le test et s’effondre lorsque les images glissent d’un pixel. Soumettons-lui maintenant une entrée qui vient vraiment de l’extérieur : notre propre dessin.
 
 ## 5. Faire reconnaître nos propres dessins
 
-Écrire le même chiffre de la même manière que dans le jeu de données, ce serait pratique. Mais ce n’est pas ce qui arrivera lorsque quelqu’un utilisera notre programme. À nous de dessiner.
+Les images du jeu partagent un format et une manière d’occuper la grille. Notre propre écriture risque de bousculer ces habitudes. À nous de dessiner.
 
 ### Dessiner puis enregistrer
 
@@ -621,13 +621,13 @@ Si vous souhaitez ensuite lui faire apprendre vos dessins, il faudra aussi leur 
 
 [^p2-5-sauvegarde-save]: [NumPy, savez_compressed](https://numpy.org/doc/stable/reference/generated/numpy.savez_compressed.html).
 
-Le modèle est maintenant un fichier que nous pouvons recharger et utiliser. Nous avons aussi rencontré une limite très concrète : notre écriture ne ressemble pas forcément aux images qui ont servi à l’entraînement.
+Le fichier du modèle se recharge sans nouvel entraînement. Face à notre dessin, sa réponse dépend beaucoup de la manière dont nous avons occupé la grille. Ajoutons maintenant une couche au réseau et regardons si davantage de paramètres change ce comportement.
 
 ## 6. Ajouter une couche… et voir ce que cela change
 
-Notre modèle linéaire additionne les contributions des pixels. Il n’a pas de couche intermédiaire capable de transformer leur combinaison avant de calculer les dix scores.
+Notre modèle linéaire additionne directement les contributions des pixels pour obtenir dix scores. Ajoutons une transformation entre les deux : une couche de 32 unités.
 
-Ajoutons-en une. Nous pourrons comparer le résultat, mais aussi vérifier si davantage de paramètres suffit à mieux reconnaître les chiffres.
+Le réseau contiendra davantage de paramètres. Les courbes, la validation et le test nous diront ce que cette capacité supplémentaire lui apporte réellement.
 
 ### Une transformation entre l’image et les scores
 
@@ -764,13 +764,13 @@ Nous pouvons agir sur la quantité et la qualité des données, la taille du mod
 
 Les exemples et leurs étiquettes font partie du comportement appris. Si la cible est mal définie, le programme peut très bien optimiser ce qu’on lui a demandé tout en produisant quelque chose d’inutile.
 
-Nous avons construit un réseau à plusieurs couches et fait circuler le gradient à travers ses calculs. Il sait apprendre davantage de détails ; certains sont utiles, d’autres permettent seulement de mémoriser. Les données à part servent à voir la différence.
+Le gradient traverse désormais plusieurs couches. Cette capacité supplémentaire aide le réseau à apprendre davantage de détails, y compris 80 étiquettes tirées au hasard. La validation et le test nous permettent de voir ce qui reste utile sur d’autres images.
 
 ## 7. Produire du texte, un morceau à la fois
 
-Nous avons donné des images au modèle et obtenu des classes. Pour produire du texte, nous allons aussi manipuler des nombres, mais la sortie devra être réutilisée pour continuer une séquence.
+Avec les chiffres, une image produisait une classe et le calcul s’arrêtait là. Pour écrire du texte, chaque sortie doit pouvoir servir à choisir la suivante.
 
-Commençons avec un modèle de langage qui tient dans une table. Nous pourrons compter nous-mêmes ce qu’il apprend.
+Commençons avec un modèle de langage qui tient dans une table. Son corpus est assez court pour que nous puissions compter nous-mêmes ce qu’il apprend.
 
 ### Transformer les caractères en nombres
 
@@ -959,22 +959,22 @@ Pour entraîner un modèle de langage autorégressif, on peut lui fournir une s�
 
 Un modèle préentraîné à poursuivre du texte peut ensuite être adapté avec des exemples de consignes et de réponses, ainsi qu’avec d’autres méthodes d’optimisation. Les travaux sur InstructGPT illustrent cette distinction entre le préentraînement et l’entraînement destiné à mieux suivre des instructions.[^p2-7-reponse-instructions]
 
-Cela explique aussi pourquoi « prédire la suite » ne signifie pas forcément « répondre à la question ». Une suite de texte peut imiter une réponse, recopier une formule familière ou continuer un dialogue dans une direction qui ne convient pas à la demande.
+La prédiction de la suite produit parfois une réponse utile, parfois une formule familière ou un dialogue qui part dans la mauvaise direction. La capacité à suivre une consigne se travaille et s’évalue comme un usage à part entière.
 
 Et une réponse bien écrite peut être fausse. Nous avons déjà vu notre classifieur produire une mauvaise réponse avec un score élevé. Pour le langage, les erreurs prennent d’autres formes : une référence inexistante, une explication plausible mais incorrecte, une API inventée.
 
-Nos expériences ne mesurent pas ces erreurs des grands modèles. Elles rendent visibles deux mécanismes qu’on y retrouve : produire une sortie à partir d’un contexte, et sélectionner des possibilités selon des scores. Leur fiabilité sur une tâche précise reste quelque chose à évaluer.
+Nous n’avons pas mesuré les erreurs des grands modèles avec notre corpus de mille caractères. L’expérience rend seulement visibles deux mécanismes que l’on retrouve chez eux : produire une sortie à partir d’un contexte et sélectionner des possibilités selon des scores. Leur fiabilité doit ensuite être évaluée sur la tâche qui nous intéresse.
 
 
 [^p2-7-reponse-instructions]: [Ouyang et ses collègues, Training language models to follow instructions with human feedback (2022)](https://arxiv.org/abs/2203.02155).
 
-Nous avons produit du texte à partir de comptages et exécuté un calcul d’attention. Le contexte, les paramètres et la méthode de génération jouent des rôles distincts. Modifier l’un ne revient pas à modifier les autres.
+Le corpus fixe les comptages de notre bigramme, le début fournit son contexte et la température modifie le tirage. L’attention nous a ensuite permis de combiner plusieurs positions. Gardons ces rôles en tête avant d’ajouter des outils autour du modèle.
 
 ## 8. Du modèle aux outils qui l’entourent
 
-Le modèle de chiffres reçoit des pixels. Le modèle de langage reçoit des tokens. Pour lire un fichier, consulter une documentation ou exécuter un test, il faut aussi du logiciel autour d’eux.
+Le classifieur reçoit des pixels ; le bigramme reçoit des tokens. Aucun des deux ne sait ouvrir un fichier, consulter une documentation ou lancer un test. Ces actions viennent du logiciel qui entoure le modèle.
 
-Cette distinction devient très concrète dès qu’un programme peut agir sur autre chose que son tableau de sortie.
+Donnons à notre application un premier outil, puis provoquons un appel qu’elle doit refuser.
 
 ### Exécuter un appel d’outil
 
@@ -1047,7 +1047,7 @@ Reprenons les opérations que nous avons réellement effectuées :
 | Changer la température | La répartition utilisée pour choisir le caractère suivant |
 | Lire une fiche avec un outil | Les informations que l’application peut fournir ensuite au modèle |
 
-Cette distinction évite plusieurs malentendus. Donner une documentation à lire n’est pas la même opération qu’adapter les poids du modèle. Demander une réponse plus prudente n’améliore pas automatiquement les données qui ont servi à l’entraînement.
+Le tableau montre pourquoi deux changements qui se ressemblent dans une interface peuvent agir à des endroits très différents. Ajouter une documentation enrichit les informations disponibles pour la réponse en cours ; adapter le modèle modifie ses poids. Une consigne plus prudente, elle, laisse intactes les données qui ont servi à l’entraînement.
 
 Un agent peut aussi perdre l’accès à une information si son application la retire, la résume mal ou ne la charge pas au bon moment. Notre bigramme avait une limite extrêmement visible : un caractère de contexte. Les modèles actuels en utilisent beaucoup plus, mais la quantité d’informations accessible et la manière de les exploiter restent des contraintes.
 
@@ -1087,16 +1087,16 @@ Vous pouvez aussi décider de faire ces expériences sans agent. Le matériel, l
 
 Ce sont ces choix concrets qui déterminent la place de l’outil : ce que nous voulons apprendre, ce que nous voulons déléguer et ce que nous devons pouvoir vérifier.
 
-Nous avons entraîné, sauvegardé, évalué et utilisé nos modèles. Nous avons aussi vu des réussites trompeuses, des erreurs provoquées par un petit décalage et la différence entre calculer une réponse et exécuter un outil.
+Notre petit modèle tient dans un fichier que nous savons entraîner, sauvegarder, évaluer et recharger. Son joli score résiste mal à un décalage d’un pixel, et l’appel d’outil refusé nous a montré où l’application reprend la main.
 
-Le code et les résultats sont assez petits pour être gardés sous la main et modifiés. C’est une bonne base pour aborder ensuite des modèles déjà entraînés, dont les besoins matériels et les capacités seront très différents.
+Le code et les résultats restent assez petits pour être ouverts et modifiés. Nous pouvons maintenant changer d’échelle sans oublier où se trouvent les paramètres, les entrées et le programme qui agit autour du modèle.
 
 ## Conclusion
 
-Une image est devenue une ligne de nombres, puis dix scores. Nous avons mesuré une erreur, ajusté des poids et conservé les paramètres dans un fichier. Un dessin extérieur a suffi à montrer que la présentation des données comptait autant que le bon fonctionnement des calculs.
+Une image est devenue une ligne de nombres, puis dix scores. Nous avons mesuré une erreur, ajusté les poids et conservé les paramètres dans un fichier. Notre dessin et le décalage d’un pixel ont ensuite montré combien le résultat dépendait de la présentation des données.
 
 Le réseau plus grand a mieux appris l’entraînement, sans gagner de bonnes réponses sur notre test. Avec des étiquettes arbitraires, il a même appris parfaitement des associations inutiles. Le résultat de validation nous a permis de voir ce que la seule réussite sur les exemples cachait.
 
 Pour le texte, une table de fréquences a produit des suites de caractères. Nous avons séparé ce qui vient du corpus, du contexte et du tirage. Puis un petit calcul d’attention a combiné les informations de plusieurs positions.
 
-Ces modèles ne remplacent pas les outils actuels de développement. Ils nous donnent en revanche des opérations que nous savons regarder : charger des données, calculer, entraîner, évaluer et exécuter un outil. Lorsque nous utiliserons un modèle beaucoup plus grand, ces questions resteront là.
+Ces expériences nous laissent des opérations que nous savons regarder : charger des données, calculer, entraîner, évaluer et exécuter un outil. La partie suivante change d’échelle avec un modèle de langage déjà entraîné. Cette fois, nous téléchargerons ses poids et nous les ferons fonctionner sur notre propre machine.

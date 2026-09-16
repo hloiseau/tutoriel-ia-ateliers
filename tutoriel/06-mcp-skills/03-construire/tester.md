@@ -1,4 +1,4 @@
-Nos commandes montrent que quelques appels fonctionnent. Gardons aussi des contrôles que nous pourrons relancer après un changement.
+Nos commandes montrent que quelques appels fonctionnent. Écrivons maintenant des contrôles que nous pourrons relancer après chaque changement, sans rouvrir les journaux un par un.
 
 Créez `test_mon_serveur.py` à côté de `mon_serveur.py` et écrivez :
 
@@ -43,7 +43,7 @@ python -m unittest test_mon_serveur -v
 
 Les trois tests doivent passer. Le deuxième cherche aussi `string_pattern_mismatch`, le code de l’erreur de format retournée par notre version du SDK : une simple erreur « document introuvable » ne suffirait pas. Le troisième vérifie l’inventaire, pour distinguer un outil absent d’un outil présent qui aurait refusé cet appel.
 
-`IsolatedAsyncioTestCase` permet d’écrire des tests avec `async` et `await`. `Client(mcp)` appelle notre serveur en mémoire ; il ne démarre pas de processus. Les commandes précédentes ont, elles, exercé le transport stdio.
+`IsolatedAsyncioTestCase` permet d’écrire des tests avec `async` et `await`. Ici, `Client(mcp)` appelle le serveur en mémoire. Les commandes précédentes complètent donc ces tests en exerçant le transport stdio entre deux processus.
 
 Vérifions que le premier test ne passe pas par accident. Commentez temporairement le décorateur de `lire_ticket` dans **`mon_serveur.py`**, puis relancez les tests. La lecture doit échouer : la fonction existe toujours en Python, mais elle n’est plus exposée comme outil. Rétablissez le décorateur et vérifiez que les trois tests repassent au vert.
 
@@ -57,4 +57,4 @@ python configuration.py --serveur mon_serveur.py
 
 Dans `.vscode/mcp.json`, remplacez l’entrée **`atelier-tickets`** par celle affichée, en gardant vos autres serveurs. Arrêtez puis redémarrez cette entrée depuis **MCP: List Servers** pour charger votre programme. Les chemins absolus affichés concernent votre machine. Avec un autre assistant, modifiez le chemin du programme dans sa configuration MCP.
 
-Demandez de nouveau la lecture de PRIX-1 et inspectez l’appel. L’essai dans l’assistant dépend de votre installation et de votre modèle ; les tests Python ne le remplacent pas. Pour les chapitres suivants, nous garderons `mon_serveur.py` et cette configuration.
+Demandez de nouveau la lecture de PRIX-1 et inspectez l’appel. Cet essai dépend de votre installation et de votre modèle. Les tests Python ont vérifié le serveur et ses appels ; ils ne prédisent pas ce que l’assistant choisira d’en faire. Pour les chapitres suivants, nous garderons `mon_serveur.py` et cette configuration.

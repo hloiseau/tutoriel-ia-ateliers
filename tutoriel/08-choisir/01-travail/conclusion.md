@@ -1,1 +1,1 @@
-Nous avons commencé par les contenus et les personnes, avant les paramètres du modèle. Passons maintenant aux fichiers que l’on peut obtenir et aux droits qui les accompagnent.
+Notre fiche de provenance contient déjà des informations, quelques inconnues et des personnes que le mot « données » aurait facilement cachées. Les fichiers disponibles et leurs licences vont maintenant préciser ce que nous pouvons étudier, modifier et partager.

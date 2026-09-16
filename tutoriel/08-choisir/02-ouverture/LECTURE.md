@@ -4,7 +4,7 @@
 
 [Précédent : D’où viennent les données et le travail humain ?](../01-travail/LECTURE.md) · [Suivant : Coûts, énergie, matériel et environnement](../03-ressources/LECTURE.md)
 
-**TL;DR** — Télécharger des poids, lire du code et pouvoir réutiliser un système sont trois choses à examiner séparément. Le mot « open » ne remplit pas notre fiche à notre place.
+**TL;DR** — Télécharger des poids, lire le code et réutiliser un système demandent des droits et des fichiers différents. Le mot « open » ne remplit pas notre fiche à notre place.
 
 « C’est ouvert, donc on peut tout faire avec. » Voilà une phrase qui mérite qu’on ouvre au moins le fichier de licence.
 
@@ -20,11 +20,11 @@ Dans notre dépôt, le code, les textes et certains éléments tiers ont des lic
 | Données | Leur provenance et leurs conditions de réutilisation sont-elles décrites ? |
 | Service hébergé | Quelles conditions s’appliquent à nos entrées, sorties et journaux ? |
 
-Une licence permissive annoncée pour le moteur ne s’étend pas automatiquement au modèle que l’on charge. Inversement, utiliser une interface propriétaire n’efface pas la licence du modèle situé derrière.
+Une licence permissive annoncée pour le moteur couvre le moteur dans les conditions qu’elle énonce. Le modèle chargé possède ses propres conditions, tout comme l’interface placée devant lui.
 
-Pour SmolLM2-360M-Instruct, la fiche annonce Apache 2.0.[^p8-carte-licence] Nous pouvons le noter avec son lien et la date de consultation. Cela ne constitue pas, à lui seul, un audit de tous les contenus ayant servi à l’entraînement. Pour redistribuer une combinaison précise de fichiers, il faut lire les textes qui leur sont effectivement applicables, avec leurs notices et conditions.[^p8-apache]
+Pour SmolLM2-360M-Instruct, la fiche annonce Apache 2.0.[^p8-carte-licence] Notons-le avec le lien et la date de consultation. Cette information porte sur le modèle indiqué par la fiche ; elle ne documente pas à elle seule tous les contenus qui ont servi à l’entraînement. Avant de redistribuer une combinaison précise de fichiers, lisons les textes, notices et conditions qui s’appliquent à chacun.[^p8-apache]
 
-Le but de notre exercice est de retrouver ces éléments. Un badge sur une page d’accueil est un début de piste ; ce n’est pas encore le dossier de notre application.
+Notre exercice consiste à retrouver ces éléments. Le badge d’une page d’accueil fournit une piste ; le dossier de l’application doit conserver les références qui s’appliquent réellement.
 
 [^p8-apache]: Apache Software Foundation, [texte de la licence Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0), notamment les conditions de redistribution. La portée dépend des éléments effectivement placés sous cette licence.
 
@@ -34,11 +34,11 @@ Le but de notre exercice est de retrouver ces éléments. Un badge sur une page 
 
 La définition *Open Source AI* 1.0 de l’Open Source Initiative associe les libertés d’utiliser, d’étudier, de modifier et de partager à plusieurs éléments accessibles : paramètres, code et informations détaillées sur les données d’entraînement. Elle ne demande pas que toutes les données soient distribuées sans exception ; elle précise les informations attendues pour comprendre et reconstruire un système substantiellement équivalent.[^p8-osi]
 
-C’est un cadre explicite, que nous pouvons examiner, plutôt qu’une impression donnée par un nom. Il ne faut pas pour autant confondre ce cadre avec une garantie de bonnes conditions de travail, de faible consommation ou de réponses justes.
+Ce cadre explicite se prête à l’examen. Il décrit des libertés et les éléments nécessaires pour les exercer ; les conditions de travail, la consommation et la justesse des réponses demandent leurs propres informations.
 
 L’ouverture peut nous donner des prises utiles. Si nous pouvons exécuter le modèle ailleurs, inspecter les étapes et modifier le programme, nous avons davantage de moyens d’expérimenter et de continuer sans le service d’origine. Encore faut-il disposer du matériel, du temps et des compétences nécessaires.
 
-Une liberté que l’on peut exercer collectivement reste intéressante même si l’on ne veut pas tout refaire seul. Une équipe, une association ou un hébergeur peut porter une partie de ce travail. L’alternative à un grand fournisseur n’est pas forcément de devenir, à soi seul, administrateur système tous les week-ends. 🙂
+Ces libertés peuvent aussi s’exercer collectivement. Une équipe, une association ou un hébergeur peut porter une partie du travail. Quitter un grand fournisseur ne vous condamne donc pas à devenir administrateur système tous les week-ends. 🙂
 
 [^p8-osi]: Open Source Initiative, [*The Open Source AI Definition — 1.0*](https://opensource.org/ai/open-source-ai-definition).
 
@@ -46,7 +46,7 @@ Une liberté que l’on peut exercer collectivement reste intéressante même si
 
 Reprenez SmolLM2 dans `fiches/provenance.md`. Nous avons déjà une raison d’être précis : le modèle utilisé dans les parties 3 et 7 est le 360M *Instruct*, avec un fichier GGUF déterminé, pas n’importe quel membre de sa famille.
 
-Notez la référence, la licence annoncée, la langue indiquée, les liens vers les informations de préparation et ce que vous avez effectivement testé. Dans la dernière colonne, séparez trois formulations : « indiqué par l’auteur », « vérifié dans notre essai » et « pas établi avec les éléments consultés ».
+Notez la référence, la licence annoncée, la langue indiquée, les liens vers les informations de préparation et ce que vous avez effectivement testé. La dernière colonne doit permettre de reconnaître la provenance de chaque affirmation : « indiqué par l’auteur », « vérifié dans notre essai » ou « pas établi avec les éléments consultés ».
 
 Par exemple, l’étiquette de langue anglaise provient de la fiche. La durée de temporisation inventée vient de notre journal d’exécution. Ni l’une ni l’autre ne prouve que toutes les réponses en français seront fausses. Elles nous donnent en revanche une raison concrète de ne pas valider cet usage sur la foi du nom du modèle.
 
@@ -54,7 +54,7 @@ Une piste de correction est disponible dans `corriges/provenance.md`. Elle conti
 
 Vous pouvez refaire le même travail avec un autre modèle. Gardez sa révision lorsqu’elle est disponible. Si vous changez de fichier ou de service, relisez les conditions correspondantes au lieu de transporter automatiquement la conclusion précédente.
 
-Nous pouvons maintenant dire plus précisément ce qui est ouvert et ce qui reste à établir. Regardons une autre information souvent résumée trop vite : le coût de l’outil.
+Notre fiche dit maintenant quels éléments nous pouvons obtenir, étudier ou modifier, et quelles informations restent à établir. Le coût de l’outil mérite la même précision : une facture, une mesure électrique et un impact environnemental racontent trois choses différentes.
 
 ---
 

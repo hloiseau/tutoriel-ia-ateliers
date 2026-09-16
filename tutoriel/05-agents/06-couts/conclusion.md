@@ -1,1 +1,1 @@
-
+Un bilan utile rapproche le résultat vérifié, les tokens ou le quota consommé, le temps écoulé et votre attention. Gardez ces mesures avec leur contexte : elles nourriront les choix d’usage de la dernière partie.

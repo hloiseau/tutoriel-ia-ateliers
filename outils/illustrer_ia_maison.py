@@ -34,7 +34,7 @@ box(ax,.45,2.1,3.1,1.3,'Question','« Quel délai ? »',GRAY)
 arrow(ax,(3.65,2.75),(5.9,4.5))
 box(ax,8.25,2.1,3.1,1.3,'Modèle local','Question + passages')
 arrow(ax,(3.65,2.75),(8.15,2.75));arrow(ax,(9.8,4.5),(9.8,3.5))
-box(ax,2.3,.2,7.4,1.1,'Réponse à confronter aux sources','Une source pertinente ne garantit pas une réponse juste.',RED)
+box(ax,2.3,.2,7.4,1.1,'Réponse à confronter aux sources','Le modèle peut encore contredire les passages retenus.',RED)
 arrow(ax,(9.8,2),(8.8,1.4))
 save(fig,'recherche')
 

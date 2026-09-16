@@ -6,11 +6,11 @@
 
 **TL;DR** — Cette référence compare les interfaces, les possibilités et les coûts des outils. Vous pouvez y revenir pour changer d’assistant sans recommencer l’atelier.
 
-Le relevé est une photographie de septembre 2026. Un éditeur, un harness et un abonnement à un modèle ne désignent pas la même chose ; regardez surtout ce que chaque offre vous permet de faire avec votre projet.
+Le relevé est une photographie de septembre 2026. Un éditeur, un harness et un abonnement à un modèle couvrent des besoins et des dépenses différents. Pour les comparer, partez des tâches que vous voulez réaliser dans votre projet.
 
 ## Les éditeurs et les agents
 
-Commençons par les outils que vous pouvez rencontrer dans un éditeur, un terminal ou un service distant. Nous compléterons ce panorama avec les harness extensibles, dont Pi, dans la section suivante. Ce n’est pas la liste de tous les produits existants, ni un classement de leurs modèles.
+Commençons par les outils que vous pouvez rencontrer dans un éditeur, un terminal ou un service distant. Le tableau donne une carte de départ pour l’atelier ; la section suivante l’élargira aux harness extensibles, dont Pi. Les produits y sont regroupés par porte d’entrée et par usage, sans classement des modèles.
 
 Les offres et les fonctions décrites correspondent aux pages officielles consultées le **14 septembre 2026**. Si vous lisez ce chapitre plus tard, les liens en notes permettront de retrouver leur état actuel.
 
@@ -55,13 +55,13 @@ Vous croiserez souvent le mot **harness** dans les discussions sur les agents. I
 
 Dans notre premier client Python, nous envoyions une question et recevions du texte. Un harness peut ajouter la boucle suivante : le modèle demande à lire un fichier, le programme le lit et lui renvoie le contenu, puis le modèle choisit la prochaine action. La gestion des sessions, des permissions et des modifications appartient aussi à cet entourage logiciel.
 
-Deux agents utilisant le même modèle peuvent donc se comporter différemment. Ils ne préparent pas forcément le même contexte et ne lui donnent pas les mêmes outils.
+Avec le même modèle, deux agents peuvent donc se comporter différemment : chacun prépare son contexte, choisit les outils disponibles et organise la boucle à sa manière.
 
 ##### Pi, et les autres possibilités à connaître
 
 **Pi** mérite qu’on s’y arrête. Il propose un agent en terminal que l’on peut étendre et intégrer à ses propres outils. Sa conception laisse une grande place aux extensions et aux modèles de consignes, plutôt que de fournir par défaut toutes les étapes d’une méthode de développement. Il dispose aussi d’interfaces permettant de le piloter depuis un programme[^p4-h-pi].
 
-Cela rejoint une question qui nous suivra dans le tutoriel : est-ce l’outil qui décide de notre manière de travailler, ou pouvons-nous le modifier pour qu’il nous aide là où nous en avons besoin ?
+Pi illustre une question qui nous suivra dans le tutoriel : jusqu’où pouvons-nous adapter l’outil à notre manière de travailler ?
 
 | Outil | Interface et approche | Choix du modèle et usage local |
 | --- | --- | --- |
@@ -76,15 +76,15 @@ Table: Compléter le panorama des harness et des environnements d’agents
 
 Pour Pi, la documentation permet par exemple de déclarer l’adresse d’un serveur compatible dans un fichier de configuration. Nous retrouvons ainsi la séparation entre modèle et assistant, sans devoir adopter un fournisseur unique[^p4-h-pi-models].
 
-Cette liberté n’implique pas que toutes les protections soient installées d’avance. Le dépôt de Pi précise que le programme s’exécute avec les droits du processus qui le lance, sans système intégré de restriction des accès aux fichiers, aux processus ou au réseau. Une isolation supplémentaire relève donc de l’environnement dans lequel on l’exécute[^p4-h-pi-droits]. C’est une différence concrète à connaître lorsqu’on compare deux harness.
+Cette liberté demande de prévoir les protections adaptées. Le dépôt de Pi précise que le programme s’exécute avec les droits du processus qui le lance, sans système intégré de restriction des accès aux fichiers, aux processus ou au réseau. Une isolation supplémentaire relève de l’environnement dans lequel on l’exécute[^p4-h-pi-droits]. C’est une différence concrète à connaître lorsqu’on compare deux harness.
 
 ##### Les noms que vous trouverez dans d’anciens comparatifs
 
-**Roo Code** a sa place dans l’histoire de ces outils, mais son dépôt officiel est archivé depuis le **15 mai 2026**. Nous ne le présenterons donc pas comme une installation maintenue au même titre que les projets actifs de cette liste[^p4-h-roo].
+**Roo Code** a sa place dans l’histoire de ces outils, mais son dépôt officiel est archivé depuis le **15 mai 2026**. Les anciennes procédures qui l’utilisent demandent donc une attention particulière[^p4-h-roo].
 
-**Gemini CLI** mérite aussi d’être nommé explicitement. Le changement annoncé par Google concerne notamment les parcours gratuits et les abonnements individuels transférés vers Antigravity ; il ne faut pas en déduire que tous les usages professionnels ou toutes les modalités d’accès ont disparu[^p4-h-gemini].
+**Gemini CLI** mérite aussi d’être nommé explicitement. Le changement annoncé par Google concerne notamment les parcours gratuits et les abonnements individuels transférés vers Antigravity ; les usages professionnels et les autres modalités d’accès suivent leurs propres conditions[^p4-h-gemini].
 
-Les noms, les offres et parfois les dépôts changent. Le comparatif est une photographie de septembre 2026, pas une liste à apprendre par cœur. Les étoiles GitHub peuvent aider à repérer un projet connu ; elles ne disent pas si sa manière de travailler convient à votre équipe.
+Les noms, les offres et parfois les dépôts changent. Ce comparatif photographie leur état en septembre 2026. Les étoiles GitHub peuvent aider à repérer un projet connu ; pour choisir, il faudra surtout essayer sa manière de travailler sur les tâches de votre équipe.
 
 [^p4-h-pi]: Pi, [présentation du harness et de ses extensions](https://pi.dev/).
 [^p4-h-pi-models]: Pi, [modèles et fournisseurs personnalisés](https://pi.dev/docs/latest/models).
@@ -137,7 +137,7 @@ Table: Tarifs complémentaires, relevés le 14 septembre 2026 en USD
 
 Un abonnement au modèle, un abonnement au logiciel et une machine qui exécute l’agent peuvent donc représenter trois dépenses distinctes. Avant de comparer les totaux, regardez qui fournit chacun de ces éléments.
 
-« Gratuit » peut donc désigner deux choses : un service qui vous accorde un petit quota, ou un logiciel que vous installez sans payer, mais auquel il faut fournir un modèle. Dans le second cas, brancher une API payante ne rend pas ses réponses gratuites.
+« Gratuit » peut donc désigner deux choses : un service qui vous accorde un petit quota, ou un logiciel que vous installez sans payer, mais auquel il faut fournir un modèle. Avec une API payante, le logiciel reste gratuit tandis que chaque réponse peut être facturée.
 
 De même, une complétion et une tâche d’agent ne représentent pas la même quantité de travail. Un agent peut lire plusieurs fichiers, produire du code, recevoir une sortie de tests et recommencer. Selon la tarification, cela consomme des tokens, des crédits ou une partie d’un quota. Les crédits de deux fournisseurs ne sont pas une unité commune.
 

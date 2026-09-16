@@ -15,6 +15,6 @@ Code: Demander une explication que l’on peut vérifier
 
 Gardez la fonction sous les yeux pendant la lecture. `nouveau.disponible` vaut vrai ; la comparaison des prix vaut faux ; `not ancien.disponible` vaut vrai. Le `or` suffit donc à rendre vraie la parenthèse, puis la fonction entière.
 
-Si l’explication de l’assistant aboutit à faux, confrontez-la à ces trois valeurs et au résultat que vous avez exécuté. C’est un désaccord précis à lui montrer, sans lui demander vaguement de « mieux réfléchir ».
+Si l’explication de l’assistant aboutit à faux, renvoyez-lui ces trois valeurs ainsi que le résultat exécuté. Vous aurez un désaccord précis à résoudre, bien plus utile qu’une invitation à « mieux réfléchir ».
 
-Nous savons maintenant où intervenir. Ouvrons le ticket pour décider ce qui doit remplacer cette règle.
+Nous avons retrouvé la condition responsable. Le ticket va maintenant nous dire ce qu’elle doit exprimer — et surtout ce qu’elle ne dit pas sur les autres cas.

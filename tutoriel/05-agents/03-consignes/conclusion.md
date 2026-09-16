@@ -1,1 +1,1 @@
-
+Une consigne précise rend le résultat observable et rejouable. Elle ne peut toutefois pas retirer au processus un droit qu’il possède déjà : pour cela, quittons le texte des prompts et passons aux contrôles du programme.

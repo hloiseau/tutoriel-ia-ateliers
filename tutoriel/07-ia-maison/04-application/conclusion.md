@@ -1,1 +1,1 @@
-Notre assistant fonctionne comme programme, mais ses réponses ne sont pas assez fiables pour lui confier les décisions du service. Gardons cette différence en tête en passant à une autre expérience : modifier les poids d’un modèle.
+Notre programme retrouve des sources et interroge un modèle, mais ses réponses restent trop fragiles pour décider à la place de l’équipe. Nous allons maintenant changer complètement d’échelle et de modèle afin d’observer ce qui se passe lorsque l’on modifie les poids eux-mêmes.

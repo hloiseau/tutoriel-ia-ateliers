@@ -1,3 +1,3 @@
-**TL;DR** — LoRA ajoute des matrices entraînables à une transformation existante. Les poids de base peuvent rester figés, mais le comportement du modèle change quand même, parfois dans le mauvais sens.
+**TL;DR** — LoRA ajoute de petites matrices entraînables à une transformation existante. La base reste figée ; l’adaptateur actif modifie tout de même les sorties, y compris parfois celles que nous voulions préserver.
 
-Peut-on éviter de modifier tous les paramètres à chaque adaptation ? C’est précisément ce que nous allons essayer.
+Notre adaptation complète pouvait toucher 15 055 paramètres. Repartons des mêmes poids et limitons la correction à deux matrices beaucoup plus petites.

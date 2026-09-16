@@ -8,7 +8,7 @@ Si vous avez suivi le parcours sur CPU, vous avez déjà réalisé l’objectif 
 
 ## Vérifier que le moteur voit la carte
 
-Une carte NVIDIA présente dans l’ordinateur ne signifie pas que n’importe quel exécutable saura l’utiliser. Il faut un pilote compatible et un moteur construit avec le bon support. Les cartes d’autres fabricants et les puces Apple utilisent d’autres voies.
+Pour utiliser une carte NVIDIA, il faut un pilote compatible et un moteur construit avec le support correspondant. Un exécutable prévu uniquement pour le CPU continuera d’ignorer la carte. Les autres fabricants et les puces Apple utilisent d’autres voies.
 
 Sur une machine NVIDIA, commencez par :
 
@@ -16,7 +16,7 @@ Sur une machine NVIDIA, commencez par :
 nvidia-smi
 ```
 
-Cette commande permet notamment de voir le pilote, la carte et sa mémoire. La version CUDA affichée par le pilote n’est pas une preuve qu’un kit de développement CUDA complet est installé.
+Cette commande affiche notamment le pilote, la carte et sa mémoire. La version CUDA indiquée décrit la compatibilité du pilote ; vérifiez séparément la présence du kit de développement si vous voulez compiler le moteur.
 
 Pour Windows, la version b10809 propose des archives CUDA et des archives `cudart` correspondantes. Gardez la même variante entre le moteur et ses bibliothèques. Pour une compilation NVIDIA, la [documentation de construction de llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md) détaille les prérequis et l’option `GGML_CUDA`.[^p3-gpu]
 
@@ -34,7 +34,7 @@ Sous Windows, utilisez le chemin `.\moteur\llama-server.exe`. Si aucune carte ut
 
 Arrêtez le serveur CPU. Dans sa commande, retirez `--device none` et remplacez `-ngl 0` par `-ngl all`. Conservez le fichier GGUF, la taille de contexte, le nombre de requêtes simultanées et les autres paramètres.
 
-Regardez les messages de démarrage : le moteur doit indiquer le placement des couches sur le GPU. Une commande qui accepte une option n’est pas une preuve que tout le calcul a été placé où vous l’imaginez.
+Regardez les messages de démarrage : le moteur doit indiquer le placement des couches sur le GPU. C’est ce journal, puis l’activité de la carte, qui nous dira si l’option a produit l’effet attendu.
 
 Relancez la série :
 
@@ -42,9 +42,9 @@ Relancez la série :
 python mesurer.py --nom gpu-contexte2048
 ```
 
-Notez la commande exacte et la mémoire vidéo observée. Comparez les durées aux essais CPU et relisez les réponses. Nous utilisons un modèle minuscule à l’échelle de certaines cartes : cette comparaison ne permettra pas de prévoir le gain pour tous les modèles ou toutes les tailles de requêtes.
+Notez la commande exacte et la mémoire vidéo observée. Comparez les durées aux essais CPU et relisez les réponses. Avec ce modèle de 360 millions de paramètres et ces courtes requêtes, les résultats décriront cette expérience précise. Un modèle plus grand ou un contexte plus long changeraient le travail demandé à la carte.
 
-Une RTX 3090 Ti avec 24 Go de mémoire vidéo permet d’envisager des expériences plus grandes que celle-ci, mais il faut toujours tenir compte du modèle, de sa précision, du contexte et de la mémoire déjà occupée. Il n’y a pas de correspondance universelle « tant de Go = tel modèle sans aucune contrainte ».
+Une RTX 3090 Ti avec 24 Go de mémoire vidéo permet d’envisager des expériences plus grandes que celle-ci. Avant de choisir la suivante, comptez le modèle, sa précision, le contexte et la mémoire déjà occupée : la capacité de la carte ne suffit pas à désigner un modèle universellement adapté.
 
 Avant de télécharger plus gros, choisissez ce que vous voulez améliorer dans votre grille d’évaluation. Sinon, il est assez facile de passer la soirée à remplir un disque sans avoir avancé sur son besoin.
 
@@ -62,6 +62,6 @@ Vous n’avez pas besoin de publier toutes les traces de votre ordinateur. Regar
 
 Pour libérer de la place, vous pouvez arrêter le serveur puis supprimer le fichier de poids téléchargé. Gardez `modele.json` et vos résultats si vous souhaitez retrouver l’expérience plus tard. Relancer `telecharger.py` permettra de récupérer de nouveau le fichier tant qu’il reste disponible à cette adresse.
 
-Nous avons maintenant un modèle que nous pouvons démarrer, interroger, mesurer et arrêter. La prochaine décision vous appartient : le garder pour une tâche précise, en essayer un autre, ou passer à autre chose.
+Nous avons maintenant un modèle que nous pouvons démarrer, interroger, mesurer et arrêter. Gardez-le pour une tâche précise, comparez-en un autre sur les mêmes cas ou récupérez l’espace disque : les trois décisions sont parfaitement valables.
 
 

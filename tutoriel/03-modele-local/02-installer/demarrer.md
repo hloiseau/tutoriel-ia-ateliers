@@ -13,7 +13,7 @@ Sous Windows, la commande devient :
 
 Le chemin après `-m` désigne les poids. Nous demandons un contexte de 2 048 tokens, deux fils CPU, aucune couche sur le GPU et une seule requête traitée à la fois. L’alias `atelier-local` sera le nom utilisé par notre client.[^p3-serveur]
 
-Des messages apparaissent dans le terminal. Laissez-le ouvert : tant que le serveur fonctionne, il occupe ce terminal. Attendez la fin du chargement, puis ouvrez `http://127.0.0.1:8080/health` dans votre navigateur. Une réponse indiquant un état `ok` signifie que le serveur est prêt. Pendant le chargement, il peut encore répondre qu’il n’est pas disponible.
+Des messages apparaissent dans le terminal. Laissez-le ouvert : le serveur y restera jusqu’à son arrêt. Attendez la fin du chargement, puis ouvrez `http://127.0.0.1:8080/health` dans votre navigateur. Tant que le modèle se charge, la route peut signaler qu’il est indisponible ; l’état `ok` annonce que nous pouvons envoyer notre première question.
 
 L’adresse `127.0.0.1` désigne cette machine. Nous n’ouvrons pas le service aux autres ordinateurs du réseau. L’option `--cors-origins` limite également les origines autorisées pour les appels depuis un navigateur à celle de notre service local. Pour arrêter le serveur, revenez dans son terminal et appuyez sur `Ctrl+C`.
 

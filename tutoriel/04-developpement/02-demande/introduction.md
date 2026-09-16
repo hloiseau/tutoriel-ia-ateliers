@@ -1,1 +1,1 @@
-**TL;DR :** une phrase de ticket cache parfois plusieurs comportements. Nous allons les mettre à plat avant de toucher à la fonction.
+**TL;DR** — Le ticket donne une règle courte, mais plusieurs combinaisons de prix et de disponibilité. Nous allons décider leur résultat avant de toucher à la fonction.

@@ -1,1 +1,1 @@
-
+Le journal nous donne trois repères : la demande d’outil, le contrôle du programme et le résultat renvoyé. Pour comprendre la réponse finale, il faut maintenant regarder l’autre matière première de l’agent : son contexte.

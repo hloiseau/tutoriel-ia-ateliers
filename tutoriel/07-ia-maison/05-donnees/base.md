@@ -4,7 +4,7 @@ Le dossier `resultats-reference/base` contient les poids d’un modèle entraîn
 python petit_modele.py generer --modele resultats-reference/base/modele.npz
 ```
 
-Le résultat commence comme une phrase du corpus, puis finit par dérailler. C’est normal au sens où nous observons les limites de cette expérience ; ce n’est pas une réponse que nous devrions accepter dans une application.
+Le résultat commence comme une phrase du corpus, puis déraille. Gardez-le sous les yeux : ce modèle de départ sait reproduire quelques régularités, pas écrire une réponse que nous pourrions confier à une application.
 
 Nous allons lui faire apprendre les lignes `INFO`. Une première possibilité consiste à continuer l’entraînement en autorisant la modification de tous ses paramètres : c’est ici notre **adaptation complète**.
 
@@ -14,4 +14,4 @@ python petit_modele.py entrainer --base resultats-reference/base/modele.npz --mo
 
 Le dossier de sortie doit être nouveau. Il recevra les poids, le rapport et un échantillon généré. Les poids de départ restent dans leur dossier d’origine ; nous pouvons donc toujours revenir à eux.
 
-Cette commande ne garantit pas que le modèle deviendra bon. Elle nous donne un premier résultat auquel comparer une adaptation plus petite, avec beaucoup moins de paramètres entraînables.
+Cette commande nous donnera un premier résultat. Nous le comparerons à une adaptation beaucoup plus petite, qui entraîne seulement 556 paramètres.

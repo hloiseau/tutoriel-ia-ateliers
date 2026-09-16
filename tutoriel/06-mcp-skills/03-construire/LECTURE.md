@@ -6,7 +6,7 @@
 
 **TL;DR** — Nous allons créer `mon_serveur.py`, lui ajouter un premier outil, puis la recherche documentaire, la validation des paramètres et des tests. À chaque étape, le client appellera le fichier que nous venons d’écrire.
 
-Le serveur fourni nous a permis de voir le résultat. À nous de construire le nôtre ! Gardez le même dossier d’atelier et le même environnement Python : les données et le client sont déjà prêts.
+Le serveur fourni nous a montré le résultat. À nous de construire le nôtre ! Gardez le même dossier d’atelier et le même environnement Python : les données et le client sont déjà prêts, ce qui nous permet de vérifier chaque ajout au fur et à mesure.
 
 ## Partir d’un fichier vide
 
@@ -103,7 +103,7 @@ def catalogue(nom):
     return json.loads((ROOT / "donnees" / nom).read_text(encoding="utf-8"))
 ```
 
-`ROOT` désigne le dossier du fichier serveur. Le catalogue reste donc accessible même si un assistant démarre ce programme depuis un autre dossier. Ici, `nom` viendra uniquement de chaînes écrites dans nos fonctions : le client ne pourra pas choisir un chemin de fichier.
+`ROOT` désigne le dossier du fichier serveur. Le catalogue reste ainsi accessible même si un assistant démarre le programme depuis un autre dossier. La valeur de `nom` vient uniquement des chaînes écrites dans nos fonctions ; aucun argument du client n’est utilisé pour construire ce chemin.
 
 Remplacez ensuite **toute la fonction `lire_ticket`, décorateur compris**, par :
 
@@ -123,13 +123,13 @@ Essayez maintenant :
 python client.py ticket PRIX-2 --serveur mon_serveur.py --journal sorties/c02-ticket.json
 ```
 
-Le résultat contient les deux questions ouvertes de PRIX-2. Comparez-le avec `donnees/tickets.json` : la fonction a trouvé l’identifiant dans le catalogue et renvoyé son contenu. Elle n’a plus besoin d’embarquer les données de chaque ticket dans son code.
+Le résultat contient les deux questions ouvertes de PRIX-2. Comparez-le avec `donnees/tickets.json` : la fonction a trouvé l’identifiant dans le catalogue et renvoyé son contenu. Les prochains tickets pourront être ajoutés dans les données, sans grossir cette fonction.
 
 Nous relisons le petit fichier à chaque appel. Cela rend les changements immédiatement visibles et suffit pour ce jeu de données. Un service réel appellerait peut-être une API, gérerait ses erreurs et contrôlerait les droits du compte utilisé ; nous avons isolé l’accès aux données pour pouvoir le faire évoluer.
 
 ## Ajouter la recherche documentaire
 
-PRIX-1 cite `regle-notification`. Nous allons ajouter un outil pour ouvrir ce document et un autre pour trouver des documents quand on ne connaît pas encore leur identifiant.
+PRIX-1 cite `regle-notification`, mais un ticket ne nous donnera pas toujours l’identifiant du bon document. Ajoutons un outil pour ouvrir une source connue et un autre pour la chercher.
 
 Ajoutez ces deux fonctions après `lire_ticket`, toujours avant le démarrage du serveur :
 
@@ -173,7 +173,7 @@ python client.py document regle-notification --serveur mon_serveur.py --journal 
 
 La recherche doit trouver la règle et la note archivée. Le second appel retourne le texte complet de la règle en vigueur. Nous pouvons ainsi **chercher des sources**, puis **ouvrir celle qui nous intéresse**, sans charger tous les textes dès la première demande.
 
-Essayez aussi une recherche avec `alerte`, dans un nouveau journal. Elle ne trouve rien : notre code cherche une expression littérale, pas un sens voisin. Il n’y a pas d’embeddings cachés dans la boucle. Cette limite vient de notre fonction, pas du protocole MCP.
+Essayez aussi une recherche avec `alerte`, dans un nouveau journal. Elle ne trouve rien : notre code cherche une expression littérale et ignore les mots de sens voisin. Aucune magie ni embeddings cachés dans cette petite boucle. 🙂 Cette limite vient de notre fonction de recherche ; MCP se contente d’en transporter la demande et le résultat.
 
 ## Valider les paramètres reçus
 
@@ -220,7 +220,7 @@ def lire_document(identifiant: IdentifiantDocument) -> dict[str, Any]:
 
 Remplacez également les trois décorateurs `@mcp.tool()` par `@mcp.tool(annotations=LECTURE)`.
 
-Les annotations déclarent que nos outils lisent des données, ne les détruisent pas, et que répéter la lecture n’ajoute pas d’effet d’écriture. `openWorldHint=False` indique qu’ils travaillent dans notre jeu fermé de données. Ces indications ne retirent aucun droit au processus : c’est toujours notre code qui doit correspondre à ce qu’il annonce.[^p6-construire-annotations]
+Les annotations présentent nos outils comme des lectures non destructives que l’on peut répéter sans ajouter d’effet d’écriture. `openWorldHint=False` indique qu’ils travaillent dans notre jeu fermé de données. Le client peut utiliser ces indications pour présenter ou choisir les outils. Les droits du processus, eux, restent inchangés : notre code doit réellement tenir ce qu’il annonce.[^p6-construire-annotations]
 
 Vérifiez l’inventaire et une demande invalide :
 
@@ -254,19 +254,19 @@ Puis lisez-la :
 python client.py conventions --serveur mon_serveur.py --journal sorties/c05-conventions.json
 ```
 
-La réponse contient le texte de nos conventions, notamment l’usage des centimes. `atelier://conventions` est un identifiant compris par le serveur, pas une adresse à ouvrir dans le navigateur.
+La réponse contient le texte de nos conventions, notamment l’usage des centimes. L’identifiant `atelier://conventions` permet au serveur de désigner cette ressource ; votre navigateur n’a rien à ouvrir à cette adresse.
 
 Un outil propose une opération avec des arguments ; une ressource expose un contenu identifié. Un autre serveur pourrait représenter ses tickets comme des ressources. Le client décide ensuite comment proposer ou charger ces contenus.[^p6-construire-ressource]
 
 Notre fichier contient maintenant trois outils et une ressource. Si vous souhaitez comparer, `serveur.py` est le corrigé complet. Regardez les différences avant de remplacer quoi que ce soit : une faute de nom ou une définition après `run` suffit à expliquer un outil absent.
 
-Pour déboguer, évitez les `print()` dans le serveur : sa sortie standard transporte MCP. Utilisez les logs ou la sortie d’erreur, par exemple `print("lecture du catalogue", file=sys.stderr)` après avoir importé `sys`. Votre message restera alors un diagnostic, pas un morceau de protocole à décoder.
+Pour déboguer, évitez les `print()` dans le serveur : sa sortie standard transporte MCP. Utilisez les logs ou la sortie d’erreur, par exemple `print("lecture du catalogue", file=sys.stderr)` après avoir importé `sys`. Votre diagnostic ne se retrouvera pas au milieu des messages du protocole.
 
 [^p6-construire-ressource]: Spécification MCP, [ressources](https://modelcontextprotocol.io/specification/2026-07-28/server/resources).
 
 ## Écrire les tests et utiliser notre serveur
 
-Nos commandes montrent que quelques appels fonctionnent. Gardons aussi des contrôles que nous pourrons relancer après un changement.
+Nos commandes montrent que quelques appels fonctionnent. Écrivons maintenant des contrôles que nous pourrons relancer après chaque changement, sans rouvrir les journaux un par un.
 
 Créez `test_mon_serveur.py` à côté de `mon_serveur.py` et écrivez :
 
@@ -311,7 +311,7 @@ python -m unittest test_mon_serveur -v
 
 Les trois tests doivent passer. Le deuxième cherche aussi `string_pattern_mismatch`, le code de l’erreur de format retournée par notre version du SDK : une simple erreur « document introuvable » ne suffirait pas. Le troisième vérifie l’inventaire, pour distinguer un outil absent d’un outil présent qui aurait refusé cet appel.
 
-`IsolatedAsyncioTestCase` permet d’écrire des tests avec `async` et `await`. `Client(mcp)` appelle notre serveur en mémoire ; il ne démarre pas de processus. Les commandes précédentes ont, elles, exercé le transport stdio.
+`IsolatedAsyncioTestCase` permet d’écrire des tests avec `async` et `await`. Ici, `Client(mcp)` appelle le serveur en mémoire. Les commandes précédentes complètent donc ces tests en exerçant le transport stdio entre deux processus.
 
 Vérifions que le premier test ne passe pas par accident. Commentez temporairement le décorateur de `lire_ticket` dans **`mon_serveur.py`**, puis relancez les tests. La lecture doit échouer : la fonction existe toujours en Python, mais elle n’est plus exposée comme outil. Rétablissez le décorateur et vérifiez que les trois tests repassent au vert.
 
@@ -325,11 +325,11 @@ python configuration.py --serveur mon_serveur.py
 
 Dans `.vscode/mcp.json`, remplacez l’entrée **`atelier-tickets`** par celle affichée, en gardant vos autres serveurs. Arrêtez puis redémarrez cette entrée depuis **MCP: List Servers** pour charger votre programme. Les chemins absolus affichés concernent votre machine. Avec un autre assistant, modifiez le chemin du programme dans sa configuration MCP.
 
-Demandez de nouveau la lecture de PRIX-1 et inspectez l’appel. L’essai dans l’assistant dépend de votre installation et de votre modèle ; les tests Python ne le remplacent pas. Pour les chapitres suivants, nous garderons `mon_serveur.py` et cette configuration.
+Demandez de nouveau la lecture de PRIX-1 et inspectez l’appel. Cet essai dépend de votre installation et de votre modèle. Les tests Python ont vérifié le serveur et ses appels ; ils ne prédisent pas ce que l’assistant choisira d’en faire. Pour les chapitres suivants, nous garderons `mon_serveur.py` et cette configuration.
 
 Nous sommes partis d’un fichier vide et nous avons obtenu un serveur que nous savons appeler, modifier et tester. Le client et l’assistant peuvent maintenant utiliser notre propre fichier.
 
-Au chapitre suivant, nous allons chercher ce que ces contrôles laissent encore passer : un identifiant valide ne donne pas un droit d’accès, et une réponse d’outil peut contenir une mauvaise consigne.
+Nos contrôles ont toutefois un périmètre précis. Le chapitre suivant le mettra à l’épreuve avec une demande mal formée, un outil d’écriture absent et une consigne cachée dans un document.
 
 ---
 

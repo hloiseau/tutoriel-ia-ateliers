@@ -13,4 +13,4 @@ Figure: Des fichiers différents parce que les informations changent pour des ra
 
 Si la règle de notification évolue, nous corrigeons sa source métier. Si la présentation des recettes change, nous corrigeons la référence du skill. Si le projet change d’unité monétaire interne, les conventions et le code doivent être revus ensemble.
 
-La séparation n’a d’intérêt que si les liens permettent de retrouver les informations. Dans notre atelier, le ticket cite un document par son identifiant et le skill renvoie explicitement vers son format de recette. Déplacer un paragraphe dans un sous-dossier sans indiquer quand le lire ne suffit pas.
+Les liens rendent cette séparation utilisable. Dans notre atelier, le ticket cite un document par son identifiant et le skill renvoie explicitement vers son format de recette. Un paragraphe déplacé dans un sous-dossier sans indication devient seulement plus difficile à retrouver.

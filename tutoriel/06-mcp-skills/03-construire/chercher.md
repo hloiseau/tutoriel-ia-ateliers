@@ -1,4 +1,4 @@
-PRIX-1 cite `regle-notification`. Nous allons ajouter un outil pour ouvrir ce document et un autre pour trouver des documents quand on ne connaît pas encore leur identifiant.
+PRIX-1 cite `regle-notification`, mais un ticket ne nous donnera pas toujours l’identifiant du bon document. Ajoutons un outil pour ouvrir une source connue et un autre pour la chercher.
 
 Ajoutez ces deux fonctions après `lire_ticket`, toujours avant le démarrage du serveur :
 
@@ -42,4 +42,4 @@ python client.py document regle-notification --serveur mon_serveur.py --journal 
 
 La recherche doit trouver la règle et la note archivée. Le second appel retourne le texte complet de la règle en vigueur. Nous pouvons ainsi **chercher des sources**, puis **ouvrir celle qui nous intéresse**, sans charger tous les textes dès la première demande.
 
-Essayez aussi une recherche avec `alerte`, dans un nouveau journal. Elle ne trouve rien : notre code cherche une expression littérale, pas un sens voisin. Il n’y a pas d’embeddings cachés dans la boucle. Cette limite vient de notre fonction, pas du protocole MCP.
+Essayez aussi une recherche avec `alerte`, dans un nouveau journal. Elle ne trouve rien : notre code cherche une expression littérale et ignore les mots de sens voisin. Aucune magie ni embeddings cachés dans cette petite boucle. 🙂 Cette limite vient de notre fonction de recherche ; MCP se contente d’en transporter la demande et le résultat.

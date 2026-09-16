@@ -1,1 +1,1 @@
-Le bilan ne choisit pas à notre place. Il rend simplement visibles des éléments que la vitesse d’apparition du code pouvait cacher. Nous pouvons maintenant formuler une décision pour l’équipe.
+Le bilan fait apparaître la préparation, les corrections, l’attente et l’état du résultat derrière la vitesse d’apparition du code. Il nous reste à transformer ces observations en décision applicable par l’équipe.

@@ -6,11 +6,11 @@
 
 **TL;DR** — Pour l’atelier, il nous faut discuter du code, modifier un fichier et lire le résultat des tests. Gardez un assistant qui sait déjà le faire ; sinon, nous allons préparer VS Code avec Copilot.
 
-Avant l’installation, réglons deux questions : à qui allons-nous montrer le code, et qui exécutera les commandes ?
+Avant d’ouvrir l’éditeur, suivons le trajet de notre code. Cela permettra de savoir ce qui reste sur notre machine, ce qui part vers le fournisseur du modèle et quel logiciel exécutera les commandes.
 
 ## Où tournent le code et le modèle ?
 
-Notre client de la partie précédente envoyait une question à `llama-server`, qui faisait calculer la réponse par le modèle. Un assistant de développement ajoute notamment les fichiers du projet à cette conversation.
+Dans la partie précédente, notre client envoyait une question à `llama-server`, puis le modèle calculait une réponse. Un assistant de développement reprend ce principe en y ajoutant du code, des résultats de commandes et parfois le droit de modifier les fichiers.
 
 Il faut distinguer **l’endroit où l’assistant agit** et **l’endroit où le modèle tourne**. Dans l’installation que nous allons utiliser, l’éditeur et les tests tournent sur notre ordinateur. Le modèle, lui, reçoit le contexte et calcule sa réponse chez le fournisseur.
 
@@ -21,7 +21,7 @@ Il faut distinguer **l’endroit où l’assistant agit** et **l’endroit où l
 | Modèle et moteur d’inférence | Chez le fournisseur du modèle |
 Table: Où se passe le travail ?
 
-C’est pour cela que cette installation ne demande pas de GPU. Faire également tourner le modèle chez soi est une autre possibilité, avec des besoins de mémoire et de calcul à évaluer. Un petit modèle qui répond sur CPU ne devient pas un agent de code efficace simplement parce qu’on le branche à l’éditeur.
+Le calcul lourd ayant lieu chez le fournisseur, cette installation ne demande pas de GPU. On peut aussi faire tourner le modèle chez soi, avec des besoins de mémoire et de calcul à évaluer. Obtenir une réponse courte sur CPU ne suffit pas à établir qu’un modèle soutiendra le rythme et le contexte d’une session d’agent de code.
 
 ## Discuter, puis laisser agir
 
@@ -30,15 +30,15 @@ La complétion suggère du code pendant que vous tapez. Nous allons surtout util
 - **La discussion** : nous montrons une fonction et demandons une explication. Nous lisons la réponse en gardant le code sous les yeux.
 - **Le mode agent** : le modèle peut demander au logiciel de lire ou modifier des fichiers et de lancer des commandes. Les résultats lui reviennent, ce qui lui permet de poursuivre.
 
-Le programme qui organise ces échanges est souvent appelé **harness**. Copilot, Codex, Claude Code, Pi et d’autres proposent leur propre manière de le faire. Nous comparerons leurs possibilités dans l’annexe comparative.
+Le programme qui organise ces échanges est souvent appelé **harness**. Copilot, Codex, Claude Code, Pi et d’autres ont chacun leur manière d’assembler la conversation, les fichiers et les outils. Le détail de leurs possibilités reste dans l’annexe comparative ; notre correctif, lui, ne dépend d’aucune fonction exotique.
 
-Pour commencer, nous resterons en discussion. Nous passerons au mode agent au moment d’écrire notre premier test. Vous verrez ainsi ce qui change quand l’outil peut agir sur les fichiers.
+Nous commencerons par une discussion autour d’une fonction copiée dans le chat. Le mode agent n’arrivera qu’avec le premier test : à cet instant, l’assistant devra réellement créer un fichier et exécuter Python.
 
 ## Quel outil prendre pour commencer ?
 
 Vous utilisez déjà un assistant capable de lire et modifier un projet ? Gardez-le. Les demandes de l’atelier portent sur des fichiers et des commandes Python ; elles ne dépendent pas d’une marque.
 
-Sinon, nous prendrons **VS Code avec GitHub Copilot** comme exemple d’installation. D’autres possibilités figurent dans le [comparatif complet](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/annexes/comparatif/LECTURE.md) : éditeurs, agents en terminal, choix du modèle, prix et limites des offres. Ce comparatif est daté de septembre 2026.
+Sinon, nous prendrons **VS Code avec GitHub Copilot** comme exemple d’installation. Ce choix nous donne un parcours concret à décrire ; il ne change pas l’atelier en tutoriel consacré à Copilot. Le [comparatif complet](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/annexes/comparatif/LECTURE.md), daté de septembre 2026, couvre aussi des éditeurs et des agents en terminal, avec leurs modèles, leurs prix et les limites de leurs offres.
 
 Avant de vous connecter, vérifiez deux points :
 

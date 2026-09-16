@@ -1,1 +1,1 @@
-Nous savons produire un adaptateur, le recharger et mesurer une régression. Mais nous avons encore utilisé des poids de départ fournis. Il est temps de fabriquer cette base nous-mêmes.
+Nous savons produire un adaptateur, le recharger et retrouver la régression qu’il provoque. Les poids de départ étaient toutefois fournis. Pour suivre toute l’histoire du modèle, nous allons maintenant fabriquer cette base nous-mêmes.

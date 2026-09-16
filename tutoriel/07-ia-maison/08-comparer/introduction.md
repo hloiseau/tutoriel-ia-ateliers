@@ -1,3 +1,3 @@
-**TL;DR** — La recherche et le petit entraînement restent accessibles sur CPU. L’adaptation d’un LLM demande une autre préparation ; la mémoire nécessaire dépend aussi de l’entraînement, pas seulement du fichier de poids.
+**TL;DR** — La recherche, les trois appels documentaires et les entraînements du petit réseau ont tourné sur CPU. L’adaptation d’un LLM sur GPU reste à exécuter ; son budget mémoire ne se déduit pas de la seule taille des poids.
 
-Après ces essais, la bonne question n’est pas forcément « quel modèle plus gros puis-je faire tourner ? ». Nous avons déjà plusieurs problèmes précis à résoudre.
+Nos essais ont laissé plusieurs pistes très concrètes : une formulation que la recherche manque, une durée inventée et une forte régression avec LoRA. Avant de choisir un modèle plus gros, décidons lequel de ces problèmes nous voulons réellement résoudre.

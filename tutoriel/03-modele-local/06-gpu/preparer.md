@@ -1,4 +1,4 @@
-Une carte NVIDIA présente dans l’ordinateur ne signifie pas que n’importe quel exécutable saura l’utiliser. Il faut un pilote compatible et un moteur construit avec le bon support. Les cartes d’autres fabricants et les puces Apple utilisent d’autres voies.
+Pour utiliser une carte NVIDIA, il faut un pilote compatible et un moteur construit avec le support correspondant. Un exécutable prévu uniquement pour le CPU continuera d’ignorer la carte. Les autres fabricants et les puces Apple utilisent d’autres voies.
 
 Sur une machine NVIDIA, commencez par :
 
@@ -6,7 +6,7 @@ Sur une machine NVIDIA, commencez par :
 nvidia-smi
 ```
 
-Cette commande permet notamment de voir le pilote, la carte et sa mémoire. La version CUDA affichée par le pilote n’est pas une preuve qu’un kit de développement CUDA complet est installé.
+Cette commande affiche notamment le pilote, la carte et sa mémoire. La version CUDA indiquée décrit la compatibilité du pilote ; vérifiez séparément la présence du kit de développement si vous voulez compiler le moteur.
 
 Pour Windows, la version b10809 propose des archives CUDA et des archives `cudart` correspondantes. Gardez la même variante entre le moteur et ses bibliothèques. Pour une compilation NVIDIA, la [documentation de construction de llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md) détaille les prérequis et l’option `GGML_CUDA`.[^p3-gpu]
 

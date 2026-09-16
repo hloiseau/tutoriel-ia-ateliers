@@ -14,6 +14,6 @@ Rechargeons ce deuxième fichier avec la base :
 python petit_modele.py generer --modele resultats-reference/base/modele.npz --adaptateur sorties/lora/adaptateur.npz --debut "INFO "
 ```
 
-Le programme vérifie que les poids de base correspondent. Pour désactiver l’adaptateur, relancez la génération sans `--adaptateur`. Nous retrouvons alors le modèle de départ, sans devoir « désapprendre » ce que nous venons d’ajouter.
+Le programme vérifie que les poids de base correspondent. Relancez ensuite la génération sans `--adaptateur` : vous retrouvez le modèle de départ sans devoir « désapprendre » ce que nous venons d’ajouter.
 
-C’est pratique, mais cela ne prouve pas que l’adaptateur soit utile. Regardons ses résultats avant de lui donner un nom impressionnant.
+Le mécanisme est pratique. Reste à savoir ce que la correction a réellement amélioré — et abîmé. Ouvrons les résultats avant de lui donner un nom impressionnant.

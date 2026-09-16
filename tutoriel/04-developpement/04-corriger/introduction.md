@@ -1,1 +1,1 @@
-**TL;DR** — L’agent va corriger la fonction sans toucher aux résultats attendus des tests. Nous comparerons ensuite son changement à la règle du ticket.
+**TL;DR** — Les tests rouges fixent le comportement attendu. Nous allons laisser l’agent corriger la fonction, puis confronter son diff au ticket et à ces tests.

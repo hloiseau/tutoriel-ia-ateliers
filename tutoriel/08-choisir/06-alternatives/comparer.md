@@ -10,7 +10,7 @@ Pour voir la forme du bilan avant de remplir le vôtre :
 python bilan.py exemples/temps-fictifs.json
 ```
 
-Les nombres du fichier sont **inventés pour montrer le calcul**. L’essai assisté produit plus vite, mais prend davantage de relecture et de correction : son occupation totale atteint 28 minutes, contre 23 pour l’autre. Ce n’est pas un résultat sur un outil réel.
+Les nombres du fichier sont **inventés pour montrer le calcul**. Dans ce scénario fictif, l’essai assisté produit plus vite et demande davantage de relecture et de correction : son occupation totale atteint 28 minutes, contre 23 pour l’autre. Aucune comparaison avec un outil réel n’a été réalisée ici.
 
 ![Dans cet exemple fictif, la production prend 12 minutes sans IA et 3 avec IA ; les autres étapes portent le total à 23 et 28 minutes.](image:images/temps.png)
 Figure: Durées inventées pour illustrer le calcul, sans comparaison d’outils réels

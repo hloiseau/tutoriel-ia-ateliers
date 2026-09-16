@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 ```
 Code: Métadonnées du skill fourni
 
-Le nom désigne la tâche. La description aide l’assistant à reconnaître quand ce dossier peut servir. « Un super expert du développement » ne lui dirait pas grand-chose sur le moment où charger une procédure de recette.
+Le nom désigne la tâche. La description aide l’assistant à reconnaître quand ce dossier peut servir. Avec « un super expert du développement », il aurait encore fallu deviner à quel moment charger une procédure de recette.
 
 Le format Agent Skills prévoit un dossier contenant `SKILL.md`, avec des métadonnées YAML puis les instructions en Markdown. On peut y joindre des scripts, des références ou des modèles de documents.[^p6-format-skill] Notre dossier ne contient que la procédure et une référence de présentation.
 
@@ -18,6 +18,6 @@ Le format Agent Skills prévoit un dossier contenant `SKILL.md`, avec des métad
 | `SKILL.md` | Quand préparer la recette et comment traiter les sources |
 | `references/format-recette.md` | La forme du résultat à présenter |
 
-Les mots *skill*, *commande* et *plugin* ne désignent donc pas exactement la même chose. Un produit peut proposer notre skill comme commande dans son interface. Un plugin peut distribuer plusieurs skills avec des outils. Notre procédure reste un fichier que nous pouvons lire et modifier sans adopter l’organisation complète d’un plugin.
+Un produit peut proposer notre skill sous la forme d’une commande dans son interface. Un plugin peut, lui, distribuer plusieurs skills avec des outils. Ces mots décrivent des objets qui se recouvrent parfois, mais notre point de départ reste très simple : un fichier de procédure que nous pouvons lire et modifier.
 
 [^p6-format-skill]: [Spécification du format Agent Skills](https://agentskills.io/specification).

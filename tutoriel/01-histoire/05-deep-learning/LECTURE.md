@@ -12,11 +12,9 @@ En 1997, Deep Blue, développé par IBM, remporte un match contre Garry Kasparov
 
 Deep Blue s’appuie sur une recherche rapide de positions, une évaluation spécialisée et du matériel conçu pour les échecs. Nous retrouvons le problème étudié par Shannon : examiner les suites de coups et décider lesquelles méritent d’être poursuivies.
 
-Le résultat ne signifie pas que Deep Blue peut discuter de n’importe quel sujet ou apprendre tout seul un nouveau métier. Son organisation est consacrée à un jeu précis.
+Deep Blue est consacré à un jeu précis. Les règles sont connues, l’adversaire est excellent et le résultat se constate sur l’échiquier : **gagner un match d’échecs** reste une performance remarquable. Le match n’évalue en revanche ni une discussion sur un autre sujet ni l’apprentissage d’un nouveau métier.
 
-Cela n’enlève rien à la performance. Les règles sont connues, l’adversaire est excellent et le résultat se constate sur l’échiquier. Mais pour raconter correctement l’histoire, il faut garder le nom de la tâche à côté du résultat : **gagner un match d’échecs**.
-
-Ce succès ne repose pas sur les grands réseaux de langage que nous utiliserons plus tard. L’IA rassemble plusieurs familles de techniques, et une victoire célèbre ne marque pas nécessairement le triomphe de la méthode devenue populaire aujourd’hui.
+Ce succès repose sur une autre famille de techniques que les grands réseaux de langage que nous utiliserons plus tard. Dans l’histoire de l’IA, la méthode devenue populaire aujourd’hui n’explique pas rétroactivement toutes les victoires célèbres.
 
 
 [^h5s1-blue]: [IBM, Deep Blue](https://www.ibm.com/history/deep-blue).
@@ -31,7 +29,7 @@ Vous voyez la différence avec le système expert de notre atelier : nous n’av
 
 Ces approches font partie de l’histoire de l’IA, même lorsqu’on ne les présente pas avec une interface de conversation. Reconnaître un message indésirable, prévoir une quantité ou classer un document n’exige pas automatiquement un grand modèle génératif.
 
-Nous reviendrons sur le choix d’une méthode lorsque nous construirons nos propres expériences. Pour le moment, retenez que les réseaux de neurones progressent au milieu d’un domaine déjà très divers.
+Nous reviendrons sur le choix d’une méthode dans nos propres expériences. Les réseaux de neurones progressent ici au milieu d’un domaine déjà très divers.
 
 
 [^h5s2-svm]: [Cortes et Vapnik, Support-vector networks (1995)](https://link.springer.com/article/10.1007/BF00994018).
@@ -41,7 +39,7 @@ Nous reviendrons sur le choix d’une méthode lorsque nous construirons nos pro
 
 En 2009, une équipe autour de Fei-Fei Li présente **ImageNet**, une grande base d’images organisée en catégories. Son intérêt est de fournir des données pour entraîner et évaluer des systèmes de reconnaissance d’images.[^h5s3-imagenet]
 
-Pour apprendre à reconnaître un chat, un réseau doit voir des exemples. Mais il faut d’abord rassembler les images, choisir les catégories et vérifier ce qu’elles contiennent. Le papier d’ImageNet décrit notamment le recours à des personnes chargées de vérifier des annotations via Amazon Mechanical Turk.
+Pour apprendre à reconnaître un chat, un réseau doit voir des exemples. Avant l’entraînement, des personnes rassemblent les images, choisissent les catégories et vérifient ce qu’elles contiennent. L’article d’ImageNet décrit notamment le recours à des personnes chargées de vérifier des annotations via Amazon Mechanical Turk.
 
 Les données ne se sont donc pas rangées toutes seules dans les bons dossiers. Derrière une base d’apprentissage se trouvent des choix et du travail humain.
 
@@ -58,14 +56,14 @@ En 2012, Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton présentent un rése
 
 Il utilise plusieurs couches de calcul et des GPU pour son entraînement. Un GPU, que l’on rencontre notamment sur une carte graphique, peut exécuter de nombreux calculs en parallèle. Ces capacités sont utiles pour les opérations répétées des réseaux.
 
-Le **deep learning**, ou apprentissage profond, désigne des méthodes utilisant plusieurs couches de transformations apprises. Le mot « profond » concerne cette organisation ; il ne veut pas dire que la machine réfléchit profondément à la photo. 🙂
+Le **deep learning**, ou apprentissage profond, désigne des méthodes utilisant plusieurs couches de transformations apprises. La profondeur compte ici des couches de calcul, pas les pensées de la machine devant la photo. 🙂
 
 ![Une image représentée par une grille de pixels traverse plusieurs couches de calcul avant de produire des scores pour des catégories.](../images/image-couches.png)
 Figure: Vue pédagogique d’une classification d’image. Ce dessin ne reproduit pas l’architecture exacte d’AlexNet.
 
 Sur le schéma, nous partons de valeurs de pixels. Les couches les transforment progressivement, puis le réseau produit des scores pour les catégories proposées. Pendant l’entraînement, ses réglages sont modifiés pour améliorer les réponses.
 
-Le résultat d’AlexNet rend très visible l’intérêt de cette combinaison de données, de méthodes et de matériel. Il ne marque pas l’invention soudaine des réseaux à plusieurs couches : nous avons déjà rencontré des travaux sur leur apprentissage en 1986.
+Le résultat d’AlexNet rend très visible l’intérêt de cette combinaison de données, de méthodes et de matériel. Les réseaux à plusieurs couches ont déjà une longue histoire en 2012 ; les travaux de 1986 sur leur apprentissage nous l’ont montré.
 
 
 [^h5s4-alexnet]: [Krizhevsky, Sutskever et Hinton, ImageNet Classification with Deep Convolutional Neural Networks (2012)](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html).

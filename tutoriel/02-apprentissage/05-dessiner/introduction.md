@@ -1,1 +1,1 @@
-Écrire le même chiffre de la même manière que dans le jeu de données, ce serait pratique. Mais ce n’est pas ce qui arrivera lorsque quelqu’un utilisera notre programme. À nous de dessiner.
+Les images du jeu partagent un format et une manière d’occuper la grille. Notre propre écriture risque de bousculer ces habitudes. À nous de dessiner.

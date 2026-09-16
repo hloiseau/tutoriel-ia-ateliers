@@ -28,9 +28,9 @@ Code: Deux appels du SDK, à l’intérieur d’un client ouvert
 
 MCP, pour *Model Context Protocol*, définit notamment la découverte et l’appel des outils ; le SDK construit les messages nécessaires.[^p6-tools] Nous n’avons pas à écrire nous-mêmes l’enveloppe du protocole.
 
-Voilà ce qu’apporte un format commun : notre assistant peut demander au serveur son inventaire, au lieu de contenir à l’avance une intégration Python spécifique à `lire_ticket`. Cela ne garantit ni que tous les assistants utilisent toutes les possibilités de MCP, ni qu’ils montrent les mêmes boutons.
+Voilà ce qu’apporte un format commun : notre assistant peut demander au serveur son inventaire, au lieu d’embarquer une intégration Python écrite spécialement pour `lire_ticket`. Chaque assistant choisit ensuite les possibilités qu’il prend en charge et la manière de les présenter dans son interface.
 
-Et MCP n’a pas choisi de lire PRIX-1 : dans notre client, ce choix vient de la ligne de commande. Dans un agent, il peut venir d’une demande d’outil produite par le modèle, traitée par le programme qui l’entoure.
+Dans notre client, la ligne de commande choisit de lire PRIX-1. Avec un agent, le modèle peut demander cet outil ; le programme qui l’entoure décide alors comment traiter cette demande et son résultat. MCP décrit l’échange entre les programmes, il ne décide pas quel ticket consulter.
 
 [^p6-tools]: Spécification MCP, [outils et appels d’outils](https://modelcontextprotocol.io/specification/2026-07-28/server/tools).
 
@@ -50,9 +50,9 @@ Demandez :
 
 > Consulte PRIX-1 avec le MCP atelier-tickets et donne-moi sa règle.
 
-Dépliez l’appel d’outil. Retrouve-t-on `lire_ticket`, l’identifiant `PRIX-1` et la règle que nous avons obtenue dans le terminal ? Si l’assistant a seulement ouvert `tickets.json`, il a pu trouver la bonne réponse, mais vous n’avez pas encore testé son accès MCP.
+Dépliez l’appel d’outil. Retrouve-t-on `lire_ticket`, l’identifiant `PRIX-1` et la règle obtenue dans le terminal ? Si l’assistant a simplement ouvert `tickets.json`, sa réponse peut être juste, mais cet essai ne nous apprend encore rien sur son accès MCP.
 
-Avec Cursor, Codex, Pi ou un autre assistant, gardez votre outil. Il faut reprendre la **commande** et les **arguments** dans sa configuration MCP, si votre installation prend en charge le transport stdio. Le fichier JSON de VS Code n’est pas un format de configuration universel. Si cet accès manque, les manipulations avec `client.py` restent disponibles ; nous pourrons essayer séparément la procédure du skill.
+Avec Cursor, Codex, Pi ou un autre assistant, gardez votre outil. S’il prend en charge le transport stdio, reprenez la **commande** et les **arguments** dans son propre format de configuration MCP : le JSON de VS Code ne se copie pas tel quel partout. Sans cet accès, poursuivez les manipulations avec `client.py` ; la procédure du skill pourra être essayée séparément.
 
 [^p6-vscode-mcp]: [Ajouter et gérer les serveurs MCP dans VS Code](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
 
@@ -65,13 +65,13 @@ Figure: Un serveur local peut alimenter un modèle distant
 
 Dans le vocabulaire MCP, l’application qui accueille l’interaction est l’**hôte**. Elle contient un client MCP qui parle au serveur. Le modèle n’a pas besoin de comprendre comment Python ouvre `tickets.json` ; il reçoit les outils que l’hôte lui présente et les résultats que celui-ci réintroduit dans la conversation.
 
-Le mot *local* mérite donc qu’on précise ce qu’il désigne. Le serveur tourne ici sur notre machine. Si l’assistant utilise un modèle hébergé, les informations issues du ticket peuvent ensuite lui être envoyées. Héberger le MCP chez soi ne suffit pas à garder toute la conversation chez soi.
+Le mot *local* désigne ici le serveur, qui tourne sur notre machine. Avec un modèle hébergé, les informations issues du ticket peuvent ensuite quitter cette machine pour rejoindre la conversation. Il faut suivre tout le trajet avant de conclure où vivent les données.
 
 Pour notre atelier, les données sont fictives. Dans un projet professionnel, ce trajet aide à décider quels champs exposer et avec quel compte accéder aux services. Une liste d’identifiants et de titres suffit parfois pour chercher ; envoyer tout le ticket, ses pièces jointes et son historique à chaque recherche ajouterait des informations dont on n’a pas encore besoin.
 
 [^p6-transport]: Spécification MCP, [transports stdio et Streamable HTTP](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports).
 
-Le même serveur peut être appelé par notre script ou par un assistant compatible. Nous avons essayé celui de l’atelier ; au chapitre suivant, nous allons créer le nôtre, depuis un fichier vide.
+Notre script sait appeler le serveur, et un assistant compatible peut faire le même échange. Nous connaissons maintenant le résultat à obtenir ; construisons notre propre serveur depuis un fichier vide.
 
 ---
 

@@ -2,7 +2,7 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-À la fin des années 1950, les neurones du modèle de McCulloch et Pitts ont des connexions fixées à l’avance. Frank Rosenblatt étudie une autre possibilité : modifier certains réglages du système à partir des exemples qu’on lui présente.
+À la fin des années 1950, les connexions du modèle de McCulloch et Pitts sont fixées à l’avance. Frank Rosenblatt étudie une autre possibilité : présenter des exemples au système et modifier certains de ses réglages lorsqu’il se trompe.
 
 L’objectif est de lui faire reconnaître des formes sans écrire à la main une règle pour chaque image possible.
 
@@ -32,13 +32,13 @@ Cet exemple correspond au motif logique appelé **OU exclusif**, ou XOR. Il illu
 
 ## Ce que veut dire « apprendre »
 
-Le mot peut faire imaginer une machine qui comprend sa leçon comme nous. Dans notre exemple, l’apprentissage consiste plus précisément à ajuster des nombres pour diminuer les erreurs sur une tâche.
+Le mot peut faire imaginer une machine penchée sur sa leçon. Dans notre exemple, la scène est plus sobre : le programme ajuste des nombres pour diminuer ses erreurs sur une tâche.
 
 Imaginons un appareil qui doit distinguer de petits fruits à partir de leur masse et de leur diamètre. Nous préparons des exemples avec la bonne catégorie, puis nous comparons les réponses de l’appareil avec celles attendues.
 
-Si nous vérifions uniquement les fruits utilisés pour régler le modèle, nous pouvons avoir une mauvaise surprise avec les suivants. Il faut donc garder des exemples à part, qui ne servent pas à ces réglages.
+Si nous vérifions uniquement les fruits utilisés pour régler le modèle, les suivants risquent de nous réserver une mauvaise surprise. Gardons donc des exemples à part, sans les utiliser pour les réglages.
 
-C’est la différence entre réussir sur ce qui a servi à l’apprentissage et réussir sur de nouvelles situations. Cette seconde capacité s’appelle la **généralisation**.
+Réussir sur ce qui a servi à l’apprentissage est une chose ; réussir sur de nouvelles situations en est une autre. Cette seconde capacité s’appelle la **généralisation**.
 
 On peut aussi avoir choisi des exemples trop faciles. Si tous nos petits fruits sont des cerises et tous les gros des pommes, notre modèle peut sembler excellent. Ajoutons une petite pomme, et nous découvrons ce qu’il avait réellement appris à séparer.
 
@@ -55,9 +55,9 @@ Figure: Chaque cercle représente une unité de calcul du réseau ; les connexio
 
 Suivez d’abord les flèches vers la droite : le réseau produit une réponse. Nous la comparons à la réponse attendue. Le calcul en sens inverse sert ensuite à déterminer comment modifier les poids.
 
-Cette publication contribue à faire connaître l’intérêt de la méthode pour les réseaux à plusieurs couches. Elle ne signifie pas que toutes les difficultés sont résolues, ni que le principe du calcul des dérivées à travers une suite d’opérations vient d’être inventé.
+Cette publication contribue à faire connaître l’intérêt de la méthode pour les réseaux à plusieurs couches. Elle s’inscrit dans des travaux antérieurs sur le calcul des dérivées à travers une suite d’opérations, et les réseaux restent difficiles à entraîner.
 
-Nous pouvons maintenant entraîner des réseaux plus élaborés. Le temps de calcul, les données disponibles et le choix de l’architecture restent cependant des contraintes importantes.
+La méthode ouvre la voie à des réseaux plus élaborés. Leur entraînement dépend encore du temps de calcul, des données disponibles et du choix de l’architecture.
 
 
 [^h3s3-backprop]: [Rumelhart, Hinton et Williams, Learning representations by back-propagating errors (1986)](https://www.nature.com/articles/323533a0).

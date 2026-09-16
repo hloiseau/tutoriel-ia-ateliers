@@ -8,7 +8,7 @@ Un texte accessible sur le Web n’est pas, pour cette seule raison, un texte sa
 
 À partir de 2023, des modèles comme GPT-4 prennent aussi en entrée plusieurs types de données, notamment du texte et des images. On parle de modèles **multimodaux**. Le rapport technique de GPT-4 indique cependant qu’il ne donne pas tous les détails de l’architecture et de l’entraînement.[^h6s5-gpt4]
 
-Les outils deviennent faciles à essayer, mais leur fabrication peut rester difficile à examiner.
+Quelques secondes suffisent pour essayer l’outil dans une interface. Examiner sa fabrication demande beaucoup plus d’informations.
 
 
 [^h6s5-c4]: [Dodge et ses collègues, Documenting Large Webtext Corpora (2021)](https://arxiv.org/abs/2104.08758).

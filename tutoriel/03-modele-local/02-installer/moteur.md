@@ -36,6 +36,6 @@ Sous Windows, dans PowerShell :
 
 Si l’exécutable est dans `moteur/bin`, ajoutez simplement `bin` au chemin. Les commandes suivantes supposent qu’il est directement dans `moteur`.
 
-Une erreur qui mentionne une bibliothèque système manquante n’est pas une erreur du modèle : le moteur n’a même pas encore pu démarrer. En particulier, un binaire Ubuntu ne garantit pas la compatibilité avec toutes les distributions Linux. Dans ce cas, utilisez les [instructions de compilation du projet](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md) pour votre système, puis reprenez à `--version`. Évitez de récupérer au hasard une bibliothèque isolée pour faire disparaître le message.
+Si une erreur mentionne une bibliothèque système manquante, le moteur n’a pas encore démarré et le modèle n’est pas en cause. Les binaires Ubuntu peuvent aussi rencontrer des incompatibilités sur une autre distribution Linux. Suivez alors les [instructions de compilation du projet](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md) pour votre système, puis reprenez à `--version`. Télécharger au hasard une bibliothèque isolée ne ferait que masquer le diagnostic.
 
 [^p3-release]: ggml-org, [fichiers de la version b10809](https://github.com/ggml-org/llama.cpp/releases/tag/b10809) et [installation de llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/docs/install.md).

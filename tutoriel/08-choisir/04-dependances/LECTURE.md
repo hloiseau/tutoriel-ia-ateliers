@@ -4,13 +4,13 @@
 
 [Précédent : Coûts, énergie, matériel et environnement](../03-ressources/LECTURE.md) · [Suivant : Apprendre et exercer notre métier](../05-apprendre/LECTURE.md)
 
-**TL;DR** — Nous allons suivre le trajet d’une demande et préparer une sortie possible. Héberger un morceau chez soi ne rend pas automatiquement toute l’application locale.
+**TL;DR** — Suivre le trajet d’une demande révèle les services dont elle dépend. Nous préparerons aussi une façon de continuer si l’un d’eux disparaît.
 
-Imaginez que le service utilisé par l’équipe double son tarif, change un modèle ou soit indisponible ce matin. Qu’est-ce qui continue à fonctionner ?
+Le service utilisé par l’équipe double son tarif, change un modèle ou tombe en panne ce matin. Qu’est-ce qui continue à fonctionner ?
 
 ## Suivre les données jusqu’au bout
 
-Dans la partie 6, notre serveur MCP lisait des documents sur notre ordinateur. Cela ne décidait pas où tournait le modèle qui recevait ensuite les résultats. Nous retrouvons la même question avec une interface installée localement : ses fichiers sont chez nous, mais ses requêtes peuvent partir ailleurs.
+Dans la partie 6, notre serveur MCP lisait des documents sur notre ordinateur, puis transmettait ses résultats au modèle choisi par l’assistant. Avec une interface installée localement, les fichiers du programme restent chez nous tandis que les requêtes peuvent partir ailleurs. Le mot « local » décrit ici un morceau du trajet.
 
 Ouvrez `fiches/flux.md` et remplissez une ligne par trajet : de l’éditeur au modèle, de l’agent au serveur MCP, du serveur aux tickets, puis vers les éventuels journaux. Pour chaque trajet, notez ce qui passe, où cela arrive et ce qui vous permet de l’affirmer.
 
@@ -21,7 +21,7 @@ Ouvrez `fiches/flux.md` et remplissez une ligne par trajet : de l’éditeur au 
 | Assistant installé pour la partie 4 | Le trajet dépend du produit, de sa configuration et du fournisseur sélectionné |
 | Politique d’un service externe | Elle doit être vérifiée pour ce service et l’offre utilisée |
 
-« Non utilisé pour l’entraînement » ne signifie pas forcément « jamais conservé ». La rétention des journaux, l’accès de tiers et la localisation du traitement sont des questions distinctes. Il faut lire les engagements applicables plutôt que déduire toutes les réponses d’une seule option.
+Une option « non utilisé pour l’entraînement » répond à une question précise. Pour connaître la durée de conservation des journaux, l’accès de tiers et la localisation du traitement, il reste à lire les engagements applicables au service et à l’offre choisis.
 
 Pour notre exercice, restez sur les documents fictifs fournis. Une fois la carte des trajets dessinée, vous pourrez décider quelles données de votre propre projet seraient acceptables dans cette configuration.
 
@@ -35,7 +35,7 @@ Changer d’API ne suffit pas toujours : deux modèles acceptant des messages de
 
 Le fichier `fiches/sortie.md` distingue ce que l’on possède, ce que l’on peut exporter et ce qu’il faudra reconstruire. Il demande aussi quelle procédure permet de travailler pendant une panne. Une bonne réponse peut être très simple : reprendre les tests et la recette manuellement.
 
-Nous n’avons pas besoin d’une migration parfaite en cinq minutes. Nous avons besoin de savoir où se trouve la dépendance et ce que son remplacement coûterait en travail.
+L’essai ne promet pas une migration parfaite en cinq minutes. Il localise la dépendance et donne une première idée du travail nécessaire pour la remplacer.
 
 ## Ne pas tout faire reposer sur un abonnement individuel
 
@@ -43,13 +43,13 @@ Le choix d’un outil dans une équipe touche aussi les personnes qui ne l’uti
 
 Pour moi, imposer un framework d’IA à toute l’organisation parce qu’il est populaire est une mauvaise façon de commencer. Nous devrions d’abord identifier le problème, puis discuter de la place que l’outil prendra et du travail qu’il déplace.
 
-L’auto-hébergement peut rendre une partie de cette dépendance plus maîtrisable. Il ajoute aussi de l’administration, des mises à jour et une responsabilité sur la disponibilité. Un service géré peut retirer certaines de ces tâches, en échange d’autres dépendances. Comparons les deux organisations concrètes, plutôt que deux étiquettes.
+L’auto-hébergement peut rendre une partie de cette dépendance plus maîtrisable. Il ajoute de l’administration, des mises à jour et une responsabilité sur la disponibilité. Un service géré retire certaines de ces tâches et crée d’autres dépendances. Comparons les deux organisations concrètes plutôt que leurs étiquettes.
 
-Dans notre équipe fictive, les tests restent exécutables sans agent et les procédures restent lisibles sans abonnement. L’aide de l’IA peut s’ajouter à ce fonctionnement ; elle ne devient pas la seule façon de savoir comment fonctionne le service.
+Dans notre équipe fictive, les tests restent exécutables sans agent et les procédures lisibles sans abonnement. L’aide de l’IA s’ajoute à ce fonctionnement, tandis que les connaissances nécessaires au service restent accessibles à toute l’équipe.
 
 Enfin, la dépendance peut être collective : une équipe entière risque de perdre l’habitude d’enquêter si chaque incident est confié au même assistant. C’est le bon moment pour parler de l’apprentissage du métier.
 
-Nous avons une carte des trajets et une possibilité de continuer sans l’outil. Voyons maintenant ce que nous voulons être capables de faire nous-mêmes.
+Rangez la carte des trajets et la procédure de sortie avec le projet : elles serviront lors d’une panne comme lors d’un changement d’outil. Reste une dépendance moins visible, celle de nos propres savoir-faire lorsque l’assistant prend l’habitude de chercher et d’écrire à notre place.
 
 ---
 

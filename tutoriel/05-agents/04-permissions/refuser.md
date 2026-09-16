@@ -13,8 +13,8 @@ Vous obtenez trois refus. Ouvrez `cas/refus.json` et le journal côte à côte :
 | Appeler `terminal` | Le banc n’expose aucun outil de ce nom |
 Table: Les contrôles ne reposent pas sur l’obéissance d’un modèle
 
-`ecrire_note` existe bien dans le code : être disponible ne signifie pas être autorisé pour cet essai. À l’inverse, inventer le nom `terminal` ne crée pas un terminal.
+Trois contrôles différents apparaissent. Le chemin sort de la liste autorisée ; `ecrire_note` existe mais son option d’autorisation manque ; `terminal`, lui, n’existe tout simplement pas dans le banc. Même une demande formulée avec beaucoup d’assurance ne fera pas surgir ce dernier par magie. 🙂
 
-Regardez `Banc.executer` dans `banc.py`. Les arguments sont vérifiés avant l’action. Pour lire, le chemin doit correspondre à un nom prévu, puis rester dans le dossier du projet après résolution. Pour écrire, la destination est fixée à `sorties/note.md` ; le demandeur ne fournit pas de chemin de sortie.
+Regardez `Banc.executer` dans `banc.py`. Les arguments sont vérifiés avant l’action. Pour lire, le chemin doit correspondre à un nom prévu, puis rester dans le dossier du projet après résolution. Pour écrire, la destination est fixée à `sorties/note.md` : le demandeur choisit le texte, jamais le chemin de sortie.
 
-Le journal est écrit par le programme pour conserver l’expérience. Cette écriture de suivi est distincte de l’autorisation de l’outil `ecrire_note`.
+Vous voyez pourtant un nouveau journal sur le disque. C’est le programme principal qui l’écrit pour conserver l’expérience ; l’autorisation testée concerne uniquement l’outil `ecrire_note`.

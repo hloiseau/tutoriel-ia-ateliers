@@ -1,1 +1,1 @@
-Les quinze erreurs et le décalage nous donnent des informations que le seul pourcentage de réussite cachait. Nous pouvons maintenant passer à une entrée qui vient vraiment de l’extérieur : notre propre dessin.
+Le modèle fait quinze erreurs sur le test et s’effondre lorsque les images glissent d’un pixel. Soumettons-lui maintenant une entrée qui vient vraiment de l’extérieur : notre propre dessin.

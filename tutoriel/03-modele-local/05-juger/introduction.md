@@ -1,1 +1,1 @@
-**TL;DR :** un modèle peut fonctionner correctement comme logiciel et mal répondre à nos questions. Nous allons garder ces deux constats séparés.
+**TL;DR :** le serveur fonctionne ; il reste à voir ce que ses réponses valent pour nos usages. Cinq cas courts nous aideront à séparer ces deux constats.

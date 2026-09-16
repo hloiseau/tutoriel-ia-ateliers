@@ -1,3 +1,3 @@
-Notre modèle linéaire additionne les contributions des pixels. Il n’a pas de couche intermédiaire capable de transformer leur combinaison avant de calculer les dix scores.
+Notre modèle linéaire additionne directement les contributions des pixels pour obtenir dix scores. Ajoutons une transformation entre les deux : une couche de 32 unités.
 
-Ajoutons-en une. Nous pourrons comparer le résultat, mais aussi vérifier si davantage de paramètres suffit à mieux reconnaître les chiffres.
+Le réseau contiendra davantage de paramètres. Les courbes, la validation et le test nous diront ce que cette capacité supplémentaire lui apporte réellement.

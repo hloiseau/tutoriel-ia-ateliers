@@ -1,1 +1,1 @@
-Nous avons obtenu une donnée par MCP. Regardons maintenant ce que le client a dû connaître pour la demander, puis remplaçons-le par notre assistant.
+PRIX-1 est arrivé jusqu’à notre journal. Regardons maintenant comment le client a découvert l’outil qui le lui a fourni, puis branchons ce même serveur à notre assistant.

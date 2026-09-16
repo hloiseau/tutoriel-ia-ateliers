@@ -1,1 +1,1 @@
-Nous avons produit du texte à partir de comptages et exécuté un calcul d’attention. Le contexte, les paramètres et la méthode de génération jouent des rôles distincts. Modifier l’un ne revient pas à modifier les autres.
+Le corpus fixe les comptages de notre bigramme, le début fournit son contexte et la température modifie le tirage. L’attention nous a ensuite permis de combiner plusieurs positions. Gardons ces rôles en tête avant d’ajouter des outils autour du modèle.

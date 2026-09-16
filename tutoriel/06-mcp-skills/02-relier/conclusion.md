@@ -1,1 +1,1 @@
-Le même serveur peut être appelé par notre script ou par un assistant compatible. Nous avons essayé celui de l’atelier ; au chapitre suivant, nous allons créer le nôtre, depuis un fichier vide.
+Notre script sait appeler le serveur, et un assistant compatible peut faire le même échange. Nous connaissons maintenant le résultat à obtenir ; construisons notre propre serveur depuis un fichier vide.

@@ -6,7 +6,7 @@
 
 **TL;DR** — Le client lance le serveur, lui demande PRIX-1 et enregistre sa réponse. Aucun modèle n’intervient encore.
 
-Avant de parler du protocole, faisons-lui transporter quelque chose. Un ticket fera très bien l’affaire. 🙂
+Avant de démonter le protocole pièce par pièce, faisons-lui transporter quelque chose. Un ticket fera très bien l’affaire. 🙂
 
 ## Préparer le dossier
 
@@ -65,9 +65,9 @@ La réponse est assez longue : le SDK fournit notamment une représentation text
 ```
 Code: Contenu du ticket fictif retourné par le serveur
 
-Comparez-le avec `donnees/tickets.json`. C’est bien notre fichier qui a répondu. Le client n’a ni deviné la règle ni demandé à un modèle de la reformuler.
+Comparez-le avec `donnees/tickets.json` : les champs correspondent. Le client a lu la règle par l’intermédiaire du serveur, sans demander à un modèle de la deviner ou de la reformuler.
 
-Le journal conserve aussi `protocole`, la version employée lors de l’échange. Notre exécution avec le SDK fourni utilise `2026-07-28`. Ce journal contient les résultats obtenus par le client, pas une capture de chaque message qui a circulé.
+Le journal conserve aussi `protocole`, la version employée lors de l’échange. Notre exécution avec le SDK fourni utilise `2026-07-28`. Nous y enregistrons le résultat obtenu par le client ; pour examiner chaque message du transport, il faudrait une trace plus détaillée.
 
 Pour refaire la commande, choisissez un autre nom de journal. Le client refuse d’écraser le premier : nous pourrons comparer nos essais sans perdre la réponse précédente.
 
@@ -91,11 +91,11 @@ C’est différent d’un client qui n’arrive même pas à démarrer :
 | `isError: true` dans un journal enregistré | Le message retourné par l’outil |
 | Le serveur s’arrête avant de répondre | La sortie d’erreur du terminal et les dépendances |
 
-Le client imprime les erreurs attendues de l’outil dans son journal et termine normalement. Un code de sortie nul signifie ici qu’il a pu enregistrer la réponse, pas que le ticket demandé a été trouvé.
+Le client enregistre les erreurs attendues de l’outil dans son journal et termine normalement. Son code de sortie nul nous apprend que l’échange a pu être conservé. Pour savoir si le ticket a été trouvé, il faut encore lire `isError` et le message de l’outil.
 
-Une erreur correctement remontée est déjà un résultat utile : l’agent pourra dire qu’il n’a pas obtenu le ticket. Une réponse inventée serait beaucoup plus ennuyeuse à repérer.
+Cette erreur correctement remontée est déjà utile : l’agent pourra dire qu’il n’a pas obtenu le ticket. C’est tout de même plus facile à traiter qu’une réponse inventée avec beaucoup d’assurance. 😅
 
-Nous avons obtenu une donnée par MCP. Regardons maintenant ce que le client a dû connaître pour la demander, puis remplaçons-le par notre assistant.
+PRIX-1 est arrivé jusqu’à notre journal. Regardons maintenant comment le client a découvert l’outil qui le lui a fourni, puis branchons ce même serveur à notre assistant.
 
 ---
 

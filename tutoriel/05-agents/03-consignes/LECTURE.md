@@ -12,7 +12,7 @@ Voici une demande difficile à contrôler :
 
 > Regarde le code, fais attention aux cas limites et assure-toi que tout est bon.
 
-Qu’est-ce qui nous permettra de dire que le travail est terminé ? Le modèle peut répondre par un commentaire très rassurant sans avoir fait ce que nous attendions.
+À quel résultat reconnaîtrons-nous que le travail est terminé ? Avec cette seule phrase, le modèle peut produire un commentaire très rassurant sans avoir inspecté le bon cas.
 
 Pour notre projet, nous pouvons écrire :
 
@@ -24,9 +24,9 @@ Sinon, propose un test qui appelle notifier sur ce cas.
 Ne modifie pas les fichiers. Ne prétends pas avoir exécuté la suite.
 ```
 
-Les verbes sont impératifs et le résultat est vérifiable. L’agent doit retrouver un cas précis ou en proposer un. Il n’a pas à deviner ce que « tout est bon » voulait dire.
+Les verbes sont impératifs, le cas est nommé et le résultat se vérifie dans les fichiers. L’agent doit retrouver un test précis ou en proposer un ; il n’a plus à deviner ce que « tout est bon » voulait dire.
 
-Gardez les demandes courtes tant que le travail l’est. Une longue liste d’interdictions sans rapport rend aussi plus difficile la lecture de ce qui compte.
+Gardez les demandes courtes tant que le travail l’est. Dix interdictions héritées d’un autre ticket finiraient par cacher la seule règle qui compte ici.
 
 ## Essayer la consigne sur deux états du projet
 
@@ -34,23 +34,23 @@ Faites l’essai sur `01-depart`, puis sur la version contenant les tests de `02
 
 Dans la première version, le test du retour avec hausse est absent. Dans la seconde, vous pouvez retrouver `test_retour_en_stock_avec_hausse`. Vérifiez dans le fichier si la réponse de l’agent correspond à l’état que vous lui avez montré.
 
-Le même texte doit donc mener à deux constats différents. C’est plus instructif que de vérifier seulement si l’agent reprend les mots de la consigne.
+Le même texte devrait mener à deux constats différents, puisque les fichiers diffèrent. Nous vérifions ainsi que la réponse correspond au projet ouvert, au lieu de nous contenter d’y retrouver les mots de la consigne.
 
 S’il se trompe, notez la demande, le modèle choisi, le fichier réellement ouvert et la réponse. Puis changez un élément à la fois : une pièce jointe manquait-elle ? L’assistant avait-il gardé le contexte d’une autre copie ? La consigne demandait-elle vraiment de lire les tests ?
 
-Nous n’en déduirons pas qu’un prompt est « fiable à 100 % ». Nous aurons un cas qui passe ou échoue, et une manière de le rejouer après une modification.
+Au bout de ces deux essais, gardez le cas, l’état de départ et le résultat. Vous pourrez les rejouer après avoir changé la consigne ou le modèle. Deux réussites resteraient deux observations, bien loin d’une fiabilité « à 100 % ».
 
 ## Quand les règles se contredisent
 
-Imaginons que le fichier général du projet dise « crée un commit après chaque tâche » et que votre demande dise « montre-moi le changement avant tout commit ». Ajouter une troisième phrase en majuscules ne résout pas proprement ce désaccord.
+Imaginons que le fichier général du projet dise « crée un commit après chaque tâche », tandis que votre demande exige de voir le changement avant tout commit. Une troisième phrase en majuscules ajouterait surtout du bruit à ce désaccord.
 
-Ouvrez les consignes chargées par votre assistant. Cherchez les règles qui portent sur cette étape, leur portée et l’ordre de priorité documenté par l’outil. Les fichiers et leurs noms diffèrent selon les produits. Une instruction présente quelque part dans le dépôt n’est pas forcément chargée à chaque tour.
+Ouvrez les consignes chargées par votre assistant. Cherchez les règles qui portent sur cette étape, leur portée et l’ordre de priorité documenté par l’outil. Les fichiers et leurs noms diffèrent selon les produits, et leur simple présence dans le dépôt ne dit pas quand l’assistant les charge.
 
 Pour votre propre organisation, placez une règle générale là où elle s’applique réellement, puis retirez les copies contradictoires. Les détails d’un ticket ont leur place avec le ticket. La procédure réutilisable de revue ou de préparation des tests pourra devenir un skill dans la partie suivante.
 
-Une consigne explicite reste adressée à un modèle. Pour une action qui doit être interdite, il nous faut maintenant regarder ce que le programme autorise réellement.
+Ces consignes aident le modèle à choisir. Dès qu’une action doit être interdite, le programme doit prendre le relais. Voyons donc ce qu’il autorise réellement.
 
-
+Une consigne précise rend le résultat observable et rejouable. Elle ne peut toutefois pas retirer au processus un droit qu’il possède déjà : pour cela, quittons le texte des prompts et passons aux contrôles du programme.
 
 ---
 

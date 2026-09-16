@@ -11,7 +11,7 @@ Essayez maintenant de remplacer « mon travail » par « mon grille-pain ». La 
 
 Cet exemple montre comment quelques règles peuvent donner une impression de dialogue. ELIZA est plus élaboré que notre unique transformation, mais il ne fonctionne pas comme les grands modèles de langage actuels : ses réponses reposent sur des scripts et des mécanismes de traitement du texte.
 
-On peut donc faire apparaître des phrases dans une conversation par des moyens très différents. L’interface ressemble parfois à celle d’un outil récent, alors que le programme derrière elle n’a pas du tout la même organisation.
+Une conversation à l’écran ne nous dit donc pas comment les phrases ont été produites. ELIZA et un outil récent peuvent présenter une interface familière tout en reposant sur des organisations très différentes.
 
 
 [^h2s3-eliza]: [Joseph Weizenbaum, ELIZA (1966)](https://cse.buffalo.edu/~rapaport/572/S02/weizenbaum.eliza.1966.pdf).

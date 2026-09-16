@@ -14,13 +14,13 @@ Lancez :
 python banc.py boucle --limite 3 --journal sorties/boucle.jsonl
 ```
 
-Le fichier `cas/boucle.json` contient huit demandes de lecture identiques. Le journal n’enregistre que trois appels, puis un arrêt pour `budget_appels`. Le quatrième appel n’est pas exécuté.
+Le fichier `cas/boucle.json` contient huit demandes de lecture identiques. Le journal enregistre les trois premières, puis un arrêt pour `budget_appels`. La quatrième reste dans le scénario et n’atteint jamais l’outil.
 
-Ouvrez la fonction `rejouer` : c’est le programme qui compte les appels et arrête la boucle. Il ne demande pas au modèle de décider s’il a suffisamment dépensé. Le test associé vérifie aussi que les demandes refusées consomment ce budget.
+Ouvrez la fonction `rejouer` : le compteur et l’arrêt appartiennent au programme. Le test associé vérifie aussi que les demandes refusées consomment ce budget. Une boucle de refus peut donc atteindre la limite aussi vite qu’une boucle de succès.
 
-Dans un véritable agent, une limite peut porter sur les tours, les tokens, la durée ou une dépense. Il faut savoir ce qui est compté. Notre limite d’appels ne borne pas le temps d’un outil bloqué ni la durée d’une requête au modèle ; il faudrait des délais d’expiration pour cela.
+Dans un véritable agent, une limite peut porter sur les tours, les tokens, la durée ou une dépense. Vérifiez l’unité choisie : trois appels d’outils ne disent rien sur la taille des réponses du modèle. Notre compteur ne borne pas non plus le temps d’un outil bloqué ni la durée d’une requête au modèle ; ces risques demandent des délais d’expiration.
 
-Relire un fichier n’est pas toujours inutile : il peut avoir changé. En revanche, lire trois fois le même contenu sans nouvelle question doit nous inciter à regarder ce qui manque, plutôt qu’à attendre le quatrième passage. 😅
+Un fichier peut changer et mériter une seconde lecture. Après trois lectures du même contenu sans nouvelle question, mieux vaut chercher ce qui manque que parier sur l’illumination au quatrième passage. 😅
 
 ## Corriger la cause du refus
 
@@ -30,17 +30,17 @@ Rejouez cet autre cas :
 python banc.py reprise --journal sorties/reprise.jsonl
 ```
 
-La première demande cherche `ticket.md`, qui ne figure pas dans la liste des chemins autorisés. La seconde demande `TICKET.md` et réussit. Le script montre une correction de paramètre, pas une ouverture générale des droits.
+La première demande cherche `ticket.md`, absent de la liste des chemins autorisés. La seconde utilise le nom exact `TICKET.md` et réussit. Le droit de lecture n’a pas changé ; seul l’argument a été corrigé.
 
-Dans votre assistant, commencez de la même façon : quelle demande a échoué, avec quels arguments, et quel résultat est revenu ? « Permission refusée », « fichier absent » et « test en échec » demandent des réponses différentes.
+Dans votre assistant, commencez par les mêmes questions : quelle demande a échoué, avec quels arguments, et quel résultat est revenu ? « Permission refusée », « fichier absent » et « test en échec » appellent des corrections différentes.
 
-Avant de relancer une écriture, regardez aussi si elle a pu avoir lieu. Un délai dépassé ne prouve pas que le serveur n’a rien fait. Pour un envoi de notification ou la création d’un ticket, répéter aveuglément peut produire un doublon. L’opération doit avoir une manière de vérifier son état ou d’éviter les doublons ; « réessaie » ne suffit pas.
+Avant de relancer une écriture, vérifiez si elle a pu avoir lieu. Après un délai dépassé, le serveur a peut-être terminé l’action sans que la réponse vous parvienne. Renvoyer une notification ou recréer un ticket peut alors produire un doublon. Prévoyez un moyen de consulter l’état de l’opération ou de reconnaître une répétition.
 
-Pour notre exercice de la partie 4, inspectez le fichier et le diff avant de demander une nouvelle correction. On repartira ainsi de l’état présent, pas du récit de la dernière tentative.
+Pour l’exercice de la partie 4, inspectez le fichier et le diff avant de demander une nouvelle correction. La reprise partira de l’état présent des fichiers, plus fiable que le récit de la dernière tentative.
 
 ## Préparer la prochaine session
 
-L’atelier fournit `REPRISE-exemple.md`. C’est une trame, pas le compte rendu de votre session. Adaptez-la à `mon-suivi` :
+L’atelier fournit `REPRISE-exemple.md`, une trame à compléter avec les faits de votre session sur `mon-suivi` :
 
 ```markdown
 # Reprise du ticket
@@ -61,13 +61,13 @@ Les commandes réellement exécutées, leurs résultats et leurs journaux.
 Le blocage éventuel et la prochaine action à vérifier.
 ```
 
-Fermez la conversation et essayez de reprendre avec cette fiche dans une session neuve. Demandez d’abord de vérifier l’état des fichiers et de relever ce qui manque pour continuer.
+Fermez la conversation, puis repartez dans une session neuve avec cette fiche. Demandez d’abord de vérifier l’état des fichiers et de relever ce qui manque pour continuer. Vous verrez vite si la fiche porte le travail ou si elle s’appuyait encore sur des souvenirs de l’ancienne conversation.
 
 Si la fiche dit « les tests passent », mais ne donne ni commande ni résultat conservé, complétez-la. Si elle contient trente paragraphes d’hypothèses abandonnées, retirez ce qui ne guide plus la suite. Gardez en revanche la raison d’une solution rejetée si elle risque de revenir.
 
-Le modèle peut préparer ce résumé. Relisez les décisions et les faits avant de vous en servir : une erreur recopiée dans une fiche de reprise peut devenir très convaincante à force d’être répétée.
+Le modèle peut préparer ce résumé. Relisez les décisions et les faits avant de vous en servir : une erreur recopiée dans une fiche de reprise gagne vite l’apparence d’une vieille vérité.
 
-
+Une limite arrête la boucle ; le journal explique où elle s’est arrêtée ; la fiche rassemble l’état nécessaire pour repartir. Cette reprise consomme toutefois du temps, des appels et parfois un quota payant. Nous allons les compter séparément.
 
 ---
 

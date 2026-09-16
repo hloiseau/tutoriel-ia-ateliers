@@ -1,1 +1,1 @@
-Nous avons entraîné de vrais paramètres, mais sur une tâche volontairement minuscule. Voyons maintenant ce que cette expérience permet de préparer sur une autre machine, et ce qu’elle ne permet pas de promettre.
+Nous avons entraîné de vrais paramètres sur une tâche volontairement minuscule. Faisons maintenant le bilan de ce qui a réellement tourné sur CPU, avant d’ouvrir le protocole d’une expérience beaucoup plus exigeante sur GPU.

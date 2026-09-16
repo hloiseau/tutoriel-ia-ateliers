@@ -15,3 +15,5 @@ Ces évolutions se sont étalées sur plusieurs décennies :
 Table: Les périodes se recouvrent : une méthode ne disparaît pas dès qu’une autre progresse.
 
 Les résultats les plus visibles reposent sur des modèles, mais aussi sur des données, des personnes, du matériel et des logiciels qui les font fonctionner ensemble.
+
+Dans la partie suivante, nous allons isoler quelques-uns de ces éléments. Nous commencerons avec une image de huit pixels de côté, des poids et une réponse à calculer. Puis nous entraînerons nous-mêmes le petit modèle qui devra reconnaître les chiffres.

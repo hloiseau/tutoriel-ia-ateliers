@@ -1,1 +1,1 @@
-Le serveur sait fournir des données et rejeter certaines demandes. Il ne sait toujours pas comment nous voulons préparer une recette. C’est le rôle du fichier que nous allons écrire.
+Le serveur fournit les données et bloque les demandes qui sortent de son contrat. Pour transformer ces sources en scénarios de recette, il nous manque encore une procédure : ce sera notre premier skill.

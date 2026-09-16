@@ -6,4 +6,4 @@ Un ami m’a proposé une comparaison qui me plaît bien :
 
 On peut reprendre une bonne base sans tout garder. Pour un skill, cela peut vouloir dire retirer une étape qui ne nous sert pas, ajouter une vérification qui manque ou remplacer une étape prévue pour un outil que l’on n’utilise pas. C’est à la procédure de s’adapter à notre manière de travailler.
 
-C’est souvent là que les choses deviennent intéressantes : le premier exemple marchait, le suivant révèle ce que nous n’avions pas précisé.
+C’est souvent là que les choses deviennent intéressantes : PRIX-1 peut donner un résultat convaincant, puis PRIX-2 révèle tout ce que la procédure ou le ticket n’avaient pas précisé.

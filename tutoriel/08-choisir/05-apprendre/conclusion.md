@@ -1,1 +1,1 @@
-Nous avons un moyen de regarder ce que nous apprenons, en plus de ce que nous produisons. Comparons maintenant plusieurs façons de faire le travail demandé.
+Le résultat de l’exercice tient dans quelques booléens ; son intérêt se voit surtout le lendemain, lorsque nous savons encore expliquer la condition et la modifier. Ajoutons cette capacité à nos critères quand nous comparerons plusieurs façons d’accomplir une tâche.

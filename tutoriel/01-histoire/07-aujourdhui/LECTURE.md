@@ -8,7 +8,7 @@ En parallèle, des équipes distribuent les paramètres de certains modèles. Il
 
 ## Du modèle qui répond à l’agent qui utilise des outils
 
-Un modèle qui produit une commande n’a pas, pour autant, exécuté cette commande. Il faut un programme autour de lui pour lire sa proposition, lancer l’outil autorisé et lui transmettre le résultat.
+Supposons qu’un modèle produise la commande `pytest`. Pour qu’elle soit réellement exécutée, un programme autour de lui doit lire cette proposition, autoriser l’appel, lancer l’outil et lui transmettre le résultat.
 
 Les travaux ReAct, publiés en 2022, étudient notamment l’association entre des étapes de raisonnement formulées par le modèle et des actions dans un environnement. Ils constituent un repère parmi les recherches qui conduisent aux agents fondés sur des modèles de langage.[^h7s1-react]
 
@@ -21,7 +21,7 @@ Suivez la boucle : le modèle demande une recherche, l’application l’exécut
 
 Cela change les possibilités du système. Il peut consulter une information récente ou examiner un fichier qui n’était pas présent dans son entraînement. Cela ajoute aussi de nouvelles causes d’erreur : le mauvais outil peut être choisi, ses résultats mal interprétés ou une action proposée hors du périmètre attendu.
 
-Le mot **agent** ne veut donc pas dire « programme qui réussit tout seul ». Il décrit ici une organisation qui permet d’enchaîner des décisions et des appels d’outils. Les droits, les limites et les vérifications font partie de cette organisation.
+Nous appelons ici **agent** cette organisation capable d’enchaîner des décisions et des appels d’outils. Elle ne promet pas la réussite en solitaire : les droits, les limites et les vérifications font partie de son fonctionnement.
 
 
 [^h7s1-react]: [Yao et ses collègues, ReAct (2022)](https://arxiv.org/abs/2210.03629).
@@ -30,11 +30,11 @@ Le mot **agent** ne veut donc pas dire « programme qui réussit tout seul ». I
 
 En novembre 2024, Anthropic présente le **Model Context Protocol**, ou **MCP**. Le protocole vise à faciliter les échanges entre des applications utilisant des modèles et des serveurs qui exposent des ressources ou des outils.[^h7s2-mcp]
 
-Pour reprendre notre exemple, un serveur peut proposer un outil de recherche documentaire. Le protocole aide l’application à découvrir cet outil et à l’appeler. Il ne garantit pas que le modèle saura quand l’utiliser, ni que toutes les réponses obtenues seront correctes.
+Pour reprendre notre exemple, un serveur peut proposer un outil de recherche documentaire. Le protocole aide l’application à le découvrir et à l’appeler. Le choix du bon moment et l’interprétation du résultat restent à la charge de l’agent — avec les erreurs que cela peut entraîner.
 
 Les fichiers de consignes et les procédures réutilisables se développent également autour des agents. En 2025, Anthropic présente notamment les **Agent Skills**, des ensembles organisés de consignes, de ressources et éventuellement de scripts, chargés selon le travail à effectuer.[^h7s2-skills]
 
-Les MCP et les skills permettent d’organiser l’accès aux outils et les informations fournies à un agent. Ils ne constituent pas un nouvel entraînement complet du modèle.
+Les MCP et les skills organisent l’accès aux outils et les informations fournies à un agent. Ils agissent autour du modèle, sans reprendre son entraînement complet.
 
 Une procédure de revue de code peut ainsi préciser ce qu’il faut examiner, tandis qu’un outil permet de lire les changements. Ce sont deux rôles différents, qui peuvent être combinés.
 
@@ -50,7 +50,7 @@ En 2023, Meta présente LLaMA, puis Llama 2. Ces publications participent au dé
 
 Les **poids** sont les nombres ajustés pendant l’entraînement. Les récupérer permet d’exécuter le modèle avec un logiciel compatible, si l’on dispose des ressources nécessaires. Cela donne plus de prise sur son fonctionnement que le seul accès à une interface distante.
 
-Il faut cependant distinguer plusieurs choses :
+Regardons précisément ce que l’on peut récupérer :
 
 | Ce qui est disponible | Ce que cela permet d’examiner ou de faire |
 | --- | --- |
@@ -60,11 +60,11 @@ Il faut cependant distinguer plusieurs choses :
 | Les données et leur documentation | Étudier les exemples utilisés et leurs conditions de collecte |
 Table: Ces éléments peuvent être publiés séparément. Leur disponibilité ne donne pas automatiquement les mêmes droits d’utilisation.
 
-Le mot « ouvert » mérite donc qu’on regarde ce qui est effectivement fourni. Des poids téléchargeables ne signifient pas nécessairement que toutes les données sont accessibles ou que tous les usages sont autorisés.
+Le mot « ouvert » mérite donc qu’on regarde ce qui est effectivement fourni. Avec des poids téléchargeables, les données peuvent rester inaccessibles et la licence peut encore limiter certains usages.
 
 Des méthodes comme **LoRA**, présentée en 2021, permettent aussi d’adapter un modèle en entraînant un ensemble limité de paramètres supplémentaires. On peut ainsi réduire les ressources nécessaires à certaines adaptations, par rapport à la modification de tous les poids.[^h7s3-lora]
 
-Faire tourner un modèle existant, l’adapter et en entraîner un depuis zéro sont trois travaux différents. Avoir installé un programme de conversation ne veut pas dire que nous avons entraîné le modèle qui lui répond.
+Faire tourner un modèle existant, l’adapter et en entraîner un depuis zéro sont trois travaux différents. Lorsqu’un programme de conversation répond avec un modèle déjà fourni, nous accomplissons le premier ; nous n’avons pas entraîné le modèle qui lui répond.
 
 Le local peut nous donner davantage de maîtrise sur les données envoyées et sur la disponibilité de l’outil. Il ne règle pas, à lui seul, les questions sur l’origine des données d’entraînement ou les conditions de fabrication du matériel.
 
@@ -77,13 +77,13 @@ Le local peut nous donner davantage de maîtrise sur les données envoyées et s
 
 En 2025, DeepSeek-R1 illustre l’importance prise par l’apprentissage par renforcement pour améliorer les performances de modèles de langage sur des tâches de raisonnement. Le rapport décrit aussi la diffusion de modèles adaptés et de versions plus petites issues de distillation.[^h7s4-r1model]
 
-La **distillation** consiste à utiliser un modèle pour aider à entraîner un autre modèle, par exemple au moyen de réponses qu’il a produites. Ce n’est pas la même opération que réduire la précision des nombres stockés dans les poids.
+La **distillation** consiste à utiliser un modèle pour aider à en entraîner un autre, par exemple au moyen de réponses qu’il a produites. Réduire la précision des nombres stockés dans les poids porte un autre nom : la quantification.
 
 Dans cette période, les systèmes peuvent consacrer davantage de calcul à une réponse, effectuer plusieurs étapes et utiliser des outils pour vérifier certains résultats. L’expérience ressemble moins à une simple complétion de phrase, même si la génération de texte reste un composant important.
 
 Le rapport **AI Index 2026** de Stanford décrit des progrès sur différentes évaluations, mais aussi des capacités très inégales selon les tâches. Il souligne également la place de l’industrie, les questions de ressources et les difficultés à mesurer certains effets sociaux.[^h7s4-index]
 
-Un score sur une épreuve ne résume donc pas tous les usages. Un système peut réussir une question difficile et échouer sur une manipulation qui nous semble banale. Et un agent performant sur un ensemble de tâches peut encore se tromper dans votre projet, avec vos fichiers et vos contraintes.
+Un score sur une épreuve ne résume donc pas tous les usages. Un système peut réussir une question difficile et échouer sur une manipulation qui nous semble banale. Dans votre projet, vos fichiers et vos contraintes constituent encore une autre épreuve.
 
 Le rapport AI Index 2026 rassemble surtout des observations sur l’année précédente et des données disponibles au moment de sa publication.
 
@@ -103,9 +103,9 @@ Si vous débutez en développement, une autre question est tout aussi importante
 
 Vous pouvez demander de l’aide pour comprendre un message d’erreur, puis essayer de résoudre le problème. Vous pouvez aussi confier toute la modification à un agent. Dans le second cas, il faut déjà savoir comment juger ce qu’il produit. Sinon, on risque de conserver une grosse réécriture là où une ligne aurait suffi, ou de laisser passer un bug parce que les tests produits semblent rassurants.
 
-Les skills et les procédures peuvent aider à organiser ce travail. Ils ne suppriment pas le temps nécessaire pour comprendre, relire, tester et valider.
+Les skills et les procédures peuvent organiser ce travail. Le temps passé à comprendre, relire, tester et valider reste dans la boucle.
 
-Vous n’êtes pas obligé de développer avec une IA. Vous pouvez vouloir comprendre le sujet, expérimenter chez vous ou chercher une aide limitée à une tâche pénible, comme préparer des cas de test. C’est à l’outil de trouver sa place dans vos besoins.
+Développer avec une IA reste un choix. Vous pouvez vouloir comprendre le sujet, expérimenter chez vous ou chercher une aide limitée à une tâche pénible, comme préparer des cas de test. Vous pouvez aussi vous en passer : c’est à l’outil de trouver sa place dans vos besoins.
 
 
 [^h7s5-foundation]: [Bommasani et ses collègues, On the Opportunities and Risks of Foundation Models (2021)](https://arxiv.org/abs/2108.07258).

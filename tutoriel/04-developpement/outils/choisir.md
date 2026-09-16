@@ -1,6 +1,6 @@
 Vous utilisez déjà un assistant capable de lire et modifier un projet ? Gardez-le. Les demandes de l’atelier portent sur des fichiers et des commandes Python ; elles ne dépendent pas d’une marque.
 
-Sinon, nous prendrons **VS Code avec GitHub Copilot** comme exemple d’installation. D’autres possibilités figurent dans le [comparatif complet](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/annexes/comparatif/LECTURE.md) : éditeurs, agents en terminal, choix du modèle, prix et limites des offres. Ce comparatif est daté de septembre 2026.
+Sinon, nous prendrons **VS Code avec GitHub Copilot** comme exemple d’installation. Ce choix nous donne un parcours concret à décrire ; il ne change pas l’atelier en tutoriel consacré à Copilot. Le [comparatif complet](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/annexes/comparatif/LECTURE.md), daté de septembre 2026, couvre aussi des éditeurs et des agents en terminal, avec leurs modèles, leurs prix et les limites de leurs offres.
 
 Avant de vous connecter, vérifiez deux points :
 

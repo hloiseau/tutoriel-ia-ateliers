@@ -1,1 +1,1 @@
-Nous avons un corpus, une séparation des lots et une première adaptation complète. Voyons maintenant comment changer le comportement du modèle en laissant ses paramètres de départ figés.
+Nous avons séparé les lots et produit une première adaptation qui peut modifier les 15 055 paramètres. Essayons maintenant d’obtenir une correction avec 556 paramètres entraînables, ajoutés à une base figée.

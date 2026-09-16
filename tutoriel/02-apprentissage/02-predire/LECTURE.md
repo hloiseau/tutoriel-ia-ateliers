@@ -64,7 +64,7 @@ Le modèle peut ainsi attribuer `0,60` au trois, `0,25` au huit et répartir les
 chiffre = probas.argmax()
 ```
 
-Un score de 60 % est une probabilité **calculée par le modèle**. Ce n’est pas automatiquement la garantie que 60 % des dessins ayant ce score seront bien reconnus. Pour savoir si les scores correspondent aux fréquences de réussite, il faudrait aussi étudier leur calibration.
+Un score de 60 % est une probabilité **calculée par le modèle**. Pour affirmer que, parmi les dessins qui reçoivent ce score, environ 60 % sont bien reconnus, il faudrait étudier la **calibration** du modèle. Nous ne la mesurons pas dans cet atelier.
 
 
 [^p2-2-softmax-softmax]: [Dive into Deep Learning, Softmax Regression](https://d2l.ai/chapter_linear-classification/softmax-regression.html).
@@ -87,7 +87,7 @@ Exactitude avant entraînement : 10.3%
 
 Le chiffre attendu est un trois. Le modèle choisit un deux. Ses probabilités sont toutes proches d’un dixième : les poids viennent d’être tirés au hasard, il n’a encore reçu aucune correction.
 
-Les 10,3 % de bonnes réponses ne sont donc pas une panne. Avec dix classes assez équilibrées, une règle naïve ou un choix au hasard peut déjà obtenir un résultat de cet ordre. C’est un point de comparaison, pas un objectif.
+Les 10,3 % de bonnes réponses nous donnent un point de départ. Avec dix classes assez équilibrées, une règle naïve ou un choix au hasard peut déjà obtenir un résultat de cet ordre. L’entraînement devra faire nettement mieux.
 
 Ouvrez `02_predire.py`. Remplacez :
 
@@ -101,8 +101,8 @@ par :
 index = train[1]
 ```
 
-Relancez le programme. Nous avons changé l’image, pas les paramètres. Le score peut bouger, mais le modèle n’apprend rien en exécutant cette prédiction.
+Relancez le programme. Les scores changent parce que l’image a changé. Les paramètres, eux, sont exactement les mêmes : exécuter une prédiction ne les modifie pas.
 
 Vous pouvez conserver cette modification ou remettre `train[0]` pour retrouver l’exemple du trois. Le script d’entraînement choisit ses propres lots et ne dépend pas de ce changement.
 
-Nous avons une première chaîne complète : une image devient des scores, puis des probabilités, puis un chiffre choisi. Elle fonctionne, mais les réponses sont mauvaises. Il manque un moyen de corriger les paramètres.
+Une image devient maintenant dix scores, puis dix probabilités et enfin un chiffre choisi. Pour l’instant, notre trois finit dans la case du deux. Il faut traduire cette erreur en modifications des paramètres.

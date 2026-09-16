@@ -14,7 +14,7 @@ L’un de ses mécanismes essentiels est l’**attention** : il permet de combin
 
 > Le chat poursuit la souris parce qu’elle a volé son fromage.
 
-Pour interpréter « elle », le contexte est utile. Un mécanisme d’attention permet au calcul effectué à une position de tenir compte d’autres éléments de la phrase. Cela ne signifie pas qu’on lui a écrit une règle « elle désigne toujours la souris » : les paramètres qui organisent ces calculs sont appris.
+Pour interpréter « elle », le contexte est utile. Un mécanisme d’attention permet au calcul effectué à une position de tenir compte d’autres éléments de la phrase. Les paramètres qui organisent ces calculs sont appris ; personne n’a écrit une règle « elle désigne toujours la souris ».
 
 ![Le mot « elle » est relié à plusieurs éléments de la phrase ; les liens illustrent l’accès au contexte et ne représentent pas des poids mesurés.](../images/attention.png)
 Figure: Illustration du rôle du contexte. Les liens ne proviennent pas de l’analyse d’un modèle réel.
@@ -36,7 +36,7 @@ En 2020, l’article sur GPT-3 montre qu’un grand modèle de langage peut acco
 
 Par exemple, nous pouvons montrer le format d’une traduction, puis demander d’en produire une nouvelle. Ce travail à partir du contexte ne doit pas être confondu avec un nouvel entraînement du modèle.
 
-Le programme ne consulte pas nécessairement une fiche vérifiée pour chaque phrase qu’il écrit. Il peut produire une suite convaincante qui contient une erreur. La fluidité du texte et son exactitude doivent donc être examinées séparément.
+Une suite convaincante peut contenir une erreur : le programme ne consulte pas nécessairement une fiche vérifiée pour chaque phrase qu’il écrit. Lisons donc la fluidité du texte et son exactitude comme deux propriétés séparées.
 
 
 [^h6s2-gpt3]: [Brown et ses collègues, Language Models are Few-Shot Learners (2020)](https://arxiv.org/abs/2005.14165).
@@ -90,7 +90,7 @@ Un texte accessible sur le Web n’est pas, pour cette seule raison, un texte sa
 
 À partir de 2023, des modèles comme GPT-4 prennent aussi en entrée plusieurs types de données, notamment du texte et des images. On parle de modèles **multimodaux**. Le rapport technique de GPT-4 indique cependant qu’il ne donne pas tous les détails de l’architecture et de l’entraînement.[^h6s5-gpt4]
 
-Les outils deviennent faciles à essayer, mais leur fabrication peut rester difficile à examiner.
+Quelques secondes suffisent pour essayer l’outil dans une interface. Examiner sa fabrication demande beaucoup plus d’informations.
 
 
 [^h6s5-c4]: [Dodge et ses collègues, Documenting Large Webtext Corpora (2021)](https://arxiv.org/abs/2104.08758).

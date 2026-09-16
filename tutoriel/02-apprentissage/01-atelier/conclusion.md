@@ -1,1 +1,1 @@
-Nous avons des images, leurs réponses attendues et trois groupes distincts. Aucun paramètre n’a encore été entraîné. Le modèle va maintenant devoir transformer les 64 pixels en dix scores.
+Les images sont chargées, leurs réponses attendues sont connues et le test attend sagement à part. Aucun paramètre n’a encore bougé : il faut d’abord transformer les 64 pixels en dix scores.

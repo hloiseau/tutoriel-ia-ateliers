@@ -8,9 +8,9 @@ Si vous débutez en développement, une autre question est tout aussi importante
 
 Vous pouvez demander de l’aide pour comprendre un message d’erreur, puis essayer de résoudre le problème. Vous pouvez aussi confier toute la modification à un agent. Dans le second cas, il faut déjà savoir comment juger ce qu’il produit. Sinon, on risque de conserver une grosse réécriture là où une ligne aurait suffi, ou de laisser passer un bug parce que les tests produits semblent rassurants.
 
-Les skills et les procédures peuvent aider à organiser ce travail. Ils ne suppriment pas le temps nécessaire pour comprendre, relire, tester et valider.
+Les skills et les procédures peuvent organiser ce travail. Le temps passé à comprendre, relire, tester et valider reste dans la boucle.
 
-Vous n’êtes pas obligé de développer avec une IA. Vous pouvez vouloir comprendre le sujet, expérimenter chez vous ou chercher une aide limitée à une tâche pénible, comme préparer des cas de test. C’est à l’outil de trouver sa place dans vos besoins.
+Développer avec une IA reste un choix. Vous pouvez vouloir comprendre le sujet, expérimenter chez vous ou chercher une aide limitée à une tâche pénible, comme préparer des cas de test. Vous pouvez aussi vous en passer : c’est à l’outil de trouver sa place dans vos besoins.
 
 
 [^h7s5-foundation]: [Bommasani et ses collègues, On the Opportunities and Risks of Foundation Models (2021)](https://arxiv.org/abs/2108.07258).

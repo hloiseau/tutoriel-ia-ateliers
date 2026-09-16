@@ -1,13 +1,13 @@
-Un modèle de langage, on en parle beaucoup. Mais où est-il, exactement ? Dans une page web ? Dans une application ? Dans un immense ordinateur auquel il faudrait obligatoirement louer un accès ?
+Un modèle de langage semble parfois se confondre avec la page web dans laquelle on lui écrit. Nous allons séparer les pièces : un fichier de poids sur le disque, un moteur qui effectue les calculs et un petit programme qui lui envoie nos questions.
 
-Nous allons en télécharger un et le faire fonctionner sur notre ordinateur. Il aura un fichier, un emplacement sur le disque et un programme pour l’exécuter. On pourra lui poser une question, regarder ce qu’il répond, puis arrêter le programme. Ça devrait déjà lui enlever un peu de son mystère. 🙂
+À la fin de l’atelier, vous saurez démarrer ce modèle sur votre ordinateur, conserver ses réponses et arrêter le serveur. Il devrait déjà avoir perdu un peu de son mystère. 🙂
 
-Pas besoin d’une carte graphique pour commencer. Nous utiliserons un petit modèle et des réponses courtes. Les machines plus puissantes auront aussi de quoi s’occuper, mais acheter du matériel ne fait pas partie des prérequis.
+Nous commencerons sur CPU, avec un petit modèle et des réponses courtes. Si vous avez une carte graphique, vous pourrez ensuite reprendre la même expérience et mesurer ce qu’elle change ; aucun achat de matériel n’est nécessaire pour suivre le parcours principal.
 
 **TL;DR**
 
-- Télécharger les poids d’un modèle ne revient pas à l’entraîner.
-- Nous allons installer un moteur, charger un modèle, puis l’interroger depuis un petit programme Python.
-- Nous mesurerons ce qui se passe sur notre machine : une taille de fichier ne dit pas à elle seule combien de mémoire il faut.
-- Une réponse rapide peut être fausse. Nous allons donc regarder les réponses aussi attentivement que le chronomètre.
+- Télécharger les poids permet de réutiliser un entraînement déjà effectué.
+- Nous installerons un moteur, chargerons un modèle, puis l’interrogerons depuis un petit programme Python.
+- Nous mesurerons ce qui se passe sur notre machine : la taille du fichier ne suffit pas à prévoir la mémoire occupée pendant une réponse.
+- Nous lirons les réponses aussi attentivement que le chronomètre : la vitesse et la qualité répondent à deux questions différentes.
 - Faire les calculs chez soi permet de garder la main sur une partie du système. La provenance du modèle et les droits sur ses données restent des questions à examiner.

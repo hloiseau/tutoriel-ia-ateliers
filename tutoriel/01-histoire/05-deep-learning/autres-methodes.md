@@ -6,7 +6,7 @@ Vous voyez la différence avec le système expert de notre atelier : nous n’av
 
 Ces approches font partie de l’histoire de l’IA, même lorsqu’on ne les présente pas avec une interface de conversation. Reconnaître un message indésirable, prévoir une quantité ou classer un document n’exige pas automatiquement un grand modèle génératif.
 
-Nous reviendrons sur le choix d’une méthode lorsque nous construirons nos propres expériences. Pour le moment, retenez que les réseaux de neurones progressent au milieu d’un domaine déjà très divers.
+Nous reviendrons sur le choix d’une méthode dans nos propres expériences. Les réseaux de neurones progressent ici au milieu d’un domaine déjà très divers.
 
 
 [^h5s2-svm]: [Cortes et Vapnik, Support-vector networks (1995)](https://link.springer.com/article/10.1007/BF00994018).

@@ -1,1 +1,1 @@
-**TL;DR :** préparez une trace courte du problème, de la correction et des vérifications. Puis choisissez où l’aide vous a réellement été utile.
+**TL;DR** — Gardez une trace courte du problème, du diff et des vérifications réellement exécutées. Vous pourrez ensuite décider à quelles étapes l’aide vous a servi.

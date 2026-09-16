@@ -2,7 +2,7 @@ En 2023, Meta présente LLaMA, puis Llama 2. Ces publications participent au dé
 
 Les **poids** sont les nombres ajustés pendant l’entraînement. Les récupérer permet d’exécuter le modèle avec un logiciel compatible, si l’on dispose des ressources nécessaires. Cela donne plus de prise sur son fonctionnement que le seul accès à une interface distante.
 
-Il faut cependant distinguer plusieurs choses :
+Regardons précisément ce que l’on peut récupérer :
 
 | Ce qui est disponible | Ce que cela permet d’examiner ou de faire |
 | --- | --- |
@@ -12,11 +12,11 @@ Il faut cependant distinguer plusieurs choses :
 | Les données et leur documentation | Étudier les exemples utilisés et leurs conditions de collecte |
 Table: Ces éléments peuvent être publiés séparément. Leur disponibilité ne donne pas automatiquement les mêmes droits d’utilisation.
 
-Le mot « ouvert » mérite donc qu’on regarde ce qui est effectivement fourni. Des poids téléchargeables ne signifient pas nécessairement que toutes les données sont accessibles ou que tous les usages sont autorisés.
+Le mot « ouvert » mérite donc qu’on regarde ce qui est effectivement fourni. Avec des poids téléchargeables, les données peuvent rester inaccessibles et la licence peut encore limiter certains usages.
 
 Des méthodes comme **LoRA**, présentée en 2021, permettent aussi d’adapter un modèle en entraînant un ensemble limité de paramètres supplémentaires. On peut ainsi réduire les ressources nécessaires à certaines adaptations, par rapport à la modification de tous les poids.[^h7s3-lora]
 
-Faire tourner un modèle existant, l’adapter et en entraîner un depuis zéro sont trois travaux différents. Avoir installé un programme de conversation ne veut pas dire que nous avons entraîné le modèle qui lui répond.
+Faire tourner un modèle existant, l’adapter et en entraîner un depuis zéro sont trois travaux différents. Lorsqu’un programme de conversation répond avec un modèle déjà fourni, nous accomplissons le premier ; nous n’avons pas entraîné le modèle qui lui répond.
 
 Le local peut nous donner davantage de maîtrise sur les données envoyées et sur la disponibilité de l’outil. Il ne règle pas, à lui seul, les questions sur l’origine des données d’entraînement ou les conditions de fabrication du matériel.
 

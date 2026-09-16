@@ -44,7 +44,7 @@ Sous Windows, dans PowerShell :
 
 Si l’exécutable est dans `moteur/bin`, ajoutez simplement `bin` au chemin. Les commandes suivantes supposent qu’il est directement dans `moteur`.
 
-Une erreur qui mentionne une bibliothèque système manquante n’est pas une erreur du modèle : le moteur n’a même pas encore pu démarrer. En particulier, un binaire Ubuntu ne garantit pas la compatibilité avec toutes les distributions Linux. Dans ce cas, utilisez les [instructions de compilation du projet](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md) pour votre système, puis reprenez à `--version`. Évitez de récupérer au hasard une bibliothèque isolée pour faire disparaître le message.
+Si une erreur mentionne une bibliothèque système manquante, le moteur n’a pas encore démarré et le modèle n’est pas en cause. Les binaires Ubuntu peuvent aussi rencontrer des incompatibilités sur une autre distribution Linux. Suivez alors les [instructions de compilation du projet](https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md) pour votre système, puis reprenez à `--version`. Télécharger au hasard une bibliothèque isolée ne ferait que masquer le diagnostic.
 
 [^p3-release]: ggml-org, [fichiers de la version b10809](https://github.com/ggml-org/llama.cpp/releases/tag/b10809) et [installation de llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/docs/install.md).
 
@@ -60,9 +60,9 @@ Le programme lit `modele.json`, télécharge le fichier retenu dans `modeles/` e
 
 Pendant le transfert, le fichier porte une extension `.part`. Il ne prend son nom définitif qu’après vérification. Si la connexion coupe, relancez la commande : ce petit script recommence le transfert, il ne sait pas le reprendre au milieu.
 
-Vous pouvez ouvrir `modele.json`. Les informations servent à répondre à une question très pratique : « Avons-nous réellement testé le même fichier ? » Deux fichiers nommés de façon proche ne sont pas forcément identiques.
+Ouvrez `modele.json`. Son nom de dépôt, sa révision, sa taille et son empreinte répondent à une question très pratique : « Avons-nous réellement testé le même fichier ? » Des noms proches peuvent cacher deux versions différentes.
 
-L’empreinte permet de détecter un fichier différent de celui attendu. Elle ne prouve pas que son auteur est digne de confiance ni que les données d’entraînement ont toutes été obtenues dans de bonnes conditions. Ce sont deux vérifications différentes.
+L’empreinte détecte un fichier différent de celui attendu. La confiance envers son auteur et la provenance des données d’entraînement demandent d’autres informations, à commencer par la fiche et les documents publiés avec le modèle.
 
 ## Le premier démarrage
 
@@ -81,7 +81,7 @@ Sous Windows, la commande devient :
 
 Le chemin après `-m` désigne les poids. Nous demandons un contexte de 2 048 tokens, deux fils CPU, aucune couche sur le GPU et une seule requête traitée à la fois. L’alias `atelier-local` sera le nom utilisé par notre client.[^p3-serveur]
 
-Des messages apparaissent dans le terminal. Laissez-le ouvert : tant que le serveur fonctionne, il occupe ce terminal. Attendez la fin du chargement, puis ouvrez `http://127.0.0.1:8080/health` dans votre navigateur. Une réponse indiquant un état `ok` signifie que le serveur est prêt. Pendant le chargement, il peut encore répondre qu’il n’est pas disponible.
+Des messages apparaissent dans le terminal. Laissez-le ouvert : le serveur y restera jusqu’à son arrêt. Attendez la fin du chargement, puis ouvrez `http://127.0.0.1:8080/health` dans votre navigateur. Tant que le modèle se charge, la route peut signaler qu’il est indisponible ; l’état `ok` annonce que nous pouvons envoyer notre première question.
 
 L’adresse `127.0.0.1` désigne cette machine. Nous n’ouvrons pas le service aux autres ordinateurs du réseau. L’option `--cors-origins` limite également les origines autorisées pour les appels depuis un navigateur à celle de notre service local. Pour arrêter le serveur, revenez dans son terminal et appuyez sur `Ctrl+C`.
 
@@ -104,7 +104,7 @@ Table: Quelques points de contrôle avant de réinstaller tout l’atelier
 
 Si vous changez le port, il faudra aussi changer `BASE` dans `client.py`. Pour le premier essai, conserver `8080` évite cette manipulation supplémentaire.
 
-Ne lancez pas le programme en administrateur pour essayer de corriger une erreur de chemin ou un manque de mémoire. Cela ne règle aucun de ces deux problèmes.
+Les droits d’administrateur ne corrigent ni un chemin erroné ni un manque de mémoire. Gardez les permissions normales et revenez au premier message utile.
 
 Sous Linux x86-64, si le moteur signale `no backends are loaded` alors que les bibliothèques sont présentes, vous pouvez lui indiquer explicitement la variante CPU générique fournie dans l’archive :
 

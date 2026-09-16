@@ -12,8 +12,8 @@ Demandez :
 
 > Consulte PRIX-1 avec le MCP atelier-tickets et donne-moi sa règle.
 
-Dépliez l’appel d’outil. Retrouve-t-on `lire_ticket`, l’identifiant `PRIX-1` et la règle que nous avons obtenue dans le terminal ? Si l’assistant a seulement ouvert `tickets.json`, il a pu trouver la bonne réponse, mais vous n’avez pas encore testé son accès MCP.
+Dépliez l’appel d’outil. Retrouve-t-on `lire_ticket`, l’identifiant `PRIX-1` et la règle obtenue dans le terminal ? Si l’assistant a simplement ouvert `tickets.json`, sa réponse peut être juste, mais cet essai ne nous apprend encore rien sur son accès MCP.
 
-Avec Cursor, Codex, Pi ou un autre assistant, gardez votre outil. Il faut reprendre la **commande** et les **arguments** dans sa configuration MCP, si votre installation prend en charge le transport stdio. Le fichier JSON de VS Code n’est pas un format de configuration universel. Si cet accès manque, les manipulations avec `client.py` restent disponibles ; nous pourrons essayer séparément la procédure du skill.
+Avec Cursor, Codex, Pi ou un autre assistant, gardez votre outil. S’il prend en charge le transport stdio, reprenez la **commande** et les **arguments** dans son propre format de configuration MCP : le JSON de VS Code ne se copie pas tel quel partout. Sans cet accès, poursuivez les manipulations avec `client.py` ; la procédure du skill pourra être essayée séparément.
 
 [^p6-vscode-mcp]: [Ajouter et gérer les serveurs MCP dans VS Code](https://code.visualstudio.com/docs/agent-customization/mcp-servers).

@@ -10,4 +10,4 @@ Vous n’avez pas besoin de publier toutes les traces de votre ordinateur. Regar
 
 Pour libérer de la place, vous pouvez arrêter le serveur puis supprimer le fichier de poids téléchargé. Gardez `modele.json` et vos résultats si vous souhaitez retrouver l’expérience plus tard. Relancer `telecharger.py` permettra de récupérer de nouveau le fichier tant qu’il reste disponible à cette adresse.
 
-Nous avons maintenant un modèle que nous pouvons démarrer, interroger, mesurer et arrêter. La prochaine décision vous appartient : le garder pour une tâche précise, en essayer un autre, ou passer à autre chose.
+Nous avons maintenant un modèle que nous pouvons démarrer, interroger, mesurer et arrêter. Gardez-le pour une tâche précise, comparez-en un autre sur les mêmes cas ou récupérez l’espace disque : les trois décisions sont parfaitement valables.

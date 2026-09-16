@@ -1,7 +1,9 @@
-Notre ticket a suivi un trajet complet : un client l’a demandé au serveur MCP, nous avons examiné sa documentation, puis un skill a fourni les instructions pour préparer sa recette.
+Notre ticket a suivi un trajet complet dans l’atelier : le client l’a demandé au serveur MCP, nous avons examiné sa documentation, puis nous avons écrit un skill destiné à guider la préparation de sa recette.
 
-Les rôles sont maintenant visibles dans les fichiers. Le serveur fournit des accès précis. Le skill décrit une tâche. Les documents portent les faits du projet. Et nous relisons encore les résultats, notamment là où le ticket laisse une décision ouverte.
+Chaque information a maintenant sa place. Le serveur fournit des accès précis, le skill décrit une tâche et les documents portent les faits du projet. Notre relecture reste indispensable lorsque le ticket laisse une décision ouverte.
 
-Si la préparation des tests vous fait perdre du temps, c’est déjà un endroit où essayer ces outils. Vous n’avez pas besoin de déléguer tout le développement ni d’organiser votre équipe autour d’un framework pour en tirer quelque chose.
+Si la préparation des tests vous fait perdre du temps, vous tenez déjà un endroit raisonnable où essayer ces outils. Une tâche pénible et bien délimitée suffit ; aucune raison de leur confier tout le développement ou de réorganiser l’équipe autour d’un framework.
 
 Gardez ce qui vous aide, changez ce qui vous gêne et vérifiez ce que ces changements produisent. Nous avons enfin des outils dont on peut modifier une bonne partie du fonctionnement ; autant en profiter. 🙂
+
+Notre recherche littérale manque encore `alerte` lorsque la source parle de `notification`. La partie suivante partira de cet échec pour améliorer la recherche avant de toucher aux poids d’un modèle.

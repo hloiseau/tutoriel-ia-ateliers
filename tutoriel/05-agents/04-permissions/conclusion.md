@@ -1,1 +1,1 @@
-
+Nous avons fait refuser une lecture, une écriture et un outil absent sans demander au modèle de « bien se comporter ». Reste à gérer un cas moins spectaculaire, mais très courant : l’action autorisée qui tourne en rond ou échoue à mi-chemin.

@@ -4,13 +4,13 @@ Cette expérience est facultative. Copiez le dossier corrigé `mon-suivi` dans u
 cd ../mon-suivi-mutations
 ```
 
-Ouvrez **le fichier `suivi.py` de cette copie**, remplacez `<` par `<=`, enregistrez, puis relancez `python -m unittest discover -v` dans ce terminal.
+Ouvrez **le fichier `suivi.py` de cette copie**. Dans la fonction `notifier` uniquement, remplacez la comparaison `nouveau.prix_centimes < ancien.prix_centimes` par `nouveau.prix_centimes <= ancien.prix_centimes`. Enregistrez, puis relancez `python -m unittest discover -v` dans ce terminal.
 
-Le prix identique autorise maintenant une notification. Les tests qui attendent l’absence de notification à prix inchangé doivent échouer. S’ils ne le font pas, vérifiez que vous avez exécuté la bonne copie et que ces cas sont présents.
+Le prix identique autorise maintenant une notification. Les tests qui attendent l’absence de notification à prix inchangé doivent échouer. S’ils ne le font pas, vérifiez la copie exécutée et la présence de ces cas.
 
 Rétablissez ensuite `<`, puis retirez temporairement la condition `nouveau.disponible and`. Le test de baisse sur un produit indisponible doit cette fois protester.
 
-Ces modifications volontaires sont de petites **mutations** : nous introduisons une erreur précise pour voir si les tests la remarquent. Cela ne prouve pas qu’ils détecteront tous les bugs. Cela permet de vérifier que les cas importants ne sont pas seulement décoratifs.
+Ces modifications volontaires sont de petites **mutations** : nous introduisons une erreur précise pour voir si les tests la remarquent. Nous vérifions ainsi que les cas importants savent protester. D’autres bugs restent évidemment possibles ; deux mutations ne dressent pas un bouclier magique autour de la fonction.
 
 Rétablissez la condition dans `mon-suivi-mutations`, puis revenez à notre copie de travail restée intacte :
 

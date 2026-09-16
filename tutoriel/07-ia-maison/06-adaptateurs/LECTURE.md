@@ -4,9 +4,9 @@
 
 [Précédent : Préparer ce que notre modèle va apprendre](../05-donnees/LECTURE.md) · [Suivant : Entraîner notre réseau depuis zéro](../07-entrainer/LECTURE.md)
 
-**TL;DR** — LoRA ajoute des matrices entraînables à une transformation existante. Les poids de base peuvent rester figés, mais le comportement du modèle change quand même, parfois dans le mauvais sens.
+**TL;DR** — LoRA ajoute de petites matrices entraînables à une transformation existante. La base reste figée ; l’adaptateur actif modifie tout de même les sorties, y compris parfois celles que nous voulions préserver.
 
-Peut-on éviter de modifier tous les paramètres à chaque adaptation ? C’est précisément ce que nous allons essayer.
+Notre adaptation complète pouvait toucher 15 055 paramètres. Repartons des mêmes poids et limitons la correction à deux matrices beaucoup plus petites.
 
 ## Une correction ajoutée au calcul
 
@@ -23,7 +23,7 @@ Figure: Deux chemins se rejoignent avant le calcul des probabilités
 
 Dans notre cas, `U` comporte 64 × 75 nombres. Avec un rang de 4, `A` contient 64 × 4 nombres et `B`, 4 × 75 : soit 556 paramètres entraînables, au lieu des 15 055 du modèle complet.
 
-Le rang limite la forme de la correction possible. Ce n’est ni un nombre de connaissances ni un niveau d’intelligence. Notre exemple applique LoRA uniquement à la couche de sortie, avec un facteur d’échelle égal à 1 ; une adaptation de LLM peut viser d’autres couches et employer d’autres réglages.
+Le rang limite la forme de la correction possible. Il ne compte ni des connaissances ni des niveaux d’intelligence. Notre exemple applique LoRA uniquement à la couche de sortie, avec un facteur d’échelle égal à 1 ; une adaptation de LLM peut viser d’autres couches et employer d’autres réglages.
 
 [^p7-lora]: Hu et al., [*LoRA: Low-Rank Adaptation of Large Language Models*](https://arxiv.org/abs/2106.09685).
 
@@ -45,9 +45,9 @@ Rechargeons ce deuxième fichier avec la base :
 python petit_modele.py generer --modele resultats-reference/base/modele.npz --adaptateur sorties/lora/adaptateur.npz --debut "INFO "
 ```
 
-Le programme vérifie que les poids de base correspondent. Pour désactiver l’adaptateur, relancez la génération sans `--adaptateur`. Nous retrouvons alors le modèle de départ, sans devoir « désapprendre » ce que nous venons d’ajouter.
+Le programme vérifie que les poids de base correspondent. Relancez ensuite la génération sans `--adaptateur` : vous retrouvez le modèle de départ sans devoir « désapprendre » ce que nous venons d’ajouter.
 
-C’est pratique, mais cela ne prouve pas que l’adaptateur soit utile. Regardons ses résultats avant de lui donner un nom impressionnant.
+Le mécanisme est pratique. Reste à savoir ce que la correction a réellement amélioré — et abîmé. Ouvrons les résultats avant de lui donner un nom impressionnant.
 
 ## L’amélioration qui cache une régression
 
@@ -71,13 +71,13 @@ La **perte** mesure ici à quel point le modèle attribue de mauvaises probabili
 ![Les deux adaptations réduisent la perte sur les lignes INFO ; elles augmentent la perte sur les anciennes phrases, surtout avec l’adaptateur LoRA actif.](../images/adaptation.png)
 Figure: Résultats de notre essai, arrondis ; une barre plus courte indique une perte plus faible
 
-Notre adaptateur améliore donc la prédiction du nouveau format, mais dégrade fortement celle des anciennes phrases. Les poids de base sont restés identiques, et pourtant la sortie du modèle a changé : la correction s’ajoute à chaque passage dans la couche.
+Sur les lignes `INFO`, la perte passe de 6,08 à 0,95 avec LoRA. Sur les anciennes phrases, elle bondit de 0,48 à 8,77. Les poids de base sont restés identiques ; la correction active s’ajoute pourtant à chaque passage dans la couche et transforme la sortie du modèle.
 
-Désactiver l’adaptateur permet de retrouver la base. Cela ne supprime pas la régression lorsqu’il est activé. Selon l’usage visé, nous pourrions essayer d’autres données, d’autres réglages ou un autre compromis ; il faudrait alors refaire une évaluation indépendante.
+Désactiver l’adaptateur permet de retrouver la base. Lorsqu’il est actif, la régression demeure. Selon l’usage visé, nous pourrions essayer d’autres données, d’autres réglages ou un autre compromis, puis reprendre l’évaluation avec des exemples restés à l’écart de ces choix.
 
-Ces résultats concernent notre minuscule réseau et nos gabarits. Ils ne classent pas LoRA et l’adaptation complète pour tous les modèles. Ils montrent surtout pourquoi nous avons gardé les anciens exemples dans l’évaluation.
+Ces valeurs appartiennent à notre minuscule réseau et à ses gabarits ; elles ne servent pas à classer LoRA et l’adaptation complète sur tous les modèles. En revanche, elles donnent une excellente raison de garder les anciennes tâches dans l’évaluation.
 
-Nous savons produire un adaptateur, le recharger et mesurer une régression. Mais nous avons encore utilisé des poids de départ fournis. Il est temps de fabriquer cette base nous-mêmes.
+Nous savons produire un adaptateur, le recharger et retrouver la régression qu’il provoque. Les poids de départ étaient toutefois fournis. Pour suivre toute l’histoire du modèle, nous allons maintenant fabriquer cette base nous-mêmes.
 
 ---
 

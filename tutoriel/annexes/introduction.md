@@ -1,1 +1,1 @@
-**TL;DR** — Le comparatif permet de choisir ou de changer d’assistant. L’expérience locale propose de relier un éditeur à notre serveur. Ces annexes se consultent selon vos besoins, indépendamment du déroulé de l’atelier.
+**TL;DR** — Revenez au comparatif pour choisir ou changer d’assistant. L’expérience locale, elle, relie un éditeur au serveur de la partie 3. Ces deux annexes restent facultatives et se consultent selon vos besoins.

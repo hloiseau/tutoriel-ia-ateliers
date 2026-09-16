@@ -5,7 +5,7 @@ python client.py --fichier questions/format.json --sortie resultats/format.json
 python client.py --fichier questions/francais.json --sortie resultats/francais.json
 ```
 
-Le premier demande un objet JSON très précis. Le second reprend l’explication d’une variable, en français. Ouvrez les réponses et remplissez une table dans un fichier `evaluation.md` :
+Le premier demande un objet JSON très précis. Le second reprend l’explication d’une variable, en français. Ouvrez les réponses : le serveur a-t-il renvoyé du texte, le modèle a-t-il suivi la forme demandée, et le contenu tient-il debout ? Pour ne pas mélanger ces questions, rassemblez vos observations dans un fichier `evaluation.md` :
 
 | Cas | Vérification | Votre observation |
 | --- | --- | --- |
@@ -26,6 +26,6 @@ Cette commande contrôle la syntaxe JSON. Elle ne vérifie pas que les clés et 
 
 Si vous retirez vous-même des balises Markdown ou réparez une virgule, notez cette intervention. Le résultat brut et le résultat obtenu après votre correction ne racontent pas la même histoire.
 
-Dans l’exécution de référence sous Linux, le modèle a trouvé 10 heures pour le mardi et répondu « I do not know. » pour le dimanche. Le JSON demandé était valide et contenait la bonne liste. En revanche, l’explication anglaise tenait en une phrase au lieu des deux demandées. La réponse française était maladroite et a atteint la limite de 96 tokens avant de se terminer.
+Dans l’exécution de référence sous Linux, le modèle a trouvé 10 heures pour le mardi et répondu « I do not know. » pour le dimanche. Le JSON demandé était valide et contenait la bonne liste. L’explication anglaise tenait toutefois en une phrase au lieu des deux demandées. En français, le texte était maladroit et s’est interrompu après avoir atteint la limite de 96 tokens.
 
-Ce mélange est intéressant : le même modèle respecte certaines consignes et en manque d’autres sur cinq demandes très courtes. Les réponses brutes sont dans `resultats-reference` dans l’archive. Comparez-les aux vôtres, mais conservez aussi vos propres observations si elles diffèrent.
+Sur cinq demandes très courtes, le même modèle respecte donc certaines consignes et en manque d’autres. Les réponses brutes sont dans `resultats-reference` dans l’archive. Comparez-les aux vôtres et conservez vos propres observations si elles diffèrent : ce sont elles qui décrivent votre installation.

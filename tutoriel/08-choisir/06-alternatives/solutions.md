@@ -9,6 +9,6 @@ Ouvrez les trois demandes de `cas/equipe.md`. Pour chacune, essayez d’abord de
 
 Le choix peut combiner ces outils. Un modèle peut proposer des scénarios, puis un humain les vérifier et un programme exécuter les assertions. Nous n’avons pas besoin de lui confier également le droit de décider que le résultat est bon.
 
-Pour gagner en autonomie, nous pouvons privilégier des formats exportables, des logiciels libres et des modèles dont les conditions permettent l’usage envisagé. Cela ne dispense pas de regarder les données et le travail humain, mais donne davantage de moyens d’agir sur l’outil.
+Pour gagner en autonomie, nous pouvons privilégier des formats exportables, des logiciels libres et des modèles dont les conditions permettent l’usage envisagé. Nous disposerons ainsi de davantage de moyens d’agir sur l’outil. Les données et le travail humain restent à examiner, quelle que soit la licence.
 
 Vous pouvez aussi garder l’IA hors de votre développement. Si les tests manuels sont la partie qui vous épuise, commencez éventuellement par une aide sur leur préparation. Si cette aide ne vous convient pas, un gabarit amélioré peut rester le meilleur résultat de l’expérience.

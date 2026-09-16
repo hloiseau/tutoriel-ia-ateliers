@@ -2,9 +2,9 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-Notre modèle linéaire additionne les contributions des pixels. Il n’a pas de couche intermédiaire capable de transformer leur combinaison avant de calculer les dix scores.
+Notre modèle linéaire additionne directement les contributions des pixels pour obtenir dix scores. Ajoutons une transformation entre les deux : une couche de 32 unités.
 
-Ajoutons-en une. Nous pourrons comparer le résultat, mais aussi vérifier si davantage de paramètres suffit à mieux reconnaître les chiffres.
+Le réseau contiendra davantage de paramètres. Les courbes, la validation et le test nous diront ce que cette capacité supplémentaire lui apporte réellement.
 
 ## Une transformation entre l’image et les scores
 
@@ -141,4 +141,4 @@ Nous pouvons agir sur la quantité et la qualité des données, la taille du mod
 
 Les exemples et leurs étiquettes font partie du comportement appris. Si la cible est mal définie, le programme peut très bien optimiser ce qu’on lui a demandé tout en produisant quelque chose d’inutile.
 
-Nous avons construit un réseau à plusieurs couches et fait circuler le gradient à travers ses calculs. Il sait apprendre davantage de détails ; certains sont utiles, d’autres permettent seulement de mémoriser. Les données à part servent à voir la différence.
+Le gradient traverse désormais plusieurs couches. Cette capacité supplémentaire aide le réseau à apprendre davantage de détails, y compris 80 étiquettes tirées au hasard. La validation et le test nous permettent de voir ce qui reste utile sur d’autres images.

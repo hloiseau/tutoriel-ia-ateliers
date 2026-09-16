@@ -6,7 +6,7 @@
 
 **TL;DR** — Nous allons relier la recherche au serveur local, puis comparer les réponses avec les passages transmis. Le modèle peut se tromper même lorsque la bonne source est sous ses yeux.
 
-Nous avons les documents et leur classement. Il manque maintenant le petit programme qui fait circuler tout cela.
+Nous savons quels passages ont été sélectionnés. Il reste à voir exactement ce que le modèle recevra, puis à comparer sa réponse aux sources placées sous ses yeux.
 
 ## Regarder ce que le modèle va recevoir
 
@@ -20,9 +20,9 @@ Ouvrez le fichier produit. `passages` contient les résultats de recherche avec 
 
 La consigne demande de répondre avec les sources, de citer leurs identifiants et de signaler une décision encore ouverte. Elle précise aussi que les documents sont des données à lire, pas des ordres à exécuter. Vous retrouvez le problème rencontré avec la documentation piégée de la partie 6.
 
-La préparation n’a fait aucun appel réseau. Vous pouvez donc examiner le contexte avant de lancer quoi que ce soit. Si aucun passage n’est retrouvé, le programme le signale et ne demande pas au modèle de combler le vide.
+À ce stade, aucun appel réseau n’a eu lieu. Vous pouvez lire tranquillement le contexte avant de lancer le serveur. Si la recherche ne ramène aucun passage, le programme s’arrête là au lieu de demander au modèle de combler le vide.
 
-Cela reste une décision de notre application. D’autres usages peuvent avoir besoin d’une réponse générale malgré l’absence de source locale ; ici, nous cherchons une réponse sur les règles de notre service.
+Ce comportement correspond à notre besoin : nous interrogeons les règles du service. Une application chargée de répondre à des questions générales pourrait faire un autre choix, à condition de l’annoncer clairement au lecteur de la réponse.
 
 ## Relier les deux morceaux
 
@@ -57,11 +57,11 @@ Essayez d’abord sans génération :
 python mon_assistant.py "Quand les données de staging sont-elles réinitialisées ?"
 ```
 
-Vous devez voir les sources sélectionnées. Relancez ensuite le [serveur de la partie 3](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/03-modele-local/02-installer/LECTURE.md), depuis le dossier de cet ancien atelier, avec le modèle SmolLM2-360M-Instruct Q8_0, l’alias `atelier-local` et le port `8080`. Gardez ce serveur ouvert dans un autre terminal, puis ajoutez `--generer` à la commande.
+Vous devez voir les sources sélectionnées. Relancez ensuite le [serveur de la partie 3](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/03-modele-local/02-installer/LECTURE.md), depuis le dossier de cet ancien atelier, avec le modèle SmolLM2-360M-Instruct Q8_0, l’alias `atelier-local` et le port `8080`. Gardez ce serveur ouvert dans un autre terminal, revenez dans le dossier de la partie 7, puis ajoutez `--generer` à la commande.
 
 Dans `assistant_local.py`, ouvrez maintenant `appeler`. L’application envoie les messages à `http://127.0.0.1:8080/v1/chat/completions` et extrait le texte de la réponse. Le modèle reste servi par `llama-server` ; notre programme ne charge pas lui-même ses poids.
 
-Ce premier fichier laisse apparaître une erreur Python si le serveur est absent. La version fournie gère ce cas et conserve un journal, y compris lorsque l’appel échoue :
+Notre premier fichier laisse apparaître une erreur Python si le serveur est absent. C’est un bon prochain problème à traiter : la version fournie intercepte ce cas et conserve un journal, y compris lorsque l’appel échoue.
 
 ```bash
 python assistant_local.py "Quand les données de staging sont-elles réinitialisées ?" --appeler --sortie sorties/reponse-staging.json
@@ -81,17 +81,17 @@ L’horaire correspond au document. La phrase est maladroite et ne cite aucun id
 
 > Délai de temporisation validé : 10 minutes.
 
-Aïe. Le passage transmis dit pourtant qu’aucune durée n’est validée. Le nombre vient du modèle, pas de notre documentation. Une troisième question sur la baisse de prix produit également une réponse confuse, qui ne restitue pas correctement les conditions.
+Aïe. Ouvrez `reponse-delai.json` : `temporisation#2` figure bien dans les passages et dit qu’aucune durée chiffrée n’est validée. La recherche a fait son travail ; les dix minutes viennent du modèle. Une troisième question sur la baisse de prix produit également une réponse confuse, qui ne restitue pas correctement les conditions.
 
-Nous avons donc une application qui transmet les sources, et un modèle qui ne les exploite pas de manière fiable. La fiche de ce petit modèle indique l’anglais comme langue ; notre utilisation en français ne lui facilite pas la tâche.[^p7-smollm] Cela ne suffit pas à expliquer chaque erreur, et passer à un autre modèle demanderait de rejouer les mêmes questions.
+Notre application transmet bien les sources, mais ce modèle ne les exploite pas de manière fiable dans cet essai. Sa fiche indique l’anglais comme langue ; notre utilisation en français ne lui facilite pas la tâche.[^p7-smollm] Cela n’explique pas à lui seul chaque erreur. Pour comparer un autre modèle, nous rejouerions les mêmes questions et relirions à nouveau les passages envoyés.
 
-Ne modifiez pas la règle de temporisation pour qu’elle corresponde à sa réponse. 🙂 La suite logique est de conserver cet échec dans nos essais, puis de comparer une autre formulation ou un modèle plus adapté. Le journal permet de vérifier si l’amélioration vient de la recherche, du contexte ou de la génération.
+Évitons de corriger la règle de temporisation pour donner raison au modèle. 🙂 Conservons plutôt cet échec dans nos essais, puis comparons une autre formulation ou un modèle plus adapté. Grâce au journal, nous pourrons vérifier si le changement touche la recherche, le contexte ou la génération.
 
-Pour une question très structurée comme un horaire, nous pourrions aussi afficher directement le passage retrouvé. Générer une nouvelle phrase n’est pas toujours nécessaire.
+Pour une question très structurée comme un horaire, nous pourrions aussi afficher directement le passage retrouvé. Le modèle ajouterait ici une étape et une occasion de déformer une réponse déjà lisible.
 
 [^p7-smollm]: Hugging Face, [fiche de SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct).
 
-Notre assistant fonctionne comme programme, mais ses réponses ne sont pas assez fiables pour lui confier les décisions du service. Gardons cette différence en tête en passant à une autre expérience : modifier les poids d’un modèle.
+Notre programme retrouve des sources et interroge un modèle, mais ses réponses restent trop fragiles pour décider à la place de l’équipe. Nous allons maintenant changer complètement d’échelle et de modèle afin d’observer ce qui se passe lorsque l’on modifie les poids eux-mêmes.
 
 ---
 

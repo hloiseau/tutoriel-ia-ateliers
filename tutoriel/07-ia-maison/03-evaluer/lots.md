@@ -14,4 +14,4 @@ python evaluer_recherche.py --lot test --sortie sorties/recherche-test.json
 
 Dans notre exécution, une source pertinente est présente pour trois des quatre questions de test qui en ont une. La question sur la « purge des fixtures » est manquée. La question hors corpus ne retourne aucun passage.
 
-Ces cinq exemples ne constituent pas un benchmark général. Ils servent à révéler des erreurs concrètes. Si nous ajoutons ensuite des synonymes spécialement pour corriger la question ratée, elle devient un exemple de développement ; il faudra de nouvelles questions pour évaluer ce changement sans lui donner d’avance l’examen.
+Avec cinq exemples, nous cherchons des erreurs concrètes plutôt qu’un score général. Si nous ajoutons des synonymes spécialement pour corriger la question ratée, elle devient un exemple de développement. Pour évaluer la modification, il nous faudra alors de nouvelles questions qu’elle n’aura pas déjà rencontrées — autrement, nous lui soufflerions le sujet de l’examen. 😅

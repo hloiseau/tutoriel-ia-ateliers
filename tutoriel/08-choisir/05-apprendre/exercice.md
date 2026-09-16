@@ -20,4 +20,4 @@ Le programme affiche les cas, le résultat obtenu et le résultat attendu, puis 
 
 Le lendemain, ou simplement après une autre tâche, essayez une petite variante sans rouvrir la réponse : ne notifier que si la baisse atteint au moins 100 centimes, toujours avec un produit disponible. Que se passe-t-il pour une baisse de 99, de 100 et de 101 centimes ? La correction de cette variante est fournie elle aussi.
 
-Ce n’est pas un examen à envoyer à quelqu’un. L’intérêt est de constater ce que nous savons encore expliquer et modifier après avoir fermé l’outil.
+Personne ne ramassera la copie. 🙂 Observez plutôt ce que vous savez encore expliquer et modifier après avoir fermé l’outil.

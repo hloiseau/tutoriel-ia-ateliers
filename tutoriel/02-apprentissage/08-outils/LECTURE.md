@@ -2,9 +2,9 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-Le modèle de chiffres reçoit des pixels. Le modèle de langage reçoit des tokens. Pour lire un fichier, consulter une documentation ou exécuter un test, il faut aussi du logiciel autour d’eux.
+Le classifieur reçoit des pixels ; le bigramme reçoit des tokens. Aucun des deux ne sait ouvrir un fichier, consulter une documentation ou lancer un test. Ces actions viennent du logiciel qui entoure le modèle.
 
-Cette distinction devient très concrète dès qu’un programme peut agir sur autre chose que son tableau de sortie.
+Donnons à notre application un premier outil, puis provoquons un appel qu’elle doit refuser.
 
 ## Exécuter un appel d’outil
 
@@ -77,7 +77,7 @@ Reprenons les opérations que nous avons réellement effectuées :
 | Changer la température | La répartition utilisée pour choisir le caractère suivant |
 | Lire une fiche avec un outil | Les informations que l’application peut fournir ensuite au modèle |
 
-Cette distinction évite plusieurs malentendus. Donner une documentation à lire n’est pas la même opération qu’adapter les poids du modèle. Demander une réponse plus prudente n’améliore pas automatiquement les données qui ont servi à l’entraînement.
+Le tableau montre pourquoi deux changements qui se ressemblent dans une interface peuvent agir à des endroits très différents. Ajouter une documentation enrichit les informations disponibles pour la réponse en cours ; adapter le modèle modifie ses poids. Une consigne plus prudente, elle, laisse intactes les données qui ont servi à l’entraînement.
 
 Un agent peut aussi perdre l’accès à une information si son application la retire, la résume mal ou ne la charge pas au bon moment. Notre bigramme avait une limite extrêmement visible : un caractère de contexte. Les modèles actuels en utilisent beaucoup plus, mais la quantité d’informations accessible et la manière de les exploiter restent des contraintes.
 
@@ -117,6 +117,6 @@ Vous pouvez aussi décider de faire ces expériences sans agent. Le matériel, l
 
 Ce sont ces choix concrets qui déterminent la place de l’outil : ce que nous voulons apprendre, ce que nous voulons déléguer et ce que nous devons pouvoir vérifier.
 
-Nous avons entraîné, sauvegardé, évalué et utilisé nos modèles. Nous avons aussi vu des réussites trompeuses, des erreurs provoquées par un petit décalage et la différence entre calculer une réponse et exécuter un outil.
+Notre petit modèle tient dans un fichier que nous savons entraîner, sauvegarder, évaluer et recharger. Son joli score résiste mal à un décalage d’un pixel, et l’appel d’outil refusé nous a montré où l’application reprend la main.
 
-Le code et les résultats sont assez petits pour être gardés sous la main et modifiés. C’est une bonne base pour aborder ensuite des modèles déjà entraînés, dont les besoins matériels et les capacités seront très différents.
+Le code et les résultats restent assez petits pour être ouverts et modifiés. Nous pouvons maintenant changer d’échelle sans oublier où se trouvent les paramètres, les entrées et le programme qui agit autour du modèle.

@@ -1,1 +1,1 @@
-Le modèle se trompe sur un trois. Nous pourrions lui dire « non, c’est un trois », mais il faut traduire cette correction en calculs. Quels poids faut-il changer ? Et de combien ?
+Le modèle vient de prendre un trois pour un deux. L’étiquette nous donne la bonne réponse ; il reste à traduire l’écart en calculs. Quels poids faut-il changer ? Et de combien ?

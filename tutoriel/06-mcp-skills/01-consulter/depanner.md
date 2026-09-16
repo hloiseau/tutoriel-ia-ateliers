@@ -16,6 +16,6 @@ C’est différent d’un client qui n’arrive même pas à démarrer :
 | `isError: true` dans un journal enregistré | Le message retourné par l’outil |
 | Le serveur s’arrête avant de répondre | La sortie d’erreur du terminal et les dépendances |
 
-Le client imprime les erreurs attendues de l’outil dans son journal et termine normalement. Un code de sortie nul signifie ici qu’il a pu enregistrer la réponse, pas que le ticket demandé a été trouvé.
+Le client enregistre les erreurs attendues de l’outil dans son journal et termine normalement. Son code de sortie nul nous apprend que l’échange a pu être conservé. Pour savoir si le ticket a été trouvé, il faut encore lire `isError` et le message de l’outil.
 
-Une erreur correctement remontée est déjà un résultat utile : l’agent pourra dire qu’il n’a pas obtenu le ticket. Une réponse inventée serait beaucoup plus ennuyeuse à repérer.
+Cette erreur correctement remontée est déjà utile : l’agent pourra dire qu’il n’a pas obtenu le ticket. C’est tout de même plus facile à traiter qu’une réponse inventée avec beaucoup d’assurance. 😅

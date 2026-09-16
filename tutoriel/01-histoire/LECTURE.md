@@ -9,15 +9,15 @@
 - Les succès alternent avec des déceptions : réussir une démonstration ou gagner à un jeu ne suffit pas à résoudre tous les problèmes. Les différentes méthodes continuent de cohabiter.
 - Les outils actuels associent des modèles capables de générer du texte, des images ou du code à d’autres logiciels. Un agent peut ainsi utiliser des outils ; un modèle dont les poids sont disponibles peut fonctionner localement, si le matériel le permet.
 
-Les machines auxquelles on demande d’écrire du code, de dessiner ou de répondre à nos questions ont une longue histoire. Avant elles, des chercheurs ont essayé de faire jouer des ordinateurs, de leur apprendre à reconnaître des formes ou de leur faire utiliser des règles de raisonnement.
+Les machines auxquelles on demande aujourd’hui d’écrire du code, de dessiner ou de répondre à nos questions ont une longue histoire. Bien avant la fenêtre de conversation, des chercheurs ont fait jouer des ordinateurs, tenté de leur apprendre à reconnaître des formes et décrit des règles de raisonnement.
 
 Comment est-on passé de ces premiers programmes à un agent capable de modifier du code ? Et pourquoi certaines idées ont-elles attendu des décennies avant de trouver leur place dans nos logiciels ?
 
-Il n’est pas nécessaire de connaître les réseaux de neurones ou de savoir entraîner un modèle pour suivre cette histoire.
+Vous n’avez besoin de connaître ni les réseaux de neurones ni l’entraînement d’un modèle pour suivre cette histoire. Nous allons partir des machines et des expériences de chaque époque, puis regarder ce qu’elles permettaient réellement de faire.
 
 ## 1. Les origines de l’intelligence artificielle
 
-Avant les premiers ordinateurs, on cherche déjà à confier des calculs à des machines. Le projet est alors très matériel : il faut concevoir les pièces, transmettre les mouvements et trouver comment donner les opérations à effectuer.
+Avant les premiers ordinateurs, confier un calcul à une machine commence par un problème très matériel : concevoir les pièces, transmettre les mouvements et trouver comment donner les opérations à effectuer.
 
 Au XIXe siècle, Charles Babbage et Ada Lovelace envisagent déjà une machine dont on pourrait changer les instructions.
 
@@ -30,7 +30,7 @@ Figure: Modèle d’essai de la machine analytique. © The Board of Trustees of 
 
 Regardez les roues et les axes de ce mécanisme. Les opérations doivent être réalisées par le mouvement de ces pièces. La photographie montre seulement une partie de la machine : l’ensemble ne sera pas achevé du vivant de Babbage.
 
-Pour effectuer un autre calcul, on change les instructions. Pas besoin de reconstruire tous les engrenages à chaque fois, heureusement. 🙂 Les cartes permettent aussi de répéter une suite d’opérations. Si vous avez déjà écrit une boucle dans un programme, vous connaissez le principe.
+Pour effectuer un autre calcul, on change les instructions et on garde le mécanisme — heureusement, personne n’a à reconstruire tous les engrenages. 🙂 Les cartes permettent aussi de répéter une suite d’opérations. Si vous avez déjà écrit une boucle dans un programme, vous connaissez le principe.
 
 ![Cartes perforées destinées à la machine analytique, avec des trous disposés en lignes et des annotations manuscrites.](images/babbage-cartes.jpg)
 Figure: Cartes pour la machine analytique. © The Board of Trustees of the Science Museum, [Science Museum Group](https://collection.sciencemuseumgroup.org.uk/objects/co62248/punched-cards-for-babbages-analytical-engine), [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -39,7 +39,7 @@ En 1843, Ada Lovelace publie une traduction d’un texte décrivant cette machin
 
 Imaginons que nous décidions d’associer les nombres de 0 à 6 aux notes do, ré, mi, fa, sol, la et si. La suite `0, 2, 4` représente alors **do, mi, sol**. En ajoutant 1 à chaque nombre, nous obtenons `1, 3, 5`, soit **ré, fa, la**.
 
-Nous avons transformé une suite de notes en effectuant des opérations sur des nombres. En représentant les notes par des nombres, une machine à calculer peut donc manipuler autre chose que des quantités.
+Dans notre exemple, les opérations portent sur des nombres que nous interprétons comme des notes. Cette représentation permettrait à une machine de manipuler autre chose que des quantités.
 
 Nous sommes encore dans les antécédents de l’informatique. Il faudra d’autres machines et d’autres travaux pour arriver à l’IA.
 
@@ -88,16 +88,16 @@ En 1955, John McCarthy, Marvin Minsky, Nathaniel Rochester et Claude Shannon pro
 
 Ils veulent étudier comment faire utiliser le langage à des machines, leur faire résoudre des problèmes et leur permettre de s’améliorer. Les réseaux de neurones figurent aussi dans les pistes proposées.
 
-La rencontre de 1956 devient un événement fondateur du domaine. Les recherches n’ont pas toutes commencé cet été-là, mais elles sont réunies sous un nom et un projet commun.
+La rencontre de 1956 devient un événement fondateur du domaine. Plusieurs des recherches qu’elle rassemble existaient déjà ; elles disposent désormais d’un nom et d’un projet commun.
 
 Le programme est ambitieux : les auteurs espèrent obtenir des avancées en réunissant un petit groupe pendant l’été. Certains de ces problèmes leur résisteront pourtant pendant des décennies.
 
-Il existe déjà plusieurs façons d’aborder ces questions. On peut chercher à représenter des neurones, mais aussi décrire des connaissances et des règles qu’un programme devra appliquer.
+Les participants ne partent pas tous dans la même direction. Certains cherchent à représenter des neurones ; d’autres décrivent des connaissances et les règles qu’un programme devra appliquer. Suivons d’abord cette seconde piste.
 
 
 [^h1s4-dartmouth]: [McCarthy, Minsky, Rochester et Shannon, proposition du projet de Dartmouth (1955, pour la rencontre de 1956)](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904).
 
-Nous avons rencontré des machines programmables, des neurones décrits par des mathématiques et une proposition pour étudier l’intelligence avec des ordinateurs. À partir des années 1950, ces idées vont donner lieu à des programmes qui jouent, cherchent des démonstrations et dialoguent.
+Les machines programmables, les neurones décrits par des mathématiques et le projet de Dartmouth posent plusieurs pistes. À partir des années 1950, elles donnent lieu à des programmes qui jouent, cherchent des démonstrations et dialoguent.
 
 ## 2. Des règles pour raisonner
 
@@ -122,7 +122,7 @@ La difficulté augmente lorsqu’il existe plusieurs règles applicables et de n
 
 Une heuristique ressemble à un conseil pratique : « commence par les possibilités qui semblent les plus utiles ». Elle évite parfois beaucoup d’essais, mais ne garantit pas à elle seule de trouver la meilleure solution.
 
-Le rapport de 1956 décrit le système et ses méthodes ; il faut distinguer cette description du détail de son exécution sur un ordinateur.
+Le rapport de 1956 décrit le système et ses méthodes. Il ne fournit cependant pas le journal détaillé d’une exécution sur un ordinateur ; restons-en à ce qu’il documente.
 
 
 [^h2s1-logic]: [Newell et Simon, The Logic Theory Machine (1956)](https://www.rand.org/pubs/papers/P868.html).
@@ -162,7 +162,7 @@ Essayez maintenant de remplacer « mon travail » par « mon grille-pain ». La 
 
 Cet exemple montre comment quelques règles peuvent donner une impression de dialogue. ELIZA est plus élaboré que notre unique transformation, mais il ne fonctionne pas comme les grands modèles de langage actuels : ses réponses reposent sur des scripts et des mécanismes de traitement du texte.
 
-On peut donc faire apparaître des phrases dans une conversation par des moyens très différents. L’interface ressemble parfois à celle d’un outil récent, alors que le programme derrière elle n’a pas du tout la même organisation.
+Une conversation à l’écran ne nous dit donc pas comment les phrases ont été produites. ELIZA et un outil récent peuvent présenter une interface familière tout en reposant sur des organisations très différentes.
 
 
 [^h2s3-eliza]: [Joseph Weizenbaum, ELIZA (1966)](https://cse.buffalo.edu/~rapaport/572/S02/weizenbaum.eliza.1966.pdf).
@@ -173,7 +173,7 @@ Pendant que ces recherches avancent, d’autres équipes cherchent à faire ajus
 
 ## 3. Apprendre à partir de données : les premières approches
 
-À la fin des années 1950, les neurones du modèle de McCulloch et Pitts ont des connexions fixées à l’avance. Frank Rosenblatt étudie une autre possibilité : modifier certains réglages du système à partir des exemples qu’on lui présente.
+À la fin des années 1950, les connexions du modèle de McCulloch et Pitts sont fixées à l’avance. Frank Rosenblatt étudie une autre possibilité : présenter des exemples au système et modifier certains de ses réglages lorsqu’il se trompe.
 
 L’objectif est de lui faire reconnaître des formes sans écrire à la main une règle pour chaque image possible.
 
@@ -203,13 +203,13 @@ Cet exemple correspond au motif logique appelé **OU exclusif**, ou XOR. Il illu
 
 ### Ce que veut dire « apprendre »
 
-Le mot peut faire imaginer une machine qui comprend sa leçon comme nous. Dans notre exemple, l’apprentissage consiste plus précisément à ajuster des nombres pour diminuer les erreurs sur une tâche.
+Le mot peut faire imaginer une machine penchée sur sa leçon. Dans notre exemple, la scène est plus sobre : le programme ajuste des nombres pour diminuer ses erreurs sur une tâche.
 
 Imaginons un appareil qui doit distinguer de petits fruits à partir de leur masse et de leur diamètre. Nous préparons des exemples avec la bonne catégorie, puis nous comparons les réponses de l’appareil avec celles attendues.
 
-Si nous vérifions uniquement les fruits utilisés pour régler le modèle, nous pouvons avoir une mauvaise surprise avec les suivants. Il faut donc garder des exemples à part, qui ne servent pas à ces réglages.
+Si nous vérifions uniquement les fruits utilisés pour régler le modèle, les suivants risquent de nous réserver une mauvaise surprise. Gardons donc des exemples à part, sans les utiliser pour les réglages.
 
-C’est la différence entre réussir sur ce qui a servi à l’apprentissage et réussir sur de nouvelles situations. Cette seconde capacité s’appelle la **généralisation**.
+Réussir sur ce qui a servi à l’apprentissage est une chose ; réussir sur de nouvelles situations en est une autre. Cette seconde capacité s’appelle la **généralisation**.
 
 On peut aussi avoir choisi des exemples trop faciles. Si tous nos petits fruits sont des cerises et tous les gros des pommes, notre modèle peut sembler excellent. Ajoutons une petite pomme, et nous découvrons ce qu’il avait réellement appris à séparer.
 
@@ -226,9 +226,9 @@ Figure: Chaque cercle représente une unité de calcul du réseau ; les connexio
 
 Suivez d’abord les flèches vers la droite : le réseau produit une réponse. Nous la comparons à la réponse attendue. Le calcul en sens inverse sert ensuite à déterminer comment modifier les poids.
 
-Cette publication contribue à faire connaître l’intérêt de la méthode pour les réseaux à plusieurs couches. Elle ne signifie pas que toutes les difficultés sont résolues, ni que le principe du calcul des dérivées à travers une suite d’opérations vient d’être inventé.
+Cette publication contribue à faire connaître l’intérêt de la méthode pour les réseaux à plusieurs couches. Elle s’inscrit dans des travaux antérieurs sur le calcul des dérivées à travers une suite d’opérations, et les réseaux restent difficiles à entraîner.
 
-Nous pouvons maintenant entraîner des réseaux plus élaborés. Le temps de calcul, les données disponibles et le choix de l’architecture restent cependant des contraintes importantes.
+La méthode ouvre la voie à des réseaux plus élaborés. Leur entraînement dépend encore du temps de calcul, des données disponibles et du choix de l’architecture.
 
 
 [^h3s3-backprop]: [Rumelhart, Hinton et Williams, Learning representations by back-propagating errors (1986)](https://www.nature.com/articles/323533a0).
@@ -253,7 +253,7 @@ Le programme rencontre donc deux difficultés : le nombre de possibilités à ca
 
 En 1973, un rapport de James Lighthill, commandé pour examiner l’IA au Royaume-Uni, critique une partie de ses résultats et de ses perspectives. Le témoignage historique de l’université d’Édimbourg décrit la perte de confiance qui suit, ainsi que les réorganisations et les années difficiles pour la recherche.[^h4s1-edinburgh]
 
-On parle d’**hiver de l’IA** pour ces périodes de recul de l’intérêt et des financements. Cela ne veut pas dire que tous les laboratoires ferment ni que tous les chercheurs s’arrêtent. À Édimbourg, des travaux et des enseignements se poursuivent, avant un nouvel essor des applications dans les années 1980.
+On parle d’**hiver de l’IA** pour ces périodes de recul de l’intérêt et des financements. Le froid n’atteint pas tous les laboratoires de la même manière : à Édimbourg, des travaux et des enseignements se poursuivent avant un nouvel essor des applications dans les années 1980.
 
 
 [^h4s1-edinburgh]: [Jim Howe, Artificial Intelligence at Edinburgh University: a Perspective (2007)](https://www.inf.ed.ac.uk/about/AIhistory.html).
@@ -269,9 +269,9 @@ Nous n’allons pas reproduire de règles médicales ici. Prenons plutôt un ate
 ![Un exemple de diagnostic de lampe distingue un problème d’alimentation d’une ampoule à examiner, à partir de réponses à des questions.](images/systeme-expert.png)
 Figure: Quelques règles de diagnostic pour une lampe : chaque réponse ouvre une nouvelle piste.
 
-Le **moteur d’inférence** est la partie du programme qui applique les règles aux faits disponibles. La **base de connaissances** contient les informations et les règles du domaine. C’est donc bien quelque chose qu’il faut constituer et entretenir.
+Le **moteur d’inférence** applique les règles aux faits disponibles. La **base de connaissances** contient les informations et les règles du domaine ; des personnes doivent la constituer, puis l’entretenir.
 
-Si nous ajoutons un modèle de lampe avec un fonctionnement différent, quelqu’un doit vérifier quelles règles restent valables. Si deux règles se contredisent, il faut comprendre pourquoi. L’expertise n’a pas disparu : une partie de son travail a été déplacée vers la construction du système.
+Ajoutons un modèle de lampe au fonctionnement différent : quelqu’un doit vérifier quelles règles restent valables et comprendre les éventuelles contradictions. Une partie du travail des spécialistes s’est déplacée vers la construction du système.
 
 
 [^h4s2-mycin]: [John McCarthy, Some Expert Systems Need Common Sense](https://www-formal.stanford.edu/jmc/someneed/someneed.html).
@@ -293,13 +293,13 @@ Dans un exemple fictif de configuration, une carte peut être compatible avec un
 
 ### Pourquoi plusieurs « hivers » ?
 
-Les récits de l’IA distinguent habituellement une première période de désillusion dans les années 1970, puis une autre à la fin des années 1980 et au début des années 1990. Les dates exactes varient selon les pays et les domaines ; il ne s’agit pas d’un interrupteur mondial que quelqu’un aurait éteint deux fois.
+Les récits de l’IA distinguent habituellement une première période de désillusion dans les années 1970, puis une autre à la fin des années 1980 et au début des années 1990. Les dates varient selon les pays et les domaines : personne n’a éteint deux fois un interrupteur mondial.
 
 Les systèmes spécialisés ont montré leur utilité, mais leur coût de développement, leur maintenance et les limites de leur domaine peuvent rendre leur déploiement décevant. Une entreprise n’achète pas seulement une démonstration : elle doit pouvoir utiliser et faire évoluer le système.[^h4s4-histoire]
 
 L’apprentissage statistique, les réseaux, la recherche de solutions et les systèmes de connaissances ne disparaissent pas tous en même temps. Certaines techniques deviennent même des composants ordinaires de logiciels, sans être présentées en permanence comme de l’IA.
 
-Réussir à organiser quelques caisses ne garantit pas de savoir gérer tout un entrepôt. Mais il peut tout de même avoir appris quelque chose d’utile aux chercheurs.
+Organiser quelques caisses ne suffit pas à gérer tout un entrepôt. La démonstration peut malgré tout avoir appris quelque chose d’utile aux chercheurs.
 
 
 [^h4s4-histoire]: [IBM, The History of Artificial Intelligence (mis à jour en 2026)](https://www.ibm.com/think/topics/history-of-artificial-intelligence).
@@ -318,11 +318,9 @@ En 1997, Deep Blue, développé par IBM, remporte un match contre Garry Kasparov
 
 Deep Blue s’appuie sur une recherche rapide de positions, une évaluation spécialisée et du matériel conçu pour les échecs. Nous retrouvons le problème étudié par Shannon : examiner les suites de coups et décider lesquelles méritent d’être poursuivies.
 
-Le résultat ne signifie pas que Deep Blue peut discuter de n’importe quel sujet ou apprendre tout seul un nouveau métier. Son organisation est consacrée à un jeu précis.
+Deep Blue est consacré à un jeu précis. Les règles sont connues, l’adversaire est excellent et le résultat se constate sur l’échiquier : **gagner un match d’échecs** reste une performance remarquable. Le match n’évalue en revanche ni une discussion sur un autre sujet ni l’apprentissage d’un nouveau métier.
 
-Cela n’enlève rien à la performance. Les règles sont connues, l’adversaire est excellent et le résultat se constate sur l’échiquier. Mais pour raconter correctement l’histoire, il faut garder le nom de la tâche à côté du résultat : **gagner un match d’échecs**.
-
-Ce succès ne repose pas sur les grands réseaux de langage que nous utiliserons plus tard. L’IA rassemble plusieurs familles de techniques, et une victoire célèbre ne marque pas nécessairement le triomphe de la méthode devenue populaire aujourd’hui.
+Ce succès repose sur une autre famille de techniques que les grands réseaux de langage que nous utiliserons plus tard. Dans l’histoire de l’IA, la méthode devenue populaire aujourd’hui n’explique pas rétroactivement toutes les victoires célèbres.
 
 
 [^h5s1-blue]: [IBM, Deep Blue](https://www.ibm.com/history/deep-blue).
@@ -337,7 +335,7 @@ Vous voyez la différence avec le système expert de notre atelier : nous n’av
 
 Ces approches font partie de l’histoire de l’IA, même lorsqu’on ne les présente pas avec une interface de conversation. Reconnaître un message indésirable, prévoir une quantité ou classer un document n’exige pas automatiquement un grand modèle génératif.
 
-Nous reviendrons sur le choix d’une méthode lorsque nous construirons nos propres expériences. Pour le moment, retenez que les réseaux de neurones progressent au milieu d’un domaine déjà très divers.
+Nous reviendrons sur le choix d’une méthode dans nos propres expériences. Les réseaux de neurones progressent ici au milieu d’un domaine déjà très divers.
 
 
 [^h5s2-svm]: [Cortes et Vapnik, Support-vector networks (1995)](https://link.springer.com/article/10.1007/BF00994018).
@@ -347,7 +345,7 @@ Nous reviendrons sur le choix d’une méthode lorsque nous construirons nos pro
 
 En 2009, une équipe autour de Fei-Fei Li présente **ImageNet**, une grande base d’images organisée en catégories. Son intérêt est de fournir des données pour entraîner et évaluer des systèmes de reconnaissance d’images.[^h5s3-imagenet]
 
-Pour apprendre à reconnaître un chat, un réseau doit voir des exemples. Mais il faut d’abord rassembler les images, choisir les catégories et vérifier ce qu’elles contiennent. Le papier d’ImageNet décrit notamment le recours à des personnes chargées de vérifier des annotations via Amazon Mechanical Turk.
+Pour apprendre à reconnaître un chat, un réseau doit voir des exemples. Avant l’entraînement, des personnes rassemblent les images, choisissent les catégories et vérifient ce qu’elles contiennent. L’article d’ImageNet décrit notamment le recours à des personnes chargées de vérifier des annotations via Amazon Mechanical Turk.
 
 Les données ne se sont donc pas rangées toutes seules dans les bons dossiers. Derrière une base d’apprentissage se trouvent des choix et du travail humain.
 
@@ -364,14 +362,14 @@ En 2012, Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton présentent un rése
 
 Il utilise plusieurs couches de calcul et des GPU pour son entraînement. Un GPU, que l’on rencontre notamment sur une carte graphique, peut exécuter de nombreux calculs en parallèle. Ces capacités sont utiles pour les opérations répétées des réseaux.
 
-Le **deep learning**, ou apprentissage profond, désigne des méthodes utilisant plusieurs couches de transformations apprises. Le mot « profond » concerne cette organisation ; il ne veut pas dire que la machine réfléchit profondément à la photo. 🙂
+Le **deep learning**, ou apprentissage profond, désigne des méthodes utilisant plusieurs couches de transformations apprises. La profondeur compte ici des couches de calcul, pas les pensées de la machine devant la photo. 🙂
 
 ![Une image représentée par une grille de pixels traverse plusieurs couches de calcul avant de produire des scores pour des catégories.](images/image-couches.png)
 Figure: Vue pédagogique d’une classification d’image. Ce dessin ne reproduit pas l’architecture exacte d’AlexNet.
 
 Sur le schéma, nous partons de valeurs de pixels. Les couches les transforment progressivement, puis le réseau produit des scores pour les catégories proposées. Pendant l’entraînement, ses réglages sont modifiés pour améliorer les réponses.
 
-Le résultat d’AlexNet rend très visible l’intérêt de cette combinaison de données, de méthodes et de matériel. Il ne marque pas l’invention soudaine des réseaux à plusieurs couches : nous avons déjà rencontré des travaux sur leur apprentissage en 1986.
+Le résultat d’AlexNet rend très visible l’intérêt de cette combinaison de données, de méthodes et de matériel. Les réseaux à plusieurs couches ont déjà une longue histoire en 2012 ; les travaux de 1986 sur leur apprentissage nous l’ont montré.
 
 
 [^h5s4-alexnet]: [Krizhevsky, Sutskever et Hinton, ImageNet Classification with Deep Convolutional Neural Networks (2012)](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html).
@@ -410,7 +408,7 @@ L’un de ses mécanismes essentiels est l’**attention** : il permet de combin
 
 > Le chat poursuit la souris parce qu’elle a volé son fromage.
 
-Pour interpréter « elle », le contexte est utile. Un mécanisme d’attention permet au calcul effectué à une position de tenir compte d’autres éléments de la phrase. Cela ne signifie pas qu’on lui a écrit une règle « elle désigne toujours la souris » : les paramètres qui organisent ces calculs sont appris.
+Pour interpréter « elle », le contexte est utile. Un mécanisme d’attention permet au calcul effectué à une position de tenir compte d’autres éléments de la phrase. Les paramètres qui organisent ces calculs sont appris ; personne n’a écrit une règle « elle désigne toujours la souris ».
 
 ![Le mot « elle » est relié à plusieurs éléments de la phrase ; les liens illustrent l’accès au contexte et ne représentent pas des poids mesurés.](images/attention.png)
 Figure: Illustration du rôle du contexte. Les liens ne proviennent pas de l’analyse d’un modèle réel.
@@ -432,7 +430,7 @@ En 2020, l’article sur GPT-3 montre qu’un grand modèle de langage peut acco
 
 Par exemple, nous pouvons montrer le format d’une traduction, puis demander d’en produire une nouvelle. Ce travail à partir du contexte ne doit pas être confondu avec un nouvel entraînement du modèle.
 
-Le programme ne consulte pas nécessairement une fiche vérifiée pour chaque phrase qu’il écrit. Il peut produire une suite convaincante qui contient une erreur. La fluidité du texte et son exactitude doivent donc être examinées séparément.
+Une suite convaincante peut contenir une erreur : le programme ne consulte pas nécessairement une fiche vérifiée pour chaque phrase qu’il écrit. Lisons donc la fluidité du texte et son exactitude comme deux propriétés séparées.
 
 
 [^h6s2-gpt3]: [Brown et ses collègues, Language Models are Few-Shot Learners (2020)](https://arxiv.org/abs/2005.14165).
@@ -486,7 +484,7 @@ Un texte accessible sur le Web n’est pas, pour cette seule raison, un texte sa
 
 À partir de 2023, des modèles comme GPT-4 prennent aussi en entrée plusieurs types de données, notamment du texte et des images. On parle de modèles **multimodaux**. Le rapport technique de GPT-4 indique cependant qu’il ne donne pas tous les détails de l’architecture et de l’entraînement.[^h6s5-gpt4]
 
-Les outils deviennent faciles à essayer, mais leur fabrication peut rester difficile à examiner.
+Quelques secondes suffisent pour essayer l’outil dans une interface. Examiner sa fabrication demande beaucoup plus d’informations.
 
 
 [^h6s5-c4]: [Dodge et ses collègues, Documenting Large Webtext Corpora (2021)](https://arxiv.org/abs/2104.08758).
@@ -504,7 +502,7 @@ En parallèle, des équipes distribuent les paramètres de certains modèles. Il
 
 ### Du modèle qui répond à l’agent qui utilise des outils
 
-Un modèle qui produit une commande n’a pas, pour autant, exécuté cette commande. Il faut un programme autour de lui pour lire sa proposition, lancer l’outil autorisé et lui transmettre le résultat.
+Supposons qu’un modèle produise la commande `pytest`. Pour qu’elle soit réellement exécutée, un programme autour de lui doit lire cette proposition, autoriser l’appel, lancer l’outil et lui transmettre le résultat.
 
 Les travaux ReAct, publiés en 2022, étudient notamment l’association entre des étapes de raisonnement formulées par le modèle et des actions dans un environnement. Ils constituent un repère parmi les recherches qui conduisent aux agents fondés sur des modèles de langage.[^h7s1-react]
 
@@ -517,7 +515,7 @@ Suivez la boucle : le modèle demande une recherche, l’application l’exécut
 
 Cela change les possibilités du système. Il peut consulter une information récente ou examiner un fichier qui n’était pas présent dans son entraînement. Cela ajoute aussi de nouvelles causes d’erreur : le mauvais outil peut être choisi, ses résultats mal interprétés ou une action proposée hors du périmètre attendu.
 
-Le mot **agent** ne veut donc pas dire « programme qui réussit tout seul ». Il décrit ici une organisation qui permet d’enchaîner des décisions et des appels d’outils. Les droits, les limites et les vérifications font partie de cette organisation.
+Nous appelons ici **agent** cette organisation capable d’enchaîner des décisions et des appels d’outils. Elle ne promet pas la réussite en solitaire : les droits, les limites et les vérifications font partie de son fonctionnement.
 
 
 [^h7s1-react]: [Yao et ses collègues, ReAct (2022)](https://arxiv.org/abs/2210.03629).
@@ -526,11 +524,11 @@ Le mot **agent** ne veut donc pas dire « programme qui réussit tout seul ». I
 
 En novembre 2024, Anthropic présente le **Model Context Protocol**, ou **MCP**. Le protocole vise à faciliter les échanges entre des applications utilisant des modèles et des serveurs qui exposent des ressources ou des outils.[^h7s2-mcp]
 
-Pour reprendre notre exemple, un serveur peut proposer un outil de recherche documentaire. Le protocole aide l’application à découvrir cet outil et à l’appeler. Il ne garantit pas que le modèle saura quand l’utiliser, ni que toutes les réponses obtenues seront correctes.
+Pour reprendre notre exemple, un serveur peut proposer un outil de recherche documentaire. Le protocole aide l’application à le découvrir et à l’appeler. Le choix du bon moment et l’interprétation du résultat restent à la charge de l’agent — avec les erreurs que cela peut entraîner.
 
 Les fichiers de consignes et les procédures réutilisables se développent également autour des agents. En 2025, Anthropic présente notamment les **Agent Skills**, des ensembles organisés de consignes, de ressources et éventuellement de scripts, chargés selon le travail à effectuer.[^h7s2-skills]
 
-Les MCP et les skills permettent d’organiser l’accès aux outils et les informations fournies à un agent. Ils ne constituent pas un nouvel entraînement complet du modèle.
+Les MCP et les skills organisent l’accès aux outils et les informations fournies à un agent. Ils agissent autour du modèle, sans reprendre son entraînement complet.
 
 Une procédure de revue de code peut ainsi préciser ce qu’il faut examiner, tandis qu’un outil permet de lire les changements. Ce sont deux rôles différents, qui peuvent être combinés.
 
@@ -546,7 +544,7 @@ En 2023, Meta présente LLaMA, puis Llama 2. Ces publications participent au dé
 
 Les **poids** sont les nombres ajustés pendant l’entraînement. Les récupérer permet d’exécuter le modèle avec un logiciel compatible, si l’on dispose des ressources nécessaires. Cela donne plus de prise sur son fonctionnement que le seul accès à une interface distante.
 
-Il faut cependant distinguer plusieurs choses :
+Regardons précisément ce que l’on peut récupérer :
 
 | Ce qui est disponible | Ce que cela permet d’examiner ou de faire |
 | --- | --- |
@@ -556,11 +554,11 @@ Il faut cependant distinguer plusieurs choses :
 | Les données et leur documentation | Étudier les exemples utilisés et leurs conditions de collecte |
 Table: Ces éléments peuvent être publiés séparément. Leur disponibilité ne donne pas automatiquement les mêmes droits d’utilisation.
 
-Le mot « ouvert » mérite donc qu’on regarde ce qui est effectivement fourni. Des poids téléchargeables ne signifient pas nécessairement que toutes les données sont accessibles ou que tous les usages sont autorisés.
+Le mot « ouvert » mérite donc qu’on regarde ce qui est effectivement fourni. Avec des poids téléchargeables, les données peuvent rester inaccessibles et la licence peut encore limiter certains usages.
 
 Des méthodes comme **LoRA**, présentée en 2021, permettent aussi d’adapter un modèle en entraînant un ensemble limité de paramètres supplémentaires. On peut ainsi réduire les ressources nécessaires à certaines adaptations, par rapport à la modification de tous les poids.[^h7s3-lora]
 
-Faire tourner un modèle existant, l’adapter et en entraîner un depuis zéro sont trois travaux différents. Avoir installé un programme de conversation ne veut pas dire que nous avons entraîné le modèle qui lui répond.
+Faire tourner un modèle existant, l’adapter et en entraîner un depuis zéro sont trois travaux différents. Lorsqu’un programme de conversation répond avec un modèle déjà fourni, nous accomplissons le premier ; nous n’avons pas entraîné le modèle qui lui répond.
 
 Le local peut nous donner davantage de maîtrise sur les données envoyées et sur la disponibilité de l’outil. Il ne règle pas, à lui seul, les questions sur l’origine des données d’entraînement ou les conditions de fabrication du matériel.
 
@@ -573,13 +571,13 @@ Le local peut nous donner davantage de maîtrise sur les données envoyées et s
 
 En 2025, DeepSeek-R1 illustre l’importance prise par l’apprentissage par renforcement pour améliorer les performances de modèles de langage sur des tâches de raisonnement. Le rapport décrit aussi la diffusion de modèles adaptés et de versions plus petites issues de distillation.[^h7s4-r1model]
 
-La **distillation** consiste à utiliser un modèle pour aider à entraîner un autre modèle, par exemple au moyen de réponses qu’il a produites. Ce n’est pas la même opération que réduire la précision des nombres stockés dans les poids.
+La **distillation** consiste à utiliser un modèle pour aider à en entraîner un autre, par exemple au moyen de réponses qu’il a produites. Réduire la précision des nombres stockés dans les poids porte un autre nom : la quantification.
 
 Dans cette période, les systèmes peuvent consacrer davantage de calcul à une réponse, effectuer plusieurs étapes et utiliser des outils pour vérifier certains résultats. L’expérience ressemble moins à une simple complétion de phrase, même si la génération de texte reste un composant important.
 
 Le rapport **AI Index 2026** de Stanford décrit des progrès sur différentes évaluations, mais aussi des capacités très inégales selon les tâches. Il souligne également la place de l’industrie, les questions de ressources et les difficultés à mesurer certains effets sociaux.[^h7s4-index]
 
-Un score sur une épreuve ne résume donc pas tous les usages. Un système peut réussir une question difficile et échouer sur une manipulation qui nous semble banale. Et un agent performant sur un ensemble de tâches peut encore se tromper dans votre projet, avec vos fichiers et vos contraintes.
+Un score sur une épreuve ne résume donc pas tous les usages. Un système peut réussir une question difficile et échouer sur une manipulation qui nous semble banale. Dans votre projet, vos fichiers et vos contraintes constituent encore une autre épreuve.
 
 Le rapport AI Index 2026 rassemble surtout des observations sur l’année précédente et des données disponibles au moment de sa publication.
 
@@ -599,9 +597,9 @@ Si vous débutez en développement, une autre question est tout aussi importante
 
 Vous pouvez demander de l’aide pour comprendre un message d’erreur, puis essayer de résoudre le problème. Vous pouvez aussi confier toute la modification à un agent. Dans le second cas, il faut déjà savoir comment juger ce qu’il produit. Sinon, on risque de conserver une grosse réécriture là où une ligne aurait suffi, ou de laisser passer un bug parce que les tests produits semblent rassurants.
 
-Les skills et les procédures peuvent aider à organiser ce travail. Ils ne suppriment pas le temps nécessaire pour comprendre, relire, tester et valider.
+Les skills et les procédures peuvent organiser ce travail. Le temps passé à comprendre, relire, tester et valider reste dans la boucle.
 
-Vous n’êtes pas obligé de développer avec une IA. Vous pouvez vouloir comprendre le sujet, expérimenter chez vous ou chercher une aide limitée à une tâche pénible, comme préparer des cas de test. C’est à l’outil de trouver sa place dans vos besoins.
+Développer avec une IA reste un choix. Vous pouvez vouloir comprendre le sujet, expérimenter chez vous ou chercher une aide limitée à une tâche pénible, comme préparer des cas de test. Vous pouvez aussi vous en passer : c’est à l’outil de trouver sa place dans vos besoins.
 
 
 [^h7s5-foundation]: [Bommasani et ses collègues, On the Opportunities and Risks of Foundation Models (2021)](https://arxiv.org/abs/2108.07258).
@@ -627,3 +625,5 @@ Ces évolutions se sont étalées sur plusieurs décennies :
 Table: Les périodes se recouvrent : une méthode ne disparaît pas dès qu’une autre progresse.
 
 Les résultats les plus visibles reposent sur des modèles, mais aussi sur des données, des personnes, du matériel et des logiciels qui les font fonctionner ensemble.
+
+Dans la partie suivante, nous allons isoler quelques-uns de ces éléments. Nous commencerons avec une image de huit pixels de côté, des poids et une réponse à calculer. Puis nous entraînerons nous-mêmes le petit modèle qui devra reconnaître les chiffres.

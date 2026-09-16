@@ -2,9 +2,9 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-Nous avons donné des images au modèle et obtenu des classes. Pour produire du texte, nous allons aussi manipuler des nombres, mais la sortie devra être réutilisée pour continuer une séquence.
+Avec les chiffres, une image produisait une classe et le calcul s’arrêtait là. Pour écrire du texte, chaque sortie doit pouvoir servir à choisir la suivante.
 
-Commençons avec un modèle de langage qui tient dans une table. Nous pourrons compter nous-mêmes ce qu’il apprend.
+Commençons avec un modèle de langage qui tient dans une table. Son corpus est assez court pour que nous puissions compter nous-mêmes ce qu’il apprend.
 
 ## Transformer les caractères en nombres
 
@@ -193,13 +193,13 @@ Pour entraîner un modèle de langage autorégressif, on peut lui fournir une s�
 
 Un modèle préentraîné à poursuivre du texte peut ensuite être adapté avec des exemples de consignes et de réponses, ainsi qu’avec d’autres méthodes d’optimisation. Les travaux sur InstructGPT illustrent cette distinction entre le préentraînement et l’entraînement destiné à mieux suivre des instructions.[^p2-7-reponse-instructions]
 
-Cela explique aussi pourquoi « prédire la suite » ne signifie pas forcément « répondre à la question ». Une suite de texte peut imiter une réponse, recopier une formule familière ou continuer un dialogue dans une direction qui ne convient pas à la demande.
+La prédiction de la suite produit parfois une réponse utile, parfois une formule familière ou un dialogue qui part dans la mauvaise direction. La capacité à suivre une consigne se travaille et s’évalue comme un usage à part entière.
 
 Et une réponse bien écrite peut être fausse. Nous avons déjà vu notre classifieur produire une mauvaise réponse avec un score élevé. Pour le langage, les erreurs prennent d’autres formes : une référence inexistante, une explication plausible mais incorrecte, une API inventée.
 
-Nos expériences ne mesurent pas ces erreurs des grands modèles. Elles rendent visibles deux mécanismes qu’on y retrouve : produire une sortie à partir d’un contexte, et sélectionner des possibilités selon des scores. Leur fiabilité sur une tâche précise reste quelque chose à évaluer.
+Nous n’avons pas mesuré les erreurs des grands modèles avec notre corpus de mille caractères. L’expérience rend seulement visibles deux mécanismes que l’on retrouve chez eux : produire une sortie à partir d’un contexte et sélectionner des possibilités selon des scores. Leur fiabilité doit ensuite être évaluée sur la tâche qui nous intéresse.
 
 
 [^p2-7-reponse-instructions]: [Ouyang et ses collègues, Training language models to follow instructions with human feedback (2022)](https://arxiv.org/abs/2203.02155).
 
-Nous avons produit du texte à partir de comptages et exécuté un calcul d’attention. Le contexte, les paramètres et la méthode de génération jouent des rôles distincts. Modifier l’un ne revient pas à modifier les autres.
+Le corpus fixe les comptages de notre bigramme, le début fournit son contexte et la température modifie le tirage. L’attention nous a ensuite permis de combiner plusieurs positions. Gardons ces rôles en tête avant d’ajouter des outils autour du modèle.

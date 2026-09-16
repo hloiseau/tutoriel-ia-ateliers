@@ -2,7 +2,7 @@
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 
-Le modèle se trompe sur un trois. Nous pourrions lui dire « non, c’est un trois », mais il faut traduire cette correction en calculs. Quels poids faut-il changer ? Et de combien ?
+Le modèle vient de prendre un trois pour un deux. L’étiquette nous donne la bonne réponse ; il reste à traduire l’écart en calculs. Quels poids faut-il changer ? Et de combien ?
 
 ## Mesurer ce qui ne va pas
 
@@ -145,6 +145,6 @@ Figure: Poids du modèle linéaire. Un pixel clair placé sur une zone bleue aug
 
 Ce ne sont pas dix photographies mémorisées. Ce sont les coefficients utilisés dans nos multiplications. Certaines positions favorisent un chiffre, d’autres le défavorisent.
 
-Le modèle a maintenant une manière de séparer les classes à partir de ces positions. Il n’a pas pour autant appris que « deux boucles superposées font un huit », ni que déplacer un chiffre devrait conserver son identité.
+Le modèle sépare maintenant les classes à partir de ces positions. Rien dans ce calcul ne lui enseigne que « deux boucles superposées font un huit » ou qu’un chiffre garde son identité lorsqu’on le déplace. Nous allons justement essayer de le déplacer.
 
-Les paramètres ont été ajustés à partir des images et des réponses attendues. Nous pouvons mesurer la progression, sauvegarder le résultat et le regarder. Il reste à vérifier ce que cette progression vaut sur d’autres images.
+La perte a baissé, les bonnes réponses ont augmenté et les paramètres tiennent désormais dans un fichier. Ces courbes portent encore sur l’entraînement et la validation. Le jeu de test va nous dire ce que le modèle fait avec des images restées de côté.

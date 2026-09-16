@@ -41,7 +41,7 @@ def lire_document(identifiant: IdentifiantDocument) -> dict[str, Any]:
 
 Remplacez également les trois décorateurs `@mcp.tool()` par `@mcp.tool(annotations=LECTURE)`.
 
-Les annotations déclarent que nos outils lisent des données, ne les détruisent pas, et que répéter la lecture n’ajoute pas d’effet d’écriture. `openWorldHint=False` indique qu’ils travaillent dans notre jeu fermé de données. Ces indications ne retirent aucun droit au processus : c’est toujours notre code qui doit correspondre à ce qu’il annonce.[^p6-construire-annotations]
+Les annotations présentent nos outils comme des lectures non destructives que l’on peut répéter sans ajouter d’effet d’écriture. `openWorldHint=False` indique qu’ils travaillent dans notre jeu fermé de données. Le client peut utiliser ces indications pour présenter ou choisir les outils. Les droits du processus, eux, restent inchangés : notre code doit réellement tenir ce qu’il annonce.[^p6-construire-annotations]
 
 Vérifiez l’inventaire et une demande invalide :
 
