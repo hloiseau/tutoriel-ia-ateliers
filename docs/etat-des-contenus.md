@@ -1,6 +1,6 @@
 # État des contenus
 
-Mis à jour le **15 septembre 2026**. [Sommaire](../SOMMAIRE.md).
+Mis à jour le **16 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 
 ## Textes et illustrations centralisés
 
@@ -11,7 +11,7 @@ Mis à jour le **15 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 | [3 — Modèle local](../tutoriel/03-modele-local/README.md) | 6 | 21 | 4 | Rédigée ; corrections demandées sur la forme conservées ; transition vers la partie 4 ajoutée |
 | [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Atelier continu ; interfaces à vérifier |
 | [5 — Agents](../tutoriel/05-agents/README.md) | 6 | 18 | 3 | Première rédaction complète ; banc Python exécuté, essais avec un modèle à réaliser |
-| [6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) | 7 | 25 | 3 | Construction du MCP pas à pas ; parcours rejoué depuis le Markdown, essais du skill avec un modèle à réaliser |
+| [6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) | 7 | 25 | 3 | Validée par l’auteur le 16 septembre 2026 ; parcours MCP vérifié, essais du skill avec un modèle à réaliser |
 | [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Comparatif des outils et expérience locale facultative |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
@@ -68,3 +68,7 @@ Une correction de l’assembleur rétablit également les numéros de chapitre d
 Le chapitre 3 de la partie 6 comporte maintenant sept étapes : fichier vide, premier outil, catalogue, recherche documentaire, validation, ressource et tests. Le client permet de choisir explicitement `mon_serveur.py`. Les chapitres suivants gardent cette cible. Les états intermédiaires, le corrigé complet et les tests sont dans l’archive pratique.
 
 Le parcours a été reconstruit depuis les blocs de code du chapitre, avec les fichiers d’une archive extraite. La [passe adverse](relecture-construction-mcp.md) décrit les défauts corrigés, les mutations essayées et les limites restantes.
+
+## Partie 6 validée par l’auteur
+
+Hugo valide la partie 6 le **16 septembre 2026**, après la reprise de la construction du MCP et sa passe adverse. Cette validation porte sur la version des chapitres au commit `aa79bbe51ff9fe2379604339b88057d3fe34719f`. Les essais pratiques restants sont suivis dans le rapport de vérification. L’analogie des recettes reste notée dans le cadre de rédaction pour une éventuelle prochaine passe.
