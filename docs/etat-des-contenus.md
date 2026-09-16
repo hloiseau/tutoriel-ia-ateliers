@@ -72,7 +72,7 @@ Le parcours a été reconstruit depuis les blocs de code du chapitre, avec les f
 
 ## Partie 6 validée par l’auteur
 
-Hugo valide la partie 6 le **16 septembre 2026**, après la reprise de la construction du MCP et sa passe adverse. Cette validation porte sur la version des chapitres au commit `aa79bbe51ff9fe2379604339b88057d3fe34719f`. Les essais pratiques restants sont suivis dans le rapport de vérification. L’analogie des recettes reste notée dans le cadre de rédaction pour une éventuelle prochaine passe.
+Hugo valide la partie 6 le **16 septembre 2026**, après la reprise de la construction du MCP et sa passe adverse. Cette validation porte sur la version des chapitres au commit `aa79bbe51ff9fe2379604339b88057d3fe34719f`. Les essais pratiques restants sont suivis dans le rapport de vérification. À la demande de Hugo, l’analogie des recettes a ensuite été intégrée à l’introduction du chapitre 6, consacré à l’adaptation du skill.
 
 ## Partie 7 rédigée
 

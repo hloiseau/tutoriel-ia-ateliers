@@ -41,13 +41,13 @@ L’auto-hébergement est une possibilité à expérimenter, pas une réponse au
 
 Partir des difficultés réelles du développeur. Adapter l’outil à sa manière de travailler ; ne pas organiser son travail autour d’un framework simplement parce qu’il est populaire.
 
-## Idée à reprendre plus tard : les skills comme recettes
+## Analogie retenue : les skills comme recettes
 
 Analogie transmise par Hugo le 16 septembre 2026, proposée par un ami :
 
 > Les skills sont comme une recette de cuisine, on peut enlever du sel ou du sucre pour l’adapter à notre régime.
 
-À garder pour la partie sur les skills : adapter une procédure à ses besoins plutôt que la reprendre telle quelle. Hugo demande de conserver l’idée pour une prochaine passe, sans l’intégrer immédiatement au chapitre.
+Intégrée à la demande de Hugo dans l’introduction du chapitre 6 de la partie 6, « Faire évoluer le skill à partir des problèmes rencontrés ». Elle explique comment adapter une procédure à ses besoins plutôt que la reprendre telle quelle. La partie 7 reste inchangée.
 
 ## Sources et vérifications
 
