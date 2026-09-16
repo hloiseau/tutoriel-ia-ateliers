@@ -1,0 +1,31 @@
+{
+  "origine": "fictif",
+  "essais": [
+    {
+      "nom": "Recette sans IA — exemple inventé",
+      "mode": "sans_ia",
+      "statut": "valide",
+      "minutes": {
+        "preparer": 4,
+        "produire": 12,
+        "relire": 3,
+        "corriger": 1,
+        "verifier": 3,
+        "attente_bloquante": 0
+      }
+    },
+    {
+      "nom": "Recette avec IA — exemple inventé",
+      "mode": "avec_ia",
+      "statut": "valide",
+      "minutes": {
+        "preparer": 5,
+        "produire": 3,
+        "relire": 7,
+        "corriger": 6,
+        "verifier": 5,
+        "attente_bloquante": 2
+      }
+    }
+  ]
+}

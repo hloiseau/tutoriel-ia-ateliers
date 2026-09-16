@@ -1,0 +1,18 @@
+{
+  "origine": "observe",
+  "essais": [
+    {
+      "nom": "À préciser",
+      "mode": "sans_ia",
+      "statut": "a_corriger",
+      "minutes": {
+        "preparer": null,
+        "produire": null,
+        "relire": null,
+        "corriger": null,
+        "verifier": null,
+        "attente_bloquante": null
+      }
+    }
+  ]
+}

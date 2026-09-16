@@ -1,0 +1,23 @@
+{
+  "origine_declaree": "fictif",
+  "essais": [
+    {
+      "nom": "Recette sans IA — exemple inventé",
+      "mode": "sans_ia",
+      "statut": "valide",
+      "actif_min": 23.0,
+      "attente_bloquante_min": 0.0,
+      "occupation_min": 23.0
+    },
+    {
+      "nom": "Recette avec IA — exemple inventé",
+      "mode": "avec_ia",
+      "statut": "valide",
+      "actif_min": 26.0,
+      "attente_bloquante_min": 2.0,
+      "occupation_min": 28.0
+    }
+  ],
+  "limite": "Durées déclarées sur des phases disjointes ; aucun classement ni contrôle automatique de qualité.",
+  "contexte_reference": "Exemple fictif exécuté pour vérifier le programme, pas une mesure sur une personne ou un modèle."
+}

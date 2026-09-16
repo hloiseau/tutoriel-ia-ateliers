@@ -1,0 +1,58 @@
+# 1. D’où viennent les données et le travail humain ?
+
+[Sommaire de la partie](../README.md) · [Sources](.)
+
+[Suivant : Licences, transparence et possibilités de vérification](../02-ouverture/LECTURE.md)
+
+**TL;DR** — Un modèle ne sort pas seulement d’un calcul. Il dépend de contenus, de décisions et de travail humain dont les conditions ne sont pas toujours visibles dans sa fiche.
+
+Jusqu’ici, nous avons pu ouvrir nos corpus et retrouver comment nos petits modèles avaient été entraînés. Essayons maintenant de remonter la même piste avec un modèle que nous n’avons pas fabriqué.
+
+## Remonter avant le téléchargement
+
+Prenez la fiche du modèle utilisé dans la partie 3, SmolLM2-360M-Instruct. Nous y trouvons des informations sur la famille de modèles, des données et des évaluations. Cela nous donne un point de départ, pas le nom de chaque personne ayant contribué à chaque texte.[^p8-carte]
+
+Il faut distinguer les auteurs des contenus, les personnes qui préparent les données et celles qui conçoivent le modèle. Une documentation de bibliothèque a été écrite pour aider ses utilisateurs. Son passage éventuel dans un corpus ajoute un usage, sans effacer ce premier travail.
+
+![Des auteurs et des personnes représentées dans les données alimentent une chaîne de collecte, de préparation et d’entraînement. L’application mobilise aussi le travail de déploiement et de vérification.](../images/travail.png)
+Figure: Plusieurs contributions humaines derrière une réponse affichée
+
+Ouvrez `fiches/provenance.md`. Pour notre corpus fictif de la partie 7, nous pouvons indiquer qu’il a été préparé pour le tutoriel, qu’il décrit un service inventé et qu’il est distribué avec sa licence. Pour un corpus externe, nous devons pouvoir retrouver d’où vient l’information que nous écrivons dans cette fiche.
+
+Une source peut être décrite sans être téléchargeable ; un jeu peut être téléchargeable sans que chaque étape de sa préparation soit documentée. Garder ces différences aide à poser une question précise au lieu d’écrire simplement « transparent » dans une case.
+
+[^p8-carte]: Hugging Face, [fiche de SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct), consultée en septembre 2026.
+
+## Les personnes que le mot « automatisation » cache
+
+Dans notre petit atelier, les étiquettes existaient déjà ou étaient faciles à produire. À une autre échelle, des personnes peuvent transcrire, classer, comparer des réponses, vérifier des exemples ou modérer des contenus. Ce travail mérite d’être regardé autrement que comme une ligne « données » dans un budget.
+
+Oskarina Veronica Fuentes Anaya raconte son expérience sur des plateformes de travail de données dans *Life of a Latin American Data Worker*. Elle décrit notamment des tâches qui arrivent de façon irrégulière et du temps passé à attendre sans être payé. C’est son témoignage et celui du milieu qu’elle décrit ; il ne permet pas d’attribuer les mêmes conditions à tous les modèles.[^p8-travail]
+
+Cette distinction compte. Nous pouvons prendre ces récits au sérieux sans inventer la chaîne de sous-traitance d’un fournisseur qui ne la publie pas. Dans notre fiche, une information inconnue reste inconnue. Elle peut néanmoins peser dans notre choix : rien ne nous oblige à considérer son absence comme rassurante.
+
+Les auteurs des textes et du code méritent également une place dans cette discussion. Selon moi, la disponibilité technique d’un contenu ne devrait pas suffire à écarter la question de son usage, de l’accord de ses créateurs et du partage de la valeur produite. Une réponse juridique et une position éthique ne répondent pas forcément à la même question.
+
+Pour un projet auquel nous contribuons, cela devient très concret : qui annote, avec quelles consignes, quel paiement et quelle possibilité de signaler une erreur ou de refuser un contenu difficile ? Si nous commandons ce travail, la rapidité de livraison n’est pas notre seul critère.
+
+[^p8-travail]: Oskarina Veronica Fuentes Anaya, [*Life of a Latin American Data Worker*](https://data-workers.org/oskarina/), 2024, Data Workers’ Inquiry. Présentation et témoignage de l’autrice, avec une animation sous-titrée.
+
+## Ce que nous choisissons de garder
+
+Ouvrez `cas/documents.md`. L’équipe dispose de trois éléments : une règle publique du service, une conversation de support contenant des coordonnées fictives et une ancienne recette dont la décision a changé.
+
+Pour expliquer la règle de notification, le premier document suffit. Ajouter les coordonnées du client ne l’explique pas mieux. Quant à l’ancienne recette, elle pourrait contredire la règle actuelle. Avant de demander quel modèle choisir, nous pouvons déjà améliorer ce que nous lui donnons.
+
+Réduire les données aide aussi à limiter leur exposition. Pour des données personnelles réelles, leur collecte et leur réutilisation demandent une analyse adaptée au but poursuivi ; leur présence sur le Web ne dispense pas de ces questions. Les fiches de la CNIL détaillent notamment la sélection des données pertinentes et leur suivi.[^p8-cnil]
+
+Faites une copie de travail des documents et conservez seulement ce qui sert à répondre à la question. Comparez ensuite avec `corriges/documents.md`. Retirer un nom ne suffit pas toujours à anonymiser un texte : une combinaison de détails peut encore désigner quelqu’un. Ici, toutes les personnes sont fictives, ce qui nous permet d’examiner le problème sans exposer de véritables clients.
+
+La sélection peut également déformer ce que le modèle voit. Si nos exemples ne couvrent que des tickets bien rédigés en anglais, un bon résultat sur ceux-ci ne dit pas ce qui se passera avec des demandes courtes en français. Essayons les usages que nous voulons réellement prendre en charge.
+
+[^p8-cnil]: CNIL, [tenir compte de la protection des données dans la collecte et la gestion des données](https://www.cnil.fr/fr/tenir-compte-de-la-protection-des-donnees-dans-la-collecte-et-la-gestion-des-donnees). Ces recommandations portent sur les données personnelles ; elles ne règlent pas à elles seules les questions de droit d’auteur.
+
+Nous avons commencé par les contenus et les personnes, avant les paramètres du modèle. Passons maintenant aux fichiers que l’on peut obtenir et aux droits qui les accompagnent.
+
+---
+
+[Suivant : Licences, transparence et possibilités de vérification](../02-ouverture/LECTURE.md)

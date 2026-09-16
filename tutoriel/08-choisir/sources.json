@@ -1,0 +1,74 @@
+[
+  {
+    "section": "01-travail/personnes.md",
+    "note": "[^p8-travail]: Oskarina Veronica Fuentes Anaya, [*Life of a Latin American Data Worker*](https://data-workers.org/oskarina/), 2024, Data Workers’ Inquiry. Présentation et témoignage de l’autrice, avec une animation sous-titrée.",
+    "url": "https://data-workers.org/oskarina/",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "01-travail/remonter.md",
+    "note": "[^p8-carte]: Hugging Face, [fiche de SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct), consultée en septembre 2026.",
+    "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "01-travail/selection.md",
+    "note": "[^p8-cnil]: CNIL, [tenir compte de la protection des données dans la collecte et la gestion des données](https://www.cnil.fr/fr/tenir-compte-de-la-protection-des-donnees-dans-la-collecte-et-la-gestion-des-donnees). Ces recommandations portent sur les données personnelles ; elles ne règlent pas à elles seules les questions de droit d’auteur.",
+    "url": "https://www.cnil.fr/fr/tenir-compte-de-la-protection-des-donnees-dans-la-collecte-et-la-gestion-des-donnees",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "02-ouverture/libertes.md",
+    "note": "[^p8-osi]: Open Source Initiative, [*The Open Source AI Definition — 1.0*](https://opensource.org/ai/open-source-ai-definition).",
+    "url": "https://opensource.org/ai/open-source-ai-definition",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "02-ouverture/objets.md",
+    "note": "[^p8-apache]: Apache Software Foundation, [texte de la licence Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0), notamment les conditions de redistribution. La portée dépend des éléments effectivement placés sous cette licence.",
+    "url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "02-ouverture/objets.md",
+    "note": "[^p8-carte-licence]: Hugging Face, [fiche de SmolLM2-360M-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct), licence annoncée à la consultation de septembre 2026.",
+    "url": "https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "03-ressources/perimetre.md",
+    "note": "[^p8-ademe]: ADEME, [*IA générative, comment quantifier les impacts ?*](https://www.ademe.fr/presse/communique-national/ia-generative-comment-quantifier-les-impacts/), 22 juillet 2026.",
+    "url": "https://www.ademe.fr/presse/communique-national/ia-generative-comment-quantifier-les-impacts/",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "03-ressources/usage.md",
+    "note": "[^p8-energie]: Luccioni, Jernite et Strubell, [*Power Hungry Processing: Watts Driving the Cost of AI Deployment?*](https://arxiv.org/abs/2311.16863), étude publiée à FAccT 2024.",
+    "url": "https://arxiv.org/abs/2311.16863",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "05-apprendre/comprendre.md",
+    "note": "[^p8-apprendre]: Shen et Tamkin, [*How AI assistance impacts the formation of coding skills*](https://www.anthropic.com/research/AI-assistance-coding-skills), 29 janvier 2026. Étude menée par un fournisseur d’IA ; ses analyses des différentes manières d’interagir avec l’outil sont exploratoires et ne prouvent pas à elles seules un lien causal.",
+    "url": "https://www.anthropic.com/research/AI-assistance-coding-skills",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "05-apprendre/metier.md",
+    "note": "[^p8-oit]: OIT, [*Generative AI and Jobs: A Refined Global Index of Occupational Exposure*](https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure), 2025.",
+    "url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "06-alternatives/etudes.md",
+    "note": "[^p8-metr25]: Becker et al., [*Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity*](https://arxiv.org/abs/2507.09089), 2025.",
+    "url": "https://arxiv.org/abs/2507.09089",
+    "consultation": "2026-09-16"
+  },
+  {
+    "section": "06-alternatives/etudes.md",
+    "note": "[^p8-metr26]: METR, [*We are Changing our Developer Productivity Experiment Design*](https://metr.org/blog/2026-02-24-uplift-update/), 24 février 2026.",
+    "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+    "consultation": "2026-09-16"
+  }
+]

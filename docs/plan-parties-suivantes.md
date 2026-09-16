@@ -1,21 +1,18 @@
-# Plan détaillé des parties à rédiger
+# Suivi après la première rédaction des huit parties
 
-[Sommaire global](../SOMMAIRE.md)
+[Sommaire global](../SOMMAIRE.md) · [État détaillé des contenus](etat-des-contenus.md)
 
-La [partie 5 — Comprendre et encadrer les agents](../tutoriel/05-agents/README.md) dispose maintenant d’une première rédaction complète et d’un atelier. Les expériences avec un modèle réel restent à effectuer.
+Les parties 1 à 8 sont maintenant présentes avec leurs sources, leurs illustrations et leurs exports ZdS. Les derniers ajouts sont des premières rédactions à relire, avec les validations indiquées dans l’état des contenus.
 
-La [partie 6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) dispose également d’une rédaction complète et d’un atelier MCP exécuté. Les essais du skill avec un modèle restent à effectuer.
+## Dernières parties
 
-La [partie 7 — IA maison](../tutoriel/07-ia-maison/README.md) dispose de huit chapitres et d’un atelier exécuté sur CPU : recherche lexicale, application documentaire, adaptation complète, LoRA et entraînement depuis zéro d’un petit réseau. L’expérience d’adaptation d’un LLM sur GPU reste à réaliser ; son [document de reprise](../ateliers/07-ia-maison/experience-gpu/PROMPT-CODEX.md) est fourni.
+- [Partie 5 — Agents](../tutoriel/05-agents/README.md) : banc exécuté ; essais avec un modèle réel à effectuer.
+- [Partie 6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) : validée par l’auteur, parcours MCP vérifié ; essais du skill avec un modèle à effectuer.
+- [Partie 7 — IA maison](../tutoriel/07-ia-maison/README.md) : accord global de l’auteur, parcours CPU exécuté ; adaptation d’un LLM sur GPU à réaliser avec le [prompt local](../ateliers/07-ia-maison/experience-gpu/PROMPT-CODEX.md).
+- [Partie 8 — Choisir la place de l’IA](../tutoriel/08-choisir/README.md) : sept chapitres sur les données, le travail humain, les droits, l’environnement, les dépendances, l’apprentissage et les choix ; exercices exécutés, relecture de l’auteur à faire.
 
-## 8. Choisir la place de l’IA — à rédiger
+## Travail restant
 
-1. D’où viennent les données et le travail humain ?
-2. Licences, transparence et possibilités de vérification
-3. Coûts, énergie, matériel et environnement
-4. Dépendances techniques et économiques
-5. Apprendre et exercer notre métier
-6. Alternatives, logiciels libres et possibilités de s’en passer
-7. Construire ses propres critères de choix
+Relire les chapitres dans leur ordre, vérifier les transitions et essayer les imports dans un brouillon ZdS. Exécuter les expériences encore ouvertes sur la machine de l’auteur. Revoir les informations changeantes avant publication. Ces travaux sont suivis dans [les expériences à lancer](experiences-a-lancer.md) et [les vérifications](verification.md).
 
-Pratique envisagée : analyser une fiche de modèle, inventorier ce que révèle un outil, comparer une tâche avec et sans IA en incluant la relecture. Les questions éthiques et l’apprentissage des juniors apparaissent dès les autres parties ; elles ne sont pas reportées ici pour être évitées ailleurs.
+La conclusion de la partie 8 termine le parcours prévu, avec la possibilité d’adapter les outils ou de s’en passer.

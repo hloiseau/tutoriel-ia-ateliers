@@ -9,7 +9,7 @@
 
 - [Reprendre sur la machine de l’auteur](reprise-locale.md).
 - [Expériences à lancer](experiences-a-lancer.md).
-- [Plan détaillé de la partie 8](plan-parties-suivantes.md).
+- [Suivi après la rédaction des huit parties](plan-parties-suivantes.md).
 - [Contrôle structurel du tutoriel](structure-tutoriel.json).
 
 - [Vérification de la partie 5](../tutoriel/05-agents/VERIFICATION.md).
@@ -20,3 +20,6 @@
 
 - [Vérification de la partie 7](../tutoriel/07-ia-maison/VERIFICATION.md).
 - [Relecture adverse de la partie 7](relecture-partie7.md).
+
+- [Vérification de la partie 8](../tutoriel/08-choisir/VERIFICATION.md).
+- [Relecture adverse de la partie 8](relecture-partie8.md).

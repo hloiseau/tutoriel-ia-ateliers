@@ -37,3 +37,9 @@ Les commandes Windows et macOS, le GPU et les interactions dans un navigateur r�
 ## Partie 7
 
 Onze tests et dix-neuf commandes ont été exécutés depuis l’archive extraite, sous Linux avec Python 3.12.14, NumPy 2.3.5 et threadpoolctl 3.6.0. Les entraînements de base, LoRA et complet reproduisent les six pertes de test enregistrées. Trois appels réels à SmolLM2 sur CPU sont conservés, dont une temporisation inventée. [Rapport détaillé](../tutoriel/07-ia-maison/VERIFICATION.md). L’adaptation d’un LLM sur GPU, Windows, macOS et l’import dans l’interface ZdS restent non exécutés.
+
+## Partie 8
+
+Neuf commandes vérifiées depuis l’archive extraite sous Linux et Python 3.12.14, dont huit tests. Les erreurs attendues du jeu de catalogue et de la fonction de notification sont présentes ; les corrections passent. Les calculateurs refusent les valeurs absentes ou invalides. Les sources de douze notes sont recensées et les quatre illustrations ont été inspectées.
+
+Les nombres de démonstration sont fictifs : aucune consommation matérielle, aucun gain de productivité, aucun apprentissage de lecteur n’est annoncé comme mesuré. [Rapport détaillé](../tutoriel/08-choisir/VERIFICATION.md).

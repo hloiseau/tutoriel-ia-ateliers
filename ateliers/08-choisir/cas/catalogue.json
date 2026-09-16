@@ -1,0 +1,22 @@
+[
+  {
+    "id": "A",
+    "prix_centimes": 2500,
+    "disponible": true
+  },
+  {
+    "id": "B",
+    "prix_centimes": -50,
+    "disponible": true
+  },
+  {
+    "id": "",
+    "prix_centimes": 300,
+    "disponible": false
+  },
+  {
+    "id": "D",
+    "prix_centimes": true,
+    "disponible": true
+  }
+]

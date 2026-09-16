@@ -2,7 +2,7 @@
 
 [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
 
-Les sept premières parties sont centralisées avec leurs sources et illustrations : **49 chapitres et deux annexes, 175 sections et 42 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
+Les huit parties sont centralisées avec leurs sources et illustrations : **56 chapitres et deux annexes, 196 sections et 46 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
 
 ## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
@@ -88,11 +88,19 @@ Les sept premières parties sont centralisées avec leurs sources et illustratio
 7. [Entraîner notre réseau depuis zéro](tutoriel/07-ia-maison/07-entrainer/LECTURE.md)
 8. [Choisir la suite sans changer de machine par défaut](tutoriel/07-ia-maison/08-comparer/LECTURE.md)
 
-## Partie suivante
+## 8. Choisir la place de l’IA
 
-8. Choisir la place de l’IA.
+[Introduction](tutoriel/08-choisir/introduction.md) · [Toute la partie](tutoriel/08-choisir/LECTURE.md) · [Exercices et corrigés](ateliers/08-choisir/README.md)
 
-[Lire le plan détaillé de la partie 8](docs/plan-parties-suivantes.md). Cette partie reste à rédiger. Les questions éthiques, l’apprentissage des juniors et le choix de se passer de l’IA restent également présents dans les premières parties.
+1. [D’où viennent les données et le travail humain ?](tutoriel/08-choisir/01-travail/LECTURE.md)
+2. [Licences, transparence et possibilités de vérification](tutoriel/08-choisir/02-ouverture/LECTURE.md)
+3. [Coûts, énergie, matériel et environnement](tutoriel/08-choisir/03-ressources/LECTURE.md)
+4. [Dépendances techniques et économiques](tutoriel/08-choisir/04-dependances/LECTURE.md)
+5. [Apprendre et exercer notre métier](tutoriel/08-choisir/05-apprendre/LECTURE.md)
+6. [Alternatives, logiciels libres et possibilités de s’en passer](tutoriel/08-choisir/06-alternatives/LECTURE.md)
+7. [Construire ses propres critères de choix](tutoriel/08-choisir/07-decider/LECTURE.md)
+
+Les huit parties sont rédigées. Les [relectures et validations restantes](docs/etat-des-contenus.md) restent distinctes de cette première rédaction.
 
 ## Annexes
 

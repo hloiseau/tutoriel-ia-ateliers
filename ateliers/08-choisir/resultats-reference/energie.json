@@ -1,0 +1,7 @@
+{
+  "energie_wh": 100.0,
+  "energie_kwh": 0.1,
+  "nature": "Calcul à partir des valeurs fournies, pas une mesure.",
+  "perimetre": "Électricité correspondant à cette puissance moyenne et à cette durée ; hors fabrication et autres impacts.",
+  "contexte_reference": "Exemple fictif exécuté pour vérifier le programme, pas une mesure sur une personne ou un modèle."
+}

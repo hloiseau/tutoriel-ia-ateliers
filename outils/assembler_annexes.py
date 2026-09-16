@@ -22,6 +22,7 @@ def main():
         ('05-agents', 'atelier-agents.zip'),
         ('06-mcp-skills', 'atelier-mcp-skills.zip'),
         ('07-ia-maison', 'atelier-ia-maison.zip'),
+        ('08-choisir', 'atelier-choisir-ia.zip'),
     ]
     if args.atelier and args.atelier not in {d for d, _ in ateliers}:
         parser.error('Atelier inconnu.')

@@ -12,12 +12,13 @@ Mis à jour le **16 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 | [4 — Développement](../tutoriel/04-developpement/README.md) | 7 | 23 | 3 | Atelier continu ; interfaces à vérifier |
 | [5 — Agents](../tutoriel/05-agents/README.md) | 6 | 18 | 3 | Première rédaction complète ; banc Python exécuté, essais avec un modèle à réaliser |
 | [6 — MCP et skills](../tutoriel/06-mcp-skills/README.md) | 7 | 25 | 3 | Validée par l’auteur le 16 septembre 2026 ; parcours MCP vérifié, essais du skill avec un modèle à réaliser |
-| [7 — IA maison](../tutoriel/07-ia-maison/README.md) | 8 | 24 | 4 | Première rédaction complète ; recherche, application et entraînements CPU exécutés ; expérience GPU à faire |
+| [7 — IA maison](../tutoriel/07-ia-maison/README.md) | 8 | 24 | 4 | Accord global de l’auteur ; recherche, application et entraînements CPU exécutés ; expérience GPU à faire |
+| [8 — Choisir la place de l’IA](../tutoriel/08-choisir/README.md) | 7 | 21 | 4 | Première rédaction complète ; exercices vérifiés ; relecture de l’auteur à faire |
 | [Annexes](../tutoriel/annexes/README.md) | 2 | 4 | 0 | Comparatif des outils et expérience locale facultative |
 
 Les sources sont sous `tutoriel/`. Chaque chapitre possède une lecture avec images. Les ateliers, données et résultats sont sous `ateliers/` ; les archives pratiques sont sous `telechargements/`.
 
-La partie 7 dispose maintenant de huit chapitres et d’un atelier. La partie 8 reste au stade du [plan détaillé](plan-parties-suivantes.md). Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
+Les huit parties disposent maintenant d’une première rédaction. Le [suivi de fin de rédaction](plan-parties-suivantes.md) renvoie aux relectures et aux expériences restantes. Le dernier export du billet d’origine reste distinct et n’a pas été ajouté à cette centralisation du tutoriel.
 
 ## Ce qui a été vérifié pendant l’intégration
 
@@ -78,4 +79,12 @@ Hugo valide la partie 6 le **16 septembre 2026**, après la reprise de la constr
 
 Huit chapitres, vingt-quatre sections et quatre illustrations. L’archive pratique a été extraite et dix-neuf commandes ont été exécutées, dont onze tests. Les trois entraînements et les six pertes de test ont été reproduits. Trois appels réels au modèle documentaire conservent notamment une durée inventée malgré une source qui la laisse ouverte.
 
-La [vérification](../tutoriel/07-ia-maison/VERIFICATION.md) distingue ces exécutions de l’adaptation d’un LLM sur GPU, qui reste à réaliser. La partie 7 n’a pas encore été validée par l’auteur.
+La [vérification](../tutoriel/07-ia-maison/VERIFICATION.md) distingue ces exécutions de l’adaptation d’un LLM sur GPU, qui reste à réaliser. Hugo a donné son accord global sur la partie 7 ; les validations pratiques restantes ne sont pas levées par cet accord.
+
+## Partie 8 rédigée
+
+Sept chapitres, vingt et une sections, quatre illustrations et un atelier sans dépendance supplémentaire. Neuf commandes ont été exécutées depuis l’archive extraite, dont huit tests unitaires. Le bug volontaire et les deux corrigés de lecture de code donnent les résultats attendus.
+
+Les sources distinguent travail humain, droits, ouverture, impacts environnementaux, dépendances et apprentissage. Les durées du bilan et les paramètres du calcul énergétique sont fictifs et étiquetés comme tels. Aucune comparaison réelle avec et sans IA, ni mesure pédagogique sur des lecteurs, n’a été réalisée. Voir [le rapport](../tutoriel/08-choisir/VERIFICATION.md) et la [passe adverse](relecture-partie8.md).
+
+Cette partie attend la relecture de l’auteur. Les huit parties sont rédigées ; cela ne vaut ni validation générale ni publication sur ZdS.
