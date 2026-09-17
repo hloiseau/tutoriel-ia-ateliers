@@ -102,6 +102,10 @@ Les huit parties sont centralisées avec leurs sources et illustrations : **56 c
 
 Les huit parties sont rédigées. Les [relectures et validations restantes](docs/etat-des-contenus.md) restent distinctes de cette première rédaction.
 
+## En préparation — Travailler avec l’IA au-delà du code
+
+Le nouveau parcours suit une équipe qui organise une journée d’ateliers. Son [premier chapitre](redaction/hors-developpement/LECTURE.md), le [dossier fictif](ateliers/hors-developpement/README.md) et le [plan des sept chapitres](docs/hors-developpement/PLAN.md) sont disponibles séparément. Ce début reste hors du ZIP global ; les huit parties ci-dessus ne sont pas renumérotées.
+
 ## Annexes
 
 - [A — Comparer les outils et leurs tarifs](tutoriel/annexes/comparatif/LECTURE.md)

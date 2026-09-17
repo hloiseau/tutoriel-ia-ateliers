@@ -1,0 +1,14 @@
+Jeu de données fictif — Les ateliers du quartier
+Message-ID: <M002@atelier.example>
+Date: 2026-09-15T10:05:00+02:00
+De: Léo <leo@example.org>
+À: Équipe des ateliers <equipe@example.org>
+Objet: Inscription à la journée
+
+Bonjour,
+
+Je voudrais m’inscrire avec un ami : une place pour lui et une pour moi.
+Pouvez-vous prendre notre demande en compte ?
+
+Bonne journée,
+Léo

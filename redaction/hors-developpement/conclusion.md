@@ -1,0 +1,3 @@
+Le dossier laisse plusieurs choses ouvertes : une date, le choix d’un atelier et un horaire. Nous pouvons tout de même préparer le point d’équipe et les questions qui permettront d’avancer. Les conserver dans le résultat évite que les décisions manquantes disparaissent au milieu d’un compte rendu bien présenté.
+
+Nous avons aussi de quoi comparer le travail d’un assistant à celui que nous venons de faire. Il devra retrouver les demandes, distinguer celles déjà enregistrées et permettre de remonter aux documents. Sa manière de rédiger pourra varier ; les informations du dossier, elles, resteront les mêmes.

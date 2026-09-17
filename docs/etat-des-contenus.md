@@ -1,6 +1,6 @@
 # État des contenus
 
-Mis à jour le **16 septembre 2026**. [Sommaire](../SOMMAIRE.md).
+Mis à jour le **17 septembre 2026**. [Sommaire](../SOMMAIRE.md).
 
 ## Textes et illustrations centralisés
 
@@ -102,3 +102,11 @@ Huit missions distinctes ont relu et réécrit les sources canoniques, une par p
 La passe a réduit les oppositions rhétoriques et les transitions automatiques, rendu les manipulations plus concrètes et conservé les distinctions techniques utiles. Le schéma de recherche documentaire de la partie 7 a également été reformulé depuis son générateur. L’introduction générale, déjà naturelle, a été relue sans changement de fond.
 
 Cette réécriture n’ajoute aucune expérience sur le PC de Hugo. Son système reste à identifier ; l’adaptation de LLM sur la RTX 3090 Ti, les interfaces réelles, les essais de skills et d’agents ainsi que l’import interactif dans ZdS restent à effectuer. Le [projet d’extension aux usages hors développement](relecture/2026-09-16-globale/extension-hors-developpement.md) est une proposition de structure, pas une neuvième partie déjà rédigée.
+
+## Début du parcours hors développement
+
+Hugo a retenu le fil rouge de l’organisation d’un événement. Une introduction et un premier chapitre, « Préparer le point d’équipe », sont rédigés dans [redaction/hors-developpement/](../redaction/hors-developpement/README.md). Le manifest décrit un chapitre et quatre sections, sans compter les chapitres seulement prévus.
+
+Le [dossier fictif](../ateliers/hors-developpement/README.md) comprend cinq fichiers de courriel, un suivi initial en CSV avec sa version XLSX, deux comptes rendus contradictoires, les règles de l’équipe, un modèle de point et un corrigé manuel. Le [plan](hors-developpement/PLAN.md) prévoit six autres chapitres, des essais d’assistant, un pipeline et des validations humaines. Ces essais ne sont pas exécutés.
+
+Les lectures et l’export de ce début sont générés séparément. Le ZIP global conserve ses huit parties, sans renumérotation. L’accord sur le fil rouge ne vaut pas validation du nouveau texte, du choix des produits ni de l’intégration définitive. Les [contrôles et limites](hors-developpement/VERIFICATION.md) distinguent les matériaux vérifiés des automatisations encore à construire.

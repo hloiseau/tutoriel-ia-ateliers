@@ -1,0 +1,14 @@
+Jeu de données fictif — Les ateliers du quartier
+Message-ID: <M001@atelier.example>
+Date: 2026-09-15T09:10:00+02:00
+De: Nora <nora@example.org>
+À: Équipe des ateliers <equipe@example.org>
+Objet: Deux places en Reliure
+
+Bonjour,
+
+Nous aimerions participer à l’atelier Reliure. Pouvez-vous noter
+une demande pour deux personnes ? Nous attendrons votre confirmation.
+
+Merci,
+Nora

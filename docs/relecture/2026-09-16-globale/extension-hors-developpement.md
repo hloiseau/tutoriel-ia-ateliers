@@ -1,5 +1,7 @@
 # Étendre le tutoriel au travail hors développement
 
+Suite au 17 septembre 2026 : Hugo a retenu l’organisation d’un événement comme fil rouge. Le [plan de travail courant](../../hors-developpement/PLAN.md) et un [premier chapitre](../../../redaction/hors-developpement/LECTURE.md) concrétisent cette proposition initiale. Le choix d’un produit et la renumérotation restent ouverts.
+
 ## Recommandation
 
 Ajouter une partie d’application consacrée au travail documentaire et aux pipelines, après les agents, MCP et skills, puis avant l’IA maison et la partie sur les choix d’usage. Les notions techniques seraient ainsi apprises une fois, puis appliquées à deux familles de tâches : le développement et le travail de bureau.

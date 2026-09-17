@@ -1,0 +1,2 @@
+id_demande,message_id,nom,atelier,places,statut,source
+D001,<M004@atelier.example>,Samir,Reliure,1,demande_enregistree,courriels/04-samir.txt

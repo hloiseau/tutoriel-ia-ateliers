@@ -1,0 +1,24 @@
+{
+  "object": "container",
+  "slug": "travailler-avec-l-ia-au-dela-du-code",
+  "title": "Travailler avec l’IA au-delà du code",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-preparer",
+      "title": "Préparer le point d’équipe",
+      "introduction": "01-preparer/introduction.md",
+      "conclusion": "01-preparer/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "ouvrir", "title": "Ouvrir le dossier de la journée", "text": "01-preparer/ouvrir.md"},
+        {"object": "extract", "slug": "demeler", "title": "Deux dates pour une seule journée", "text": "01-preparer/demeler.md"},
+        {"object": "extract", "slug": "preparer", "title": "Écrire un point que l’équipe peut utiliser", "text": "01-preparer/preparer.md"},
+        {"object": "extract", "slug": "repartir", "title": "Répartir le travail", "text": "01-preparer/repartir.md"}
+      ],
+      "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

@@ -61,6 +61,9 @@ def build(part, export):
 
     title = manifest['title']
     index = f'# {title}\n\n[Sommaire global](../../SOMMAIRE.md) · [Lecture complète](LECTURE.md)\n\n'
+    draft = part.parent.resolve() == (ROOT / 'redaction').resolve()
+    if draft:
+        index += 'Parcours en cours de rédaction, hors du ZIP global. Le manifest ne contient que les chapitres rédigés.\n\n'
     guided = part.name in {'04-developpement', '05-agents', '06-mcp-skills', '07-ia-maison', '08-choisir'}
     annexes = part.name == 'annexes'
     workshop_count = len(manifest['children'])
@@ -110,7 +113,10 @@ def build(part, export):
         (part / directory / 'LECTURE.md').write_text(page, encoding='utf-8')
     complete += '\n## Conclusion\n\n' + lecture(read(part, manifest.get('conclusion')), 1, '')
     index += '\n[Introduction](introduction.md) · [Conclusion](conclusion.md) · [Crédits](CREDITS.md)\n\n'
-    index += 'Les fichiers `LECTURE.md` sont générés. Pour corriger un passage, modifier le petit Markdown déclaré dans `manifest.json`, puis lancer `python outils/assembler_tutoriel.py` depuis la racine du dépôt.\n\n'
+    command = 'python outils/assembler_tutoriel.py'
+    if draft:
+        command += f' --partie {part.relative_to(ROOT).as_posix()}'
+    index += f'Les fichiers `LECTURE.md` sont générés. Pour corriger un passage, modifier le petit Markdown déclaré dans `manifest.json`, puis lancer `{command}` depuis la racine du dépôt.\n\n'
     index += '[État de relecture et des vérifications](../../docs/etat-des-contenus.md)\n'
     (part / 'README.md').write_text(index, encoding='utf-8')
     (part / 'LECTURE.md').write_text(complete, encoding='utf-8')
@@ -132,9 +138,16 @@ def build(part, export):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--exports', type=Path, help='Dossier de sortie des ZIP ZdS des parties et des annexes')
+    parser.add_argument('--partie', type=Path, help='Assembler seulement ce dossier relatif à la racine du dépôt, y compris un brouillon sous redaction/')
     args = parser.parse_args()
-    reports = [build(p, args.exports) for p in sorted((ROOT/'tutoriel').iterdir()) if (p/'manifest.json').is_file()]
-    (ROOT/'docs/structure-tutoriel.json').write_text(json.dumps(reports, ensure_ascii=False, indent=2)+'\n')
+    if args.partie:
+        part = (ROOT / args.partie).resolve()
+        if not part.is_relative_to(ROOT) or not (part / 'manifest.json').is_file():
+            parser.error('La partie doit être un dossier du dépôt contenant un manifest.json.')
+        reports = [build(part, args.exports)]
+    else:
+        reports = [build(p, args.exports) for p in sorted((ROOT/'tutoriel').iterdir()) if (p/'manifest.json').is_file()]
+        (ROOT/'docs/structure-tutoriel.json').write_text(json.dumps(reports, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps(reports, ensure_ascii=False, indent=2))
 
 
