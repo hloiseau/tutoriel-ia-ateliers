@@ -1,12 +1,14 @@
 # Construire et adapter une IA maison
 
-[Partie 7](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/07-ia-maison/README.md) · [Vérifications](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/main/tutoriel/07-ia-maison/VERIFICATION.md)
+[Partie 8](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/parcours-dev-travail-2026-09-18/tutoriel/08-ia-maison/README.md) · [Vérifications](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/parcours-dev-travail-2026-09-18/tutoriel/08-ia-maison/VERIFICATION.md)
 
 Deux expériences : retrouver des documents pour une réponse, puis adapter et entraîner un petit modèle de caractères. Les données sont fictives et créées pour cet atelier. Le petit modèle NumPy n’est ni un assistant conversationnel ni un agent de code.
 
+Cet approfondissement demande de programmer en Python. Pour poursuivre le parcours de tâches de travail, rejoignez directement [les choix d’usage, en partie 9](https://github.com/hloiseau/tutoriel-ia-ateliers/blob/parcours-dev-travail-2026-09-18/tutoriel/09-choisir/README.md).
+
 ## Installer
 
-Décompressez [l’archive pratique](https://github.com/hloiseau/tutoriel-ia-ateliers/raw/main/telechargements/atelier-ia-maison.zip), ou ouvrez ce dossier du dépôt. Les commandes ci-dessous se lancent à côté de `recherche.py`.
+Décompressez [l’archive pratique](https://github.com/hloiseau/tutoriel-ia-ateliers/raw/parcours-dev-travail-2026-09-18/telechargements/atelier-ia-maison.zip), ou ouvrez ce dossier du dépôt. Les commandes ci-dessous se lancent à côté de `recherche.py`.
 
 Python 3.12 est la version de référence. Créez l’environnement avec `python -m venv .venv` (ou votre commande `python3` / `py -3.12`). Activez-le :
 

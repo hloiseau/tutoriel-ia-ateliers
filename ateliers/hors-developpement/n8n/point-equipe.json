@@ -1,0 +1,108 @@
+{
+  "name": "Les ateliers du quartier — proposition interne (démo fictive)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f1b6f3f6-3972-42bb-8c43-376334273b01",
+      "name": "Lancer manuellement",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"version\": 1,\n  \"lot\": \"quartier-01\",\n  \"origine\": \"exemple_fictif\",\n  \"messages\": [\n    {\n      \"id\": \"M001\",\n      \"type\": \"inscription\",\n      \"atelier\": \"Reliure\",\n      \"places\": 2,\n      \"source\": \"entrees/courriels/01-nora.txt\",\n      \"extrait\": \"Nous aimerions participer à l’atelier Reliure. Pouvez-vous noter\\nune demande pour deux personnes ? Nous attendrons votre confirmation.\"\n    },\n    {\n      \"id\": \"M002\",\n      \"type\": \"inscription\",\n      \"atelier\": null,\n      \"places\": 2,\n      \"source\": \"entrees/courriels/02-leo.txt\",\n      \"extrait\": \"Je voudrais m’inscrire avec un ami : une place pour lui et une pour moi.\"\n    },\n    {\n      \"id\": \"M004\",\n      \"type\": \"inscription\",\n      \"atelier\": \"Reliure\",\n      \"places\": 1,\n      \"source\": \"entrees/courriels/04-samir.txt\",\n      \"extrait\": \"Je souhaite participer à l’atelier Reliure, pour une personne.\"\n    },\n    {\n      \"id\": \"M005\",\n      \"type\": \"question\",\n      \"atelier\": \"Cartographie\",\n      \"places\": null,\n      \"source\": \"entrees/courriels/05-question-nora.txt\",\n      \"extrait\": \"À quelle heure commence l’atelier Cartographie ? Je pose la question\\npour savoir si je pourrai passer le voir ; ma demande d’inscription\\nporte toujours sur les deux places en Reliure.\"\n    }\n  ],\n  \"date_evenement\": null,\n  \"horaire_cartographie\": null,\n  \"alertes\": [\n    \"CR01 retient le 10 octobre 2026, sous réserve de la salle ; le projet d’affiche de CR02 porte le 17 octobre 2026. Camille doit clarifier la date.\",\n    \"L’horaire de Cartographie reste à préciser.\",\n    \"Léo demande deux places sans nommer l’atelier.\",\n    \"03-copie-nora.txt est une copie identique de M001, référencé par 01-nora.txt.\"\n  ]\n}",
+        "options": {}
+      },
+      "id": "f1b6f3f6-3972-42bb-8c43-376334273b02",
+      "name": "Extraction fictive ou collée",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        260,
+        160
+      ],
+      "notesInFlow": true,
+      "notes": "Données fictives écrites pour l’atelier. Aucun appel IA. Remplacer JSON Output (Fixed) par une extraction réelle si disponible ; origine: assistant."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "// Contrôles propres au lot fictif quartier-01. Aucun appel réseau.\nconst sources = {\n  \"M001\": {\n    \"source\": \"entrees/courriels/01-nora.txt\",\n    \"texte\": \"Jeu de données fictif — Les ateliers du quartier\\nMessage-ID: <M001@atelier.example>\\nDate: 2026-09-15T09:10:00+02:00\\nDe: Nora <nora@example.org>\\nÀ: Équipe des ateliers <equipe@example.org>\\nObjet: Deux places en Reliure\\n\\nBonjour,\\n\\nNous aimerions participer à l’atelier Reliure. Pouvez-vous noter\\nune demande pour deux personnes ? Nous attendrons votre confirmation.\\n\\nMerci,\\nNora\\n\"\n  },\n  \"M002\": {\n    \"source\": \"entrees/courriels/02-leo.txt\",\n    \"texte\": \"Jeu de données fictif — Les ateliers du quartier\\nMessage-ID: <M002@atelier.example>\\nDate: 2026-09-15T10:05:00+02:00\\nDe: Léo <leo@example.org>\\nÀ: Équipe des ateliers <equipe@example.org>\\nObjet: Inscription à la journée\\n\\nBonjour,\\n\\nJe voudrais m’inscrire avec un ami : une place pour lui et une pour moi.\\nPouvez-vous prendre notre demande en compte ?\\n\\nBonne journée,\\nLéo\\n\"\n  },\n  \"M004\": {\n    \"source\": \"entrees/courriels/04-samir.txt\",\n    \"texte\": \"Jeu de données fictif — Les ateliers du quartier\\nMessage-ID: <M004@atelier.example>\\nDate: 2026-09-10T17:20:00+02:00\\nDe: Samir <samir@example.org>\\nÀ: Équipe des ateliers <equipe@example.org>\\nObjet: Une place en Reliure\\n\\nBonjour,\\n\\nJe souhaite participer à l’atelier Reliure, pour une personne.\\nPouvez-vous enregistrer ma demande ?\\n\\nMerci,\\nSamir\\n\"\n  },\n  \"M005\": {\n    \"source\": \"entrees/courriels/05-question-nora.txt\",\n    \"texte\": \"Jeu de données fictif — Les ateliers du quartier\\nMessage-ID: <M005@atelier.example>\\nDate: 2026-09-15T11:40:00+02:00\\nDe: Nora <nora@example.org>\\nÀ: Équipe des ateliers <equipe@example.org>\\nObjet: Horaire de Cartographie\\n\\nBonjour,\\n\\nÀ quelle heure commence l’atelier Cartographie ? Je pose la question\\npour savoir si je pourrai passer le voir ; ma demande d’inscription\\nporte toujours sur les deux places en Reliure.\\n\\nMerci,\\nNora\\n\"\n  }\n};\nfunction refuser(message) {\n  throw new Error(\"Lot refusé : \" + message);\n}\nfunction objet(value) {\n  return value !== null && typeof value === \"object\" && !Array.isArray(value);\n}\nfunction clefs(value, attendues, nom) {\n  if (!objet(value)) refuser(nom + \" doit être un objet.\");\n  const presentes = Object.keys(value).sort();\n  if (JSON.stringify(presentes) !== JSON.stringify([...attendues].sort())) {\n    refuser(nom + \" : champs absents ou inconnus.\");\n  }\n}\nconst items = $input.all();\nif (items.length !== 1) refuser(\"un seul objet d’extraction est attendu.\");\nconst extraction = items[0].json;\nclefs(extraction, [\"version\", \"lot\", \"origine\", \"messages\", \"date_evenement\", \"horaire_cartographie\", \"alertes\"], \"extraction\");\nif (extraction.version !== 1 || extraction.lot !== \"quartier-01\") refuser(\"version ou lot inconnu.\");\nif (![\"exemple_fictif\", \"manuel\", \"assistant\"].includes(extraction.origine)) refuser(\"origine inconnue.\");\nif (extraction.date_evenement !== null || extraction.horaire_cartographie !== null) {\n  refuser(\"la date et l’horaire restent à arbitrer : garder null dans ce lot.\");\n}\nif (!Array.isArray(extraction.alertes) || extraction.alertes.length > 20 ||\n    extraction.alertes.some(texte => typeof texte !== \"string\" || !texte.trim() || texte.length > 1000)) {\n  refuser(\"alertes doit être une liste de textes non vides (20 textes de 1000 caractères au plus).\");\n}\nif (!Array.isArray(extraction.messages) || extraction.messages.length !== 4) {\n  refuser(\"les quatre messages distincts M001, M002, M004 et M005 sont attendus.\");\n}\nconst vus = new Set();\nfor (const message of extraction.messages) {\n  clefs(message, [\"id\", \"type\", \"atelier\", \"places\", \"source\", \"extrait\"], \"message\");\n  if (typeof message.id !== \"string\" || !Object.hasOwn(sources, message.id)) refuser(\"identifiant inconnu.\");\n  if (vus.has(message.id)) refuser(\"identifiant répété : \" + message.id);\n  vus.add(message.id);\n  if (![\"inscription\", \"question\"].includes(message.type)) refuser(message.id + \" : type inconnu.\");\n  if (![null, \"Reliure\", \"Cartographie\"].includes(message.atelier)) refuser(message.id + \" : atelier inconnu.\");\n  if (message.places !== null && (!Number.isSafeInteger(message.places) || message.places <= 0)) {\n    refuser(message.id + \" : places doit être un entier positif ou null.\");\n  }\n  if (message.type === \"question\" && message.places !== null) refuser(\"une question n’ajoute aucune place.\");\n  if (message.id === \"M005\" && message.type !== \"question\") refuser(\"M005 reste une question.\");\n  if (message.source !== sources[message.id].source) refuser(message.id + \" : source incorrecte.\");\n  if (typeof message.extrait !== \"string\" || !message.extrait.trim() ||\n      !sources[message.id].texte.includes(message.extrait)) {\n    refuser(message.id + \" : extrait absent du message source.\");\n  }\n}\nreturn [{\n  json: {\n    extraction,\n    deja_connus: [\"M004\"],\n    nouveaux: extraction.messages.filter(message => message.id !== \"M004\"),\n    copie: {\n      id: \"M001\",\n      source: \"entrees/courriels/01-nora.txt\",\n      doublon: \"entrees/courriels/03-copie-nora.txt\"\n    },\n    controle: \"Format, identifiants et citations vérifiés ; sens des champs à relire.\"\n  }\n}];"
+      },
+      "id": "f1b6f3f6-3972-42bb-8c43-376334273b03",
+      "name": "Contrôler le lot",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        160
+      ],
+      "notesInFlow": true,
+      "notes": "Arrêt sur format, identifiant, source ou citation invalides. La fidélité sémantique reste à vérifier."
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "language": "javaScript",
+        "jsCode": "\n// Cette sortie reste interne. Aucun envoi, aucune inscription confirmée,\n// aucun état durable : chaque exécution repart du suivi initial.\nconst donnees = $input.all()[0].json;\nconst extraction = donnees.extraction;\nfunction texte(value) {\n  if (value === null) return \"non précisé\";\n  return String(value).replace(/[\\\\`*_[\\]<>|]/g, \"\\\\$&\").replace(/\\r?\\n/g, \" \");\n}\nconst lignes = [\n  \"# Les ateliers du quartier — point proposé\",\n  \"\",\n  \"Proposition interne non approuvée. Origine : \" + texte(extraction.origine) + \".\",\n  \"Vérifier les faits dans les sources avant de retenir ce point.\",\n  \"\",\n  \"## Messages nouveaux\",\n  \"\",\n  \"| Message | Type | Atelier | Places demandées | Source |\",\n  \"| --- | --- | --- | --- | --- |\"\n];\nfor (const message of donnees.nouveaux) {\n  lignes.push(\"| \" + [message.id, message.type, message.atelier, message.type === \"question\" ? \"sans objet\" : message.places, message.source].map(texte).join(\" | \") + \" |\");\n}\nlignes.push(\"\", \"## Extraits à relire\", \"\");\nfor (const message of donnees.nouveaux) {\n  lignes.push(\"- \" + message.id + \" : « \" + texte(message.extrait) + \" »\");\n}\nlignes.push(\n  \"\", \"## Suivi connu et décisions manquantes\", \"\",\n  \"- M004 figure déjà dans le suivi initial ; il ne crée aucune nouvelle demande.\",\n  \"- M001 a aussi une copie : entrees/courriels/03-copie-nora.txt. Elle ne crée aucune demande supplémentaire.\",\n  \"- Date à clarifier : 10 octobre dans CR01, 17 octobre sur le projet d’affiche de CR02.\",\n  \"- Horaire de Cartographie à demander à l’équipe ; aucune annonce préparée.\",\n  \"- Les demandes relevées ne confirment aucune place.\",\n  \"\", \"## Alertes extraites, à vérifier\", \"\"\n);\nfor (const alerte of extraction.alertes) lignes.push(\"- \" + texte(alerte));\nreturn [{\n  json: {\n    statut: \"proposition_interne_non_approuvee\",\n    lot: extraction.lot,\n    origine: extraction.origine,\n    nouveaux: donnees.nouveaux.map(message => message.id),\n    deja_connus: donnees.deja_connus,\n    controle: donnees.controle,\n    point_interne: lignes.join(\"\\n\"),\n    action_exterieure: false,\n    persistance: false\n  }\n}];\n"
+      },
+      "id": "f1b6f3f6-3972-42bb-8c43-376334273b04",
+      "name": "Préparer le point interne",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        160
+      ],
+      "notesInFlow": true,
+      "notes": "Sortie interne non approuvée. Aucun envoi, accès externe, suivi durable ni validation humaine intégrée."
+    }
+  ],
+  "connections": {
+    "Lancer manuellement": {
+      "main": [
+        [
+          {
+            "node": "Extraction fictive ou collée",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extraction fictive ou collée": {
+      "main": [
+        [
+          {
+            "node": "Contrôler le lot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contrôler le lot": {
+      "main": [
+        [
+          {
+            "node": "Préparer le point interne",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}

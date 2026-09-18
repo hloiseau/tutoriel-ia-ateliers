@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Les ateliers du quartier — préparer le point</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #243340; background: #eef3f5; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1180px; margin: auto; padding: 30px 22px 60px; }
+    h1 { margin: 8px 0 12px; line-height: 1.15; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+    h2 { margin-top: 0; font-size: 1.3rem; }
+    p { line-height: 1.6; max-width: 85ch; }
+    .kicker { color: #396476; font-weight: 700; font-size: .9rem; letter-spacing: .05em; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 24px 0; }
+    .card { background: white; border: 1px solid #ccd8dd; border-radius: 12px; padding: 22px; }
+    .wide { margin-top: 22px; }
+    label { display: block; font-weight: 650; margin-bottom: 8px; }
+    textarea { display: block; width: 100%; min-height: 370px; resize: vertical; font: .88rem/1.5 ui-monospace, monospace; padding: 12px; border: 1px solid #8fabb7; border-radius: 6px; color: #172d38; background: #fbfcfd; }
+    button { font: inherit; font-weight: 650; padding: 10px 14px; border: 1px solid #0c6176; border-radius: 6px; background: #0c6176; color: white; cursor: pointer; }
+    button.secondary { color: #15485b; background: #f1f6f8; }
+    button:disabled { opacity: .48; cursor: not-allowed; }
+    button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #dc9800; outline-offset: 3px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 8px; }
+    .check { font-weight: 400; line-height: 1.5; margin-top: 18px; }
+    .check input { margin-right: 8px; width: 18px; height: 18px; vertical-align: middle; }
+    .small { font-size: .9rem; }
+    #statut { min-height: 55px; border-left: 4px solid #187081; background: #e2f0f2; padding: 12px 16px; line-height: 1.5; }
+    #statut.erreur { border-color: #a63737; background: #fff0ec; }
+    #connus { font-weight: 650; }
+    details { margin-top: 10px; border-top: 1px solid #e1e7ea; padding-top: 10px; }
+    summary { cursor: pointer; overflow-wrap: anywhere; }
+    pre { background: #f4f7f8; white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; font: .88rem/1.55 ui-monospace, monospace; }
+    #journal { padding-left: 25px; max-height: 320px; overflow: auto; }
+    #journal li { padding: 5px 0; line-height: 1.5; }
+    .resume { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+    input[type=file] { max-width: 100%; }
+    noscript { display: block; padding: 20px; background: #ffe8dd; }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } main { padding: 20px 12px; } .card { padding: 18px; } }
+  </style>
+</head>
+<body>
+  <noscript>Activez JavaScript pour cet exercice local, puis rechargez la page. Aucun accès au réseau n’est nécessaire.</noscript>
+  <main>
+    <header>
+      <div class="kicker">LES ATELIERS DU QUARTIER · DOSSIER FICTIF</div>
+      <h1>Préparer le point d’équipe</h1>
+      <p>Une extraction, des contrôles, une relecture et un point interne à télécharger. Cette application n’appelle aucun modèle, n’envoie aucun message et ne confirme aucune inscription. Tout reste dans ce navigateur et dans les fichiers que vous téléchargez.</p>
+    </header>
+    <div id="statut" role="status" aria-live="polite">Commencez par charger l’exemple fictif ou coller votre extraction JSON.</div>
+    <p id="connus"></p>
+    <div class="grid">
+      <section class="card" aria-labelledby="entree-titre">
+        <h2 id="entree-titre">1. Contrôler le lot reçu</h2>
+        <label for="extraction">Extraction JSON</label>
+        <textarea id="extraction" maxlength="64000" spellcheck="false" aria-describedby="aide-extraction"></textarea>
+        <div class="buttons">
+          <button id="exemple" type="button" class="secondary">Charger l’exemple fictif</button>
+          <button id="controler" type="button">Contrôler et préparer</button>
+        </div>
+        <p class="small" id="aide-extraction">Le format, les identifiants, la référence de chaque message et la présence exacte de son extrait sont contrôlés. La fidélité des valeurs extraites reste à vérifier dans les sources. Les champs de date et d’horaire restent à <code>null</code> pour ce lot.</p>
+      </section>
+      <section class="card" aria-labelledby="point-titre">
+        <h2 id="point-titre">2. Relire une version précise</h2>
+        <label for="point">Point proposé</label>
+        <textarea id="point" maxlength="64000" aria-describedby="aide-point"></textarea>
+        <label class="check" for="lecture"><input id="lecture" type="checkbox">J’ai comparé ce point aux sources, vérifié les informations manquantes et les décisions laissées ouvertes.</label>
+        <div class="buttons">
+          <button id="approuver" type="button" disabled>Approuver cette version</button>
+          <button id="exporter-point" type="button" disabled>Exporter le point</button>
+        </div>
+        <p class="small" id="aide-point">L’accord porte sur ce point interne exact. Modifier l’extraction ou le point annule l’accord. Les messages nouveaux sont marqués « pris en compte » uniquement lorsque vous déclenchez le téléchargement du point ; leur inscription reste à examiner.</p>
+      </section>
+    </div>
+    <section class="card" aria-labelledby="sources-titre">
+      <h2 id="sources-titre">Sources consultables</h2>
+      <p class="small">Ouvrez les fichiers ci-dessous pour comparer les faits au texte complet. Ces copies sont intégrées à l’application à partir du dossier fourni, y compris la copie de M001. Un extrait réel peut accompagner une interprétation fausse.</p>
+      <div id="sources"></div>
+    </section>
+    <section class="card wide" aria-labelledby="etat-titre">
+      <h2 id="etat-titre">3. Garder une trace, reprendre le travail</h2>
+      <div class="resume">
+        <button id="exporter-etat" type="button" class="secondary">Exporter l’état</button>
+        <div><label for="reprendre">Reprendre un état</label><input id="reprendre" type="file" accept=".json,application/json"></div>
+      </div>
+      <p class="small">L’état contient les identifiants connus, les points exportés, les brouillons et le journal. À la reprise, aucun accord n’est conservé : contrôlez et relisez le brouillon. Rejouer le lot déjà exporté n’ajoute aucun rapport. Sans sauvegarde, fermer ou recharger la page perd l’état de la séance.</p>
+      <p class="small">Le navigateur déclenche le téléchargement, mais ne nous dit pas si vous l’avez conservé. Si vous l’annulez, les identifiants sont tout de même marqués dans cette séance ; le point reste dans le fichier d’état. Ce fichier est inspectable et modifiable : il ne constitue ni un journal inviolable ni une protection pour une équipe entière.</p>
+      <h2>Journal</h2>
+      <ol id="journal" aria-label="Journal des opérations"></ol>
+    </section>
+  </main>
+  <script src="donnees.js"></script>
+  <script src="moteur.js"></script>
+  <script src="interface.js"></script>
+</body>
+</html>

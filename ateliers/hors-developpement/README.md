@@ -1,6 +1,6 @@
 # Les ateliers du quartier — dossier fictif
 
-Ce dossier accompagne le premier chapitre du parcours « Travailler avec l’IA au-delà du code ». Il se lit sans installation et sans compte de service. Les personnes, messages et décisions sont entièrement fictifs.
+Ce dossier accompagne les sept chapitres du parcours « Travailler avec l’IA au-delà du code », partie 7 du tutoriel. Les personnes, messages et décisions sont entièrement fictifs. Le parcours local se suit sans programmer et sans compte d’IA.
 
 ## Commencer
 
@@ -12,9 +12,27 @@ Les messages sont de simples fichiers UTF-8, sans pièce jointe ni lien à ouvri
 
 ## Où travailler ?
 
-Les chemins du chapitre partent de la racine de ce dossier. Enregistrez votre point et vos brouillons dans un dossier de travail distinct des entrées. Aucun programme de traitement, agent, serveur de messagerie ou envoi n’est inclus dans cette première étape.
+Les chemins des chapitres partent de la racine de ce dossier. Enregistrez votre point et vos brouillons dans un dossier de travail distinct des entrées. Commencez par votre lecture ; l’application viendra ensuite.
 
-Lors des futurs essais avec un assistant, fournissez uniquement `regles-equipe.md` et `entrees/`. Le modèle de point est une aide de présentation facultative. Gardez `corrige/` à part pour l’évaluation ; ne transmettez pas non plus tout le dépôt du tutoriel.
+Pour l’essai avec un assistant, fournissez `regles-equipe.md`, `modele-point.md` et les huit fichiers de `entrees/`. Gardez `corrige/` à part pour l’évaluation ; ne transmettez pas tout le dépôt du tutoriel. Conservez les réponses réellement obtenues séparément des exemples fournis.
+
+## Poursuivre les sept chapitres
+
+| Étape | Fichiers à utiliser |
+| --- | --- |
+| Préparer le point à la main | Entrées, règles, modèle, puis corrigé et grille de vérification |
+| Essayer un assistant | `consignes/point-equipe.md`, puis `consignes/extraction.md` |
+| Contrôler l’extraction | Ouvrir [pipeline/index.html](pipeline/index.html) dans le navigateur ; [mode d’emploi](pipeline/README.md) |
+| Examiner les accès et garder la méthode | `procedures/preparer-point.md`, document portable à fournir explicitement, sans installation automatique |
+| Approuver une version | Boutons de relecture, d’approbation et d’export de l’application locale |
+| Reprendre le lot | Exporter l’état, le recharger et vérifier l’absence de nouvelles demandes |
+| Comparer et transposer | `evaluation/fiche-essai.md` et `evaluation/veille.md` |
+
+L’application locale est conçue pour le seul lot `quartier-01`. Elle ne fait aucune requête réseau et n’appelle aucun modèle. Elle reçoit le JSON par copier-coller, ou charge une extraction explicitement fictive. Les contrôles vérifient la forme et les références ; la fidélité des faits reste à examiner. Le générateur ajoute aussi des rappels connus du dossier : sa sortie ne mesure pas, à elle seule, la qualité d’une extraction par un assistant.
+
+L’export d’un point marque ses messages comme pris en compte dans ce rapport. Il ne confirme aucune inscription. L’application ne connaît aucun compte de messagerie, n’effectue aucun envoi et ne modifie aucun tableau partagé. Conservez le point et l’état après avoir vérifié leur téléchargement.
+
+La variante [n8n](n8n/README.md) est facultative. Elle contient un workflow manuel inactif avec une extraction fictive et des contrôles ; l’approbation, le suivi durable et l’appel d’un modèle ne font pas partie de cet export. Son code est testé hors n8n ; son import et son exécution dans n8n restent à vérifier. L’essai réel de l’interface locale dans un navigateur reste également à réaliser.
 
 ## Vérifier les matériaux de l’atelier
 
@@ -31,5 +49,13 @@ python -m unittest discover -s . -p 'test_dossier.py' -v
 ```
 
 Ces tests contrôlent les fichiers fictifs, leurs identifiants, les références et les incidents prévus. Ils ne font appel à aucun modèle et n’évaluent pas automatiquement votre rédaction. Le corrigé est écrit à partir des données ; il ne représente pas une sortie observée d’assistant.
+
+Les personnes qui maintiennent l’atelier peuvent aussi tester le moteur et les nœuds avec Node.js, depuis la racine du dépôt :
+
+```bash
+node --test ateliers/hors-developpement/pipeline/test-moteur.cjs ateliers/hors-developpement/n8n/test_workflow.js
+```
+
+Dans l’archive décompressée, les chemins deviennent `pipeline/test-moteur.cjs` et `n8n/test_workflow.js`. Aucun de ces tests ne lance le navigateur, n8n ou un assistant distant.
 
 Textes et données : CC BY-SA 4.0. Script de vérification : GPL-3.0-only.

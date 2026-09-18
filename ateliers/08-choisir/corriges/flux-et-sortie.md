@@ -1,6 +1,6 @@
 # Exemple : notre application documentaire locale
 
-Dans la configuration testée en partie 7, `assistant_local.py` lit les documents du dossier, construit les messages puis contacte `127.0.0.1:8080`. Les messages comprennent la question et les passages retenus. Le serveur de cette expérience utilise des poids déjà téléchargés. Le journal local conserve question, passages, requête et réponse.
+Dans la configuration testée en partie 8, `assistant_local.py` lit les documents du dossier, construit les messages puis contacte `127.0.0.1:8080`. Les messages comprennent la question et les passages retenus. Le serveur de cette expérience utilise des poids déjà téléchargés. Le journal local conserve question, passages, requête et réponse.
 
 Ces observations portent sur ce programme et cette configuration. Elles ne démontrent pas que tout logiciel installé localement fonctionne sans service extérieur, ni que l’ensemble de la machine est exempt d’autres communications. Le téléchargement initial du modèle est distinct de l’appel local.
 
