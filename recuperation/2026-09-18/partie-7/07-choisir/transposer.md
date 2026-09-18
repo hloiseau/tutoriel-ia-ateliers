@@ -1,0 +1,13 @@
+Essayons une tâche voisine : préparer une courte veille pour l’équipe qui organise la journée. Ouvrez `evaluation/veille.md`. Vous y trouverez trois notices entièrement fictives sur le prêt d’un vidéoprojecteur. Elles permettent de tester la méthode sans chercher sur le Web ni transmettre de données personnelles.
+
+Notre destinataire veut savoir si une réservation est possible et à quelle heure retirer le matériel. Une notice décrit la procédure, une autre signale une indisponibilité et la troisième rapporte une possibilité non confirmée. Préparez quatre ou cinq phrases, en gardant pour chaque affirmation sa source et sa date. Faites d’abord votre lecture ; vous pourrez ensuite donner les notices et la consigne à l’assistant de votre choix pour comparer sa proposition.
+
+Le point de vigilance ressemble à celui de notre date d’événement : le document le plus récent ne contient pas forcément une décision. Ici, le compte rendu récent rapporte une suggestion de prêt par un partenaire. Il n’établit ni la disponibilité de son appareil ni son accord. La synthèse doit conserver cette question ouverte.
+
+La transposition demande pourtant de nouveaux critères. Dans les courriels, un identifiant nous aidait à reconnaître une copie. Pour une veille, deux pages différentes peuvent reprendre la même annonce. Il faut regarder leur origine avant de les présenter comme deux confirmations indépendantes. Et une procédure publiée avant la panne du vidéoprojecteur peut rester utile pour comprendre la réservation, tout en étant insuffisante pour affirmer que le matériel est disponible aujourd’hui.
+
+Si vous poursuivez avec de vraies sources publiques, partez d’un périmètre étroit : quelques documents identifiés et une question précise. Conservez leur adresse, le titre, la date du document lorsqu’elle existe et la date de consultation. Lisez les passages qui soutiennent la synthèse. Quand une information manque ou que deux sources se contredisent, gardez la question à résoudre et la personne ou le service susceptible de répondre.
+
+Vous pouvez limiter cet essai aux documents déjà choisis. Demander à un agent de chercher seul ajoute un autre travail à examiner : quelles sources a-t-il trouvées, lesquelles a-t-il écartées, et pourquoi ? Les pièces jointes privées, courriels personnels et accès aux comptes ne sont d’aucune utilité pour notre petit exercice de veille publique.
+
+Si une synthèse correcte nécessite finalement autant de recherches que la rédaction manuelle, notez-le. Elle a peut-être encore un intérêt pour reformuler le texte, ou aucun pour cette tâche. Le transfert de la méthode consiste justement à refaire ce choix, pas à déplacer partout le même pipeline.

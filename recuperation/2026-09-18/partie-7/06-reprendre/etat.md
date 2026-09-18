@@ -1,0 +1,13 @@
+Reprenons `pipeline/index.html`, ouvert dans le navigateur depuis le dossier de l’atelier. L’adresse commence normalement par `file://`. Gardez le point `point-quartier-01.md` exporté au chapitre précédent, puis cliquez sur **Exporter l’état**. Enregistrez le fichier `etat-quartier-01.json` à côté de ce point, dans votre dossier de travail.
+
+Les deux fichiers ont des usages différents. Le point contient le texte à relire ou à partager plus tard selon les décisions de l’équipe. L’état permet à l’application de retrouver les messages pris en compte. Conserver seulement le point obligerait à reconstituer cette mémoire à partir de son contenu.
+
+Ouvrez l’état avec un éditeur de texte. Son format JSON emploie les mêmes accolades et listes que l’extraction du chapitre 3. Cherchez les identifiants : M004 était connu dès le départ ; M001, M002 et M005 ont été retenus dans le point exporté. Leur présence indique une prise en compte dans ce travail interne. Elle ne confirme aucune inscription et ne donne aucune réponse à Nora.
+
+Ouvrez maintenant l’application dans un nouvel onglet. Avec **Reprendre un état**, choisissez le fichier que vous venez d’enregistrer. Rechargez ensuite la même extraction JSON, ou cliquez sur **Charger l’exemple fictif** si vous suivez la démonstration, puis sur **Contrôler et préparer**. Ce lot ne doit plus apporter de message nouveau : l’application indique qu’il est déjà pris en compte et bloque l’export d’un rapport supplémentaire. Consultez le **Journal** pour retrouver le chargement et le contrôle. Si M001 revient comme une nouveauté, vérifiez que vous avez repris l’état sauvegardé *après* l’export du point.
+
+Nous venons de distinguer deux doublons. La copie de M001 se trouvait dans un même lot : la comparaison des identifiants et des contenus permettait de la rapprocher. Ici, c’est un lot entier qui revient lors d’un autre lancement. Le programme a besoin de l’historique pour reconnaître ce retour. Le nom de Nora serait une mauvaise clé dans les deux cas, puisque M005 est une vraie question supplémentaire.
+
+Le fichier d’état reste inspectable et modifiable. L’application vérifie sa structure et certaines cohérences, mais une personne peut toujours reprendre une ancienne sauvegarde ou travailler simultanément sur une autre copie. Cela convient à notre manipulation individuelle ; une équipe partageant un même traitement aurait besoin d’un stockage commun et de règles pour éviter les écritures concurrentes. Nous ne les obtenons pas en renommant ce fichier « base officielle ».
+
+Gardez donc ensemble les entrées, l’extraction utilisée, le point et l’état qui suit son export. Vous pourrez retrouver ce qui a été fait sans dépendre d’un onglet resté ouvert depuis vendredi.

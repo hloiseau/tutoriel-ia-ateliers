@@ -1,0 +1,11 @@
+Ouvrez `evaluation/fiche-essai.md` et faites-en une copie pour votre séance. Elle permet de rapprocher le résultat et le travail nécessaire pour l’obtenir. Si vous avez utilisé **Charger l’exemple fictif**, indiquez-le : la durée mesurée concerne alors les contrôles et les manipulations, sans extraction par un modèle.
+
+Pour un essai avec assistant, gardez la réponse brute avant de la corriger. Notez le temps passé à préparer les fichiers, attendre, relire les sources, corriger et reprendre une erreur. Le temps de relecture nous intéresse particulièrement. Un point produit rapidement mais dont chaque phrase demande une enquête peut coûter davantage de travail que notre première lecture manuelle.
+
+Le **Journal** aide à retrouver les opérations de l’application. Votre fiche complète ce qu’il ne mesure pas : pourquoi vous avez refusé une proposition, quelles corrections vous avez faites et ce qui manque encore. Évitez d’y recopier des documents personnels entiers ; des références vers les fichiers utiles suffisent souvent. Notre dossier est fictif, mais une méthode de suivi doit aussi rester praticable avec de vraies données.
+
+Pour l’argent, séparez l’accès à un service, les éventuels appels facturés à l’usage et l’hébergement d’un orchestrateur. Un abonnement de conversation et une API peuvent relever de facturations distinctes. Vérifiez ce que votre contrat inclut avant un essai. Quand le fournisseur fournit un relevé, conservez la quantité et le montant constatés avec leur unité ; lorsqu’il manque, écrivez « non disponible » plutôt que de déduire un prix à partir d’une durée.
+
+Une exécution locale avec l’exemple fictif ne produit aucun appel de modèle. Elle ne permet donc pas d’estimer une consommation de tokens ou le prix d’une future automatisation. De même, un abonnement déjà payé reste une dépense, même si la facture ne détaille pas le coût de cette séance.
+
+Comparez enfin le résultat au point manuel du premier chapitre. Avons-nous gardé les deux dates ? Léo attend-il toujours qu’on lui demande son atelier ? Le temps gagné, s’il y en a, concerne-t-il une tâche que vous ferez assez souvent pour entretenir le dispositif ? La fiche laisse ces réponses ouvertes : vos observations décideront de la suite.

@@ -4,6 +4,8 @@ Le 18 septembre 2026, l’environnement de rédaction est déconnecté pendant l
 
 Cette branche de sauvegarde rend accessibles les huit archives dont le transfert sur GitHub a été confirmé avant l’interruption. Elle ne remplace pas la publication complète du commit local. Les sources du dépôt hors de ce dossier restent celles du commit de départ `a81cbdc9dc09caf76990a90e93f326742600a05b`.
 
+Les [sept chapitres du parcours de tâches de travail sont aussi lisibles directement](partie-7/README.md). Les sources et les deux images ont été récupérées depuis le ZIP transféré, avec contrôle CRC de chaque entrée ; les empreintes Git des images correspondent aux originaux. Les vues de lecture adaptent seulement les liens de téléchargement et d’images à cette sauvegarde.
+
 ## Textes récupérés
 
 - [Partie 2 — repères communs et apprentissage](02-apprentissage.zip) : neuf chapitres, dont le nouveau premier chapitre sans code.

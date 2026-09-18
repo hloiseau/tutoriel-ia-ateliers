@@ -1,0 +1,5 @@
+Notre journée d’ateliers nous a donné un travail à examiner de bout en bout : lire les demandes, préparer un point, relier les étapes et conserver une décision sur une version précise. Nous avons aussi gardé ce qui restait ouvert. Exporter le point ne réservait aucune place et ne tranchait pas la date.
+
+Vous disposez maintenant des documents, des consignes, des règles de traitement et d’une application locale dont les sorties restent lisibles. Le passage à un service connecté demandera de vérifier ses accès, ses coûts et sa manière de reprendre un traitement. Vous pouvez également garder seulement l’aide à la rédaction, ou continuer avec le tableau et les procédures habituelles.
+
+Le parcours de tâches de travail rejoint la partie 9, « Choisir la place de l’IA ». Nous y examinerons les données et le travail humain derrière les outils, leurs ressources, nos dépendances et ce que nous apprenons en les utilisant. La partie 8 est un approfondissement facultatif en Python pour ceux qui souhaitent construire une recherche documentaire et adapter des modèles.
