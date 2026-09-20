@@ -1,0 +1,3 @@
+**TL;DR** — Un modèle apprend pendant son entraînement, puis utilise ses paramètres pour produire des réponses. Les documents qu’on lui fournit, les outils qu’on lui donne et les vérifications qu’on conserve changent ce que l’on peut en faire. Ces repères suffisent pour commencer aussi bien l’atelier de développement que celui des tâches de travail.
+
+Vous pouvez demander à un assistant de corriger une fonction ou de préparer un compte rendu. L’écran ressemble souvent à une conversation. Derrière, plusieurs choses se passent : un modèle reçoit du contexte, produit une réponse et, parfois, demande à utiliser un outil. Prenons le temps de les distinguer avant de choisir notre parcours.

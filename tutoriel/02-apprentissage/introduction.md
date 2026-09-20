@@ -1,12 +1,11 @@
-**TL;DR**
+**TL;DR** — Le premier chapitre pose les repères communs, sans code. Vous pourrez ensuite rejoindre le parcours de tâches de travail ou poursuivre ici avec Python : reconnaître des chiffres, entraîner un petit réseau et produire du texte. Les expériences de cette partie fonctionnent sur CPU.
 
-- Nous allons entraîner un programme à reconnaître des chiffres, puis lui soumettre nos propres dessins. Tout fonctionne sur CPU, sans abonnement ni carte graphique dédiée.
-- Un modèle reçoit des nombres, calcule une réponse et ajuste ses paramètres pendant l’entraînement. Nous écrirons ces calculs avec NumPy.
-- Nous garderons des images à part pour vérifier les résultats. Le modèle pourra réussir ses exercices et se tromper sur un chiffre légèrement décalé. 😅
-- Un second petit projet produira du texte. Nous manipulerons les tokens, le choix du caractère suivant et un calcul d’attention, avant de regarder où interviennent les outils d’un agent.
+Commençons par quelques notions que nous utiliserons dans les deux parcours : ce qu’un modèle apprend, le contexte d’une réponse et les outils qui entourent un agent. Ce premier chapitre ne demande aucune installation. Pour les tâches de travail, vous pourrez ensuite rejoindre directement la partie 7.
+
+Si vous poursuivez les expériences de cette partie, nous regarderons comment ces idées se traduisent en calculs.
 
 Prenez un crayon et écrivez un trois. Vous avez probablement fait deux courbes, sans mesurer exactement leur position. Écrivez-en un deuxième : il ne sera pas identique au premier, mais vous le reconnaîtrez quand même.
 
 Pour un programme, nous allons devoir préciser ce qui entre, ce qui sort et comment décider qu’une réponse est correcte. Les images feront huit pixels de côté. C’est petit, mais suffisant pour commencer à lui donner du travail.
 
-Vous aurez besoin de savoir lancer une commande et de connaître les bases de Python : variables, fonctions, boucles et listes. Les calculs sur des tableaux seront expliqués au moment où nous les utiliserons.
+À partir du chapitre d’installation, vous aurez besoin de savoir lancer une commande et de connaître les bases de Python : variables, fonctions, boucles et listes. Les calculs sur des tableaux seront expliqués au moment où nous les utiliserons.

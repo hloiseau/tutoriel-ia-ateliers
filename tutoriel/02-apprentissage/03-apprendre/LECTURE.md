@@ -1,4 +1,4 @@
-# 3. Faire apprendre le modèle
+# 4. Faire apprendre le modèle
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

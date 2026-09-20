@@ -780,4 +780,6 @@ Si la préparation des tests vous fait perdre du temps, vous tenez déjà un end
 
 Gardez ce qui vous aide, changez ce qui vous gêne et vérifiez ce que ces changements produisent. Nous avons enfin des outils dont on peut modifier une bonne partie du fonctionnement ; autant en profiter. 🙂
 
-Notre recherche littérale manque encore `alerte` lorsque la source parle de `notification`. La partie suivante partira de cet échec pour améliorer la recherche avant de toucher aux poids d’un modèle.
+Pour le parcours développement, vous pouvez maintenant rejoindre la partie 9 et examiner les choix d’usage. Si vous souhaitez approfondir la recherche et les modèles, la partie 8 repartira de notre recherche littérale : elle manque encore `alerte` lorsque la source parle de `notification`.
+
+La partie 7 applique ces mêmes questions d’accès et de procédure à des documents, des demandes d’inscription et un point d’équipe. Vous pouvez l’essayer avec les acquis de cet atelier ; elle possède aussi sa propre entrée pour les lecteurs qui ne développent pas.

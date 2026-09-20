@@ -1,4 +1,4 @@
-# 1. Installer notre petit atelier
+# 2. Installer notre petit atelier
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

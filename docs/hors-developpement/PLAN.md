@@ -2,7 +2,7 @@
 
 État au 17 septembre 2026 : Hugo a retenu le fil rouge de l’organisation d’un événement. L’introduction, le premier chapitre et le dossier fictif sont préparés ; les six chapitres suivants restent à rédiger et leurs parcours à exécuter.
 
-[Lire le début](../../redaction/hors-developpement/LECTURE.md) · [Ouvrir l’atelier](../../ateliers/hors-developpement/README.md) · [Vérifications](VERIFICATION.md)
+[Lire le début](../archives/redaction/hors-developpement/LECTURE.md) · [Ouvrir l’atelier](../../ateliers/hors-developpement/README.md) · [Vérifications](VERIFICATION.md)
 
 ## Le cas retenu
 

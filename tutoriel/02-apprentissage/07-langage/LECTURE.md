@@ -1,4 +1,4 @@
-# 7. Produire du texte, un morceau à la fois
+# 8. Produire du texte, un morceau à la fois
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

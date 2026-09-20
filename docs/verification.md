@@ -34,12 +34,18 @@ Le parcours courant reconstruit `mon_serveur.py` depuis les blocs Markdown, dans
 
 Les commandes Windows et macOS, le GPU et les interactions dans un navigateur réel restent à valider. Gardez vos propres résultats et leurs paramètres, même lorsqu’ils diffèrent de ceux fournis.
 
-## Partie 7
-
-Onze tests et dix-neuf commandes ont été exécutés depuis l’archive extraite, sous Linux avec Python 3.12.14, NumPy 2.3.5 et threadpoolctl 3.6.0. Les entraînements de base, LoRA et complet reproduisent les six pertes de test enregistrées. Trois appels réels à SmolLM2 sur CPU sont conservés, dont une temporisation inventée. [Rapport détaillé](../tutoriel/07-ia-maison/VERIFICATION.md). L’adaptation d’un LLM sur GPU, Windows, macOS et l’import dans l’interface ZdS restent non exécutés.
-
 ## Partie 8
+
+Onze tests et dix-neuf commandes ont été exécutés depuis l’archive extraite, sous Linux avec Python 3.12.14, NumPy 2.3.5 et threadpoolctl 3.6.0. Les entraînements de base, LoRA et complet reproduisent les six pertes de test enregistrées. Trois appels réels à SmolLM2 sur CPU sont conservés, dont une temporisation inventée. [Rapport détaillé](../tutoriel/08-ia-maison/VERIFICATION.md). L’adaptation d’un LLM sur GPU, Windows, macOS et l’import dans l’interface ZdS restent non exécutés.
+
+## Partie 9
 
 Neuf commandes vérifiées depuis l’archive extraite sous Linux et Python 3.12.14, dont huit tests. Les erreurs attendues du jeu de catalogue et de la fonction de notification sont présentes ; les corrections passent. Les calculateurs refusent les valeurs absentes ou invalides. Les sources de douze notes sont recensées et les quatre illustrations ont été inspectées.
 
-Les nombres de démonstration sont fictifs : aucune consommation matérielle, aucun gain de productivité, aucun apprentissage de lecteur n’est annoncé comme mesuré. [Rapport détaillé](../tutoriel/08-choisir/VERIFICATION.md).
+Les nombres de démonstration sont fictifs : aucune consommation matérielle, aucun gain de productivité, aucun apprentissage de lecteur n’est annoncé comme mesuré. [Rapport détaillé](../tutoriel/09-choisir/VERIFICATION.md).
+
+## Partie 7 — Tâches de travail
+
+La reprise du 18 septembre documente neuf tests sur les fichiers fictifs, dix-huit tests du moteur local et quinze tests du code des nœuds n8n, soit 42 tests également exécutés depuis l’archive d’atelier. Ces contrôles ne lancent ni le navigateur, ni le moteur n8n, ni un assistant distant. Les sept chapitres restaurés sont intégrés dans le cours courant.
+
+Voir le [guide de l’atelier](../ateliers/hors-developpement/README.md) et la [provenance de la récupération](archives/recuperation/2026-09-18/README.md).

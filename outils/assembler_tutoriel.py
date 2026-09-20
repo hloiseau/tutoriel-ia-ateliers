@@ -4,8 +4,8 @@
 import argparse
 import json
 import re
-import zipfile
 from pathlib import Path
+from format_zds import images_path, import_manifest, transform, write_zip
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -61,10 +61,10 @@ def build(part, export):
 
     title = manifest['title']
     index = f'# {title}\n\n[Sommaire global](../../SOMMAIRE.md) · [Lecture complète](LECTURE.md)\n\n'
-    draft = part.parent.resolve() == (ROOT / 'redaction').resolve()
+    draft = part.parent.resolve() != (ROOT / 'tutoriel').resolve()
     if draft:
         index += 'Parcours en cours de rédaction, hors du ZIP global. Le manifest ne contient que les chapitres rédigés.\n\n'
-    guided = part.name in {'04-developpement', '05-agents', '06-mcp-skills', '07-ia-maison', '08-choisir'}
+    guided = part.name in {'04-developpement', '05-agents', '06-mcp-skills', '07-travail', '08-ia-maison', '09-choisir'}
     annexes = part.name == 'annexes'
     workshop_count = len(manifest['children'])
     if part.name == '04-developpement':
@@ -73,9 +73,11 @@ def build(part, export):
         index += '[Atelier Python](../../ateliers/05-agents/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
     elif part.name == '06-mcp-skills':
         index += '[Atelier MCP et skill](../../ateliers/06-mcp-skills/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
-    elif part.name == '07-ia-maison':
+    elif part.name == '07-travail':
+        index += '[Atelier sans programmation](../../ateliers/hors-developpement/README.md) · [Télécharger les fichiers](../../telechargements/atelier-hors-developpement.zip?raw=true)\n\n'
+    elif part.name == '08-ia-maison':
         index += '[Atelier IA maison](../../ateliers/07-ia-maison/README.md) · [Résultats et limites des vérifications](VERIFICATION.md)\n\n'
-    elif part.name == '08-choisir':
+    elif part.name == '09-choisir':
         index += '[Exercices et corrigés](../../ateliers/08-choisir/README.md) · [Sources et vérifications](VERIFICATION.md)\n\n'
     complete = f'# {title}\n\n[Sommaire de la partie](README.md) · [Sommaire global](../../SOMMAIRE.md)\n\n'
     complete += lecture(read(part, manifest.get('introduction')), 1, '')
@@ -124,12 +126,16 @@ def build(part, export):
         (part / 'SOMMAIRE.md').write_text('# Sommaire de la partie\n\n[Consulter le sommaire courant](README.md).\n')
     if export:
         export.mkdir(parents=True, exist_ok=True)
-        paths = files | images | {'manifest.json', 'CREDITS.md'}
+        paths = files | {'CREDITS.md'}
         if (part/'sources.json').exists():
             paths.add('sources.json')
-        with zipfile.ZipFile(export / (part.name + '.zip'), 'w', zipfile.ZIP_DEFLATED) as z:
-            for rel in sorted(paths):
-                z.write(part / rel, rel)
+        entries = {rel: (part / rel).read_bytes() for rel in paths}
+        for rel in files:
+            entries[rel] = transform(entries[rel].decode('utf-8'))[0].encode('utf-8')
+        entries['manifest.json'] = (json.dumps(import_manifest(manifest), ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+        output = export / (part.name + '.zip')
+        write_zip(output, entries)
+        write_zip(images_path(output), {rel: (part / rel).read_bytes() for rel in images})
     return {'partie': part.name, 'chapitres': len(manifest['children']),
             'sections': sum(len(c['children']) for c in manifest['children']),
             'images': len(images), 'fichiers_sources': len(files)}

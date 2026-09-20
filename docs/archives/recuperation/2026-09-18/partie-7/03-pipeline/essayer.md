@@ -1,0 +1,19 @@
+Ouvrez maintenant `pipeline/index.html` en double-cliquant dessus. L’adresse commence normalement par `file://` : vous lisez une page enregistrée sur votre machine. Dans la zone **Extraction JSON**, collez votre extraction, ou cliquez sur **Charger l’exemple fictif** pour utiliser les données de démonstration.
+
+Cliquez sur **Contrôler et préparer**. Avec l’exemple fourni, la page doit proposer un point et faire apparaître le déroulement dans **Journal**. Retrouvez-y `M004`, déjà connu, puis les trois messages nouveaux `M001`, `M002` et `M005`. Nous avons trois messages à traiter, dont deux demandes d’inscription : additionner ces deux catégories aurait vite fabriqué une drôle de liste d’invités.
+
+Lisez le **Point proposé**. La copie de Nora doit être signalée ; Léo garde ses deux places et son atelier non précisé ; la question sur Cartographie reste ouverte. Les demandes ne deviennent pas des confirmations. Pour l’instant, nous nous arrêtons à cette proposition. Les étapes d’approbation et de reprise auront leurs propres manipulations.
+
+Pour ce dossier, le générateur ajoute des rappels déjà connus sur les dates, l’horaire, la copie de Nora et l’atelier manquant de Léo. Leur présence dans le point ne prouve donc pas que l’assistant les a retrouvés. Pour examiner son travail, gardez son extraction brute sous les yeux ; le point permet ensuite de juger l’ensemble du traitement.
+
+Faisons échouer le contrôle exprès. Dans l’extraction, trouvez le champ `places` de Léo et remplacez le nombre `2` par le texte `"deux"`, guillemets compris. Relancez **Contrôler et préparer**. Le programme attend un entier positif ou `null` ; il doit refuser ce texte et indiquer le défaut. Rétablissez `2` et relancez. Le sens de « deux » était évident pour nous, mais l’étape qui reçoit ces données n’accepte qu’une représentation précise.
+
+Essayez ensuite de remplacer l’extrait de Léo par `"Je choisis Reliure."`. Le contrôle doit refuser cette citation, car elle ne figure pas dans le fichier associé à `M002`. Remettez l’extrait initial. La vérification rapproche ici un passage exact d’un fichier connu ; elle repère une citation fabriquée ou attribuée au mauvais message.
+
+Dernier essai, plus intéressant : changez seulement `"atelier": null` en `"atelier": "Reliure"` pour Léo, en gardant son vrai extrait. Relancez. Cette extraction peut passer les contrôles de structure et de provenance : Reliure est un nom d’atelier autorisé, et la citation existe. Pourtant, le fait est faux. Le programme ne déduit pas le sens complet du message pour prouver chacun des champs. Remettez `null` avant de poursuivre, puis regardez ce que cet incident nous apprend sur la relecture.
+
+Nous pouvons vérifier automatiquement qu’une quantité a le bon type, qu’un identifiant n’apparaît qu’une fois ou qu’un extrait appartient au fichier annoncé. Vérifier que cet extrait justifie vraiment la proposition demande une lecture supplémentaire. Un indicateur vert ne nous dispense donc pas d’ouvrir le message de Léo.
+
+Les champs globaux `date_evenement` et `horaire_cartographie` ont une règle plus stricte dans cet exercice : ils doivent rester à `null` tant que le lot n’est pas arbitré. Essayez une date si vous voulez voir le refus, puis retirez-la. Cette règle exprime ce que nous savons de ce dossier. Pour réutiliser le pipeline sur un autre événement, il faudra définir où se trouvent les décisions approuvées et comment les reconnaître ; conserver indéfiniment ces deux champs vides empêcherait aussi de travailler.
+
+Si la page refuse votre première extraction, lisez l’erreur avant de retourner vers l’assistant. Une virgule manquante se corrige dans le texte. Un message absent demande de relire le lot. Une date affirmée malgré les deux comptes rendus demande de corriger le raisonnement. Relancer toute la tâche dix fois sans regarder le défaut risque surtout de vous offrir dix variantes du même problème.

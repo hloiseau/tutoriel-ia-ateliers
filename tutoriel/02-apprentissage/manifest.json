@@ -6,6 +6,16 @@
   "conclusion": "conclusion.md",
   "children": [
     {
+      "object": "container", "slug": "00-reperes", "title": "Quelques repères avant de choisir un parcours",
+      "introduction": "00-reperes/introduction.md", "conclusion": "00-reperes/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "apprendre", "title": "Apprendre et utiliser un modèle", "text": "00-reperes/apprendre.md"},
+        {"object": "extract", "slug": "contexte", "title": "Donner du contexte à la réponse", "text": "00-reperes/contexte.md"},
+        {"object": "extract", "slug": "verifier", "title": "Retrouver ce qui justifie une réponse", "text": "00-reperes/verifier.md"},
+        {"object": "extract", "slug": "outils", "title": "Du modèle aux outils de travail", "text": "00-reperes/outils.md"}
+      ], "ready_to_publish": false
+    },
+    {
       "object": "container",
       "slug": "01-atelier",
       "title": "Installer notre petit atelier",

@@ -1,0 +1,1 @@
+L’intérêt de l’exercice se voit aussi le lendemain, lorsque nous savons encore expliquer la condition de notification ou corriger une synthèse à partir de ses sources. Ajoutons cette capacité à nos critères quand nous comparerons plusieurs façons d’accomplir une tâche.

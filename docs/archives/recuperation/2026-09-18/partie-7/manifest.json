@@ -1,0 +1,78 @@
+{
+  "object": "container",
+  "slug": "travailler-avec-l-ia-au-dela-du-code",
+  "title": "Travailler avec l’IA au-delà du code",
+  "introduction": "introduction.md",
+  "conclusion": "conclusion.md",
+  "children": [
+    {
+      "object": "container",
+      "slug": "01-preparer",
+      "title": "Préparer le point d’équipe",
+      "introduction": "01-preparer/introduction.md",
+      "conclusion": "01-preparer/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "ouvrir", "title": "Ouvrir le dossier de la journée", "text": "01-preparer/ouvrir.md"},
+        {"object": "extract", "slug": "demeler", "title": "Deux dates pour une seule journée", "text": "01-preparer/demeler.md"},
+        {"object": "extract", "slug": "preparer", "title": "Écrire un point que l’équipe peut utiliser", "text": "01-preparer/preparer.md"},
+        {"object": "extract", "slug": "repartir", "title": "Répartir le travail", "text": "01-preparer/repartir.md"}
+      ],
+      "ready_to_publish": false
+    },
+    {
+      "object": "container", "slug": "02-assistant", "title": "Faire travailler un assistant sur le dossier",
+      "introduction": "02-assistant/introduction.md", "conclusion": "02-assistant/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "choisir", "title": "Choisir un espace de travail", "text": "02-assistant/choisir.md"},
+        {"object": "extract", "slug": "demander", "title": "Donner les fichiers et la demande", "text": "02-assistant/demander.md"},
+        {"object": "extract", "slug": "relire", "title": "Ouvrir et vérifier le résultat", "text": "02-assistant/relire.md"}
+      ], "ready_to_publish": false
+    },
+    {
+      "object": "container", "slug": "03-pipeline", "title": "Refaire le travail avec un pipeline",
+      "introduction": "03-pipeline/introduction.md", "conclusion": "03-pipeline/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "enchainer", "title": "Relier les étapes de traitement", "text": "03-pipeline/enchainer.md"},
+        {"object": "extract", "slug": "essayer", "title": "Essayer les contrôles dans le navigateur", "text": "03-pipeline/essayer.md"},
+        {"object": "extract", "slug": "orchestrer", "title": "Transporter le parcours dans n8n", "text": "03-pipeline/orchestrer.md"}
+      ], "ready_to_publish": false
+    },
+    {
+      "object": "container", "slug": "04-acces", "title": "Donner accès aux bons outils",
+      "introduction": "04-acces/introduction.md", "conclusion": "04-acces/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "perimetre", "title": "Délimiter les fichiers et les actions", "text": "04-acces/perimetre.md"},
+        {"object": "extract", "slug": "mcp", "title": "Relier les outils avec MCP", "text": "04-acces/mcp.md"},
+        {"object": "extract", "slug": "skill", "title": "Adapter une procédure de travail", "text": "04-acces/skill.md"}
+      ], "ready_to_publish": false
+    },
+    {
+      "object": "container", "slug": "05-validation", "title": "Relire avant d’agir",
+      "introduction": "05-validation/introduction.md", "conclusion": "05-validation/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "version", "title": "Approuver une version précise", "text": "05-validation/version.md"},
+        {"object": "extract", "slug": "decider", "title": "Garder les décisions à leur place", "text": "05-validation/decider.md"},
+        {"object": "extract", "slug": "reprendre", "title": "Modifier, relire et exporter", "text": "05-validation/reprendre.md"}
+      ], "ready_to_publish": false
+    },
+    {
+      "object": "container", "slug": "06-reprendre", "title": "Reprendre sans traiter deux fois",
+      "introduction": "06-reprendre/introduction.md", "conclusion": "06-reprendre/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "etat", "title": "Sauvegarder et reprendre le lot", "text": "06-reprendre/etat.md"},
+        {"object": "extract", "slug": "planifier", "title": "Passer à des exécutions régulières", "text": "06-reprendre/planifier.md"},
+        {"object": "extract", "slug": "mesurer", "title": "Compter le coût du travail terminé", "text": "06-reprendre/mesurer.md"}
+      ], "ready_to_publish": false
+    },
+    {
+      "object": "container", "slug": "07-choisir", "title": "Garder ce qui nous aide",
+      "introduction": "07-choisir/introduction.md", "conclusion": "07-choisir/conclusion.md",
+      "children": [
+        {"object": "extract", "slug": "comparer", "title": "Comparer les façons de faire", "text": "07-choisir/comparer.md"},
+        {"object": "extract", "slug": "transposer", "title": "Essayer sur une autre tâche", "text": "07-choisir/transposer.md"},
+        {"object": "extract", "slug": "continuer", "title": "Transmettre et faire évoluer le travail", "text": "07-choisir/continuer.md"}
+      ], "ready_to_publish": false
+    }
+  ],
+  "ready_to_publish": false
+}

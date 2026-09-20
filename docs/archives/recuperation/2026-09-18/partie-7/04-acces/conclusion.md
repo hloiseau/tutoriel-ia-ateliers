@@ -1,0 +1,3 @@
+Notre point a maintenant un périmètre : les pièces de la journée en lecture, des sorties séparées et aucun envoi. Une intégration ou un serveur MCP pourra éviter des copies manuelles, à condition de conserver ce périmètre dans les permissions effectives. La recette, elle, conserve la manière de travailler de l’équipe.
+
+Retournons au point préparé par le pipeline. Il reste une question très pratique : sur quoi porte notre accord lorsque nous cliquons sur « approuver » ? Sur le brouillon relu, sur le suivant, ou sur tout ce que l’assistant décidera de faire ensuite ? Nous allons attacher cette décision à un contenu précis.

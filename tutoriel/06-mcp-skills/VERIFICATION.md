@@ -26,7 +26,7 @@ Le script extrait l’archive dans un dossier temporaire, sans remplacer les fic
 
 ## Première exécution du serveur fourni
 
-Les [journaux initiaux](../../docs/verifications-partie6/) concernent la version publiée au [commit b921fc8](https://github.com/hloiseau/tutoriel-ia-ateliers/commit/b921fc867bb4babf4a4eb4eda2cf53c884a500d9). Ils conservent dix échanges stdio, dix tests et l’empreinte de l’archive de cette version. Le protocole observé était `2026-07-28`.
+Les [journaux initiaux](../../docs/verifications-partie6) concernent la version publiée au [commit b921fc8](https://github.com/hloiseau/tutoriel-ia-ateliers/commit/b921fc867bb4babf4a4eb4eda2cf53c884a500d9). Ils conservent dix échanges stdio, dix tests et l’empreinte de l’archive de cette version. Le protocole observé était `2026-07-28`.
 
 La structure du skill et les trois illustrations avaient également été vérifiées. Ces fichiers restent inchangés dans la reprise du chapitre de construction.
 

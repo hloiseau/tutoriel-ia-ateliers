@@ -1,0 +1,11 @@
+**TL;DR** — Utiliser l’IA, s’en passer ou la réserver à une tâche précise sont trois choix possibles. Nous allons les examiner à partir des données, du travail humain, des licences, des ressources consommées et de ce que nous apprenons réellement.
+
+Dans le parcours développement, nous avons relu des changements de code et encadré les outils d’un agent. Dans le parcours de tâches de travail, nous avons préparé un point d’équipe et séparé les propositions des décisions. Si vous avez suivi l’approfondissement sur l’IA maison, vous avez aussi rencontré une réponse qui invente une durée et une adaptation qui dégrade un ancien format. Nous avons de quoi examiner ce que nous voulons confier à ces outils, et ce que cela nous demande.
+
+J’utilise ces outils au quotidien, mais je ne pense pas que notre métier doive s’organiser autour d’eux par défaut. Si une tâche se résout bien avec un script, gardons le script. Si une aide sur les tests nous permet de mieux travailler, regardons ce qu’elle apporte. Et si nous ne voulons pas développer avec l’IA, nous pouvons aussi faire ce choix.
+
+Nous utiliserons les exemples du suivi de prix et de la journée d’ateliers. Automatiser une vérification de catalogue, préparer des tests ou traiter des demandes d’inscription conduit à des choix différents : les données disponibles, les personnes concernées et les conséquences d’une erreur changent.
+
+Téléchargez [les fichiers de cette partie](https://github.com/hloiseau/tutoriel-ia-ateliers/raw/main/telechargements/atelier-choisir-ia.zip), ou ouvrez `ateliers/08-choisir`. Ils contiennent les cas, des fiches courtes, un exercice de lecture de code et des pistes de correction. Aucun abonnement ni modèle local n’est nécessaire pour commencer. Les documents et études cités sont consultés en septembre 2026 ; leurs dates comptent lorsqu’on compare les résultats.
+
+Vous n’avez pas besoin d’avoir exécuté tous les ateliers pour suivre cette partie. Les exemples de code sont facultatifs pour le parcours de tâches de travail ; nous proposerons un exercice de relecture de compte rendu au même endroit. Lorsque nous ouvrons la fiche d’un modèle, les informations nécessaires se trouvent dans les fichiers fournis.

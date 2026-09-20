@@ -1,4 +1,4 @@
-# 6. Ajouter une couche… et voir ce que cela change
+# 7. Ajouter une couche… et voir ce que cela change
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

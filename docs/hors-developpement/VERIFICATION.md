@@ -1,3 +1,5 @@
+> Rapport historique du 17 septembre, limité au premier chapitre. Les sept chapitres sont désormais intégrés ; consulter l’[état courant](../etat-des-contenus.md).
+
 # Première étape hors développement — vérifications
 
 Contrôles exécutés le 17 septembre 2026 dans l’environnement de rédaction, sous Linux. Aucun essai sur le PC de Hugo.
@@ -7,7 +9,7 @@ Contrôles exécutés le 17 septembre 2026 dans l’environnement de rédaction,
 - Un [plan de sept chapitres](PLAN.md), dont seul le premier est rédigé.
 - Une introduction, un chapitre de quatre sections et une conclusion provisoire, en huit petits Markdown référencés par un manifest.
 - Un [atelier fictif](../../ateliers/hors-developpement/README.md) comprenant cinq fichiers de courriel, un CSV d’état initial et sa version XLSX, deux comptes rendus, les règles, un modèle de point et un corrigé manuel.
-- Des lectures générées, un [ZIP du début de cours](../../telechargements/zds-brouillons/hors-developpement.zip) et une [archive d’atelier](../../telechargements/atelier-hors-developpement.zip).
+- Des lectures générées, un [ZIP du début de cours](../archives/zds-brouillons/hors-developpement.zip) et une [archive d’atelier](../../telechargements/atelier-hors-developpement.zip).
 
 La branche de travail part de la réécriture publiée `1f5c8cbb90480701f3057db28855adf6a4f04b99`. Avant le travail, `main` pointait toujours sur `102e5ccf29bff571da46bcdae0a51a5b1d089f95`. Les sources des huit parties et les résultats de référence n’ont pas été modifiés.
 

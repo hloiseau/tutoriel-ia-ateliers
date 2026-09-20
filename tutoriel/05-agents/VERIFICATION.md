@@ -11,7 +11,7 @@ Révision du 15 septembre 2026. Statut : première rédaction complète, à reli
 - Douze tests réussis : lectures, refus, lien symbolique extérieur, schéma invalide, absence de fichier, budget d’appels, contenu non exécuté et calcul du coût.
 - Trois illustrations générées à partir de leur source et inspectées visuellement.
 
-Les [commandes et sorties](../../docs/verifications-partie5/executions.json) et les [journaux de démonstration](../../docs/verifications-partie5/) sont conservés. Les durées présentes dans les journaux mesurent les fonctions Python du banc, pas l’inférence d’un modèle.
+Les [commandes et sorties](../../docs/verifications-partie5/executions.json) et les [journaux de démonstration](../../docs/verifications-partie5) sont conservés. Les durées présentes dans les journaux mesurent les fonctions Python du banc, pas l’inférence d’un modèle.
 
 ## À ne pas déduire de ces résultats
 

@@ -1,4 +1,4 @@
-# 5. Faire reconnaître nos propres dessins
+# 6. Faire reconnaître nos propres dessins
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

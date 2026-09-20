@@ -1,30 +1,21 @@
-# Suivi du projet
+# Maintenir le tutoriel
 
-- [État des contenus](etat-des-contenus.md) : ce qui est présent, les versions intégrées et les validations restantes.
-- [Cadre de rédaction](cadre-redaction.md) : choix retenus au fil des échanges.
-- [Vérification des ateliers](verification.md) : exécutions réalisées et limites.
-- [Vérification du nouveau début de la partie 4](../tutoriel/04-developpement/VERIFICATION.md) : sources consultées et installations à rejouer.
+Pour suivre le cours, utilisez le [sommaire](../SOMMAIRE.md). Pour modifier les sources, commencez par [CONTRIBUTING.md](../CONTRIBUTING.md).
 
-[Retour au sommaire](../SOMMAIRE.md)
+## Suivi courant
 
-- [Reprendre sur la machine de l’auteur](reprise-locale.md).
-- [Expériences à lancer](experiences-a-lancer.md).
-- [Suivi après la rédaction des huit parties](plan-parties-suivantes.md).
-- [Contrôle structurel du tutoriel](structure-tutoriel.json).
+- [État des contenus](etat-des-contenus.md) : neuf parties intégrées et validations restantes.
+- [Résultats de référence](verification.md) : essais documentés et limites.
+- [Préparer l’import ZdS](export-global.md) : archive du contenu et archive des images.
+- [Statistiques du tutoriel](structure-tutoriel.json) et [empreintes des exports](structure-globale.json).
+- [Expériences à lancer](experiences-a-lancer.md) et [reprise locale](reprise-locale.md).
 
-- [Vérification de la partie 5](../tutoriel/05-agents/VERIFICATION.md).
+## Dossiers de travail datés
 
-- [Vérification de la partie 6](../tutoriel/06-mcp-skills/VERIFICATION.md).
+- [Cadre de rédaction](cadre-redaction.md) et [relecture globale](relecture/README.md).
+- [Prompts de reprise](prompts/README.md) et [guide de voix](prompts/GUIDE-VOIX-HUGO.md).
+- [Construction progressive du MCP](relecture-construction-mcp.md).
+- [Première étape hors développement du 17 septembre](hors-developpement/VERIFICATION.md).
+- [Archives, imports et sauvegardes](archives/README.md).
 
-- [Relecture adverse de la construction du MCP](relecture-construction-mcp.md).
-
-- [Vérification de la partie 7](../tutoriel/07-ia-maison/VERIFICATION.md).
-- [Relecture adverse de la partie 7](relecture-partie7.md).
-
-- [Vérification de la partie 8](../tutoriel/08-choisir/VERIFICATION.md).
-- [Relecture adverse de la partie 8](relecture-partie8.md).
-
-- [Prompts de reprise](prompts/README.md) : expériences locales et réécriture par huit sous-agents.
-- [Guide de voix de Hugo](prompts/GUIDE-VOIX-HUGO.md) : références et exemples avant/après.
-- [Export global ZdS](export-global.md) et [rapport de structure](structure-globale.json).
-- [Dossier des prochaines relectures](relecture/README.md).
+Les rapports et prompts antérieurs au 20 septembre emploient parfois l’ancienne numérotation à huit parties. Dans le parcours courant, les tâches de travail sont la partie 7, l’IA maison la partie 8 et les choix d’usage la partie 9.

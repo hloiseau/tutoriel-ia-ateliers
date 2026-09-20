@@ -1,1 +1,0 @@
-La fiche tient en quelques rubriques, mais elle conserve l’essentiel : l’usage précis, les personnes concernées, la façon de vérifier et les conditions d’arrêt. Refermons maintenant le tutoriel avec ce que ces huit parties nous permettent de choisir.

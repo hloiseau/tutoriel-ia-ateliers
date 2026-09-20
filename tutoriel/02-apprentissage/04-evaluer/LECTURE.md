@@ -1,4 +1,4 @@
-# 4. Lire les résultats sans se raconter d’histoires
+# 5. Lire les résultats sans se raconter d’histoires
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

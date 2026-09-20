@@ -1,29 +1,25 @@
-# Assembler le tutoriel pour ZdS
+# Assembler les exports pour ZdS
 
-Le [ZIP global](../telechargements/zds/tutoriel-ia-complet.zip) regroupe l’introduction générale, les huit parties et les annexes. La hiérarchie reprend celle de l’archive du tutoriel Vim fournie par l’auteur : un contenu, ses parties, leurs chapitres, puis leurs sections.
-
-Depuis la racine du dépôt :
+Le [guide d’import](../telechargements/zds/README.md) donne les deux fichiers : `tutoriel-ia-complet.zip` pour le contenu et `tutoriel-ia-complet-images.zip` pour les images.
 
 ```bash
-python outils/assembler_tutoriel.py --exports telechargements/zds
+python outils/assembler_tutoriel.py --exports telechargements/zds/parties
 python outils/assembler_global.py
-python -m unittest discover -s outils -p 'test_assembler_global.py' -v
+python -m unittest discover -s outils -p 'test_assembler*.py' -v
 ```
-
-La première commande régénère les lectures et les imports séparés. La deuxième produit `tutoriel/manifest.json`, `telechargements/zds/tutoriel-ia-complet.zip` et `docs/structure-globale.json`. Le manifest global est généré : modifier les manifests des parties pour changer leur structure, puis reconstruire.
 
 ## Sources et transformations
 
-Les petits Markdown déclarés dans les manifests des parties restent les sources canoniques. `tutoriel/introduction.md` est l’introduction générale. `tutoriel/conclusion.md` reste vide : la conclusion de la partie 8 termine déjà le parcours.
+Les petits Markdown référencés par les manifests des neuf parties sont les sources canoniques. `tutoriel/introduction.md` est l’introduction générale ; la conclusion de la partie 9 termine le parcours. Le manifeste global et les lectures GitHub sont générés.
 
-Dans l’archive globale seulement, les chemins d’images reçoivent le préfixe de leur partie. Les identifiants internes des notes reçoivent également un préfixe, pour éviter les collisions entre parties. Les blocs de code sont préservés. Ces transformations ne modifient ni le texte source ni les imports séparés.
+Les exports emploient le manifeste ZdS 2.1, de type `TUTORIAL`, avec le code de licence `CC BY-SA`. Les images quittent le ZIP de contenu pour une archive dédiée. Les liens utilisent `archive:`. Dans l’export global, chaque chemin d’image et chaque identifiant de note reçoit le préfixe de sa partie. Les blocs de code sont conservés.
 
-L’archive contient les sources référencées, leurs images, les crédits et les mentions de licence. Les ateliers, prompts d’assistant, rapports éditoriaux et lectures générées en sont exclus. Les archives d’ateliers restent des téléchargements séparés. Il n’y a pas de nouveau document monolithique de lecture : le sommaire GitHub conserve les liens par chapitre.
+Les dates ZIP sont fixes : les mêmes sources produisent les mêmes octets. Les [statistiques et empreintes](structure-globale.json) décrivent les deux fichiers reconstruits. Les notes éditoriales, prompts, archives historiques et lectures générées sont exclus des imports. Les ateliers sont des téléchargements séparés.
 
-## Vérifications et limites
+## Contrôles et limites
 
-L’assembleur contrôle les fichiers et images référencés, les notes manquantes ou dupliquées, les chemins sortant des dossiers et les entrées ZIP en double. Tous les conteneurs restent marqués `ready_to_publish: false`. Les dates internes du ZIP sont fixes afin que la reconstruction soit reproductible.
+Les contrôles couvrent les sources manquantes, les images, les notes non résolues, les collisions entre parties, les sorties de dossiers et les exemples dans les blocs de code. Le test des deux archives vérifie la correspondance entre les chemins cités et les images livrées. Le manifeste respecte la hiérarchie contenu → parties → chapitres → sections.
 
-Les tests couvrent deux parties utilisant le même nom d’image et de note, la préservation des exemples dans les blocs de code, une image manquante, une note non résolue et une tentative de sortie du dossier. Le [rapport structurel](structure-globale.json) donne les nombres et l’empreinte de l’archive réellement construite.
+Le contrôle local du parseur officiel ne lance ni le site, ni sa base de données, ni le rendu Markdown. Un premier import du contenu a été signalé par l’auteur, sans images ; l’export d’images séparé accompagne désormais le contenu. L’import complet avec images et son rendu restent à confirmer dans ZdS.
 
-**L’import interactif dans ZdS n’a pas été effectué.** Dans un brouillon, il reste à vérifier le sommaire, les niveaux de titres, les 46 images, les notes, les tableaux et leurs légendes, ainsi que les blocs de code. Une acceptation par l’assembleur ne prouve pas le rendu du site. Le détail des contrôles de structure est disponible sans prétendre que les nouvelles expériences locales ont été réalisées.
+Les conteneurs restent marqués `ready_to_publish: false`. La relecture et les expériences pratiques restent suivies dans [l’état des contenus](etat-des-contenus.md).

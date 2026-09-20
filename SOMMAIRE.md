@@ -1,8 +1,10 @@
 # Sommaire du tutoriel
 
-[Introduction générale](tutoriel/introduction.md) · [Accueil](README.md) · [État des textes](docs/etat-des-contenus.md) · [Ateliers](ateliers/)
+[Accueil](README.md) · [Introduction générale](tutoriel/introduction.md) · [Téléchargements](telechargements/README.md)
 
-Les huit parties sont centralisées avec leurs sources et illustrations : **56 chapitres et deux annexes, 196 sections et 46 illustrations**. Les lectures ci-dessous sont générées à partir des petits Markdown destinés à ZdS.
+**Neuf parties, 64 chapitres et deux annexes.**
+
+Les parties 1 et le [premier chapitre de la partie 2](tutoriel/02-apprentissage/00-reperes/LECTURE.md) donnent les repères communs. Le parcours développement poursuit les parties 2 à 6 ; le parcours de tâches de travail commence directement en partie 7. La partie 8 est un approfondissement facultatif en Python. La partie 9 réunit les deux parcours.
 
 ## 1. Une histoire de l’IA, des premières idées à aujourd’hui
 
@@ -20,14 +22,15 @@ Les huit parties sont centralisées avec leurs sources et illustrations : **56 c
 
 [Introduction](tutoriel/02-apprentissage/introduction.md) · [Toute la partie](tutoriel/02-apprentissage/LECTURE.md)
 
-1. [Installer notre petit atelier](tutoriel/02-apprentissage/01-atelier/LECTURE.md)
-2. [Des pixels à une première réponse](tutoriel/02-apprentissage/02-predire/LECTURE.md)
-3. [Faire apprendre le modèle](tutoriel/02-apprentissage/03-apprendre/LECTURE.md)
-4. [Lire les résultats sans se raconter d’histoires](tutoriel/02-apprentissage/04-evaluer/LECTURE.md)
-5. [Faire reconnaître nos propres dessins](tutoriel/02-apprentissage/05-dessiner/LECTURE.md)
-6. [Ajouter une couche… et voir ce que cela change](tutoriel/02-apprentissage/06-reseau/LECTURE.md)
-7. [Produire du texte, un morceau à la fois](tutoriel/02-apprentissage/07-langage/LECTURE.md)
-8. [Du modèle aux outils qui l’entourent](tutoriel/02-apprentissage/08-outils/LECTURE.md)
+1. [Quelques repères avant de choisir un parcours](tutoriel/02-apprentissage/00-reperes/LECTURE.md)
+2. [Installer notre petit atelier](tutoriel/02-apprentissage/01-atelier/LECTURE.md)
+3. [Des pixels à une première réponse](tutoriel/02-apprentissage/02-predire/LECTURE.md)
+4. [Faire apprendre le modèle](tutoriel/02-apprentissage/03-apprendre/LECTURE.md)
+5. [Lire les résultats sans se raconter d’histoires](tutoriel/02-apprentissage/04-evaluer/LECTURE.md)
+6. [Faire reconnaître nos propres dessins](tutoriel/02-apprentissage/05-dessiner/LECTURE.md)
+7. [Ajouter une couche… et voir ce que cela change](tutoriel/02-apprentissage/06-reseau/LECTURE.md)
+8. [Produire du texte, un morceau à la fois](tutoriel/02-apprentissage/07-langage/LECTURE.md)
+9. [Du modèle aux outils qui l’entourent](tutoriel/02-apprentissage/08-outils/LECTURE.md)
 
 ## 3. Faire tourner un modèle chez soi
 
@@ -54,7 +57,7 @@ Les huit parties sont centralisées avec leurs sources et illustrations : **56 c
 
 ## 5. Comprendre et encadrer les agents de code
 
-[Introduction](tutoriel/05-agents/introduction.md) · [Toute la partie](tutoriel/05-agents/LECTURE.md) · [Atelier](ateliers/05-agents/README.md)
+[Introduction](tutoriel/05-agents/introduction.md) · [Toute la partie](tutoriel/05-agents/LECTURE.md)
 
 1. [Suivre une demande jusqu’à l’outil](tutoriel/05-agents/01-boucle/LECTURE.md)
 2. [Donner le contexte utile à l’étape en cours](tutoriel/05-agents/02-contexte/LECTURE.md)
@@ -65,7 +68,7 @@ Les huit parties sont centralisées avec leurs sources et illustrations : **56 c
 
 ## 6. Les MCP et les skills en pratique
 
-[Introduction](tutoriel/06-mcp-skills/introduction.md) · [Toute la partie](tutoriel/06-mcp-skills/LECTURE.md) · [Atelier](ateliers/06-mcp-skills/README.md)
+[Introduction](tutoriel/06-mcp-skills/introduction.md) · [Toute la partie](tutoriel/06-mcp-skills/LECTURE.md)
 
 1. [Consulter notre premier ticket](tutoriel/06-mcp-skills/01-consulter/LECTURE.md)
 2. [Brancher le serveur à notre assistant](tutoriel/06-mcp-skills/02-relier/LECTURE.md)
@@ -75,38 +78,46 @@ Les huit parties sont centralisées avec leurs sources et illustrations : **56 c
 6. [Faire évoluer le skill à partir des problèmes rencontrés](tutoriel/06-mcp-skills/06-adapter/LECTURE.md)
 7. [Articuler skills, conventions et base de connaissances](tutoriel/06-mcp-skills/07-ranger/LECTURE.md)
 
-## 7. Construire et adapter son IA maison
+## 7. Travailler avec l’IA au-delà du code
 
-[Introduction](tutoriel/07-ia-maison/introduction.md) · [Toute la partie](tutoriel/07-ia-maison/LECTURE.md) · [Atelier](ateliers/07-ia-maison/README.md)
+[Introduction](tutoriel/07-travail/introduction.md) · [Toute la partie](tutoriel/07-travail/LECTURE.md)
 
-1. [Choisir ce que l’on veut modifier](tutoriel/07-ia-maison/01-choisir/LECTURE.md)
-2. [Construire une recherche dans nos documents](tutoriel/07-ia-maison/02-rechercher/LECTURE.md)
-3. [Évaluer les sources avant les réponses](tutoriel/07-ia-maison/03-evaluer/LECTURE.md)
-4. [Assembler notre assistant documentaire](tutoriel/07-ia-maison/04-application/LECTURE.md)
-5. [Préparer ce que notre modèle va apprendre](tutoriel/07-ia-maison/05-donnees/LECTURE.md)
-6. [Ajouter un petit adaptateur](tutoriel/07-ia-maison/06-adaptateurs/LECTURE.md)
-7. [Entraîner notre réseau depuis zéro](tutoriel/07-ia-maison/07-entrainer/LECTURE.md)
-8. [Choisir la suite sans changer de machine par défaut](tutoriel/07-ia-maison/08-comparer/LECTURE.md)
+1. [Préparer le point d’équipe](tutoriel/07-travail/01-preparer/LECTURE.md)
+2. [Faire travailler un assistant sur le dossier](tutoriel/07-travail/02-assistant/LECTURE.md)
+3. [Refaire le travail avec un pipeline](tutoriel/07-travail/03-pipeline/LECTURE.md)
+4. [Donner accès aux bons outils](tutoriel/07-travail/04-acces/LECTURE.md)
+5. [Relire avant d’agir](tutoriel/07-travail/05-validation/LECTURE.md)
+6. [Reprendre sans traiter deux fois](tutoriel/07-travail/06-reprendre/LECTURE.md)
+7. [Garder ce qui nous aide](tutoriel/07-travail/07-choisir/LECTURE.md)
 
-## 8. Choisir la place de l’IA
+## 8. Construire et adapter son IA maison
 
-[Introduction](tutoriel/08-choisir/introduction.md) · [Toute la partie](tutoriel/08-choisir/LECTURE.md) · [Exercices et corrigés](ateliers/08-choisir/README.md)
+[Introduction](tutoriel/08-ia-maison/introduction.md) · [Toute la partie](tutoriel/08-ia-maison/LECTURE.md)
 
-1. [D’où viennent les données et le travail humain ?](tutoriel/08-choisir/01-travail/LECTURE.md)
-2. [Licences, transparence et possibilités de vérification](tutoriel/08-choisir/02-ouverture/LECTURE.md)
-3. [Coûts, énergie, matériel et environnement](tutoriel/08-choisir/03-ressources/LECTURE.md)
-4. [Dépendances techniques et économiques](tutoriel/08-choisir/04-dependances/LECTURE.md)
-5. [Apprendre et exercer notre métier](tutoriel/08-choisir/05-apprendre/LECTURE.md)
-6. [Alternatives, logiciels libres et possibilités de s’en passer](tutoriel/08-choisir/06-alternatives/LECTURE.md)
-7. [Construire ses propres critères de choix](tutoriel/08-choisir/07-decider/LECTURE.md)
+1. [Choisir ce que l’on veut modifier](tutoriel/08-ia-maison/01-choisir/LECTURE.md)
+2. [Construire une recherche dans nos documents](tutoriel/08-ia-maison/02-rechercher/LECTURE.md)
+3. [Évaluer les sources avant les réponses](tutoriel/08-ia-maison/03-evaluer/LECTURE.md)
+4. [Assembler notre assistant documentaire](tutoriel/08-ia-maison/04-application/LECTURE.md)
+5. [Préparer ce que notre modèle va apprendre](tutoriel/08-ia-maison/05-donnees/LECTURE.md)
+6. [Ajouter un petit adaptateur](tutoriel/08-ia-maison/06-adaptateurs/LECTURE.md)
+7. [Entraîner notre réseau depuis zéro](tutoriel/08-ia-maison/07-entrainer/LECTURE.md)
+8. [Choisir la suite sans changer de machine par défaut](tutoriel/08-ia-maison/08-comparer/LECTURE.md)
 
-Les huit parties sont rédigées. Les [relectures et validations restantes](docs/etat-des-contenus.md) restent distinctes de cette première rédaction.
+## 9. Choisir la place de l’IA
 
-## En préparation — Travailler avec l’IA au-delà du code
+[Introduction](tutoriel/09-choisir/introduction.md) · [Toute la partie](tutoriel/09-choisir/LECTURE.md)
 
-Le nouveau parcours suit une équipe qui organise une journée d’ateliers. Son [premier chapitre](redaction/hors-developpement/LECTURE.md), le [dossier fictif](ateliers/hors-developpement/README.md) et le [plan des sept chapitres](docs/hors-developpement/PLAN.md) sont disponibles séparément. Ce début reste hors du ZIP global ; les huit parties ci-dessus ne sont pas renumérotées.
+1. [D’où viennent les données et le travail humain ?](tutoriel/09-choisir/01-travail/LECTURE.md)
+2. [Licences, transparence et possibilités de vérification](tutoriel/09-choisir/02-ouverture/LECTURE.md)
+3. [Coûts, énergie, matériel et environnement](tutoriel/09-choisir/03-ressources/LECTURE.md)
+4. [Dépendances techniques et économiques](tutoriel/09-choisir/04-dependances/LECTURE.md)
+5. [Apprendre et exercer notre métier](tutoriel/09-choisir/05-apprendre/LECTURE.md)
+6. [Alternatives, logiciels libres et possibilités de s’en passer](tutoriel/09-choisir/06-alternatives/LECTURE.md)
+7. [Construire ses propres critères de choix](tutoriel/09-choisir/07-decider/LECTURE.md)
 
 ## Annexes
 
-- [A — Comparer les outils et leurs tarifs](tutoriel/annexes/comparatif/LECTURE.md)
-- [B — Expérimenter une discussion avec un modèle local](tutoriel/annexes/essai-local/LECTURE.md)
+[Introduction](tutoriel/annexes/introduction.md) · [Toute la partie](tutoriel/annexes/LECTURE.md)
+
+1. [Comparer les outils et leurs tarifs](tutoriel/annexes/comparatif/LECTURE.md)
+2. [Expérimenter une discussion avec un modèle local](tutoriel/annexes/essai-local/LECTURE.md)

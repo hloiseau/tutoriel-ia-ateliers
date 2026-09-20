@@ -8,10 +8,10 @@
   },
   {
     "partie": "02-apprentissage",
-    "chapitres": 8,
-    "sections": 31,
-    "images": 13,
-    "fichiers_sources": 49
+    "chapitres": 9,
+    "sections": 35,
+    "images": 14,
+    "fichiers_sources": 55
   },
   {
     "partie": "03-modele-local",
@@ -42,14 +42,21 @@
     "fichiers_sources": 41
   },
   {
-    "partie": "07-ia-maison",
+    "partie": "07-travail",
+    "chapitres": 7,
+    "sections": 22,
+    "images": 2,
+    "fichiers_sources": 38
+  },
+  {
+    "partie": "08-ia-maison",
     "chapitres": 8,
     "sections": 24,
     "images": 4,
     "fichiers_sources": 42
   },
   {
-    "partie": "08-choisir",
+    "partie": "09-choisir",
     "chapitres": 7,
     "sections": 21,
     "images": 4,

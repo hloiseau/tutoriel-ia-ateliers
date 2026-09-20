@@ -9,8 +9,8 @@ Les protocoles complets sont dans les [missions locales](prompts/local/README.md
 | 4 — Développement | États du code, tests, mutations et cas JSON exécutés | Résolution par un assistant réel, interfaces VS Code/Copilot ; discussion locale facultative évaluée séparément |
 | 5 — Agents | Banc déterministe sans modèle et ses tests | Observations avec un assistant réel : outils, contexte, refus, états de tests, reprise, compteurs disponibles |
 | 6 — MCP et skills | Construction progressive, client/serveur stdio et tests exécutés | Intégration dans un produit, découverte du skill, recettes réellement produites pour PRIX-1 et PRIX-2 |
-| 7 — IA maison | Recherche, réponses documentaires réelles et entraînements NumPy CPU | Reproduction locale, adaptation LoRA d’un LLM sur GPU, comparaison et rechargement de l’adaptateur |
-| 8 — Choix d’usage | Exercices de décision et calculs sur données fictives | Comparaison humaine facultative ; aucune mesure de productivité ou d’apprentissage à inventer |
+| 8 — IA maison | Recherche, réponses documentaires réelles et entraînements NumPy CPU | Reproduction locale, adaptation LoRA d’un LLM sur GPU, comparaison et rechargement de l’adaptateur |
+| 9 — Choix d’usage | Exercices de décision et calculs sur données fictives | Comparaison humaine facultative ; aucune mesure de productivité ou d’apprentissage à inventer |
 
 Les rapports existants, réunis dans [les vérifications](verification.md) et les `VERIFICATION.md` des parties, donnent les versions et les limites de chaque référence. Une validation de prose par l’auteur ne remplace pas une exécution manquante.
 

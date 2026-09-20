@@ -8,7 +8,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'tutoriel/07-ia-maison/images'
+OUT=ROOT/'tutoriel/08-ia-maison/images'
 INK='#243447';BLUE='#dcecf8';GREEN='#def0e6';RED='#f9e2dc';GRAY='#edf0f4';BG='#fbfaf7'
 def canvas(title,subtitle):
  fig,ax=plt.subplots(figsize=(12,7.4),dpi=140)

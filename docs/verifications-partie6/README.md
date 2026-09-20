@@ -6,4 +6,4 @@
 
 Aucun appel à un modèle, aucun accès à des tickets réels.
 
-Ces traces concernent le commit `b921fc867bb4babf4a4eb4eda2cf53c884a500d9`. Le parcours de construction courant est vérifié séparément dans [verifications-construction-mcp](../verifications-construction-mcp/).
+Ces traces concernent le commit `b921fc867bb4babf4a4eb4eda2cf53c884a500d9`. Le parcours de construction courant est vérifié séparément dans [verifications-construction-mcp](../verifications-construction-mcp).

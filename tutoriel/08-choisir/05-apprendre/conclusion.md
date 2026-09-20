@@ -1,1 +1,0 @@
-Le résultat de l’exercice tient dans quelques booléens ; son intérêt se voit surtout le lendemain, lorsque nous savons encore expliquer la condition et la modifier. Ajoutons cette capacité à nos critères quand nous comparerons plusieurs façons d’accomplir une tâche.

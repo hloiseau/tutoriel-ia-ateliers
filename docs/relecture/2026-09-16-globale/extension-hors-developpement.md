@@ -1,6 +1,6 @@
 # Étendre le tutoriel au travail hors développement
 
-Suite au 17 septembre 2026 : Hugo a retenu l’organisation d’un événement comme fil rouge. Le [plan de travail courant](../../hors-developpement/PLAN.md) et un [premier chapitre](../../../redaction/hors-developpement/LECTURE.md) concrétisent cette proposition initiale. Le choix d’un produit et la renumérotation restent ouverts.
+Suite au 17 septembre 2026 : Hugo a retenu l’organisation d’un événement comme fil rouge. Le [plan de travail courant](../../hors-developpement/PLAN.md) et un [premier chapitre](../../archives/redaction/hors-developpement/LECTURE.md) concrétisent cette proposition initiale. Le choix d’un produit et la renumérotation restent ouverts.
 
 ## Recommandation
 

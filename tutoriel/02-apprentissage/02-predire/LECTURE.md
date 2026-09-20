@@ -1,4 +1,4 @@
-# 2. Des pixels à une première réponse
+# 3. Des pixels à une première réponse
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

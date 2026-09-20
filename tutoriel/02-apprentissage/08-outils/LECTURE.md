@@ -1,4 +1,4 @@
-# 8. Du modèle aux outils qui l’entourent
+# 9. Du modèle aux outils qui l’entourent
 
 [Sommaire de la partie](../README.md) · [Sources](.)
 

@@ -6,4 +6,6 @@ Les cartes des poids, les matrices et les courbes proviennent des programmes et 
 
 Les références techniques sont citées dans les notes et recensées dans `sources.json`.
 
+Le schéma original « Entraîner, puis utiliser un modèle », ajouté au chapitre de repères communs, est produit par `outils/illustrer_parcours.py` et distribué sous CC BY-SA 4.0.
+
 Le format suit [Rédiger sur ZdS](https://zestedesavoir.com/tutoriels/249/rediger-sur-zds/). La référence de ton et de progression pratique est le tutoriel [Vim](https://zestedesavoir.com/tutoriels/3575/vim/), sans reproduction de son texte.

@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2026 Hugo Loiseau
 # SPDX-License-Identifier: GPL-3.0-only
-"""Assembler les huit parties et les annexes en un seul import ZdS.
+"""Assembler les neuf parties et les annexes en deux ZIP pour ZdS.
 
 Les sources des parties restent inchangées. Les chemins d’images et les noms
 internes des notes sont adaptés uniquement dans les fichiers du ZIP global.
@@ -9,19 +9,16 @@ import argparse
 import copy
 import hashlib
 import json
-import re
-import zipfile
 from pathlib import Path, PurePosixPath
 
 from assembler_tutoriel import references
+from format_zds import images_path, import_manifest, transform, write_zip
 
 ROOT = Path(__file__).resolve().parents[1]
 PARTS = (
     '01-histoire', '02-apprentissage', '03-modele-local', '04-developpement',
-    '05-agents', '06-mcp-skills', '07-ia-maison', '08-choisir', 'annexes',
+    '05-agents', '06-mcp-skills', '07-travail', '08-ia-maison', '09-choisir', 'annexes',
 )
-IMAGE = re.compile(r'\]\(image:([^\)]+)\)')
-NOTE = re.compile(r'\[\^([^\]\s]+)\]')
 
 
 def source_path(directory, relative):
@@ -33,33 +30,6 @@ def source_path(directory, relative):
     if not path.is_relative_to(directory.resolve()) or not path.is_file():
         raise ValueError(f'Fichier absent ou hors du dossier : {directory}/{relative}')
     return path
-
-
-def transform(text, prefix):
-    """Réécrire les références hors blocs de code, et relever les images."""
-    images, notes, definitions, lines = set(), set(), set(), []
-    fence = None
-    for line in text.splitlines(keepends=True):
-        marker = re.match(r'^ {0,3}(`{3,}|~{3,})(.*)$', line.rstrip('\r\n'))
-        if marker:
-            run, rest = marker.groups()
-            if fence is None:
-                fence = run
-            elif run[0] == fence[0] and len(run) >= len(fence) and not rest.strip():
-                fence = None
-            lines.append(line)
-            continue
-        if fence is None:
-            images.update(IMAGE.findall(line))
-            notes.update(NOTE.findall(line))
-            definition = re.match(r'^ {0,3}\[\^([^\]\s]+)\]:', line)
-            if definition:
-                definitions.add(definition.group(1))
-            if prefix:
-                line = IMAGE.sub(lambda m: f'](image:{prefix}/{m.group(1)})', line)
-                line = NOTE.sub(lambda m: f'[^{prefix}-{m.group(1)}]', line)
-        lines.append(line)
-    return ''.join(lines), images, notes, definitions
 
 
 def prefixed(node, prefix):
@@ -78,11 +48,13 @@ def prefixed(node, prefix):
 def assemble(root, output, parts=PARTS):
     tutorial = root / 'tutoriel'
     entries = {}
+    image_entries = {}
     manifest = {
         'object': 'container', 'slug': 'comprendre-lia-et-developper-avec-elle',
         'title': 'Comprendre l’IA et développer avec elle',
         'introduction': 'introduction.md', 'conclusion': 'conclusion.md',
         'children': [], 'ready_to_publish': False,
+        'description': 'Comprendre les modèles et explorer deux parcours : développer avec l’IA et l’utiliser dans les tâches de travail.',
     }
     report = {'parties': 0, 'groupes_annexes': 0, 'chapitres': 0,
               'chapitres_annexes': 0, 'sections': 0, 'images': 0,
@@ -123,7 +95,7 @@ def assemble(root, output, parts=PARTS):
         if all_notes != all_definitions:
             raise ValueError(f'Notes non résolues dans {part_name} : {all_notes ^ all_definitions}')
         for relative in sorted(images):
-            add(f'{part_name}/{relative}', source_path(part, relative).read_bytes())
+            image_entries[f'{part_name}/{relative}'] = source_path(part, relative).read_bytes()
         for relative in ('CREDITS.md', 'sources.json'):
             if (part / relative).is_file():
                 add(f'{part_name}/{relative}', source_path(part, relative).read_bytes())
@@ -136,21 +108,17 @@ def assemble(root, output, parts=PARTS):
 
     for name in ('LICENSE', 'LICENCE-TEXTES.md', 'CREDITS.md'):
         add(name, source_path(root, name).read_bytes())
-    manifest_bytes = (json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+    manifest_bytes = (json.dumps(import_manifest(manifest), ensure_ascii=False, indent=2) + '\n').encode('utf-8')
     add('manifest.json', manifest_bytes)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    # Dates et attributs fixes : mêmes sources, mêmes octets dans l’archive.
-    with zipfile.ZipFile(output, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-        for name, data in sorted(entries.items()):
-            info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
-            info.compress_type = zipfile.ZIP_DEFLATED
-            info.create_system = 3
-            info.external_attr = 0o100644 << 16
-            archive.writestr(info, data)
+    write_zip(output, entries)
+    image_output = images_path(output)
+    write_zip(image_output, image_entries)
     (tutorial / 'manifest.json').write_bytes(manifest_bytes)
     report['entrees_zip'] = len(entries)
     report['sha256_zip'] = hashlib.sha256(output.read_bytes()).hexdigest()
-    report['import_interactif_zds'] = 'non effectué'
+    report['archive_images'] = image_output.name
+    report['sha256_images'] = hashlib.sha256(image_output.read_bytes()).hexdigest()
+    report['import_interactif_zds'] = 'rendu à vérifier dans le site'
     (root / 'docs').mkdir(exist_ok=True)
     (root / 'docs/structure-globale.json').write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

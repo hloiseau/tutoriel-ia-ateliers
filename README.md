@@ -1,99 +1,51 @@
 # Comprendre l’IA et développer avec elle
 
-Les textes, les illustrations et les ateliers du tutoriel en cours de rédaction pour **Zeste de Savoir**, par Hugo Loiseau.
+Le dépôt qui accompagne le tutoriel de **Hugo Loiseau** pour **Zeste de Savoir** : les textes à lire, les fichiers des exercices et leurs corrigés.
 
-**[Lire l’introduction générale](tutoriel/introduction.md)** · **[Ouvrir le sommaire](SOMMAIRE.md)** · **[Voir ce qui est disponible](docs/etat-des-contenus.md)** · **[Lire les derniers chapitres](tutoriel/08-choisir/LECTURE.md)**
+**[Commencer le tutoriel](tutoriel/introduction.md)** · **[Sommaire complet](SOMMAIRE.md)** · **[Télécharger un atelier](telechargements/README.md)**
 
-Ce dépôt est le point de travail commun. La branche `main` rassemble les versions courantes, y compris les brouillons identifiés comme tels. Être présent ici ne signifie pas être validé pour publication.
+## Choisir votre parcours
 
-Les **huit parties** sont désormais réunies ici : **56 chapitres et deux annexes, 196 sections et 46 illustrations**, avec les ateliers et les documents de reprise. Le [sommaire](SOMMAIRE.md) mène directement aux lectures par chapitre. Les huit parties disposent d’une première rédaction ; les relectures et expériences restantes sont suivies dans l’état des contenus. Le billet d’origine est un contenu séparé.
+Commencez par [l’histoire de l’IA](tutoriel/01-histoire/README.md), puis les [repères communs sans code](tutoriel/02-apprentissage/00-reperes/LECTURE.md). Choisissez ensuite selon ce que vous souhaitez faire :
 
-## Où trouver quoi ?
-
-| Dossier ou fichier | Contenu |
-| --- | --- |
-| [SOMMAIRE.md](SOMMAIRE.md) | Plan global et liens de lecture |
-| [tutoriel/](tutoriel/README.md) | Sources Markdown du tutoriel, organisées par partie |
-| [ateliers/](ateliers/) | Code, données d’exercice et résultats de référence |
-| [telechargements/](telechargements/) | Archives des ateliers |
-| [docs/](docs/README.md) | État des textes, décisions de rédaction et vérifications |
-| [billets/](billets/README.md) | Repère vers le billet à l’origine du projet ; sources à récupérer |
-| [outils/](outils/) | Scripts de préparation et de vérification |
-
-Pour relire ou corriger, partez du sommaire et modifiez le Markdown de la section concernée. Les vues `LECTURE.md` regroupent les sections pour une lecture continue ; les fichiers séparés sont les sources à modifier. Les ZIP servent aux téléchargements et aux imports ZdS.
-
-## Choisir un atelier
-
-| Partie | Ce que l’on fait | Dossier de départ |
+| Parcours | Point de départ | Suite |
 | --- | --- | --- |
-| 2 — Comprendre un modèle | Reconnaître des chiffres, entraîner un petit réseau, produire du texte et calculer une attention | [Atelier d’apprentissage](ateliers/02-apprentissage/atelier-ia/README.md) |
-| 3 — Modèle local | Charger un petit modèle, lui envoyer des messages et mesurer les appels | [Atelier local](ateliers/03-modele-local/atelier-local/README.md) |
-| 4 — Développement | Reproduire un bug, écrire les tests, corriger et vérifier un suivi de prix | [Atelier de développement](ateliers/04-developpement/README.md) |
-| 5 — Agents | Observer des appels d’outils, des refus et un budget, puis calculer un coût fictif | [Banc d’essai sans modèle](ateliers/05-agents/README.md) |
-| 6 — MCP et skills | Consulter des tickets avec un serveur MCP et préparer une recette | [Atelier MCP et skill](ateliers/06-mcp-skills/README.md) |
-| 7 — IA maison | Retrouver des sources, assembler une application et adapter un petit modèle | [Atelier IA maison](ateliers/07-ia-maison/README.md) |
-| 8 — Choisir la place de l’IA | Examiner les données, comparer l’effort et décider d’un usage | [Exercices et corrigés](ateliers/08-choisir/README.md) |
+| **Développer avec une IA** | [Les ateliers Python de la partie 2](tutoriel/02-apprentissage/README.md) | Modèle local, développement, agents, MCP et skills — parties 3 à 6 |
+| **Utiliser l’IA dans les tâches de travail** | [La journée d’ateliers fictive — partie 7](tutoriel/07-travail/README.md) | Courriels, tableau, point d’équipe et pipeline local ; sans programmer |
 
-Chaque README indique le dossier dans lequel ouvrir le terminal et les commandes à lancer. Python 3.12 est utilisé pour les exécutions de référence.
+Les deux parcours se retrouvent en [partie 9 — Choisir la place de l’IA](tutoriel/09-choisir/README.md). La [partie 8 — IA maison](tutoriel/08-ia-maison/README.md) propose un approfondissement facultatif en Python.
 
-Les répertoires `resultats-reference` contiennent des résultats réellement obtenus. Les scripts écrivent vos essais dans leurs propres dossiers de sortie. Les réponses et durées peuvent différer sur votre machine.
+## Vous venez du tutoriel pour faire un exercice ?
 
-## Télécharger
+Téléchargez le ZIP de la partie concernée, décompressez-le et ouvrez son README. Il indique les fichiers à utiliser et le dossier dans lequel travailler. Vous pouvez prendre un seul atelier ; il n’est pas nécessaire de télécharger tout le dépôt.
 
-Le [ZIP global pour ZdS](telechargements/zds/tutoriel-ia-complet.zip) rassemble l’introduction, les huit parties et les annexes. Les [imports séparés](telechargements/zds/README.md) restent disponibles. La structure est contrôlée ; l’import dans le site reste à essayer.
+| Partie | Guide de l’atelier | Télécharger |
+| --- | --- | --- |
+| 2 — Comprendre un modèle | [Commencer](ateliers/02-apprentissage/atelier-ia/README.md) | [ZIP](telechargements/annexes-atelier-ia-v1.zip?raw=true) |
+| 3 — Faire tourner un modèle local | [Commencer](ateliers/03-modele-local/atelier-local/README.md) | [ZIP](telechargements/annexes-modele-local-v1.zip?raw=true) |
+| 4 — Développer avec une IA | [Commencer](ateliers/04-developpement/README.md) | [ZIP](telechargements/annexes-developpement-v1.zip?raw=true) |
+| 5 — Comprendre les agents | [Commencer](ateliers/05-agents/README.md) | [ZIP](telechargements/atelier-agents.zip?raw=true) |
+| 6 — MCP et skills | [Commencer](ateliers/06-mcp-skills/README.md) | [ZIP](telechargements/atelier-mcp-skills.zip?raw=true) |
+| 7 — Travailler avec l’IA au-delà du code | [Commencer](ateliers/hors-developpement/README.md) | [ZIP](telechargements/atelier-hors-developpement.zip?raw=true) |
+| 8 — Construire son IA maison | [Commencer](ateliers/07-ia-maison/README.md) | [ZIP](telechargements/atelier-ia-maison.zip?raw=true) |
+| 9 — Choisir la place de l’IA | [Commencer](ateliers/08-choisir/README.md) | [ZIP](telechargements/atelier-choisir-ia.zip?raw=true) |
 
-Vous pouvez cloner ce dépôt ou télécharger son archive ZIP depuis GitHub. Les [archives des sept ateliers](telechargements/) permettent de télécharger un atelier séparément. Le chapitre peut pointer vers une révision précise du dépôt pour conserver les mêmes fichiers au fil des corrections. Les fichiers de poids du modèle local et les exécutables de llama.cpp se téléchargent séparément.
+Pour la partie 7, ouvrez `pipeline/index.html` **après avoir décompressé l’atelier**. Le navigateur affiche l’application locale. Les fichiers de poids des modèles et les exécutables de llama.cpp ne sont pas inclus dans les ZIP ; leur téléchargement est expliqué dans le cours.
 
-## État des vérifications des ateliers
+## Ce que contient le dépôt
 
-Les ateliers ont été exécutés sous Linux sur CPU. L’atelier local a été interrogé avec un vrai modèle ; les tests unitaires du client utilisent, eux, des réponses factices. Les scripts de développement et leurs mutations ont été exécutés. Les prompts fournis ne sont pas des traces attribuées à un agent particulier.
+- [**tutoriel/**](tutoriel/README.md) : neuf parties, 64 chapitres et deux annexes, avec leurs illustrations.
+- [**ateliers/**](ateliers/README.md) : code, données fictives, corrigés et résultats de référence.
+- [**telechargements/**](telechargements/README.md) : les huit ateliers à décompresser.
 
-La recherche et les entraînements de la partie 7 ont également été rejoués depuis leur archive. Les réponses du modèle documentaire conservent leurs erreurs.
+Le contenu est en préparation pour la bêta. Les [vérifications et limites connues](docs/etat-des-contenus.md) indiquent les essais encore à faire.
 
-Les exercices de décision de la partie 8 ont été vérifiés depuis leur archive. Les durées de démonstration sont fictives ; aucune mesure de gain de productivité ou d’apprentissage n’en est tirée.
+## Signaler un problème ou contribuer
 
-Les essais GPU, Windows, macOS et les interactions dans un vrai navigateur restent à vérifier. Voir [les résultats et leurs limites](docs/verification.md).
+Pour une erreur de texte, un lien cassé ou un exercice difficile à suivre, [ouvrez une issue](https://github.com/hloiseau/tutoriel-ia-ateliers/issues/new) en indiquant la partie, le chapitre et, si nécessaire, votre système et le message d’erreur.
 
-## Reprendre le travail avec un assistant
-
-- [Prompts pour les expériences sur le PC de Hugo](docs/prompts/LOCAL-COORDINATEUR.md), avec une mission détaillée par atelier.
-- [Prompt de réécriture complète](docs/prompts/RELECTURE-COORDINATEUR.md), avec huit sous-agents, un par partie.
-- [Guide de voix et de pédagogie](docs/prompts/GUIDE-VOIX-HUGO.md), avec le texte maison de Hugo et des exemples avant/après.
-
-Ces documents préparent les prochaines passes ; ils ne valent pas exécution des expériences ni réécriture déjà réalisée.
-
-## Préparer les lectures et les imports ZdS
-
-```bash
-python outils/assembler_tutoriel.py --exports telechargements/zds
-python outils/assembler_global.py
-```
-
-La première commande vérifie les fichiers et les images référencés, régénère les lectures GitHub et prépare les imports séparés. Sans `--exports`, elle régénère seulement les lectures. La seconde construit le ZIP global et son manifest. Les notes éditoriales et les ateliers sont exclus des imports ZdS. Voir [le fonctionnement et les contrôles de l’export global](docs/export-global.md).
-
-## Préparer les archives des ateliers
-
-```bash
-python outils/assembler_annexes.py
-```
-
-Les sept ZIP sont écrits dans `telechargements/`. Ils contiennent le code, les résultats de référence et les mentions de licence.
-
-Pour exécuter les contrôles rapides sans téléchargement de modèle :
-
-```bash
-python outils/verifier.py
-```
-
-Ces contrôles ne relancent pas les entraînements de la partie 2 ni le serveur de la partie 3. Les tests MCP de la partie 6 se lancent séparément, avec les dépendances de son [atelier](ateliers/06-mcp-skills/README.md).
-
-Les sources des données et du modèle sont recensées dans [CREDITS.md](CREDITS.md).
+Pour modifier les sources ou reconstruire les archives, consultez [CONTRIBUTING.md](CONTRIBUTING.md). Les [exports pour l’auteur sur ZdS](telechargements/zds/README.md), le [suivi éditorial](docs/README.md) et les [archives du projet](docs/archives/README.md) y sont documentés.
 
 ## Licences
 
-Copyright © 2026 Hugo Loiseau.
-
-- **Code et page de dessin : GPLv3**, voir [LICENSE](LICENSE).
-- **Textes de documentation et illustrations originales : CC BY-SA 4.0**, voir [LICENCE-TEXTES.md](LICENCE-TEXTES.md).
-- **Éléments tiers :** les licences et attributions précisées dans [CREDITS.md](CREDITS.md) restent applicables.
-
+Copyright © 2026 Hugo Loiseau. Le [code est sous GPLv3](LICENSE), les [textes et illustrations originales sous CC BY-SA 4.0](LICENCE-TEXTES.md). Les attributions et licences des éléments tiers figurent dans [CREDITS.md](CREDITS.md).

@@ -7,6 +7,7 @@ import zipfile
 from pathlib import Path
 
 from assembler_global import assemble
+from format_zds import images_path
 
 
 class GlobalArchiveTests(unittest.TestCase):
@@ -53,26 +54,34 @@ class GlobalArchiveTests(unittest.TestCase):
         with zipfile.ZipFile(self.output) as archive:
             manifest = json.loads(archive.read('manifest.json'))
             self.assertEqual(len(manifest['children']), 2)
+            self.assertEqual(manifest['version'], 2.1)
+            self.assertEqual(manifest['type'], 'TUTORIAL')
             self.assertFalse(manifest['ready_to_publish'])
             for part in manifest['children']:
                 self.assertFalse(part['ready_to_publish'])
                 self.assertFalse(part['children'][0]['ready_to_publish'])
                 self.assertIn(part['children'][0]['children'][0]['text'], archive.namelist())
-            self.assertEqual(archive.read('un/images/schema.png'), b'un')
-            self.assertEqual(archive.read('deux/images/schema.png'), b'deux')
+            self.assertNotIn('un/images/schema.png', archive.namelist())
             text = archive.read('un/section.md').decode()
-            self.assertIn('(image:un/images/schema.png)', text)
+            self.assertIn('(archive:un/images/schema.png)', text)
             self.assertIn('[^un-source]: Crédit.', text)
             self.assertIn('```markdown\n![Exemple](image:absente.png)\nExemple[^sans-definition]\n```', text)
+        with zipfile.ZipFile(images_path(self.output)) as images:
+            self.assertEqual(set(images.namelist()), {'un/images/schema.png', 'deux/images/schema.png'})
+            self.assertEqual(images.read('un/images/schema.png'), b'un')
+            self.assertEqual(images.read('deux/images/schema.png'), b'deux')
         original = self.output.read_bytes()
+        original_images = images_path(self.output).read_bytes()
         self.build()
         self.assertEqual(self.output.read_bytes(), original)
+        self.assertEqual(images_path(self.output).read_bytes(), original_images)
 
     def test_missing_image_fails_before_export(self):
         (self.root / 'tutoriel/un/images/schema.png').unlink()
         with self.assertRaises(ValueError):
             self.build()
         self.assertFalse(self.output.exists())
+        self.assertFalse(images_path(self.output).exists())
 
     def test_escape_is_rejected_even_when_target_exists(self):
         (self.root / 'tutoriel/secret.png').write_bytes(b'private')

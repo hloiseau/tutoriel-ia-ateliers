@@ -1,13 +1,15 @@
 {
-  "parties": 8,
+  "parties": 9,
   "groupes_annexes": 1,
-  "chapitres": 56,
+  "chapitres": 64,
   "chapitres_annexes": 2,
-  "sections": 196,
-  "images": 46,
-  "notes": 155,
-  "fichiers_markdown": 332,
-  "entrees_zip": 394,
-  "sha256_zip": "7bdbbb8d88d9b2aa76021f2e17579732970de938b45ba67206e5a3d4e1bed744",
-  "import_interactif_zds": "non effectué"
+  "sections": 222,
+  "images": 49,
+  "notes": 163,
+  "fichiers_markdown": 376,
+  "entrees_zip": 393,
+  "sha256_zip": "9aa3cef2fd04d4b14dfc2f61f264d92d3841149da45edf4f79c47ec133bc86f6",
+  "archive_images": "tutoriel-ia-complet-images.zip",
+  "sha256_images": "9a4e351a088ddefe61a3291a325be599b1b0e6d83d15e9cf6ddee69254d68cd6",
+  "import_interactif_zds": "rendu à vérifier dans le site"
 }
